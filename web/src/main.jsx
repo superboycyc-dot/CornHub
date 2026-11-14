@@ -273,11 +273,11 @@ function Map({
   useEffect(() => {
     if (!fields?.features.length) return;
     const normal = (feature) => ({
-      color: feature.properties.field_id === selected ? "#dcff92" : "#d4e5c9",
-      weight: feature.properties.field_id === selected ? 2 : 1.15,
-      opacity: 0.95,
+      color: feature.properties.field_id === selected ? "#edffb6" : "#cfff87",
+      weight: feature.properties.field_id === selected ? 2.5 : 1.8,
+      opacity: 1,
       fillColor: "#c3ff84",
-      fillOpacity: feature.properties.field_id === selected ? 0.14 : 0.045,
+      fillOpacity: feature.properties.field_id === selected ? 0.38 : 0.26,
     });
     const layer = L.geoJSON(fields, {
       pane: "field-polygons",
@@ -292,7 +292,7 @@ function Map({
           opacity: 1,
         });
         const highlight = () => {
-          polygon.setStyle({ color: "#e6ffad", weight: 3, fillOpacity: 0.32 });
+          polygon.setStyle({ color: "#efffc9", weight: 3, fillOpacity: 0.52 });
           polygon.bringToFront();
         };
         const reset = () => polygon.setStyle(normal(feature));
