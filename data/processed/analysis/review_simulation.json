@@ -12,6 +12,6 @@
   "random_absolute_error_max_ha": null,
   "heuristic_review_ids": [],
   "notes": [
-    "Requires OOF probabilities, sourced real labels, and A validation_folds.csv."
+    "Budget exceeds available usable candidates; no silent budget reduction."
   ]
 }

@@ -1,0 +1,4 @@
+year,prediction_role,status,budget,seed,random_repeats,n_candidates,initial_absolute_error_ha,heuristic_absolute_error_ha,random_absolute_error_median_ha,random_absolute_error_min_ha,random_absolute_error_max_ha,change_in_absolute_error_ha
+2021,oof,pending,3,42,200,0,,,,,,
+2022,oof,evaluated,3,42,200,7,11.460348561480334,2.617936080428347,7.231083375189829,1.0752408173666304,16.149438256924554,-8.842412481051984
+2023,oof,evaluated,3,42,200,19,3.0577221691703897,4.009307098232732,4.77900319547479,0.4720189849917986,11.757307665134938,0.9515849290623422

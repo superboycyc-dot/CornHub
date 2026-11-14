@@ -1,0 +1,68 @@
+{
+  "status": "checked",
+  "model_commit": "a867e4e19c431754e7b07ee8a260f48761d83d81",
+  "role_counts": {
+    "oof": 44,
+    "inference": 44
+  },
+  "source_hashes_and_refs_match_C_training_inputs": true,
+  "model_versions": [
+    "rf_v1_uncalibrated"
+  ],
+  "annual_checks": [
+    {
+      "year": 2021,
+      "prediction_role": "oof",
+      "status": "pending",
+      "budget": 3,
+      "seed": 42,
+      "random_repeats": 200,
+      "n_candidates": 0,
+      "initial_absolute_error_ha": null,
+      "heuristic_absolute_error_ha": null,
+      "random_absolute_error_median_ha": null,
+      "random_absolute_error_min_ha": null,
+      "random_absolute_error_max_ha": null,
+      "change_in_absolute_error_ha": null,
+      "area_conservation_and_rank_checked": true
+    },
+    {
+      "year": 2022,
+      "prediction_role": "oof",
+      "status": "evaluated",
+      "budget": 3,
+      "seed": 42,
+      "random_repeats": 200,
+      "n_candidates": 7,
+      "initial_absolute_error_ha": 11.460348561480334,
+      "heuristic_absolute_error_ha": 2.617936080428347,
+      "random_absolute_error_median_ha": 7.231083375189829,
+      "random_absolute_error_min_ha": 1.0752408173666304,
+      "random_absolute_error_max_ha": 16.149438256924554,
+      "change_in_absolute_error_ha": -8.842412481051984,
+      "area_conservation_and_rank_checked": true
+    },
+    {
+      "year": 2023,
+      "prediction_role": "oof",
+      "status": "evaluated",
+      "budget": 3,
+      "seed": 42,
+      "random_repeats": 200,
+      "n_candidates": 19,
+      "initial_absolute_error_ha": 3.0577221691703897,
+      "heuristic_absolute_error_ha": 4.009307098232732,
+      "random_absolute_error_median_ha": 4.77900319547479,
+      "random_absolute_error_min_ha": 0.4720189849917986,
+      "random_absolute_error_max_ha": 11.757307665134938,
+      "change_in_absolute_error_ha": 0.9515849290623422,
+      "area_conservation_and_rank_checked": true
+    }
+  ],
+  "notes": [
+    "OOF training exclusion relies on C; D does not retrain models.",
+    "Probabilities are uncalibrated; areas are exploratory sample estimates.",
+    "Manual review assumes perfect whole-field label revelation; no field survey was performed.",
+    "An observed error increase is retained; no general ranking effectiveness is claimed."
+  ]
+}

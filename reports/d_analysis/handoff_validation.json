@@ -98,60 +98,60 @@
     },
     {
       "path": "data/processed/satellite/features.csv",
-      "commit": "e107fea4a539a6a9f973263f6a1be23158438304",
+      "commit": "05a81a7d1634c80d3c56b66cf9eb9acb9527fc9b",
       "exists": true,
-      "sha256": "7ac9efe2d420704839952e0be3a51633d3bb7ef66af7326810a34d82759ac3bf",
-      "git_blob_sha": "82c10e8b06120d440af9046dbb7c23ee8770f1a6"
+      "sha256": "402ec0ba1198ed582dd6de0181b7e6298f30a7452282e377d5a39db838c227cb",
+      "git_blob_sha": "d13fc5b0d7267c33525f2b279fb8d339656ff718"
     },
     {
       "path": "data/processed/model/predictions.csv",
-      "commit": "6a799c1d4f3d0103c105d19cf880b52c68140901",
+      "commit": "a867e4e19c431754e7b07ee8a260f48761d83d81",
       "exists": true,
-      "sha256": "ed1ffbf37c50c09b2c38a13781879663c900c62d1763f77786c8a0bc29fa5488",
-      "git_blob_sha": "3f28a1fdad9a99cf28e86928baad57ac216c2246"
+      "sha256": "fc837db3fc6667419d9c784a8cee520574230bc5ceec94246df0e738953ef5ea",
+      "git_blob_sha": "15ce29c47768ff044dad8e00f316780323ab311e"
     }
   ],
   "upstream_rows": {
-    "features": 0,
-    "predictions": 0
+    "features": 44,
+    "predictions": 88
   },
-  "checked_at_utc": "2026-11-14T19:58:32.441628Z",
+  "checked_at_utc": "2026-11-14T21:14:50.193241Z",
   "analysis_runs": [
     {
       "cohort": "smoke",
       "year": 2021,
       "prediction_role": "oof",
       "n_fields": 1,
-      "status": "pending",
+      "status": "computed",
       "selected_area_ha": 6.63739333,
-      "covered_area_ha": 0.0
+      "covered_area_ha": 6.63739333
     },
     {
       "cohort": "labeled",
       "year": 2021,
       "prediction_role": "oof",
       "n_fields": 18,
-      "status": "pending",
+      "status": "computed",
       "selected_area_ha": 130.11089599,
-      "covered_area_ha": 0.0
+      "covered_area_ha": 130.11089599
     },
     {
       "cohort": "labeled",
       "year": 2022,
       "prediction_role": "oof",
       "n_fields": 7,
-      "status": "pending",
+      "status": "computed",
       "selected_area_ha": 44.6508102,
-      "covered_area_ha": 0.0
+      "covered_area_ha": 44.6508102
     },
     {
       "cohort": "labeled",
       "year": 2023,
       "prediction_role": "oof",
       "n_fields": 19,
-      "status": "pending",
+      "status": "computed",
       "selected_area_ha": 123.08976508,
-      "covered_area_ha": 0.0
+      "covered_area_ha": 123.08976508
     }
   ]
 }

@@ -10,6 +10,7 @@ from pathlib import Path
 from analysis import (analyze, read_csv, read_fields, simulate_review, ContractError,
                       FEATURE_COLUMNS, PREDICTION_COLUMNS, cohort_ids)
 from validate_handoff import validate_core
+from report_results import feature_coverage
 
 
 def fields():
@@ -28,6 +29,23 @@ def predictions(role='oof'):
 
 
 class AnalysisTests(unittest.TestCase):
+    def test_features_do_not_imply_prediction_coverage(self):
+        feat = [{**r, 'valid_obs_count': 8, 'max_gap_days': 20} for r in features()]
+        feat[0].update(quality_flag='limited', max_gap_days=40)
+        summary = analyze(fields(), feat[:2], [], year=2022, prediction_role='oof')[0]
+        coverage = feature_coverage(fields(), feat[:2], summary)
+        self.assertEqual(summary['coverage_fraction'], 0)
+        self.assertEqual(coverage['feature_matched_area_ha'], 30)
+        self.assertEqual(coverage['usable_feature_area_ha'], 20)
+        self.assertEqual(coverage['quality_area_ha']['limited'], 10)
+        self.assertEqual(coverage['quality_area_ha']['missing_features'], 30)
+
+    def test_feature_coverage_unknown_and_empty_denominators(self):
+        for inventory in [None, []]:
+            summary = analyze(inventory, None, None, year=2022, prediction_role='oof')[0]
+            coverage = feature_coverage(inventory, None, summary)
+            self.assertIsNone(coverage['feature_match_fraction'])
+            self.assertEqual(coverage['n_matched_features'], 0)
     def test_explicit_annual_and_smoke_cohorts(self):
         labels = [{'field_id': 'barc_001', 'year': 2022},
                   {'field_id': 'barc_002', 'year': 2023}]

@@ -1,58 +1,19 @@
-Actual verification (2026-11-14 UTC)
+Actual checks: 2026-11-14 UTC
+python3 -m unittest discover -s src/analysis -p 'test_*.py' -v
+18 tests passed; temporary synthetic fixtures only.
 
-Command: python3 -m unittest discover -s src/analysis -p 'test_*.py' -v
-Result: 16 tests passed (including cohort selection/exclusions, farm-fold leakage checks,
-CSV integration, pending handling, weighted area, duplicates, probability boundaries,
-quality separation and fixed-seed equal-budget review simulation).
+validate_handoff.py used actual staged read-only A/B/C inputs via --core-root,
+--features, --predictions, --acceptance; year/cohort runs select OOF.
+A=df7ce8cd63039e90de7ca78ba95f4f3259ee15c5
+B=05a81a7d1634c80d3c56b66cf9eb9acb9527fc9b
+C=a867e4e19c431754e7b07ee8a260f48761d83d81
+Exit 0; real summaries computed for smoke and all three annual labeled cohorts.
 
-Actual integration invoked src/analysis/validate_handoff.py with --core-root,
---features, --predictions and --acceptance pointed at the staged read-only GitHub
-snapshots, and these exact source selectors:
---a-ref df7ce8cd63039e90de7ca78ba95f4f3259ee15c5
---b-ref e107fea4a539a6a9f973263f6a1be23158438304
---c-ref 6a799c1d4f3d0103c105d19cf880b52c68140901
---prediction-role oof
-
-Result: 83 fields, 44 labels on 34 fields, 44 matching folds, 5 farms, no
-field/farm fold crossing. Four A core checksums match the acceptance report.
-B feature rows=0; C prediction rows=0. Per-field missing reasons are preserved;
-review queues are header-only and crop-area/economic estimates are null.
-
-[
-  {
-    "cohort": "smoke",
-    "year": 2021,
-    "prediction_role": "oof",
-    "n_fields": 1,
-    "status": "pending",
-    "selected_area_ha": 6.63739333,
-    "covered_area_ha": 0.0
-  },
-  {
-    "cohort": "labeled",
-    "year": 2021,
-    "prediction_role": "oof",
-    "n_fields": 18,
-    "status": "pending",
-    "selected_area_ha": 130.11089599,
-    "covered_area_ha": 0.0
-  },
-  {
-    "cohort": "labeled",
-    "year": 2022,
-    "prediction_role": "oof",
-    "n_fields": 7,
-    "status": "pending",
-    "selected_area_ha": 44.6508102,
-    "covered_area_ha": 0.0
-  },
-  {
-    "cohort": "labeled",
-    "year": 2023,
-    "prediction_role": "oof",
-    "n_fields": 19,
-    "status": "pending",
-    "selected_area_ha": 123.08976508,
-    "covered_area_ha": 0.0
-  }
-]
+report_results.py --input-root [staged inputs] --model-report [C merge report]
+--c-ref a867e4e19c431754e7b07ee8a260f48761d83d81 --prediction-role oof
+Exit 0. C training input hashes/refs match; prediction keys unique; OOF folds match.
+Independent area, rank and direct-label-replacement/random simulations agree 1e-10.
+2021 has no usable candidates, simulation pending. 2022/2023 budget=3, seed=42,
+random repeats=200. 2023 error increases (3.05772217 -> 4.00930710 ha); no broad
+benefit claimed. No default prices, model training, image reprocessing, ground
+survey, frontend change or deployment by D. Full commands and flags in README.

@@ -1,8 +1,8 @@
 {
   "inputs": {
     "fields": 83,
-    "features": 0,
-    "predictions": 0
+    "features": 44,
+    "predictions": 88
   },
   "year": 2022,
   "prediction_role": "oof",
@@ -89,34 +89,18 @@
   ],
   "excluded_outside_cohort_feature_ids": [],
   "excluded_outside_cohort_prediction_ids": [],
-  "selected_feature_rows": 0,
-  "selected_prediction_rows": 0,
-  "excluded_other_year_feature_rows": 0,
-  "excluded_other_year_or_role_prediction_rows": 0,
+  "selected_feature_rows": 7,
+  "selected_prediction_rows": 7,
+  "excluded_other_year_feature_rows": 37,
+  "excluded_other_year_or_role_prediction_rows": 81,
   "unmatched_feature_ids": [],
   "unmatched_prediction_ids": [],
-  "missing_feature_ids": [
-    "barc_231",
-    "barc_251",
-    "barc_252",
-    "barc_278",
-    "barc_279",
-    "barc_286",
-    "barc_429"
-  ],
-  "missing_prediction_ids": [
-    "barc_231",
-    "barc_251",
-    "barc_252",
-    "barc_278",
-    "barc_279",
-    "barc_286",
-    "barc_429"
-  ],
-  "matched_feature_rows": 0,
-  "matched_prediction_rows": 0,
+  "missing_feature_ids": [],
+  "missing_prediction_ids": [],
+  "matched_feature_rows": 7,
+  "matched_prediction_rows": 7,
   "missing_files": [],
-  "covered_prediction_rows": 0,
-  "review_queue_rows": 0,
-  "data_needed_rows": 7
+  "covered_prediction_rows": 7,
+  "review_queue_rows": 7,
+  "data_needed_rows": 0
 }

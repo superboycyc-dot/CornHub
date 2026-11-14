@@ -94,68 +94,119 @@ Fresh silage and grain weight are different products; do not compare their mass
 directly. Gross crop value is not profit; costs are absent. No economic calculation
 is released in phase one, and summary.economic_scenario stays null.
 
-## Actual checks and blockers
+## Current real A/B/C integration
 
-The test command above covers pending inputs, weighted sums and area conservation,
-year/role separation, duplicate/orphan rejection, probability limits, quality queue
-separation, tie-breaking, fixed-seed equal-budget simulation and CLI selectors.
-See validation.txt for the actual run result.
+A: df7ce8cd63039e90de7ca78ba95f4f3259ee15c5 (PR #6).
+B: 05a81a7d1634c80d3c56b66cf9eb9acb9527fc9b (PR #5).
+C: a867e4e19c431754e7b07ee8a260f48761d83d81 (PR #4).
+These are pinned read-only inputs. D does not merge their unapproved changes or
+copy their data into this PR. Sources are recorded in sources.csv. Contract blob
+remains 1749344f5a6a2911a8327927eabbdb549e951adb; no AGENTS.md appears in inspected trees.
 
-A core inputs have been received from PR #6 (work/a-data), but are not yet on
-main at the inspected snapshot. A records five leave-one-farm-out folds as an
-explicit authorized exception to the older three-field-fold contract; D reads
-those folds and checks farm separation without re-splitting. A documents official
-label-use findings and their limits in reports/a_data/README.md; no extra written
-organizer approval is claimed. B and C have header-only tables, so real features
-and probabilities remain blockers. Review effectiveness and economic conclusions
-remain uncomputed; economic inputs and OOF provenance are still needed.
+83 boundaries, 44 labels on 34 fields, 44 matching features and 88 predictions
+(44 OOF + 44 inference) have been consumed. Four A core files match A acceptance
+SHA-256. C training input hashes and A/B source refs match D inputs. Prediction
+keys are unique; OOF fold IDs match A. A explicitly documents five farm folds
+as an authorized exception to the older three-field-fold contract. D reads them,
+checks same-field/farm separation and does not re-split or retrain models.
+A owns geometry/CRS/area checks; D does not independently reproject or ground-survey.
+A's label-use and licensing findings still apply; no extra organizer approval is claimed.
 
-## Real A handoff integration
+Published runs explicitly select OOF. Inference rows are excluded from area sums
+and all review evaluation. C probabilities are uncalibrated, so probability-weighted
+areas below are exploratory sample estimates, not validated county/state totals.
+The 83 boundary inventory is not assumed to be corn in each year. Annual labeled
+cohorts remain selected samples; different years are never added together.
 
-A snapshot: df7ce8cd63039e90de7ca78ba95f4f3259ee15c5 (PR #6).
-B header snapshot: e107fea4a539a6a9f973263f6a1be23158438304.
-C header snapshot: 6a799c1d4f3d0103c105d19cf880b52c68140901.
-These branches are read-only inputs; D does not merge their unapproved changes or
-copy core/model/satellite files into this PR. Stage the pinned source files in
-separate input directories until the respective PRs are merged. Read current
-README, contract and collaboration/submission rules; contract blob unchanged,
-and no AGENTS.md appears in the inspected trees.
+| Year | Fields | Covered area ha | Expected silage ha | Expected grain ha | Prediction coverage |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| 2021 | 18 | 130.11089599 | 32.66385589 | 97.44704010 | 100% |
+| 2022 | 7 | 44.65081020 | 18.66016901 | 25.99064119 | 100% |
+| 2023 | 19 | 123.08976508 | 40.63679195 | 82.45297313 | 100% |
 
-Validated 83 boundaries, 44 unique labels on 34 fields and 44 matching fold rows.
-The four consumed A core files match A acceptance SHA-256 byte for byte. Same
-field/farm never crosses a fold. D trusts A area/geometry preparation and does
-not claim an independent geometric reprojection or ground survey. The 490.86427949
-ha static boundary inventory is only an input integrity check, not annual corn
-acreage and not an estimated S/G total.
+Root snapshot is only the official smoke barc_1/2021 OOF. Full annual scopes are
+in 2021/oof, 2022/oof and 2023/oof. Label-derived areas are never passed off as
+predicted areas. No extrapolation to California or annual BARC census is claimed.
 
-| Selected cohort | Fields | Selected area (ha) | Prediction coverage | Status |
+## Feature availability and quality sidecar
+
+report_results.py adds feature_coverage.json in each output folder, without changing
+the summary.json top-level contract. Fields include selected scope/year, feature
+match count/area, area of fields with at least one valid day, usable-feature area
+and fractions, quality counts/areas, and min/max valid days and maximum gaps.
+Unknown/empty denominators are null. All fractions use the explicit cohort area.
+Field-level feature availability is not complete seasonal/pixel coverage, model
+accuracy, prediction coverage or probability reliability.
+
+| Year | Feature matches | limited | usable | Valid-day range | Longest-gap range days |
+| --- | ---: | ---: | ---: | --- | --- |
+| 2021 | 18 | 18 | 0 | 21-52 | 33-45 |
+| 2022 | 7 | 0 | 7 | 25-43 | 20-28 |
+| 2023 | 19 | 0 | 19 | 21-51 | 15-30 |
+
+Every selected field has features and valid days. All 2021 rows remain limited,
+so 2021 usable-feature area is zero while its predicted area is fully covered.
+Its 18 data_needed.csv records preserve quality_limited;gap_exceeds_30_days.
+2022/2023 data-needed tables are empty. B reports 4,524 scene observations; D
+checked consumed interfaces, not imagery processing or ground truth. C separately
+reports time-series/feature consistency checks. Early peak/drop features are not
+established harvest dates or S/G labels. Quality rules are not relaxed.
+
+## Real fixed-budget review simulation
+
+Budget=3 whole fields per annual cohort, seed=42, random repeats=200. Root smoke
+uses budget=1. Same usable candidate pool, same budget and same OOF labeled cohort
+for heuristic and random methods. Reviewed A*p is replaced by its true silage
+area (A or zero). This assumes perfect manual label revelation, not a field survey.
+
+| Year | Initial abs error ha | Heuristic abs error ha | Random median ha | Random range ha |
 | --- | ---: | ---: | ---: | --- |
-| Official smoke barc_1 / 2021 | 1 | 6.63739333 | 0% | pending |
-| Labeled 2021 | 18 | 130.11089599 | 0% | pending |
-| Labeled 2022 | 7 | 44.65081020 | 0% | pending |
-| Labeled 2023 | 19 | 123.08976508 | 0% | pending |
+| 2021 | null | null | null | null |
+| 2022 | 11.46034856 | 2.61793608 | 7.23108338 | 1.07524082-16.14943826 |
+| 2023 | 3.05772217 | 4.00930710 | 4.77900320 | 0.47201898-11.75730767 |
 
-All expected crop areas and economic scenarios remain null, every review queue
-is header-only, and each selected field has missing_features;missing_prediction
-in its data-needed table. B/C files exist but contain zero rows, which is different
-from a missing file. No true-label area was used as a prediction. Years are never
-summed into a single area.
+2021 and smoke simulations remain pending: zero usable candidates, so the budget
+cannot be executed. No budget reduction or quality promotion is performed.
+2022 review IDs: barc_252, barc_278, barc_279. 2023: barc_292, barc_230, barc_323.
+2023 error increases from 3.05772217 to 4.00930710 ha: revealing correct labels can
+remove cancellation between field errors. Keep this negative result. Being below
+the random median in two small runs is not a significance test or proof of general
+ranking effectiveness. No threshold, budget or model choices were tuned to results.
 
-Reproduce using a checkout containing A/B/C handoffs, or pass --core-root,
---features, --predictions and --acceptance pointing to staged read-only inputs:
+review_comparison.csv and prediction_handoff_review.json record comparisons and
+independent direct recomputation of weighted areas, area conservation, queue rank,
+whole-field label replacement and seed-42 random error summaries (agreement 1e-10).
+D relies on C's OOF training provenance and does not retrain or calibrate its models.
+
+## Reproduce and remaining limitations
+
+Python 3.9+ standard library. Tests: 18 passing; internal synthetic fixtures stay
+in temporary directories. Main real integration and independent audit commands:
 
 ```sh
 python3 src/analysis/validate_handoff.py \
   --a-ref df7ce8cd63039e90de7ca78ba95f4f3259ee15c5 \
-  --b-ref e107fea4a539a6a9f973263f6a1be23158438304 \
-  --c-ref 6a799c1d4f3d0103c105d19cf880b52c68140901 \
+  --b-ref 05a81a7d1634c80d3c56b66cf9eb9acb9527fc9b \
+  --c-ref a867e4e19c431754e7b07ee8a260f48761d83d81 \
   --acceptance reports/a_data/acceptance.json --prediction-role oof
+python3 src/analysis/report_results.py \
+  --c-ref a867e4e19c431754e7b07ee8a260f48761d83d81 --prediction-role oof
 ```
 
-The refs must identify the actual source snapshots; when inputs change, use their
-new commits. The runner verifies core checksums against the supplied acceptance,
-records all six input SHA-256 and Git blob hashes, validates core links and farm
-folds, and writes smoke plus annual labeled-cohort outputs. It does not fetch or
-change any upstream file. Full audit: handoff_validation.json. Actual execution
-and staged-input command: validation.txt. Tests: 16 passing, including cohort
-selection, exclusions, farm leakage rejection and the original calculation tests.
+Actual execution used staged read-only snapshots via --core-root, --features,
+--predictions and --acceptance for the integration runner, and --input-root plus
+--model-report for the result audit. Default paths above work after upstream PRs
+are integrated. The scripts do not download or modify upstream files. Record the
+actual immutable source refs when inputs change. Actual run evidence: validation.txt.
+
+A/B/C inputs are available for this selected BARC cohort. Remaining limitations:
+2021 has no usable review candidates; C probabilities are uncalibrated, only 34
+independent fields/5 farms exist, one training fold has a single silage example,
+and no independent-year/California validation exists. No general effectiveness,
+confidence interval, deployment or field survey is claimed.
+
+Economic inputs remain absent. Parameter template values and economic_scenario
+stay null. Need local year-matched yields/prices, source table/URL, publication and
+data year, region, currency, units, farm-gate/delivered price basis, moisture/fresh-
+dry basis, conversions, retrieval time and license. Do not compare silage fresh
+mass directly with grain mass or call gross crop value profit. No default prices.

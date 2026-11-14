@@ -1,1 +1,20 @@
 field_id,year,prediction_role,rank,review_score,reason
+barc_292,2023,oof,1,16.23691663514431,area_ha * 4*p_silage*(1-p_silage); usable observations; unvalidated heuristic
+barc_230,2023,oof,2,10.953273442829856,area_ha * 4*p_silage*(1-p_silage); usable observations; unvalidated heuristic
+barc_323,2023,oof,3,10.239860301375636,area_ha * 4*p_silage*(1-p_silage); usable observations; unvalidated heuristic
+barc_254,2023,oof,4,9.27788807427344,area_ha * 4*p_silage*(1-p_silage); usable observations; unvalidated heuristic
+barc_248,2023,oof,5,5.967425606113835,area_ha * 4*p_silage*(1-p_silage); usable observations; unvalidated heuristic
+barc_347,2023,oof,6,5.283810408491595,area_ha * 4*p_silage*(1-p_silage); usable observations; unvalidated heuristic
+barc_238,2023,oof,7,5.24885129575999,area_ha * 4*p_silage*(1-p_silage); usable observations; unvalidated heuristic
+barc_348,2023,oof,8,4.863136946195306,area_ha * 4*p_silage*(1-p_silage); usable observations; unvalidated heuristic
+barc_400,2023,oof,9,4.1105601553365005,area_ha * 4*p_silage*(1-p_silage); usable observations; unvalidated heuristic
+barc_382,2023,oof,10,3.2922213001980554,area_ha * 4*p_silage*(1-p_silage); usable observations; unvalidated heuristic
+barc_231,2023,oof,11,3.0465969029918787,area_ha * 4*p_silage*(1-p_silage); usable observations; unvalidated heuristic
+barc_288,2023,oof,12,2.868668442769158,area_ha * 4*p_silage*(1-p_silage); usable observations; unvalidated heuristic
+barc_397,2023,oof,13,2.799629961935528,area_ha * 4*p_silage*(1-p_silage); usable observations; unvalidated heuristic
+barc_383,2023,oof,14,2.7805747784053887,area_ha * 4*p_silage*(1-p_silage); usable observations; unvalidated heuristic
+barc_286,2023,oof,15,2.5532904548978523,area_ha * 4*p_silage*(1-p_silage); usable observations; unvalidated heuristic
+barc_394,2023,oof,16,1.6183551842193888,area_ha * 4*p_silage*(1-p_silage); usable observations; unvalidated heuristic
+barc_251,2023,oof,17,0.8787008986975252,area_ha * 4*p_silage*(1-p_silage); usable observations; unvalidated heuristic
+barc_1,2023,oof,18,0.6723413947556798,area_ha * 4*p_silage*(1-p_silage); usable observations; unvalidated heuristic
+barc_24,2023,oof,19,0.114452653239,area_ha * 4*p_silage*(1-p_silage); usable observations; unvalidated heuristic

@@ -1,5 +1,5 @@
 {
-  "status": "pending",
+  "status": "computed",
   "year": 2023,
   "scope": {
     "dataset": "BARC",
@@ -29,10 +29,10 @@
   },
   "prediction_role": "oof",
   "total_area_ha": 123.08976508,
-  "covered_area_ha": 0.0,
-  "coverage_fraction": 0.0,
-  "expected_silage_area_ha": null,
-  "expected_grain_area_ha": null,
+  "covered_area_ha": 123.08976508,
+  "coverage_fraction": 1.0,
+  "expected_silage_area_ha": 40.63679195082961,
+  "expected_grain_area_ha": 82.45297312917039,
   "economic_scenario": null,
   "notes": [
     "Denominator is the explicitly selected cohort, not verified annual BARC/county/state corn acreage.",
