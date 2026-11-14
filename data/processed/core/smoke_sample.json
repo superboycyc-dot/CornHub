@@ -1,0 +1,8 @@
+{
+  "field_id": "barc_1",
+  "year": 2021,
+  "window_start": "2021-04-01",
+  "window_end_exclusive": "2021-12-01",
+  "selection_rule": "First labeled record sorted lexicographically by normalized field_id, then numeric year.",
+  "source_dataset_id": "barc_corn_2021_2023_challenge"
+}
