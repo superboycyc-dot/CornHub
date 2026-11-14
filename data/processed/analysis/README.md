@@ -20,3 +20,5 @@ Run after upstream files are available:
 python3 src/analysis/analysis.py --year 2021 --prediction-role oof --cohort smoke --review-budget 1
 Use --cohort labeled and a distinct --output-root for annual scopes. Full contracts,
 commands, source refs, independent checks and limitations: reports/d_analysis/README.md.
+
+汇总附件：annual_data_summary.csv（按年面积/占比）、review_field_corrections.csv（逐田核查修正）、year_change_decomposition.csv（年度差异算术分解）。中文说明见 reports/d_analysis/all_data_summary_zh.md。

@@ -1,5 +1,7 @@
 # D: area and review interfaces
 
+[中文全量数据汇总与变化解释](all_data_summary_zh.md)：包括 A/B/C/D、USDA/CDL、年度面积变化分解和逐田核查修正。
+
 Contract baseline: docs/team-contract.md, main commit 51d59890b04c6b0d7c1dce8186f2992352a32a1c (contract blob 1749344f5a6a2911a8327927eabbdb549e951adb).
 The user explicitly assigns this round to that contract: BARC 2021-2023, not
 the older California/2022-2026 README scope. Root README also retains an older

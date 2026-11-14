@@ -1,0 +1,101 @@
+{
+  "sources": [
+    {
+      "path": "data/processed/model/metrics.json",
+      "commit": "a867e4e19c431754e7b07ee8a260f48761d83d81",
+      "sha256": "9729e8915305de50d9d403432d44aae22de812cc984e307860afe28f4f691a7b",
+      "git_blob_sha": "96f89f66e513a41c20d536308c3f1f5c7c16e325",
+      "url": "https://github.com/superboycyc-dot/CornHub/blob/a867e4e19c431754e7b07ee8a260f48761d83d81/data/processed/model/metrics.json"
+    },
+    {
+      "path": "reports/c_model/harvest_rule_metrics.json",
+      "commit": "a867e4e19c431754e7b07ee8a260f48761d83d81",
+      "sha256": "7d4b6c7abfef96467eb64cad3ed7d71cd0184063bc3c83954da8843e759e6401",
+      "git_blob_sha": "2680a274dce72a7026b3b58507589d71ac52a8ac",
+      "url": "https://github.com/superboycyc-dot/CornHub/blob/a867e4e19c431754e7b07ee8a260f48761d83d81/reports/c_model/harvest_rule_metrics.json"
+    },
+    {
+      "path": "reports/b_satellite/batch_report.json",
+      "commit": "05a81a7d1634c80d3c56b66cf9eb9acb9527fc9b",
+      "sha256": "703ee8d45deccc17db815c78f9e0b8463dbee8eca250a63b6779f6097327df38",
+      "git_blob_sha": "48a555f5f3fff24b4a2beccd909ab91d7d9625ab",
+      "url": "https://github.com/superboycyc-dot/CornHub/blob/05a81a7d1634c80d3c56b66cf9eb9acb9527fc9b/reports/b_satellite/batch_report.json"
+    },
+    {
+      "path": "data/processed/satellite/timeseries.csv",
+      "commit": "05a81a7d1634c80d3c56b66cf9eb9acb9527fc9b",
+      "sha256": "2b42414eb5e6ce248671b5e2d0468ad06ea86b85ab7b82cec9e3503ffd6edbbf",
+      "git_blob_sha": "3e2cebf61686b1a18184eee83f6b534699c999fe",
+      "url": "https://github.com/superboycyc-dot/CornHub/blob/05a81a7d1634c80d3c56b66cf9eb9acb9527fc9b/data/processed/satellite/timeseries.csv"
+    },
+    {
+      "path": "data/usda_nass_cdl/california/manifest.json",
+      "commit": "630eebfb465a21379aeeda49ea8a5d7d70ef36d0",
+      "sha256": "a3a2a2905a3022cf2628dec1b4e8bf0ffbfb6a1a1e8205092c5ada9d98e65196",
+      "git_blob_sha": "6e031b3fef6a930727b96f08af10a36b7aef9fa5",
+      "url": "https://github.com/superboycyc-dot/CornHub/blob/630eebfb465a21379aeeda49ea8a5d7d70ef36d0/data/usda_nass_cdl/california/manifest.json"
+    },
+    {
+      "path": "data/processed/usda_nass/corn_state_benchmarks_2025.csv",
+      "commit": "630eebfb465a21379aeeda49ea8a5d7d70ef36d0",
+      "sha256": "a521d0e00d0cac71f745f87971742a2e42eca61da4193d59837701dc79a75e88",
+      "git_blob_sha": "80287848a239c8803626b068d3ac0e1fdd9cf07b",
+      "url": "https://github.com/superboycyc-dot/CornHub/blob/630eebfb465a21379aeeda49ea8a5d7d70ef36d0/data/processed/usda_nass/corn_state_benchmarks_2025.csv"
+    },
+    {
+      "path": "data/processed/usda_nass/california_corn_acreage_annual_reference_2012_2025.csv",
+      "commit": "630eebfb465a21379aeeda49ea8a5d7d70ef36d0",
+      "sha256": "12f17813caf5229e0c1d31dc44f21945c5a69a61033b1d78c5434fe2c401b628",
+      "git_blob_sha": "f321f5e9e16a9ceee9884f210bf217ab98838dd1",
+      "url": "https://github.com/superboycyc-dot/CornHub/blob/630eebfb465a21379aeeda49ea8a5d7d70ef36d0/data/processed/usda_nass/california_corn_acreage_annual_reference_2012_2025.csv"
+    }
+  ],
+  "core_inputs": [
+    {
+      "path": "data/processed/core/fields.geojson",
+      "commit": "df7ce8cd63039e90de7ca78ba95f4f3259ee15c5",
+      "exists": true,
+      "sha256": "0ec8c03cbf78ee2dbadc79eb0b43604126e82ecbb2a96710f790574214e252de",
+      "git_blob_sha": "435ee8ea1f8d3b66e6691872dbba2f7483b25393",
+      "matches_A_acceptance_sha256": true
+    },
+    {
+      "path": "data/processed/core/labels.csv",
+      "commit": "df7ce8cd63039e90de7ca78ba95f4f3259ee15c5",
+      "exists": true,
+      "sha256": "b7c453f7535eca3fea4477bd4861864d5912e47c1330be7c67588d8c94185f0a",
+      "git_blob_sha": "75273b55493a2be11719e10e0d1ea9649fc86105",
+      "matches_A_acceptance_sha256": true
+    },
+    {
+      "path": "data/processed/core/validation_folds.csv",
+      "commit": "df7ce8cd63039e90de7ca78ba95f4f3259ee15c5",
+      "exists": true,
+      "sha256": "a846206c02b3e53f57b997893ea5c2a730411fb7ea91863f5f96cb47ce878ca5",
+      "git_blob_sha": "04ed160c6dfb1417099a16daa22ae053d77c1d07",
+      "matches_A_acceptance_sha256": true
+    },
+    {
+      "path": "data/processed/core/smoke_sample.json",
+      "commit": "df7ce8cd63039e90de7ca78ba95f4f3259ee15c5",
+      "exists": true,
+      "sha256": "3199c9f2f6f77f6676f4747664dff40a825be04254361f2b25aacc3d3a32a3c1",
+      "git_blob_sha": "1db47bd3276f05596ef64ce4345610395f597f62",
+      "matches_A_acceptance_sha256": true
+    },
+    {
+      "path": "data/processed/satellite/features.csv",
+      "commit": "05a81a7d1634c80d3c56b66cf9eb9acb9527fc9b",
+      "exists": true,
+      "sha256": "402ec0ba1198ed582dd6de0181b7e6298f30a7452282e377d5a39db838c227cb",
+      "git_blob_sha": "d13fc5b0d7267c33525f2b279fb8d339656ff718"
+    },
+    {
+      "path": "data/processed/model/predictions.csv",
+      "commit": "a867e4e19c431754e7b07ee8a260f48761d83d81",
+      "exists": true,
+      "sha256": "fc837db3fc6667419d9c784a8cee520574230bc5ceec94246df0e738953ef5ea",
+      "git_blob_sha": "15ce29c47768ff044dad8e00f316780323ab311e"
+    }
+  ]
+}

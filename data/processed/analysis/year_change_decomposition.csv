@@ -1,0 +1,3 @@
+from_year,to_year,expected_silage_change_ha,selected_area_component_ha,weighted_probability_share_component_ha,interpretation
+2021,2022,-14.003686882188795,-21.454436274627504,7.450749392438706,Arithmetic decomposition of different selected cohorts; not a causal land-use trend
+2022,2023,21.976622942309945,32.78068524078984,-10.804062298479899,Arithmetic decomposition of different selected cohorts; not a causal land-use trend

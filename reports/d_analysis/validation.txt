@@ -17,3 +17,5 @@ Independent area, rank and direct-label-replacement/random simulations agree 1e-
 random repeats=200. 2023 error increases (3.05772217 -> 4.00930710 ha); no broad
 benefit claimed. No default prices, model training, image reprocessing, ground
 survey, frontend change or deployment by D. Full commands and flags in README.
+
+Full-data summary: summarize_data.py ran with pinned read-only input/aux roots and --main-ref 630eebfb465a21379aeeda49ea8a5d7d70ef36d0. Seven auxiliary Git blobs match fetched sources. Three annual rows, six field corrections and two year changes checked against original outputs; arithmetic agrees at 1e-10 ha; Markdown table shapes inspected. Details: summary_validation.json. No model/imagery rerun.
