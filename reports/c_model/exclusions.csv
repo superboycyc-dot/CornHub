@@ -1,5 +1,4 @@
 field_id,year,reason
-barc_1,2021,missing_features
 barc_1,2023,missing_features
 barc_230,2023,missing_features
 barc_231,2022,missing_features
@@ -43,3 +42,4 @@ barc_429,2022,missing_features
 barc_511,2021,missing_features
 barc_548,2021,missing_features
 barc_571,2021,missing_features
+barc_1,2021,training fold lacks a class; no OOF prediction

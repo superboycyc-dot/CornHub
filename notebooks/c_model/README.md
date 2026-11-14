@@ -29,7 +29,7 @@ Calibration is deliberately disabled in v1: small expected sample, no nested cal
 
 ## Consume delivered A/B branches before integration
 
-A has delivered canonical inputs in PR #6; latest inspected B feature table in PR #5 is header-only. To consume these without changing A/B directories, fetch the branches and run:
+A has delivered canonical inputs in PR #6; B PR #5 now supplies one partial-season real feature row (barc_1/2021); it is insufficient for training. To consume these without changing A/B directories, fetch the branches and run:
 
 ```sh
 python3 -m src.model.from_refs --core-ref origin/work/a-data --satellite-ref origin/work/b-satellite --train
@@ -39,4 +39,4 @@ This resolves each ref once to a commit, extracts only contract inputs into a te
 
 A now provides one fixed leave-one-farm-out 5-fold assignment as a documented lead-approved exception to the earlier three-field-fold contract; C consumes fold_id 0–4 unchanged. fields.geojson farm_group metadata is checked for cross-fold farm leakage and unknown field IDs across labels/folds/features. No geometry or area calculation is performed by C. If farm_group metadata is not supplied, the audit explicitly reports that farm-level checking was unavailable; field-level checking remains mandatory. Farm IDs never enter model features.
 
-Label counts and full planned fold structure are reported before filtering satellite coverage, separately from actual trained folds and evaluated class counts. Header-only features are a present file with zero input rows, not a missing file; every label row missing features is listed in reports/c_model/exclusions.csv. Current real-data attempt produces pending even with --train because zero eligible rows exist. No placeholder probabilities are written.
+Label counts and full planned fold structure are reported before filtering satellite coverage, separately from actual trained folds and evaluated class counts. Header-only features are a present file with zero input rows, not a missing file; every label row missing features is listed in reports/c_model/exclusions.csv. Current real-data attempt produces pending with --train --inference: one limited grain row matches, but holding out its fold leaves no training rows, and full-data inference lacks silage. Audit records model_fit_count=0 and output_rows by role. The other 43 labeled keys are missing features. The earlier header-only attempt is superseded. No late-season imputation is fitted because no model can be fitted at all. No placeholder probabilities are written.

@@ -190,7 +190,8 @@ def inspect_core(root, labels, folds, features, audit):
 
 def run(root, out, report, train=False, inference=False, provenance=None):
     audit = dict(input_rows={}, missing_files=[], errors=[], duplicate_keys=[], matched_count=0,
-                 unmatched=[], exclusions=[], folds=[], features=FEATURES, calibration='not performed; probabilities uncalibrated, reliability unproven')
+                 unmatched=[], exclusions=[], folds=[], features=FEATURES,
+                 training_requested=train, inference_requested=inference, model_fit_count=0, calibration='not performed; probabilities uncalibrated, reliability unproven')
     labels = load(root / 'core/labels.csv', 'labels', audit)
     folds = load(root / 'core/validation_folds.csv', 'folds', audit)
     features = load(root / 'satellite/features.csv', 'features', audit)
@@ -226,6 +227,10 @@ def run(root, out, report, train=False, inference=False, provenance=None):
                              'fold_id': folds[key]['fold_id']})
     audit['matched_count'] = len(set(labels) & set(features) & set(folds))
     audit['eligible_count'] = len(eligible)
+    audit['eligible_summary'] = dict(class_counts=class_counts(eligible),
+                                     n_fields=len({r['field_id'] for r in eligible}),
+                                     fold_ids=sorted({r['fold_id'] for r in eligible}),
+                                     quality_counts={q: sum(r['quality_flag'] == q for r in eligible) for q in ('usable', 'limited')})
     notes = ['Uncalibrated exploratory BARC baseline; no probability reliability claim.']
     predictions, truth, probs, rule_y, rule_p = [], [], [], [], []
     if audit['errors'] or audit['missing_files']:
@@ -244,6 +249,7 @@ def run(root, out, report, train=False, inference=False, provenance=None):
             model = make_pipeline(SimpleImputer(strategy='median', keep_empty_features=True),
                                   RandomForestClassifier(n_estimators=100, max_depth=4, min_samples_leaf=2, class_weight='balanced', random_state=42, n_jobs=1))
             model.fit([[r[c] if r[c] is not None else np.nan for c in FEATURES] for r in rows], [int(r['label'] == 'silage') for r in rows])
+            audit['model_fit_count'] += 1
             return model
 
         def predict(model, rows, role, fold):
@@ -271,11 +277,16 @@ def run(root, out, report, train=False, inference=False, provenance=None):
                         rule_y.append(y_i)
                         rule_p.append(float(r['drop_doy'] <= 258))
             audit['folds'].append(entry)
+        if inference and len({r['label'] for r in eligible}) < 2:
+            notes.append('Inference not fitted: eligible training labels lack a class.')
+        if not truth:
+            notes.append('No valid OOF predictions: each available held-out fold leaves a training set missing a class (possibly empty). No validation metrics can be calculated.')
         if inference and len({r['label'] for r in eligible}) == 2:
             targets = [r for _, r in sorted(features.items()) if r['quality_flag'] in ('usable', 'limited')]
             # Reject unknown years of training fields from OOF already via global field-fold check.
             predict(fit(eligible), targets, 'inference', '')
         notes.append('OOF metrics cover only successfully held-out rows; inspect exclusions and per-fold counts.')
+    audit['output_rows'] = {role: sum(r['prediction_role'] == role for r in predictions) for role in ('oof', 'inference')}
     write_csv(out / 'predictions.csv', HEADER, predictions)
     write_json(out / 'metrics.json', metrics(truth, probs, notes))
     rule = metrics(rule_y, rule_p, ['Fixed rule: drop_doy <= 258 predicts silage; missing drop day abstains.', 'Hard decisions only; Brier is not a calibrated-probability assessment. Same successful OOF cohort, subset with drop_doy.'])

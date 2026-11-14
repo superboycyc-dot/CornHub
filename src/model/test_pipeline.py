@@ -117,6 +117,25 @@ class ContractTests(unittest.TestCase):
         self.assertEqual(json.loads((self.out / 'metrics.json').read_text())['n_evaluated'], 24)
         self.assertTrue(all(r['fold_id'] == '' for r in rows if r['prediction_role'] == 'inference'))
 
+    def test_one_realistic_feature_row_cannot_train_or_infer(self):
+        _, _, features = self.fixture()
+        # Partial-season shape only; synthetic values stay in TemporaryDirectory.
+        features[0].update(ndvi_late_mean='', max_gap_days=177, quality_flag='limited', missing_reason='internal partial season')
+        write_csv(self.data / 'satellite/features.csv', SCHEMAS['features'], features[:1])
+        self.assertEqual(run(self.data, self.out, self.report, train=True, inference=True), 0)
+        audit = json.loads((self.report / 'merge_report.json').read_text())
+        self.assertEqual(audit['matched_count'], 1)
+        self.assertEqual(audit['eligible_count'], 1)
+        self.assertEqual(audit['eligible_summary']['class_counts'], {'grain': 1, 'silage': 0})
+        self.assertEqual(audit['model_fit_count'], 0)
+        self.assertEqual(audit['output_rows'], {'oof': 0, 'inference': 0})
+        self.assertEqual(audit['folds'][0]['n_train'], 0)
+        self.assertEqual(len(audit['exclusions']), 24)
+        result = json.loads((self.out / 'metrics.json').read_text())
+        self.assertEqual(result['status'], 'pending')
+        self.assertIsNone(result['brier_score'])
+        self.assertTrue(any('Inference not fitted' in note for note in result['notes']))
+
     def test_extra_feature_columns_cannot_replace_truth(self):
         _, _, features = self.fixture()
         for row in features:

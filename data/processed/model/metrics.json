@@ -13,6 +13,8 @@
   "confusion_matrix": null,
   "notes": [
     "Uncalibrated exploratory BARC baseline; no probability reliability claim.",
-    "No eligible labeled feature rows; see exclusions in merge_report.json."
+    "Inference not fitted: eligible training labels lack a class.",
+    "No valid OOF predictions: each available held-out fold leaves a training set missing a class (possibly empty). No validation metrics can be calculated.",
+    "OOF metrics cover only successfully held-out rows; inspect exclusions and per-fold counts."
   ]
 }

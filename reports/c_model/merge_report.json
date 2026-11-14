@@ -2,19 +2,13 @@
   "input_rows": {
     "labels": 44,
     "folds": 44,
-    "features": 0
+    "features": 1
   },
   "missing_files": [],
   "errors": [],
   "duplicate_keys": [],
-  "matched_count": 0,
+  "matched_count": 1,
   "unmatched": [
-    {
-      "table": "labels",
-      "field_id": "barc_1",
-      "year": 2021,
-      "reason": "missing_features"
-    },
     {
       "table": "labels",
       "field_id": "barc_1",
@@ -277,13 +271,6 @@
   "exclusions": [
     {
       "field_id": "barc_1",
-      "year": 2021,
-      "reasons": [
-        "missing_features"
-      ]
-    },
-    {
-      "field_id": "barc_1",
       "year": 2023,
       "reasons": [
         "missing_features"
@@ -582,9 +569,31 @@
       "reasons": [
         "missing_features"
       ]
+    },
+    {
+      "field_id": "barc_1",
+      "year": 2021,
+      "reasons": [
+        "training fold lacks a class; no OOF prediction"
+      ]
     }
   ],
-  "folds": [],
+  "folds": [
+    {
+      "fold_id": "3",
+      "n_train": 0,
+      "n_test": 1,
+      "train_class_counts": {
+        "grain": 0,
+        "silage": 0
+      },
+      "test_class_counts": {
+        "grain": 1,
+        "silage": 0
+      },
+      "reason": "training fold lacks a class; no OOF prediction"
+    }
+  ],
   "features": [
     "ndvi_peak",
     "peak_doy",
@@ -594,6 +603,9 @@
     "valid_obs_count",
     "max_gap_days"
   ],
+  "training_requested": true,
+  "inference_requested": true,
+  "model_fit_count": 0,
   "calibration": "not performed; probabilities uncalibrated, reliability unproven",
   "label_summary": {
     "n_rows": 44,
@@ -739,8 +751,8 @@
         "missing_files": []
       },
       {
-        "requested_ref": "e107fea4a539a6a9f973263f6a1be23158438304",
-        "commit": "e107fea4a539a6a9f973263f6a1be23158438304",
+        "requested_ref": "9ff56716c5584b25238c91398f306a17e7269762",
+        "commit": "9ff56716c5584b25238c91398f306a17e7269762",
         "present_files": [
           "data/processed/satellite/features.csv"
         ],
@@ -752,7 +764,25 @@
     "core/labels.csv": "b7c453f7535eca3fea4477bd4861864d5912e47c1330be7c67588d8c94185f0a",
     "core/validation_folds.csv": "a846206c02b3e53f57b997893ea5c2a730411fb7ea91863f5f96cb47ce878ca5",
     "core/fields.geojson": "0ec8c03cbf78ee2dbadc79eb0b43604126e82ecbb2a96710f790574214e252de",
-    "satellite/features.csv": "7ac9efe2d420704839952e0be3a51633d3bb7ef66af7326810a34d82759ac3bf"
+    "satellite/features.csv": "d3c15ae6241c8f6e88d74ee76ceae47fd6993b0541b3aef35519a9378bdcf013"
   },
-  "eligible_count": 0
+  "eligible_count": 1,
+  "eligible_summary": {
+    "class_counts": {
+      "grain": 1,
+      "silage": 0
+    },
+    "n_fields": 1,
+    "fold_ids": [
+      "3"
+    ],
+    "quality_counts": {
+      "usable": 0,
+      "limited": 1
+    }
+  },
+  "output_rows": {
+    "oof": 0,
+    "inference": 0
+  }
 }

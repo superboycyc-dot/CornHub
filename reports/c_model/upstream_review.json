@@ -1,0 +1,49 @@
+{
+  "source_commit": "9ff56716c5584b25238c91398f306a17e7269762",
+  "source_paths": [
+    "data/processed/satellite/timeseries.csv",
+    "data/processed/satellite/features.csv",
+    "reports/b_satellite/coverage_report.json",
+    "reports/b_satellite/core_handoff.json"
+  ],
+  "timeseries_sha256": "bb6685e1c1bb7fd266751de1b6fe3ec62be82c2bbafa4740eaea46956417a38c",
+  "coverage_report_sha256": "1df919a58424d719ca7e0d29301afe089dc6fabfc4fab68161f45f1028bb4920",
+  "source_a_commit_matches": true,
+  "source_field_geometry_hash_matches": true,
+  "n_scene_rows": 69,
+  "n_selected_dates": 30,
+  "n_valid_dates": 14,
+  "computed_features": {
+    "ndvi_peak": 0.4991520345211029,
+    "peak_doy": 108,
+    "max_drop_per_day": 0.013676196336746216,
+    "drop_doy": 130,
+    "ndvi_late_mean": null,
+    "valid_obs_count": 14,
+    "max_gap_days": 177
+  },
+  "feature_recomputation": "passed; same-day highest valid fraction then scene_id; quality threshold 0.5; no interpolation",
+  "upstream_coverage": {
+    "status": "partial_network_blocked",
+    "field_id": "barc_1",
+    "year": 2021,
+    "processed_scene_rows": 69,
+    "processed_unique_dates": 30,
+    "valid_observation_days": 14,
+    "first_processed_date": "2021-04-03",
+    "last_processed_date": "2021-06-14",
+    "first_valid_date": "2021-04-03",
+    "last_valid_date": "2021-06-07",
+    "processed_dates_excluded_by_quality": 16,
+    "max_gap_days": 177,
+    "quality_flag": "limited",
+    "late_season_mean": null,
+    "late_season_reason": "September-November scenes remain unread due to upstream HTTP 503; not evidence of zero vegetation or all clouds.",
+    "interpretation": "Observed partial-window peak/drop only; cannot interpret as full-season corn peak or harvest timing. No interpolation."
+  },
+  "notes": [
+    "Only one real grain field-year; no silage features and no training folds after holding it out.",
+    "Partial spring signal is not a complete-season harvest observation; fixed harvest rule not scored.",
+    "No claim that independent recomputation validates satellite pixels, image retrieval or classification performance."
+  ]
+}
