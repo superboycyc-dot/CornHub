@@ -1,9 +1,14 @@
 """Public STAC search and remote COG window reads; no full-scene downloads."""
 from datetime import datetime, timedelta, timezone
 import math
+import os
+import ssl
 
 import numpy as np
 import requests
+# Some rasterio wheels inject a certifi GDAL_CA default at import time. Capture
+# caller-provided trust settings first so a configured proxy CA is not replaced.
+_CONFIGURED_CA = os.environ.get("GDAL_CURL_CA_BUNDLE") or os.environ.get("CURL_CA_BUNDLE") or os.environ.get("SSL_CERT_FILE")
 import rasterio
 from rasterio.enums import Resampling
 from rasterio.features import geometry_mask
@@ -83,7 +88,13 @@ def observe(item, geometry, max_pixels=2_000_000):
     assets = {name: item["assets"][name] for name in ("red", "nir", "scl")}
     if any(not asset["href"].startswith("https://") for asset in assets.values()):
         raise ValueError("Only public HTTPS COGs supported")
-    with rasterio.Env(GDAL_HTTP_TIMEOUT=60, GDAL_HTTP_MAX_RETRY=2, GDAL_CACHEMAX=64 * 1024 * 1024, GDAL_DISABLE_READDIR_ON_OPEN="EMPTY_DIR", CPL_VSIL_CURL_ALLOWED_EXTENSIONS=".tif"):
+    # GDAL's bundled curl may not inherit Python/requests' system trust store.
+    # Use the configured or OS CA bundle; never disable certificate verification.
+    ca_bundle = _CONFIGURED_CA or ssl.get_default_verify_paths().cafile
+    trust = dict(GDAL_CURL_CA_BUNDLE=ca_bundle, CURL_CA_BUNDLE=ca_bundle) if ca_bundle else {}
+    # A persistent upstream 503 must not stall every queued scene for minutes.
+    # Completed receipts survive; the explicit next run retries only missing reads.
+    with rasterio.Env(GDAL_HTTP_TIMEOUT=20, GDAL_HTTP_MAX_RETRY=0, GDAL_CACHEMAX=64 * 1024 * 1024, GDAL_DISABLE_READDIR_ON_OPEN="EMPTY_DIR", CPL_VSIL_CURL_ALLOWED_EXTENSIONS=".tif", **trust):
         with rasterio.open(assets["red"]["href"]) as reference:
             if reference.crs is None or reference.crs.is_geographic or not (math.isclose(abs(reference.res[0]), 10) and math.isclose(abs(reference.res[1]), 10)):
                 raise ValueError("Expected projected 10m B04 reference grid")

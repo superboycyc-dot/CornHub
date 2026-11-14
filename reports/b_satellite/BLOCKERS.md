@@ -1,16 +1,153 @@
 # B satellite execution report
 
-Status: `blocked`
+Status: `partial`
 
-Valid observation days: None
+Valid observation days: 14
 
-- `a_fields_missing`: A must provide data/processed/core/fields.geojson from the official BARC data.
-- `a_smoke_sample_missing`: A must provide data/processed/core/smoke_sample.json selected by the contract; B does not invent field_id, year or labels.
+- `scene_read_failed`: S2A_18SUJ_20210617_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210617_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210619_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210619_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210622_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210622_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210624_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210624_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210627_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210629_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210627_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210629_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210704_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210702_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210702_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210614_0_L2A: RasterioIOError: '/vsicurl/https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2A_18SUJ_20210614_0_L2A/B04.tif' not recognized as being in a supported file format.
+- `scene_read_failed`: S2A_18SUJ_20210704_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210707_3_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210707_2_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210707_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210707_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210709_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210709_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210712_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210714_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210714_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210712_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210717_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210717_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210719_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210719_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210722_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210722_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210724_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210724_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210727_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210727_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210729_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210729_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210801_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210801_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210803_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210803_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210806_2_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210806_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210806_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210808_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210808_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210811_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210811_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210813_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210813_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210818_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210818_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210816_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210816_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210821_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210823_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210821_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210823_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210826_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210828_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210828_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210826_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210831_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210831_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210902_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210902_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210905_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210905_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210907_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210910_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210907_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210912_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210915_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210912_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210915_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210917_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210917_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210920_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210920_2_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210910_0_L2A: RasterioIOError: '/vsicurl/https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/9/S2B_18SUJ_20210910_0_L2A/B04.tif' not recognized as being in a supported file format.
+- `scene_read_failed`: S2A_18SUJ_20210922_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210925_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210922_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210920_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20210925_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210930_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210927_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210930_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20210927_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20211002_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20211005_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20211002_3_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20211005_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20211007_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20211007_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20211010_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20211010_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20211010_2_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20211012_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20211015_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20211012_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20211015_2_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20211015_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20211017_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20211017_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20211020_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20211020_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20211022_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20211025_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20211022_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20211025_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20211027_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20211030_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20211030_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20211027_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20211104_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20211101_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20211106_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20211101_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20211104_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20211106_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20211111_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20211111_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20211109_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20211109_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20211114_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20211114_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20211116_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20211116_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20211119_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20211119_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20211121_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20211121_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20211124_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20211126_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20211126_0_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2A_18SUJ_20211124_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20211129_1_L2A: RasterioIOError: HTTP response code: 503
+- `scene_read_failed`: S2B_18SUJ_20211129_0_L2A: RasterioIOError: HTTP response code: 503
 
-Official notebook is now available in the repository as `03_Geospatial_References/sentinel-2_starter_notebook.ipynb`; see `notebook_review.md`. No manual download is currently required.
+Scenes: 69 / 210; longest gap: 177 days; quality: limited.
 
-If unavailable in another checkout, download `03_Geospatial_References/starter_notebook.ipynb` from the team JupyterLab to `notebooks/b_satellite/starter_notebook.ipynb`.
+A's real inputs were supplied; see core_handoff.json for the exact branch, commit, hashes and sample. No field IDs or labels were invented.
 
-A owns the official BARC boundary/label extraction and must deliver `data/processed/core/fields.geojson` and `smoke_sample.json`.
-
-Missing inputs are not evidence of zero cloud-free observations. Header-only handoff tables contain no invented fields, labels or observations.
+Official notebook is available in the repository as `03_Geospatial_References/sentinel-2_starter_notebook.ipynb`; see `notebook_review.md`. No manual download is currently required.

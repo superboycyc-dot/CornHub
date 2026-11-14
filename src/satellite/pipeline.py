@@ -3,6 +3,8 @@ import ast
 import hashlib
 import json
 import re
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -11,11 +13,49 @@ import requests
 from .contracts import (FEATURE_COLUMNS, SOURCE_COLUMNS, TIMESERIES_COLUMNS,
                         load_json, load_sample, write_csv, write_json)
 from .features import summarize
-from .imagery import ALGORITHM_VERSION, COLLECTION, ENDPOINT, observe, search
+from .imagery import ALGORITHM_VERSION, COLLECTION, ENDPOINT, VALID_SCL, observe, search
+
+_CACHE_LOCK = threading.Lock()
+
+
+def inventory_path(reports):
+    """Lossless compression keeps full STAC metadata out of enormous PR text diffs."""
+    folder = Path(reports)
+    compressed = folder / "scene_inventory.json.gz"
+    legacy = folder / "scene_inventory.json"
+    return legacy if legacy.is_file() and not compressed.is_file() else compressed
 
 
 def utc_now():
     return datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
+
+
+def process_scene(item, sample, geometry, args):
+    """Checkpoint only derived numbers and public provenance, never raster arrays."""
+    signature = dict(algorithm=ALGORITHM_VERSION, valid_scl=VALID_SCL, sample=sample, geometry=geometry, scene=item)
+    key = hashlib.sha256(json.dumps(signature, sort_keys=True, separators=(",", ":"), allow_nan=False).encode()).hexdigest()
+    cache = Path(args.cache) / (key + ".json")
+    if cache.is_file():
+        try:
+            receipt = load_json(cache)
+            if receipt["cache_key"] == key:
+                receipt["cache_hit"] = True
+                return receipt
+        except (ValueError, KeyError):
+            pass  # An interrupted/corrupt receipt is recomputed from the actual source.
+    if getattr(args, "offline", False):
+        raise RuntimeError("cache_miss: no observation inferred; remote access unavailable in offline resume")
+    stats, parameters = observe(item, geometry, max_pixels=args.max_window_pixels)
+    receipt = dict(cache_key=key, cache_hit=False, stats=stats, parameters=parameters, retrieved_at_utc=utc_now())
+    cache.parent.mkdir(parents=True, exist_ok=True)
+    # Absolute upper bound on this derived-only cache; no raw scenes on disk.
+    serialized = json.dumps(receipt, indent=2, ensure_ascii=False, allow_nan=False) + "\n"
+    with _CACHE_LOCK:
+        if sum(p.stat().st_size for p in cache.parent.glob("*.json")) + len(serialized.encode()) <= 256 * 1024 * 1024:
+            temporary = cache.with_suffix(".tmp")
+            temporary.write_text(serialized, encoding="utf-8")
+            temporary.replace(cache)
+    return receipt
 
 
 def audit_notebook(path, report):
@@ -82,11 +122,19 @@ def probe_catalog(reports):
     return result
 
 
-def sources(reports):
-    write_csv(Path(reports) / "sources.csv", SOURCE_COLUMNS, [
-        dict(source_dataset_id="earthsearch_sentinel2_l2a", organization="ESA / Sinergise / Element 84 / AWS", source_url=ENDPOINT + "/collections/" + COLLECTION, product_version="Sentinel-2 L2A; scene processing baseline recorded separately", retrieved_at_utc=utc_now(), license="unknown", notes="Catalog declares proprietary; consult Copernicus terms. No original imagery redistributed. Timestamp is catalog retrieval/run time, not a claim of successful scene acquisition."),
+def sources(reports, catalog=None):
+    records = [
+        dict(source_dataset_id="earthsearch_sentinel2_l2a", organization="ESA / Sinergise / Element 84 / AWS", source_url=ENDPOINT + "/collections/" + COLLECTION, product_version="Sentinel-2 L2A; scene processing baseline recorded separately", retrieved_at_utc=(catalog or {}).get("checked_at_utc", utc_now()), license="unknown", notes="Catalog declares proprietary; consult Copernicus terms. Original metadata check timestamp retained on offline resume. Scene acquisition receipts have their own original retrieval timestamps; no original imagery redistributed."),
         dict(source_dataset_id="cornhub_team_contract", organization="CornHub", source_url="https://github.com/superboycyc-dot/CornHub/blob/main/docs/team-contract.md", product_version="contract added in b603997; official files in 51d5989", retrieved_at_utc=utc_now(), license="unknown", notes="Contract defines BARC 2021-2023, superseding older README scope for this task."),
-        dict(source_dataset_id="official_sentinel2_starter", organization="Hack the Harvest organizers", source_url="https://github.com/superboycyc-dot/CornHub/blob/51d5989/03_Geospatial_References/sentinel-2_starter_notebook.ipynb", product_version="51d5989; 14 cells", retrieved_at_utc=utc_now(), license="unknown", notes="Actual notebook reviewed; see notebook_review.md and SHA256 in starter_notebook_audit.json. Original remains unmodified.")])
+        dict(source_dataset_id="official_sentinel2_starter", organization="Hack the Harvest organizers", source_url="https://github.com/superboycyc-dot/CornHub/blob/51d5989/03_Geospatial_References/sentinel-2_starter_notebook.ipynb", product_version="51d5989; 14 cells", retrieved_at_utc=utc_now(), license="unknown", notes="Actual notebook reviewed; see notebook_review.md and SHA256 in starter_notebook_audit.json. Original remains unmodified.")]
+    handoff = Path(reports) / "core_handoff.json"
+    if handoff.is_file():
+        core = load_json(handoff)
+        commit = core["source_commit"]
+        if not re.fullmatch(r"[a-f0-9]{40}", commit):
+            raise ValueError("Invalid A source commit in handoff provenance")
+        records.append(dict(source_dataset_id=core["sample"]["source_dataset_id"], organization="Hack the Harvest / USDA BARC; A curated handoff", source_url=f"https://github.com/superboycyc-dot/CornHub/blob/{commit}/data/processed/core/fields.geojson", product_version=commit, retrieved_at_utc=utc_now(), license="unknown", notes="Read-only A input; exact hashes in core_handoff.json. B does not create IDs or labels; consult A upstream citation and license notes."))
+    write_csv(Path(reports) / "sources.csv", SOURCE_COLUMNS, records)
 
 
 def empty_outputs(output):
@@ -102,7 +150,13 @@ def finish(args, report):
     lines = ["# B satellite execution report", "", f"Status: `{report['status']}`", "", f"Valid observation days: {report.get('valid_obs_count', 'not computed')}", ""]
     for issue in report.get("issues", []):
         lines.extend([f"- `{issue['code']}`: {issue['action']}"])
-    lines.extend(["", "Official notebook is now available in the repository as `03_Geospatial_References/sentinel-2_starter_notebook.ipynb`; see `notebook_review.md`. No manual download is currently required.", "", "If unavailable in another checkout, download `03_Geospatial_References/starter_notebook.ipynb` from the team JupyterLab to `notebooks/b_satellite/starter_notebook.ipynb`.", "", "A owns the official BARC boundary/label extraction and must deliver `data/processed/core/fields.geojson` and `smoke_sample.json`.", "", "Missing inputs are not evidence of zero cloud-free observations. Header-only handoff tables contain no invented fields, labels or observations."])
+    if report.get("real_sample_computed"):
+        lines.extend(["", f"Scenes: {report['processed_scene_count']} / {report['scene_count']}; longest gap: {report['max_gap_days']} days; quality: {report['quality_flag']}.", "", "A's real inputs were supplied; see core_handoff.json for the exact branch, commit, hashes and sample. No field IDs or labels were invented."])
+    else:
+        lines.extend(["", "A owns the official BARC boundary/label extraction: `data/processed/core/fields.geojson` and `smoke_sample.json`. Missing inputs are not evidence of zero cloud-free observations."])
+    if not report.get("issues"):
+        lines.extend(["", "No active input or scene-read blockers. Quality is a coverage flag, not model accuracy."])
+    lines.extend(["", "Official notebook is available in the repository as `03_Geospatial_References/sentinel-2_starter_notebook.ipynb`; see `notebook_review.md`. No manual download is currently required."])
     (Path(args.reports) / "BLOCKERS.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     return 0 if report["status"] in {"ready", "completed"} else 2
 
@@ -132,10 +186,21 @@ def run(args):
     Path(args.output).mkdir(parents=True, exist_ok=True)
     empty_outputs(args.output)
     issues, sample, feature, audit = prerequisites(args)
-    catalog = probe_catalog(args.reports)
-    if catalog["status"] != "reachable":
+    replay_inventory = getattr(args, "offline", False) or getattr(args, "reuse_inventory", False)
+    if replay_inventory:
+        probe = Path(args.reports) / "catalog_probe.json"
+        catalog = load_json(probe) if probe.is_file() else dict(status="unavailable", note="No recorded catalog probe")
+        recorded_path = inventory_path(args.reports)
+        if recorded_path.is_file():
+            recorded = load_json(recorded_path)
+            catalog = dict(status="recorded_search_inventory", checked_at_utc=recorded["retrieved_at_utc"], source_url=ENDPOINT + "/search", collection=COLLECTION, note="Reusing a previously successful real search, not claiming current catalog reachability.")
+        else:
+            issues.append(dict(code="recorded_inventory_missing", action="A successful real search inventory is required for offline/reuse-inventory mode."))
+    else:
+        catalog = probe_catalog(args.reports)
+    if catalog["status"] != "reachable" and not replay_inventory:
         issues.append(dict(code="catalog_unreachable", action="Public catalog metadata probe failed; see catalog_probe.json. Do not claim scene availability."))
-    sources(args.reports)
+    sources(args.reports, catalog)
     report = dict(status="blocked" if issues else "ready", started_at_utc=utc_now(), command=args.command, algorithm_version=ALGORITHM_VERSION, issues=issues, catalog_probe=catalog, real_sample_computed=False, valid_obs_count=None, missing_data_status="not_computed", official_notebook_reviewed=bool(audit and args.notebook_reviewed), scope="BARC 2021–2023; latest team contract; no California weather upload in B's PR")
     if audit is not None:
         report["official_notebook_inventory"] = audit
@@ -149,22 +214,41 @@ def run(args):
         return finish(args, report)
     report["official_notebook_reviewed"] = True
     report["sample"] = sample
+    report["execution_mode"] = "offline_resume" if getattr(args, "offline", False) else "live_remote_reads"
+    report["inventory_reused"] = replay_inventory
+    report["status"] = "running"
+    write_json(Path(args.reports) / "run_report.json", report)
     try:
-        items = search(sample, feature["geometry"])
-    except (requests.RequestException, ValueError, KeyError) as error:
+        if replay_inventory:
+            inventory = load_json(inventory_path(args.reports))
+            if inventory["geometry"] != feature["geometry"] or inventory["window_start"] != sample["window_start"] or inventory["window_end_exclusive"] != sample["window_end_exclusive"] or inventory["collection"] != COLLECTION:
+                raise ValueError("Recorded inventory does not match A geometry/window/collection")
+            items = inventory["scenes"]
+        else:
+            items = search(sample, feature["geometry"])
+    except (requests.RequestException, OSError, ValueError, KeyError) as error:
         report.update(status="blocked", issues=[dict(code="stac_search_failed", action=str(error))])
         return finish(args, report)
-    write_json(Path(args.reports) / "scene_inventory.json", dict(retrieved_at_utc=utc_now(), collection=COLLECTION, geometry=feature["geometry"], window_start=sample["window_start"], window_end_exclusive=sample["window_end_exclusive"], scenes=items))
+    if not replay_inventory:
+        write_json(Path(args.reports) / "scene_inventory.json.gz", dict(retrieved_at_utc=utc_now(), collection=COLLECTION, geometry=feature["geometry"], window_start=sample["window_start"], window_end_exclusive=sample["window_end_exclusive"], scenes=items))
     rows, provenance = [], []
-    for index, item in enumerate(items):
-        print(f"Scene {index + 1}/{len(items)}: {item['id']}", flush=True)
-        try:
-            stats, parameters = observe(item, feature["geometry"], max_pixels=args.max_window_pixels)
-            row = dict(field_id=sample["field_id"], year=sample["year"], date=datetime.fromisoformat(item["properties"]["datetime"].replace("Z", "+00:00")).astimezone(timezone.utc).date().isoformat(), sensor="sentinel2_l2a", scene_id=item["id"], ndvi=stats["ndvi"], valid_pixel_fraction=stats["valid_pixel_fraction"], source_dataset_id="earthsearch_sentinel2_l2a")
-            rows.append(row)
-            provenance.append(dict(scene_id=item["id"], source_url=f"{ENDPOINT}/collections/{COLLECTION}/items/{item['id']}", observed_at_utc=item["properties"]["datetime"], retrieved_at_utc=utc_now(), source_field_dataset_id=sample["source_dataset_id"], stats=stats, parameters=parameters))
-        except Exception as error:
-            report["issues"].append(dict(code="scene_read_failed", action=f"{item['id']}: {type(error).__name__}: {error}"))
+    with ThreadPoolExecutor(max_workers=args.workers) as executor:
+        futures = {executor.submit(process_scene, item, sample, feature["geometry"], args): item for item in items}
+        for index, future in enumerate(as_completed(futures)):
+            item = futures[future]
+            try:
+                receipt = future.result()
+                stats, parameters = receipt["stats"], receipt["parameters"]
+                row = dict(field_id=sample["field_id"], year=sample["year"], date=datetime.fromisoformat(item["properties"]["datetime"].replace("Z", "+00:00")).astimezone(timezone.utc).date().isoformat(), sensor="sentinel2_l2a", scene_id=item["id"], ndvi=stats["ndvi"], valid_pixel_fraction=stats["valid_pixel_fraction"], source_dataset_id="earthsearch_sentinel2_l2a")
+                rows.append(row)
+                provenance.append(dict(scene_id=item["id"], product_id=item["properties"].get("s2:product_uri", item["id"]), source_url=f"{ENDPOINT}/collections/{COLLECTION}/items/{item['id']}", observed_at_utc=item["properties"]["datetime"], retrieved_at_utc=receipt["retrieved_at_utc"], source_field_dataset_id=sample["source_dataset_id"], stats=stats, parameters=parameters, cache_hit=receipt["cache_hit"]))
+                print(f"Scene {index + 1}/{len(items)}: {item['id']} — {'cache' if receipt['cache_hit'] else 'read'}", flush=True)
+            except Exception as error:
+                issue_code = "scene_not_cached_network_unavailable" if getattr(args, "offline", False) else "scene_read_failed"
+                report["issues"].append(dict(code=issue_code, action=f"{item['id']}: {type(error).__name__}: {error}"))
+                print(f"Scene {index + 1}/{len(items)}: {item['id']} — failed: {type(error).__name__}", flush=True)
+    rows.sort(key=lambda row: (row["date"], row["scene_id"]))
+    provenance.sort(key=lambda row: (row["observed_at_utc"], row["scene_id"]))
     result, daily = summarize(rows, sample, "no_scenes_returned" if not items else "all_scene_reads_failed")
     if report["issues"]:
         result["missing_reason"] = ";".join(filter(None, [result["missing_reason"], "scene_read_failures_see_report"]))
@@ -173,7 +257,7 @@ def run(args):
     write_json(Path(args.reports) / "scene_provenance.json", provenance)
     if result["valid_obs_count"]:
         plot_observations(rows, daily, sample, Path(args.reports) / "ndvi_timeseries.png")
-    report.update(status="partial" if report["issues"] else "completed" if result["valid_obs_count"] else "blocked_no_valid_observations", real_sample_computed=True, scene_count=len(items), processed_scene_count=len(rows), valid_obs_count=result["valid_obs_count"], max_gap_days=result["max_gap_days"], quality_flag=result["quality_flag"], missing_data_status=result["missing_reason"] or "none")
+    report.update(status="partial" if report["issues"] else "completed" if result["valid_obs_count"] else "blocked_no_valid_observations", real_sample_computed=True, scene_count=len(items), processed_scene_count=len(rows), cache_hits=sum(row["cache_hit"] for row in provenance), valid_obs_count=result["valid_obs_count"], max_gap_days=result["max_gap_days"], quality_flag=result["quality_flag"], missing_data_status=result["missing_reason"] or "none")
     if not result["valid_obs_count"]:
         report["issues"].append(dict(code="no_valid_observation_days", action="No real NDVI chart generated. Inspect scene availability, cloud masks and read errors; do not interpolate missing observations."))
     return finish(args, report)

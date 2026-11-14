@@ -1,0 +1,19 @@
+{
+  "source_repository": "https://github.com/superboycyc-dot/CornHub",
+  "source_branch": "work/a-data",
+  "source_commit": "df7ce8cd63039e90de7ca78ba95f4f3259ee15c5",
+  "field_count": 83,
+  "sample": {
+    "field_id": "barc_1",
+    "year": 2021,
+    "window_start": "2021-04-01",
+    "window_end_exclusive": "2021-12-01",
+    "selection_rule": "First labeled record sorted lexicographically by normalized field_id, then numeric year.",
+    "source_dataset_id": "barc_corn_2021_2023_challenge"
+  },
+  "area_ha": 6.63739333,
+  "input_sha256": {
+    "fields.geojson": "0ec8c03cbf78ee2dbadc79eb0b43604126e82ecbb2a96710f790574214e252de",
+    "smoke_sample.json": "3199c9f2f6f77f6676f4747664dff40a825be04254361f2b25aacc3d3a32a3c1"
+  }
+}

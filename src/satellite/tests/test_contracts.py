@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from satellite.contracts import load_json, load_sample
+from satellite.contracts import load_json, load_sample, write_json
 
 
 def inputs(tmp_path):
@@ -46,3 +46,13 @@ def test_json_nan_rejected(tmp_path):
     p = tmp_path / "bad.json"; p.write_text('{"x":NaN}')
     with pytest.raises(ValueError):
         load_json(p)
+
+
+def test_compressed_inventory_roundtrip_is_lossless_and_deterministic(tmp_path):
+    p = tmp_path / "inventory.json.gz"
+    value = dict(collection="unit_only", scenes=[dict(id="unit_only", scale=.0001)])
+    write_json(p, value)
+    original = p.read_bytes()
+    assert load_json(p) == value
+    write_json(p, value)
+    assert p.read_bytes() == original

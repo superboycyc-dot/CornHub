@@ -1,5 +1,6 @@
 """Validate A-owned inputs without generating identifiers or labels."""
 import csv
+import gzip
 import json
 import math
 from datetime import date
@@ -20,13 +21,19 @@ def load_json(path):
         if not math.isfinite(number):
             raise ValueError("JSON float overflows finite range")
         return number
-    return json.loads(Path(path).read_text(encoding="utf-8"), parse_constant=reject, parse_float=finite_float)
+    path = Path(path)
+    content = gzip.decompress(path.read_bytes()).decode("utf-8") if path.suffix == ".gz" else path.read_text(encoding="utf-8")
+    return json.loads(content, parse_constant=reject, parse_float=finite_float)
 
 
 def write_json(path, value):
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(value, indent=2, ensure_ascii=False, allow_nan=False) + "\n", encoding="utf-8")
+    content = json.dumps(value, indent=2, ensure_ascii=False, allow_nan=False) + "\n"
+    if path.suffix == ".gz":
+        path.write_bytes(gzip.compress(content.encode("utf-8"), mtime=0))
+    else:
+        path.write_text(content, encoding="utf-8")
 
 
 def write_csv(path, columns, rows):

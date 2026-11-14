@@ -1,0 +1,18 @@
+{
+  "status": "partial_network_blocked",
+  "field_id": "barc_1",
+  "year": 2021,
+  "processed_scene_rows": 69,
+  "processed_unique_dates": 30,
+  "valid_observation_days": 14,
+  "first_processed_date": "2021-04-03",
+  "last_processed_date": "2021-06-14",
+  "first_valid_date": "2021-04-03",
+  "last_valid_date": "2021-06-07",
+  "processed_dates_excluded_by_quality": 16,
+  "max_gap_days": 177,
+  "quality_flag": "limited",
+  "late_season_mean": null,
+  "late_season_reason": "September-November scenes remain unread due to upstream HTTP 503; not evidence of zero vegetation or all clouds.",
+  "interpretation": "Observed partial-window peak/drop only; cannot interpret as full-season corn peak or harvest timing. No interpolation."
+}

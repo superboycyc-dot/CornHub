@@ -1,8 +1,6 @@
 {
-  "status": "reachable",
-  "checked_at_utc": "2026-11-14T19:46:38Z",
-  "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a",
-  "collection": "sentinel-2-l2a",
-  "catalog_license": "proprietary",
-  "note": "Collection metadata request only; no field or scene query and no raster read."
+  "status": "blocked",
+  "checked_at_utc": "2026-11-14T20:18:47Z",
+  "error": "503 Server Error: Service Unavailable for url: https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a",
+  "note": "No claim of scene availability."
 }

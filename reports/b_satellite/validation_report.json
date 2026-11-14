@@ -1,0 +1,27 @@
+{
+  "status": "passed_for_partial_results_only",
+  "timeseries_rows": 69,
+  "feature_rows": 1,
+  "duplicate_keys": 0,
+  "valid_observation_days": 14,
+  "processed_unique_dates": 30,
+  "unread_scenes": 141,
+  "quality_flag": "limited",
+  "max_gap_days": 177,
+  "late_season_mean": null,
+  "provenance_rows": 69,
+  "pixel_fraction_matches_counts": true,
+  "contract_features_recomputed": true,
+  "network_complete": false,
+  "sha256": {
+    "data/processed/satellite/timeseries.csv": "bb6685e1c1bb7fd266751de1b6fe3ec62be82c2bbafa4740eaea46956417a38c",
+    "data/processed/satellite/features.csv": "d3c15ae6241c8f6e88d74ee76ceae47fd6993b0541b3aef35519a9378bdcf013",
+    "reports/b_satellite/ndvi_timeseries.png": "5e8e2b3b09ee7fd1ea0e15b3825677372329095d80f2ed467b462dbf3fe52918"
+  },
+  "error_counts": {
+    "http_503": 139,
+    "raster_format": 2
+  },
+  "offline_resume_reproduced_contract_csv_exactly": true,
+  "compressed_inventory_scene_count": 210
+}

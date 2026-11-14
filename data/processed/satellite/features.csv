@@ -1,1 +1,2 @@
 field_id,year,ndvi_peak,peak_doy,max_drop_per_day,drop_doy,ndvi_late_mean,valid_obs_count,max_gap_days,quality_flag,missing_reason
+barc_1,2021,0.4991520345211029,108,0.013676196336746216,130,,14,177,limited,no_valid_late_season_observations;gap_exceeds_30_days;scene_read_failures_see_report

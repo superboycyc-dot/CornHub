@@ -1,0 +1,47 @@
+{
+  "initial_attempt": {
+    "status": "blocked",
+    "error": "GDAL bundled curl did not trust the configured HTTPS proxy CA; all initial scene reads failed certificate verification, not cloud quality.",
+    "scene_items": 210,
+    "successful_scene_reads": 0
+  },
+  "remediation": {
+    "method": "Respect caller CA trust settings and pass the trusted CA via GDAL_CURL_CA_BUNDLE before remote COG reads.",
+    "tls_certificate_verification": true,
+    "reference": "https://gdal.org/en/stable/api/cpl.html"
+  },
+  "verified_real_probe": {
+    "scene_id": "S2B_18SUJ_20210403_0_L2A",
+    "date": "2021-04-03",
+    "field_id": "barc_1",
+    "field_pixels": 667,
+    "valid_pixels": 667,
+    "valid_pixel_fraction": 1.0,
+    "ndvi": 0.46574199199676514
+  },
+  "final_attempt": {
+    "mode": "live_remote_reads_with_recorded_inventory",
+    "total_scene_items": 210,
+    "cache_hits": 69,
+    "attempted_missing_scene_reads": 141,
+    "remaining_http_503_failures": 139,
+    "status": "partial",
+    "all_successful_receipts_preserved": true,
+    "tls_verification_enabled": true,
+    "remaining_raster_format_errors": 2,
+    "remaining_unread_scenes": 141
+  },
+  "subsequent_outage": {
+    "http_status": 503,
+    "message": "upstream connect error or disconnect/reset before headers. reset reason: remote connection failure",
+    "affected_checks": [
+      "S3 red/NIR/SCL range reads",
+      "Earth Search collection metadata",
+      "Planetary Computer search",
+      "GitHub REST API"
+    ],
+    "environment_network_policy": "unrestricted; observed connected; no credential reauthentication requested",
+    "processed_scene_receipts": 69,
+    "remaining_unread_scenes": 141
+  }
+}
