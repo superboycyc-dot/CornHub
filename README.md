@@ -10,6 +10,17 @@ CornHub 利用收割前后的卫星观测，估计加州选定样区在 2022 至
 
 数据成员按年份列出样区、田块数、有效标签数、已覆盖英亩数和最后观测日期。地图按收获年度分别展示；当年资料尚未齐全时标明截至日期和缺口。州内局部样区的结果只代表其覆盖范围。
 
+## 卫星影像最小下载清单
+
+| 数据源 | 地表反射率波段 | 配套质量层 |
+| --- | --- | --- |
+| Sentinel-2 L2A（主数据源） | B04 红光、B08 近红外，均取 10 m | SCL 场景分类取 20 m，用最近邻对齐到波段网格，过滤云、云影、雪和无效像元，同时保留裸土观测。 |
+| Landsat 8/9 Collection 2 Level-2（补充观测空档） | SR_B4 红光、SR_B5 近红外，均取 30 m | QA_PIXEL 过滤云、云影、雪和填充值，QA_RADSAT 筛除所用波段的饱和像元。 |
+
+先按加州目标玉米田边界和 2022–2026 年实际可用日期筛选，再按表取层。用产品元数据将原始像元值换算为地表反射率后计算 NDVI = (近红外 − 红光) / (近红外 + 红光)。若平台已完成换算，直接使用其反射率。优先导出逐田、逐日期的 NDVI 中位数和有效像元比例，并保留传感器名称，以便区分收割信号、云遮空档和传感器切换。
+
+产品依据见 [Copernicus L2A 说明](https://sentiwiki.copernicus.eu/web/s2-products)、[USGS NDVI 波段说明](https://www.usgs.gov/landsat-missions/landsat-normalized-difference-vegetation-index)及 [USGS 质量层说明](https://www.usgs.gov/landsat-missions/landsat-collection-2-quality-assessment-bands)。
+
 ## 五条成员分支
 
 | 分支 | 首项工作 | 交付与验收 |
