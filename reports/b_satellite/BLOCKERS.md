@@ -1,7 +1,7 @@
-# Current remaining blocker
+# Batch status
 
-Alternative provider now supplies 86/87 products and 47 valid days for barc_1 / 2021. Longest valid-observation gap: 33 days, quality_flag=limited; no threshold relaxation.
+completed
 
-One product remains excluded: S2B_MSIL2A_20211119T160549_R097_T18SUJ_20230130T063849. Its PB04 additive BOA offsets were not available from the accessible product metadata. No zero offset was assumed. Primary S3 errors remain archived in earthsearch_partial/ and no longer describe the current handoff tables.
+Catalog errors: 0; scene errors: 0. All 44 A field-year keys are represented. Missing observations retain contract quality/missing_reason fields. No synthetic observations or interpolation.
 
-No model/label conclusions are claimed. The 33-day quality gap is not filled by interpolation.
+Earlier single-field limitations are historical; see single_field_prior/ and earthsearch_partial/.

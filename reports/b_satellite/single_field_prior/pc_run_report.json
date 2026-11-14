@@ -1,0 +1,27 @@
+{
+  "status": "partial",
+  "provider": "planetary_computer_server_crop",
+  "real_sample_computed": true,
+  "sample": {
+    "field_id": "barc_1",
+    "year": 2021,
+    "window_start": "2021-04-01",
+    "window_end_exclusive": "2021-12-01",
+    "selection_rule": "First labeled record sorted lexicographically by normalized field_id, then numeric year.",
+    "source_dataset_id": "barc_corn_2021_2023_challenge"
+  },
+  "scene_count": 87,
+  "processed_scene_count": 86,
+  "cache_hits": 86,
+  "valid_obs_count": 47,
+  "max_gap_days": 33,
+  "quality_flag": "limited",
+  "issues": [
+    {
+      "scene_id": "S2B_MSIL2A_20211119T160549_R097_T18SUJ_20230130T063849",
+      "error_type": "ValueError",
+      "message": "Only metadata-confirmed PB<04 supported: require explicit BOA offsets for newer products"
+    }
+  ],
+  "finished_at_utc": "2026-11-14T20:43:35Z"
+}

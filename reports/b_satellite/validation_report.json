@@ -1,21 +1,9 @@
 {
-  "status": "passed_for_alternative_provider_results",
-  "timeseries_rows": 86,
-  "feature_rows": 1,
-  "duplicate_keys": 0,
-  "valid_observation_days": 47,
-  "max_gap_days": 33,
-  "quality_flag": "limited",
-  "late_season_mean": 0.43836742773465454,
-  "provenance_rows": 86,
-  "all_grids_native_10m_aligned": true,
-  "all_pixel_denominators": 667,
-  "source_urls_contain_no_sas_tokens": true,
-  "unread_scenes": 1,
-  "unread_reason": "PB04 additive offsets unavailable; not guessed",
-  "sha256": {
-    "data/processed/satellite/timeseries.csv": "cbd3867c4d4dd779b59c86811bd952715d98ce66da2d4be0bf9e8ff6980c579e",
-    "data/processed/satellite/features.csv": "e4b8b7d0d449f5fa052a25c579aa6bd317bc533647874a27811ab683a3a2c47d",
-    "reports/b_satellite/ndvi_timeseries.png": "bd337b259d6bb00f442dfde48083672eee3ff74ef9c1201e2fc928430af1f613"
-  }
+  "status": "extra_manual_and_row_checks_skipped_by_user_request",
+  "completion_accounting": {
+    "feature_rows": 44,
+    "timeseries_rows": 4524,
+    "export_counts_match_execution_report": true
+  },
+  "execution_status": "completed"
 }

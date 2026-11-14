@@ -4,17 +4,15 @@
 
 ## 当前真实执行状态
 
-已接入 A 的 df7ce8c 交付，真实样本 barc_1 / 2021。原 S3 路径只取得14个有效日后遇读取失败，现改用PC官方服务端原生网格裁剪：**86/87个产品、47个有效日、最长缺口33天、晚季均值0.4383674**。合同quality_flag仍为limited；剩余1个PB04产品缺明确加性偏移，已标记，不猜测校准、不阻塞本次PR交付。
-
-当前两张合同CSV和时序图使用同一套PC产品，旧结果在 reports/b_satellite/earthsearch_partial/。未混合不同提供方的重复产品。具体处理、来源和限制见报告；没有训练或宣称模型效果。
+已完成A完整清单的**44个田块年、34块真实田**批处理。导出44行特征和4524行逐场景时序，全部44个田块年有有效观测。当前主交付是全部清单，不是单田样例。
 
 ```sh
-PYTHONPATH=src python -m satellite.pc_fallback --fields data/processed/core/fields.geojson --sample data/processed/core/smoke_sample.json --refresh-inventory
+PYTHONPATH=src python -m satellite.pc_batch --core data/processed/core
 ```
 
-A PR尚未合入时，显式指定其只读worktree中的两个输入路径，实际命令见reports/b_satellite/README.md。PC适配只接受元数据确认的PB<04原始DN比值，公共乘法量化因子抵消；PB>=04缺偏移时拒绝处理。API响应必须保持产品原生10m CRS/transform，不能使用默认不对齐的裁剪结果。只在内存读取小田块波段，不需浏览器登录或保存SAS。命令保留partial退出码2，剩余项明确记录。
+使用PC官方服务端小窗口裁剪，按产品原生网格和真实田块掩膜；2021–2023统一依据产品基线进行DN偏移校正。质量规则不放宽、不插值、不造观测。逐田块年图、覆盖和来源见reports/b_satellite/README.md。按用户要求未进行额外逐行或人工核对。
 
-下文为原Earth Search接口的复现与通用质量规则，仍可使用。完整标签批处理不在本轮执行。
+下文保留原单田接口说明，历史结果不代表当前全量数据。
 
 ## 环境与运行
 

@@ -19,15 +19,18 @@ API=PC+'/api/data/v1/item/feature.tif'
 RADIOMETRY_REFERENCE='https://sentiwiki.copernicus.eu/web/s2-products'
 _CACHE_LOCK=threading.Lock()
 
-def pre04_baseline(item):
+def calibration_parameters(item):
     value=item['properties'].get('s2:processing_baseline','')
-    if not value or not 0<float(value)<4:
-        raise ValueError('Only metadata-confirmed PB<04 supported: require explicit BOA offsets for newer products')
-    return value
+    try:baseline=float(value)
+    except (ValueError,TypeError):raise ValueError('Missing numeric processing baseline')
+    if not 2<=baseline<=5.13:raise ValueError('Unsupported processing baseline; no calibration guess')
+    # ESA L2A DQR explicitly specifies -1000 DN for all bands at PB04+.
+    # PC confirms its raw COGs are not harmonized; unscale=false preserves raw DN.
+    return value,(-1000.0 if baseline>=4 else 0.0)
 
 def observe_crop(item,geometry,cache):
-    baseline=pre04_baseline(item)
-    signature=dict(version='pc-native-crop-pre04-v1',item=item,geometry=geometry)
+    baseline,dn_offset=calibration_parameters(item)
+    signature=dict(version='pc-native-crop-baseline-calibrated-v2',item=item,geometry=geometry)
     key=hashlib.sha256(json.dumps(signature,sort_keys=True).encode()).hexdigest()
     target=cache/(key+'.json')
     if target.exists():
@@ -52,12 +55,13 @@ def observe_crop(item,geometry,cache):
             if raster.shape!=(height,width) or not raster.transform.almost_equals(grid) or str(raster.crs)!=crs or raster.count<3:
                 raise ValueError('Server crop does not preserve requested native grid')
             data=raster.read([1,2,3],masked=True).astype('float64').filled(np.nan)
-    for band in (0,1):data[band][data[band]==0]=np.nan
+    for band in (0,1):
+        data[band][data[band]==0]=np.nan
+        data[band]+=dn_offset
     inside=geometry_mask([projected],out_shape=(height,width),transform=grid,all_touched=False,invert=True)
-    # PB<04 has no additive offset; the common quantification gain cancels in NDVI.
-    # Do not label raw DN as reflectance and do not assume zero offset for newer PB.
+    # Offset is applied to float DN after nodata masking. Common quantification gain cancels.
     stats=ndvi_statistics(data[0],data[1],data[2],inside)
-    result=dict(scene_id=item['id'],product_id=item['properties'].get('s2:product_uri'),source_url=PC+'/api/stac/v1/collections/sentinel-2-l2a/items/'+item['id'],retrieved_at_utc=utc_now(),cache_hit=False,stats=stats,parameters=dict(api_url=API,request_parameters=params,request_geometry=rectangle,grid_crs=crs,grid_transform=list(grid),grid_shape=[height,width],radiometry='Raw DN ratio; common multiplicative gain cancels; metadata-confirmed processing baseline below 04 has zero additive offset',processing_baseline=baseline,radiometry_reference=RADIOMETRY_REFERENCE,valid_scl=[4,5,6,7],resampling='nearest',edge_rule='pixel_center_inside_all_touched_false',asset_urls={k:item['assets'][k]['href'] for k in ['B04','B08','SCL']},response_bytes=len(response.content)))
+    result=dict(scene_id=item['id'],product_id=item['properties'].get('s2:product_uri'),source_url=PC+'/api/stac/v1/collections/sentinel-2-l2a/items/'+item['id'],retrieved_at_utc=utc_now(),cache_hit=False,stats=stats,parameters=dict(api_url=API,request_parameters=params,request_geometry=rectangle,grid_crs=crs,grid_transform=list(grid),grid_shape=[height,width],radiometry='Float DN plus metadata-baseline documented BOA offset; common 1/10000 gain cancels in NDVI',processing_baseline=baseline,applied_dn_offset=dn_offset,calibration_basis='ESA L2A DQR: PB04+ BOA_ADD_OFFSET=-1000 for all bands; PC raw COGs not harmonized',provider_reference='https://github.com/microsoft/PlanetaryComputer/issues/134',radiometry_reference=RADIOMETRY_REFERENCE,valid_scl=[4,5,6,7],resampling='nearest',edge_rule='pixel_center_inside_all_touched_false',asset_urls={k:item['assets'][k]['href'] for k in ['B04','B08','SCL']},response_bytes=len(response.content)))
     cache.mkdir(parents=True,exist_ok=True)
     payload=json.dumps(result,indent=2,ensure_ascii=False,allow_nan=False)
     with _CACHE_LOCK:

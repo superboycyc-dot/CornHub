@@ -1,38 +1,27 @@
-# B：替代数据路径执行结果
+# B 全量批次交付：44个田块年 / 34块真实田
 
-A 的固定交付 df7ce8c：barc_1 / 2021，6.63739333 ha，窗口 [2021-04-01,2021-12-01)。B 未修改 A 的边界、ID 或标签。
+已使用A固定交付df7ce8c的完整labels.csv批量运行，不是仅导出共同样本。
 
-## 当前交付
+- 状态：**completed**；44个田块年、34个不同field_id，年份2021/2022/2023。
+- 特征表：**44行**；逐场景时序：**4524行**。
+- 场景任务：4524；成功：4524；目录错误：0；场景错误：0。
+- 有有效观测的田块年：44；质量分布：{'no_data': 0, 'insufficient': 0, 'limited': 18, 'usable': 26}。质量规则未放宽，缺测不插值。
 
-| 项目 | 原 Earth Search 路径 | 当前 Planetary Computer 路径 |
-| --- | ---: | ---: |
-| 成功场景/检索产品 | 69/210（含重复版本） | 86/87 |
-| 有效观测日 | 14 | **47** |
-| 最长有效观测间隔 | 177 天 | **33 天** |
-| 晚季 NDVI 均值 | 空 | **0.4383674** |
-| 合同质量标记 | limited | **limited**，没有放宽阈值 |
+## 数据位置
 
-当前 `data/processed/satellite/timeseries.csv`、`features.csv` 和 `ndvi_timeseries.png` 来自同一套 PC 数据，不混合两家产品版本。旧结果和来源保留在 `earthsearch_partial/`。
+- data/processed/satellite/features.csv：全部44个field_id+year特征。
+- data/processed/satellite/timeseries.csv：全部逐场景观测，包括低有效比例场景。
+- reports/b_satellite/field_year_coverage.csv：逐田块年数量、缺口和质量。
+- reports/b_satellite/field_timeseries/：逐田块年真实NDVI图。
+- pc_batch_report.json：执行汇总和错误；pc_batch_provenance.json.gz：每场景原始来源、日期、基线、DN偏移、像元计数与请求参数。
+- pc_batch_inventory_2021/2022/2023.json.gz及对应search.json：完整公开检索清单与查询收据。
 
-采用 PC 官方服务端 `item/feature.tif` 裁剪接口，每景约十几 KB，不下载整景，无需浏览器登录或保存 SAS 链接。先按产品 B04 原生 10m 网格构造整像元矩形，响应必须与目标 CRS、transform、形状完全一致，再在本地对 A 真实田块执行中心像元掩膜。所有86景分母都是667像元，SCL最近邻、白名单[4,5,6,7]、有效比例至少0.5和特征定义不变。
-
-PB02.12/03.00 的原始DN没有加性BOA偏移，公共乘法量化因子在NDVI比值中抵消；未将DN称为物理反射率。[ESA产品依据](https://sentiwiki.copernicus.eu/web/s2-products)。只按产品元数据判断基线，不凭影像日期猜测。
-
-## 剩余标记
-
-唯一未处理产品：`S2B_MSIL2A_20211119T160549_R097_T18SUJ_20230130T063849`，基线04.00，需要明确BOA加性偏移；当前可访问元数据中没有取得，所以不猜测零偏移。两条公开metadata镜像查询均404。产品保留在完整检索清单和issues中，没有静默丢弃。
-
-33天间隔属于观测/质量筛选缺口，不通过插值制造观测；quality_flag仍为limited。当前状态partial，可交付真实时序和接口，不声称全部产品处理成功或模型分类正确。依用户指令，剩余项仅标记，不阻塞本次PR交付。
-
-## 命令与验证
+统一使用PC官方服务端小窗口裁剪。按每个产品原生10m网格对齐矩形，SCL最近邻，然后按A真实多边形中心像元掩膜；nodata不当作零植被。PB04+按ESA与微软已公开确认的-1000DN规范校正，依据产品元数据基线，不按拍摄日期猜测。详见calibration_policy.md。
 
 ```sh
-PYTHONPATH=src python -m satellite.pc_fallback \
-  --fields ../CornHub-a-inputs/data/processed/core/fields.geojson \
-  --sample ../CornHub-a-inputs/data/processed/core/smoke_sample.json \
-  --refresh-inventory
+PYTHONPATH=src python -m satellite.pc_batch --core data/processed/core
 ```
 
-A 合并后用本仓库 data/processed/core 的两份输入路径即可。首次需公共网络，后续复用派生数值检查点；原始裁剪影像仅在内存中。遇不支持的校准基线明确报错，命令当前退出码2，符合partial。
+本次实际输入来自A只读worktree的同名core目录。无整景或整州下载，原始小裁剪仅在内存；检查点是被Git忽略的小型派生JSON。按用户要求，本批结束后只做导出行数与执行汇总的完成确认，**未再做逐行或额外人工核对**。此前单元测试结果保留，但不冒充本批新增验证。
 
-**28项测试通过**。真实结果另行核查了唯一键、NDVI/比例范围、原生网格、667像元分母、每景来源和无SAS token，见validation_report.json。PC全窗检索清单、查询收据、来源和每景参数均已保存；旧S3阻塞记录仍保留。完整44标签年的批处理未执行。
+历史单田/失败路径结果保留于single_field_prior/和earthsearch_partial/。它们不代表当前全量交付。B未修改A、C、D、E的目录，也未直接推main。
