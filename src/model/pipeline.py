@@ -262,6 +262,8 @@ def run(root, out, report, train=False, inference=False, provenance=None):
             training = [r for r in eligible if r['fold_id'] != fold]
             testing = [r for r in eligible if r['fold_id'] == fold]
             entry = dict(fold_id=fold, n_train=len(training), n_test=len(testing), train_class_counts=class_counts(training), test_class_counts=class_counts(testing))
+            if min(entry['train_class_counts'].values()) < 2:
+                notes.append(f"Fold {fold} has fewer than 2 training rows in a class; estimates are unstable and uncalibrated.")
             if len({r['label'] for r in training}) < 2:
                 entry['reason'] = 'training fold lacks a class; no OOF prediction'
                 audit['exclusions'].extend(dict(field_id=r['field_id'], year=r['year'], reasons=[entry['reason']]) for r in testing)

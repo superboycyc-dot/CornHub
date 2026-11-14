@@ -1,0 +1,11 @@
+field_id,year,fold_id,true_label,predicted_label,p_silage,quality_flag,max_gap_days
+barc_382,2023,0,grain,silage,0.5641666666666667,usable,30
+barc_383,2023,0,grain,silage,0.5641666666666667,usable,30
+barc_231,2022,2,silage,grain,0.35965961815961817,usable,20
+barc_248,2023,2,silage,grain,0.44182015207015185,usable,27
+barc_252,2022,2,silage,grain,0.34299295149295156,usable,20
+barc_254,2023,2,silage,grain,0.30654814629814625,usable,27
+barc_280,2021,2,silage,grain,0.35543833943833947,limited,33
+barc_291,2021,2,silage,grain,0.34609743034743035,limited,35
+barc_327,2021,2,silage,grain,0.23692365967365966,limited,40
+barc_328,2021,2,silage,grain,0.2340635198135198,limited,40
