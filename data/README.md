@@ -34,6 +34,8 @@ python3 scripts/curate_quickstats.py
 
 This table is an aggregate reference, not ground truth for individual fields. Annual publication and revision timing means it cannot serve as a real-time supply feed.
 
+**Source-vintage discrepancy to resolve before reporting totals:** for California 2025, this Quick Stats extract reports 450 thousand planted acres, 75 thousand grain-harvested acres, and 370 thousand silage-harvested acres. The separate January 2026 *Crop Production 2025 Summary* extract in `processed/usda_nass/corn_state_benchmarks_2025.csv` reports 420, 50, and 365 thousand acres, respectively. Both retain their source and publication context; do not average or silently substitute between them. Confirm definitions, reference vintage, and later revisions with NASS before using either as the project’s calibration target.
+
 ## USDA NASS California Cropland Data Layer
 
 [加州 2022–2025 年 CDL 数据与来源说明](usda_nass_cdl/california/README.md)：四个原始年度 ZIP、文件清单与 SHA-256 校验记录。实测 30 米像元；2026 年本次未找到已发布数据。
