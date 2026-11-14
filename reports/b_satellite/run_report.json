@@ -1,0 +1,77 @@
+{
+  "status": "blocked",
+  "started_at_utc": "2026-11-14T19:46:38Z",
+  "command": "smoke",
+  "algorithm_version": "barc-smoke-v1",
+  "issues": [
+    {
+      "code": "a_fields_missing",
+      "action": "A must provide data/processed/core/fields.geojson from the official BARC data."
+    },
+    {
+      "code": "a_smoke_sample_missing",
+      "action": "A must provide data/processed/core/smoke_sample.json selected by the contract; B does not invent field_id, year or labels."
+    }
+  ],
+  "catalog_probe": {
+    "status": "reachable",
+    "checked_at_utc": "2026-11-14T19:46:38Z",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a",
+    "collection": "sentinel-2-l2a",
+    "catalog_license": "proprietary",
+    "note": "Collection metadata request only; no field or scene query and no raster read."
+  },
+  "real_sample_computed": false,
+  "valid_obs_count": null,
+  "missing_data_status": "not_computed",
+  "official_notebook_reviewed": true,
+  "scope": "BARC 2021–2023; latest team contract; no California weather upload in B's PR",
+  "official_notebook_inventory": {
+    "status": "inventoried_not_executed",
+    "source_filename": "sentinel-2_starter_notebook.ipynb",
+    "sha256": "c5239266224acc45079b6539e48dfccd67212782799c34692e866e2095192092",
+    "cells": 14,
+    "imports": [
+      "geopandas",
+      "matplotlib.pyplot",
+      "numpy",
+      "odc.stac",
+      "pathlib",
+      "planetary_computer",
+      "pystac_client"
+    ],
+    "defined_functions": [],
+    "signals": [
+      {
+        "cell_index": 2,
+        "signal": "catalog_or_search_reference"
+      },
+      {
+        "cell_index": 4,
+        "signal": "catalog_or_search_reference"
+      },
+      {
+        "cell_index": 6,
+        "signal": "catalog_or_search_reference"
+      },
+      {
+        "cell_index": 8,
+        "signal": "scl_reference"
+      },
+      {
+        "cell_index": 10,
+        "signal": "scl_reference"
+      },
+      {
+        "cell_index": 10,
+        "signal": "ndvi_reference"
+      },
+      {
+        "cell_index": 12,
+        "signal": "ndvi_reference"
+      }
+    ],
+    "limitation": "Text/AST inventory is not verification that masking, scaling, or search is correct; manual code review is required before claiming official-notebook adaptation."
+  },
+  "finished_at_utc": "2026-11-14T19:46:38Z"
+}

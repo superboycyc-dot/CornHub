@@ -1,0 +1,8 @@
+{
+  "status": "reachable",
+  "checked_at_utc": "2026-11-14T19:46:38Z",
+  "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a",
+  "collection": "sentinel-2-l2a",
+  "catalog_license": "proprietary",
+  "note": "Collection metadata request only; no field or scene query and no raster read."
+}
