@@ -1,0 +1,3 @@
+year,geography,state_fips,corn_planted_all_purpose_thousand_acres,corn_harvested_for_grain_thousand_acres,corn_grain_yield_bushels_per_acre,corn_grain_production_thousand_bushels,corn_harvested_for_silage_thousand_acres,corn_silage_yield_tons_per_acre,corn_silage_production_thousand_tons
+2025,United States,00,98788,91258,186.5,17020549,6208,21.8,135540
+2025,California,06,420,50,173,8650,365,27,9855
