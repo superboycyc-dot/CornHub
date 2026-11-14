@@ -4,12 +4,17 @@
 
 ## 当前真实执行状态
 
-- 官方 notebook 已逐 cell 阅读；保留其单田 L2A/B04/B08/SCL/NDVI 中位数流程并适配合同。审阅见 reports。
-- A 已交付，用 PR #6 / `df7ce8c` 的只读 worktree 校验 83 个边界和 44 个标签键。样本 **barc_1 / 2021，6.63739333 ha**。
-- 实际检索 210 个场景条目；读取 69 条，合同聚合后 **14 个有效日**，已生成真实 CSV、特征和时序图。
-- 其余 **141 个场景因上游 HTTP 503 未完成**。最长缺口 177 天，quality_flag=limited，晚季均值空；峰值和下降不能解释为完整季节或收获时点。
-- CA 信任问题已修复，保留 TLS 验证；已验证离线重建，并在线重试全部缺失场景，最终仍为 **partial / exit 2**，不是全窗成功。
-- 不将合成检查样本用作生产结果；原件与队友文件不改，B PR 不复制 A 的文件。
+已接入 A 的 df7ce8c 交付，真实样本 barc_1 / 2021。原 S3 路径只取得14个有效日后遇读取失败，现改用PC官方服务端原生网格裁剪：**86/87个产品、47个有效日、最长缺口33天、晚季均值0.4383674**。合同quality_flag仍为limited；剩余1个PB04产品缺明确加性偏移，已标记，不猜测校准、不阻塞本次PR交付。
+
+当前两张合同CSV和时序图使用同一套PC产品，旧结果在 reports/b_satellite/earthsearch_partial/。未混合不同提供方的重复产品。具体处理、来源和限制见报告；没有训练或宣称模型效果。
+
+```sh
+PYTHONPATH=src python -m satellite.pc_fallback --fields data/processed/core/fields.geojson --sample data/processed/core/smoke_sample.json --refresh-inventory
+```
+
+A PR尚未合入时，显式指定其只读worktree中的两个输入路径，实际命令见reports/b_satellite/README.md。PC适配只接受元数据确认的PB<04原始DN比值，公共乘法量化因子抵消；PB>=04缺偏移时拒绝处理。API响应必须保持产品原生10m CRS/transform，不能使用默认不对齐的裁剪结果。只在内存读取小田块波段，不需浏览器登录或保存SAS。命令保留partial退出码2，剩余项明确记录。
+
+下文为原Earth Search接口的复现与通用质量规则，仍可使用。完整标签批处理不在本轮执行。
 
 ## 环境与运行
 

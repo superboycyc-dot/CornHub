@@ -1,18 +1,29 @@
 {
-  "status": "partial_network_blocked",
+  "provider": "planetary_computer_server_crop",
+  "status": "partial_one_calibration_metadata_blocker",
   "field_id": "barc_1",
   "year": 2021,
-  "processed_scene_rows": 69,
-  "processed_unique_dates": 30,
-  "valid_observation_days": 14,
+  "scene_count": 87,
+  "processed_scene_rows": 86,
+  "processed_unique_dates": 86,
+  "valid_observation_days": 47,
   "first_processed_date": "2021-04-03",
-  "last_processed_date": "2021-06-14",
+  "last_processed_date": "2021-11-29",
   "first_valid_date": "2021-04-03",
-  "last_valid_date": "2021-06-07",
-  "processed_dates_excluded_by_quality": 16,
-  "max_gap_days": 177,
+  "last_valid_date": "2021-11-29",
+  "max_gap_days": 33,
   "quality_flag": "limited",
-  "late_season_mean": null,
-  "late_season_reason": "September-November scenes remain unread due to upstream HTTP 503; not evidence of zero vegetation or all clouds.",
-  "interpretation": "Observed partial-window peak/drop only; cannot interpret as full-season corn peak or harvest timing. No interpolation."
+  "ndvi_late_mean": 0.43836742773465454,
+  "unprocessed_scene": {
+    "scene_id": "S2B_MSIL2A_20211119T160549_R097_T18SUJ_20230130T063849",
+    "error_type": "ValueError",
+    "message": "Only metadata-confirmed PB<04 supported: require explicit BOA offsets for newer products"
+  },
+  "comparison": {
+    "previous_provider": "earthsearch",
+    "previous_successful_scenes": 69,
+    "previous_valid_days": 14,
+    "previous_max_gap_days": 177
+  },
+  "note": "Whole-season date range now covered through alternative Sentinel-2 provider; no cloud interpolation or label inference. One PB04 product excluded explicitly."
 }

@@ -1,27 +1,21 @@
 {
-  "status": "passed_for_partial_results_only",
-  "timeseries_rows": 69,
+  "status": "passed_for_alternative_provider_results",
+  "timeseries_rows": 86,
   "feature_rows": 1,
   "duplicate_keys": 0,
-  "valid_observation_days": 14,
-  "processed_unique_dates": 30,
-  "unread_scenes": 141,
+  "valid_observation_days": 47,
+  "max_gap_days": 33,
   "quality_flag": "limited",
-  "max_gap_days": 177,
-  "late_season_mean": null,
-  "provenance_rows": 69,
-  "pixel_fraction_matches_counts": true,
-  "contract_features_recomputed": true,
-  "network_complete": false,
+  "late_season_mean": 0.43836742773465454,
+  "provenance_rows": 86,
+  "all_grids_native_10m_aligned": true,
+  "all_pixel_denominators": 667,
+  "source_urls_contain_no_sas_tokens": true,
+  "unread_scenes": 1,
+  "unread_reason": "PB04 additive offsets unavailable; not guessed",
   "sha256": {
-    "data/processed/satellite/timeseries.csv": "bb6685e1c1bb7fd266751de1b6fe3ec62be82c2bbafa4740eaea46956417a38c",
-    "data/processed/satellite/features.csv": "d3c15ae6241c8f6e88d74ee76ceae47fd6993b0541b3aef35519a9378bdcf013",
-    "reports/b_satellite/ndvi_timeseries.png": "5e8e2b3b09ee7fd1ea0e15b3825677372329095d80f2ed467b462dbf3fe52918"
-  },
-  "error_counts": {
-    "http_503": 139,
-    "raster_format": 2
-  },
-  "offline_resume_reproduced_contract_csv_exactly": true,
-  "compressed_inventory_scene_count": 210
+    "data/processed/satellite/timeseries.csv": "cbd3867c4d4dd779b59c86811bd952715d98ce66da2d4be0bf9e8ff6980c579e",
+    "data/processed/satellite/features.csv": "e4b8b7d0d449f5fa052a25c579aa6bd317bc533647874a27811ab683a3a2c47d",
+    "reports/b_satellite/ndvi_timeseries.png": "bd337b259d6bb00f442dfde48083672eee3ff74ef9c1201e2fc928430af1f613"
+  }
 }
