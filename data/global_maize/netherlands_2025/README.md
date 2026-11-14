@@ -1,0 +1,4 @@
+# 荷兰 2025 年玉米田块与 Sentinel-2 NDVI
+来源：[RVO / PDOK](https://api.pdok.nl/rvo/gewaspercelen/ogc/v1)、[RVO 作物代码](https://www.rvo.nl/onderwerpen/gewascodelijst?page=1)。本次查询 bbox=5.8,51.5,5.9,51.6 的首批 1000 项，保留代码 259 和 316；不是该区域或全国的普查。原始查询：https://api.pdok.nl/rvo/gewaspercelen/ogc/v1/collections/brpgewas/items?f=json&bbox=5.8,51.5,5.9,51.6&limit=1000
+fields.geojson 是官方经纬度田块几何和原始属性，id 与两个 CSV 的 field_id 对应。field_index.csv 给出按 WGS84 椭球计算的面积和一个保证在田内的代表点。边界反映该年申报，不是地籍测绘或收割机轨迹。没有实际收割确认、日期、产量或水分实测值。
+NDVI 来源：Copernicus Sentinel-2 L2A，由 Earth Search 的公开 COG 获取。先在 10 米网格按像元算 (B08-B04)/(B08+B04)，再取田内中位数。边缘内缩 10 米，仅保留 SCL 4/5，20 米 SCL 使用最近邻；排除无数据和无效分母。依元数据处理反射率偏移。valid_pixels / interior_pixels 为覆盖率，分母为零时无定义；空 NDVI 为无观测，不是零。分析建议另设最低覆盖率及像元数。scenes.json 保存原始影像元数据与多波段链接；extract.py 为提取程序。日期按可用影像择取，不等间隔，不能把曲线下降直接解释为实测收割日。

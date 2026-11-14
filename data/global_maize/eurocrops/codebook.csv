@@ -1,0 +1,22 @@
+nuts,original_code,original_name,translated_name,hcat4_code,hcat4_name,usage_code,usage_name,label
+at,105,KÖRNERMAIS,GRAIN CORN,3310106000,maize_corn_popcorn,6,Harvested as Grains,grain
+at,109,SILOMAIS,SILO CORN,3310106000,maize_corn_popcorn,3,Fodder/Forage,silage
+be2,201,Silomaïs,SILO CORN,3310106000,maize_corn_popcorn,3,Fodder/Forage,silage
+be2,202,Korrelmaïs,grain corn,3310106000,maize_corn_popcorn,6,Harvested as Grains,grain
+be3,201,Maïs ensilage,Silage Maize,3310106000,maize_corn_popcorn,0,No specified use,silage
+be3,202,Maïs grain,Grain corn,3310106000,maize_corn_popcorn,6,Harvested as Grains,grain
+bg,10259,царевица за зърно,corn for grain,3310106000,maize_corn_popcorn,6,Harvested as Grains,grain
+bg,10260,царевица за силаж,maize for silage,3310106000,maize_corn_popcorn,0,No specified use,silage
+cz,434,Kukuřice na zrno,Grain maize,3310106000,maize_corn_popcorn,6,Harvested as Grains,grain
+de4,10171,Körnermais,GRAIN CORN,3310106000,maize_corn_popcorn,6,Harvested as Grains,grain
+de4,411,Silomais (als Hauptfutter),Silage maize (as staple feed),3310106000,maize_corn_popcorn,3,Fodder/Forage,silage
+dea,411,Silomais,Silage maize,3310106000,maize_corn_popcorn,0,No specified use,silage
+dk,216,Silomajs,Silo maize,3310106000,maize_corn_popcorn,3,Fodder/Forage,silage
+dk,218,Silomajs med græsudlæg,Silo maize with grass undersowing,3310106000,maize_corn_popcorn,3,Fodder/Forage,silage
+fr,MIE,Maïs ensilage,Silage Maize,3310106000,maize_corn_popcorn,5,Harvested Green,silage
+nl,259,"Maïs, snij-",maize cut,3310106000,maize_corn_popcorn,0,No specified use,silage
+nl,316,"Maïs, korrel-",corn grain,3310106000,maize_corn_popcorn,6,Harvested as Grains,grain
+si,5,koruza za zrnje,Grain maize,3310106000,maize_corn_popcorn,6,Harvested as Grains,grain
+si,6,koruza za silažo,Silage corn,3310106000,maize_corn_popcorn,0,No specified use,silage
+sk,10082,Kukurica na siláž,Corn for silage,3310106000,maize_corn_popcorn,5,Harvested Green,silage
+sk,10083,Kukurica na siláž s podsevom,Maize for silage with undersowing,3310106000,maize_corn_popcorn,5,Harvested Green,silage
