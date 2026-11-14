@@ -102,3 +102,13 @@ MPLCONFIGDIR=/tmp/cornhub-mpl /tmp/cornhub-ndmi-venv/bin/python src/analysis/ndm
 ```
 
 ![真实逐月 NDMI 与覆盖率](ndmi_monthly.svg)
+
+## NVIDIA/Brev 并行部署
+
+[给管理员 AI 的完整执行提示词](nvidia_admin_prompt_zh.md) 包含连接、网络探针、依赖、GPU 对照、真实单月验收、持久后台批处理和交付要求。
+
+新增可选 `--backend gpu --gpu-ids all`，使用 CuPy 计算同样的 DN 缩放、QA 与 NDMI；默认 CPU。多进程使用 spawn，每个进程按可见 GPU 轮转选卡，完成一个月份即可报告状态。`remote/launch.py` 根据实际 CPU 配额、可用 RAM/磁盘规划并发，不会自动采购实例。`remote/bootstrap.sh` 在持久目录创建独立环境。未安装 CuPy 或 GPU 初始化失败时，GPU 请求报错，不静默假装使用 GPU。
+
+新增 `--retry-incomplete`：归档失败月份并从头重算；没有错误的场景检查点继续沿用。默认连续累计 3 个场景读取错误就停止该月，结果明确保留 partial/failed；`--max-scene-errors` 可调整。输出增加本次处理时间、检查点起始场景及 `compute_backend_this_attempt`。这些时间与后端字段仅描述本次尝试，不包含历史计算，也不代表全部历史检查点都在 GPU 上计算。
+
+本地远程部署检查见 `remote/setup_status.json`。本机没有 NVIDIA CUDA，GPU 对照尚未实测；本地 CPU 合成性能测试仅是诊断，不是卫星观测结果，也不能证明云端或完整流程的加速倍数。

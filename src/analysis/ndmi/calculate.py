@@ -16,6 +16,12 @@ import sys
 import urllib.parse
 import urllib.request
 import urllib.error
+import multiprocessing
+import fcntl
+if __package__:
+    from .compute_backend import configure as configure_backend, info as backend_info, gpu_ndmi
+else:
+    from compute_backend import configure as configure_backend, info as backend_info, gpu_ndmi
 
 import numpy as np
 import rasterio
@@ -39,6 +45,7 @@ QA_PIXEL_REJECT = 0b111111  # fill, dilated cloud, cirrus, cloud, shadow, snow
 QA_RADSAT_REJECT = (1 << 4) | (1 << 5) | (1 << 11)  # B5, B6, terrain occlusion
 SAS_TOKENS = {}
 TOKEN_LOCK = threading.Lock()
+MAX_SCENE_ERRORS=3
 
 
 def request(url, body=None, binary=False, timeout=90):
@@ -60,9 +67,14 @@ def request(url, body=None, binary=False, timeout=90):
             time.sleep(delay)
 
 
-def init_tokens(tokens):
-    global SAS_TOKENS
+def init_tokens(tokens, backend='cpu', gpu_ids=None, max_scene_errors=3):
+    global SAS_TOKENS,MAX_SCENE_ERRORS
     SAS_TOKENS = tokens
+    MAX_SCENE_ERRORS=max_scene_errors
+    identity=multiprocessing.current_process()._identity
+    worker_index=(identity[0]-1) if identity else 0
+    selected=configure_backend(backend,gpu_ids,worker_index)
+    print(json.dumps({'stage':'worker_ready',**selected}),flush=True)
 
 
 def public_container_tokens(years, cache):
@@ -224,6 +236,7 @@ def catalog(year, grid, cache):
 
 
 def ndmi(nir_dn, swir_dn, qa, sat):
+    if backend_info()['backend']=='gpu':return gpu_ndmi(nir_dn,swir_dn,qa,sat)
     nir, swir = nir_dn.astype('float64')*SCALE+OFFSET, swir_dn.astype('float64')*SCALE+OFFSET
     valid = ((nir_dn != 0) & (swir_dn != 0) & ((qa & QA_PIXEL_REJECT)==0)
         & ((sat & QA_RADSAT_REJECT)==0) & (nir >= 0) & (swir >= 0) & ((nir+swir)>0))
@@ -238,6 +251,8 @@ def month_job(year, month, cache_name, result_name):
     path = results/f'{year}_{month:02}.json'
     if path.exists():
         return json.loads(path.read_text())
+    attempt_started=time.perf_counter()
+    started_at=dt.datetime.now(dt.timezone.utc).isoformat().replace('+00:00','Z')
     grid = json.loads((cache/'grid.json').read_text())
     corn = np.load(cache/f'corn_{year}.npy', mmap_mode='r')
     total = int(np.count_nonzero(corn))
@@ -262,6 +277,11 @@ def month_job(year, month, cache_name, result_name):
         used,errors,examples=progress['used'],progress['errors'],progress['examples']
         remaining=total-int(np.count_nonzero(np.isfinite(values)))
         next_scene=progress['next_scene']
+    resumed_from_scene=next_scene
+    attempted_scene_count=next_scene
+    aborted_due_to_errors=False
+    print(json.dumps({'stage':'month_start','year':year,'month':month,
+        'started_at_utc':started_at,'resumed_from_scene':next_scene,'candidate_scenes':len(items)}),flush=True)
     def checkpoint(next_scene):
         nonlocal previous_array
         target=cache/f'checkpoint_{year}_{month:02}_{next_scene}.npy'
@@ -281,6 +301,10 @@ def month_job(year, month, cache_name, result_name):
             if scene_number < next_scene:continue
             if not remaining:
                 break
+            if len(errors)>=MAX_SCENE_ERRORS:
+                aborted_due_to_errors=True
+                break
+            attempted_scene_count=scene_number+1
             accepted = 0
             try:
                 footprint = geometry_transform(projection.transform, shape(item['geometry']))
@@ -383,6 +407,14 @@ def month_job(year, month, cache_name, result_name):
     n = len(valid)
     status = 'computed' if n and not errors else 'partial_scene_errors' if n else 'failed_scene_errors' if errors else 'no_valid_observations'
     result = {'year':year,'month':month,'scope':'Maryland state; annual CDL Corn class=1',
+        'processing_started_at_utc':started_at,
+        'processing_finished_at_utc':dt.datetime.now(dt.timezone.utc).isoformat().replace('+00:00','Z'),
+        'elapsed_seconds_this_attempt':time.perf_counter()-attempt_started,
+        'resumed_from_scene':resumed_from_scene,
+        'compute_backend_this_attempt':backend_info(),
+        'attempted_scene_count':attempted_scene_count,
+        'unprocessed_scene_count':len(items)-attempted_scene_count,
+        'aborted_due_to_errors':aborted_due_to_errors,
         'status':status,'method':'spatial mean of deterministic monthly first-clear-pixel mosaic',
         'corn_pixel_count':total,'corn_area_ha':total*0.09,'valid_pixel_count':n,'valid_area_ha':n*0.09,
         'valid_area_fraction':n/total,'ndmi_mean':float(np.mean(valid,dtype='float64')) if n else None,
@@ -413,8 +445,17 @@ def main():
     p.add_argument('--year',type=int,choices=range(2021,2026))
     p.add_argument('--month',type=int,choices=range(1,13))
     p.add_argument('--workers',type=int,default=2)
+    p.add_argument('--backend',choices=['cpu','gpu'],default='cpu')
+    p.add_argument('--gpu-ids',default='all',help='visible CUDA ordinals, e.g. 0,1; all by default')
+    p.add_argument('--max-scene-errors',type=int,default=3)
+    p.add_argument('--retry-incomplete',action='store_true',help='Archive partial results and restart failed months from scratch')
     args=p.parse_args()
+    if args.workers<1 or args.max_scene_errors<1:p.error('workers and max-scene-errors must be positive')
+    gpu_ids=None if args.gpu_ids=='all' else [int(x) for x in args.gpu_ids.split(',')]
     args.cache.mkdir(parents=True,exist_ok=True)
+    cache_lock=(args.cache/'.pipeline.lock').open('a')
+    try:fcntl.flock(cache_lock.fileno(),fcntl.LOCK_EX|fcntl.LOCK_NB)
+    except BlockingIOError:p.error('Another pipeline is already using this cache directory')
     grid,sources=setup(args.cache)
     years=[args.year] if args.year else list(range(2021,2026))
     for year in years:
@@ -423,9 +464,35 @@ def main():
     if args.prepare_only:
         return
     jobs=[(y,m,str(args.cache),str(args.output)) for y in years for m in ([args.month] if args.month else range(1,13))]
+    if args.retry_incomplete:
+        for year,month,_,_ in jobs:
+            result=args.output/f'{year}_{month:02}.json'
+            progress=args.cache/f'progress_{year}_{month:02}.json'
+            failed_result=result.exists() and json.loads(result.read_text())['status']!='computed'
+            failed_progress=progress.exists() and bool(json.loads(progress.read_text())['errors'])
+            if failed_result or failed_progress:
+                if failed_result:
+                    archive=args.output/'attempts';archive.mkdir(parents=True,exist_ok=True)
+                    result.replace(archive/f'{year}_{month:02}_{time.time_ns()}.json')
+                progress.unlink(missing_ok=True)
+                for old in args.cache.glob(f'checkpoint_{year}_{month:02}_*.npy'):old.unlink()
     tokens=public_container_tokens(years,args.cache)
-    with concurrent.futures.ProcessPoolExecutor(max_workers=args.workers,initializer=init_tokens,initargs=(tokens,)) as pool:
-        list(pool.map(run_job,jobs))
+    results=[]
+    if args.workers == 1:
+        init_tokens(tokens,args.backend,gpu_ids,args.max_scene_errors)
+        for job in jobs:results.append(run_job(job))
+        if any(r['status']!='computed' for r in results):raise SystemExit(2)
+        return
+    # Spawn prevents inheriting an initialized CUDA context across fork.
+    with concurrent.futures.ProcessPoolExecutor(max_workers=args.workers,mp_context=multiprocessing.get_context('spawn'),
+            initializer=init_tokens,initargs=(tokens,args.backend,gpu_ids,args.max_scene_errors)) as pool:
+        futures={pool.submit(run_job,job):job[:2] for job in jobs}
+        for done in concurrent.futures.as_completed(futures):
+            result=done.result()
+            results.append(result)
+            print(json.dumps({'stage':'month_result','year':result['year'],'month':result['month'],
+                'status':result['status']}),flush=True)
+    if any(r['status']!='computed' for r in results):raise SystemExit(2)
 
 
 def run_job(args):
