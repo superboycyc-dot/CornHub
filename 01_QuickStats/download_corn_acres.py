@@ -22,6 +22,11 @@ SERIES = (
     ("planted", "AREA PLANTED"),
 )
 COUNTY_CENSUS_YEARS = {2012, 2017, 2022}
+REQUESTED_SHORT_DESCRIPTIONS = {
+    "CORN - ACRES PLANTED",
+    "CORN, GRAIN - ACRES HARVESTED",
+    "CORN, SILAGE - ACRES HARVESTED",
+}
 OUTPUT_COLUMNS = (
     "year",
     "aggregation_level",
@@ -162,9 +167,13 @@ def crop_use(record: dict[str, Any]) -> str:
 
 def is_requested_series(record: dict[str, Any]) -> bool:
     short_description = record.get("short_desc", "")
-    if record.get("statisticcat_desc") == "AREA PLANTED":
-        return short_description == "CORN - ACRES PLANTED"
-    return "CORN, GRAIN" in short_description or "CORN, SILAGE" in short_description
+    return (
+        short_description in REQUESTED_SHORT_DESCRIPTIONS
+        and record.get("reference_period_desc") == "YEAR"
+        and record.get("freq_desc") == "ANNUAL"
+        and record.get("domain_desc") == "TOTAL"
+        and record.get("domaincat_desc") == "NOT SPECIFIED"
+    )
 
 
 def main() -> int:
