@@ -5,6 +5,8 @@ import "leaflet/dist/leaflet.css";
 import "./style.css";
 import { loadData, number, present } from "./data";
 import { FIELD_MIN_ZOOM, fieldSnapshot, countiesInView } from "./map-data";
+// At BARC latitude, zoom 13 with a 100 CSS-pixel metric scale renders 1 km.
+const INITIAL_MAP_ZOOM = 13;
 const show = (v, missing = "Missing data") =>
   present(v) ? String(v) : missing;
 function Icon({ name, size = 18 }) {
@@ -168,7 +170,7 @@ function Map({
       zoomControl: false,
       scrollWheelZoom: true,
       attributionControl: true,
-    }).setView([39.0234, -76.8751], FIELD_MIN_ZOOM);
+    }).setView([39.0234, -76.8751], INITIAL_MAP_ZOOM);
     controller.current = map.current;
     map.current.createPane("county-lines").style.zIndex = 350;
     map.current.createPane("county-labels").style.zIndex = 390;
@@ -338,13 +340,12 @@ function Map({
     };
     map.current.on("zoomend", toggle);
     if (fitted.current !== fields) {
-      map.current.fitBounds(layer.getBounds(), {
-        padding: [80, 80],
-        maxZoom: FIELD_MIN_ZOOM,
+      // Use a fixed initial scale rather than viewport-dependent fitBounds.
+      // The 1 km ruler is computed by Leaflet from actual map distances.
+      map.current.setView(layer.getBounds().getCenter(), INITIAL_MAP_ZOOM, {
+        animate: false,
       });
       // Initial focus only: users remain free to zoom out across the United States.
-      if (map.current.getZoom() < FIELD_MIN_ZOOM)
-        map.current.setZoom(FIELD_MIN_ZOOM);
       fitted.current = fields;
     }
     toggle();
