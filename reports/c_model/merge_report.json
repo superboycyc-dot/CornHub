@@ -1,15 +1,589 @@
 {
-  "input_rows": {},
-  "missing_files": [
-    "data/processed/core/labels.csv",
-    "data/processed/core/validation_folds.csv",
-    "data/processed/satellite/features.csv"
-  ],
+  "input_rows": {
+    "labels": 44,
+    "folds": 44,
+    "features": 0
+  },
+  "missing_files": [],
   "errors": [],
   "duplicate_keys": [],
   "matched_count": 0,
-  "unmatched": [],
-  "exclusions": [],
+  "unmatched": [
+    {
+      "table": "labels",
+      "field_id": "barc_1",
+      "year": 2021,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_1",
+      "year": 2023,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_230",
+      "year": 2023,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_231",
+      "year": 2022,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_231",
+      "year": 2023,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_238",
+      "year": 2021,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_238",
+      "year": 2023,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_24",
+      "year": 2021,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_24",
+      "year": 2023,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_248",
+      "year": 2023,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_251",
+      "year": 2022,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_251",
+      "year": 2023,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_252",
+      "year": 2022,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_254",
+      "year": 2023,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_263",
+      "year": 2021,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_278",
+      "year": 2022,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_279",
+      "year": 2022,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_280",
+      "year": 2021,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_286",
+      "year": 2021,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_286",
+      "year": 2022,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_286",
+      "year": 2023,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_288",
+      "year": 2021,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_288",
+      "year": 2023,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_291",
+      "year": 2021,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_292",
+      "year": 2023,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_301",
+      "year": 2021,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_323",
+      "year": 2023,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_327",
+      "year": 2021,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_328",
+      "year": 2021,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_332",
+      "year": 2021,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_334",
+      "year": 2021,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_347",
+      "year": 2021,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_347",
+      "year": 2023,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_348",
+      "year": 2021,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_348",
+      "year": 2023,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_382",
+      "year": 2023,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_383",
+      "year": 2023,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_394",
+      "year": 2023,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_397",
+      "year": 2023,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_400",
+      "year": 2023,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_429",
+      "year": 2022,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_511",
+      "year": 2021,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_548",
+      "year": 2021,
+      "reason": "missing_features"
+    },
+    {
+      "table": "labels",
+      "field_id": "barc_571",
+      "year": 2021,
+      "reason": "missing_features"
+    }
+  ],
+  "exclusions": [
+    {
+      "field_id": "barc_1",
+      "year": 2021,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_1",
+      "year": 2023,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_230",
+      "year": 2023,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_231",
+      "year": 2022,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_231",
+      "year": 2023,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_238",
+      "year": 2021,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_238",
+      "year": 2023,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_24",
+      "year": 2021,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_24",
+      "year": 2023,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_248",
+      "year": 2023,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_251",
+      "year": 2022,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_251",
+      "year": 2023,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_252",
+      "year": 2022,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_254",
+      "year": 2023,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_263",
+      "year": 2021,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_278",
+      "year": 2022,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_279",
+      "year": 2022,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_280",
+      "year": 2021,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_286",
+      "year": 2021,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_286",
+      "year": 2022,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_286",
+      "year": 2023,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_288",
+      "year": 2021,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_288",
+      "year": 2023,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_291",
+      "year": 2021,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_292",
+      "year": 2023,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_301",
+      "year": 2021,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_323",
+      "year": 2023,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_327",
+      "year": 2021,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_328",
+      "year": 2021,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_332",
+      "year": 2021,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_334",
+      "year": 2021,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_347",
+      "year": 2021,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_347",
+      "year": 2023,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_348",
+      "year": 2021,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_348",
+      "year": 2023,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_382",
+      "year": 2023,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_383",
+      "year": 2023,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_394",
+      "year": 2023,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_397",
+      "year": 2023,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_400",
+      "year": 2023,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_429",
+      "year": 2022,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_511",
+      "year": 2021,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_548",
+      "year": 2021,
+      "reasons": [
+        "missing_features"
+      ]
+    },
+    {
+      "field_id": "barc_571",
+      "year": 2021,
+      "reasons": [
+        "missing_features"
+      ]
+    }
+  ],
   "folds": [],
   "features": [
     "ndvi_peak",
@@ -21,5 +595,164 @@
     "max_gap_days"
   ],
   "calibration": "not performed; probabilities uncalibrated, reliability unproven",
+  "label_summary": {
+    "n_rows": 44,
+    "n_fields": 34,
+    "class_counts": {
+      "grain": 32,
+      "silage": 12
+    },
+    "by_year": {
+      "2021": {
+        "grain": 14,
+        "silage": 4
+      },
+      "2022": {
+        "grain": 3,
+        "silage": 4
+      },
+      "2023": {
+        "grain": 15,
+        "silage": 4
+      }
+    }
+  },
+  "label_fold_matched_count": 44,
+  "farm_group_check": {
+    "status": "checked",
+    "n_fields": 83,
+    "n_labeled_farms": 5,
+    "farms_crossing_folds": [],
+    "notes": "Grouping metadata only; farm_group is never a model feature."
+  },
+  "planned_folds": [
+    {
+      "fold_id": "0",
+      "n_train": 32,
+      "n_test": 12,
+      "train_class_counts": {
+        "grain": 21,
+        "silage": 11
+      },
+      "test_class_counts": {
+        "grain": 11,
+        "silage": 1
+      },
+      "test_n_fields": 10,
+      "test_farm_groups": [
+        "22358"
+      ],
+      "warnings": []
+    },
+    {
+      "fold_id": "1",
+      "n_train": 42,
+      "n_test": 2,
+      "train_class_counts": {
+        "grain": 30,
+        "silage": 12
+      },
+      "test_class_counts": {
+        "grain": 2,
+        "silage": 0
+      },
+      "test_n_fields": 2,
+      "test_farm_groups": [
+        "22359"
+      ],
+      "warnings": [
+        "Test truth lacks a class: macro F1 undefined; silage recall null if no true silage."
+      ]
+    },
+    {
+      "fold_id": "2",
+      "n_train": 19,
+      "n_test": 25,
+      "train_class_counts": {
+        "grain": 18,
+        "silage": 1
+      },
+      "test_class_counts": {
+        "grain": 14,
+        "silage": 11
+      },
+      "test_n_fields": 19,
+      "test_farm_groups": [
+        "22380"
+      ],
+      "warnings": [
+        "Fewer than 2 training rows in a class; unreliable small-sample learning; no calibration."
+      ]
+    },
+    {
+      "fold_id": "3",
+      "n_train": 40,
+      "n_test": 4,
+      "train_class_counts": {
+        "grain": 28,
+        "silage": 12
+      },
+      "test_class_counts": {
+        "grain": 4,
+        "silage": 0
+      },
+      "test_n_fields": 2,
+      "test_farm_groups": [
+        "22381"
+      ],
+      "warnings": [
+        "Test truth lacks a class: macro F1 undefined; silage recall null if no true silage."
+      ]
+    },
+    {
+      "fold_id": "4",
+      "n_train": 43,
+      "n_test": 1,
+      "train_class_counts": {
+        "grain": 31,
+        "silage": 12
+      },
+      "test_class_counts": {
+        "grain": 1,
+        "silage": 0
+      },
+      "test_n_fields": 1,
+      "test_farm_groups": [
+        "22854"
+      ],
+      "warnings": [
+        "Test truth lacks a class: macro F1 undefined; silage recall null if no true silage."
+      ]
+    }
+  ],
+  "input_provenance": {
+    "mode": "git_snapshot",
+    "sources": [
+      {
+        "requested_ref": "df7ce8cd63039e90de7ca78ba95f4f3259ee15c5",
+        "commit": "df7ce8cd63039e90de7ca78ba95f4f3259ee15c5",
+        "present_files": [
+          "data/processed/core/labels.csv",
+          "data/processed/core/validation_folds.csv",
+          "data/processed/core/fields.geojson"
+        ],
+        "missing_files": []
+      },
+      {
+        "requested_ref": "e107fea4a539a6a9f973263f6a1be23158438304",
+        "commit": "e107fea4a539a6a9f973263f6a1be23158438304",
+        "present_files": [
+          "data/processed/satellite/features.csv"
+        ],
+        "missing_files": []
+      }
+    ]
+  },
+  "input_sha256": {
+    "core/labels.csv": "b7c453f7535eca3fea4477bd4861864d5912e47c1330be7c67588d8c94185f0a",
+    "core/validation_folds.csv": "a846206c02b3e53f57b997893ea5c2a730411fb7ea91863f5f96cb47ce878ca5",
+    "core/fields.geojson": "0ec8c03cbf78ee2dbadc79eb0b43604126e82ecbb2a96710f790574214e252de",
+    "satellite/features.csv": "7ac9efe2d420704839952e0be3a51633d3bb7ef66af7326810a34d82759ac3bf"
+  },
   "eligible_count": 0
 }

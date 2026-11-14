@@ -13,6 +13,6 @@
   "confusion_matrix": null,
   "notes": [
     "Uncalibrated exploratory BARC baseline; no probability reliability claim.",
-    "Blocked by missing files or schema errors; see merge_report.json."
+    "No eligible labeled feature rows; see exclusions in merge_report.json."
   ]
 }

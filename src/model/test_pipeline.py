@@ -4,7 +4,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
-from src.model.pipeline import FEATURES, SCHEMAS, metrics, run, write_csv
+from src.model.pipeline import FEATURES, SCHEMAS, metrics, run, write_csv, write_json
 
 
 class ContractTests(unittest.TestCase):
@@ -63,6 +63,32 @@ class ContractTests(unittest.TestCase):
         self.assertEqual(len(audit['exclusions']), 2)
         self.assertEqual(len(audit['unmatched']), 1)
 
+    def test_farm_leakage_rejected_before_training(self):
+        self.fixture()
+        fields = [dict(type='Feature', properties=dict(field_id=f'barc_internal_{i:03d}', farm_group='same_farm'), geometry=None) for i in range(12)]
+        write_json(self.data / 'core/fields.geojson', dict(type='FeatureCollection', features=fields))
+        self.assertEqual(run(self.data, self.out, self.report, train=True), 2)
+        audit = json.loads((self.report / 'merge_report.json').read_text())
+        self.assertEqual(audit['farm_group_check']['status'], 'failed')
+        self.assertEqual(audit['label_fold_matched_count'], 24)
+        self.assertEqual(audit['label_summary']['n_fields'], 12)
+        self.assertEqual(len(audit['planned_folds']), 3)
+        self.assertEqual(json.loads((self.out / 'metrics.json').read_text())['status'], 'pending')
+
+    def test_farm_plan_and_unknown_feature_id(self):
+        _, _, features = self.fixture()
+        fields = [dict(type='Feature', properties=dict(field_id=f'barc_internal_{i:03d}', farm_group=f'farm_{i % 3}'), geometry=None) for i in range(12)]
+        write_json(self.data / 'core/fields.geojson', dict(type='FeatureCollection', features=fields))
+        self.assertEqual(run(self.data, self.out, self.report), 0)
+        audit = json.loads((self.report / 'merge_report.json').read_text())
+        self.assertEqual(audit['farm_group_check']['n_labeled_farms'], 3)
+        self.assertTrue(all(len(f['test_farm_groups']) == 1 for f in audit['planned_folds']))
+        features[0]['field_id'] = 'barc_unknown'
+        write_csv(self.data / 'satellite/features.csv', SCHEMAS['features'], features)
+        self.assertEqual(run(self.data, self.out, self.report, train=True), 2)
+        audit = json.loads((self.report / 'merge_report.json').read_text())
+        self.assertTrue(any('barc_unknown' in e for e in audit['errors']))
+
     def test_undefined_metrics(self):
         m = metrics([0, 0], [.1, .2])
         for key in ('macro_f1', 'silage_precision', 'silage_recall'):
@@ -90,6 +116,17 @@ class ContractTests(unittest.TestCase):
         self.assertTrue(all(0 <= float(r['p_silage']) <= 1 for r in rows))
         self.assertEqual(json.loads((self.out / 'metrics.json').read_text())['n_evaluated'], 24)
         self.assertTrue(all(r['fold_id'] == '' for r in rows if r['prediction_role'] == 'inference'))
+
+    def test_extra_feature_columns_cannot_replace_truth(self):
+        _, _, features = self.fixture()
+        for row in features:
+            row['label'] = 'grain'
+            row['fold_id'] = 'untrusted_extra'
+        write_csv(self.data / 'satellite/features.csv', [*SCHEMAS['features'], 'label', 'fold_id'], features)
+        self.assertEqual(run(self.data, self.out, self.report, train=True), 0)
+        result = json.loads((self.out / 'metrics.json').read_text())
+        self.assertEqual(result['class_counts'], {'grain': 12, 'silage': 12})
+        self.assertEqual(result['n_evaluated'], 24)
 
     def test_missing_training_class_abstains(self):
         labels, _, _ = self.fixture()

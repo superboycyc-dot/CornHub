@@ -2,6 +2,7 @@
 import argparse
 import calendar
 import csv
+import hashlib
 import json
 import math
 from pathlib import Path
@@ -120,12 +121,87 @@ def load(path, kind, audit):
     return indexed
 
 
-def run(root, out, report, train=False, inference=False):
+def class_counts(rows):
+    return {c: sum(r['label'] == c for r in rows) for c in ('grain', 'silage')}
+
+
+def inspect_core(root, labels, folds, features, audit):
+    """Inspect assigned folds before satellite coverage removes any rows."""
+    audit['label_summary'] = dict(n_rows=len(labels), n_fields=len({k[0] for k in labels}),
+                                 class_counts=class_counts(labels.values()),
+                                 by_year={str(year): class_counts([r for r in labels.values() if r['year'] == year])
+                                          for year in sorted({k[1] for k in labels})})
+    audit['label_fold_matched_count'] = len(set(labels) & set(folds))
+    path = root / 'core/fields.geojson'
+    groups = {}
+    audit['farm_group_check'] = dict(status='not_available', notes='fields.geojson with farm_group not supplied')
+    if path.exists():
+        try:
+            data = json.loads(path.read_text(encoding='utf-8'))
+            if data.get('type') != 'FeatureCollection':
+                raise ValueError('not a FeatureCollection')
+            fields = {}
+            for feature in data['features']:
+                props = feature['properties']
+                fid = props['field_id']
+                if fid in fields:
+                    raise ValueError(f'duplicate field_id {fid}')
+                fields[fid] = props
+                if 'farm_group' in props:
+                    if not isinstance(props['farm_group'], str) or not props['farm_group'].strip():
+                        raise ValueError(f'invalid farm_group for {fid}')
+                    groups[fid] = props['farm_group']
+            for fid, year in sorted(set(labels) | set(folds) | set(features)):
+                if fid not in fields:
+                    audit['errors'].append(f'core key has no field: {fid}/{year}')
+            if groups:
+                assigned = {}
+                for (fid, year), row in folds.items():
+                    if fid not in groups:
+                        audit['errors'].append(f'fold key has no farm_group: {fid}/{year}')
+                        continue
+                    group = groups[fid]
+                    assigned.setdefault(group, set()).add(row['fold_id'])
+                leaked = sorted(g for g, ids in assigned.items() if len(ids) > 1)
+                if leaked:
+                    audit['errors'].append(f'farm groups cross folds: {leaked}')
+                audit['farm_group_check'] = dict(status='failed' if leaked or any(fid not in groups for fid, _ in folds) else 'checked',
+                                                 n_fields=len(fields), n_labeled_farms=len(assigned),
+                                                 farms_crossing_folds=leaked,
+                                                 notes='Grouping metadata only; farm_group is never a model feature.')
+        except (ValueError, KeyError, TypeError) as exc:
+            audit['errors'].append(f'fields.geojson: {exc}')
+    audit['planned_folds'] = []
+    for fold in sorted({r['fold_id'] for r in folds.values()}):
+        testing = [r for k, r in labels.items() if k in folds and folds[k]['fold_id'] == fold]
+        training = [r for k, r in labels.items() if k in folds and folds[k]['fold_id'] != fold]
+        warnings = []
+        if any(v == 0 for v in class_counts(testing).values()):
+            warnings.append('Test truth lacks a class: macro F1 undefined; silage recall null if no true silage.')
+        if min(class_counts(training).values(), default=0) < 2:
+            warnings.append('Fewer than 2 training rows in a class; unreliable small-sample learning; no calibration.')
+        audit['planned_folds'].append(dict(fold_id=fold, n_train=len(training), n_test=len(testing),
+                                          train_class_counts=class_counts(training), test_class_counts=class_counts(testing),
+                                          test_n_fields=len({r['field_id'] for r in testing}),
+                                          test_farm_groups=sorted({groups[r['field_id']] for r in testing if r['field_id'] in groups}),
+                                          warnings=warnings))
+    return groups
+
+
+def run(root, out, report, train=False, inference=False, provenance=None):
     audit = dict(input_rows={}, missing_files=[], errors=[], duplicate_keys=[], matched_count=0,
                  unmatched=[], exclusions=[], folds=[], features=FEATURES, calibration='not performed; probabilities uncalibrated, reliability unproven')
     labels = load(root / 'core/labels.csv', 'labels', audit)
     folds = load(root / 'core/validation_folds.csv', 'folds', audit)
     features = load(root / 'satellite/features.csv', 'features', audit)
+    inspect_core(root, labels, folds, features, audit)
+    audit['input_provenance'] = provenance or {'mode': 'filesystem'}
+    audit['input_sha256'] = {}
+    for relative in ('core/labels.csv', 'core/validation_folds.csv', 'core/fields.geojson', 'satellite/features.csv'):
+        path = root / relative
+        if path.exists():
+            audit['input_sha256'][relative] = hashlib.sha256(path.read_bytes()).hexdigest()
+    audit['missing_files'] = [str(Path(p).relative_to(root)) for p in audit['missing_files']]
     by_field = {}
     for key, row in folds.items():
         if key[0] in by_field and by_field[key[0]] != row['fold_id']:
@@ -146,17 +222,18 @@ def run(root, out, report, train=False, inference=False):
         if reasons:
             audit['exclusions'].append(dict(field_id=key[0], year=key[1], reasons=reasons))
         else:
-            eligible.append({**label, **features[key], **folds[key]})
+            eligible.append({**label, **{c: features[key][c] for c in SCHEMAS['features']},
+                             'fold_id': folds[key]['fold_id']})
     audit['matched_count'] = len(set(labels) & set(features) & set(folds))
     audit['eligible_count'] = len(eligible)
     notes = ['Uncalibrated exploratory BARC baseline; no probability reliability claim.']
     predictions, truth, probs, rule_y, rule_p = [], [], [], [], []
     if audit['errors'] or audit['missing_files']:
         notes.append('Blocked by missing files or schema errors; see merge_report.json.')
+    elif not eligible:
+        notes.append('No eligible labeled feature rows; see exclusions in merge_report.json.')
     elif not train:
         notes.append('Interface-only run; pass --train after real data and authorized validation splits are ready.')
-    elif not eligible:
-        notes.append('No eligible labeled feature rows.')
     else:
         import numpy as np
         from sklearn.ensemble import RandomForestClassifier
@@ -178,7 +255,7 @@ def run(root, out, report, train=False, inference=False):
         for fold in sorted({r['fold_id'] for r in eligible}):
             training = [r for r in eligible if r['fold_id'] != fold]
             testing = [r for r in eligible if r['fold_id'] == fold]
-            entry = dict(fold_id=fold, n_train=len(training), n_test=len(testing), train_class_counts={c: sum(r['label'] == c for r in training) for c in ('grain', 'silage')})
+            entry = dict(fold_id=fold, n_train=len(training), n_test=len(testing), train_class_counts=class_counts(training), test_class_counts=class_counts(testing))
             if len({r['label'] for r in training}) < 2:
                 entry['reason'] = 'training fold lacks a class; no OOF prediction'
                 audit['exclusions'].extend(dict(field_id=r['field_id'], year=r['year'], reasons=[entry['reason']]) for r in testing)
@@ -205,6 +282,8 @@ def run(root, out, report, train=False, inference=False):
     rule['brier_score'] = None
     write_json(report / 'harvest_rule_metrics.json', rule)
     write_json(report / 'merge_report.json', audit)
+    write_csv(report / 'exclusions.csv', ['field_id', 'year', 'reason'],
+              [dict(field_id=r['field_id'], year=r['year'], reason=';'.join(r['reasons'])) for r in audit['exclusions']])
     return 2 if audit['errors'] else 0
 
 
