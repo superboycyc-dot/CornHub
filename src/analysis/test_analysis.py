@@ -8,7 +8,8 @@ import tempfile
 import unittest
 from pathlib import Path
 from analysis import (analyze, read_csv, read_fields, simulate_review, ContractError,
-                      FEATURE_COLUMNS, PREDICTION_COLUMNS)
+                      FEATURE_COLUMNS, PREDICTION_COLUMNS, cohort_ids)
+from validate_handoff import validate_core
 
 
 def fields():
@@ -27,6 +28,47 @@ def predictions(role='oof'):
 
 
 class AnalysisTests(unittest.TestCase):
+    def test_explicit_annual_and_smoke_cohorts(self):
+        labels = [{'field_id': 'barc_001', 'year': 2022},
+                  {'field_id': 'barc_002', 'year': 2023}]
+        chosen = cohort_ids(fields(), labels, year=2022, cohort='labeled')
+        summary, queue, _, audit, _ = analyze(fields(), features(), predictions(), year=2022,
+            prediction_role='oof', selected_ids=chosen, cohort='labeled')
+        self.assertEqual(summary['total_area_ha'], 10)
+        self.assertEqual(summary['expected_silage_area_ha'], 8)
+        self.assertEqual(summary['scope']['field_ids'], ['barc_001'])
+        self.assertEqual(audit['excluded_outside_cohort_prediction_ids'], ['barc_002'])
+        self.assertEqual(audit['excluded_other_year_or_role_prediction_rows'], 0)
+        smoke = {'field_id': 'barc_001', 'year': 2022}
+        self.assertEqual(cohort_ids(fields(), labels, year=2022, cohort='smoke', smoke=smoke), chosen)
+        with self.assertRaises(ContractError):
+            cohort_ids(fields(), labels, year=2023, cohort='smoke', smoke=smoke)
+        with self.assertRaises(ContractError):
+            analyze(fields(), features(), predictions(), year=2022, prediction_role='oof', selected_ids=['barc_unknown'])
+
+    def test_A_handoff_farm_folds_and_smoke(self):
+        inventory = [{**r, 'farm_group': 'farm_a'} for r in fields()]
+        labels = [{'field_id': 'barc_001', 'year': 2022, 'label': 'grain', 'source_dataset_id': 'test-only'},
+                  {'field_id': 'barc_002', 'year': 2022, 'label': 'silage', 'source_dataset_id': 'test-only'}]
+        folds = [{'field_id': r['field_id'], 'year': 2022, 'fold_id': '0'} for r in labels]
+        smoke = {'field_id': 'barc_001', 'year': 2022, 'window_start': '2022-04-01',
+                 'window_end_exclusive': '2022-12-01', 'source_dataset_id': 'test-only'}
+        result = validate_core(inventory, labels, folds, smoke)
+        self.assertEqual(result['annual_labeled_cohorts']['2022']['selected_labeled_area_ha'], 30)
+        with self.assertRaises(ContractError):
+            validate_core(inventory, labels, [{**r, 'fold_id': str(i)} for i, r in enumerate(folds)], smoke)
+        with self.assertRaises(ContractError):
+            validate_core(inventory, labels, folds[:-1], smoke)
+        with self.assertRaises(ContractError):
+            validate_core(inventory, labels, folds, {**smoke, 'field_id': 'barc_002'})
+
+    def test_cohort_cannot_hide_duplicates_or_orphans(self):
+        for pred in [predictions()+[predictions()[1]], predictions()+[
+                {**predictions()[1], 'field_id': 'barc_unknown', 'year': 2023}]]:
+            with self.assertRaises(ContractError):
+                analyze(fields(), features(), pred, year=2022, prediction_role='oof',
+                        selected_ids=['barc_001'], cohort='smoke')
+
     def run_analysis(self, f=None, p=None, year=2022, role='oof'):
         return analyze(fields(), features() if f is None else f, predictions() if p is None else p, year=year, prediction_role=role)
 

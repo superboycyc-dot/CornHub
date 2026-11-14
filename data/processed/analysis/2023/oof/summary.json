@@ -1,0 +1,44 @@
+{
+  "status": "pending",
+  "year": 2023,
+  "scope": {
+    "dataset": "BARC",
+    "field_ids": [
+      "barc_1",
+      "barc_230",
+      "barc_231",
+      "barc_238",
+      "barc_24",
+      "barc_248",
+      "barc_251",
+      "barc_254",
+      "barc_286",
+      "barc_288",
+      "barc_292",
+      "barc_323",
+      "barc_347",
+      "barc_348",
+      "barc_382",
+      "barc_383",
+      "barc_394",
+      "barc_397",
+      "barc_400"
+    ],
+    "cohort": "labeled",
+    "representative_of_county_or_state": false
+  },
+  "prediction_role": "oof",
+  "total_area_ha": 123.08976508,
+  "covered_area_ha": 0.0,
+  "coverage_fraction": 0.0,
+  "expected_silage_area_ha": null,
+  "expected_grain_area_ha": null,
+  "economic_scenario": null,
+  "notes": [
+    "Denominator is the explicitly selected cohort, not verified annual BARC/county/state corn acreage.",
+    "All 83 boundaries are not assumed to be corn every year. Labeled and smoke cohorts are selected samples, not a census.",
+    "Areas with predictions include low-quality observations; those records are excluded from review ranking and listed in data_needed.csv.",
+    "Missing predictions are not grain. Quality is not model accuracy. No interval or review benefit is claimed.",
+    "Missing economic inputs: regional/year-matched crop yields, prices, units, price basis, conversions and sources."
+  ]
+}

@@ -1,22 +1,58 @@
-Command: python3 -m unittest discover -s src/analysis -p test_*.py -v
-test_cli_pending_and_required_selectors (test_analysis.AnalysisTests) ... ok
-test_cli_reads_and_merges_complete_files (test_analysis.AnalysisTests) ... ok
-test_computation_api_rejects_bad_numbers (test_analysis.AnalysisTests) ... ok
-test_csv_rejects_nonfinite_and_out_of_range_probability (test_analysis.AnalysisTests) ... ok
-test_duplicates_and_orphans_fail (test_analysis.AnalysisTests) ... ok
-test_empty_inventory_and_missing_features (test_analysis.AnalysisTests) ... ok
-test_pending_absent_and_empty_predictions (test_analysis.AnalysisTests) ... ok
-test_quality_not_confidence (test_analysis.AnalysisTests) ... ok
-test_review_complete_budget_and_seed (test_analysis.AnalysisTests) ... ok
-test_string_id_and_geojson_area_validation (test_analysis.AnalysisTests) ... ok
-test_tie_break_and_probability_endpoints (test_analysis.AnalysisTests) ... ok
-test_weighted_area_and_unknown_not_grain (test_analysis.AnalysisTests) ... ok
-test_year_and_role_separation (test_analysis.AnalysisTests) ... ok
+Actual verification (2026-11-14 UTC)
 
-----------------------------------------------------------------------
-Ran 13 tests in 0.133s
+Command: python3 -m unittest discover -s src/analysis -p 'test_*.py' -v
+Result: 16 tests passed (including cohort selection/exclusions, farm-fold leakage checks,
+CSV integration, pending handling, weighted area, duplicates, probability boundaries,
+quality separation and fixed-seed equal-budget review simulation).
 
-OK
+Actual integration invoked src/analysis/validate_handoff.py with --core-root,
+--features, --predictions and --acceptance pointed at the staged read-only GitHub
+snapshots, and these exact source selectors:
+--a-ref df7ce8cd63039e90de7ca78ba95f4f3259ee15c5
+--b-ref e107fea4a539a6a9f973263f6a1be23158438304
+--c-ref 6a799c1d4f3d0103c105d19cf880b52c68140901
+--prediction-role oof
 
-Command: python3 src/analysis/analysis.py --year 2022 --prediction-role oof --review-budget 3
-{"output_dir": "data/processed/analysis", "status": "pending", "missing_files": ["fields.geojson", "features.csv", "predictions.csv"]}
+Result: 83 fields, 44 labels on 34 fields, 44 matching folds, 5 farms, no
+field/farm fold crossing. Four A core checksums match the acceptance report.
+B feature rows=0; C prediction rows=0. Per-field missing reasons are preserved;
+review queues are header-only and crop-area/economic estimates are null.
+
+[
+  {
+    "cohort": "smoke",
+    "year": 2021,
+    "prediction_role": "oof",
+    "n_fields": 1,
+    "status": "pending",
+    "selected_area_ha": 6.63739333,
+    "covered_area_ha": 0.0
+  },
+  {
+    "cohort": "labeled",
+    "year": 2021,
+    "prediction_role": "oof",
+    "n_fields": 18,
+    "status": "pending",
+    "selected_area_ha": 130.11089599,
+    "covered_area_ha": 0.0
+  },
+  {
+    "cohort": "labeled",
+    "year": 2022,
+    "prediction_role": "oof",
+    "n_fields": 7,
+    "status": "pending",
+    "selected_area_ha": 44.6508102,
+    "covered_area_ha": 0.0
+  },
+  {
+    "cohort": "labeled",
+    "year": 2023,
+    "prediction_role": "oof",
+    "n_fields": 19,
+    "status": "pending",
+    "selected_area_ha": 123.08976508,
+    "covered_area_ha": 0.0
+  }
+]

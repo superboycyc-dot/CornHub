@@ -156,7 +156,28 @@ def select(rows, year, role=None):
     return [r for r in rows or [] if r['year'] == year and (role is None or r['prediction_role'] == role)]
 
 
-def analyze(fields, features, predictions, *, year, prediction_role):
+def cohort_ids(fields, labels, *, year, cohort, smoke=None):
+    """Select an explicit annual analysis cohort without generating IDs or labels."""
+    if cohort == 'inventory':
+        return None
+    if fields is None or labels is None:
+        raise ContractError('labeled/smoke cohort requires A fields and labels')
+    unique(labels, ['field_id', 'year'], 'labels')
+    inventory = {row['field_id'] for row in fields}
+    if any(row['field_id'] not in inventory for row in labels):
+        raise ContractError('labels contain orphan field IDs')
+    annual = {row['field_id'] for row in labels if row['year'] == year}
+    if cohort == 'labeled':
+        return sorted(annual)
+    if cohort != 'smoke' or not isinstance(smoke, dict):
+        raise ContractError('smoke cohort requires A smoke_sample.json')
+    if smoke.get('year') != year or smoke.get('field_id') not in annual:
+        raise ContractError('smoke sample must match selected year and a real label')
+    return [smoke['field_id']]
+
+
+def analyze(fields, features, predictions, *, year, prediction_role, selected_ids=None,
+            cohort='inventory'):
     if isinstance(year, bool) or not isinstance(year, int) or year not in YEARS or prediction_role not in ROLES:
         raise ContractError('explicit year (2021-2023) and prediction_role (oof/inference) required')
     if fields is not None:
@@ -179,14 +200,33 @@ def analyze(fields, features, predictions, *, year, prediction_role):
             row['p_silage'] = number(row['p_silage'], 'p_silage', lo=0, hi=1)
     chosen_features = select(features, year)
     chosen_predictions = select(predictions, year, prediction_role)
-    inventory = {r['field_id']: r for r in fields or []}
+    full_inventory = {r['field_id']: r for r in fields or []}
+    if selected_ids is not None:
+        if len(selected_ids) != len(set(selected_ids)) or set(selected_ids) - full_inventory.keys():
+            raise ContractError('selected cohort has duplicate or unknown field IDs')
+    inventory = {key: row for key, row in full_inventory.items()
+                 if selected_ids is None or key in set(selected_ids)}
+    unknown_features = {r['field_id'] for r in features or []} - full_inventory.keys()
+    unknown_predictions = {r['field_id'] for r in predictions or []} - full_inventory.keys()
+    if fields is not None and (unknown_features or unknown_predictions):
+        raise ContractError('orphan IDs cannot be merged: ' + json.dumps({
+            'unmatched_feature_ids': sorted(unknown_features),
+            'unmatched_prediction_ids': sorted(unknown_predictions)}))
+    outside_features = sorted({r['field_id'] for r in chosen_features} - inventory.keys())
+    outside_predictions = sorted({r['field_id'] for r in chosen_predictions} - inventory.keys())
+    chosen_features = [r for r in chosen_features if r['field_id'] in inventory]
+    chosen_predictions = [r for r in chosen_predictions if r['field_id'] in inventory]
     feature_map = {r['field_id']: r for r in chosen_features}
     prediction_map = {r['field_id']: r for r in chosen_predictions}
     audit = {'inputs': {'fields': None if fields is None else len(fields), 'features': None if features is None else len(features), 'predictions': None if predictions is None else len(predictions)},
              'year': year, 'prediction_role': prediction_role, 'duplicate_keys': [],
+             'cohort': cohort, 'selected_field_rows': len(inventory),
+             'excluded_inventory_ids': sorted(full_inventory.keys() - inventory.keys()),
+             'excluded_outside_cohort_feature_ids': outside_features,
+             'excluded_outside_cohort_prediction_ids': outside_predictions,
              'selected_feature_rows': len(chosen_features), 'selected_prediction_rows': len(chosen_predictions),
-             'excluded_other_year_feature_rows': len(features or []) - len(chosen_features),
-             'excluded_other_year_or_role_prediction_rows': len(predictions or []) - len(chosen_predictions),
+             'excluded_other_year_feature_rows': len(features or []) - len(select(features, year)),
+             'excluded_other_year_or_role_prediction_rows': len(predictions or []) - len(select(predictions, year, prediction_role)),
              'unmatched_feature_ids': sorted(feature_map.keys() - inventory.keys()),
              'unmatched_prediction_ids': sorted(prediction_map.keys() - inventory.keys()),
              'missing_feature_ids': sorted(inventory.keys() - feature_map.keys()),
@@ -229,12 +269,14 @@ def analyze(fields, features, predictions, *, year, prediction_role):
     silage = math.fsum(r['area_ha'] * r['p_silage'] for r in covered) if covered else None
     grain = math.fsum(r['area_ha'] * (1-r['p_silage']) for r in covered) if covered else None
     summary = {'status': 'computed' if covered else 'pending', 'year': year,
-               'scope': {'dataset': 'BARC', 'field_ids': sorted(inventory), 'representative_of_county_or_state': False},
+               'scope': {'dataset': 'BARC', 'field_ids': sorted(inventory), 'cohort': cohort,
+                         'representative_of_county_or_state': False},
                'prediction_role': prediction_role, 'total_area_ha': total, 'covered_area_ha': covered_area,
                'coverage_fraction': covered_area/total if total else None,
                'expected_silage_area_ha': silage, 'expected_grain_area_ha': grain,
                'economic_scenario': None,
-               'notes': ['Denominator is the supplied field inventory, not verified county/state corn acreage.',
+               'notes': ['Denominator is the explicitly selected cohort, not verified annual BARC/county/state corn acreage.',
+                         'All 83 boundaries are not assumed to be corn every year. Labeled and smoke cohorts are selected samples, not a census.',
                          'Areas with predictions include low-quality observations; those records are excluded from review ranking and listed in data_needed.csv.',
                          'Missing predictions are not grain. Quality is not model accuracy. No interval or review benefit is claimed.',
                          'Missing economic inputs: regional/year-matched crop yields, prices, units, price basis, conversions and sources.']}
@@ -318,6 +360,8 @@ def main():
     parser.add_argument('--predictions', type=Path, default=Path('data/processed/model/predictions.csv'))
     parser.add_argument('--labels', type=Path, default=Path('data/processed/core/labels.csv'))
     parser.add_argument('--folds', type=Path, default=Path('data/processed/core/validation_folds.csv'))
+    parser.add_argument('--cohort', choices=['inventory', 'labeled', 'smoke'], default='inventory')
+    parser.add_argument('--smoke-sample', type=Path, default=Path('data/processed/core/smoke_sample.json'))
     parser.add_argument('--review-budget', type=int)
     parser.add_argument('--seed', type=int, default=42)
     parser.add_argument('--random-repeats', type=int, default=200)
@@ -327,10 +371,13 @@ def main():
         fields = read_fields(args.fields)
         features = read_csv(args.features, FEATURE_COLUMNS, 'features')
         predictions = read_csv(args.predictions, PREDICTION_COLUMNS, 'predictions')
-        summary, queue, missing, audit, covered = analyze(fields, features, predictions, year=args.year, prediction_role=args.prediction_role)
+        labels = read_csv(args.labels, LABEL_COLUMNS, 'labels') if args.cohort != 'inventory' or args.review_budget is not None else None
+        smoke = load_json(args.smoke_sample) if args.cohort == 'smoke' else None
+        selected = cohort_ids(fields, labels, year=args.year, cohort=args.cohort, smoke=smoke)
+        summary, queue, missing, audit, covered = analyze(fields, features, predictions, year=args.year,
+            prediction_role=args.prediction_role, selected_ids=selected, cohort=args.cohort)
         simulation = None
         if args.review_budget is not None:
-            labels = read_csv(args.labels, LABEL_COLUMNS, 'labels')
             folds = read_csv(args.folds, ['field_id', 'year', 'fold_id'], 'folds')
             simulation = simulate_review(covered, queue, labels, folds, budget=args.review_budget, seed=args.seed, random_repeats=args.random_repeats)
         # Compute and validate everything before changing any published output.

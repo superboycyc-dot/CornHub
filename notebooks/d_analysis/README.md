@@ -3,7 +3,7 @@
 Run from the repository root:
 
 ```sh
-python3 src/analysis/analysis.py --year 2022 --prediction-role oof --review-budget 3
+python3 src/analysis/analysis.py --year 2021 --prediction-role oof --cohort smoke --review-budget 1
 ```
 
 The tested functions live in src/analysis/analysis.py; no notebook kernel or

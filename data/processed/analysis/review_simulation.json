@@ -1,6 +1,6 @@
 {
   "status": "pending",
-  "budget": 3,
+  "budget": 1,
   "seed": 42,
   "random_repeats": 200,
   "n_evaluated": 0,
