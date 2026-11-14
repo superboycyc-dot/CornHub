@@ -1,0 +1,18 @@
+{
+  "status": "pending",
+  "prediction_role": "oof",
+  "n_evaluated": 0,
+  "class_counts": {
+    "grain": 0,
+    "silage": 0
+  },
+  "macro_f1": null,
+  "silage_precision": null,
+  "silage_recall": null,
+  "brier_score": null,
+  "confusion_matrix": null,
+  "notes": [
+    "Fixed rule: drop_doy <= 258 predicts silage; missing drop day abstains.",
+    "Hard decisions only; Brier is not a calibrated-probability assessment. Same successful OOF cohort, subset with drop_doy."
+  ]
+}

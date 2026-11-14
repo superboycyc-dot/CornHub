@@ -1,0 +1,25 @@
+{
+  "input_rows": {},
+  "missing_files": [
+    "data/processed/core/labels.csv",
+    "data/processed/core/validation_folds.csv",
+    "data/processed/satellite/features.csv"
+  ],
+  "errors": [],
+  "duplicate_keys": [],
+  "matched_count": 0,
+  "unmatched": [],
+  "exclusions": [],
+  "folds": [],
+  "features": [
+    "ndvi_peak",
+    "peak_doy",
+    "max_drop_per_day",
+    "drop_doy",
+    "ndvi_late_mean",
+    "valid_obs_count",
+    "max_gap_days"
+  ],
+  "calibration": "not performed; probabilities uncalibrated, reliability unproven",
+  "eligible_count": 0
+}

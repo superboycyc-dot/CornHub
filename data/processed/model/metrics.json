@@ -1,0 +1,18 @@
+{
+  "status": "pending",
+  "prediction_role": "oof",
+  "n_evaluated": 0,
+  "class_counts": {
+    "grain": 0,
+    "silage": 0
+  },
+  "macro_f1": null,
+  "silage_precision": null,
+  "silage_recall": null,
+  "brier_score": null,
+  "confusion_matrix": null,
+  "notes": [
+    "Uncalibrated exploratory BARC baseline; no probability reliability claim.",
+    "Blocked by missing files or schema errors; see merge_report.json."
+  ]
+}

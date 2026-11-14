@@ -1,0 +1,2 @@
+source_dataset_id,organization,source_url,product_version,retrieved_at_utc,license,notes
+cornhub_team_contract,CornHub,https://github.com/superboycyc-dot/CornHub/blob/main/docs/team-contract.md,2026-11-14,,unknown,Interface contract only; A/B handoff data not yet present; no raw dataset redistributed
