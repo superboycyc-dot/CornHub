@@ -46,12 +46,13 @@ summary 必须与选择的 year 和 role 一致，直接显示 D 的数值、sco
 
 真实样本截图尚未完成：A/B/C/D 的合同文件当前全缺。数据到齐后运行同步并打开共同样本，核实来源后截图，存 `reports/e_web/real-sample.png`。不能用已有加州州级统计或测试夹具代替 BARC 真实样本。
 
-A 需要从已登录团队 JupyterLab 下载原件：
-https://hacktheharvest.farmgpu.net/anaheim04-8892/lab
+最新主线 `51d5989` 已包含官方材料，已同步到本地，无需再次手工下载：
 
-- `04_Evaluation/BARC_Corn.2021-2023.gpkg` → `data/raw/barc/BARC_Corn.2021-2023.gpkg`
-- `04_Evaluation/barc_fields_explorer.ipynb` → `data/raw/barc/barc_fields_explorer.ipynb`
-- `01_Challenge/challenge_statement.md` → `data/raw/barc/challenge_statement.md`
-- B 需要 `03_Geospatial_References/starter_notebook.ipynb`，建议交给 B 存 `notebooks/b_satellite/starter_notebook.ipynb`。
+- `04_Evaluation/BARC_Corn.2021-2023.gpkg`
+- `04_Evaluation/barc_fields_explorer.ipynb`
+- 根目录 `challenge_statement.md`
+- `03_Geospatial_References/sentinel-2_starter_notebook.ipynb`（实际文件名与合同示例不同）
 
-这些路径由对应负责人创建，本次 E 不修改它们。原件许可不明不提交公开仓库。E 应接 A 生成的 core 文件，不在前端从 GPKG 生成 ID/面积/标签。
+另有 `data/processed/barc_field_year_labels.csv`：列为原始 field_id、year、harvest_type、acres，不是合同的 core/labels.csv。E 不自行给原 ID 加前缀、不转换标签及面积；需 A 统一提供 core 与不可变 ID 映射，再由 B/C/D 按该 ID 交付。现有 notebook 原型不代表合同路径的数据已经生成。
+
+若其他电脑缺少这些文件，先 `git pull` 获取最新主线。仅当主线也没有时，才从 https://hacktheharvest.farmgpu.net/anaheim04-8892/lab 下载合同列出的原件，交给 A/B 保留上述实际路径。原件许可及训练/评估用途由 A 核实，E 不复制原件到公开数据目录。

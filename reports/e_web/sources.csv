@@ -1,3 +1,4 @@
 source_dataset_id,organization,source_url,product_version,retrieved_at_utc,license,notes
 cornhub_team_contract,CornHub,https://github.com/superboycyc-dot/CornHub/blob/b603997/docs/team-contract.md,b603997,2026-11-14T19:38:10Z,unknown,"本页面字段与 BARC 2021–2023 范围依据；无真实田块观测输入"
 cornhub_processed_inventory,CornHub,https://github.com/superboycyc-dot/CornHub/tree/b603997/data/processed,b603997,2026-11-14T19:38:10Z,unknown,"仅存在 usda_nass/corn_state_benchmarks_2025.csv；同步保留但不用于 BARC 页面"
+cornhub_latest_main,CornHub,https://github.com/superboycyc-dot/CornHub/tree/51d5989,51d5989,2026-11-14T19:40:00Z,unknown,"最终复查补充：官方原件已加入；processed 新增旧格式 BARC 标签和 California 年度参考；均未替代合同 core 输出"

@@ -1,6 +1,6 @@
 # 成员 E 第一阶段交付与验收
 
-负责人：E。分支：`work/e-web`。基线 `b603997`（main 的团队合同）。本轮仅新增 web 和 reports/e_web，无前端可沿用，无 AGENTS.md。没有公开部署、改动队友目录或根配置。
+负责人：E。分支：`work/e-web`。起始基线 `b603997`（main 的团队合同），交付前无冲突合入最新主线 `51d5989`。PR：https://github.com/superboycyc-dot/CornHub/pull/2 。本轮仅新增 web 和 reports/e_web，无前端可沿用，无 AGENTS.md；已补读新主线的协作、提交和官方挑战规则。没有公开部署、改动队友目录或根配置。
 
 交付：React + Vite + Leaflet 本地页面；重复执行的逐字节数据同步；README；输入检查与浏览器验收脚本；桌面和手机空状态截图；来源记录。
 
@@ -16,7 +16,7 @@
 
 ## 当前真实数据验收
 
-实际输入：`data/processed/usda_nass/corn_state_benchmarks_2025.csv` 已同步，未接入 BARC 视图。合同 core 4 文件、satellite 2 文件、model 2 文件、analysis 2 文件全缺。故真实边界数、匹配数和真实模型结果均无法验收，不报告为零田块或成功联通。
+实际输入：最新主线含 `barc_field_year_labels.csv`、`usda_nass/corn_state_benchmarks_2025.csv`、`usda_nass/california_corn_acreage_annual_reference_2012_2025.csv`，均原样同步。旧标签表的原始 ID/harvest_type/acres 不符合合同，未自行转换或接入 BARC 视图；州级统计也未接入。合同 core 4 文件、satellite 2 文件、model 2 文件、analysis 2 文件全缺。故真实边界数、匹配数和真实模型结果均无法验收，不报告为零田块或成功联通。
 
 页面显示尚未提供/缺测/未计算；读取失败显示具体文件和原因。边界未交付时无默认伪造样区。地图坐标按 GeoJSON 经度在前交由 Leaflet 转换，面积仅显示 A 的 area_ha。数据质量与模型概率单列；summary 使用 D 结果，不复制统计算法。不会混合 OOF 与 inference。
 
@@ -33,6 +33,6 @@
 |C|model/predictions.csv、metrics.json|p_silage、类别、role、模型版本、真实验证指标|
 |D|analysis/summary.json、review_queue.csv|选定年和 role 的 scope/面积/覆盖率/经济情景、原始核查顺序与理由|
 
-官方原件的准确下载位置与建议落盘位置见 `web/README.md`。由 A 核实官方使用限制、CRS、标签与许可；E 不生成 ID。由 B 按官方 notebook 提取真实观测。C 未训练维持空值，D 无参数维持经济情景 null。
+最新主线已包含官方 GPKG、explorer notebook、根目录 challenge_statement.md 和 sentinel-2_starter_notebook.ipynb，无需用户重复下载。实际路径见 `web/README.md`。由 A 核实官方使用限制、CRS、标签与许可；E 不生成 ID。由 B 按官方 notebook 提取真实观测。C 未训练维持空值，D 无参数维持经济情景 null。
 
 需要 A 处理的文档冲突：根 README 的加州 2022–2026/英亩/旧核查公式与新合同的 BARC 2021–2023/公顷规则不同。本次依用户要求遵循团队合同，未越权修改根文件。
