@@ -23,7 +23,7 @@ def feature_coverage(fields, features, summary):
         groups[rows[key]['quality_flag'] if key in rows else 'missing_features'].append(key)
     total = summary['total_area_ha']
     def area(keys):
-        return math.fsum(inventory[key]['area_ha'] for key in keys) if fields is not None else None
+        return math.fsum(inventory[key]['area_ha'] for key in keys) if fields is not None and total is not None else None
     def fraction(value):
         return value / total if total else None
     valid = [key for key, row in rows.items() if row['valid_obs_count'] > 0]
@@ -99,13 +99,30 @@ def main():
                             'Manual review assumes perfect whole-field label revelation; no field survey was performed.',
                             'An observed error increase is retained; no general ranking effectiveness is claimed.']}
         comparisons, sidecars = [], []
-        outputs = [args.output_root] + [args.output_root/str(y)/'oof' for y in sorted({r['year'] for r in labels})]
+        period = load_json(args.output_root/'period_status.json') if (args.output_root/'period_status.json').exists() else None
+        years = period['requested_years'] if period else sorted({r['year'] for r in labels})
+        outputs = [args.output_root] + [args.output_root/str(y)/'oof' for y in years]
         for out in outputs:
             summary = load_json(out/'summary.json')
             if summary['prediction_role'] != 'oof':
                 raise ContractError('inference cannot enter real review evaluation')
             coverage = feature_coverage(fields, features, summary)
             sidecars.append((out/'feature_coverage.json', coverage))
+            if summary['status'] == 'pending':
+                if out == args.output_root:
+                    continue
+                sim = load_json(out/'review_simulation.json')
+                pending = {'year': summary['year'], 'prediction_role': 'oof', 'status': 'pending',
+                    'budget': 3, 'seed': 42, 'random_repeats': 200, 'n_candidates': None,
+                    **{k: None for k in ['initial_absolute_error_ha', 'heuristic_absolute_error_ha',
+                        'random_absolute_error_median_ha', 'random_absolute_error_min_ha', 'random_absolute_error_max_ha']},
+                    'change_in_absolute_error_ha': None}
+                if sim['status'] != 'pending':
+                    raise ContractError('pending area scope cannot have evaluated review simulation')
+                comparisons.append(pending)
+                report['annual_checks'].append({**pending, 'area_conservation_and_rank_checked': False,
+                    'notes': summary['notes']})
+                continue
             year, ids = summary['year'], set(summary['scope']['field_ids'])
             rows = [r for r in predictions if r['prediction_role'] == 'oof' and r['year'] == year and r['field_id'] in ids]
             if len(rows) != len(ids):
@@ -115,7 +132,7 @@ def main():
             close(silage, summary['expected_silage_area_ha'])
             close(grain, summary['expected_grain_area_ha'])
             close(silage+grain, summary['covered_area_ha'])
-            if summary['scope']['cohort'] == 'smoke':
+            if out == args.output_root or summary['scope']['cohort'] == 'smoke':
                 continue
             ranked = sorted([r for r in rows if quality[(r['field_id'], year)] == 'usable'],
                 key=lambda r: (-areas[r['field_id']]*4*r['p_silage']*(1-r['p_silage']), r['field_id']))

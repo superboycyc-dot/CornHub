@@ -29,6 +29,34 @@ def predictions(role='oof'):
 
 
 class AnalysisTests(unittest.TestCase):
+    def test_2024_2025_missing_annual_cohort_is_unknown_not_zero(self):
+        for year in [2024, 2025]:
+            selected = cohort_ids(fields(), [{'field_id': 'barc_001', 'year': 2022}], year=year, cohort='labeled')
+            summary, queue, needed, audit, covered = analyze(fields(), features(), predictions(),
+                year=year, prediction_role='oof', selected_ids=selected, cohort='labeled')
+            self.assertEqual(summary['status'], 'pending')
+            self.assertEqual(summary['scope']['cohort_status'], 'pending_no_annual_cohort')
+            for key in ['total_area_ha', 'covered_area_ha', 'coverage_fraction',
+                        'expected_silage_area_ha', 'expected_grain_area_ha']:
+                self.assertIsNone(summary[key])
+            self.assertEqual((queue, needed, covered), ([], [], []))
+            self.assertIn('missing_annual_target_cohort', audit['blocking_reasons'])
+            coverage = feature_coverage(fields(), features(), summary)
+            self.assertIsNone(coverage['feature_matched_area_ha'])
+
+    def test_new_year_real_probabilities_remain_separate(self):
+        pred = [{**predictions()[0], 'year': 2024, 'p_silage': 0.6}]
+        feat = [{**features()[0], 'year': 2024}]
+        summary = analyze(fields(), feat, predictions()+pred, year=2024, prediction_role='oof',
+                          selected_ids=['barc_001'], cohort='labeled')[0]
+        self.assertEqual(summary['expected_silage_area_ha'], 6)
+        self.assertEqual(summary['expected_grain_area_ha'], 4)
+        next_year = analyze(fields(), feat, predictions()+pred, year=2025, prediction_role='oof',
+                            selected_ids=['barc_001'], cohort='labeled')[0]
+        self.assertEqual(next_year['covered_area_ha'], 0)
+        self.assertIsNone(next_year['expected_silage_area_ha'])
+
+
     def test_features_do_not_imply_prediction_coverage(self):
         feat = [{**r, 'valid_obs_count': 8, 'max_gap_days': 20} for r in features()]
         feat[0].update(quality_flag='limited', max_gap_days=40)

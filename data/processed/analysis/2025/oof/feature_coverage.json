@@ -1,0 +1,39 @@
+{
+  "year": 2025,
+  "scope": {
+    "dataset": "BARC",
+    "field_ids": [],
+    "cohort": "labeled",
+    "representative_of_county_or_state": false,
+    "cohort_status": "pending_no_annual_cohort"
+  },
+  "n_matched_features": 0,
+  "feature_matched_area_ha": null,
+  "feature_match_fraction": null,
+  "fields_with_valid_days_area_ha": null,
+  "fields_with_valid_days_area_fraction": null,
+  "usable_feature_area_ha": null,
+  "usable_feature_area_fraction": null,
+  "quality_counts": {
+    "missing_features": 0,
+    "no_data": 0,
+    "insufficient": 0,
+    "limited": 0,
+    "usable": 0
+  },
+  "quality_area_ha": {
+    "missing_features": null,
+    "no_data": null,
+    "insufficient": null,
+    "limited": null,
+    "usable": null
+  },
+  "valid_day_count_min": null,
+  "valid_day_count_max": null,
+  "max_gap_days_min": null,
+  "max_gap_days_max": null,
+  "notes": [
+    "Field-level feature availability is not full seasonal/pixel coverage or model accuracy.",
+    "Quality rules are unchanged. These are selected BARC samples, not a census."
+  ]
+}

@@ -1,20 +1,26 @@
 {
   "status": "computed",
-  "year": 2021,
+  "year": 2022,
   "scope": {
     "dataset": "BARC",
     "field_ids": [
-      "barc_1"
+      "barc_231",
+      "barc_251",
+      "barc_252",
+      "barc_278",
+      "barc_279",
+      "barc_286",
+      "barc_429"
     ],
-    "cohort": "smoke",
+    "cohort": "labeled",
     "representative_of_county_or_state": false
   },
   "prediction_role": "oof",
-  "total_area_ha": 6.63739333,
-  "covered_area_ha": 6.63739333,
+  "total_area_ha": 44.6508102,
+  "covered_area_ha": 44.6508102,
   "coverage_fraction": 1.0,
-  "expected_silage_area_ha": 1.836948887360303,
-  "expected_grain_area_ha": 4.800444442639697,
+  "expected_silage_area_ha": 18.660169008519667,
+  "expected_grain_area_ha": 25.990641191480336,
   "economic_scenario": null,
   "notes": [
     "Denominator is the explicitly selected cohort, not verified annual BARC/county/state corn acreage.",

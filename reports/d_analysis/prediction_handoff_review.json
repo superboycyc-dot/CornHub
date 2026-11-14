@@ -11,22 +11,6 @@
   ],
   "annual_checks": [
     {
-      "year": 2021,
-      "prediction_role": "oof",
-      "status": "pending",
-      "budget": 3,
-      "seed": 42,
-      "random_repeats": 200,
-      "n_candidates": 0,
-      "initial_absolute_error_ha": null,
-      "heuristic_absolute_error_ha": null,
-      "random_absolute_error_median_ha": null,
-      "random_absolute_error_min_ha": null,
-      "random_absolute_error_max_ha": null,
-      "change_in_absolute_error_ha": null,
-      "area_conservation_and_rank_checked": true
-    },
-    {
       "year": 2022,
       "prediction_role": "oof",
       "status": "evaluated",
@@ -57,12 +41,61 @@
       "random_absolute_error_max_ha": 11.757307665134938,
       "change_in_absolute_error_ha": 0.9515849290623422,
       "area_conservation_and_rank_checked": true
+    },
+    {
+      "year": 2024,
+      "prediction_role": "oof",
+      "status": "pending",
+      "budget": 3,
+      "seed": 42,
+      "random_repeats": 200,
+      "n_candidates": null,
+      "initial_absolute_error_ha": null,
+      "heuristic_absolute_error_ha": null,
+      "random_absolute_error_median_ha": null,
+      "random_absolute_error_min_ha": null,
+      "random_absolute_error_max_ha": null,
+      "change_in_absolute_error_ha": null,
+      "area_conservation_and_rank_checked": false,
+      "notes": [
+        "Denominator is the explicitly selected cohort, not verified annual BARC/county/state corn acreage.",
+        "All 83 boundaries are not assumed to be corn every year. Labeled and smoke cohorts are selected samples, not a census.",
+        "Areas with predictions include low-quality observations; those records are excluded from review ranking and listed in data_needed.csv.",
+        "Missing predictions are not grain. Quality is not model accuracy. No interval or review benefit is claimed.",
+        "Missing economic inputs: regional/year-matched crop yields, prices, units, price basis, conversions and sources.",
+        "No annual target cohort supplied for this year. Empty IDs mean unresolved scope, not zero corn acreage. Do not reuse older-year fields or probabilities."
+      ]
+    },
+    {
+      "year": 2025,
+      "prediction_role": "oof",
+      "status": "pending",
+      "budget": 3,
+      "seed": 42,
+      "random_repeats": 200,
+      "n_candidates": null,
+      "initial_absolute_error_ha": null,
+      "heuristic_absolute_error_ha": null,
+      "random_absolute_error_median_ha": null,
+      "random_absolute_error_min_ha": null,
+      "random_absolute_error_max_ha": null,
+      "change_in_absolute_error_ha": null,
+      "area_conservation_and_rank_checked": false,
+      "notes": [
+        "Denominator is the explicitly selected cohort, not verified annual BARC/county/state corn acreage.",
+        "All 83 boundaries are not assumed to be corn every year. Labeled and smoke cohorts are selected samples, not a census.",
+        "Areas with predictions include low-quality observations; those records are excluded from review ranking and listed in data_needed.csv.",
+        "Missing predictions are not grain. Quality is not model accuracy. No interval or review benefit is claimed.",
+        "Missing economic inputs: regional/year-matched crop yields, prices, units, price basis, conversions and sources.",
+        "No annual target cohort supplied for this year. Empty IDs mean unresolved scope, not zero corn acreage. Do not reuse older-year fields or probabilities."
+      ]
     }
   ],
   "notes": [
     "OOF training exclusion relies on C; D does not retrain models.",
     "Probabilities are uncalibrated; areas are exploratory sample estimates.",
     "Manual review assumes perfect whole-field label revelation; no field survey was performed.",
-    "An observed error increase is retained; no general ranking effectiveness is claimed."
+    "An observed error increase is retained; no general ranking effectiveness is claimed.",
+    "Current requested window is 2022-2025. Historical 2021 is excluded; newer-year evaluation remains pending without real data."
   ]
 }

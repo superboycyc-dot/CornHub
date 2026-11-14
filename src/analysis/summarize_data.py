@@ -26,6 +26,8 @@ def main():
     args = p.parse_args()
     try:
         root, aux, out, report = args.input_root, args.aux_root, args.analysis_root, args.report_root
+        if (out/'period_status.json').exists():
+            raise ContractError('Active period outputs must use run_period.py; this historical-source summarizer must not overwrite the requested period')
         fields = read_fields(root/'core/fields.geojson')
         labels = read_csv(root/'core/labels.csv', LABEL_COLUMNS, 'labels')
         features = read_csv(root/'satellite/features.csv', FEATURE_COLUMNS, 'features')

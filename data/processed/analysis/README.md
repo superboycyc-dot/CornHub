@@ -1,24 +1,19 @@
-# Analysis handoff
+# Active analysis: 2022–2025
 
-Root: official smoke barc_1 / 2021 / OOF only. Annual labeled OOF scopes are separate
-under 2021/oof, 2022/oof and 2023/oof. They select 18/7/19 fields, not all 83 boundaries.
-Source commits and input hashes: reports/d_analysis/handoff_validation.json.
+Requested years 2022/2023/2024/2025, explicit role oof; see period_status.json.
+2022/2023 are computed sample estimates. 2024/2025 are pending: annual targets,
+features, real predictions and OOF labels/folds are absent. Unknown areas/coverage
+are null, never zero or copied from another year.
 
-Real C OOF probabilities now provide 100% selected-cohort prediction coverage.
-Inference is excluded. Expected areas are exploratory uncalibrated sample estimates,
-not BARC annual census/county/state/California totals; years are not added together.
-feature_coverage.json separates feature availability and quality from predictions.
-2021 has 18 limited records (gaps 33-45 days), with reasons in data_needed.csv;
-2022/2023 have 7/19 usable records. 2021 and smoke review simulations remain pending
-because no usable candidates meet the unchanged quality gate.
+Root files are the single 2022 labeled cohort. Each requested year has its own
+folder. 2021/oof is historical and excluded from active CSV summaries; A's
+official smoke sample is not modified. No years/roles are summed together.
 
-2022/2023 review simulations use real OOF and sourced labels, seed 42, 200 random
-repeats and the same budget of three fields. 2023 heuristic error increases after
-review; no general ranking benefit is claimed. Economic scenarios remain null.
+annual_data_summary.csv has four rows; year_change_decomposition.csv computes
+only 2022→2023. The remaining pairs are pending. Six real 2022/2023 field
+corrections are retained. Global missing inputs are listed in period_status.json;
+unresolved-cohort field-level tables contain headers only.
 
-Run after upstream files are available:
-python3 src/analysis/analysis.py --year 2021 --prediction-role oof --cohort smoke --review-budget 1
-Use --cohort labeled and a distinct --output-root for annual scopes. Full contracts,
-commands, source refs, independent checks and limitations: reports/d_analysis/README.md.
-
-汇总附件：annual_data_summary.csv（按年面积/占比）、review_field_corrections.csv（逐田核查修正）、year_change_decomposition.csv（年度差异算术分解）。中文说明见 reports/d_analysis/all_data_summary_zh.md。
+Run: python3 src/analysis/run_period.py --start-year 2022 --end-year 2025 --prediction-role oof
+Current report and contract: reports/d_analysis/all_data_summary_zh.md and README.md.
+No newly acquired 2024/2025 source data is claimed.

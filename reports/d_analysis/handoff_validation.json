@@ -118,6 +118,44 @@
   "checked_at_utc": "2026-11-14T21:14:50.193241Z",
   "analysis_runs": [
     {
+      "cohort": "labeled",
+      "year": 2022,
+      "prediction_role": "oof",
+      "n_fields": 7,
+      "status": "computed",
+      "selected_area_ha": 44.6508102,
+      "covered_area_ha": 44.6508102
+    },
+    {
+      "cohort": "labeled",
+      "year": 2023,
+      "prediction_role": "oof",
+      "n_fields": 19,
+      "status": "computed",
+      "selected_area_ha": 123.08976508,
+      "covered_area_ha": 123.08976508
+    },
+    {
+      "cohort": "labeled",
+      "year": 2024,
+      "prediction_role": "oof",
+      "n_fields": null,
+      "status": "pending",
+      "selected_area_ha": null,
+      "covered_area_ha": null
+    },
+    {
+      "cohort": "labeled",
+      "year": 2025,
+      "prediction_role": "oof",
+      "n_fields": null,
+      "status": "pending",
+      "selected_area_ha": null,
+      "covered_area_ha": null
+    }
+  ],
+  "archived_analysis_runs": [
+    {
       "cohort": "smoke",
       "year": 2021,
       "prediction_role": "oof",
@@ -153,5 +191,11 @@
       "selected_area_ha": 123.08976508,
       "covered_area_ha": 123.08976508
     }
+  ],
+  "active_period_years": [
+    2022,
+    2023,
+    2024,
+    2025
   ]
 }

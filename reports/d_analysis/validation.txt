@@ -1,21 +1,21 @@
-Actual checks: 2026-11-14 UTC
-python3 -m unittest discover -s src/analysis -p 'test_*.py' -v
-18 tests passed; temporary synthetic fixtures only.
+Current requested period: 2022–2025, role oof.
 
-validate_handoff.py used actual staged read-only A/B/C inputs via --core-root,
---features, --predictions, --acceptance; year/cohort runs select OOF.
-A=df7ce8cd63039e90de7ca78ba95f4f3259ee15c5
-B=05a81a7d1634c80d3c56b66cf9eb9acb9527fc9b
-C=a867e4e19c431754e7b07ee8a260f48761d83d81
-Exit 0; real summaries computed for smoke and all three annual labeled cohorts.
+Before local execution disconnected:
+- python3 -m unittest discover -s src/analysis -p 'test_*.py' -v
+  20 tests passed, including 2024/2025 unknown cohorts and no year carry-forward.
+- run_period.py --start-year 2022 --end-year 2025 --prediction-role oof
+  --input-root pointed at pinned read-only A/B/C files. Exit 0, partial_pending.
+  2022/2023 computed; 2024/2025 pending with explicit missing-input lists.
+- report_results.py was run with the pinned C report and real inputs; exit 0.
+  Source refs/hashes/folds match; existing annual checks pass; missing years
+  remain unevaluated.
 
-report_results.py --input-root [staged inputs] --model-report [C merge report]
---c-ref a867e4e19c431754e7b07ee8a260f48761d83d81 --prediction-role oof
-Exit 0. C training input hashes/refs match; prediction keys unique; OOF folds match.
-Independent area, rank and direct-label-replacement/random simulations agree 1e-10.
-2021 has no usable candidates, simulation pending. 2022/2023 budget=3, seed=42,
-random repeats=200. 2023 error increases (3.05772217 -> 4.00930710 ha); no broad
-benefit claimed. No default prices, model training, image reprocessing, ground
-survey, frontend change or deployment by D. Full commands and flags in README.
+After execution environment disconnected:
+- Files assembled from fixed GitHub snapshots and the recorded implementation.
+- Current JSON/CSV year selection, null semantics, root scope and unchanged
+  2021 output paths checked before upload.
+- No new Python run, model training, image processing or ground review occurred.
+- The uploaded batch entry and documentation were not executed after assembly.
 
-Full-data summary: summarize_data.py ran with pinned read-only input/aux roots and --main-ref 630eebfb465a21379aeeda49ea8a5d7d70ef36d0. Seven auxiliary Git blobs match fetched sources. Three annual rows, six field corrections and two year changes checked against original outputs; arithmetic agrees at 1e-10 ha; Markdown table shapes inspected. Details: summary_validation.json. No model/imagery rerun.
+A/B/C data is still 2021–2023. Interface support for new years is not data coverage.
+2024/2025 require annual targets, real features, predictions and OOF labels/folds.

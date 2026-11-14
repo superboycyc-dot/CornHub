@@ -15,7 +15,8 @@ QUEUE_COLUMNS = 'field_id year prediction_role rank review_score reason'.split()
 MISSING_COLUMNS = 'field_id year prediction_role quality_flag missing_reason'.split()
 ROLES = {'oof', 'inference'}
 QUALITY = {'no_data', 'insufficient', 'limited', 'usable'}
-YEARS = {2021, 2022, 2023}
+# Historical 2021 inputs remain readable; the active period is 2022-2025.
+YEARS = {2021, 2022, 2023, 2024, 2025}
 
 
 class ContractError(ValueError):
@@ -101,7 +102,7 @@ def read_csv(path, columns, kind):
         validate_id(row['field_id'])
         row['year'] = integer(row['year'], 'year')
         if row['year'] not in YEARS:
-            raise ContractError(f'{kind}: year outside contract BARC 2021-2023')
+            raise ContractError(f'{kind}: year outside supported source range 2021-2025')
         if kind == 'features':
             if row['quality_flag'] not in QUALITY:
                 raise ContractError('features: unknown quality_flag')
@@ -179,7 +180,7 @@ def cohort_ids(fields, labels, *, year, cohort, smoke=None):
 def analyze(fields, features, predictions, *, year, prediction_role, selected_ids=None,
             cohort='inventory'):
     if isinstance(year, bool) or not isinstance(year, int) or year not in YEARS or prediction_role not in ROLES:
-        raise ContractError('explicit year (2021-2023) and prediction_role (oof/inference) required')
+        raise ContractError('explicit supported year (2021-2025) and prediction_role (oof/inference) required')
     if fields is not None:
         unique(fields, ['field_id'], 'fields')
     unique(features or [], ['field_id', 'year'], 'features')
@@ -263,7 +264,8 @@ def analyze(fields, features, predictions, *, year, prediction_role, selected_id
     queue.sort(key=lambda r: (-r['review_score'], r['field_id']))
     for rank, row in enumerate(queue, 1):
         row['rank'] = rank
-    known = fields is not None
+    unresolved_cohort = cohort == 'labeled' and selected_ids == []
+    known = fields is not None and not unresolved_cohort
     total = math.fsum(r['area_ha'] for r in inventory.values()) if known else None
     covered_area = math.fsum(r['area_ha'] for r in covered) if known else None
     silage = math.fsum(r['area_ha'] * r['p_silage'] for r in covered) if covered else None
@@ -283,6 +285,10 @@ def analyze(fields, features, predictions, *, year, prediction_role, selected_id
     audit['covered_prediction_rows'] = len(covered)
     audit['review_queue_rows'] = len(queue)
     audit['data_needed_rows'] = len(missing)
+    if unresolved_cohort:
+        summary['scope']['cohort_status'] = 'pending_no_annual_cohort'
+        summary['notes'].append('No annual target cohort supplied for this year. Empty IDs mean unresolved scope, not zero corn acreage. Do not reuse older-year fields or probabilities.')
+        audit['blocking_reasons'] = ['missing_annual_target_cohort']
     return summary, queue, missing, audit, covered
 
 

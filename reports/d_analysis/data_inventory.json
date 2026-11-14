@@ -32,6 +32,31 @@
   "cdl_archive_size_bytes": 290778951,
   "notes": [
     "Scene rows repeat a scene across fields; rows are not distinct images.",
-    "All years/roles/regions and reference products remain separate."
-  ]
+    "All years/roles/regions and reference products remain separate.",
+    "Source inventory counts still include 2021; no new 2024/2025 field-year data is supplied."
+  ],
+  "active_analysis_period": {
+    "years": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "computed_years": [
+      2022,
+      2023
+    ],
+    "pending_years": [
+      2024,
+      2025
+    ],
+    "historical_output_years": [
+      2021
+    ],
+    "source_years": [
+      2021,
+      2022,
+      2023
+    ]
+  }
 }
