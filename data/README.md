@@ -10,6 +10,8 @@
 
 ### Units and interpretation
 
+The following yield/production and thousand-acre units apply to `corn_state_benchmarks_2025.csv` only. The Quick Stats acreage extract uses **ACRES** in its `unit` column, with values retained as source text. Convert units explicitly before comparing these files.
+
 - Area columns are thousand acres.
 - Grain yield is bushels per acre; grain production is thousand bushels.
 - Silage yield is tons per acre; silage production is thousand tons.
@@ -22,7 +24,7 @@
 - California state overview: <https://www.nass.usda.gov/Quick_Stats/Ag_Overview/stateOverview.php?state=California&year=2025>
 - Data are attributed to USDA NASS. Consult the linked source for publication notes, revisions, definitions, and reuse terms.
 
-All values in the CSV are from the same January 2026 NASS summary report and preserve its published rounding.
+The values in `corn_state_benchmarks_2025.csv` are recorded as an extract of the January 2026 NASS summary report with its published rounding. This provenance statement does not apply to the separate Quick Stats extract.
 
 ### Quick Stats acreage extract
 
@@ -35,6 +37,8 @@ python3 scripts/curate_quickstats.py
 This table is an aggregate reference, not ground truth for individual fields. Annual publication and revision timing means it cannot serve as a real-time supply feed.
 
 **Source-vintage discrepancy to resolve before reporting totals:** for California 2025, this Quick Stats extract reports 450 thousand planted acres, 75 thousand grain-harvested acres, and 370 thousand silage-harvested acres. The separate January 2026 *Crop Production 2025 Summary* extract in `processed/usda_nass/corn_state_benchmarks_2025.csv` reports 420, 50, and 365 thousand acres, respectively. Both retain their source and publication context; do not average or silently substitute between them. Confirm definitions, reference vintage, and later revisions with NASS before using either as the project’s calibration target.
+
+The cause of this discrepancy is **not established**. Recheck the PDF-to-CSV transcription as well as query definitions and revisions; the phrase “source-vintage” above is a hypothesis, not a verified explanation. The current audit compares repository files only.
 
 ## USDA NASS California Cropland Data Layer
 
