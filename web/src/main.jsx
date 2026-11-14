@@ -168,7 +168,7 @@ function Map({
       zoomControl: false,
       scrollWheelZoom: true,
       attributionControl: true,
-    }).setView([39, -77], 9);
+    }).setView([39.0234, -76.8751], FIELD_MIN_ZOOM);
     controller.current = map.current;
     map.current.createPane("county-lines").style.zIndex = 350;
     map.current.createPane("county-labels").style.zIndex = 390;
@@ -340,8 +340,11 @@ function Map({
     if (fitted.current !== fields) {
       map.current.fitBounds(layer.getBounds(), {
         padding: [80, 80],
-        maxZoom: 12,
+        maxZoom: FIELD_MIN_ZOOM,
       });
+      // Initial focus only: users remain free to zoom out across the United States.
+      if (map.current.getZoom() < FIELD_MIN_ZOOM)
+        map.current.setZoom(FIELD_MIN_ZOOM);
       fitted.current = fields;
     }
     toggle();
@@ -563,7 +566,7 @@ function App() {
       });
       if (mapController.current.getZoom() < FIELD_MIN_ZOOM)
         mapController.current.setZoom(FIELD_MIN_ZOOM);
-    } else mapController.current.setView([39, -77], 9);
+    } else mapController.current.setView([39.0234, -76.8751], FIELD_MIN_ZOOM);
   };
   const toggleFullscreen = async () => {
     try {
@@ -754,7 +757,7 @@ function App() {
             </p>
             <small>
               {fields?.features.length
-                ? "BARC fields only. Not a nationwide field inventory."
+                ? "Maryland / BARC · Zoom out to explore the United States."
                 : "Regional basemap only. No field boundaries are inferred."}
             </small>
             {fields?.features.length > 0 &&
