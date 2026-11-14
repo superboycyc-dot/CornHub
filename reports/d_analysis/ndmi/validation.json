@@ -1,0 +1,37 @@
+{
+  "validated_at_utc": "2026-11-14T22:42:52.577681Z",
+  "target_months": 60,
+  "computed_months": 1,
+  "pending_months": 59,
+  "months_with_scene_errors": 0,
+  "pixel_example_count": 5,
+  "used_scene_records": 5,
+  "candidate_scenes": 2093,
+  "software_versions": {
+    "numpy": "2.3.5",
+    "rasterio": "1.5.2",
+    "shapely": "2.2.0",
+    "pyproj": "3.8.0"
+  },
+  "source_code_sha256": {
+    "src/analysis/ndmi/calculate.py": "6ab1cbefd11571cec3ad4d5dc39d0efadd21c108e7e0021d4d4edda0654286b7",
+    "src/analysis/ndmi/export_results.py": "9952d60c887c5163fc0786456dec1f1241140922e8a43793f4b410f4df45eb0e",
+    "src/analysis/ndmi/test_ndmi.py": "c69995e6ea5a6df67b437ef6c0b50d1e41e6ed83ca2b5deb277d7b7bb6afab55",
+    "src/analysis/ndmi/plot_results.py": "f03f615dc7e86e92348f5d077e1fb171ccfd101bea019a4298513cf685e6e45e"
+  },
+  "checks": [
+    "unique year+month",
+    "count and area bounds",
+    "scene counts sum to valid pixels",
+    "month dates match",
+    "percentile ordering and index bounds",
+    "raw DN examples reproduce NDMI within 1e-7",
+    "example cloud/saturation rejection bits clear"
+  ],
+  "monthly_result_sha256": [
+    {
+      "path": "data/processed/analysis/ndmi/months/2021_02.json",
+      "sha256": "e58284a062045a9c0bef16083c7ad7f918d6520034772ab08f0d1a7ad1e6def7"
+    }
+  ]
+}
