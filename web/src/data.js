@@ -1,5 +1,5 @@
 import Papa from "papaparse";
-export const paths = [
+export const contractPaths = [
   "core/fields.geojson",
   "core/labels.csv",
   "core/smoke_sample.json",
@@ -11,9 +11,47 @@ export const paths = [
   "analysis/summary.json",
   "analysis/review_queue.csv",
 ];
+export const optionalPaths = [
+  "analysis/period_status.json",
+  ...[2022, 2023, 2024, 2025].flatMap((year) =>
+    [
+      "summary.json",
+      "review_queue.csv",
+      "data_needed.csv",
+      "review_simulation.json",
+    ].map((name) => `analysis/${year}/oof/${name}`),
+  ),
+];
+export const paths = [...contractPaths, ...optionalPaths];
+export function selectAnalysis(data, year, role) {
+  const annual = data[`analysis/${year}/${role}/summary.json`];
+  const root = data["analysis/summary.json"];
+  const summary = annual || root;
+  return summary &&
+    String(summary.year) === String(year) &&
+    summary.prediction_role === role
+    ? summary
+    : null;
+}
+export function selectReviewQueue(data, year, role) {
+  const rows =
+    data[`analysis/${year}/${role}/review_queue.csv`] ||
+    data["analysis/review_queue.csv"] ||
+    [];
+  return rows.filter(
+    (r) => String(r.year) === String(year) && r.prediction_role === role,
+  );
+}
+function schemaPath(name) {
+  const match = name.match(
+    /^analysis\/\d{4}\/(oof|inference)\/(review_queue|data_needed)\.csv$/,
+  );
+  return match ? `analysis/${match[2]}.csv` : name;
+}
 export function parse(name, text) {
   if (!name.endsWith(".csv")) return JSON.parse(text);
   const result = Papa.parse(text, { header: true, skipEmptyLines: "greedy" });
+  name = schemaPath(name);
   const headers = {
     "core/labels.csv": [
       "field_id",
@@ -55,6 +93,13 @@ export function parse(name, text) {
       "fold_id",
       "model_version",
     ],
+    "analysis/data_needed.csv": [
+      "field_id",
+      "year",
+      "prediction_role",
+      "quality_flag",
+      "missing_reason",
+    ],
     "analysis/review_queue.csv": [
       "field_id",
       "year",
@@ -84,6 +129,7 @@ export function unique(rows, keys) {
   return rows;
 }
 export function validate(name, data) {
+  name = schemaPath(name);
   const keys = {
     "core/labels.csv": ["field_id", "year"],
     "core/validation_folds.csv": ["field_id", "year"],
@@ -91,6 +137,7 @@ export function validate(name, data) {
     "satellite/timeseries.csv": ["field_id", "year", "date", "scene_id"],
     "model/predictions.csv": ["field_id", "year", "prediction_role"],
     "analysis/review_queue.csv": ["field_id", "year", "prediction_role"],
+    "analysis/data_needed.csv": ["field_id", "year", "prediction_role"],
   };
   if (keys[name]) {
     unique(data, keys[name]);
@@ -168,7 +215,8 @@ export async function loadData() {
   await Promise.all(
     paths.map(async (name) => {
       if (manifest.files?.[name]?.status !== "available") {
-        errors[name] = manifest.files?.[name]?.reason || "Not provided";
+        if (contractPaths.includes(name))
+          errors[name] = manifest.files?.[name]?.reason || "Not provided";
         return;
       }
       try {

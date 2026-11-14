@@ -15,20 +15,40 @@
     {
       "role": "B",
       "branch": "work/b-satellite",
-      "commit": "9d31ddfdeff74648f03dcf04d5f35bdbabb2abf3",
+      "commit": "05a81a7d1634c80d3c56b66cf9eb9acb9527fc9b",
       "files": ["satellite/timeseries.csv", "satellite/features.csv"]
     },
     {
       "role": "C",
       "branch": "work/c-model",
-      "commit": "c3f432cab739fd74847ee038684db32d28b7384e",
+      "commit": "a867e4e19c431754e7b07ee8a260f48761d83d81",
       "files": ["model/predictions.csv", "model/metrics.json"]
     },
     {
       "role": "D",
       "branch": "work/d-analysis",
-      "commit": "25755b55adbf6c38ca8b6a8e940a5b262f6f8836",
-      "files": ["analysis/summary.json", "analysis/review_queue.csv"]
+      "commit": "b369af8fe673a2f384fb0462fc7e6bbb34a2eeaa",
+      "files": [
+        "analysis/summary.json",
+        "analysis/review_queue.csv",
+        "analysis/period_status.json",
+        "analysis/2022/oof/summary.json",
+        "analysis/2022/oof/review_queue.csv",
+        "analysis/2023/oof/summary.json",
+        "analysis/2023/oof/review_queue.csv",
+        "analysis/2024/oof/summary.json",
+        "analysis/2024/oof/review_queue.csv",
+        "analysis/2025/oof/summary.json",
+        "analysis/2025/oof/review_queue.csv",
+        "analysis/2022/oof/data_needed.csv",
+        "analysis/2022/oof/review_simulation.json",
+        "analysis/2023/oof/data_needed.csv",
+        "analysis/2023/oof/review_simulation.json",
+        "analysis/2024/oof/data_needed.csv",
+        "analysis/2024/oof/review_simulation.json",
+        "analysis/2025/oof/data_needed.csv",
+        "analysis/2025/oof/review_simulation.json"
+      ]
     }
   ]
 }

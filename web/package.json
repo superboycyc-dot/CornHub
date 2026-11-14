@@ -8,7 +8,8 @@
     "dev": "npm run sync:data && vite --host 0.0.0.0",
     "build": "npm run sync:data && vite build",
     "test": "node --test scripts/*.test.mjs",
-    "preview": "vite preview --host 0.0.0.0"
+    "preview": "vite preview --host 0.0.0.0",
+    "check:data": "npm run sync:data && node scripts/check-handoffs.mjs"
   },
   "dependencies": {
     "react": "^19.0.0",

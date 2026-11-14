@@ -44,7 +44,7 @@ summary 必须与选择的 year 和 role 一致，直接显示 D 的数值、sco
 
 `reports/e_web/empty-state.png` 和 `empty-state-mobile.png` 是当前仓库真实缺数据状态。浏览器检查中的临时测试数据仅存在请求拦截中，用于验证年份、用途和重复键；不写发布目录，不用作真实样本截图。
 
-已从 A/B/C/D 固定提交只读接入合同数据：83 块真实边界，44 个标签年，barc_1/2021 的 86 景 NDVI，模型/分析 pending。真实样本截图尚未完成：当前托管环境缺少支持的浏览器控制工具，因此未执行本轮截图，不把测试夹具或旧截图冒充已接通截图。
+已从 A/B/C/D 固定提交只读接入合同数据：83 块真实边界、34 个有标签田块、44 个标签年；4,524 景真实 NDVI、44 行特征；44 OOF + 44 inference 预测（同一批 44 田块年，不是 88 独立样本）；模型 OOF 指标已评估，概率未校准。D 的 2022/2023 年结果已计算，2024/2025 年 pending，2021 年不在 D 当前活动分析期。真实样本截图尚未完成：当前托管环境缺少支持的浏览器控制工具，因此未执行本轮截图，不把测试夹具或旧截图冒充已接通截图。
 
 最新主线 `51d5989` 已包含官方材料，已同步到本地，无需再次手工下载：
 
@@ -76,3 +76,21 @@ npm run sync:data
 ```
 
 同步不自行 fetch，不偷偷合入队友分支，不创造字段 ID。固定 SHA 和逐文件字节核对见 `data-handoffs.json` 与 `reports/e_web/handoff-verification.json`。后续 A/B/C/D 更新后审查并修改对应 pin，或等其正式合入本地 data/processed；两种来源都逐字节保留。
+
+## Latest BARC integration and Git log
+
+当前提交读取 A `df7ce8c`、B `05a81a7`、C `a867e4e`、D `b369af8` 的固定交接；完整 SHA 见 data-handoffs.json。全国候选田、NDMI 计划及奶牛场资料不在本轮接入范围。
+
+```bash
+npm run check:data
+npm test
+npm run build
+```
+
+check:data 检查 27 个发布输入的 schema/键、田块关联、两种 role 覆盖、fold/类别阈值、D 输入哈希与年度/role、待补年份 null，并更新 reports/e_web/handoff-verification.json。它不训练模型，不重算 D 的汇总。
+
+2022–2025 的 summary/review_queue/data_needed/review_simulation 使用 D 的同年同 role 文件。D 尚未提供推荐的 analysis/index.json，因此前端根据固定交接清单和 D 当前目录组织读取，校验文件内 year/role，并显示原 scope/cohort；不伪造 D 的索引或结果。2021 可看真实时序/模型，D 的当前活动汇总不包含该年。2024/2025 没有年度目标群体，空 IDs 表示未提供，不等于零面积。
+
+Model validation 明确为 2021–2023 的 44 条汇总 OOF 评估，不能视为当前单年指标或 inference 验证。Review 显示 D 的核查前/后误差和相同预算随机对照，保留 2023 核查后误差上升。所有模型概率标注 uncalibrated。
+
+日志见 reports/e_web/CHANGELOG.md；当前浏览器工具限制和截图状态仍按交付报告如实记录。

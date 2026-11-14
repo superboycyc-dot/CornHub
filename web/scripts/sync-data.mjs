@@ -47,7 +47,13 @@ export async function sync(
     if (!/^[a-f0-9]{40}$/.test(handoff.commit))
       throw Error("Handoff commit must be a full SHA");
     for (const name of handoff.files) {
-      if (!expected.includes(name))
+      if (
+        !expected.includes(name) &&
+        name !== "analysis/period_status.json" &&
+        !/^analysis\/\d{4}\/(oof|inference)\/(summary\.json|review_queue\.csv|data_needed\.csv|review_simulation\.json)$/.test(
+          name,
+        )
+      )
         throw Error(`Unexpected handoff path: ${name}`);
       if (files[name]?.status === "available") continue;
       try {

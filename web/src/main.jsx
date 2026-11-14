@@ -3,7 +3,14 @@ import { createRoot } from "react-dom/client";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "./style.css";
-import { loadData, number, present } from "./data";
+import {
+  loadData,
+  number,
+  present,
+  contractPaths,
+  selectAnalysis,
+  selectReviewQueue,
+} from "./data";
 import { FIELD_MIN_ZOOM, fieldSnapshot, countiesInView } from "./map-data";
 // At BARC latitude, zoom 13 with a 100 CSS-pixel metric scale renders 1 km.
 const INITIAL_MAP_ZOOM = 13;
@@ -117,7 +124,7 @@ function fieldTooltip(info) {
   );
   text(
     "span",
-    "Probability is not accuracy. Click to inspect.",
+    "Uncalibrated probability, not accuracy. Click to inspect.",
     "tooltip-footnote",
   );
   return root;
@@ -505,14 +512,17 @@ function App() {
   const boundary = fields?.features.find(
     (f) => f.properties.field_id === fieldId,
   )?.properties;
-  const summary = d["analysis/summary.json"],
+  const summary = selectAnalysis(d, year, role),
     summaryMatches =
       summary &&
       String(summary.year) === year &&
       summary.prediction_role === role;
   const metrics = d["model/metrics.json"];
-  const queue = (d["analysis/review_queue.csv"] || []).filter(
-    (r) => String(r.year) === year && r.prediction_role === role,
+  const queue = selectReviewQueue(d, year, role);
+  const reviewSimulation = d[`analysis/${year}/${role}/review_simulation.json`];
+  const dataNeeded = d[`analysis/${year}/${role}/data_needed.csv`];
+  const annualStatus = (d["analysis/period_status.json"]?.years || []).find(
+    (row) => String(row.year) === year,
   );
   const orphan = Object.entries(d)
     .filter(([, v]) => Array.isArray(v))
@@ -557,7 +567,7 @@ function App() {
     { id: "review", label: "Review", icon: "review" },
     { id: "data", label: "Data status", icon: "data" },
   ];
-  const loadedCount = Object.keys(d).length;
+  const loadedCount = contractPaths.filter((name) => name in d).length;
   const fitMap = () => {
     if (!mapController.current) return;
     if (fields?.features.length) {
@@ -581,7 +591,10 @@ function App() {
       );
     }
   };
-  const gaps = allIds
+  const annualLabeledIds = (d["core/labels.csv"] || [])
+    .filter((row) => String(row.year) === year)
+    .map((row) => row.field_id);
+  const gaps = annualLabeledIds
     .map((field_id) => {
       const match = (r) => r.field_id === field_id && String(r.year) === year;
       const f = (d["satellite/features.csv"] || []).find(match);
@@ -671,8 +684,10 @@ function App() {
             value={year}
             onChange={(e) => setYear(e.target.value)}
           >
-            {["2021", "2022", "2023"].map((y) => (
-              <option key={y}>{y}</option>
+            {["2021", "2022", "2023", "2024", "2025"].map((y) => (
+              <option key={y} value={y}>
+                {Number(y) > 2023 ? `${y} · Pending` : y}
+              </option>
             ))}
           </select>
         </label>
@@ -826,6 +841,13 @@ function App() {
             {panel === "field" && (
               <>
                 <span className="section-kicker">SELECTED FIELD</span>
+                {Number(year) > 2023 && (
+                  <p className="notice">
+                    No annual target cohort, observations or predictions have
+                    been supplied for {year}. Displayed polygons are reference
+                    boundaries, not verified corn fields for this year.
+                  </p>
+                )}
                 <h3>{fieldId || "Awaiting the shared sample"}</h3>
                 <dl>
                   {Object.entries({
@@ -865,11 +887,21 @@ function App() {
                     </React.Fragment>
                   ))}
                 </dl>
+                {role === "oof" &&
+                  label?.label &&
+                  prediction?.predicted_label &&
+                  label.label !== prediction.predicted_label && (
+                    <p className="notice">
+                      This held-out prediction differs from the recorded label (
+                      {label.label}). It is a real OOF error; satellite quality
+                      does not establish correctness.
+                    </p>
+                  )}
                 <p className="notice">
                   {role === "oof"
                     ? "OOF: predictions from models trained without this field."
                     : "Inference: predictions from the full-data model."}{" "}
-                  Model probability is not accuracy.
+                  Model probability is uncalibrated and is not accuracy.
                 </p>
                 <small>
                   Source: core/fields.geojson, core/labels.csv,
@@ -958,11 +990,18 @@ function App() {
                   </p>
                 )}
                 <small>
-                  Source: analysis/summary.json · Results supplied by D.
+                  Source: D's year-specific analysis/{year}/{role}/summary.json,
+                  or a matching root summary. Active D summaries cover
+                  2022–2025; 2024/2025 are pending.
                 </small>
                 <div className="panel-rule" />
                 <span className="section-kicker">EVALUATION</span>
                 <h3>Model validation</h3>
+                <p>
+                  Pooled OOF evaluation across 2021–2023, not the selected year
+                  alone. Probabilities are uncalibrated; results are
+                  exploratory.
+                </p>
                 {metrics?.status === "evaluated" &&
                 metrics.prediction_role === role ? (
                   <pre>{JSON.stringify(metrics, null, 2)}</pre>
@@ -998,17 +1037,94 @@ function App() {
                   D.
                 </small>
                 <div className="panel-rule" />
+                <div className="panel-rule" />
+                <span className="section-kicker">OOF REVIEW SIMULATION</span>
+                <h3>Same-budget review comparison</h3>
+                {reviewSimulation?.status === "evaluated" ? (
+                  <>
+                    <dl>
+                      {[
+                        "budget",
+                        "n_evaluated",
+                        "initial_absolute_error_ha",
+                        "heuristic_absolute_error_ha",
+                        "random_absolute_error_median_ha",
+                        "random_absolute_error_min_ha",
+                        "random_absolute_error_max_ha",
+                        "random_repeats",
+                        "seed",
+                      ].map((key) => (
+                        <React.Fragment key={key}>
+                          <dt>{key.replaceAll("_", " ")}</dt>
+                          <dd>{show(reviewSimulation[key])}</dd>
+                        </React.Fragment>
+                      ))}
+                    </dl>
+                    <p>
+                      Smaller absolute area error is better. Review can increase
+                      error; these results do not establish a general ranking
+                      benefit.
+                    </p>
+                    {reviewSimulation.notes && (
+                      <p>{JSON.stringify(reviewSimulation.notes)}</p>
+                    )}
+                  </>
+                ) : (
+                  <p className="empty">
+                    Not evaluated for this year and prediction role.
+                  </p>
+                )}
+                {year === "2021" && role === "oof" && queue.length === 0 && (
+                  <p className="notice">
+                    The 2021 labeled observations are all limited. No
+                    usable-only formal review queue is available under D's
+                    current policy; the empty queue does not mean there are no
+                    uncertainties.
+                  </p>
+                )}
+                <div className="panel-rule" />
                 <h3>Data gaps</h3>
-                <Table
-                  rows={gaps}
-                  cols={["field_id", "year", "prediction_role", "reason"]}
-                />
+                {Array.isArray(dataNeeded) ? (
+                  <Table
+                    rows={dataNeeded}
+                    cols={[
+                      "field_id",
+                      "year",
+                      "prediction_role",
+                      "quality_flag",
+                      "missing_reason",
+                    ]}
+                  />
+                ) : (
+                  <Table
+                    rows={gaps}
+                    cols={["field_id", "year", "prediction_role", "reason"]}
+                  />
+                )}
+                {annualStatus?.blockers?.length > 0 && (
+                  <p>{JSON.stringify(annualStatus.blockers)}</p>
+                )}
               </>
             )}
             {panel === "data" && (
               <>
                 <span className="section-kicker">SOURCE READINESS</span>
                 <h3>File status and loading errors</h3>
+                <dl>
+                  <dt>Reference boundaries</dt>
+                  <dd>{fields?.features.length ?? "Pending"}</dd>
+                  <dt>Fields with labels</dt>
+                  <dd>
+                    {d["core/labels.csv"]
+                      ? new Set(d["core/labels.csv"].map((row) => row.field_id))
+                          .size
+                      : "Pending"}
+                  </dd>
+                  <dt>Labeled field-years</dt>
+                  <dd>{d["core/labels.csv"]?.length ?? "Pending"}</dd>
+                  <dt>Observed scene records</dt>
+                  <dd>{d["satellite/timeseries.csv"]?.length ?? "Pending"}</dd>
+                </dl>
                 <p className="source-count">
                   <strong>{loadedCount}</strong>
                   <span>/ 10 contract files loaded</span>
