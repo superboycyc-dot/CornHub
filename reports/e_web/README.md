@@ -36,3 +36,11 @@
 最新主线已包含官方 GPKG、explorer notebook、根目录 challenge_statement.md 和 sentinel-2_starter_notebook.ipynb，无需用户重复下载。实际路径见 `web/README.md`。由 A 核实官方使用限制、CRS、标签与许可；E 不生成 ID。由 B 按官方 notebook 提取真实观测。C 未训练维持空值，D 无参数维持经济情景 null。
 
 需要 A 处理的文档冲突：根 README 的加州 2022–2026/英亩/旧核查公式与新合同的 BARC 2021–2023/公顷规则不同。本次依用户要求遵循团队合同，未越权修改根文件。
+
+## 全屏地图改版
+
+按用户新的界面要求改为英文全屏任务控制台：主体固定视口，不产生整页纵向滚动；年份、prediction_role、田块选择和地图控制悬浮；底部 Field / Observations / Analysis / Review / Data status 打开可关闭面板，长记录只在面板内部滚动。新增地图缩放、回到田块范围和浏览器全屏按钮（支持时）。窄屏保留地图与底部操作，面板不撑高页面。
+
+底图使用 Esri World Imagery 的真实地图瓦片，保留来源署名。初始视野为 Maryland 区域背景，不表示已取得 A 的边界。底图不是 B 的 NDVI 数据，也不生成 field_id。缺边界时明确标记 FIELD LAYER PENDING；模型无结果保持 NOT COMPUTED。原有年份+田块+role 关联与 D 原始 summary 仍保留。
+
+本轮实际验证：数据单元测试通过，Vite 构建通过，Esri 示例瓦片请求返回 HTTP 200；浏览器验收脚本已适配新的面板操作和视口尺寸断言，但当前托管环境没有 cua_repl 工具，按 Sites 规则未执行本轮浏览器或截图验收。旧截图保留作为第一版交付记录，不能视作新版视觉验收。

@@ -7,6 +7,17 @@ const errors = [];
 page.on("pageerror", (e) => errors.push(e.message));
 await page.goto("http://localhost:5173");
 await page.getByText("Field boundaries have not been provided").waitFor();
+const mapBox = await page
+  .getByLabel("Field map", { exact: true })
+  .boundingBox();
+assert.equal(mapBox.width, 1440);
+assert.equal(mapBox.height, 1100);
+assert.equal(
+  await page.evaluate(
+    () => document.documentElement.scrollHeight > innerHeight,
+  ),
+  false,
+);
 await page.screenshot({
   path: "../reports/e_web/empty-state.png",
   fullPage: true,
@@ -24,6 +35,7 @@ await page.route("**/data/manifest.json", (r) =>
   r.fulfill({ status: 500, body: "failed" }),
 );
 await page.getByRole("button", { name: "Reload data" }).click();
+await page.getByRole("button", { name: "Data status", exact: true }).click();
 await page.getByText(/Manifest loading failed/).waitFor();
 await page.unroute("**/data/manifest.json");
 const bodies = {
@@ -76,6 +88,7 @@ await page.route("**/data/**", (r) => {
   return r.fulfill({ status: 404 });
 });
 await page.getByRole("button", { name: "Reload data" }).click();
+await page.getByRole("button", { name: "Field", exact: true }).click();
 await page
   .getByRole("heading", { name: "test_only_001", exact: true })
   .waitFor();
@@ -96,10 +109,12 @@ assert.equal(
     .textContent(),
   "0.8",
 );
+await page.getByRole("button", { name: "Analysis", exact: true }).click();
 await page
   .getByText(/no summary\.json matches the selected year and role/)
   .waitFor();
-await page.getByRole("combobox").nth(0).selectOption("2022");
+await page.getByRole("button", { name: "Field", exact: true }).click();
+await page.getByLabel("Year", { exact: true }).selectOption("2022");
 assert.equal(
   await page
     .locator("dt")
@@ -119,7 +134,16 @@ assert.equal(
 );
 bodies["model/predictions.csv"] += "test_only_001,2022,0.9,silage,oof,0,test\n";
 await page.getByRole("button", { name: "Reload data" }).click();
+await page.getByRole("button", { name: "Data status", exact: true }).click();
 await page.getByText(/Loading failed: Duplicate key/).waitFor();
+await page.getByRole("button", { name: "Close panel", exact: true }).click();
+assert.equal(await page.getByRole("complementary").count(), 0);
+assert.equal(
+  await page.evaluate(
+    () => document.documentElement.scrollHeight > innerHeight,
+  ),
+  false,
+);
 assert.deepEqual(errors, []);
 await browser.close();
 console.log(

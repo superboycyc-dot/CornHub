@@ -34,7 +34,7 @@ node scripts/browser-check.mjs
 - C：`model/predictions.csv`、`metrics.json`。
 - D：`analysis/summary.json`、`review_queue.csv`。
 
-字段、唯一键与空值定义见团队合同。CSV 保留字符串，不转换 ID。按 `field_id+year` 关联，再选择一个 `prediction_role`。CSV 缺字段、重复键、非法概率及非 4326 声明的边界会报错并隔离该文件。GeoJSON 使用经度在前；Leaflet 自身转换，不手动交换或用经纬度计算面积。无底图依赖，真实多边形到齐后自动缩放。
+字段、唯一键与空值定义见团队合同。CSV 保留字符串，不转换 ID。按 `field_id+year` 关联，再选择一个 `prediction_role`。CSV 缺字段、重复键、非法概率及非 4326 声明的边界会报错并隔离该文件。GeoJSON 使用经度在前；Leaflet 自身转换，不手动交换或用经纬度计算面积。背景使用在线 Esri World Imagery，保留署名；瓦片加载失败时显示提示，合同数据面板继续可用。Maryland 区域背景不代表已提供田块边界。真实多边形到齐后自动缩放。
 
 NDVI 图显示逐景真实观测点与来源，不插值、不补零；有效比例低于 0.5 或缺失用棕色。B 的日聚合和特征计算仍由 B 执行。质量来自 features，不从模型概率推断。零概率是合法结果，空预测显示未计算。
 
@@ -56,3 +56,7 @@ summary 必须与选择的 year 和 role 一致，直接显示 D 的数值、sco
 另有 `data/processed/barc_field_year_labels.csv`：列为原始 field_id、year、harvest_type、acres，不是合同的 core/labels.csv。E 不自行给原 ID 加前缀、不转换标签及面积；需 A 统一提供 core 与不可变 ID 映射，再由 B/C/D 按该 ID 交付。现有 notebook 原型不代表合同路径的数据已经生成。
 
 若其他电脑缺少这些文件，先 `git pull` 获取最新主线。仅当主线也没有时，才从 https://hacktheharvest.farmgpu.net/anaheim04-8892/lab 下载合同列出的原件，交给 A/B 保留上述实际路径。原件许可及训练/评估用途由 A 核实，E 不复制原件到公开数据目录。
+
+## Full-screen interface
+
+The English interface uses a fixed full-viewport satellite map. Year, field and prediction-role selectors float above it. The bottom navigation opens Field, Observations, Analysis, Review, and Data status panels; Escape or the close button dismisses a panel. The page itself does not scroll; long panel contents scroll within their overlay. Esri imagery provides geographic context and is not used to fabricate NDVI observations.

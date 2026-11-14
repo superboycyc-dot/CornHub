@@ -6,42 +6,135 @@ import "./style.css";
 import { loadData, number, present } from "./data";
 const show = (v, missing = "Missing data") =>
   present(v) ? String(v) : missing;
-function Map({ fields, onSelect, selected }) {
+function Icon({ name, size = 18 }) {
+  const paths = {
+    layers: (
+      <>
+        <path d="m12 3 9 5-9 5-9-5 9-5Z" />
+        <path d="m3 12 9 5 9-5M3 16l9 5 9-5" />
+      </>
+    ),
+    field: (
+      <>
+        <path d="M4 8V4h4M16 4h4v4M20 16v4h-4M8 20H4v-4" />
+        <path d="M8 8h8v8H8z" />
+      </>
+    ),
+    chart: (
+      <>
+        <path d="M4 4v16h16" />
+        <path d="m7 14 4-5 4 3 5-7" />
+      </>
+    ),
+    analysis: (
+      <>
+        <path d="M5 20V11M12 20V4M19 20V8" />
+      </>
+    ),
+    review: (
+      <>
+        <path d="M9 6h11M9 12h11M9 18h11" />
+        <path d="m3 6 1 1 2-2M3 12h2M3 18h2" />
+      </>
+    ),
+    data: (
+      <>
+        <ellipse cx="12" cy="5" rx="8" ry="3" />
+        <path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0" />
+      </>
+    ),
+    close: <path d="m6 6 12 12M6 18 18 6" />,
+    refresh: (
+      <>
+        <path d="M20 7v5h-5M4 17v-5h5" />
+        <path d="M6 7a7 7 0 0 1 11-2l3 3M4 16l3 3a7 7 0 0 0 11-2" />
+      </>
+    ),
+    fit: (
+      <>
+        <path d="M3 9V3h6M15 3h6v6M21 15v6h-6M9 21H3v-6" />
+        <circle cx="12" cy="12" r="3" />
+      </>
+    ),
+    fullscreen: <path d="M8 3H3v5M16 3h5v5M21 16v5h-5M8 21H3v-5" />,
+    plus: <path d="M12 5v14M5 12h14" />,
+    minus: <path d="M5 12h14" />,
+    arrow: <path d="m8 5 7 7-7 7" />,
+  };
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      {paths[name] || paths.field}
+    </svg>
+  );
+}
+function Map({ fields, onSelect, selected, controller }) {
   const el = useRef(),
-    map = useRef();
+    map = useRef(),
+    fitted = useRef();
+  const [tileError, setTileError] = useState(false);
   useEffect(() => {
-    map.current = L.map(el.current).setView([0, 0], 2);
-    return () => map.current.remove();
+    map.current = L.map(el.current, {
+      zoomControl: false,
+      scrollWheelZoom: true,
+      attributionControl: true,
+    }).setView([39, -77], 9);
+    controller.current = map.current;
+    const basemap = L.tileLayer(
+      "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+      {
+        maxZoom: 19,
+        attribution:
+          "Imagery © Esri, Maxar, Earthstar Geographics, GIS User Community",
+      },
+    ).addTo(map.current);
+    basemap.on("tileerror", () => setTileError(true));
+    const observer = new ResizeObserver(() => map.current?.invalidateSize());
+    observer.observe(el.current);
+    return () => {
+      observer.disconnect();
+      map.current.remove();
+      controller.current = null;
+    };
   }, []);
   useEffect(() => {
     if (!fields?.features.length) return;
     const layer = L.geoJSON(fields, {
       style: (f) => ({
-        color: f.properties.field_id === selected ? "#ffca68" : "#307a64",
-        weight: 2,
-        fillOpacity: 0.25,
+        color: f.properties.field_id === selected ? "#dcff92" : "#c8d4c3",
+        weight: f.properties.field_id === selected ? 2.5 : 1,
+        fillOpacity: f.properties.field_id === selected ? 0.2 : 0.04,
       }),
       onEachFeature: (f, l) => {
         l.bindTooltip(String(f.properties.field_id));
         l.on("click", () => onSelect(f.properties.field_id));
       },
     }).addTo(map.current);
-    map.current.fitBounds(layer.getBounds(), { padding: [24, 24] });
+    if (fitted.current !== fields) {
+      map.current.fitBounds(layer.getBounds(), { padding: [80, 80] });
+      fitted.current = fields;
+    }
     return () => layer.remove();
   }, [fields, selected]);
   return (
     <div className="map-wrap">
       <div ref={el} className="map" aria-label="Field map" />
-      {!fields?.features.length && (
-        <div className="map-empty">
-          Field boundaries have not been provided
-          <br />
-          <small>Awaiting A: core/fields.geojson · EPSG:4326</small>
+      <div className="map-vignette" />
+      {tileError && (
+        <div className="tile-error" role="status">
+          Some basemap tiles could not load. Field data remains available in the
+          panels.
         </div>
       )}
-      <span className="map-note">
-        Longitude, latitude · No external basemap
-      </span>
     </div>
   );
 }
@@ -203,271 +296,529 @@ function App() {
         )
         .map((r) => `${name}: ${r.field_id} / ${r.year}`),
     );
+  const [panel, setPanel] = useState(null),
+    [fullscreen, setFullscreen] = useState(false),
+    [uiNotice, setUiNotice] = useState("");
+  const mapController = useRef();
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "Escape") setPanel(null);
+    };
+    const onFullscreen = () =>
+      setFullscreen(Boolean(document.fullscreenElement));
+    document.addEventListener("keydown", onKey);
+    document.addEventListener("fullscreenchange", onFullscreen);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.removeEventListener("fullscreenchange", onFullscreen);
+    };
+  }, []);
+  const tabs = [
+    { id: "field", label: "Field", icon: "field" },
+    { id: "observations", label: "Observations", icon: "chart" },
+    { id: "analysis", label: "Analysis", icon: "analysis" },
+    { id: "review", label: "Review", icon: "review" },
+    { id: "data", label: "Data status", icon: "data" },
+  ];
+  const loadedCount = Object.keys(d).length;
+  const fitMap = () => {
+    if (!mapController.current) return;
+    if (fields?.features.length)
+      mapController.current.fitBounds(L.geoJSON(fields).getBounds(), {
+        padding: [90, 90],
+      });
+    else mapController.current.setView([39, -77], 9);
+  };
+  const toggleFullscreen = async () => {
+    try {
+      if (document.fullscreenElement) await document.exitFullscreen();
+      else if (document.documentElement.requestFullscreen)
+        await document.documentElement.requestFullscreen();
+      else throw Error();
+    } catch {
+      setUiNotice(
+        "Fullscreen is unavailable here. The map already fills this window.",
+      );
+    }
+  };
+  const gaps = allIds
+    .map((field_id) => {
+      const match = (r) => r.field_id === field_id && String(r.year) === year;
+      const f = (d["satellite/features.csv"] || []).find(match);
+      const p = (d["model/predictions.csv"] || []).find(
+        (r) => match(r) && r.prediction_role === role,
+      );
+      return {
+        field_id,
+        year,
+        prediction_role: role,
+        reason: [
+          !present(p?.p_silage) && "No prediction",
+          (!f || f.quality_flag !== "usable") &&
+            `Satellite quality: ${f?.quality_flag || "Missing data"}`,
+        ]
+          .filter(Boolean)
+          .join("; "),
+      };
+    })
+    .filter((r) => r.reason);
   return (
-    <>
-      <header>
-        <div className="brand">
-          C<span>●</span>RNHUB
+    <main className="mission" aria-label="CornHub field operations">
+      <Map
+        fields={fields}
+        selected={fieldId}
+        onSelect={setId}
+        controller={mapController}
+      />
+      <header className="topbar">
+        <a
+          className="brand"
+          href="#"
+          aria-label="CornHub home"
+          onClick={(e) => {
+            e.preventDefault();
+            setPanel(null);
+          }}
+        >
+          CORN<span>HUB</span>
+          <i />
+        </a>
+        <div className="header-divider" />
+        <span className="mission-name">FIELD OPERATIONS</span>
+        <div className="header-actions">
+          <span className="archive-label">BARC / ARCHIVE 2021—2023</span>
+          <button
+            className="icon-button"
+            onClick={reload}
+            aria-label="Reload data"
+            title="Reload data"
+          >
+            <Icon name="refresh" />
+          </button>
+          <button
+            className="icon-button fullscreen-button"
+            onClick={toggleFullscreen}
+            aria-label={fullscreen ? "Exit fullscreen" : "Enter fullscreen"}
+            title="Fullscreen"
+          >
+            <Icon name="fullscreen" />
+          </button>
         </div>
-        <span>BARC / Field Evidence Workspace</span>
-        <span className="stage">Phase 01 · Data integration</span>
       </header>
-      <main>
-        <div className="intro">
+      <div className="mission-heading">
+        <div className="eyebrow">
+          <span className="status-dot" /> EARTH OBSERVATION
+        </div>
+        <h1>
+          FIELD
+          <br />
+          INTELLIGENCE
+        </h1>
+        <p>Every field. Every observation. In context.</p>
+      </div>
+      <section className="selectors" aria-label="Map filters">
+        <label>
+          <span>YEAR</span>
+          <select
+            aria-label="Year"
+            value={year}
+            onChange={(e) => setYear(e.target.value)}
+          >
+            {["2021", "2022", "2023"].map((y) => (
+              <option key={y}>{y}</option>
+            ))}
+          </select>
+        </label>
+        <label className="role-select">
+          <span>PREDICTION ROLE</span>
+          <select
+            aria-label="Prediction role"
+            value={role}
+            onChange={(e) => setRole(e.target.value)}
+          >
+            <option value="oof">OOF · Validation</option>
+            <option value="inference">Inference</option>
+          </select>
+        </label>
+        <label className="field-select">
+          <span>FIELD</span>
+          <select
+            aria-label="Field"
+            value={fieldId}
+            disabled={!allIds.length}
+            onChange={(e) => setId(e.target.value)}
+          >
+            {!allIds.length && <option value="">Awaiting fields</option>}
+            {allIds.map((i) => (
+              <option key={i}>{i}</option>
+            ))}
+          </select>
+        </label>
+      </section>
+      {!panel && (
+        <div className="context-note">
+          <span className="crosshair-mark">+</span>
           <div>
-            <p className="eyebrow">FIELD EVIDENCE · 2021—2023</p>
-            <h1>Explore harvest evidence, field by field.</h1>
+            <span className="micro-label">
+              {fields?.features.length
+                ? "VERIFIED FIELD LAYER"
+                : "FIELD LAYER PENDING"}
+            </span>
             <p>
-              Explore satellite observations, model silage probabilities, and
-              data quality separately. Results apply only to the selected scope.
+              {fields?.features.length
+                ? "Select a field to inspect its evidence."
+                : "Field boundaries have not been provided"}
             </p>
-          </div>
-          <button onClick={reload}>Reload data</button>
-        </div>
-        <div className="toolbar">
-          <label>
-            Year{" "}
-            <select value={year} onChange={(e) => setYear(e.target.value)}>
-              {["2021", "2022", "2023"].map((y) => (
-                <option key={y}>{y}</option>
-              ))}
-            </select>
-          </label>
-          <label>
-            Prediction role{" "}
-            <select value={role} onChange={(e) => setRole(e.target.value)}>
-              <option value="oof">oof · Held-out field validation</option>
-              <option value="inference">
-                inference · Full-model predictions
-              </option>
-            </select>
-          </label>
-          <label>
-            Field{" "}
-            <select value={fieldId} onChange={(e) => setId(e.target.value)}>
-              <option value="">Select a field</option>
-              {allIds.map((i) => (
-                <option key={i}>{i}</option>
-              ))}
-            </select>
-          </label>
-          <span>
-            {loading ? "Loading…" : "Source: published data/processed snapshot"}
-          </span>
-        </div>
-        <div className="grid">
-          <section className="card map-card">
-            <h2>
-              Field map <small>Observed boundaries</small>
-            </h2>
-            <Map fields={fields} selected={fieldId} onSelect={setId} />
-          </section>
-          <section className="card">
-            <h2>Field details</h2>
-            <h3>{fieldId || "Awaiting the shared sample"}</h3>
-            <dl>
-              {Object.entries({
-                Year: year,
-                "Area (ha)": show(boundary?.area_ha),
-                "Official ID": show(boundary?.source_field_id),
-                Label: show(label?.label),
-                "Source dataset": show(boundary?.source_dataset_id),
-                "Model silage probability": show(
-                  prediction?.p_silage,
-                  "Not computed",
-                ),
-                "Predicted class": show(
-                  prediction?.predicted_label,
-                  "Not computed",
-                ),
-                "Model version": show(
-                  prediction?.model_version,
-                  "Not computed",
-                ),
-                "Prediction role": role,
-              }).map(([k, v]) => (
-                <React.Fragment key={k}>
-                  <dt>{k}</dt>
-                  <dd>{v}</dd>
-                </React.Fragment>
-              ))}
-            </dl>
-            <p className="notice">
-              Model probability is not accuracy. Missing predictions are shown
-              as Not computed. Source: model/predictions.csv.
-            </p>
-          </section>
-          <section className="card">
-            <h2>
-              NDVI time series <small>{year} · No interpolation</small>
-            </h2>
-            <Curve rows={selected(d["satellite/timeseries.csv"])} />
-          </section>
-          <section className="card">
-            <h2>Satellite data quality</h2>
-            <dl>
-              {[
-                "quality_flag",
-                "valid_obs_count",
-                "max_gap_days",
-                "missing_reason",
-              ].map((k) => (
-                <React.Fragment key={k}>
-                  <dt>{k}</dt>
-                  <dd>{show(feature?.[k])}</dd>
-                </React.Fragment>
-              ))}
-            </dl>
             <small>
-              Source: satellite/features.csv · Provisional quality rules do not
-              measure prediction reliability.
+              {fields?.features.length
+                ? "Source: core/fields.geojson"
+                : "Regional basemap only. No field boundaries are inferred."}
             </small>
-          </section>
-          <section className="card">
-            <h2>
-              Area and economic summary <small>Results supplied by D</small>
-            </h2>
-            {summaryMatches ? (
+          </div>
+        </div>
+      )}
+      <div className="map-tools" aria-label="Map controls">
+        <span className="north-marker">
+          N<span>↑</span>
+        </span>
+        <button
+          className="icon-button"
+          aria-label="Zoom in"
+          onClick={() => mapController.current?.zoomIn()}
+        >
+          <Icon name="plus" />
+        </button>
+        <button
+          className="icon-button"
+          aria-label="Zoom out"
+          onClick={() => mapController.current?.zoomOut()}
+        >
+          <Icon name="minus" />
+        </button>
+        <button
+          className="icon-button"
+          aria-label="Fit map to fields"
+          onClick={fitMap}
+        >
+          <Icon name="fit" />
+        </button>
+      </div>
+      {panel && (
+        <aside
+          className="floating-panel"
+          aria-label={tabs.find((t) => t.id === panel)?.label + " panel"}
+        >
+          <div className="panel-header">
+            <div>
+              <span className="micro-label">
+                {year} / {role.toUpperCase()}
+              </span>
+              <h2>{tabs.find((t) => t.id === panel)?.label}</h2>
+            </div>
+            <button
+              className="icon-button"
+              aria-label="Close panel"
+              onClick={() => setPanel(null)}
+            >
+              <Icon name="close" />
+            </button>
+          </div>
+          <div className="panel-content" key={panel}>
+            {panel === "field" && (
               <>
-                <p>
-                  {summary.status === "pending"
-                    ? "Not computed"
-                    : summary.status}
-                </p>
+                <span className="section-kicker">SELECTED FIELD</span>
+                <h3>{fieldId || "Awaiting the shared sample"}</h3>
                 <dl>
-                  {[
-                    "scope",
-                    "prediction_role",
-                    "total_area_ha",
-                    "covered_area_ha",
-                    "coverage_fraction",
-                    "expected_silage_area_ha",
-                    "expected_grain_area_ha",
-                  ].map((k) => (
+                  {Object.entries({
+                    Year: year,
+                    "Area (ha)": show(boundary?.area_ha),
+                    "Official ID": show(boundary?.source_field_id),
+                    Label: show(label?.label),
+                    "Source dataset": show(boundary?.source_dataset_id),
+                  }).map(([k, v]) => (
                     <React.Fragment key={k}>
                       <dt>{k}</dt>
-                      <dd>
-                        {show(
-                          typeof summary[k] === "object"
-                            ? JSON.stringify(summary[k])
-                            : summary[k],
-                          "Not computed",
-                        )}
-                      </dd>
+                      <dd>{v}</dd>
                     </React.Fragment>
                   ))}
                 </dl>
-                <p>
-                  Economic scenario:
-                  {summary.economic_scenario
-                    ? JSON.stringify(summary.economic_scenario)
-                    : "Not computed"}
+                <div className="panel-rule" />
+                <span className="section-kicker">MODEL OUTPUT</span>
+                <div className="probability-value">
+                  {show(prediction?.p_silage, "Not computed")}
+                </div>
+                <p className="metric-caption">Model silage probability</p>
+                <dl>
+                  {Object.entries({
+                    "Predicted class": show(
+                      prediction?.predicted_label,
+                      "Not computed",
+                    ),
+                    "Model version": show(
+                      prediction?.model_version,
+                      "Not computed",
+                    ),
+                    "Prediction role": role,
+                  }).map(([k, v]) => (
+                    <React.Fragment key={k}>
+                      <dt>{k}</dt>
+                      <dd>{v}</dd>
+                    </React.Fragment>
+                  ))}
+                </dl>
+                <p className="notice">
+                  {role === "oof"
+                    ? "OOF: predictions from models trained without this field."
+                    : "Inference: predictions from the full-data model."}{" "}
+                  Model probability is not accuracy.
                 </p>
-                <p>{JSON.stringify(summary.notes)}</p>
+                <small>
+                  Source: core/fields.geojson, core/labels.csv,
+                  model/predictions.csv
+                </small>
               </>
-            ) : (
-              <p className="empty">
-                Not computed: no summary.json matches the selected year and
-                role. This page does not calculate its own summary.
-              </p>
             )}
-          </section>
-          <section className="card">
-            <h2>Model validation</h2>
-            {metrics?.status === "evaluated" &&
-            metrics.prediction_role === role ? (
-              <pre>{JSON.stringify(metrics, null, 2)}</pre>
-            ) : (
-              <p className="empty">
-                Not computed: no evaluated metrics match the selected prediction
-                role.
-              </p>
-            )}
-          </section>
-          <section className="card wide">
-            <h2>Review queue</h2>
-            <p>
-              Source: analysis/review_queue.csv · Heuristic priority, not an
-              error probability or economic value.
-            </p>
-            <Table
-              rows={queue}
-              cols={[
-                "rank",
-                "field_id",
-                "year",
-                "prediction_role",
-                "review_score",
-                "reason",
-              ]}
-            />
-          </section>
-          <section className="card wide">
-            <h2>Data gaps and integration checks</h2>
-            <Table
-              rows={allIds
-                .map((field_id) => {
-                  const match = (r) =>
-                    r.field_id === field_id && String(r.year) === year;
-                  const f = (d["satellite/features.csv"] || []).find(match);
-                  const p = (d["model/predictions.csv"] || []).find(
-                    (r) => match(r) && r.prediction_role === role,
-                  );
-                  return {
-                    field_id,
-                    year,
-                    prediction_role: role,
-                    reason: [
-                      !present(p?.p_silage) && "No prediction",
-                      (!f || f.quality_flag !== "usable") &&
-                        `Satellite quality: ${f?.quality_flag || "Missing data"}`,
-                    ]
-                      .filter(Boolean)
-                      .join("; "),
-                  };
-                })
-                .filter((r) => r.reason)}
-              cols={["field_id", "year", "prediction_role", "reason"]}
-            />
-            <details open>
-              <summary>File status and loading errors</summary>
-              {Object.entries(errors).map(([name, e]) => (
-                <p className="file-status" key={name}>
-                  <code>{name}</code>
-                  <span>{e}</span>
+            {panel === "observations" && (
+              <>
+                <span className="section-kicker">VEGETATION SIGNAL</span>
+                <h3>NDVI time series</h3>
+                <Curve rows={selected(d["satellite/timeseries.csv"])} />
+                <div className="panel-rule" />
+                <span className="section-kicker">OBSERVATION QUALITY</span>
+                <h3>Satellite data quality</h3>
+                <dl>
+                  {[
+                    "quality_flag",
+                    "valid_obs_count",
+                    "max_gap_days",
+                    "missing_reason",
+                  ].map((k) => (
+                    <React.Fragment key={k}>
+                      <dt>{k.replaceAll("_", " ")}</dt>
+                      <dd>{show(feature?.[k])}</dd>
+                    </React.Fragment>
+                  ))}
+                </dl>
+                <p className="notice">
+                  Quality describes the satellite data, not the reliability of a
+                  model prediction.
                 </p>
-              ))}
-              {!Object.keys(errors).length && (
-                <p>All contract files have been loaded.</p>
-              )}
-            </details>
-            {!!orphan.length && (
-              <details>
-                <summary>
-                  Records without matching boundaries (retained)
-                </summary>
-                <pre>{orphan.join("\n")}</pre>
-              </details>
+                <small>
+                  Source: satellite/features.csv · Provisional contract quality
+                  rules.
+                </small>
+              </>
             )}
-            <details>
-              <summary>Input record counts</summary>
-              <pre>
-                {Object.entries(d)
-                  .map(
-                    ([k, v]) =>
-                      `${k}: ${Array.isArray(v) ? v.length : (v.features?.length ?? "JSON object")}`,
-                  )
-                  .join("\n")}
-              </pre>
-            </details>
-          </section>
+            {panel === "analysis" && (
+              <>
+                <span className="section-kicker">SELECTED SCOPE ONLY</span>
+                <h3>Area and economic summary</h3>
+                {summaryMatches ? (
+                  <>
+                    <p className="summary-status">
+                      {summary.status === "pending"
+                        ? "Not computed"
+                        : summary.status}
+                    </p>
+                    <dl>
+                      {[
+                        "scope",
+                        "prediction_role",
+                        "total_area_ha",
+                        "covered_area_ha",
+                        "coverage_fraction",
+                        "expected_silage_area_ha",
+                        "expected_grain_area_ha",
+                      ].map((k) => (
+                        <React.Fragment key={k}>
+                          <dt>{k.replaceAll("_", " ")}</dt>
+                          <dd>
+                            {show(
+                              typeof summary[k] === "object" &&
+                                summary[k] !== null
+                                ? JSON.stringify(summary[k])
+                                : summary[k],
+                              "Not computed",
+                            )}
+                          </dd>
+                        </React.Fragment>
+                      ))}
+                    </dl>
+                    <p>
+                      Economic scenario:{" "}
+                      {summary.economic_scenario
+                        ? JSON.stringify(summary.economic_scenario)
+                        : "Not computed"}
+                    </p>
+                    {summary.notes && <p>{JSON.stringify(summary.notes)}</p>}
+                  </>
+                ) : (
+                  <p className="empty">
+                    Not computed: no summary.json matches the selected year and
+                    role. This page does not calculate its own summary.
+                  </p>
+                )}
+                <small>
+                  Source: analysis/summary.json · Results supplied by D.
+                </small>
+                <div className="panel-rule" />
+                <span className="section-kicker">EVALUATION</span>
+                <h3>Model validation</h3>
+                {metrics?.status === "evaluated" &&
+                metrics.prediction_role === role ? (
+                  <pre>{JSON.stringify(metrics, null, 2)}</pre>
+                ) : (
+                  <p className="empty">
+                    Not computed: no evaluated metrics match the selected
+                    prediction role.
+                  </p>
+                )}
+              </>
+            )}
+            {panel === "review" && (
+              <>
+                <span className="section-kicker">HUMAN REVIEW</span>
+                <h3>Review queue</h3>
+                <p>
+                  Heuristic priority, not an error probability or economic
+                  value.
+                </p>
+                <Table
+                  rows={queue}
+                  cols={[
+                    "rank",
+                    "field_id",
+                    "year",
+                    "prediction_role",
+                    "review_score",
+                    "reason",
+                  ]}
+                />
+                <small>
+                  Source: analysis/review_queue.csv · Original order supplied by
+                  D.
+                </small>
+                <div className="panel-rule" />
+                <h3>Data gaps</h3>
+                <Table
+                  rows={gaps}
+                  cols={["field_id", "year", "prediction_role", "reason"]}
+                />
+              </>
+            )}
+            {panel === "data" && (
+              <>
+                <span className="section-kicker">SOURCE READINESS</span>
+                <h3>File status and loading errors</h3>
+                <p className="source-count">
+                  <strong>{loadedCount}</strong>
+                  <span>/ 10 contract files loaded</span>
+                </p>
+                {Object.entries(errors).map(([name, e]) => (
+                  <div className="file-status" key={name}>
+                    <code>{name}</code>
+                    <span>{e}</span>
+                  </div>
+                ))}
+                {!Object.keys(errors).length && (
+                  <p>All contract files have been loaded.</p>
+                )}
+                {!!orphan.length && (
+                  <details>
+                    <summary>
+                      Records without matching boundaries (retained)
+                    </summary>
+                    <pre>{orphan.join("\n")}</pre>
+                  </details>
+                )}
+                <details>
+                  <summary>Input record counts</summary>
+                  <pre>
+                    {Object.entries(d)
+                      .map(
+                        ([k, v]) =>
+                          `${k}: ${Array.isArray(v) ? v.length : (v.features?.length ?? "JSON object")}`,
+                      )
+                      .join("\n")}
+                  </pre>
+                </details>
+                <div className="panel-rule" />
+                <small>
+                  Contract: docs/team-contract.md
+                  <br />
+                  Boundaries: A · Time series: B · Model: C · Analysis: D<br />
+                  Esri imagery is a contextual basemap, not the team's measured
+                  satellite time series.
+                </small>
+              </>
+            )}
+          </div>
+        </aside>
+      )}
+      {uiNotice && (
+        <div className="ui-notice" role="status">
+          {uiNotice}
+          <button
+            className="icon-button"
+            aria-label="Dismiss notice"
+            onClick={() => setUiNotice("")}
+          >
+            <Icon name="close" />
+          </button>
         </div>
-        <footer>
-          Contract: docs/team-contract.md · Boundaries: A · Time series: B ·
-          Model: C · Summary: D · Website: E
-        </footer>
-      </main>
-    </>
+      )}
+      <footer className="flight-deck">
+        <div className="flight-id">
+          <span className="micro-label">MISSION / BARC</span>
+          <div>
+            <span className="status-dot amber" />
+            {loading
+              ? "LOADING DATA"
+              : loadedCount === 10
+                ? "CONTRACT FILES READY"
+                : "AWAITING EVIDENCE"}
+          </div>
+        </div>
+        <nav className="panel-nav" aria-label="Evidence panels">
+          {tabs.map((t) => (
+            <button
+              key={t.id}
+              aria-label={t.label}
+              aria-pressed={panel === t.id}
+              className={panel === t.id ? "active" : ""}
+              onClick={() => setPanel(panel === t.id ? null : t.id)}
+            >
+              <Icon name={t.icon} />
+              <span>{t.label}</span>
+            </button>
+          ))}
+        </nav>
+        <div className="view-label">
+          <Icon name="layers" />
+          <div>
+            <span className="micro-label">MAP LAYER</span>
+            <span>SATELLITE IMAGERY</span>
+          </div>
+        </div>
+      </footer>
+      <div className="telemetry">
+        <span>
+          EPSG:4326 <i /> LONGITUDE / LATITUDE
+        </span>
+        <span>
+          {year} / {role.toUpperCase()} <i />{" "}
+          {fields?.features.length
+            ? "FIELD BOUNDARIES AVAILABLE"
+            : "NO VERIFIED FIELD LAYER"}
+        </span>
+        <span>
+          MODEL:{" "}
+          {present(prediction?.p_silage)
+            ? "PREDICTION AVAILABLE"
+            : "NOT COMPUTED"}
+        </span>
+      </div>
+    </main>
   );
 }
 createRoot(document.getElementById("root")).render(<App />);
