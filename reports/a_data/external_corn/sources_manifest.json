@@ -1,0 +1,252 @@
+[
+  {
+    "dataset": "csb",
+    "url": "https://www.nass.usda.gov/sites/default/files/Research_and_Science/Crop-Sequence-Boundaries/datasets/NationalCSB_2016-2023_rev23.zip",
+    "local_path": "data/raw/external_corn/NationalCSB_2016-2023_rev23.zip",
+    "bytes": 3505346935,
+    "uncompressed_bytes": 5584214724,
+    "sha256": "5eff3f67d14cd8ff5e12133ad1bb808d78740134b24df1a321598bf457fd0910",
+    "md5": "262f69e7f96bb94af432663bed10f72e",
+    "publisher_md5_verified": false,
+    "zip_crc": "passed",
+    "license": "U.S. Public Domain",
+    "verified_at_utc": "2026-11-14T22:28:31.303743Z",
+    "contents": [
+      {
+        "name": "NationalCSB_2016-2023_rev23/",
+        "bytes": 0
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/",
+        "bytes": 0
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000001.gdbindexes",
+        "bytes": 110
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000001.gdbtable",
+        "bytes": 323
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000001.gdbtablx",
+        "bytes": 5152
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000001.TablesByName.atx",
+        "bytes": 4118
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000002.gdbtable",
+        "bytes": 2055
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000002.gdbtablx",
+        "bytes": 5152
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000003.gdbindexes",
+        "bytes": 42
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000003.gdbtable",
+        "bytes": 1065
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000003.gdbtablx",
+        "bytes": 5152
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000004.CatItemsByPhysicalName.atx",
+        "bytes": 4118
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000004.CatItemsByType.atx",
+        "bytes": 4118
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000004.FDO_UUID.atx",
+        "bytes": 4118
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000004.freelist",
+        "bytes": 8536
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000004.gdbindexes",
+        "bytes": 310
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000004.gdbtable",
+        "bytes": 45786264
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000004.gdbtablx",
+        "bytes": 5152
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000004.horizon",
+        "bytes": 32
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000004.spx",
+        "bytes": 4118
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000005.CatItemTypesByName.atx",
+        "bytes": 12310
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000005.CatItemTypesByParentTypeID.atx",
+        "bytes": 4118
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000005.CatItemTypesByUUID.atx",
+        "bytes": 4118
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000005.gdbindexes",
+        "bytes": 296
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000005.gdbtable",
+        "bytes": 2071
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000005.gdbtablx",
+        "bytes": 5152
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000006.CatRelsByDestinationID.atx",
+        "bytes": 4118
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000006.CatRelsByOriginID.atx",
+        "bytes": 4118
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000006.CatRelsByType.atx",
+        "bytes": 4118
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000006.FDO_UUID.atx",
+        "bytes": 4118
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000006.gdbindexes",
+        "bytes": 318
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000006.gdbtable",
+        "bytes": 263
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000006.gdbtablx",
+        "bytes": 5152
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000007.CatRelTypesByBackwardLabel.atx",
+        "bytes": 12310
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000007.CatRelTypesByDestItemTypeID.atx",
+        "bytes": 4118
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000007.CatRelTypesByForwardLabel.atx",
+        "bytes": 12310
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000007.CatRelTypesByName.atx",
+        "bytes": 12310
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000007.CatRelTypesByOriginItemTypeID.atx",
+        "bytes": 4118
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000007.CatRelTypesByUUID.atx",
+        "bytes": 4118
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000007.gdbindexes",
+        "bytes": 602
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000007.gdbtable",
+        "bytes": 3626
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000007.gdbtablx",
+        "bytes": 5152
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000009.gdbindexes",
+        "bytes": 116
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000009.gdbtable",
+        "bytes": 5070141509
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000009.gdbtablx",
+        "bytes": 80977952
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000009.horizon",
+        "bytes": 32
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/a00000009.spx",
+        "bytes": 387067926
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/gdb",
+        "bytes": 4
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/CSB1623.gdb/timestamps",
+        "bytes": 400
+      },
+      {
+        "name": "NationalCSB_2016-2023_rev23/NationalCSB_2016-2023_rev23_metadata.htm",
+        "bytes": 77916
+      }
+    ]
+  },
+  {
+    "dataset": "cropsight",
+    "url": "https://zenodo.org/api/records/19501943/files/cropsight-us_app_dat_v1.0.1.zip/content",
+    "local_path": "data/raw/external_corn/cropsight-us_app_dat_v1.0.1.zip",
+    "bytes": 297267115,
+    "uncompressed_bytes": 468825921,
+    "sha256": "0624c520ef86a98790cde6f061001c984b7c0e0ffe3b1f632a3a791bd12ca794",
+    "md5": "8df463cd8d09210354a6e31f8cdcada7",
+    "publisher_md5_verified": true,
+    "zip_crc": "passed",
+    "license": "CC-BY-4.0",
+    "verified_at_utc": "2026-11-14T22:28:34.112796Z",
+    "contents": [
+      {
+        "name": "cropsight-us_app_dat_v1.0.1.dbf",
+        "bytes": 34713255
+      },
+      {
+        "name": "cropsight-us_app_dat_v1.0.1.prj",
+        "bytes": 145
+      },
+      {
+        "name": "cropsight-us_app_dat_v1.0.1.shp",
+        "bytes": 433117064
+      },
+      {
+        "name": "cropsight-us_app_dat_v1.0.1.shx",
+        "bytes": 995452
+      },
+      {
+        "name": "cropsight-us_app_dat_v1.0.1.cpg",
+        "bytes": 5
+      }
+    ]
+  }
+]

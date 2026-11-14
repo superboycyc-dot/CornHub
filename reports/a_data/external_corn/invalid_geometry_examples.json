@@ -1,0 +1,86 @@
+{
+  "examples": [
+    {
+      "candidate_id": "csb_451623000000288",
+      "reason": "Ring Self-intersection[-79.4163162675546 33.3604738571116]"
+    },
+    {
+      "candidate_id": "csb_451623000000379",
+      "reason": "Ring Self-intersection[-79.4784796857519 33.2800746380484]"
+    },
+    {
+      "candidate_id": "csb_181623000000954",
+      "reason": "Ring Self-intersection[-86.4985227117801 38.5607980344679]"
+    },
+    {
+      "candidate_id": "csb_181623000000975",
+      "reason": "Ring Self-intersection[-86.5269993062161 38.55262336511]"
+    },
+    {
+      "candidate_id": "csb_181623000001006",
+      "reason": "Ring Self-intersection[-86.4990617019452 38.5409452651239]"
+    },
+    {
+      "candidate_id": "csb_181623000001044",
+      "reason": "Ring Self-intersection[-86.5095719901799 38.5246857584872]"
+    },
+    {
+      "candidate_id": "csb_181623000001158",
+      "reason": "Ring Self-intersection[-86.4957379354816 38.4742004396253]"
+    },
+    {
+      "candidate_id": "csb_181623000001225",
+      "reason": "Ring Self-intersection[-86.4597154918928 38.4457238457616]"
+    },
+    {
+      "candidate_id": "csb_181623000001258",
+      "reason": "Ring Self-intersection[-86.4744478625015 38.3858960473593]"
+    },
+    {
+      "candidate_id": "csb_181623000001282",
+      "reason": "Ring Self-intersection[-86.4795682595545 38.3735891278082]"
+    },
+    {
+      "candidate_id": "csb_181623000001306",
+      "reason": "Ring Self-intersection[-86.5453249372217 38.3639771566099]"
+    },
+    {
+      "candidate_id": "csb_181623000001315",
+      "reason": "Ring Self-intersection[-86.4792089337198 38.362450018216]"
+    },
+    {
+      "candidate_id": "csb_181623000001317",
+      "reason": "Ring Self-intersection[-86.4729207252247 38.3600245671339]"
+    },
+    {
+      "candidate_id": "csb_181623000001330",
+      "reason": "Ring Self-intersection[-86.4828920265523 38.3516702357057]"
+    },
+    {
+      "candidate_id": "csb_181623000001340",
+      "reason": "Ring Self-intersection[-86.5207111003145 38.3471786583968]"
+    },
+    {
+      "candidate_id": "csb_181623000001381",
+      "reason": "Ring Self-intersection[-86.4759749985904 38.325169934393]"
+    },
+    {
+      "candidate_id": "csb_181623000001406",
+      "reason": "Ring Self-intersection[-86.5468520743216 38.3105273963864]"
+    },
+    {
+      "candidate_id": "csb_181623000001407",
+      "reason": "Ring Self-intersection[-86.5450554441112 38.3110663844101]"
+    },
+    {
+      "candidate_id": "csb_181623000001470",
+      "reason": "Ring Self-intersection[-86.4999600168382 38.2728879850589]"
+    },
+    {
+      "candidate_id": "csb_181623000001480",
+      "reason": "Ring Self-intersection[-86.5582606787845 38.2636353370979]"
+    }
+  ],
+  "cause": "Not established; reasons refer to exported WGS84 geometry, not source survey correctness.",
+  "policy": "Retain and flag; exclude or explicitly repair for spatial operations."
+}

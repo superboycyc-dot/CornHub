@@ -1,0 +1,74 @@
+{
+  "kind": "cropsight",
+  "layer": "cropsight-us_app_dat_v1.0.1",
+  "source_feature_count": 124419,
+  "selected_rows": 15939,
+  "corn_field_year_counts": {
+    "2023": 4137,
+    "2021": 6676,
+    "2022": 5126
+  },
+  "duplicate_source_ids": 0,
+  "geometry_invalid_count_preserved": 0,
+  "source_crs": "EPSG:4326",
+  "output_crs": "EPSG:4326",
+  "area_crs": "EPSG:5070",
+  "geometry_policy": "No repairs or simplification; invalid geometries retained with geometry_valid=false",
+  "harvest_type": "unknown for all rows; not S/G training labels",
+  "shards": [
+    {
+      "path": "data/processed/external_corn/cropsight/batch-000/part-00000.parquet",
+      "rows": 37,
+      "bytes": 159886,
+      "sha256": "348c25faa78984dfb3c4d5e66e312240771dd3cc71bff23fc1aceb3ae70ffe79"
+    },
+    {
+      "path": "data/processed/external_corn/cropsight/batch-000/part-00001.parquet",
+      "rows": 1,
+      "bytes": 17011,
+      "sha256": "c26cfd909a430820b6b326aa94be289b8cfdfdeee4c31710ddc4d0898657b972"
+    },
+    {
+      "path": "data/processed/external_corn/cropsight/batch-000/part-00002.parquet",
+      "rows": 546,
+      "bytes": 1729848,
+      "sha256": "40b8032e5b4bc7737d4836490032ce202c837b873b38b5577fdaf1a601c5a042"
+    },
+    {
+      "path": "data/processed/external_corn/cropsight/batch-000/part-00003.parquet",
+      "rows": 4949,
+      "bytes": 17145906,
+      "sha256": "d5068bf713f4eab4b2bb31cdcab230308b008cf4745785505403beaba29b0c21"
+    },
+    {
+      "path": "data/processed/external_corn/cropsight/batch-000/part-00004.parquet",
+      "rows": 4664,
+      "bytes": 15638885,
+      "sha256": "b0e1be458ea424d6da8d890b562924dfa894a830f8ee968747da76568f720e32"
+    },
+    {
+      "path": "data/processed/external_corn/cropsight/batch-000/part-00005.parquet",
+      "rows": 2305,
+      "bytes": 7352063,
+      "sha256": "d5c311e000103f152eb648522cff4fa594ad9d0f7ac60e681ca6c5c42e9c7ebf"
+    },
+    {
+      "path": "data/processed/external_corn/cropsight/batch-000/part-00006.parquet",
+      "rows": 2381,
+      "bytes": 7371986,
+      "sha256": "61122cf728efd5e9f601a930376c282ccaff4fc9393c834a8d9edf1a823c2d70"
+    },
+    {
+      "path": "data/processed/external_corn/cropsight/batch-000/part-00007.parquet",
+      "rows": 953,
+      "bytes": 2814999,
+      "sha256": "abb2ee1b8275c23e5ef59c11353506681fe36dd5a39a83d0b67a6785bdd8b8e4"
+    },
+    {
+      "path": "data/processed/external_corn/cropsight/batch-000/part-00008.parquet",
+      "rows": 103,
+      "bytes": 623027,
+      "sha256": "c4f41f38d15c17cfd937f5aad1acff083cc1ddf3688a89648201af0d0ee682ef"
+    }
+  ]
+}

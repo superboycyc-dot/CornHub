@@ -1,0 +1,8 @@
+program,announcement_or_evidence_year,crop_or_loss_year,support,rate,rate_basis_and_limit,source_url
+ECAP,2025,2024,corn acreage economic assistance including eligible silage intended use,42.91,USD/acre announced base rate; factors and limits apply,https://www.fsa.usda.gov/resources/income-support/emergency-commodity-assistance-program
+ELAP,2022,2022 and subsequent eligible losses,disaster extra feed/livestock transport,,cost-based conditional assistance,https://www.fsa.usda.gov/news-events/news/04-08-2022/usda-compensate-drought-stricken-ranchers-normal-costs-haul-livestock-1
+ELRP2022,2023,2022,supplemental feed cost relief using LFP proxy,,not reimbursement per corn ton,https://www.fsa.usda.gov/Internet/FSA_Notice/elrp_3.pdf
+ELRP2023_2024,2025,2023;2024,grazing losses from eligible drought/wildfire,0.35,"initial factor times gross LFP calculated amount, not corn unit rate",https://www.fsa.usda.gov/news-events/news/05-30-2025/usda-provide-1-billion-livestock-producers-impacted-drought-wildfire
+DMC,2024 analysis,2022;2023,dairy milk-feed margin risk protection,,not crop acreage subsidy,https://www.ers.usda.gov/amber-waves/2024/september/falling-milk-prices-led-to-record-program-payments-for-dairy-producers-in-2023
+ARC_PLC,2023;2024 historical page,2024,commodity revenue/price protection,,not current corn acres entitlement,https://www.fsa.usda.gov/programs-and-services/arcplc_program
+FSFL,2025,2025 example,storage/handling low-interest loan including silage example,,loan not grant,https://www.farmers.gov/blog/ask-expert-qa-on-fsas-farm-storage-facility-loans-with-michael-sherman
