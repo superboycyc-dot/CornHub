@@ -21,3 +21,7 @@
 - Data are attributed to USDA NASS. Consult the linked source for publication notes, revisions, definitions, and reuse terms.
 
 All values in the CSV are from the same January 2026 NASS summary report and preserve its published rounding.
+
+## USDA NASS California Cropland Data Layer
+
+[加州 2022–2025 年 CDL 数据与来源说明](usda_nass_cdl/california/README.md)：四个原始年度 ZIP、文件清单与 SHA-256 校验记录。实测 30 米像元；2026 年本次未找到已发布数据。

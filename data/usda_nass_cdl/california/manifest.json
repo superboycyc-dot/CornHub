@@ -1,0 +1,154 @@
+{
+  "publisher": "USDA National Agricultural Statistics Service (NASS)",
+  "source_page": "https://www.nass.usda.gov/research-and-science/cropland/sars1a",
+  "release_page": "https://www.nass.usda.gov/research-and-science/cropland/release",
+  "download_service": "USDA NASS CropScape / George Mason University data cache",
+  "requested_years": [
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "unavailable": [
+    {
+      "year": 2026,
+      "status": "not_found_as_of_2026-11-14",
+      "evidence": "Official national release page lists 2025 as latest; state-cache CDL_2026_06.zip returned HTTP 404. Not replaced with another year."
+    }
+  ],
+  "files": [
+    {
+      "year": 2022,
+      "source_url": "https://nassgeodata.gmu.edu/nass_data_cache/byfips/CDL_2022_06.zip",
+      "filename": "CDL_2022_06.zip",
+      "size_bytes": 76019988,
+      "sha256": "295ffd08eaf293a03f179c7236dd1fa79b88451d935cb4364be1c8aa13d42672",
+      "contents": [
+        {
+          "name": "CDL_2022_06.tif",
+          "size": 954403753
+        },
+        {
+          "name": "CDL_2022_06.tif.vat.dbf",
+          "size": 87521
+        },
+        {
+          "name": "ArcGIS10.7.0_2019_30m_cdls.img.vat.dbf",
+          "size": 78305
+        },
+        {
+          "name": "ArcGIS_color_table_readme.docx",
+          "size": 13221
+        }
+      ],
+      "dataset_name": "USDA NASS Cropland Data Layer — California 2022 (30 m)",
+      "state": "California",
+      "state_fips": "06",
+      "resolution_m": 30,
+      "width": 23648,
+      "height": 40345,
+      "zip_crc_verified": true,
+      "retrieved_at_utc": "2026-11-14T19:08:35.132119+00:00"
+    },
+    {
+      "year": 2023,
+      "source_url": "https://nassgeodata.gmu.edu/nass_data_cache/byfips/CDL_2023_06.zip",
+      "filename": "CDL_2023_06.zip",
+      "size_bytes": 76916883,
+      "sha256": "5d5d03d9ae8103a03a38068a64f69da1f5e2c6a4e6c7922c1a54f428f96ca642",
+      "contents": [
+        {
+          "name": "CDL_2023_06.tif",
+          "size": 954403678
+        },
+        {
+          "name": "CDL_2023_06.tif.vat.dbf",
+          "size": 87521
+        },
+        {
+          "name": "ArcGIS10.7.0_2019_30m_cdls.img.vat.dbf",
+          "size": 78305
+        },
+        {
+          "name": "ArcGIS_color_table_readme.docx",
+          "size": 13221
+        }
+      ],
+      "dataset_name": "USDA NASS Cropland Data Layer — California 2023 (30 m)",
+      "state": "California",
+      "state_fips": "06",
+      "resolution_m": 30,
+      "width": 23648,
+      "height": 40345,
+      "zip_crc_verified": true,
+      "retrieved_at_utc": "2026-11-14T19:08:35.402969+00:00"
+    },
+    {
+      "year": 2024,
+      "source_url": "https://nassgeodata.gmu.edu/nass_data_cache/byfips/CDL_2024_06.zip",
+      "filename": "CDL_2024_06.zip",
+      "size_bytes": 67684119,
+      "sha256": "b46de97afe297383195df16a9b45efe17ccba4286807c67b68298da87ffa2f44",
+      "contents": [
+        {
+          "name": "CDL_2024_06.tif",
+          "size": 954403803
+        },
+        {
+          "name": "CDL_2024_06.tif.vat.dbf",
+          "size": 87521
+        },
+        {
+          "name": "ArcGIS10.7.0_2019_30m_cdls.img.vat.dbf",
+          "size": 78305
+        },
+        {
+          "name": "ArcGIS_color_table_readme.docx",
+          "size": 13221
+        }
+      ],
+      "dataset_name": "USDA NASS Cropland Data Layer — California 2024 (30 m)",
+      "state": "California",
+      "state_fips": "06",
+      "resolution_m": 30,
+      "width": 23648,
+      "height": 40345,
+      "zip_crc_verified": true,
+      "retrieved_at_utc": "2026-11-14T19:08:35.437741+00:00"
+    },
+    {
+      "year": 2025,
+      "source_url": "https://nassgeodata.gmu.edu/nass_data_cache/byfips/CDL_2025_06.zip",
+      "filename": "CDL_2025_06.zip",
+      "size_bytes": 70157961,
+      "sha256": "599e18dd57df84ff005c4bc0d9399e4168cac9a6e3d18000af23f5385fceef4e",
+      "contents": [
+        {
+          "name": "CDL_2025_06.tif",
+          "size": 954403627
+        },
+        {
+          "name": "CDL_2025_06.tif.vat.dbf",
+          "size": 87521
+        },
+        {
+          "name": "ArcGIS10.7.0_2019_30m_cdls.img.vat.dbf",
+          "size": 78305
+        },
+        {
+          "name": "ArcGIS_color_table_readme.docx",
+          "size": 13221
+        }
+      ],
+      "dataset_name": "USDA NASS Cropland Data Layer — California 2025 (30 m)",
+      "state": "California",
+      "state_fips": "06",
+      "resolution_m": 30,
+      "width": 23648,
+      "height": 40345,
+      "zip_crc_verified": true,
+      "retrieved_at_utc": "2026-11-14T19:08:35.474113+00:00"
+    }
+  ]
+}
