@@ -5,6 +5,10 @@ const browser = await chromium.launch({ headless: true });
 const page = await browser.newPage({ viewport: { width: 1440, height: 1100 } });
 const errors = [];
 page.on("pageerror", (e) => errors.push(e.message));
+// Explicit empty-state fixture; real team handoffs are now available by default.
+await page.route("**/data/manifest.json", (r) =>
+  r.fulfill({ json: { files: {} } }),
+);
 await page.goto("http://localhost:5173");
 await page.getByText("Field boundaries have not been provided").waitFor();
 const mapBox = await page
@@ -19,12 +23,12 @@ assert.equal(
   false,
 );
 await page.screenshot({
-  path: "../reports/e_web/empty-state.png",
+  path: "../reports/e_web/test-empty-state.png",
   fullPage: true,
 });
 await page.setViewportSize({ width: 390, height: 844 });
 await page.screenshot({
-  path: "../reports/e_web/empty-state-mobile.png",
+  path: "../reports/e_web/test-empty-state-mobile.png",
   fullPage: true,
 });
 assert.equal(

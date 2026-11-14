@@ -1,9 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import { createRoot } from "react-dom/client";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "./style.css";
 import { loadData, number, present } from "./data";
+import { FIELD_MIN_ZOOM, fieldSnapshot, countiesInView } from "./map-data";
 const show = (v, missing = "Missing data") =>
   present(v) ? String(v) : missing;
 function Icon({ name, size = 18 }) {
@@ -77,11 +78,91 @@ function Icon({ name, size = 18 }) {
     </svg>
   );
 }
-function Map({ fields, onSelect, selected, controller }) {
+function fieldTooltip(info) {
+  const root = document.createElement("div");
+  root.className = "field-tooltip-content";
+  const text = (tag, value, className) => {
+    const element = document.createElement(tag);
+    element.textContent = value;
+    if (className) element.className = className;
+    root.appendChild(element);
+    return element;
+  };
+  text("span", "BARC / VERIFIED FIELD", "tooltip-kicker");
+  text("strong", info.field_id, "tooltip-title");
+  text(
+    "span",
+    `${info.year} · ${info.role.toUpperCase()} · ${info.area_ha === null ? "Area missing" : info.area_ha.toFixed(2) + " ha"}`,
+    "tooltip-context",
+  );
+  text("span", "MODEL SILAGE PROBABILITY", "tooltip-kicker");
+  text(
+    "strong",
+    info.p_silage === null
+      ? "Not computed"
+      : `${(info.p_silage * 100).toFixed(1)}%`,
+    "tooltip-probability",
+  );
+  text(
+    "span",
+    `Predicted class: ${info.predicted_label || "Not computed"}`,
+    "tooltip-detail",
+  );
+  text(
+    "span",
+    `Satellite quality: ${info.quality_flag || "Missing data"}`,
+    "tooltip-detail",
+  );
+  text(
+    "span",
+    "Probability is not accuracy. Click to inspect.",
+    "tooltip-footnote",
+  );
+  return root;
+}
+function Map({
+  fields,
+  data,
+  year,
+  role,
+  onSelect,
+  selected,
+  controller,
+  showCounties,
+  showFields,
+  onZoomChange,
+  onCountyStatus,
+}) {
   const el = useRef(),
     map = useRef(),
     fitted = useRef();
-  const [tileError, setTileError] = useState(false);
+  const [tileError, setTileError] = useState(false),
+    [counties, setCounties] = useState(null);
+  useEffect(() => {
+    const abort = new AbortController();
+    fetch("/reference/us-counties.geojson", { signal: abort.signal })
+      .then((r) => {
+        if (!r.ok) throw Error(`HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((value) => {
+        if (
+          value.type !== "FeatureCollection" ||
+          !Array.isArray(value.features) ||
+          value.features.some(
+            (f) => !Array.isArray(f.bbox) || f.bbox.length !== 4,
+          )
+        )
+          throw Error("Invalid county layer");
+        setCounties(value);
+        onCountyStatus("ready");
+      })
+      .catch((e) => {
+        if (e.name !== "AbortError")
+          onCountyStatus(`County layer could not load: ${e.message}`);
+      });
+    return () => abort.abort();
+  }, []);
   useEffect(() => {
     map.current = L.map(el.current, {
       zoomControl: false,
@@ -89,15 +170,26 @@ function Map({ fields, onSelect, selected, controller }) {
       attributionControl: true,
     }).setView([39, -77], 9);
     controller.current = map.current;
-    const basemap = L.tileLayer(
+    map.current.createPane("county-lines").style.zIndex = 350;
+    map.current.createPane("county-labels").style.zIndex = 390;
+    map.current.getPane("county-labels").style.pointerEvents = "none";
+    map.current.createPane("field-polygons").style.zIndex = 450;
+    L.tileLayer(
       "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
       {
         maxZoom: 19,
         attribution:
           "Imagery © Esri, Maxar, Earthstar Geographics, GIS User Community",
       },
-    ).addTo(map.current);
-    basemap.on("tileerror", () => setTileError(true));
+    )
+      .addTo(map.current)
+      .on("tileerror", () => setTileError(true));
+    L.control
+      .scale({ imperial: false, maxWidth: 100, position: "bottomleft" })
+      .addTo(map.current);
+    const zoom = () => onZoomChange(map.current.getZoom());
+    map.current.on("zoomend", zoom);
+    zoom();
     const observer = new ResizeObserver(() => map.current?.invalidateSize());
     observer.observe(el.current);
     return () => {
@@ -107,24 +199,157 @@ function Map({ fields, onSelect, selected, controller }) {
     };
   }, []);
   useEffect(() => {
+    if (!counties || !showCounties) return;
+    const lines = L.layerGroup().addTo(map.current),
+      labels = L.layerGroup().addTo(map.current);
+    map.current.attributionControl.addAttribution(
+      "Counties: U.S. Census Bureau / 2026",
+    );
+    const redraw = () => {
+      lines.clearLayers();
+      labels.clearLayers();
+      if (map.current.getZoom() < 6) return;
+      const viewport = map.current.getBounds().pad(0.12);
+      const visible = countiesInView(counties.features, {
+        west: viewport.getWest(),
+        south: viewport.getSouth(),
+        east: viewport.getEast(),
+        north: viewport.getNorth(),
+      });
+      L.geoJSON(
+        { type: "FeatureCollection", features: visible },
+        {
+          pane: "county-lines",
+          style: {
+            color: "#c2d0dc",
+            weight: 1.1,
+            opacity: 0.65,
+            fillColor: "#d4dce3",
+            fillOpacity: 0.015,
+            dashArray: "5 6",
+          },
+          onEachFeature: (feature, layer) => {
+            const content = document.createElement("span");
+            content.textContent = `${feature.properties.NAME} · Census 2026 · GEOID ${feature.properties.GEOID}`;
+            layer.bindTooltip(content, {
+              sticky: true,
+              className: "county-hover",
+            });
+          },
+        },
+      ).addTo(lines);
+      if (map.current.getZoom() >= 8)
+        visible.slice(0, 80).forEach((feature) => {
+          const lat = number(feature.properties.INTPTLAT),
+            lng = number(feature.properties.INTPTLON);
+          if (lat === null || lng === null || !viewport.contains([lat, lng]))
+            return;
+          const label = document.createElement("span");
+          label.textContent = feature.properties.NAME;
+          L.marker([lat, lng], {
+            pane: "county-labels",
+            interactive: false,
+            keyboard: false,
+            icon: L.divIcon({
+              html: label,
+              className: "county-label",
+              iconSize: [180, 24],
+              iconAnchor: [90, 12],
+            }),
+          }).addTo(labels);
+        });
+    };
+    map.current.on("moveend zoomend", redraw);
+    redraw();
+    return () => {
+      map.current.off("moveend zoomend", redraw);
+      map.current.removeLayer(lines);
+      map.current.removeLayer(labels);
+      map.current.attributionControl.removeAttribution(
+        "Counties: U.S. Census Bureau / 2026",
+      );
+    };
+  }, [counties, showCounties]);
+  useEffect(() => {
     if (!fields?.features.length) return;
+    const normal = (feature) => ({
+      color: feature.properties.field_id === selected ? "#dcff92" : "#d4e5c9",
+      weight: feature.properties.field_id === selected ? 2 : 1.15,
+      opacity: 0.95,
+      fillColor: "#c3ff84",
+      fillOpacity: feature.properties.field_id === selected ? 0.14 : 0.045,
+    });
     const layer = L.geoJSON(fields, {
-      style: (f) => ({
-        color: f.properties.field_id === selected ? "#dcff92" : "#c8d4c3",
-        weight: f.properties.field_id === selected ? 2.5 : 1,
-        fillOpacity: f.properties.field_id === selected ? 0.2 : 0.04,
-      }),
-      onEachFeature: (f, l) => {
-        l.bindTooltip(String(f.properties.field_id));
-        l.on("click", () => onSelect(f.properties.field_id));
+      pane: "field-polygons",
+      style: normal,
+      onEachFeature: (feature, polygon) => {
+        const info = fieldSnapshot(feature, data, year, role);
+        polygon.bindTooltip(fieldTooltip(info), {
+          sticky: true,
+          direction: "top",
+          offset: [0, -14],
+          className: "field-hover",
+          opacity: 1,
+        });
+        const highlight = () => {
+          polygon.setStyle({ color: "#e6ffad", weight: 3, fillOpacity: 0.32 });
+          polygon.bringToFront();
+        };
+        const reset = () => polygon.setStyle(normal(feature));
+        polygon.on({
+          mouseover: highlight,
+          mouseout: reset,
+          click: () => {
+            polygon.closeTooltip();
+            onSelect(feature.properties.field_id);
+          },
+          add: () => {
+            const path = polygon.getElement();
+            if (!path) return;
+            path.setAttribute("tabindex", "0");
+            path.setAttribute("role", "button");
+            path.setAttribute(
+              "aria-label",
+              `Field ${info.field_id}, ${info.year}, ${info.role}, model silage probability ${info.p_silage === null ? "not computed" : info.p_silage}`,
+            );
+            path.onfocus = () => {
+              highlight();
+              polygon.openTooltip(polygon.getBounds().getCenter());
+            };
+            path.onblur = () => {
+              reset();
+              polygon.closeTooltip();
+            };
+            path.onkeydown = (event) => {
+              if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                onSelect(info.field_id);
+              }
+            };
+          },
+        });
       },
-    }).addTo(map.current);
+    });
+    const toggle = () => {
+      const visible = showFields && map.current.getZoom() >= FIELD_MIN_ZOOM;
+      if (visible && !map.current.hasLayer(layer)) layer.addTo(map.current);
+      else if (!visible && map.current.hasLayer(layer))
+        map.current.removeLayer(layer);
+    };
+    map.current.on("zoomend", toggle);
     if (fitted.current !== fields) {
-      map.current.fitBounds(layer.getBounds(), { padding: [80, 80] });
+      map.current.fitBounds(layer.getBounds(), {
+        padding: [80, 80],
+        maxZoom: 12,
+      });
       fitted.current = fields;
     }
-    return () => layer.remove();
-  }, [fields, selected]);
+    toggle();
+    return () => {
+      map.current.off("zoomend", toggle);
+      if (map.current.hasLayer(layer)) map.current.removeLayer(layer);
+    };
+  }, [fields, selected, data, year, role, showFields, onSelect]);
   return (
     <div className="map-wrap">
       <div ref={el} className="map" aria-label="Field map" />
@@ -300,6 +525,14 @@ function App() {
     [fullscreen, setFullscreen] = useState(false),
     [uiNotice, setUiNotice] = useState("");
   const mapController = useRef();
+  const [zoomLevel, setZoomLevel] = useState(9),
+    [showCounties, setShowCounties] = useState(true),
+    [showFields, setShowFields] = useState(true),
+    [countyStatus, setCountyStatus] = useState("loading");
+  const selectField = useCallback((value) => {
+    setId(value);
+    setPanel("field");
+  }, []);
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === "Escape") setPanel(null);
@@ -323,11 +556,14 @@ function App() {
   const loadedCount = Object.keys(d).length;
   const fitMap = () => {
     if (!mapController.current) return;
-    if (fields?.features.length)
+    if (fields?.features.length) {
       mapController.current.fitBounds(L.geoJSON(fields).getBounds(), {
         padding: [90, 90],
+        maxZoom: 15,
       });
-    else mapController.current.setView([39, -77], 9);
+      if (mapController.current.getZoom() < FIELD_MIN_ZOOM)
+        mapController.current.setZoom(FIELD_MIN_ZOOM);
+    } else mapController.current.setView([39, -77], 9);
   };
   const toggleFullscreen = async () => {
     try {
@@ -367,8 +603,15 @@ function App() {
       <Map
         fields={fields}
         selected={fieldId}
-        onSelect={setId}
+        onSelect={selectField}
         controller={mapController}
+        data={d}
+        year={year}
+        role={role}
+        showCounties={showCounties}
+        showFields={showFields}
+        onZoomChange={setZoomLevel}
+        onCountyStatus={setCountyStatus}
       />
       <header className="topbar">
         <a
@@ -446,7 +689,17 @@ function App() {
             aria-label="Field"
             value={fieldId}
             disabled={!allIds.length}
-            onChange={(e) => setId(e.target.value)}
+            onChange={(e) => {
+              selectField(e.target.value);
+              const feature = fields?.features.find(
+                (f) => f.properties.field_id === e.target.value,
+              );
+              if (feature)
+                mapController.current?.flyToBounds(
+                  L.geoJSON(feature).getBounds(),
+                  { padding: [90, 90], maxZoom: 16 },
+                );
+            }}
           >
             {!allIds.length && <option value="">Awaiting fields</option>}
             {allIds.map((i) => (
@@ -455,25 +708,67 @@ function App() {
           </select>
         </label>
       </section>
+      <div className="layer-switches" aria-label="Map layers">
+        <button
+          aria-pressed={showCounties}
+          onClick={() => setShowCounties(!showCounties)}
+        >
+          <span className="layer-swatch counties" />
+          Counties <small>2026</small>
+        </button>
+        <button
+          aria-pressed={showFields}
+          onClick={() => setShowFields(!showFields)}
+        >
+          <span className="layer-swatch fields" />
+          Fields <small>{fields?.features.length || "pending"}</small>
+        </button>
+        <span className="zoom-readout">
+          Z{zoomLevel} / FIELDS ≥ {FIELD_MIN_ZOOM}
+        </span>
+      </div>
+      {countyStatus !== "ready" && countyStatus !== "loading" && (
+        <div className="county-error" role="status">
+          {countyStatus}
+        </div>
+      )}
       {!panel && (
         <div className="context-note">
           <span className="crosshair-mark">+</span>
           <div>
             <span className="micro-label">
               {fields?.features.length
-                ? "VERIFIED FIELD LAYER"
+                ? showFields
+                  ? "VERIFIED FIELD LAYER"
+                  : "FIELD LAYER HIDDEN"
                 : "FIELD LAYER PENDING"}
             </span>
             <p>
               {fields?.features.length
-                ? "Select a field to inspect its evidence."
+                ? !showFields
+                  ? "Enable the field layer to inspect boundaries."
+                  : zoomLevel < FIELD_MIN_ZOOM
+                    ? "Zoom in to reveal verified field boundaries."
+                    : "Hover a field for its prediction. Click for details."
                 : "Field boundaries have not been provided"}
             </p>
             <small>
               {fields?.features.length
-                ? "Source: core/fields.geojson"
+                ? "BARC fields only. Not a nationwide field inventory."
                 : "Regional basemap only. No field boundaries are inferred."}
             </small>
+            {fields?.features.length > 0 &&
+              (zoomLevel < FIELD_MIN_ZOOM || !showFields) && (
+                <button
+                  className="show-fields-button"
+                  onClick={() => {
+                    setShowFields(true);
+                    fitMap();
+                  }}
+                >
+                  Zoom to fields <Icon name="arrow" size={13} />
+                </button>
+              )}
           </div>
         </div>
       )}
@@ -723,6 +1018,24 @@ function App() {
                 {!Object.keys(errors).length && (
                   <p>All contract files have been loaded.</p>
                 )}
+                <details>
+                  <summary>Handoff provenance</summary>
+                  <pre>
+                    {Object.entries(state.manifest?.files || {})
+                      .filter(
+                        ([name]) =>
+                          name.startsWith("core/") ||
+                          name.startsWith("satellite/") ||
+                          name.startsWith("model/") ||
+                          name.startsWith("analysis/"),
+                      )
+                      .map(
+                        ([name, info]) =>
+                          `${name}: ${info.source || info.reason || info.status}`,
+                      )
+                      .join("\n")}
+                  </pre>
+                </details>
                 {!!orphan.length && (
                   <details>
                     <summary>
@@ -748,7 +1061,33 @@ function App() {
                   <br />
                   Boundaries: A · Time series: B · Model: C · Analysis: D<br />
                   Esri imagery is a contextual basemap, not the team's measured
-                  satellite time series.
+                  satellite time series. Counties: U.S. Census Bureau, January
+                  2026 vintage. Generalized geographic context, not crop-year
+                  statistics or a cadastral survey.
+                  <br />
+                  <a
+                    href="https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/State_County/MapServer/9"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Census county source
+                  </a>{" "}
+                  ·{" "}
+                  <a
+                    href="https://doi.org/10.1002/agg2.20474"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    BARC reference (Dulaney et al.)
+                  </a>{" "}
+                  ·{" "}
+                  <a
+                    href="https://doi.org/10.3390/s23208595"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    BARC reference (Kraatz et al.)
+                  </a>
                 </small>
               </>
             )}

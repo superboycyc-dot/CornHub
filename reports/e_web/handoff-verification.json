@@ -1,0 +1,52 @@
+{
+  "core/fields.geojson": {
+    "sha256": "0ec8c03cbf78ee2dbadc79eb0b43604126e82ecbb2a96710f790574214e252de",
+    "rows": 83,
+    "source": "git:df7ce8cd63039e90de7ca78ba95f4f3259ee15c5:data/processed/core/fields.geojson"
+  },
+  "core/labels.csv": {
+    "sha256": "b7c453f7535eca3fea4477bd4861864d5912e47c1330be7c67588d8c94185f0a",
+    "rows": 44,
+    "source": "git:df7ce8cd63039e90de7ca78ba95f4f3259ee15c5:data/processed/core/labels.csv"
+  },
+  "core/smoke_sample.json": {
+    "sha256": "3199c9f2f6f77f6676f4747664dff40a825be04254361f2b25aacc3d3a32a3c1",
+    "rows": "object",
+    "source": "git:df7ce8cd63039e90de7ca78ba95f4f3259ee15c5:data/processed/core/smoke_sample.json"
+  },
+  "core/validation_folds.csv": {
+    "sha256": "a846206c02b3e53f57b997893ea5c2a730411fb7ea91863f5f96cb47ce878ca5",
+    "rows": 44,
+    "source": "git:df7ce8cd63039e90de7ca78ba95f4f3259ee15c5:data/processed/core/validation_folds.csv"
+  },
+  "satellite/timeseries.csv": {
+    "sha256": "cbd3867c4d4dd779b59c86811bd952715d98ce66da2d4be0bf9e8ff6980c579e",
+    "rows": 86,
+    "source": "git:9d31ddfdeff74648f03dcf04d5f35bdbabb2abf3:data/processed/satellite/timeseries.csv"
+  },
+  "satellite/features.csv": {
+    "sha256": "e4b8b7d0d449f5fa052a25c579aa6bd317bc533647874a27811ab683a3a2c47d",
+    "rows": 1,
+    "source": "git:9d31ddfdeff74648f03dcf04d5f35bdbabb2abf3:data/processed/satellite/features.csv"
+  },
+  "model/predictions.csv": {
+    "sha256": "ed1ffbf37c50c09b2c38a13781879663c900c62d1763f77786c8a0bc29fa5488",
+    "rows": 0,
+    "source": "git:c3f432cab739fd74847ee038684db32d28b7384e:data/processed/model/predictions.csv"
+  },
+  "model/metrics.json": {
+    "sha256": "caea1af7e202c35ad70d54ee90a8dd896d388cfa70fbd2883c7c4ed1a9910eaf",
+    "rows": "object",
+    "source": "git:c3f432cab739fd74847ee038684db32d28b7384e:data/processed/model/metrics.json"
+  },
+  "analysis/summary.json": {
+    "sha256": "ed77e1d7a7ead92d6ab0ce963b39182c8ba75061c80c5b796ad9d5e04cf204b6",
+    "rows": "object",
+    "source": "git:25755b55adbf6c38ca8b6a8e940a5b262f6f8836:data/processed/analysis/summary.json"
+  },
+  "analysis/review_queue.csv": {
+    "sha256": "cdf23cfebbef1d3f280f09e2969feef7723a63e58de87cc6ffa1dfcd8adff8c0",
+    "rows": 0,
+    "source": "git:25755b55adbf6c38ca8b6a8e940a5b262f6f8836:data/processed/analysis/review_queue.csv"
+  }
+}

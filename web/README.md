@@ -25,7 +25,7 @@ node scripts/browser-check.mjs
 
 ## 数据接入
 
-同步脚本逐字节复制仓库 `data/processed` 下已有常规文件到 `web/public/data`，保留相对路径和全部字段；每次清理旧发布副本，生成文件状态 manifest，缺文件继续。发布目录已忽略，不手改、不提交副本。源目录应由团队维护，不存凭据或未获许可的原件；同步不会过滤其已有文件。
+同步脚本逐字节复制仓库 `data/processed` 下已有常规文件到 `web/public/data`，保留相对路径和全部字段。尚未合入主线的团队交接文件，可按 `data-handoffs.json` 中固定的完整提交 SHA 从本仓库 Git 对象只读提取；本地文件优先。每次清理旧发布副本，生成带来源的 manifest，缺文件继续，不修改队友目录。发布目录已忽略，不手改、不提交副本。源目录应由团队维护，不存凭据或未获许可的原件；同步不会过滤其已有文件。
 
 页面读取合同十个路径：
 
@@ -44,7 +44,7 @@ summary 必须与选择的 year 和 role 一致，直接显示 D 的数值、sco
 
 `reports/e_web/empty-state.png` 和 `empty-state-mobile.png` 是当前仓库真实缺数据状态。浏览器检查中的临时测试数据仅存在请求拦截中，用于验证年份、用途和重复键；不写发布目录，不用作真实样本截图。
 
-真实样本截图尚未完成：A/B/C/D 的合同文件当前全缺。数据到齐后运行同步并打开共同样本，核实来源后截图，存 `reports/e_web/real-sample.png`。不能用已有加州州级统计或测试夹具代替 BARC 真实样本。
+已从 A/B/C/D 固定提交只读接入合同数据：83 块真实边界，44 个标签年，barc_1/2021 的 86 景 NDVI，模型/分析 pending。真实样本截图尚未完成：当前托管环境缺少支持的浏览器控制工具，因此未执行本轮截图，不把测试夹具或旧截图冒充已接通截图。
 
 最新主线 `51d5989` 已包含官方材料，已同步到本地，无需再次手工下载：
 
@@ -60,3 +60,19 @@ summary 必须与选择的 year 和 role 一致，直接显示 D 的数值、sco
 ## Full-screen interface
 
 The English interface uses a fixed full-viewport satellite map. Year, field and prediction-role selectors float above it. The bottom navigation opens Field, Observations, Analysis, Review, and Data status panels; Escape or the close button dismisses a panel. The page itself does not scroll; long panel contents scroll within their overlay. Esri imagery provides geographic context and is not used to fabricate NDVI observations.
+
+## County and field overlays
+
+县界：`reference/us-counties.geojson` 是 U.S. Census TIGERweb 的 2026-01-01 版本，3,235 个县及县级等价区域，EPSG:4326。可用 `python scripts/fetch-counties.py` 从官方服务刷新，来源、概化参数和 SHA-256 保存在 `reference/us-counties.source.json`。县界为概化背景，不用作地籍测量或年度农作物统计；地图只绘制视口附近县界。县界和田块均可独立开关。
+
+真实田块仅为 A 的 BARC 样区，并非美国所有农田：zoom ≥ 13 才显示轮廓；点击 Zoom to fields 可放大。悬停高亮并读取当前 field_id + year + prediction_role 的模型青贮概率、类别、独立的卫星质量与面积；无预测显示 Not computed。点击或手机点按打开详情。键盘可聚焦已显示的田块，Enter 打开详情。
+
+首次克隆如果缺固定交接提交，先执行：
+
+```bash
+git fetch origin work/a-data work/b-satellite work/c-model work/d-analysis
+cd web
+npm run sync:data
+```
+
+同步不自行 fetch，不偷偷合入队友分支，不创造字段 ID。固定 SHA 和逐文件字节核对见 `data-handoffs.json` 与 `reports/e_web/handoff-verification.json`。后续 A/B/C/D 更新后审查并修改对应 pin，或等其正式合入本地 data/processed；两种来源都逐字节保留。

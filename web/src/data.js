@@ -168,7 +168,7 @@ export async function loadData() {
   await Promise.all(
     paths.map(async (name) => {
       if (manifest.files?.[name]?.status !== "available") {
-        errors[name] = "Not provided";
+        errors[name] = manifest.files?.[name]?.reason || "Not provided";
         return;
       }
       try {
@@ -180,5 +180,5 @@ export async function loadData() {
       }
     }),
   );
-  return { data, errors };
+  return { data, errors, manifest };
 }

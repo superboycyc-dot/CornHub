@@ -1,0 +1,34 @@
+{
+  "description": "Read-only, pinned teammate handoffs. Local data/processed takes precedence. No IDs or results are generated here.",
+  "handoffs": [
+    {
+      "role": "A",
+      "branch": "work/a-data",
+      "commit": "df7ce8cd63039e90de7ca78ba95f4f3259ee15c5",
+      "files": [
+        "core/fields.geojson",
+        "core/labels.csv",
+        "core/smoke_sample.json",
+        "core/validation_folds.csv"
+      ]
+    },
+    {
+      "role": "B",
+      "branch": "work/b-satellite",
+      "commit": "9d31ddfdeff74648f03dcf04d5f35bdbabb2abf3",
+      "files": ["satellite/timeseries.csv", "satellite/features.csv"]
+    },
+    {
+      "role": "C",
+      "branch": "work/c-model",
+      "commit": "c3f432cab739fd74847ee038684db32d28b7384e",
+      "files": ["model/predictions.csv", "model/metrics.json"]
+    },
+    {
+      "role": "D",
+      "branch": "work/d-analysis",
+      "commit": "25755b55adbf6c38ca8b6a8e940a5b262f6f8836",
+      "files": ["analysis/summary.json", "analysis/review_queue.csv"]
+    }
+  ]
+}

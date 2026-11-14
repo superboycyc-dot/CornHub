@@ -1,0 +1,4 @@
+source_dataset_id,organization,source_url,product_version,retrieved_at_utc,license,notes
+barc_corn_2021_2023_challenge,Hack the Harvest / USDA BARC,https://hack-the-harvest.devpost.com/resources,workspace BARC_Corn.2021-2023.gpkg,,unknown,Existing user-supplied workspace original; exact acquisition timestamp unknown; inspected 2026-11-14T19:52:09.149831Z; cite official explorer references; not independently downloaded.
+barc_gridded_yield_archive,USDA ARS / Ag Data Commons,https://agdatacommons.nal.usda.gov/articles/dataset/USDA_Beltsville_Agricultural_Research_Center_BARC_Gridded_Yield_Data_Archive_version_1/28950746,landing page version 2,2026-11-14T19:52:09.149831Z,U.S. Public Domain,Upstream reference only; no claim exact challenge package is identical.
+barc_nisar_crop_reference,Kraatz / Zenodo,https://zenodo.org/records/8087301,1.0.0,2026-11-14T19:52:09.149831Z,CC-BY-4.0,Upstream reference only; verified through Zenodo API.
