@@ -65,7 +65,8 @@ export function parse(name, text) {
     ],
   };
   for (const key of headers[name] || [])
-    if (!result.meta.fields?.includes(key)) throw Error(`缺少合同字段 ${key}`);
+    if (!result.meta.fields?.includes(key))
+      throw Error(`Missing contract field ${key}`);
   if (result.errors.length)
     throw Error(result.errors.map((e) => e.message).join("; "));
   return result.data;
@@ -77,7 +78,7 @@ export function unique(rows, keys) {
   const seen = new Set();
   for (const row of rows) {
     const key = JSON.stringify(keys.map((k) => row[k]));
-    if (seen.has(key)) throw Error(`重复键 ${keys.join("+")}: ${key}`);
+    if (seen.has(key)) throw Error(`Duplicate key ${keys.join("+")}: ${key}`);
     seen.add(key);
   }
   return rows;
@@ -95,12 +96,12 @@ export function validate(name, data) {
     unique(data, keys[name]);
     for (const row of data) {
       if (!row.field_id || !/^\d{4}$/.test(row.year))
-        throw Error("field_id/year 不符合合同");
+        throw Error("field_id/year does not meet the contract");
       if (
         "prediction_role" in row &&
         !["oof", "inference"].includes(row.prediction_role)
       )
-        throw Error("未知 prediction_role");
+        throw Error("Unknown prediction_role");
       for (const [k, min, max] of [
         ["p_silage", 0, 1],
         ["ndvi", -1, 1],
@@ -112,25 +113,25 @@ export function validate(name, data) {
             number(row[k]) < min ||
             number(row[k]) > max)
         )
-          throw Error(`${k} 超出范围`);
+          throw Error(`${k} out of range`);
     }
   }
   if (name === "core/fields.geojson") {
     if (data.type !== "FeatureCollection" || !Array.isArray(data.features))
-      throw Error("需要 FeatureCollection");
+      throw Error("Expected a FeatureCollection");
     unique(
       data.features.map((f) => f.properties),
       ["field_id"],
     );
     if (data.crs && !JSON.stringify(data.crs).match(/4326|CRS84/))
-      throw Error("边界必须为 EPSG:4326");
+      throw Error("Boundaries must use EPSG:4326");
     for (const f of data.features) {
       if (
         typeof f.properties?.field_id !== "string" ||
         !f.properties.field_id ||
         !["Polygon", "MultiPolygon"].includes(f.geometry?.type)
       )
-        throw Error("边界 ID/几何不符合合同");
+        throw Error("Boundary ID/geometry does not meet the contract");
       const walk = (c) => {
         if (typeof c[0] === "number") {
           if (
@@ -140,7 +141,7 @@ export function validate(name, data) {
             Math.abs(c[0]) > 180 ||
             Math.abs(c[1]) > 90
           )
-            throw Error("经纬度范围错误");
+            throw Error("Invalid longitude/latitude range");
         } else c.forEach(walk);
       };
       walk(f.geometry.coordinates);
@@ -158,7 +159,7 @@ export async function loadData() {
     return {
       data: {},
       errors: {
-        manifest: `清单加载失败：${e.message}；请运行 npm run sync:data`,
+        manifest: `Manifest loading failed: ${e.message}; ask the site maintainer to run npm run sync:data and republish`,
       },
     };
   }
@@ -167,7 +168,7 @@ export async function loadData() {
   await Promise.all(
     paths.map(async (name) => {
       if (manifest.files?.[name]?.status !== "available") {
-        errors[name] = "尚未提供";
+        errors[name] = "Not provided";
         return;
       }
       try {
@@ -175,7 +176,7 @@ export async function loadData() {
         if (!r.ok) throw Error(`HTTP ${r.status}`);
         data[name] = validate(name, parse(name, await r.text()));
       } catch (e) {
-        errors[name] = `加载失败：${e.message}`;
+        errors[name] = `Loading failed: ${e.message}`;
       }
     }),
   );

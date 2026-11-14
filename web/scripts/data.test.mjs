@@ -46,7 +46,10 @@ test("duplicates and invalid probabilities fail visibly; roles remain distinct",
     p_silage: "0",
     prediction_role: "oof",
   };
-  assert.throws(() => validate("model/predictions.csv", [row, row]), /重复键/);
+  assert.throws(
+    () => validate("model/predictions.csv", [row, row]),
+    /Duplicate key/,
+  );
   assert.doesNotThrow(() =>
     validate("model/predictions.csv", [
       row,
@@ -55,7 +58,7 @@ test("duplicates and invalid probabilities fail visibly; roles remain distinct",
   );
   assert.throws(
     () => validate("model/predictions.csv", [{ ...row, p_silage: "1.1" }]),
-    /范围/,
+    /out of range/,
   );
   assert.throws(
     () =>

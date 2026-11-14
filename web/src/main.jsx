@@ -4,7 +4,8 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "./style.css";
 import { loadData, number, present } from "./data";
-const show = (v, missing = "缺测") => (present(v) ? String(v) : missing);
+const show = (v, missing = "Missing data") =>
+  present(v) ? String(v) : missing;
 function Map({ fields, onSelect, selected }) {
   const el = useRef(),
     map = useRef();
@@ -30,15 +31,17 @@ function Map({ fields, onSelect, selected }) {
   }, [fields, selected]);
   return (
     <div className="map-wrap">
-      <div ref={el} className="map" aria-label="田块地图" />
+      <div ref={el} className="map" aria-label="Field map" />
       {!fields?.features.length && (
         <div className="map-empty">
-          真实田块边界尚未提供
+          Field boundaries have not been provided
           <br />
-          <small>等待 A：core/fields.geojson · EPSG:4326</small>
+          <small>Awaiting A: core/fields.geojson · EPSG:4326</small>
         </div>
       )}
-      <span className="map-note">经度、纬度 · 不使用外部底图</span>
+      <span className="map-note">
+        Longitude, latitude · No external basemap
+      </span>
     </div>
   );
 }
@@ -50,7 +53,11 @@ function Curve({ rows }) {
         a.date.localeCompare(b.date) || a.scene_id.localeCompare(b.scene_id),
     );
   if (!good.length)
-    return <p className="empty">缺测：没有真实 NDVI 观测，不生成曲线。</p>;
+    return (
+      <p className="empty">
+        Missing data: no observed NDVI values are available.
+      </p>
+    );
   const dates = good.map((r) => Date.parse(r.date)),
     min = Math.min(...dates),
     max = Math.max(...dates);
@@ -59,7 +66,7 @@ function Curve({ rows }) {
       <svg
         viewBox="0 0 640 190"
         role="img"
-        aria-label="真实 NDVI 观测点；不插值、不连线"
+        aria-label="Observed NDVI points; no interpolation or connecting lines"
       >
         <line x1="40" y1="10" x2="40" y2="165" stroke="#aaa" />
         <line x1="40" y1="165" x2="620" y2="165" stroke="#aaa" />
@@ -77,7 +84,8 @@ function Curve({ rows }) {
             fill={number(r.valid_pixel_fraction) >= 0.5 ? "#286c53" : "#a36c31"}
           >
             <title>
-              {r.date} NDVI={r.ndvi} 有效比例={r.valid_pixel_fraction} scene_id=
+              {r.date} NDVI={r.ndvi} valid-pixel fraction=
+              {r.valid_pixel_fraction} scene_id=
               {r.scene_id}
             </title>
           </circle>
@@ -90,11 +98,11 @@ function Curve({ rows }) {
         </text>
       </svg>
       <small>
-        仅展示观测点，不插值。棕色：有效比例不足 0.5 或缺测。来源
-        satellite/timeseries.csv
+        Observed points only; no interpolation. Brown: valid-pixel fraction
+        below 0.5 or missing. Source: satellite/timeseries.csv
       </small>
       <details>
-        <summary>逐景来源</summary>
+        <summary>Scene-level sources</summary>
         <Table
           rows={rows}
           cols={[
@@ -133,7 +141,7 @@ function Table({ rows, cols }) {
       </table>
     </div>
   ) : (
-    <p className="empty">尚未提供记录</p>
+    <p className="empty">No records provided</p>
   );
 }
 function App() {
@@ -201,23 +209,24 @@ function App() {
         <div className="brand">
           C<span>●</span>RNHUB
         </div>
-        <span>BARC / 田块证据工作台</span>
-        <span className="stage">阶段 01 · 本地集成</span>
+        <span>BARC / Field Evidence Workspace</span>
+        <span className="stage">Phase 01 · Data integration</span>
       </header>
       <main>
         <div className="intro">
           <div>
             <p className="eyebrow">FIELD EVIDENCE · 2021—2023</p>
-            <h1>从真实田块，查看收获证据。</h1>
+            <h1>Explore harvest evidence, field by field.</h1>
             <p>
-              卫星观测、模型青贮概率与数据质量分别呈现。结果仅代表选定范围。
+              Explore satellite observations, model silage probabilities, and
+              data quality separately. Results apply only to the selected scope.
             </p>
           </div>
-          <button onClick={reload}>重新加载数据</button>
+          <button onClick={reload}>Reload data</button>
         </div>
         <div className="toolbar">
           <label>
-            年份{" "}
+            Year{" "}
             <select value={year} onChange={(e) => setYear(e.target.value)}>
               {["2021", "2022", "2023"].map((y) => (
                 <option key={y}>{y}</option>
@@ -225,44 +234,57 @@ function App() {
             </select>
           </label>
           <label>
-            预测用途{" "}
+            Prediction role{" "}
             <select value={role} onChange={(e) => setRole(e.target.value)}>
-              <option value="oof">oof · 田块外验证</option>
-              <option value="inference">inference · 全量推断</option>
+              <option value="oof">oof · Held-out field validation</option>
+              <option value="inference">
+                inference · Full-model predictions
+              </option>
             </select>
           </label>
           <label>
-            田块{" "}
+            Field{" "}
             <select value={fieldId} onChange={(e) => setId(e.target.value)}>
-              <option value="">选择真实田块</option>
+              <option value="">Select a field</option>
               {allIds.map((i) => (
                 <option key={i}>{i}</option>
               ))}
             </select>
           </label>
-          <span>{loading ? "正在加载…" : "来源：data/processed 发布副本"}</span>
+          <span>
+            {loading ? "Loading…" : "Source: published data/processed snapshot"}
+          </span>
         </div>
         <div className="grid">
           <section className="card map-card">
             <h2>
-              田块地图 <small>真实边界</small>
+              Field map <small>Observed boundaries</small>
             </h2>
             <Map fields={fields} selected={fieldId} onSelect={setId} />
           </section>
           <section className="card">
-            <h2>田块详情</h2>
-            <h3>{fieldId || "等待共同样本"}</h3>
+            <h2>Field details</h2>
+            <h3>{fieldId || "Awaiting the shared sample"}</h3>
             <dl>
               {Object.entries({
-                年份: year,
-                "面积（ha）": show(boundary?.area_ha),
-                "官方 ID": show(boundary?.source_field_id),
-                标签: show(label?.label),
-                来源数据集: show(boundary?.source_dataset_id),
-                模型青贮概率: show(prediction?.p_silage, "未计算"),
-                预测类别: show(prediction?.predicted_label, "未计算"),
-                模型版本: show(prediction?.model_version, "未计算"),
-                预测用途: role,
+                Year: year,
+                "Area (ha)": show(boundary?.area_ha),
+                "Official ID": show(boundary?.source_field_id),
+                Label: show(label?.label),
+                "Source dataset": show(boundary?.source_dataset_id),
+                "Model silage probability": show(
+                  prediction?.p_silage,
+                  "Not computed",
+                ),
+                "Predicted class": show(
+                  prediction?.predicted_label,
+                  "Not computed",
+                ),
+                "Model version": show(
+                  prediction?.model_version,
+                  "Not computed",
+                ),
+                "Prediction role": role,
               }).map(([k, v]) => (
                 <React.Fragment key={k}>
                   <dt>{k}</dt>
@@ -271,18 +293,18 @@ function App() {
               ))}
             </dl>
             <p className="notice">
-              模型概率不是准确率；未提供预测时显示未计算。来源
-              model/predictions.csv。
+              Model probability is not accuracy. Missing predictions are shown
+              as Not computed. Source: model/predictions.csv.
             </p>
           </section>
           <section className="card">
             <h2>
-              NDVI 时序 <small>{year} · 不插值</small>
+              NDVI time series <small>{year} · No interpolation</small>
             </h2>
             <Curve rows={selected(d["satellite/timeseries.csv"])} />
           </section>
           <section className="card">
-            <h2>卫星数据质量</h2>
+            <h2>Satellite data quality</h2>
             <dl>
               {[
                 "quality_flag",
@@ -297,17 +319,20 @@ function App() {
               ))}
             </dl>
             <small>
-              来源 satellite/features.csv · 暂定质量规则，不代表预测可靠性。
+              Source: satellite/features.csv · Provisional quality rules do not
+              measure prediction reliability.
             </small>
           </section>
           <section className="card">
             <h2>
-              面积与经济汇总 <small>D 的原始结果</small>
+              Area and economic summary <small>Results supplied by D</small>
             </h2>
             {summaryMatches ? (
               <>
                 <p>
-                  {summary.status === "pending" ? "未计算" : summary.status}
+                  {summary.status === "pending"
+                    ? "Not computed"
+                    : summary.status}
                 </p>
                 <dl>
                   {[
@@ -326,40 +351,44 @@ function App() {
                           typeof summary[k] === "object"
                             ? JSON.stringify(summary[k])
                             : summary[k],
-                          "未计算",
+                          "Not computed",
                         )}
                       </dd>
                     </React.Fragment>
                   ))}
                 </dl>
                 <p>
-                  经济情景：
+                  Economic scenario:
                   {summary.economic_scenario
                     ? JSON.stringify(summary.economic_scenario)
-                    : "未计算"}
+                    : "Not computed"}
                 </p>
                 <p>{JSON.stringify(summary.notes)}</p>
               </>
             ) : (
               <p className="empty">
-                未计算：尚无当前年份与用途的 summary.json。前端不自行统计。
+                Not computed: no summary.json matches the selected year and
+                role. This page does not calculate its own summary.
               </p>
             )}
           </section>
           <section className="card">
-            <h2>模型验证</h2>
+            <h2>Model validation</h2>
             {metrics?.status === "evaluated" &&
             metrics.prediction_role === role ? (
               <pre>{JSON.stringify(metrics, null, 2)}</pre>
             ) : (
-              <p className="empty">未计算：尚无匹配用途的真实验证指标。</p>
+              <p className="empty">
+                Not computed: no evaluated metrics match the selected prediction
+                role.
+              </p>
             )}
           </section>
           <section className="card wide">
-            <h2>核查清单</h2>
+            <h2>Review queue</h2>
             <p>
-              来源 analysis/review_queue.csv ·
-              启发式优先级，不是误判概率或经济价值。
+              Source: analysis/review_queue.csv · Heuristic priority, not an
+              error probability or economic value.
             </p>
             <Table
               rows={queue}
@@ -374,7 +403,7 @@ function App() {
             />
           </section>
           <section className="card wide">
-            <h2>待补数据与接入检查</h2>
+            <h2>Data gaps and integration checks</h2>
             <Table
               rows={allIds
                 .map((field_id) => {
@@ -389,40 +418,44 @@ function App() {
                     year,
                     prediction_role: role,
                     reason: [
-                      !present(p?.p_silage) && "无预测",
+                      !present(p?.p_silage) && "No prediction",
                       (!f || f.quality_flag !== "usable") &&
-                        `卫星质量：${f?.quality_flag || "缺测"}`,
+                        `Satellite quality: ${f?.quality_flag || "Missing data"}`,
                     ]
                       .filter(Boolean)
-                      .join("；"),
+                      .join("; "),
                   };
                 })
                 .filter((r) => r.reason)}
               cols={["field_id", "year", "prediction_role", "reason"]}
             />
             <details open>
-              <summary>文件状态与加载失败提示</summary>
+              <summary>File status and loading errors</summary>
               {Object.entries(errors).map(([name, e]) => (
                 <p className="file-status" key={name}>
                   <code>{name}</code>
                   <span>{e}</span>
                 </p>
               ))}
-              {!Object.keys(errors).length && <p>全部合同文件已读取。</p>}
+              {!Object.keys(errors).length && (
+                <p>All contract files have been loaded.</p>
+              )}
             </details>
             {!!orphan.length && (
               <details>
-                <summary>未匹配边界的记录（不丢弃）</summary>
+                <summary>
+                  Records without matching boundaries (retained)
+                </summary>
                 <pre>{orphan.join("\n")}</pre>
               </details>
             )}
             <details>
-              <summary>输入记录数</summary>
+              <summary>Input record counts</summary>
               <pre>
                 {Object.entries(d)
                   .map(
                     ([k, v]) =>
-                      `${k}: ${Array.isArray(v) ? v.length : (v.features?.length ?? "JSON 对象")}`,
+                      `${k}: ${Array.isArray(v) ? v.length : (v.features?.length ?? "JSON object")}`,
                   )
                   .join("\n")}
               </pre>
@@ -430,8 +463,8 @@ function App() {
           </section>
         </div>
         <footer>
-          合同：docs/team-contract.md · 边界由 A 提供 · 时序 B · 模型 C · 汇总 D
-          · 页面 E
+          Contract: docs/team-contract.md · Boundaries: A · Time series: B ·
+          Model: C · Summary: D · Website: E
         </footer>
       </main>
     </>

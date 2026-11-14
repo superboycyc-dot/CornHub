@@ -6,7 +6,7 @@ const page = await browser.newPage({ viewport: { width: 1440, height: 1100 } });
 const errors = [];
 page.on("pageerror", (e) => errors.push(e.message));
 await page.goto("http://localhost:5173");
-await page.getByText("真实田块边界尚未提供").waitFor();
+await page.getByText("Field boundaries have not been provided").waitFor();
 await page.screenshot({
   path: "../reports/e_web/empty-state.png",
   fullPage: true,
@@ -23,8 +23,8 @@ assert.equal(
 await page.route("**/data/manifest.json", (r) =>
   r.fulfill({ status: 500, body: "failed" }),
 );
-await page.getByRole("button", { name: "重新加载数据" }).click();
-await page.getByText(/清单加载失败/).waitFor();
+await page.getByRole("button", { name: "Reload data" }).click();
+await page.getByText(/Manifest loading failed/).waitFor();
 await page.unroute("**/data/manifest.json");
 const bodies = {
   "core/fields.geojson": JSON.stringify({
@@ -75,49 +75,51 @@ await page.route("**/data/**", (r) => {
   if (bodies[name]) return r.fulfill({ body: bodies[name] });
   return r.fulfill({ status: 404 });
 });
-await page.getByRole("button", { name: "重新加载数据" }).click();
+await page.getByRole("button", { name: "Reload data" }).click();
 await page
   .getByRole("heading", { name: "test_only_001", exact: true })
   .waitFor();
 assert.equal(
   await page
     .locator("dt")
-    .filter({ hasText: "模型青贮概率" })
+    .filter({ hasText: "Model silage probability" })
     .locator("+ dd")
     .textContent(),
   "0.2",
 );
-await page.getByLabel("预测用途").selectOption("inference");
+await page.getByLabel("Prediction role").selectOption("inference");
 assert.equal(
   await page
     .locator("dt")
-    .filter({ hasText: "模型青贮概率" })
+    .filter({ hasText: "Model silage probability" })
     .locator("+ dd")
     .textContent(),
   "0.8",
 );
-await page.getByText(/尚无当前年份与用途的 summary/).waitFor();
+await page
+  .getByText(/no summary\.json matches the selected year and role/)
+  .waitFor();
 await page.getByRole("combobox").nth(0).selectOption("2022");
 assert.equal(
   await page
     .locator("dt")
-    .filter({ hasText: "模型青贮概率" })
+    .filter({ hasText: "Model silage probability" })
     .locator("+ dd")
     .textContent(),
-  "未计算",
+  "Not computed",
 );
-await page.getByLabel("预测用途").selectOption("oof");
+await page.getByLabel("Prediction role").selectOption("oof");
 assert.equal(
   await page
     .locator("dt")
-    .filter({ hasText: "模型青贮概率" })
+    .filter({ hasText: "Model silage probability" })
     .locator("+ dd")
     .textContent(),
   "0.9",
 );
 bodies["model/predictions.csv"] += "test_only_001,2022,0.9,silage,oof,0,test\n";
-await page.getByRole("button", { name: "重新加载数据" }).click();
-await page.getByText(/加载失败：重复键/).waitFor();
+await page.getByRole("button", { name: "Reload data" }).click();
+await page.getByText(/Loading failed: Duplicate key/).waitFor();
 assert.deepEqual(errors, []);
 await browser.close();
 console.log(
