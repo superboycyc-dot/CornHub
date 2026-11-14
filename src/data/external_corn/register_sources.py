@@ -17,7 +17,7 @@ for kind,name,url,size,md5,license in items:
   contents=[{'name':v.filename,'bytes':v.file_size} for v in z.infolist()]
   if kind=='csb':
    metadata=next(v.filename for v in z.infolist() if v.filename.endswith('.htm'))
-   (ROOT/'reports/a_data/external_corn/csb_official_metadata.htm').write_bytes(z.read(metadata))
+   (ROOT/'reports/a_data/external_corn/csb_official_metadata.htm').write_text('\n'.join(line.rstrip() for line in z.read(metadata).decode('utf-8-sig').splitlines())+'\n')
  result.append(dict(dataset=kind,url=url,local_path=str(path.relative_to(ROOT)),bytes=size,uncompressed_bytes=sum(v['bytes'] for v in contents),sha256=h.hexdigest(),md5=m.hexdigest(),publisher_md5_verified=bool(md5),zip_crc='passed',license=license,verified_at_utc=datetime.now(timezone.utc).isoformat().replace('+00:00','Z'),contents=contents))
  print(kind,'raw verified',flush=True)
 (ROOT/'reports/a_data/external_corn/sources_manifest.json').write_text(json.dumps(result,indent=2)+'\n')
