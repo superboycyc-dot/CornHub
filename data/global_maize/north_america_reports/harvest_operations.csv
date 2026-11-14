@@ -1,0 +1,86 @@
+pdf,page,farm,field,date,acres,harvest_label,basis,source_record,matching_boundary_id,challenge_year_label
+APU_1.pdf,15,APU,1,2023-11-16,15.93,grain,field corn + combine,"1 Whole Field 15.93 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_1,Grain
+APU_1.pdf,15,APU,1,2021-09-21,15.93,grain,field corn + combine,"1 Whole Field 15.93 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_1,Grain
+APU_30.pdf,8,APU,30,2023-11-16,35.86,grain,field corn + combine,"30 Whole Field 35.86 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_24,Grain
+APU_30.pdf,8,APU,30,2021-09-20,35.86,grain,field corn + combine,"30 Whole Field 35.86 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_24,Grain
+APU_7.pdf,15,APU,7,2020-09-08,15.18,silage,CSIL + chopper,"7 Whole Field 15.18 E Claas 940 Jaguar Chopper (2020) [RETURNED] Corn, Silage (CSIL) /",barc_35,
+APU_7.pdf,15,APU,7,2018-10-02,16.55,grain,field corn + combine,"7 Whole Field 16.55 W International Harvester 1440 Combine Corn, Field (FLDCRN) /",barc_35,
+APU_7.pdf,15,APU,7,2015-09-14,16.55,grain,field corn + combine,"7 Whole Field 16.55 UMD Combine Corn, Field (FLDCRN) /",barc_35,
+CentralFarm_1-1.pdf,13,CentralFarm,1-1,2022-11-21,27.10,grain,field corn + combine,"1-1 Whole Field 27.10 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_230,
+CentralFarm_1-14A.pdf,15,CentralFarm,1-14A,2023-10-19,7.07,grain,field corn + combine,"1-14A Whole Field 7.07 E John Deere S660 Combine Corn, Field (FLDCRN) /",,
+CentralFarm_1-14A.pdf,16,CentralFarm,1-14A,2015-09-18,4.76,grain,field corn + combine,"1-14A Whole Field 4.76 UMD Combine Corn, Field (FLDCRN) /",,
+CentralFarm_1-14B.pdf,13,CentralFarm,1-14B,2021-10-05,13.18,grain,field corn + combine,"1-14B Whole Field 13.18 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_234,
+CentralFarm_1-14B.pdf,13,CentralFarm,1-14B,2021-10-04,13.18,grain,field corn + combine,"1-14B Whole Field 13.18 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_234,
+CentralFarm_1-14B.pdf,13,CentralFarm,1-14B,2019-09-10,13.33,grain,field corn + combine,"1-14B Whole Field 13.33 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_234,
+CentralFarm_1-14B.pdf,13,CentralFarm,1-14B,2019-09-10,13.33,grain,field corn + combine,"1-14B Whole Field 13.33 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_234,
+CentralFarm_1-14B.pdf,13,CentralFarm,1-14B,2018-09-04,6.86,silage,CSIL + chopper,"1-14B Whole Field 6.86 E Claas Jaguar 940 Chopper (2018) [RETURNED] Corn, Silage (CSIL) /",barc_234,
+CentralFarm_1-14C.pdf,15,CentralFarm,1-14C,2023-10-19,11.53,grain,field corn + combine,"1-14C Whole Field 11.53 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_235,
+CentralFarm_1-14C.pdf,15,CentralFarm,1-14C,2015-09-18,8.59,grain,field corn + combine,"1-14C Whole Field 8.59 UMD Combine Corn, Field (FLDCRN) /",barc_235,
+CentralFarm_1-15.pdf,15,CentralFarm,1-15,2023-10-30,16.88,grain,field corn + combine,"1-15 Whole Field 16.88 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_238,Grain
+CentralFarm_1-2B.pdf,14,CentralFarm,1-2B,2023-11-15,11.34,grain,field corn + combine,"1-2B Whole Field 11.34 E John Deere S660 Combine Corn, Field (FLDCRN) /",,
+CentralFarm_1-2B.pdf,14,CentralFarm,1-2B,2021-09-13,11.34,silage,CSIL + chopper,"1-2B Whole Field 11.34 E Claas 940 Jaguar Chopper (2021) [RETURNED] Corn, Silage (CSIL) /",,
+CentralFarm_1-2C.pdf,15,CentralFarm,1-2C,2022-09-03,11.87,silage,CSIL + chopper,"1-2C Whole Field 11.87 E Claas 940 Jaguar Chopper (2022) [RETURNED] Corn, Silage (CSIL) /",,
+CentralFarm_1-2D.pdf,14,CentralFarm,1-2D,2023-11-15,8.66,grain,field corn + combine,"1-2D Whole Field 8.66 E John Deere S660 Combine Corn, Field (FLDCRN) /",,
+CentralFarm_1-2D.pdf,14,CentralFarm,1-2D,2021-09-13,8.66,silage,CSIL + chopper,"1-2D Whole Field 8.66 E Claas 940 Jaguar Chopper (2021) [RETURNED] Corn, Silage (CSIL) /",,
+CentralFarm_1-30.pdf,11,CentralFarm,1-30,2023-10-06,34.22,grain,field corn + combine,"1-30 Whole Field 34.22 E John Deere S660 Combine Corn, Field (FLDCRN) /",,
+CentralFarm_1-30.pdf,11,CentralFarm,1-30,2015-09-15,34.22,grain,field corn + combine,"1-30 Whole Field 34.22 UMD Combine Corn, Field (FLDCRN) /",,
+CentralFarm_1-32.pdf,15,CentralFarm,1-32,2023-10-31,14.59,grain,field corn + combine,"1-32 Whole Field 14.59 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_248,Silage
+CentralFarm_1-32.pdf,15,CentralFarm,1-32,2023-09-07,14.59,silage,CSIL + chopper,"1-32 Whole Field 14.59 E Claas 960 Jaguar Chopper (2023) [RETURNED] Corn, Silage (CSIL) /",barc_248,Silage
+CentralFarm_1-32.pdf,16,CentralFarm,1-32,2019-08-17,14.96,silage,CSIL + chopper,"1-32 Whole Field 14.96 E Claas Jaguar 940 Chopper (2019) [RETURNED] Corn, Silage (CSIL) /",barc_248,
+CentralFarm_1-32.pdf,16,CentralFarm,1-32,2019-08-16,14.96,silage,CSIL + chopper,"1-32 Whole Field 14.96 E Claas Jaguar 940 Chopper (2019) [RETURNED] Corn, Silage (CSIL) /",barc_248,
+CentralFarm_1-32.pdf,16,CentralFarm,1-32,2015-09-29,14.96,grain,field corn + combine,"1-32 Whole Field 14.96 UMD Combine Corn, Field (FLDCRN) /",barc_248,
+CentralFarm_1-37.pdf,16,CentralFarm,1-37,2022-08-29,29.68,silage,CSIL + chopper,"1-37 Whole Field 29.68 E Claas 940 Jaguar Chopper (2022) [RETURNED] Corn, Silage (CSIL) /",barc_252,Silage
+CentralFarm_1-7.pdf,13,CentralFarm,1-7,2023-09-05,28.95,silage,CSIL + chopper,"1-7 Whole Field 28.95 E Claas 960 Jaguar Chopper (2023) [RETURNED] Corn, Silage (CSIL) /",,
+CentralFarm_1-7.pdf,13,CentralFarm,1-7,2020-09-05,28.95,silage,CSIL + chopper,"1-7 Whole Field 28.95 E Claas 940 Jaguar Chopper (2020) [RETURNED] Corn, Silage (CSIL) /",,
+CentralFarm_1-9.pdf,12,CentralFarm,1-9,2021-10-07,32.17,grain,field corn + combine,"1-9 Whole Field 32.17 E John Deere S660 Combine Corn, Field (FLDCRN) /",,
+CentralFarm_1-9.pdf,12,CentralFarm,1-9,2019-08-17,32.65,silage,CSIL + chopper,"1-9 Whole Field 32.65 E Claas Jaguar 940 Chopper (2018) [RETURNED] Corn, Silage (CSIL) / 2Y767",,
+CentralFarm_2-13.pdf,11,CentralFarm,2-13,2019-08-19,26.35,silage,CSIL + chopper,"2-13 Whole Field 26.35 E Claas Jaguar 940 Chopper (2019) [RETURNED] Corn, Silage (CSIL) /",barc_271,
+CentralFarm_2-32A.pdf,15,CentralFarm,2-32A,2022-10-31,18.81,silage,CSIL + chopper,"2-32A Whole Field 18.81 E Claas 940 Jaguar Chopper (2022) [RETURNED] Corn, Silage (CSIL) /",barc_278,Silage
+CentralFarm_2-32A.pdf,16,CentralFarm,2-32A,2019-09-10,19.05,grain,field corn + combine,"2-32A Whole Field 19.05 E John Deere S660 Combine Corn, Field (FLDCRN) / Hubner H4744RC2P",barc_278,
+CentralFarm_2-32A.pdf,16,CentralFarm,2-32A,2015-09-29,19.05,grain,field corn + combine,"2-32A Whole Field 19.05 UMD Combine Corn, Field (FLDCRN) /",barc_278,
+CentralFarm_2-32B.pdf,13,CentralFarm,2-32B,2022-11-21,17.68,grain,field corn + combine,"2-32B Whole Field 17.68 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_279,Grain
+CentralFarm_2-32B.pdf,13,CentralFarm,2-32B,2018-10-17,17.76,grain,field corn + combine,"2-32B Whole Field 17.76 W International Harvester 1440 Combine Corn, Field (FLDCRN) /",barc_279,
+CentralFarm_2-32C.pdf,15,CentralFarm,2-32C,2021-09-07,20.62,silage,CSIL + chopper,"2-32C Whole Field 20.62 E Claas 940 Jaguar Chopper (2021) [RETURNED] Corn, Silage (CSIL) /",barc_280,Silage
+CentralFarm_2-68B.pdf,16,CentralFarm,2-68B,2018-10-04,17.83,grain,field corn + combine,"2-68B Whole Field 17.83 E John Deere S660 Combine Corn, Field (FLDCRN) / H5222RC3P",barc_291,
+CentralFarm_2-71.pdf,13,CentralFarm,2-71,2023-09-06,40.16,silage,CSIL + chopper,"2-71 Whole Field 40.16 E Claas 960 Jaguar Chopper (2023) [RETURNED] Corn, Silage (CSIL) /",,
+CentralFarm_2-71.pdf,13,CentralFarm,2-71,2022-11-21,40.16,grain,field corn + combine,"2-71 Whole Field 40.16 E John Deere S660 Combine Corn, Field (FLDCRN) /",,
+CentralFarm_2-71.pdf,13,CentralFarm,2-71,2019-09-22,40.05,grain,field corn + combine,"2-71 Whole Field 40.05 E John Deere S660 Combine Corn, Field (FLDCRN) /",,
+CentralFarm_2-72.pdf,12,CentralFarm,2-72,2021-09-28,40.74,grain,field corn + combine,"2-72 Whole Field 40.74 E John Deere S660 Combine Corn, Field (FLDCRN) /",,
+CentralFarm_2-72.pdf,12,CentralFarm,2-72,2018-08-30,40.47,silage,CSIL + chopper,"2-72 Whole Field 40.47 E Claas Jaguar 940 Chopper (2018) [RETURNED] Corn, Silage (CSIL) / 2Y767",,
+CentralFarm_2-72.pdf,12,CentralFarm,2-72,2018-08-29,40.47,silage,CSIL + chopper,"2-72 Whole Field 40.47 E Claas Jaguar 940 Chopper (2018) [RETURNED] Corn, Silage (CSIL) / 2Y767",,
+CentralFarm_4-25.pdf,12,CentralFarm,4-25,2023-09-07,24.02,silage,CSIL + chopper,"4-25 Whole Field 24.02 E Claas 960 Jaguar Chopper (2023) [RETURNED] Corn, Silage (CSIL) /",barc_323,Silage
+CentralFarm_4-25.pdf,13,CentralFarm,4-25,2018-09-05,24.16,silage,CSIL + chopper,"4-25 Whole Field 24.16 E Claas Jaguar 940 Chopper (2018) [RETURNED] Corn, Silage (CSIL) / 2Y767",barc_323,
+CentralFarm_4-25.pdf,13,CentralFarm,4-25,2018-09-04,24.16,silage,CSIL + chopper,"4-25 Whole Field 24.16 E Claas Jaguar 940 Chopper (2018) [RETURNED] Corn, Silage (CSIL) / 2Y767",barc_323,
+CentralFarm_4-25.pdf,13,CentralFarm,4-25,2018-08-30,24.16,silage,CSIL + chopper,"4-25 Whole Field 24.16 E Claas Jaguar 940 Chopper (2018) [RETURNED] Corn, Silage (CSIL) / 2Y767",barc_323,
+CentralFarm_4-7.pdf,14,CentralFarm,4-7,2020-09-05,21.29,silage,CSIL + chopper,"4-7 Whole Field 21.29 E Claas 940 Jaguar Chopper (2020) [RETURNED] Corn, Silage (CSIL) /",barc_327,
+CentralFarm_4-7.pdf,15,CentralFarm,4-7,2017-10-24,22.15,grain,field corn + combine,"4-7 Whole Field 22.15 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_327,
+CentralFarm_4-8.pdf,11,CentralFarm,4-8,2021-09-08,15.25,silage,CSIL + chopper,"4-8 Whole Field 15.25 E Claas 940 Jaguar Chopper (2021) [RETURNED] Corn, Silage (CSIL) /",barc_328,Silage
+EastFarm_5-12.pdf,14,EastFarm,5-12,2021-09-28,25.18,grain,field corn + combine,"5-12 Whole Field 25.18 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_334,Grain
+EastFarm_5-12.pdf,14,EastFarm,5-12,2018-10-06,26.10,grain,field corn + combine,"5-12 Whole Field 26.10 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_334,
+EastFarm_5-21.pdf,15,EastFarm,5-21,2023-10-16,16.27,grain,field corn + combine,"5-21 Whole Field 16.27 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_347,Grain
+EastFarm_5-21.pdf,15,EastFarm,5-21,2021-10-13,16.27,grain,field corn + combine,"5-21 Whole Field 16.27 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_347,Grain
+EastFarm_5-23.pdf,13,EastFarm,5-23,2023-10-16,18.41,grain,field corn + combine,"5-23 Whole Field 18.41 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_348,Grain
+EastFarm_5-23.pdf,13,EastFarm,5-23,2021-10-13,18.41,grain,field corn + combine,"5-23 Whole Field 18.41 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_348,Grain
+EastFarm_5-23.pdf,13,EastFarm,5-23,2019-09-20,18.85,grain,field corn + combine,"5-23 Whole Field 18.85 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_348,
+EastFarm_5-3A.pdf,11,EastFarm,5-3A,2019-09-20,13.76,grain,field corn + combine,"5-3A Whole Field 13.76 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_392,
+EastFarm_5-3A.pdf,11,EastFarm,5-3A,2017-11-17,13.76,grain,field corn + combine,"5-3A Whole Field 13.76 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_392,
+EastFarm_5-3B.pdf,11,EastFarm,5-3B,2019-09-20,8.09,grain,field corn + combine,"5-3B Whole Field 8.09 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_393,
+EastFarm_5-3B.pdf,11,EastFarm,5-3B,2017-11-17,8.09,grain,field corn + combine,"5-3B Whole Field 8.09 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_393,
+EastFarm_5-3C.pdf,12,EastFarm,5-3C,2023-11-20,8.52,grain,field corn + combine,"5-3C Whole Field 8.52 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_394,Grain
+EastFarm_5-3C.pdf,12,EastFarm,5-3C,2019-09-20,8.52,grain,field corn + combine,"5-3C Whole Field 8.52 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_394,
+EastFarm_5-3C.pdf,12,EastFarm,5-3C,2017-11-17,8.52,grain,field corn + combine,"5-3C Whole Field 8.52 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_394,
+EastFarm_5-3D.pdf,12,EastFarm,5-3D,2023-11-20,9.74,grain,field corn + combine,"5-3D Whole Field 9.74 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_395,
+EastFarm_5-3D.pdf,12,EastFarm,5-3D,2019-09-20,9.74,grain,field corn + combine,"5-3D Whole Field 9.74 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_395,
+EastFarm_5-3D.pdf,12,EastFarm,5-3D,2017-11-17,9.74,grain,field corn + combine,"5-3D Whole Field 9.74 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_395,
+EastFarm_5-45D.pdf,15,EastFarm,5-45D,2018-08-31,17.30,silage,CSIL + chopper,"5-45D Whole Field 17.30 E Claas Jaguar 940 Chopper (2018) [RETURNED] Corn, Silage (CSIL) /",barc_419,
+EastFarm_5-45D.pdf,15,EastFarm,5-45D,2015-09-10,8.52,grain,field corn + combine,"5-45D Whole Field 8.52 UMD Combine Corn, Field (FLDCRN) /",barc_419,
+EastFarm_6-60.pdf,13,EastFarm,6-60,2020-10-18,25.28,grain,field corn + combine,"6-60 Whole Field 25.28 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_434,
+EastFarm_6-60.pdf,13,EastFarm,6-60,2019-09-25,25.20,grain,field corn + combine,"6-60 Whole Field 25.20 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_434,
+EastFarm_6-60.pdf,13,EastFarm,6-60,2019-09-25,25.20,grain,field corn + combine,"6-60 Whole Field 25.20 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_434,
+EastFarm_6-60.pdf,13,EastFarm,6-60,2019-09-20,25.20,grain,field corn + combine,"6-60 Whole Field 25.20 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_434,
+EastFarm_6-64.pdf,12,EastFarm,6-64,2020-10-18,22.07,grain,field corn + combine,"6-64 Whole Field 22.07 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_437,
+EastFarm_6-64.pdf,12,EastFarm,6-64,2019-09-30,22.67,grain,field corn + combine,"6-64 Whole Field 22.67 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_437,
+LinkageFarm_EB-3.pdf,12,LinkageFarm,EB-3,2021-11-03,16.91,grain,field corn + combine,"EB-3 Whole Field 16.91 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_511,Grain
+LinkageFarm_EB-3.pdf,12,LinkageFarm,EB-3,2019-09-19,16.95,grain,field corn + combine,"EB-3 Whole Field 16.95 E John Deere S660 Combine Corn, Field (FLDCRN) /",barc_511,
+NorthFarm_ND-5.pdf,10,NorthFarm,ND-5,2021-11-16,8.64,grain,field corn + combine,"ND-5 Whole Field 8.64 E John Deere S660 Combine Corn, Field (FLDCRN) /",,
+NorthFarm_NG-1-6.pdf,14,NorthFarm,NG-1-6,2021-11-15,18.27,grain,field corn + combine,"NG-1-6 Whole Field 18.27 E John Deere S660 Combine Corn, Field (FLDCRN) /",,
