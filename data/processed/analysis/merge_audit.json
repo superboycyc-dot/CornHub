@@ -1,0 +1,28 @@
+{
+  "inputs": {
+    "fields": null,
+    "features": null,
+    "predictions": null
+  },
+  "year": 2022,
+  "prediction_role": "oof",
+  "duplicate_keys": [],
+  "selected_feature_rows": 0,
+  "selected_prediction_rows": 0,
+  "excluded_other_year_feature_rows": 0,
+  "excluded_other_year_or_role_prediction_rows": 0,
+  "unmatched_feature_ids": [],
+  "unmatched_prediction_ids": [],
+  "missing_feature_ids": [],
+  "missing_prediction_ids": [],
+  "matched_feature_rows": 0,
+  "matched_prediction_rows": 0,
+  "missing_files": [
+    "fields.geojson",
+    "features.csv",
+    "predictions.csv"
+  ],
+  "covered_prediction_rows": 0,
+  "review_queue_rows": 0,
+  "data_needed_rows": 0
+}

@@ -37,6 +37,22 @@ CornHub 利用收割前后的卫星观测，估计加州选定样区在 2022 至
 
 以下清单对应 [Hack the Harvest Resources](https://hack-the-harvest.devpost.com/resources) 的全部 Open data 条目。它们提供作物掩膜、时序观测、天气、区域统计和地理底图；其中没有直接给出完整的青贮/籽粒田块标签或奶牛场的实时需求与库存。
 
+### 当前仓库进度（2026-11-14）
+
+- 已加入加州 2022–2025 年 USDA CDL 原始压缩包；均为 30 米数据。2026 年 CDL 尚未发布。
+- 已将 Quick Stats 年度玉米统计整理为加州参考表：`data/processed/usda_nass/california_corn_acreage_annual_reference_2012_2025.csv`（225 条记录）。它用于州/县面积量级核对，不是田块标签，也不能描述实时供给。
+- 官方挑战样本 BARC 位于马里兰州：目前仅提取出 44 个已标注田块年度、34 块田、5 个农场，其中青贮仅 12 条（每年 4 条）。它只能先验证 NDVI 特征处理和分组评估流程，不能证明模型可迁移到加州。
+- **目前没有加州田块级青贮/籽粒真值、已提取的加州 Sentinel-2 时序或经过验证的加州分类结果。** 因此仓库不发布加州青贮面积预测或精度承诺。下一关键依赖是找到带用途标签的加州田块样本，或与州内合作方核验一批地块。
+
+可复现的首轮数据准备命令：
+
+```sh
+python3 scripts/curate_quickstats.py
+python3 scripts/prepare_barc_labels.py
+```
+
+BARC Sentinel-2 原型 notebook 在 [`05_Model/barc_sentinel2_baseline.ipynb`](05_Model/barc_sentinel2_baseline.ipynb)。它会在线检索影像，需安装 notebook 首格列出的地理空间依赖和可访问 Planetary Computer；尚未在此环境运行。运行后，先审查场景覆盖、逐田有效像元比例和农场分组混淆矩阵，再把它作为方法原型讨论。
+
 | 资源 | 能提供什么 | 在 CornHub 中的用途 | 主要限制 |
 | --- | --- | --- | --- |
 | [USDA Cropland Data Layer (CDL)](https://www.nass.usda.gov/Research_and_Science/Cropland/SARS1a.php) | 每年作物类型栅格；2024 年起 10 米，2008–2023 年为 30 米 | 找到玉米候选区域，形成田块级统计单元 | 标注玉米/作物类型，不区分青贮与籽粒；是年度产品，不能假定当年图层在同年 1 月前可用；FSA Common Land Unit 边界及田块行政属性不公开 |

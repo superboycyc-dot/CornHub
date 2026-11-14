@@ -1,0 +1,22 @@
+Command: python3 -m unittest discover -s src/analysis -p test_*.py -v
+test_cli_pending_and_required_selectors (test_analysis.AnalysisTests) ... ok
+test_cli_reads_and_merges_complete_files (test_analysis.AnalysisTests) ... ok
+test_computation_api_rejects_bad_numbers (test_analysis.AnalysisTests) ... ok
+test_csv_rejects_nonfinite_and_out_of_range_probability (test_analysis.AnalysisTests) ... ok
+test_duplicates_and_orphans_fail (test_analysis.AnalysisTests) ... ok
+test_empty_inventory_and_missing_features (test_analysis.AnalysisTests) ... ok
+test_pending_absent_and_empty_predictions (test_analysis.AnalysisTests) ... ok
+test_quality_not_confidence (test_analysis.AnalysisTests) ... ok
+test_review_complete_budget_and_seed (test_analysis.AnalysisTests) ... ok
+test_string_id_and_geojson_area_validation (test_analysis.AnalysisTests) ... ok
+test_tie_break_and_probability_endpoints (test_analysis.AnalysisTests) ... ok
+test_weighted_area_and_unknown_not_grain (test_analysis.AnalysisTests) ... ok
+test_year_and_role_separation (test_analysis.AnalysisTests) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.133s
+
+OK
+
+Command: python3 src/analysis/analysis.py --year 2022 --prediction-role oof --review-budget 3
+{"output_dir": "data/processed/analysis", "status": "pending", "missing_files": ["fields.geojson", "features.csv", "predictions.csv"]}
