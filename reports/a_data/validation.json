@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "fields": 83,
+  "labels": 44,
+  "folds": 44,
+  "id_map": 83,
+  "unique_labeled_fields": 34,
+  "duplicate_keys": 0,
+  "orphan_labels": 0,
+  "invalid_exported_geometries": 0,
+  "max_serialized_area_roundtrip_delta_ha": 4.974589629114234e-09,
+  "cross_year_field_leakage": false,
+  "cross_year_farm_leakage": false,
+  "smoke_sample": {
+    "field_id": "barc_1",
+    "year": 2021,
+    "window_start": "2021-04-01",
+    "window_end_exclusive": "2021-12-01",
+    "selection_rule": "First labeled record sorted lexicographically by normalized field_id, then numeric year.",
+    "source_dataset_id": "barc_corn_2021_2023_challenge"
+  },
+  "source_hash_verified": true,
+  "label_counts": {
+    "grain": 32,
+    "silage": 12
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "verified_at_utc": "2026-11-14T19:52:09.149831Z",
+  "ag_data_commons": {
+    "url": "https://agdatacommons.nal.usda.gov/articles/dataset/USDA_Beltsville_Agricultural_Research_Center_BARC_Gridded_Yield_Data_Archive_version_1/28950746",
+    "observed_version": 2,
+    "posted": "2026-01-22",
+    "license": "U.S. Public Domain",
+    "access_constraints": "None"
+  },
+  "zenodo": {
+    "url": "https://zenodo.org/records/8087301",
+    "api_url": "https://zenodo.org/api/records/8087301",
+    "title": "Validating NISAR's cropland mapping approach and the USDA/NASS Cropland Data Layer against ground truth data in a fragmented urban agricultural region",
+    "version": "1.0.0",
+    "license": {
+      "id": "cc-by-4.0"
+    }
+  },
+  "challenge_assembled_geopackage_license": "unknown; no standalone license found; official explorer requests citation when using or redistributing",
+  "original_acquisition_time": "unknown; user copied workspace before this task",
+  "publication_dois": [
+    "10.1002/agg2.20474",
+    "10.3390/s23208595"
+  ]
+}
