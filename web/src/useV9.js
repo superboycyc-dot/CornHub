@@ -4,7 +4,7 @@ const empty=new Map();
 export default function useV9(year,role) {
  const [state,setState]=useState({status:'loading',year,rows:empty});
  useEffect(()=>{
-  if(role!=='inference'){setState({status:'unavailable',year,rows:empty,message:'V9 has inference only; no OOF confidence colors'});return;}
+  if(role!=='inference'){setState({status:'unavailable',year,rows:empty,message:'V9 has inference only; no OOF probability colors'});return;}
   const abort=new AbortController();setState({status:'loading',year,rows:empty});
   (async()=>{
    const r=await fetch('/v9/manifest.json',{signal:abort.signal});if(!r.ok)throw Error(`Manifest HTTP ${r.status}`);const manifest=await r.json();
@@ -21,5 +21,5 @@ export default function useV9(year,role) {
   })().catch(e=>{if(e.name!=='AbortError')setState({status:'error',year,rows:empty,message:'V9 data loading failed: '+e.message});});
   return()=>abort.abort();
  },[year,role]);
- return String(state.year)===String(year)&&role==='inference'?state:{status:role==='inference'?'loading':'unavailable',year,rows:empty,message:role==='inference'?'Loading V9…':'V9 inference only · no OOF confidence colors'};
+ return String(state.year)===String(year)&&role==='inference'?state:{status:role==='inference'?'loading':'unavailable',year,rows:empty,message:role==='inference'?'Loading V9…':'V9 inference only · no OOF probability colors'};
 }

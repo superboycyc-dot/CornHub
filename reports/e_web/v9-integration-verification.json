@@ -1,6 +1,7 @@
 {
   "status": "passed",
   "source_commit": "cf612d37d762392068056f0c6cb2e132bf16f4cf",
+  "color_field": "p_silage",
   "total_rows": 249485,
   "scored_rows": 128,
   "groups": [
@@ -9,9 +10,9 @@
       "year": 2021,
       "rows": 49897,
       "colors": {
-        "red": 19,
-        "yellow": 16,
-        "green": 0,
+        "red": 16,
+        "yellow": 2,
+        "green": 17,
         "missing": 49862
       }
     },
@@ -20,9 +21,9 @@
       "year": 2022,
       "rows": 49897,
       "colors": {
-        "red": 20,
-        "yellow": 3,
-        "green": 0,
+        "red": 4,
+        "yellow": 4,
+        "green": 15,
         "missing": 49874
       }
     },
@@ -31,9 +32,9 @@
       "year": 2023,
       "rows": 49897,
       "colors": {
-        "red": 23,
-        "yellow": 7,
-        "green": 0,
+        "red": 10,
+        "yellow": 4,
+        "green": 16,
         "missing": 49867
       }
     },
@@ -42,9 +43,9 @@
       "year": 2024,
       "rows": 49897,
       "colors": {
-        "red": 17,
-        "yellow": 3,
-        "green": 0,
+        "red": 7,
+        "yellow": 1,
+        "green": 12,
         "missing": 49877
       }
     },
@@ -53,9 +54,9 @@
       "year": 2025,
       "rows": 49897,
       "colors": {
-        "red": 14,
-        "yellow": 6,
-        "green": 0,
+        "red": 6,
+        "yellow": 1,
+        "green": 13,
         "missing": 49877
       }
     }
@@ -64,7 +65,7 @@
     "All 5 Maryland compressed annual CSVs decompress byte-exactly to pinned upstream files",
     "Every real scored record joins an existing map boundary with source namespace unchanged",
     "Runtime parser validated all records, score ranges, classes, uniqueness and state/year/role",
-    "Strict >60 and >90 boundaries, null handling and OOF separation covered by tests"
+    "Strict p_silage >0.6/>0.9 boundaries, confidence independence, null handling and OOF separation covered by tests"
   ],
   "browser_verification": "Not performed: supported browser tool unavailable"
 }

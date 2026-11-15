@@ -1,5 +1,5 @@
 {
-  "release": "2026-11-15-md-only-confidence90-v15",
+  "release": "md-model-probability-v16",
   "outline_states": [
     "MD"
   ],
@@ -12,15 +12,15 @@
   "national_default_enabled": true,
   "detail_zoom": 12,
   "v9_source_commit": "cf612d37d762392068056f0c6cb2e132bf16f4cf",
-  "confidence_field": "confidence_score",
-  "confidence_colors": {
-    "green": "score > 90",
-    "yellow": "60 < score <= 90",
-    "red": "score <= 60",
-    "white": "unavailable"
-  },
   "default_prediction_role": "inference",
   "prediction_states": [
     "MD"
-  ]
+  ],
+  "color_field": "p_silage",
+  "probability_colors": {
+    "green": "p_silage > 0.9",
+    "yellow": "0.6 < p_silage <= 0.9",
+    "red": "p_silage <= 0.6",
+    "white": "unavailable"
+  }
 }

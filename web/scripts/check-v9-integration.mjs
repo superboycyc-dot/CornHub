@@ -4,7 +4,7 @@ import zlib from 'node:zlib';
 import crypto from 'node:crypto';
 import assert from 'node:assert/strict';
 import {execFileSync} from 'node:child_process';
-import {parseV9,confidenceColor,V9_COLORS,v9Key} from '../src/v9.js';
+import {parseV9,probabilityColor,V9_COLORS,v9Key} from '../src/v9.js';
 import {decodePolygons} from '../src/national.js';
 const root=path.resolve(import.meta.dirname,'..');
 const config=JSON.parse(fs.readFileSync(path.join(root,'v9-handoff.json')));
@@ -23,7 +23,7 @@ for(const state of config.states)for(const year of config.years) {
  const rows=parseV9(bytes.toString(),state,year),colors={red:0,yellow:0,green:0,missing:0},status={};
  for(const r of rows) {
   total++;status[r.status]=(status[r.status]||0)+1;
-  const color=Object.keys(V9_COLORS).find(k=>V9_COLORS[k]===confidenceColor(r));colors[color]++;
+  const color=Object.keys(V9_COLORS).find(k=>V9_COLORS[k]===probabilityColor(r));colors[color]++;
   if(color!=='missing'){scored++;assert.ok(identities.has(v9Key(r.source_dataset_id,r.field_id,0)),`Missing map identity ${r.field_id}`);}
  }
  const expected=index.groups.find(g=>g.state===state&&g.year===year);assert.equal(rows.length,expected.rows);assert.deepEqual(status,expected.counts);
@@ -32,5 +32,5 @@ for(const state of config.states)for(const year of config.years) {
 const selectedGroups=index.groups.filter(g=>config.states.includes(g.state)&&config.years.includes(g.year));
 assert.deepEqual(manifest.states,['MD']);assert.ok(!Object.keys(manifest.files).some(f=>f.startsWith('CA/')));
 assert.equal(total,selectedGroups.reduce((n,g)=>n+g.rows,0));assert.equal(scored,selectedGroups.reduce((n,g)=>n+(g.counts.predicted||0)+(g.counts.conditional_prediction||0),0));
-const report={status:'passed',source_commit:config.commit,total_rows:total,scored_rows:scored,groups,checks:['All 5 Maryland compressed annual CSVs decompress byte-exactly to pinned upstream files','Every real scored record joins an existing map boundary with source namespace unchanged','Runtime parser validated all records, score ranges, classes, uniqueness and state/year/role','Strict >60 and >90 boundaries, null handling and OOF separation covered by tests'],browser_verification:'Not performed: supported browser tool unavailable'};
+const report={status:'passed',source_commit:config.commit,color_field:'p_silage',total_rows:total,scored_rows:scored,groups,checks:['All 5 Maryland compressed annual CSVs decompress byte-exactly to pinned upstream files','Every real scored record joins an existing map boundary with source namespace unchanged','Runtime parser validated all records, score ranges, classes, uniqueness and state/year/role','Strict p_silage >0.6/>0.9 boundaries, confidence independence, null handling and OOF separation covered by tests'],browser_verification:'Not performed: supported browser tool unavailable'};
 fs.writeFileSync(path.resolve(root,'../reports/e_web/v9-integration-verification.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));

@@ -38,4 +38,4 @@ After generating complete polygon assets, run `node scripts/scope-national-polyg
 
 ## Maryland detail scope
 
-Only Maryland annual prediction CSVs are synchronized and loaded. California has no published detailed geometry or V9 annual CSV; it retains all national display points and future prediction lookup slots. V9 confidence colors use >90 green, >60–90 yellow, ≤60 red, unavailable white. Overview clusters remain white. Existing BARC reference fields remain in Maryland; V9 and baseline outputs remain separately labeled.
+Only Maryland annual prediction CSVs are synchronized and loaded. California has no published detailed geometry or V9 annual CSV; it retains all national display points and future prediction lookup slots. V9 colors use original model p_silage: >0.9 green, >0.6–0.9 yellow, ≤0.6 red, unavailable white. Experimental confidence is shown separately and does not control color. Overview clusters remain white. Existing BARC reference fields remain in Maryland; V9 and baseline outputs remain separately labeled.

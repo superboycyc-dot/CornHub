@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import L from "leaflet";
 import NationalLayer from "./NationalLayer";
 import useV9 from "./useV9";
-import {confidenceColor,v9Record,v9Details} from "./v9";
+import {probabilityColor,v9Record,v9Details} from "./v9";
 import "leaflet/dist/leaflet.css";
 import "./style.css";
 import {
@@ -103,7 +103,7 @@ function fieldTooltip(info, v9row) {
   if(v9row) {
     text("strong",info.field_id,"tooltip-title");
     for(const detail of v9Details(v9row)) text("span",detail,"tooltip-detail");
-    text("span","V9 confidence colors · baseline outputs are separate in the detail panel.","tooltip-footnote");
+    text("span","V9 model silage probability colors · baseline outputs are separate in the detail panel.","tooltip-footnote");
     return root;
   }
   text("span", "BARC / VERIFIED FIELD", "tooltip-kicker");
@@ -302,10 +302,10 @@ function Map({
     if (!fields?.features.length) return;
     const rowFor = feature => v9Record(v9,feature.properties.source_dataset_id,feature.properties.field_id,year,role);
     const normal = (feature) => ({
-      color: confidenceColor(rowFor(feature)),
+      color: probabilityColor(rowFor(feature)),
       weight: feature.properties.field_id === selected ? 2.5 : 1.8,
       opacity: 1,
-      fillColor: confidenceColor(rowFor(feature)),
+      fillColor: probabilityColor(rowFor(feature)),
       fillOpacity: feature.properties.field_id === selected ? 0.38 : 0.26,
     });
     const layer = L.geoJSON(fields, {
@@ -773,14 +773,14 @@ function App() {
         {nationalEnabled && (
           <small role="status">{nationalStatus || "Loading…"}</small>
         )}
-        <div className="confidence-legend" aria-label="V9 confidence score legend">
-          <span><i style={{background:"#61df8c"}} /> &gt;90</span>
-          <span><i style={{background:"#ffcf45"}} /> &gt;60–90</span>
-          <span><i style={{background:"#ff5b5b"}} /> ≤60</span>
+        <div className="probability-legend" aria-label="V9 model silage probability legend">
+          <span><i style={{background:"#61df8c"}} /> &gt;90%</span>
+          <span><i style={{background:"#ffcf45"}} /> &gt;60–90%</span>
+          <span><i style={{background:"#ff5b5b"}} /> ≤60%</span>
           <span><i style={{background:"#fff"}} /> Unavailable</span>
         </div>
-        <small>MD V9 experimental confidence · inference · {year}</small>
-        <small role="status">{v9.status==='ready'?v9.message:(v9.message||'Loading V9 confidence…')}</small>
+        <small>MD V9 model silage probability · inference · {year}</small>
+        <small role="status">{v9.status==='ready'?v9.message:(v9.message||'Loading V9 probability…')}</small>
       </div>
       <div className="layer-switches" aria-label="Map layers">
         <button
@@ -919,7 +919,7 @@ function App() {
                   ))}
                 </dl>
                 <div className="panel-rule" />
-                <span className="section-kicker">V9 INFERENCE / CONFIDENCE COLORS</span>
+                <span className="section-kicker">V9 INFERENCE / MODEL PROBABILITY COLORS</span>
                 {v9Details(selectedV9).map((line,i)=><p className="v9-detail" key={i}>{line}</p>)}
                 <div className="panel-rule" />
                 <span className="section-kicker">BARC BASELINE MODEL OUTPUT / {role.toUpperCase()}</span>

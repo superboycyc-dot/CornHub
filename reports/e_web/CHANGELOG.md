@@ -57,3 +57,9 @@ Replaced close-up national center markers with actual source Polygon/MultiPolygo
 - 2024/2025 national dots are explicitly historical reference locations, not verified current-year corn fields. Maryland conditional predictions retain source eligibility and training-overlap notes.
 
 - Deployment: Sites v15 succeeded at the existing public URL. Live homepage, JS/CSS, release manifest, Maryland-only prediction manifest, all five MD annual CSVs, Maryland-only polygon index/sample and California point tile matched local build bytes without cache-busting. Live parse confirmed 249,485 Maryland annual records (93 red, 35 yellow, zero >90 green predictions; remaining records white). Evidence: v9-live-verification.json. 16 tests passed; browser visual QA remains unavailable.
+
+## 2026-11-14 (America/Los_Angeles) — color by original model probability
+
+- Replace confidence-driven colors with original V9 p_silage: >0.9 green, >0.6–0.9 yellow, ≤0.6 red, unavailable white. Keep confidence and raw selected-class probability separately labeled in details.
+- Apply the same rule to outline/fill, hover/selection, legend and field card. Missing confidence no longer blocks a valid model probability. Test boundaries and deliberately conflicting/missing confidence values.
+- Preserve Maryland-only detailed data, other-state points, original IDs, source probabilities, selected year, inference/OOF isolation and existing upstream pin.

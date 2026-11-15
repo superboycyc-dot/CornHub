@@ -1,20 +1,23 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {confidenceColor,V9_COLORS,parseV9,v9Record,v9Key} from '../src/v9.js';
+import {probabilityColor,V9_COLORS,parseV9,v9Record,v9Key} from '../src/v9.js';
 const row={status:'predicted',prediction_role:'inference',p_silage:.9};
-test('V9 confidence boundaries are strict and missing/OOF results stay white',()=>{
- for(const [n,key] of [[0,'red'],[60,'red'],[60.0001,'yellow'],[80,'yellow'],[90,'yellow'],[90.0001,'green'],[100,'green']])assert.equal(confidenceColor({...row,confidence_score:n}),V9_COLORS[key]);
- for(const r of [null,{...row,confidence_score:null},{...row,confidence_score:99,prediction_role:'oof'},{...row,confidence_score:99,status:'pending_observations'}])assert.equal(confidenceColor(r),V9_COLORS.missing);
- assert.equal(confidenceColor({...row,status:'conditional_prediction',confidence_score:70}),V9_COLORS.yellow);
+test('V9 probability boundaries are strict and confidence never affects color',()=>{
+ for(const [p,key] of [[0,'red'],[.6,'red'],[.600001,'yellow'],[.8,'yellow'],[.9,'yellow'],[.900001,'green'],[1,'green']])assert.equal(probabilityColor({...row,p_silage:p,confidence_score:1}),V9_COLORS[key]);
+ for(const r of [null,{...row,p_silage:null},{...row,prediction_role:'oof'},{...row,status:'pending_observations'}])assert.equal(probabilityColor(r),V9_COLORS.missing);
+ assert.equal(probabilityColor({...row,p_silage:.99,confidence_score:null}),V9_COLORS.green);
+ assert.equal(probabilityColor({...row,p_silage:.01,confidence_score:99,raw_self_confidence:99}),V9_COLORS.red);
+ assert.equal(probabilityColor({...row,status:'conditional_prediction',p_silage:.7}),V9_COLORS.yellow);
 });
 const header='field_id,source_dataset_id,state,year,confidence_score,raw_self_confidence,p_silage,status,harvest_type,prediction_role,model_version';
 const record='csb_061623001006171,csb_corn_2021_2023,CA,2022,28.48,99,0.99,predicted,silage,inference,V9';
 test('V9 parser preserves IDs and keeps model probability distinct from confidence',()=>{
- const [r]=parseV9(header+'\n'+record,'CA',2022);assert.equal(r.field_id,'csb_061623001006171');assert.equal(r.confidence_score,28.48);assert.equal(r.p_silage,.99);assert.equal(confidenceColor(r),V9_COLORS.red);
+ const [r]=parseV9(header+'\n'+record,'CA',2022);assert.equal(r.field_id,'csb_061623001006171');assert.equal(r.confidence_score,28.48);assert.equal(r.p_silage,.99);assert.equal(probabilityColor(r),V9_COLORS.green);
  assert.throws(()=>parseV9(header+'\n'+record,'MD',2022),/mismatch/);
  assert.throws(()=>parseV9(header+'\n'+record+'\n'+record,'CA',2022),/Duplicate/);
  assert.throws(()=>parseV9(header+'\n'+record.replace(',28.48,',',101,'),'CA',2022),/Invalid/);
  assert.throws(()=>parseV9(header+'\n'+record.replace(',predicted,',',pending_observations,'),'CA',2022),/Uncomputed/);
+ const noConfidence=record.replace('28.48,99,0.99',',,0.99');assert.equal(probabilityColor(parseV9(header+'\n'+noConfidence,'CA',2022)[0]),V9_COLORS.green);
  const empty=record.replace('28.48,99,0.99,predicted,silage',',,,pending_observations,');assert.equal(parseV9(header+'\n'+empty,'CA',2022)[0].confidence_score,null);
  const rows=new Map([[v9Key(r.source_dataset_id,r.field_id,r.year),r]]);const v9={year:2022,status:'ready',rows};
  assert.equal(v9Record(v9,r.source_dataset_id,r.field_id,2022,'inference'),r);

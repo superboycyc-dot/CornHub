@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import L from "leaflet";
-import {confidenceColor,v9Record,v9Details} from "./v9";
+import {probabilityColor,v9Record,v9Details} from "./v9";
 import { queryPrediction, decodePolygons, decodeTile } from "./national";
 export default function NationalLayer({
   controller,
@@ -111,7 +111,7 @@ export default function NationalLayer({
           let dots = 0;
           for(const fields of pointChunks) for(const field of fields) {
             if(!(field.flags & bit) || (field.flags & 32) || !bounds.contains([field.lat,field.lng])) continue;
-            const color=confidenceColor(rowFor(field));
+            const color=probabilityColor(rowFor(field));
             const layer = L.circleMarker([field.lat,field.lng], {renderer,pane:"national",radius:3,color,weight:1,fillColor:color,fillOpacity:0.6}).bindTooltip(tooltip(field), {className:"field-hover",sticky:true});
             layer.on("mouseover",async () => {
               layer.setRadius(5);
@@ -155,7 +155,7 @@ export default function NationalLayer({
                 };
               const local = rowFor(field);
               if(historical && (!local || local.status==='not_corn')) continue;
-              const color = confidenceColor(local);
+              const color = probabilityColor(local);
               const normal = {
                 color,
                 weight: 1.8,

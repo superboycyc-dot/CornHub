@@ -103,11 +103,11 @@ Model validation 明确为 2021–2023 的 44 条汇总 OOF 评估，不能视�
 
 The national layer opens enabled: polygons only in Maryland; California is point-only; other states use individual points at close zoom. Below zoom 12 the US inventory uses white count clusters, remaining visible around the 50 km ruler. See national/README.md for reproducible scope reduction and integrity checks. The deployment build is identified at `/reference/release.json`.
 
-### V9 prediction and confidence colors
+### V9 prediction and probability colors
 
-The map defaults to inference and joins Maryland V9 records by original source_dataset_id + field_id/candidate_id + selected year. V9 outputs are separate from BARC baseline outputs and D summaries. Switching to OOF disables V9 confidence coloring. The V9 section and hover show class, p_silage, experimental confidence_score, raw_self_confidence, quality, conditional maize eligibility and training overlap.
+The map defaults to inference and joins Maryland V9 records by original source_dataset_id + field_id/candidate_id + selected year. V9 outputs are separate from BARC baseline outputs and D summaries. Switching to OOF disables V9 probability coloring. The V9 section and hover show class, p_silage, experimental confidence_score, raw_self_confidence, quality, conditional maize eligibility and training overlap.
 
-Color uses confidence_score (0–100), never p_silage or raw_self_confidence: >90 green, >60 through 90 yellow, 0 through 60 red. Missing/uncomputed data stays white. Hover and selection preserve the confidence color. Below close zoom, clusters stay white because no cluster-level confidence has been supplied. Historical 2024/2025 outlines do not establish current corn eligibility.
+Color uses the original model p_silage (0–1): >0.9 green, >0.6 through 0.9 yellow, 0 through 0.6 red. Confidence and raw selected-class probability never control the color, including when confidence is missing. Missing/uncomputed model probability stays white. Hover and selection preserve the probability color. Clusters stay white; no aggregate model probability has been supplied. Historical 2024/2025 outlines do not establish current corn eligibility.
 
 `npm run sync:data` calls scripts/sync-v9.mjs. It copies existing local data/processed/model/v9_states files first, otherwise reads the exact commit pinned in v9-handoff.json. Only the five Maryland annual CSVs are synchronized; California CSVs are excluded. Annual CSVs are gzip-compressed without changing their contents into generated public/v9; missing files are recorded in manifest.json and the page displays a loading error. No geometry copy is needed: all currently scored Maryland identities join existing Maryland or BARC boundaries. Do not hand-edit public/v9 or dist.
 

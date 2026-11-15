@@ -4,16 +4,16 @@ import zlib from 'node:zlib';
 import crypto from 'node:crypto';
 import assert from 'node:assert/strict';
 import {execFileSync} from 'node:child_process';
-import {parseV9,confidenceColor,V9_COLORS} from '../src/v9.js';
+import {parseV9,probabilityColor,V9_COLORS} from '../src/v9.js';
 const root=path.resolve(import.meta.dirname,'..'),url='https://cornhub-field-evidence.feistydegu3.chatgpt.site';
 const get=p=>execFileSync('curl',['-f','-sS','--max-time','45',url+p],{maxBuffer:25*1024*1024});
 const [siteVersion,siteCommit,deploymentId]=process.argv.slice(2);
 assert.ok(Number(siteVersion)>0 && /^[0-9a-f]{40}$/.test(siteCommit||'') && deploymentId,'Usage: node scripts/verify-live-v9.mjs VERSION SOURCE_COMMIT DEPLOYMENT_ID');
 const resources=[];
 function exact(p,file) {const bytes=get(p);assert.deepEqual(bytes,fs.readFileSync(file));resources.push({path:p,bytes:bytes.length,sha256:crypto.createHash('sha256').update(bytes).digest('hex')});return bytes;}
-const release=JSON.parse(exact('/reference/release.json',path.join(root,'reference/release.json')));assert.equal(release.confidence_field,'confidence_score');assert.equal(release.default_prediction_role,'inference');assert.deepEqual(release.prediction_states,['MD']);assert.equal(release.confidence_colors.green,'score > 90');
+const release=JSON.parse(exact('/reference/release.json',path.join(root,'reference/release.json')));assert.equal(release.color_field,'p_silage');assert.equal(release.default_prediction_role,'inference');assert.deepEqual(release.prediction_states,['MD']);assert.equal(release.probability_colors.green,'p_silage > 0.9');
 const html=exact('/',path.join(root,'dist/index.html')).toString(),asset=html.match(/src="(\/assets\/[^\"]+\.js)"/)[1];
-const js=exact(asset,path.join(root,'dist',asset)).toString();assert.ok(js.includes('V9 experimental confidence'));for(const color of Object.values(V9_COLORS))assert.ok(js.includes(color));
+const js=exact(asset,path.join(root,'dist',asset)).toString();assert.ok(js.includes('V9 model silage probability'));for(const color of Object.values(V9_COLORS))assert.ok(js.includes(color));
 const css=html.match(/href="(\/assets\/[^\"]+\.css)"/)[1];exact(css,path.join(root,'dist',css));
 const manifest=JSON.parse(exact('/v9/manifest.json',path.join(root,'public/v9/manifest.json')));assert.equal(manifest.source_commit,release.v9_source_commit);assert.deepEqual(manifest.states,['MD']);assert.ok(!Object.keys(manifest.files).some(p=>p.startsWith('CA/')));
 const sourceIndex=JSON.parse(exact('/v9/index.json',path.join(root,'public/v9/index.json')));
@@ -27,7 +27,7 @@ for(const [name,file] of Object.entries(manifest.files)) {
  const bytes=exact('/v9/'+file.path,path.join(root,'public/v9',file.path));
  const raw=zlib.gunzipSync(bytes);assert.equal(crypto.createHash('sha256').update(raw).digest('hex'),file.sha256);
  const [state,year]=name.split('/');
- for(const r of parseV9(raw.toString(),state,Number(year.slice(0,4)))){rows++;const key=Object.keys(V9_COLORS).find(k=>V9_COLORS[k]===confidenceColor(r));colors[key]++;}
+ for(const r of parseV9(raw.toString(),state,Number(year.slice(0,4)))){rows++;const key=Object.keys(V9_COLORS).find(k=>V9_COLORS[k]===probabilityColor(r));colors[key]++;}
 }
 const groups=sourceIndex.groups.filter(g=>g.state==='MD');assert.equal(rows,groups.reduce((n,g)=>n+g.rows,0));assert.equal(colors.red+colors.yellow+colors.green,groups.reduce((n,g)=>n+(g.counts.predicted||0)+(g.counts.conditional_prediction||0),0));assert.ok(!fs.existsSync(path.join(root,'dist/v9/CA')));
 const report={verified_at:new Date().toISOString(),url,status:'passed',sites_version:Number(siteVersion),release:release.release,source_commit:siteCommit,upstream_commit:release.v9_source_commit,deployment_id:deploymentId,http_without_cache_busting:true,rows,colors,resources,browser_verification:'Not performed: supported browser tool unavailable'};

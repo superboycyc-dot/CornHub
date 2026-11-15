@@ -1,9 +1,9 @@
 import Papa from 'papaparse';
 export const V9_COLORS={red:'#ff5b5b',yellow:'#ffcf45',green:'#61df8c',missing:'#ffffff'};
-export function confidenceColor(row) {
- if(!row || !['predicted','conditional_prediction'].includes(row.status) || row.prediction_role!=='inference' || row.p_silage==null || row.confidence_score==null) return V9_COLORS.missing;
- const n=row.confidence_score;
- return n>90?V9_COLORS.green:n>60?V9_COLORS.yellow:V9_COLORS.red;
+export function probabilityColor(row) {
+ if(!row || !['predicted','conditional_prediction'].includes(row.status) || row.prediction_role!=='inference' || row.p_silage==null) return V9_COLORS.missing;
+ const n=row.p_silage;
+ return n>0.9?V9_COLORS.green:n>0.6?V9_COLORS.yellow:V9_COLORS.red;
 }
 export function v9Key(source,id,year) {return JSON.stringify([source,id,Number(year)]);}
 export function v9Record(v9,source,id,year,role) {
@@ -26,7 +26,7 @@ export function parseV9(csv,state,year) {
   }
   const scored=['predicted','conditional_prediction'].includes(row.status);
   if(scored) {
-   if([row.p_silage,row.confidence_score,row.raw_self_confidence].some(n=>n===null))throw Error('Incomplete V9 prediction');
+   if(row.p_silage===null)throw Error('Incomplete V9 prediction');
    if(row.harvest_type!==(row.p_silage>=.5?'silage':'grain'))throw Error('V9 class mismatch');
   } else if(row.harvest_type||[row.p_silage,row.confidence_score,row.raw_self_confidence].some(n=>n!==null))throw Error('Uncomputed V9 row contains scores');
   return row;
