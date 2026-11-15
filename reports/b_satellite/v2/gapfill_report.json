@@ -1,0 +1,12 @@
+{
+  "status": "completed",
+  "policy_version": "quality_gapfill_v1",
+  "planned_jobs": 202,
+  "observed_jobs": 202,
+  "unique_products": 75,
+  "metadata_success": 75,
+  "elapsed_seconds": 47.46254801750183,
+  "errors": [],
+  "completed_at_utc": "2026-11-15T00:17:57.013894Z",
+  "label_file_read": false
+}

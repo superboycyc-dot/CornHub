@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "checks": {
+    "selection_stratification_and_unique_joins": true,
+    "no_label_derived_predictors": true,
+    "index_and_support_invariants": true,
+    "no_duplicate_physical_products": true,
+    "date_window_crs_native_resolutions": true,
+    "product_xml_quantification_offset_baseline_hash": 857,
+    "real_pixel_dn_to_reflectance_to_index": 15263,
+    "independent_daily_count_and_peak": true,
+    "real_array_alignment_and_median_rechecks": 4,
+    "no_signed_assets_in_delivery": true
+  },
+  "selected_field_years": 200,
+  "real_scene_rows": 4586,
+  "field_years_with_valid_ndvi": 177,
+  "limitations": [
+    "initial ten-day candidate policy;not all archive scenes",
+    "Netherlands legacy remains separate with early-season and NDMI gaps",
+    "declared labels are not final-use ground truth"
+  ]
+}

@@ -1,0 +1,8 @@
+numpy>=2
+pandas>=2
+pyarrow>=18
+pyproj>=3.6
+rasterio>=1.4
+shapely>=2
+requests>=2.31
+matplotlib>=3.8

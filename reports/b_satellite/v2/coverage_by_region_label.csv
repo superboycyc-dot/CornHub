@@ -1,0 +1,9 @@
+region,label,selected,with_any_valid_ndvi,usable,limited,no_data,with_late_observation,median_valid_days,median_max_gap_days
+be2,grain,25,24,6,18,1,24,15.0,43.0
+be2,silage,25,24,1,23,1,24,14.0,45.0
+be3,grain,25,21,4,17,4,21,15.0,48.0
+be3,silage,25,24,1,23,1,24,15.0,45.0
+bg,grain,25,22,17,5,3,22,19.0,29.0
+bg,silage,25,24,16,8,1,24,20.0,29.0
+si,grain,25,18,15,3,7,18,20.0,28.0
+si,silage,25,20,13,7,5,20,17.0,30.0

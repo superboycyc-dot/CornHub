@@ -1,0 +1,1074 @@
+{
+  "input_branch": "data/global-maize-fields",
+  "input_sha": "a8ccadff2fa3a2e53c1469e2c243d7dab98d7466",
+  "main_sha": "a7d843f5047a8fb86510a6139c086a5ed01efb61",
+  "v1_code_sha": "05a81a7d1634c80d3c56b66cf9eb9acb9527fc9b",
+  "seed": 20261114,
+  "input_files_sha256": {
+    "data\\global_maize\\eurocrops\\parcels\\be2_2023\\000000.parquet": "75423ff799563233878f9eefdccf92407f1d22acdc63c29278b790c9532a12c8",
+    "data\\global_maize\\eurocrops\\parcels\\be2_2023\\000001.parquet": "153145827bcf94b7020c4c26ffa8dcfc59a3ee36ff691c6adfb9deb571076b62",
+    "data\\global_maize\\eurocrops\\parcels\\be2_2023\\000002.parquet": "6643fe91f3a4e9f059c7885d46dbaa722d1305e8099cb782b7e5150957f2d7ad",
+    "data\\global_maize\\eurocrops\\parcels\\be2_2023\\000003.parquet": "47aee060701e030e7c8da31c47c6c7601d6276d9fee01c09e8b8f74c34998fd5",
+    "data\\global_maize\\eurocrops\\parcels\\be2_2023\\000004.parquet": "eb95bf826a8c14407d38c911544bf9e76829139e3ce8e94a72b4a225cba3ed92",
+    "data\\global_maize\\eurocrops\\parcels\\be2_2023\\000005.parquet": "aad8b7df79b1d8f0f16ba6d5f824e06ca4b375fc2bcc34fecf6084f73fad1891",
+    "data\\global_maize\\eurocrops\\parcels\\be2_2023\\000006.parquet": "05ced7e4657c819e0e214f0e983f6cbec685428379811b5c20c84f544b487d6b",
+    "data\\global_maize\\eurocrops\\parcels\\be2_2023\\000007.parquet": "f3139dccd9051407b09d9a28dd55b5011116a5e4d46b05c6fb9f15ba8d929c5e",
+    "data\\global_maize\\eurocrops\\parcels\\be2_2023\\000008.parquet": "dbfbb30c4cd945df8161c1e6d6886709109bda90d211429961119cffd0d4d8ae",
+    "data\\global_maize\\eurocrops\\parcels\\be2_2023\\000009.parquet": "631ab05bc083f9bd0f02570aa5f8e1cbba9a11688283f1b000e6ac6601b9148c",
+    "data\\global_maize\\eurocrops\\parcels\\be2_2023\\000010.parquet": "542701c5549ded3308e3399b76065032076d11baf924f89db057227443ddb4d9",
+    "data\\global_maize\\eurocrops\\parcels\\be2_2023\\000011.parquet": "3b0f28fdb61bd25249b1ea3183d14405ecedf9cdb6e047bc7bea74598db34008",
+    "data\\global_maize\\eurocrops\\parcels\\be2_2023\\000012.parquet": "c0087d6a9040311230c3d2b92729b0bedd46da9becaf8463ba9aa3b34d3762f9",
+    "data\\global_maize\\eurocrops\\parcels\\be2_2023\\000013.parquet": "a11b7fed9b33b03999818dee0270fd42c612ce827942361878ab4cff210280eb",
+    "data\\global_maize\\eurocrops\\parcels\\be2_2023\\000014.parquet": "53419869e748deb8ff4934363281af8e6aa94a8c5bb55b77b77dd0691787fee5",
+    "data\\global_maize\\eurocrops\\parcels\\be2_2023\\000015.parquet": "10ff53bb8076c3e2ae7aecd3dcff10145c5b3611a5ee1b8cab1831c2a142b902",
+    "data\\global_maize\\eurocrops\\parcels\\be2_2023\\000016.parquet": "f16319e82583cda8677e69979ea9e11f3ad508ee891bf60842dc80cd59f2fae4",
+    "data\\global_maize\\eurocrops\\parcels\\be2_2023\\000017.parquet": "ce880abc631392a9b248595ffafa9463bc71a710bbf7ebcc762333d71dcd863a",
+    "data\\global_maize\\eurocrops\\parcels\\be2_2023\\000018.parquet": "576cbda5fb6e6f542f6f5d11c06dae5ac342bf4c41ae03a395a602119adeb8fd",
+    "data\\global_maize\\eurocrops\\parcels\\be2_2023\\000019.parquet": "7eaa805131cdad10d411d222a7240a28d1e280c8c111fcb0b68b5a93ca841e71",
+    "data\\global_maize\\eurocrops\\parcels\\be2_2023\\000020.parquet": "73bf342f91a88adbad8c7cd8573cfe5d555d6857dc87b40762cd16d6c1ef5b8d",
+    "data\\global_maize\\eurocrops\\parcels\\be2_2023\\000021.parquet": "b6ec824fae2a0c3c1ed4560c99be410ff1b8f501f54711c362c71256e9f38058",
+    "data\\global_maize\\eurocrops\\parcels\\be3_2023\\000000.parquet": "85d81aa4f9e7f72ecbb194e9798dbedb6086ede3040a017f19ae3c08cfc76e9b",
+    "data\\global_maize\\eurocrops\\parcels\\be3_2023\\000001.parquet": "c329fa1cda536a8de7ea3f407769e2ff4690c47366cf3c2048fc3100801837f0",
+    "data\\global_maize\\eurocrops\\parcels\\be3_2023\\000002.parquet": "95701f85e26b6f0c637ac8117dc9309c9bbfc8f33accfd4aab26bb5b266f291a",
+    "data\\global_maize\\eurocrops\\parcels\\be3_2023\\000003.parquet": "c9ab78632ea2dbe5c11d77f25dc758204b8b039a702f63d098ca3f38e53af6ee",
+    "data\\global_maize\\eurocrops\\parcels\\be3_2023\\000004.parquet": "92c24f3b5c834d1f83326feee9027702d0c6ddd7c34d1982d0c0d2b55bd3614b",
+    "data\\global_maize\\eurocrops\\parcels\\be3_2023\\000005.parquet": "b33d5de965e204c49ebb1553caf76767adaad0e22e768a4a6db69b381efe3781",
+    "data\\global_maize\\eurocrops\\parcels\\be3_2023\\000006.parquet": "c5a458ffa6861657be17921bfd4c9ce0ea6c350c87d03df6735c7fcc58b30b14",
+    "data\\global_maize\\eurocrops\\parcels\\be3_2023\\000007.parquet": "b3a4075cb20513b4684fb2eb166189c287145aab0a3402b0b1c7839e78fa0c2d",
+    "data\\global_maize\\eurocrops\\parcels\\be3_2023\\000008.parquet": "cf8c936d3329ab11638a1e09085a020414f80662308d508021b30ee774fb46af",
+    "data\\global_maize\\eurocrops\\parcels\\be3_2023\\000009.parquet": "5562617bec09ae42c842f86736235d387b8e3d631b4d004de3f9c4e566e23f6e",
+    "data\\global_maize\\eurocrops\\parcels\\be3_2023\\000010.parquet": "c34643070e99088c3ff64913203af744d67a9857292d9cd9a7a7c93aa004d43d",
+    "data\\global_maize\\eurocrops\\parcels\\be3_2023\\000011.parquet": "1279a5ca198dcd5fc189837787ec186fb52d7fe5c806fdd7d143b189091af00e",
+    "data\\global_maize\\eurocrops\\parcels\\be3_2023\\000012.parquet": "165caae0c76e59b5104d78af2bf320698c79b298192ecc47745c148966373da4",
+    "data\\global_maize\\eurocrops\\parcels\\be3_2023\\000013.parquet": "f3693350634570ce9914433cda565d13249b3bd78d408f9a2ce94e965fa84004",
+    "data\\global_maize\\eurocrops\\parcels\\be3_2023\\000014.parquet": "ffd74f9a638677c04e265bb09aa7d048e6e4a62deb8cf06882516b8c92d38a20",
+    "data\\global_maize\\eurocrops\\parcels\\be3_2023\\000015.parquet": "076a2dbec0c0bfa28f0ea59b3034093e1297a2868a8039cbe2c3ac48ecff573b",
+    "data\\global_maize\\eurocrops\\parcels\\be3_2023\\000016.parquet": "be125b8731d89abfb356329667d240f37ba9830fcfd65d0688421a8fc25babd2",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000000.parquet": "93a3528774b9cf8330c6546ae28efc58d889faf5eabea3995c47f5401c5b7ae5",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000001.parquet": "a1fa5d7013c520d7239baa477b04c1d5b4766d0b7cd4a8220289289446f9c01b",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000002.parquet": "ff1e8dbc7ed54130ee425575f6a8a8348becf38e79d7911467e1413412a25bb5",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000003.parquet": "f6465539223ef8e590b823c92f10e2417cce7bf2139f0a6d6b41ebc3ec9efff6",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000004.parquet": "934ac8b0139ea0ba3af448929348addb196fda1f895bc4d0fe5e8cd5a31be2a1",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000005.parquet": "38de3b4b248c7f6abd1572d9c63e77bf9974b39d85a3c7e14a106dd569192a02",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000006.parquet": "d21825a37c688cf528d5ff116511ae543480f76f6ccea46f932366e5246cd3f6",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000007.parquet": "a3ebc346ff41fa0ba0031c63abb0a62d905fb14b719f3ff36e6d10748d7d1598",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000008.parquet": "48d3797cadfe71e523df1dafff8976ed0ffac2c7e91089918c46237da1d9df20",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000009.parquet": "0a371355c984742acc01beea9084274c9b5e5505cb240279e83f9dc7f453bac3",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000010.parquet": "40591debeece5f1eda205858506cdd6a14e1868242e0faccb8dbf79499fc9a95",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000011.parquet": "ed11fe502c19d66245520545f11113ab9ba87d7d56ed2d1bdbcf9db37d93b903",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000012.parquet": "8d1b5fdb719010c52bd52fad86dbd5ccb2202ed30b7d3dd80e95ba77e12cdf09",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000013.parquet": "a2508007a652ae4f90d4c1a18cbd6b6ec38baf0b5d94fb0fca73ceab698c0107",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000014.parquet": "4170cd040592ded2dd8b417eda411b7570b955f98621d9b8825f2205394e7bcd",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000015.parquet": "f4aa91c025f84974407fea8b3f0b607c89eee1f150e2735d126cfd065e4d6f65",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000016.parquet": "639135fcc44350e6a3094ea26eb1f79d9a3568c2ac8c3588f0be742792e86e79",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000017.parquet": "e25d5ccd70beffebe04a64ec8b1502973cecd42202dcd1925a625f0c9817a6a4",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000018.parquet": "febd9eee536f1f45496c94e5c59c21e13d9f9eae07ef43a8f2599617f6de8f2c",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000019.parquet": "cdd6e1633e9a08ff743ad2edf6b470d79035db1f7d1ad1e9d5723d256eb642f0",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000020.parquet": "56182d3be89341ab58977034234211eae3a7b5a9c8c6af8b0c89f8b15c01f1db",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000021.parquet": "f6db1c3c6d7b183e02d252b909766ec8334f6255508cfe6de450a8962df5eb29",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000022.parquet": "ebc04072e265bb476929872f72467328a077e8585f15bd13856a187bc66b289d",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000023.parquet": "0d769792f89689799089b465c4ef3b347fbda9b893ac5771089af6fe95f5c581",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000024.parquet": "f5c6f9dc01c20bdeb32449d161f326ff8f2405256ce11c40f1ed60f687b0104f",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000025.parquet": "d41d3b51232a45fd33303069f241413ff08e17b7287f6908b530f182708dcf94",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000026.parquet": "b5af4ce3bd8c3613d0a0a13e3abf6fad7ece853921e2cc5cd5e1ec757633f34b",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000027.parquet": "28c55be5a1ce1b5bcb66b6aab789b6196f0170987db490472b8f5e8c1ebec55e",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000028.parquet": "772b56fb4aa61685c00b549da146af5772e5457ecb6c68c77fea8835002d3b57",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000029.parquet": "7a7f15102e7c8c43d55590ac29857a362c18f1fd20b8c27fddd80257d9bab8ab",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000030.parquet": "e3c3e6cd7d8fea118cedb23791495bdfde77d9d5e523b1d47946f3044ad7ba07",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000031.parquet": "ea1fa1b68153eb2953ee3c0a3854d36d187b555ba917b1c9f8361cb824520abb",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000032.parquet": "a7ddb3e39e0716b2d5005d6fb8fafc8511cac80978aa4182ffe62e7207b61e64",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000033.parquet": "d6426860d31dabe125ddd1005a5cda3a875e47407d21c38f8402bf6d5022f6ed",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000034.parquet": "6ddb1b6dca21e4721ac164e81f1e0db6eb9de6760f0f8ea15d0ebb8c512ba1dd",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000035.parquet": "1b8a36d151483a8bb1af50b9e6f01cd3485bd16e9c55f875f83d0f10bde6a7dd",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000036.parquet": "cbf0c2749c1ea344112528a5190681f467bb46e3c41eb65bad4120b090ea7f30",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000037.parquet": "3327128fd161f6cb33b8f31a33d7f49f7c79921b2cc21ea818e825211dc54c0e",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000038.parquet": "fb90fd7f42cb9c938b6776ea31ee3a90e7f25571395d02939420bff60b08c05b",
+    "data\\global_maize\\eurocrops\\parcels\\bg_2023\\000039.parquet": "56c6ceed164953fb37c70b9141071825cffda345ba5127dc2abd980394185c95",
+    "data\\global_maize\\eurocrops\\parcels\\cz_2023\\000000.parquet": "73eab3ca80cc255dbaab2eacc088e6bd081f45c685da7e3e15bd5cf5002b8a24",
+    "data\\global_maize\\eurocrops\\parcels\\cz_2023\\000001.parquet": "67a7a211b0f90d8a290fca5fd79d9f0f3b33ef7af82d30adbbcf033a72f8ca78",
+    "data\\global_maize\\eurocrops\\parcels\\cz_2023\\000002.parquet": "6391030e1caf66388dcc4bf7408cb8996c1b74d116d035c9a7dde54e6e00e093",
+    "data\\global_maize\\eurocrops\\parcels\\cz_2023\\000003.parquet": "ed79b179f4abd77ef4b4a4a5606c1c7e7903bad77bd256230b4069642524c6e3",
+    "data\\global_maize\\eurocrops\\parcels\\cz_2023\\000004.parquet": "850cebe7d7ebdf9f2cd56d44dbff3949e28d4a73eb577ae9cb4802b9af52ff67",
+    "data\\global_maize\\eurocrops\\parcels\\cz_2023\\000005.parquet": "25a504d3f2f580d7c7d90b3d01e55b35cb968f990dc7cae32e90a661594d40e9",
+    "data\\global_maize\\eurocrops\\parcels\\cz_2023\\000006.parquet": "36b52874fbfde4aa84f6a3e2f7138b15d33075fb2bc6dac565c889468ae75a90",
+    "data\\global_maize\\eurocrops\\parcels\\cz_2023\\000007.parquet": "9fce44495c29f7110233ca6cf5134e9d5b0717b0a9a1f6ca352f76cf9631189d",
+    "data\\global_maize\\eurocrops\\parcels\\cz_2023\\000008.parquet": "43c9ef1037d7fdbfcac530342704aed5d7d71db904199025c55f82a38168a7da",
+    "data\\global_maize\\eurocrops\\parcels\\cz_2023\\000009.parquet": "4b6785e9a9bd64fafc69fb56e639e4a4d4bf58de609fb460471d9ad2cce61658",
+    "data\\global_maize\\eurocrops\\parcels\\cz_2023\\000010.parquet": "f7c7592f7dc9ee17daba2500be6b1ae6240465eb1d7f69e0cd46399e9ffaa881",
+    "data\\global_maize\\eurocrops\\parcels\\cz_2023\\000011.parquet": "170f08e5a0a73b1eec60c3aeccbe1f194974d7f4c11abee8db3b849a3534736d",
+    "data\\global_maize\\eurocrops\\parcels\\cz_2023\\000012.parquet": "dfe3513a02b3bbf6a481fa6b86c6bb2cc36dc4b1a3426e2d52eb9f8fcd1996a7",
+    "data\\global_maize\\eurocrops\\parcels\\cz_2023\\000013.parquet": "5ebca73486816b7f2e8af64a0860bcdace8ce71457acb7cc9596ebac26a49054",
+    "data\\global_maize\\eurocrops\\parcels\\cz_2023\\000014.parquet": "c2d28cd37004a89ee67b0f5ff91f7ddb85e67452896f0244a4edcb4f18192fe0",
+    "data\\global_maize\\eurocrops\\parcels\\cz_2023\\000015.parquet": "d68a132a4bbda113081c00254276425c68fbfe7574eafbb9ce3ad5f227cca9ae",
+    "data\\global_maize\\eurocrops\\parcels\\cz_2023\\000016.parquet": "aae28947180a9ff2bcb16c7d9072231cb7551ac6ba188fc9f91fdd589577062e",
+    "data\\global_maize\\eurocrops\\parcels\\cz_2023\\000017.parquet": "f9646850ba9fd25f47a1f82ca2431cf907c5e9a748024156ceb360ba46f92c1a",
+    "data\\global_maize\\eurocrops\\parcels\\cz_2023\\000018.parquet": "0fd6a1e31f7e8177d92132472156dd8fc50d41982f1618d5721f06206707ad99",
+    "data\\global_maize\\eurocrops\\parcels\\cz_2023\\000019.parquet": "31965c6751865cfc0d366cf1f8215f671e7c86d9c300e089230e73d427508711",
+    "data\\global_maize\\eurocrops\\parcels\\de4_2023\\000000.parquet": "28dfb2c79f1415a4bf10bc4e4fff40e099977d2ea79236228b75f7e03ec1eb17",
+    "data\\global_maize\\eurocrops\\parcels\\de4_2023\\000001.parquet": "023275eef223fe86b662d6c3b8de2c4ee8fa1140874bfa2532c83a97ff17c192",
+    "data\\global_maize\\eurocrops\\parcels\\de4_2023\\000002.parquet": "733ff614c9224e894e7791bcb50c20b18c14506aed879d5a28a3432d19f032c0",
+    "data\\global_maize\\eurocrops\\parcels\\de4_2023\\000003.parquet": "8fc7c60bca3ee79a7c41cfcf3c4d7d0518af6a2d544174059fdbdf740b8a1a07",
+    "data\\global_maize\\eurocrops\\parcels\\de4_2023\\000004.parquet": "e73b025852aaeaeb059286c3b6a44b27f994522cb02c23859891d1b12eef68d1",
+    "data\\global_maize\\eurocrops\\parcels\\de4_2023\\000005.parquet": "4ab5386595ee97048ce374c597a6527cc81d7588c900aaa5b898ca38c2174e97",
+    "data\\global_maize\\eurocrops\\parcels\\de4_2023\\000006.parquet": "012ae140b9a8a4f0b3f5c64691ebaafc68b22ab73094fd8c1c4acf66927ff75f",
+    "data\\global_maize\\eurocrops\\parcels\\de4_2023\\000007.parquet": "63ac188651a8864cd58e89d5c7ab23ddc6f495df472a900e9dc75050f9ee0af4",
+    "data\\global_maize\\eurocrops\\parcels\\de4_2023\\000008.parquet": "af6a5e8a95aa9689273a05c2ff3334a6fb60150a47e631b647e509acc08b6b77",
+    "data\\global_maize\\eurocrops\\parcels\\de4_2023\\000009.parquet": "959fb73e6351df6cbda100d5e05ec0af4283811559b27bc0407b8f19a7663ddd",
+    "data\\global_maize\\eurocrops\\parcels\\de4_2023\\000010.parquet": "30941dcba36708545f1d1193112f58781c902750504824abee6ba974f05f3fe2",
+    "data\\global_maize\\eurocrops\\parcels\\de4_2023\\000011.parquet": "4446e67cffccd309a88235d5c54c767eb7a4082f0329152bda4a260777b979e2",
+    "data\\global_maize\\eurocrops\\parcels\\de4_2023\\000012.parquet": "a689f07ac73c0d4237bef012650312ec2e07a4b6f0a897a7c86d4c5e50330403",
+    "data\\global_maize\\eurocrops\\parcels\\de4_2023\\000013.parquet": "448edd23d09ddaa89129dd147c49a89651df242e278c526925230f2006c1fffa",
+    "data\\global_maize\\eurocrops\\parcels\\de4_2023\\000014.parquet": "ffafa97c6a7292e35175e31269b9e80c81008119d876b36e65c440e340b52577",
+    "data\\global_maize\\eurocrops\\parcels\\dk_2023\\000000.parquet": "07ce0dabe4c0d781187be758effc37a4f6514764a21624c61acc04ff6f09d5d5",
+    "data\\global_maize\\eurocrops\\parcels\\dk_2023\\000001.parquet": "2d977b78eac1a8718633f1bae7090376ba617a2609d68a247120f747d2a2e654",
+    "data\\global_maize\\eurocrops\\parcels\\dk_2023\\000002.parquet": "d7a9e1ab4471fbd56491ff561e7a5b86fd355c8a36da9cd1865afacdaed850fe",
+    "data\\global_maize\\eurocrops\\parcels\\dk_2023\\000003.parquet": "e10a4393f61b2d37ca2279fd3cf1009b9263b117e896fe7f16e60f9e8e674d9c",
+    "data\\global_maize\\eurocrops\\parcels\\dk_2023\\000004.parquet": "e480f1eb233ef4e3a228f79b2385ce6e8edc613b8fdd641e3d672ab0cab3b246",
+    "data\\global_maize\\eurocrops\\parcels\\dk_2023\\000005.parquet": "a8666e2e6678b888b01d2027bc597f19576c5381d2cf74418b847838e4b44eb0",
+    "data\\global_maize\\eurocrops\\parcels\\dk_2023\\000006.parquet": "d8ebf1f2200c6b20931831b5b39c19c84bb37312ea5beb976c6fc6f8e1108ac2",
+    "data\\global_maize\\eurocrops\\parcels\\dk_2023\\000007.parquet": "023d79f80216d0f80db69e344f91022f2e68392e201ec84363ab330f054b9b67",
+    "data\\global_maize\\eurocrops\\parcels\\dk_2023\\000008.parquet": "93f902aca1f58e82a9be3dcc3010299963036a9c3c2d3a3f5cb9145f125896ca",
+    "data\\global_maize\\eurocrops\\parcels\\dk_2023\\000009.parquet": "0247286b3e70c4c21d506d0a29ecbb0af3cd2d0083cba57896595d7fd0244039",
+    "data\\global_maize\\eurocrops\\parcels\\dk_2023\\000010.parquet": "b9470eb2f9bd021ad14617361b2ba784aa5be0ca589d43176c5d34037073d6c3",
+    "data\\global_maize\\eurocrops\\parcels\\dk_2023\\000011.parquet": "4df72c973790c89d36463d7c87c0d98728811e17b285f34dbab7ca10cd8ea604",
+    "data\\global_maize\\eurocrops\\parcels\\dk_2023\\000012.parquet": "987bd1c345c0fa505306462ba99708a1b52eee5a0b90ab42a61277ff1c362d80",
+    "data\\global_maize\\eurocrops\\parcels\\dk_2023\\000013.parquet": "e59d13cd76c3bc9d1c8226f5bd849782bb0f2e596e182d0642099db1896cb2a3",
+    "data\\global_maize\\eurocrops\\parcels\\dk_2023\\000014.parquet": "9fa95fbc80c61071bc812ac194da5548ae3ab4c2561a5e55ff1f2984256c63ec",
+    "data\\global_maize\\eurocrops\\parcels\\dk_2023\\000015.parquet": "616528cdb016ef81e4b51f97f541645a10e405e540b9b3c45d1580c86c3e6cd2",
+    "data\\global_maize\\eurocrops\\parcels\\dk_2023\\000016.parquet": "e6545bc77797ae97584fadb62e1d576759d38a130b85b6e20e1aa3e9abe0e471",
+    "data\\global_maize\\eurocrops\\parcels\\dk_2023\\000017.parquet": "c5f4f9e503d884b7778b7f53687b11fbc46899d57f176058ede7511ce8825a4f",
+    "data\\global_maize\\eurocrops\\parcels\\dk_2023\\000018.parquet": "d29e4d524f3d04f38bc98d3edb35897a596b207071e82850bf18a67df925a4d4",
+    "data\\global_maize\\eurocrops\\parcels\\dk_2023\\000019.parquet": "608f1d5d158709de3ac95ec0716610cbc53be03cadd39f647be9f0ebc4bac042",
+    "data\\global_maize\\eurocrops\\parcels\\dk_2023\\000020.parquet": "fcd6cf812960e8c7d3e7c0db74fd649ec7fb4ec5feb6419a0844bf82c60ab290",
+    "data\\global_maize\\eurocrops\\parcels\\dk_2023\\000021.parquet": "41e4f8f50aad3f62dd3cc8817c833192270609b79a0618bec69cb2a2e793c99f",
+    "data\\global_maize\\eurocrops\\parcels\\dk_2023\\000022.parquet": "b5bda653cf26c98ac2b39dfef4081a817494a315119826d6243cb1cb32a5cb6e",
+    "data\\global_maize\\eurocrops\\parcels\\dk_2023\\000023.parquet": "e08c2feb754eb7a95afe0078a92ce1765d4342fb2251d36f4f995c9533f909c2",
+    "data\\global_maize\\eurocrops\\parcels\\dk_2023\\000024.parquet": "9934cfe58b77c32d0ab16f953ffc844dd109d134350874c41e4dc16595e50c8a",
+    "data\\global_maize\\eurocrops\\parcels\\dk_2023\\000025.parquet": "4a51c4dba11acbc9244b02f242a01bff41b4083e0f6bad139415041e18cb9b0a",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000000.parquet": "f603e47bca390c68aaa974bde236420670d7c7a75ce35daac3dbdea66eb35539",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000001.parquet": "70a632f4fc9243df583e33b561b351606581c0d3a1e5ee5b0bffc0a1d6c9cfba",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000002.parquet": "5402fabddb2c6a5760177cef0aa0d6493512ebec69a7c1b8fbc26410ef08dcc5",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000003.parquet": "40b3b15ea657f30b9e561ccfb499ceebd4d44e0aa25a465e16c4d08f3a1e23f0",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000004.parquet": "7780aa94e4fd667161e106c1f3cb41694909b45fa71227596aa507ff8e2a0ce2",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000005.parquet": "6870311c114fdfc3f775b90dd75acf733a7082e2ff94f15c708b8721dd5ed03f",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000006.parquet": "aa04f52a65d38be4fdad0a82feed60829c463bd29a2fc498a23f031631fb65d4",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000007.parquet": "b913b5c0e5e048e673aa62015b1652362244c517ed3654215acefc46752f07f2",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000008.parquet": "db45b45ebe38c5952f6587a59326b2346d39583c95d3eea89ae13a47c354a0d8",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000009.parquet": "de6c343a98a72e1006d3d409c8de76bcb69af4a0059f1778a928057f4be160fc",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000010.parquet": "c8468e5d201b60d6ea560e2d1a083291ff4ae571afdeef6f431cc9177609794e",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000011.parquet": "65a826710dad9e321163e6f92cf4dc40e9c5425fce483682f08d46df921245d9",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000012.parquet": "38a152816b90d4478b714a2772f8a444e3309ffb436274c495045d2e3ed267a9",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000013.parquet": "d603719aeae6c1b621995051ca90b1741a77c6920f82c22fa610c28cb2dad74e",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000014.parquet": "822ff8f2c408155e2c13e8e592e973ef26031bc05dacde73abb4d479db1ac964",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000015.parquet": "c58cd6fec671b705bcd0c0d15c53d524cdad4a83a67a65978ada1039773ec6ec",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000016.parquet": "f3281fb2252590eb2f42c4a4140daaa4d92bf4a3373ad48ce8a14516a9c076a2",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000017.parquet": "facb82998811516fc46d5df623b53a5f9df2f34e4ae9c77584280d2e3ce6b484",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000018.parquet": "5844c45e3f665aa43f8e1c1b0dc4b916c176a48abd7a414e9d8b86afcc904dd5",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000019.parquet": "39a60f7a28e55dd71304623b2e987ad1b5bf5c3ed90238b3d321a910fe974901",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000020.parquet": "f17623b14fd2eac7c2d5ff9776e0be900b36a43e6349bd0a525739df9f0ab3d3",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000021.parquet": "35ba0babc54c0786fc19d681c0115a41484ad194912049dd206ccaf649a9b84a",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000022.parquet": "cd4f608bfd1d6ae8172ca216875684a48f9788209a2ab444210fdef379ed81c0",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000023.parquet": "c1e92e2e3101bef79f2b9bee1c0edcef14891370e4948260451f6018b4ec17f7",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000024.parquet": "bb3409fc6c4ec132edffd1542f71c43f5705d546dc5e4eda1edf32c351260046",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000025.parquet": "2f210d8e37d17e77adfc4462511562119048aa8b6e423fbca15a6edbc40b0ca8",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000026.parquet": "a87d36c097765ba8a5f322352a0dd851c00f028afc9bed3654041d4b83762e26",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000027.parquet": "7b677ffeef41e30d05b19fc076d83385f621153d915ca3dfe5e3707d1c96fbc6",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000028.parquet": "92f354d186c9321da946efc79baba33871d84c06e78f328a2fd57d1e3fb8a04d",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000029.parquet": "80c9acb839b534066f6605975c28854019eb37c81b1520b760840e607801c773",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000030.parquet": "07e5db33b59673275b71938ac46e7a70f0ae8debf680280b21313edbe5d9ca34",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000031.parquet": "449073e12e916cd0193d7f4c1accc48ccd3b99ca9a63b652ce2784e4de31e406",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000032.parquet": "b9e165a9a0dd13e023fbc0094e0d51e2536c8f376ddc9e249bb93437333f05d9",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000033.parquet": "494a37437ff63554496b003b94b9ff988e4cb6ac0ce5e3bd63afeec28f1f0c1e",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000034.parquet": "5dce1cef910721f6f142d5ee28679a7b8a1052108801e9da80d662f10f34bd04",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000035.parquet": "b4df34baa26f03214e9844188a770aedd68b2c5efb2b858d960d71d24ddd5129",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000036.parquet": "7d7e0fe07b2963dc6e9ecdfdf10013f34785b0325da529c56d901c9a61edceae",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000037.parquet": "150f04a84a9ed4e0f2241c26bb85b1f2f1899dec8b79db72bab9f27056c4ea6c",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000038.parquet": "788613dfddb5d67c07e48afb909a3fe8d27ae62acc32ef85487d3590f7e502ef",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000039.parquet": "8a3730ed1966433435f2b35d371e9635f1c0fc22413d397b40bb7b24841438f5",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000040.parquet": "4f519edbe530579ce558cb551a5d2816038fa82b9298149ef4304ca5352438d7",
+    "data\\global_maize\\eurocrops\\parcels\\si_2023\\000041.parquet": "6b10ee18f5d07785d5f6877ded13bab304d8529bc080fc62ca27c013a7aba44a",
+    "data\\global_maize\\eurocrops\\parcels\\sk_2023\\000000.parquet": "8ad194680508f57071fabc371edfb61a572c1041a6475a6313e8028b2fc081fb",
+    "data\\global_maize\\eurocrops\\parcels\\sk_2023\\000001.parquet": "90b5804610e355eee914f2db0d14d0271da118158c54c4aec45794fda9c92285",
+    "data\\global_maize\\eurocrops\\parcels\\sk_2023\\000002.parquet": "d2d1bfbc05f60582afeca42f5e8dc3c29c5b1c8564c2710e9d5e3cc386a8bafb",
+    "data\\global_maize\\eurocrops\\parcels\\sk_2023\\000003.parquet": "7fcaa86244238a35b4df78ad084bf065869803026a09ecc368ab97b71e390ae7",
+    "data\\global_maize\\eurocrops\\parcels\\sk_2023\\000004.parquet": "3bd6d9921cc030ca5035fa131455e5e97feead4ca532b6a0cc45d3e9a5b3f354",
+    "data\\global_maize\\eurocrops\\parcels\\sk_2023\\000005.parquet": "adf51eee3e98072cb5699ab9409dbae4a20f4323bba7164cdea86705f8740fe4",
+    "data\\global_maize\\eurocrops\\parcels\\sk_2023\\000006.parquet": "25ecd1776ea0855bdcc3c4d32380f054e0bcdedc8f10d41aa68486bddd8d8005",
+    "data\\global_maize\\eurocrops\\parcels\\sk_2023\\000007.parquet": "7fe9b413c8f305d816293a9dacd5f5f264968609f53610a667537636540ed3e7",
+    "data\\global_maize\\eurocrops\\parcels\\sk_2023\\000008.parquet": "fa108ef4abaf5e2fd1f04317123bf116c6aafb44d35e5724e28c847ed1a4ddee",
+    "data\\global_maize\\eurocrops\\parcels\\sk_2023\\000009.parquet": "2f63de8aa4be21cbb881e3100e0054a881b69f6087b89a37ac3c982b6d5a0223",
+    "data\\global_maize\\eurocrops\\parcels\\sk_2023\\000010.parquet": "0df7aee22f41ff2a9fd9fd8eaf6be7963e79eea5dfda8309c42f3a87c80d530d",
+    "data\\global_maize\\eurocrops\\parcels\\sk_2023\\000011.parquet": "47e7cf6abf58d84b7fa051374f672141d61daf0f2eba25e289e7d8d84fe2075a",
+    "data\\global_maize\\eurocrops\\parcels\\sk_2023\\000012.parquet": "f932a3f2f8487c1707832a3741f4eeb3716c2d7d06c618484c12af239d708660",
+    "data\\global_maize\\eurocrops\\parcels\\sk_2023\\000013.parquet": "7a4475a36215c8ece4de67b87121db5d4bc05e409dfbb0d57d61bc53350f41d7",
+    "data\\global_maize\\netherlands_2025\\extract.py": "26e46367563c6e4a125ab33d5c9df098b7e2d3db161fb1a28788956f43a7cca8",
+    "data\\global_maize\\netherlands_2025\\fields.geojson": "750c12e971c0cc6e1b42e663e7480aa1a8625221673ff92eb8e28e4ff646ed7e",
+    "data\\global_maize\\netherlands_2025\\field_index.csv": "55f138782c712ec2518514cdad4e7c522306ecda1ce3302a2b15a6b0698d428b",
+    "data\\global_maize\\netherlands_2025\\ndvi_all.csv": "0283efe9399868ed81b086bb6d8766d86bb5ae9f1c525088b45e3746a1374fb2",
+    "data\\global_maize\\netherlands_2025\\README.md": "fe2ba1298a8cf961dbbd4081c2e00a90e20321808996f9afddf7336545b63fbd",
+    "data\\global_maize\\netherlands_2025\\scenes.json": "388f2dd92463a9b22ea38175a5279c4ab24276c1d5c7a2738826a73201308ed6",
+    "data\\global_maize\\quebec\\qc_2025_000.parquet": "7228ec56a01ebc4817e3724b275fbd03cb16af00695e157d040c1606217e2f94",
+    "data\\global_maize\\quebec\\qc_2025_001.parquet": "d979459c93b335290574ba94b641a3ec4e8a37742642375c7955c7aa874c9a31"
+  },
+  "selection_sha256": "0768fe42657a591a83ad1d4b9e53d76008ab870ca06a68fe8c42cdeeae28ab85",
+  "parameters": {
+    "window": "[04-01,12-01)",
+    "target_grid": "B04 native 10m",
+    "erosion_m": 10,
+    "min_pixels": 3,
+    "valid_scl": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "min_fraction": 0.5,
+    "b11_resampling": "nearest",
+    "scl_resampling": "nearest",
+    "reflectance": "product XML only;no date/baseline inference",
+    "daily_rule": "max NDVI fraction then scene_id",
+    "extra_ndmi_features": "none"
+  },
+  "created_at_utc": "2026-11-15T00:14:52.680384Z",
+  "main_contract_sha256": "f1f598527f356fc4935b4002173b70c08150a231e90d18cc2cfc89492a4f012a",
+  "selection_rule": "4 dual-class regions x2 labels x5 area rank quintiles x5 seeded draws",
+  "acquisition_budget_rule": "initial one min-catalog-cloud candidate per fixed 10day bin from Apr1;field SCL controls acceptance;gapfill pending where necessary",
+  "legacy_netherlands_separate": true,
+  "gapfill_policy": {
+    "version": "quality_gapfill_v1",
+    "window": "[Apr1,Dec1)",
+    "criterion": "geometrically observable field with accepted NDVI gap strictly >30 days including boundaries",
+    "candidate_dates": "middle third of each long gap",
+    "ranking": "largest true footprint overlap;lowest catalog cloud;closest gap midpoint;scene_id",
+    "budget": "one unread physical product per long gap;one pass only",
+    "label_usage": "none;no label file read",
+    "local_acceptance": "unchanged v2 pixel/SCL/valid fraction rule"
+  },
+  "selection_file": "data/processed/v2/satellite/selection.csv",
+  "sample_keys": [
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_552760",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_295911",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_291723",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_63388",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_2504",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_245204",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_126706",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_241791",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_69158",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_122612",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_11534",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_145844",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_525885",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_215896",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_102667",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_460176",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_72053",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_497679",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_5881",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_544677",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_547464",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_27620",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_329542",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_165521",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_311691",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_63697",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_236994",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_540920",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_272417",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_184645",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_132287",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_511791",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_331023",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_280117",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_163048",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_261332",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_32334",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_555895",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_180027",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_133691",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_39755",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_42278",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_108264",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_187005",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_87244",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_71020",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_532484",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_140846",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_4870",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be2_2023_216478",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_105903",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_95265",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_268095",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_183444",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_178208",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_297633",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_332768",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_322505",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_38809",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_127338",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_219250",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_125325",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_273502",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_87394",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_262006",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_166138",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_118115",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_67523",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_64982",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_185102",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_25271",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_60624",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_173248",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_71273",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_190726",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_314543",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_196523",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_74273",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_146452",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_102195",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_236134",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_125576",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_176750",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_236683",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_4969",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_98339",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_35403",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_14441",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_275794",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_13461",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_230556",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_308078",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_96792",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_177018",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_219666",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_37271",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_220582",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_333280",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_49031",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_be3_2023_244734",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_266809",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_208074",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_953330",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_596925",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_602608",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_798193",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_13274",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_991899",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_1065213",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_928056",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_518919",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_1048654",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_848769",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_1143514",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_331353",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_852455",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_932146",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_225411",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_972003",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_362113",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_690455",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_373104",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_124908",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_914255",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_1020021",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_448676",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_1057185",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_258511",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_343376",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_303721",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_533576",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_1103687",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_643103",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_1128",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_478057",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_300495",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_309907",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_314128",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_658600",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_852558",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_1105787",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_66745",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_660634",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_655135",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_36632",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_960960",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_484544",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_92794",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_947465",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_bg_2023_1158811",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_174727",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_16824",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_152580",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_446919",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_130400",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_373355",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_74790",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_830430",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_569580",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_594652",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_576588",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_550209",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_588248",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_560292",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_563954",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_819232",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_45353",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_819472",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_353561",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_707345",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_156229",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_506812",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_23209",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_730619",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_775773",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_605816",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_726357",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_308303",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_219132",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_586907",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_721443",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_559180",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_250097",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_652112",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_683468",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_81701",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_614546",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_334916",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_398429",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_577483",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_597220",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_624398",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_726845",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_470145",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_247450",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_426014",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_689390",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_364179",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_198490",
+      "year": 2023
+    },
+    {
+      "entity_id": "eurocrops_gpqtv202_si_2023_411359",
+      "year": 2023
+    }
+  ],
+  "main_contract_reviewed_sha": "884f8ad91a5b0e469d38662dca2ad1868dcc8b93",
+  "selected_geometry_sha256": "3f39a170042eb714145ed628ff8fc0bdb320ad54bbe948e86df139f7ed26a624",
+  "algorithm_version": "global-v2-xml-erosion10-nearest-min3-v2",
+  "code_files_sha256": {
+    "src/satellite/v2_acquire.py": "96a82c18880850dc3aa7ef0d703e391d8c928bcce1eecbe0765e4001f0e3ad10",
+    "src/satellite/v2_alignment.py": "2f31162a535e052bf28cdcb3300c6d767e4bca461080fac8ca318cf115a657e3",
+    "src/satellite/v2_budget.py": "43d8b961dbccbf9d53c6fcbae742787e9724b307444bd97cbd5c9ef667c98070",
+    "src/satellite/v2_check_legacy.py": "ac67e581db4e0169d3e0c45053fad921894d76ee57d2299b31736a5f67dfe630",
+    "src/satellite/v2_document.py": "1ba224c3e013a7725e087dd1ad3c377aa0a8dabb9c0659ba954989f1f3ab12c8",
+    "src/satellite/v2_export.py": "1e84fd19a1d7e0ac60a122ee2ee5fe064c39c281faaa38158a44f83fc0e17d06",
+    "src/satellite/v2_features.py": "34c6c67d658c154b45eed84fe485a1457614207c5874812d8ef5f92d0074e202",
+    "src/satellite/v2_gapfill.py": "3e55f6b95279a2faeb1246ab9daa4abfa13aefc89de67edbdd59deaa0c29773a",
+    "src/satellite/v2_netherlands_reuse.py": "a2b49dc238014c1c0eb5f37de79e0799e8271b9c9a589e8765786bf915101400",
+    "src/satellite/v2_validate.py": "f402a8b5571fb5d4be7d1c9949989378aadb92f385bb631aa7a1b49d7a4e79fc",
+    "src/satellite/global_v2.py": "c29bf009f9a894d4e4b68c24d0c6e6fafb0fc11b6cd86c2c89a56958ada6e8e3",
+    "src/satellite/requirements-v2.txt": "752924561623aa694493c9d48b34b5e5c01f686bc576fda11ea171235aec5fa2"
+  },
+  "official_api_snapshots": {
+    "earthsearch_collection.json": "9c5fe9a8c8785d8439a1697cd91adc21f7ac45f7f3b95786c1398904c413975e",
+    "pc_collection.json": "247d10bb3e2bfdfda26fcfa8c73db42110d55da5b66b7a7aff2c321ae81d0833",
+    "pc_data_openapi.json": "170a901e8f356b5f1d2c339d74da50f069cae6504eea0b109ba5630dca91d1d8",
+    "pc_probe.json": "eb8885d471894f5b1641c2d784f15f4ed092c5c613111ac462480d4beff63eb7",
+    "pc_sas_openapi.json": "1ea7c3903da4dc4567e6295046ac3216f40d8dd65cb9c96d6d1f56b136341d15"
+  }
+}

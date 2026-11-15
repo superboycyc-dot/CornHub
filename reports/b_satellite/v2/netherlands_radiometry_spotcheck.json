@@ -1,0 +1,546 @@
+[
+  {
+    "entity_id": "nl_rvo_brp_2025_3b183b46-4801-57cc-8f3e-f98f357a88b4",
+    "date": "2025-06-12",
+    "legacy_scene_id": "S2A_31UFT_20250612_0_L2A",
+    "pc_scene_id": "S2A_MSIL2A_20250612T103701_R008_T31UFT_20250612T124517",
+    "same_physical_observation": true,
+    "legacy_ndvi": 0.70996,
+    "pc_v2_ndvi": 0.7099593623779636,
+    "difference": -6.376220363923935e-07,
+    "legacy_total_pixels": 14,
+    "pc_total_pixels": 14,
+    "legacy_valid_pixels": 14,
+    "pc_valid_pixels": 14,
+    "xml_calibration": {
+      "source_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/31/U/FT/2025/06/12/S2A_MSIL2A_20250612T103701_N0511_R008_T31UFT_20250612T124517.SAFE/MTD_MSIL2A.xml",
+      "xml_sha256": "ff538c9804088287685d5c138cc9729a0bdaaa4d96cca23aab4d5adbc299ccec",
+      "quantification": 10000.0,
+      "offsets": {
+        "B04": -1000.0,
+        "B08": -1000.0,
+        "B11": -1000.0
+      },
+      "nodata": 0,
+      "processing_baseline": "05.11",
+      "retrieved_at_utc": "2026-11-15T00:11:59.970849Z"
+    },
+    "status": "observed",
+    "interpretation": "SCL4,5 legacy vs4,5,6,7 v2;rounding1e-5;not appended as independent observation",
+    "pixel_evidence": [
+      {
+        "row": 1,
+        "col": 6,
+        "center_xy": [
+          698545.0,
+          5718615.0
+        ],
+        "raw_dn": {
+          "B04": 1527.0,
+          "B08": 3132.0,
+          "B11": 3041.0,
+          "SCL": 4.0
+        },
+        "reflectance": {
+          "B04": 0.0527,
+          "B08": 0.2132,
+          "B11": 0.2041
+        },
+        "ndvi": 0.6036103798420458,
+        "ndmi": 0.02180685358255451
+      },
+      {
+        "row": 2,
+        "col": 5,
+        "center_xy": [
+          698535.0,
+          5718605.0
+        ],
+        "raw_dn": {
+          "B04": 1451.0,
+          "B08": 3598.0,
+          "B11": 3044.0,
+          "SCL": 4.0
+        },
+        "reflectance": {
+          "B04": 0.0451,
+          "B08": 0.2598,
+          "B11": 0.2044
+        },
+        "ndvi": 0.704165300098393,
+        "ndmi": 0.11934510986643684
+      },
+      {
+        "row": 2,
+        "col": 6,
+        "center_xy": [
+          698545.0,
+          5718605.0
+        ],
+        "raw_dn": {
+          "B04": 1486.0,
+          "B08": 3264.0,
+          "B11": 3041.0,
+          "SCL": 4.0
+        },
+        "reflectance": {
+          "B04": 0.0486,
+          "B08": 0.2264,
+          "B11": 0.2041
+        },
+        "ndvi": 0.6465454545454545,
+        "ndmi": 0.05180023228803714
+      },
+      {
+        "row": 2,
+        "col": 7,
+        "center_xy": [
+          698555.0,
+          5718605.0
+        ],
+        "raw_dn": {
+          "B04": 1509.0,
+          "B08": 3132.0,
+          "B11": 3041.0,
+          "SCL": 4.0
+        },
+        "reflectance": {
+          "B04": 0.0509,
+          "B08": 0.2132,
+          "B11": 0.2041
+        },
+        "ndvi": 0.6145399469897765,
+        "ndmi": 0.02180685358255451
+      },
+      {
+        "row": 3,
+        "col": 4,
+        "center_xy": [
+          698525.0,
+          5718595.0
+        ],
+        "raw_dn": {
+          "B04": 1498.0,
+          "B08": 4006.0,
+          "B11": 2957.0,
+          "SCL": 4.0
+        },
+        "reflectance": {
+          "B04": 0.0498,
+          "B08": 0.3006,
+          "B11": 0.1957
+        },
+        "ndvi": 0.7157534246575342,
+        "ndmi": 0.2113640942978037
+      }
+    ]
+  },
+  {
+    "entity_id": "nl_rvo_brp_2025_3b183b46-4801-57cc-8f3e-f98f357a88b4",
+    "date": "2025-09-28",
+    "legacy_scene_id": "S2C_31UFT_20250928_0_L2A",
+    "pc_scene_id": "S2C_MSIL2A_20250928T103831_R008_T31UFT_20250928T161815",
+    "same_physical_observation": true,
+    "legacy_ndvi": 0.27532,
+    "pc_v2_ndvi": 0.2753220881007615,
+    "difference": 2.0881007614659275e-06,
+    "legacy_total_pixels": 14,
+    "pc_total_pixels": 14,
+    "legacy_valid_pixels": 14,
+    "pc_valid_pixels": 14,
+    "xml_calibration": {
+      "source_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/31/U/FT/2025/09/28/S2C_MSIL2A_20250928T103831_N0511_R008_T31UFT_20250928T161815.SAFE/MTD_MSIL2A.xml",
+      "xml_sha256": "19fb99feaf9ed2ac47531694ed46f00d093211fb879e15185c6ca27631ea074c",
+      "quantification": 10000.0,
+      "offsets": {
+        "B04": -1000.0,
+        "B08": -1000.0,
+        "B11": -1000.0
+      },
+      "nodata": 0,
+      "processing_baseline": "05.11",
+      "retrieved_at_utc": "2026-11-15T00:12:01.611326Z"
+    },
+    "status": "observed",
+    "interpretation": "SCL4,5 legacy vs4,5,6,7 v2;rounding1e-5;not appended as independent observation",
+    "pixel_evidence": [
+      {
+        "row": 1,
+        "col": 6,
+        "center_xy": [
+          698545.0,
+          5718615.0
+        ],
+        "raw_dn": {
+          "B04": 1905.0,
+          "B08": 2666.0,
+          "B11": 3521.0,
+          "SCL": 5.0
+        },
+        "reflectance": {
+          "B04": 0.0905,
+          "B08": 0.1666,
+          "B11": 0.2521
+        },
+        "ndvi": 0.29599377674056787,
+        "ndmi": -0.20420348698352042
+      },
+      {
+        "row": 2,
+        "col": 5,
+        "center_xy": [
+          698535.0,
+          5718605.0
+        ],
+        "raw_dn": {
+          "B04": 1948.0,
+          "B08": 2662.0,
+          "B11": 3724.0,
+          "SCL": 5.0
+        },
+        "reflectance": {
+          "B04": 0.0948,
+          "B08": 0.1662,
+          "B11": 0.2724
+        },
+        "ndvi": 0.27356321839080455,
+        "ndmi": -0.24213406292749656
+      },
+      {
+        "row": 2,
+        "col": 6,
+        "center_xy": [
+          698545.0,
+          5718605.0
+        ],
+        "raw_dn": {
+          "B04": 1899.0,
+          "B08": 2622.0,
+          "B11": 3521.0,
+          "SCL": 5.0
+        },
+        "reflectance": {
+          "B04": 0.0899,
+          "B08": 0.1622,
+          "B11": 0.2521
+        },
+        "ndvi": 0.2867909559698533,
+        "ndmi": -0.21699251749939652
+      },
+      {
+        "row": 2,
+        "col": 7,
+        "center_xy": [
+          698555.0,
+          5718605.0
+        ],
+        "raw_dn": {
+          "B04": 1951.0,
+          "B08": 2680.0,
+          "B11": 3521.0,
+          "SCL": 5.0
+        },
+        "reflectance": {
+          "B04": 0.0951,
+          "B08": 0.168,
+          "B11": 0.2521
+        },
+        "ndvi": 0.2770809578107184,
+        "ndmi": -0.2001904308497976
+      },
+      {
+        "row": 3,
+        "col": 4,
+        "center_xy": [
+          698525.0,
+          5718595.0
+        ],
+        "raw_dn": {
+          "B04": 2156.0,
+          "B08": 3026.0,
+          "B11": 3651.0,
+          "SCL": 5.0
+        },
+        "reflectance": {
+          "B04": 0.1156,
+          "B08": 0.2026,
+          "B11": 0.2651
+        },
+        "ndvi": 0.2734129478315525,
+        "ndmi": -0.13363267051528757
+      }
+    ]
+  },
+  {
+    "entity_id": "nl_rvo_brp_2025_0112d3c3-f845-5a4c-810f-e5131fd8024b",
+    "date": "2025-06-12",
+    "legacy_scene_id": "S2A_31UFT_20250612_0_L2A",
+    "pc_scene_id": "S2A_MSIL2A_20250612T103701_R008_T31UFT_20250612T124517",
+    "same_physical_observation": true,
+    "legacy_ndvi": 0.70512,
+    "pc_v2_ndvi": 0.705120339396623,
+    "difference": 3.393966230280654e-07,
+    "legacy_total_pixels": 1090,
+    "pc_total_pixels": 1090,
+    "legacy_valid_pixels": 1090,
+    "pc_valid_pixels": 1090,
+    "xml_calibration": {
+      "source_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/31/U/FT/2025/06/12/S2A_MSIL2A_20250612T103701_N0511_R008_T31UFT_20250612T124517.SAFE/MTD_MSIL2A.xml",
+      "xml_sha256": "ff538c9804088287685d5c138cc9729a0bdaaa4d96cca23aab4d5adbc299ccec",
+      "quantification": 10000.0,
+      "offsets": {
+        "B04": -1000.0,
+        "B08": -1000.0,
+        "B11": -1000.0
+      },
+      "nodata": 0,
+      "processing_baseline": "05.11",
+      "retrieved_at_utc": "2026-11-15T00:11:59.970849Z"
+    },
+    "status": "observed",
+    "interpretation": "SCL4,5 legacy vs4,5,6,7 v2;rounding1e-5;not appended as independent observation",
+    "pixel_evidence": [
+      {
+        "row": 0,
+        "col": 40,
+        "center_xy": [
+          701295.0,
+          5715985.0
+        ],
+        "raw_dn": {
+          "B04": 1536.0,
+          "B08": 3644.0,
+          "B11": 3170.0,
+          "SCL": 4.0
+        },
+        "reflectance": {
+          "B04": 0.0536,
+          "B08": 0.2644,
+          "B11": 0.217
+        },
+        "ndvi": 0.6628930817610064,
+        "ndmi": 0.09846281678437893
+      },
+      {
+        "row": 1,
+        "col": 37,
+        "center_xy": [
+          701265.0,
+          5715975.0
+        ],
+        "raw_dn": {
+          "B04": 1493.0,
+          "B08": 3618.0,
+          "B11": 3021.0,
+          "SCL": 4.0
+        },
+        "reflectance": {
+          "B04": 0.0493,
+          "B08": 0.2618,
+          "B11": 0.2021
+        },
+        "ndvi": 0.6830601092896174,
+        "ndmi": 0.1286915283466264
+      },
+      {
+        "row": 1,
+        "col": 38,
+        "center_xy": [
+          701275.0,
+          5715975.0
+        ],
+        "raw_dn": {
+          "B04": 1477.0,
+          "B08": 3554.0,
+          "B11": 3021.0,
+          "SCL": 4.0
+        },
+        "reflectance": {
+          "B04": 0.0477,
+          "B08": 0.2554,
+          "B11": 0.2021
+        },
+        "ndvi": 0.6852523919498515,
+        "ndmi": 0.11650273224043718
+      },
+      {
+        "row": 1,
+        "col": 39,
+        "center_xy": [
+          701285.0,
+          5715975.0
+        ],
+        "raw_dn": {
+          "B04": 1459.0,
+          "B08": 3566.0,
+          "B11": 3123.0,
+          "SCL": 4.0
+        },
+        "reflectance": {
+          "B04": 0.0459,
+          "B08": 0.2566,
+          "B11": 0.2123
+        },
+        "ndvi": 0.6965289256198347,
+        "ndmi": 0.09447643420772021
+      },
+      {
+        "row": 1,
+        "col": 40,
+        "center_xy": [
+          701295.0,
+          5715975.0
+        ],
+        "raw_dn": {
+          "B04": 1477.0,
+          "B08": 3666.0,
+          "B11": 3123.0,
+          "SCL": 4.0
+        },
+        "reflectance": {
+          "B04": 0.0477,
+          "B08": 0.2666,
+          "B11": 0.2123
+        },
+        "ndvi": 0.6964683423480751,
+        "ndmi": 0.11338484025892674
+      }
+    ]
+  },
+  {
+    "entity_id": "nl_rvo_brp_2025_0112d3c3-f845-5a4c-810f-e5131fd8024b",
+    "date": "2025-09-28",
+    "legacy_scene_id": "S2C_31UFT_20250928_0_L2A",
+    "pc_scene_id": "S2C_MSIL2A_20250928T103831_R008_T31UFT_20250928T161815",
+    "same_physical_observation": true,
+    "legacy_ndvi": 0.45729,
+    "pc_v2_ndvi": 0.4572862477438874,
+    "difference": -3.752256112599106e-06,
+    "legacy_total_pixels": 1090,
+    "pc_total_pixels": 1090,
+    "legacy_valid_pixels": 1090,
+    "pc_valid_pixels": 1090,
+    "xml_calibration": {
+      "source_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/31/U/FT/2025/09/28/S2C_MSIL2A_20250928T103831_N0511_R008_T31UFT_20250928T161815.SAFE/MTD_MSIL2A.xml",
+      "xml_sha256": "19fb99feaf9ed2ac47531694ed46f00d093211fb879e15185c6ca27631ea074c",
+      "quantification": 10000.0,
+      "offsets": {
+        "B04": -1000.0,
+        "B08": -1000.0,
+        "B11": -1000.0
+      },
+      "nodata": 0,
+      "processing_baseline": "05.11",
+      "retrieved_at_utc": "2026-11-15T00:12:01.611326Z"
+    },
+    "status": "observed",
+    "interpretation": "SCL4,5 legacy vs4,5,6,7 v2;rounding1e-5;not appended as independent observation",
+    "pixel_evidence": [
+      {
+        "row": 0,
+        "col": 40,
+        "center_xy": [
+          701295.0,
+          5715985.0
+        ],
+        "raw_dn": {
+          "B04": 1675.0,
+          "B08": 3836.0,
+          "B11": 3378.0,
+          "SCL": 4.0
+        },
+        "reflectance": {
+          "B04": 0.0675,
+          "B08": 0.2836,
+          "B11": 0.2378
+        },
+        "ndvi": 0.6154941612076331,
+        "ndmi": 0.08784042961258151
+      },
+      {
+        "row": 1,
+        "col": 37,
+        "center_xy": [
+          701265.0,
+          5715975.0
+        ],
+        "raw_dn": {
+          "B04": 1611.0,
+          "B08": 3776.0,
+          "B11": 3517.0,
+          "SCL": 4.0
+        },
+        "reflectance": {
+          "B04": 0.0611,
+          "B08": 0.2776,
+          "B11": 0.2517
+        },
+        "ndvi": 0.6392087392973134,
+        "ndmi": 0.04893255242773481
+      },
+      {
+        "row": 1,
+        "col": 38,
+        "center_xy": [
+          701275.0,
+          5715975.0
+        ],
+        "raw_dn": {
+          "B04": 1606.0,
+          "B08": 3676.0,
+          "B11": 3517.0,
+          "SCL": 4.0
+        },
+        "reflectance": {
+          "B04": 0.0606,
+          "B08": 0.2676,
+          "B11": 0.2517
+        },
+        "ndvi": 0.6307129798903108,
+        "ndmi": 0.030618139803581794
+      },
+      {
+        "row": 1,
+        "col": 39,
+        "center_xy": [
+          701285.0,
+          5715975.0
+        ],
+        "raw_dn": {
+          "B04": 1642.0,
+          "B08": 3664.0,
+          "B11": 3677.0,
+          "SCL": 4.0
+        },
+        "reflectance": {
+          "B04": 0.0642,
+          "B08": 0.2664,
+          "B11": 0.2677
+        },
+        "ndvi": 0.6116152450090745,
+        "ndmi": -0.0024340011233850737
+      },
+      {
+        "row": 1,
+        "col": 40,
+        "center_xy": [
+          701295.0,
+          5715975.0
+        ],
+        "raw_dn": {
+          "B04": 1714.0,
+          "B08": 3676.0,
+          "B11": 3677.0,
+          "SCL": 4.0
+        },
+        "reflectance": {
+          "B04": 0.0714,
+          "B08": 0.2676,
+          "B11": 0.2677
+        },
+        "ndvi": 0.5787610619469026,
+        "ndmi": -0.00018681113394356246
+      }
+    ]
+  }
+]

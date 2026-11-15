@@ -1,0 +1,16 @@
+{
+  "status": "pending_harmonized_gapfill",
+  "legacy_reused_field_years": 134,
+  "legacy_real_observations": 1072,
+  "with_valid_ndvi": 113,
+  "no_new_pixels_downloaded": true,
+  "required_gaps": [
+    "April-May absent",
+    "longest per-field gaps in netherlands_legacy/coverage.csv",
+    "NDMI unavailable",
+    "recheck legacy SCL4,5 vs v2 SCL4,5,6,7 before combining"
+  ],
+  "legacy_scene_manifest_sha256": "388f2dd92463a9b22ea38175a5279c4ab24276c1d5c7a2738826a73201308ed6",
+  "cross_catalog_dedupe_rule": "match satellite+sensing timestamp+MGRS tile;prefer latest processing baseline and generation;never append same physical observation from both catalogs",
+  "note": "Legacy pixels kept separate;not counted in the European 200 pilot"
+}

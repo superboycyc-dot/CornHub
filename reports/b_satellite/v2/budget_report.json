@@ -1,0 +1,48 @@
+{
+  "initial_resume_execution_seconds": 447.6313257217407,
+  "gapfill_execution_seconds": 47.46254801750183,
+  "wall_seconds_from_first_catalog_checkpoint_to_gapfill_end": 1730.0760831832886,
+  "wall_clock_includes": "catalog requests;metadata;warmup;restarts;development/idle;not a pure CPU benchmark",
+  "first_checkpoint_utc": "2026-11-14T23:49:06.937811Z",
+  "completed_at_utc": "2026-11-15T00:17:57.013894Z",
+  "cache_bytes_by_kind": {
+    "catalog": 484362497,
+    "metadata": 47236368,
+    "observations": 19012592,
+    "official_docs": 489400
+  },
+  "checkpoint_bytes": 551100857,
+  "distinct_European_crop_response_bytes": 28734604,
+  "small_QA_extra_requests": "four Netherlands cross-catalog spotchecks and two four-region alignment passes;not included in crop byte sum",
+  "quality_counts": {
+    "limited": 104,
+    "usable": 73,
+    "no_data": 23
+  },
+  "observed_field_years": 177,
+  "ndmi_covered_field_years": 177,
+  "unobservable_reasons": {
+    "unobservable_eroded": 14,
+    "unobservable_fewer_than_3_centers": 9
+  },
+  "decision": "HOLD expansion:73/200 usable;104 limited and23 unobservable. Improve long gaps and deduplicate shared product catalogs/window reads before 2000-5000. Do not change erosion based on label.",
+  "team_storage_limit_bytes": 10000000000,
+  "estimates": [
+    {
+      "field_years": 2000,
+      "conservative_linear_checkpoint_bytes": 5511008570,
+      "conservative_linear_crop_bytes": 287346040,
+      "conservative_wall_hours_at_observed_rate": 4.81,
+      "basis": "linear upper-planning extrapolation of dispersed per-field catalogs;includes warmup/debug/idle;shared catalog/window optimization can reduce costs;not measured at expanded scale",
+      "decision": "not_started;coordinate storage and optimize before expansion"
+    },
+    {
+      "field_years": 5000,
+      "conservative_linear_checkpoint_bytes": 13777521425,
+      "conservative_linear_crop_bytes": 718365100,
+      "conservative_wall_hours_at_observed_rate": 12.01,
+      "basis": "linear upper-planning extrapolation of dispersed per-field catalogs;includes warmup/debug/idle;shared catalog/window optimization can reduce costs;not measured at expanded scale",
+      "decision": "not_started;coordinate storage and optimize before expansion"
+    }
+  ]
+}

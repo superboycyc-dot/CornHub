@@ -1,0 +1,23 @@
+{
+  "field_count": 134,
+  "label_counts": {
+    "silage": 121,
+    "grain": 13
+  },
+  "rows": 1072,
+  "unique_dates": [
+    "2025-06-12",
+    "2025-06-30",
+    "2025-07-02",
+    "2025-08-11",
+    "2025-09-10",
+    "2025-09-28",
+    "2025-10-01",
+    "2025-11-17"
+  ],
+  "scene_count": 8,
+  "zero_interior_rows": 168,
+  "null_ndvi_rows": 248,
+  "legacy_policy": "10m erosion;SCL4,5;selected scenes;not v2 comparable without reprocessing",
+  "decision": "preserve legacy;reuse scene inventory and boundary;recompute comparable pixels and fill seasonal gaps"
+}

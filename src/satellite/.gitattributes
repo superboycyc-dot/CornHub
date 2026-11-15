@@ -1,0 +1,4 @@
+global_v2.py text eol=lf
+v2_*.py text eol=lf
+requirements-v2.txt text eol=lf
+.gitattributes text eol=lf
