@@ -26,9 +26,12 @@ export default function HarvestSummary({stats, fields, year}) {
   return <section className="harvest-summary" aria-label="Predicted harvest mix">
     <h3>Predicted harvest mix</h3>
     <div className="harvest-mix">
+      {crops.map(c=><div key={c.type} className={'harvest-share '+c.type}>
+        <span>{c.type}</span><strong>{c.share.toFixed(1)}%</strong>
+      </div>)}
       <div aria-hidden="true" className="harvest-ring" style={{'--silage-share':crops[0].share+'%'}}/>
-      <div>{crops.map(c=><div className={'harvest-key '+c.type} key={c.type}><span>{c.type}</span><strong>{c.share.toFixed(1)}%</strong></div>)}<small>{rows.length} classified fields</small></div>
     </div>
+    <small className="harvest-count">{rows.length} classified fields</small>
     <table><caption>Estimated harvest</caption><thead><tr><th>Use</th><th>Production</th><th>Gross value</th></tr></thead>
       <tbody>{crops.map(c=><tr key={c.type}><th>{c.type}</th><td>{c.output===null?'—':whole.format(c.output)+(c.type==='grain'?' bu':' US tons')}</td><td>{c.value===null?'—':'$'+whole.format(c.value)}</td></tr>)}</tbody>
     </table>
