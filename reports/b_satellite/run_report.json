@@ -1,0 +1,27 @@
+{
+  "command": "satellite.pc_batch",
+  "scope": "all A label keys",
+  "status": "completed",
+  "finished_at_utc": "2026-11-14T21:01:12Z",
+  "field_year_count": 44,
+  "unique_field_count": 34,
+  "feature_rows": 44,
+  "timeseries_rows": 4524,
+  "field_years_with_observations": 44,
+  "scene_jobs": 4524,
+  "successful_scene_reads": 4524,
+  "cache_hits": 0,
+  "quality_counts": {
+    "no_data": 0,
+    "insufficient": 0,
+    "limited": 18,
+    "usable": 26
+  },
+  "catalog_errors": [],
+  "scene_errors": [],
+  "core_input_sha256": {
+    "fields.geojson": "0ec8c03cbf78ee2dbadc79eb0b43604126e82ecbb2a96710f790574214e252de",
+    "labels.csv": "b7c453f7535eca3fea4477bd4861864d5912e47c1330be7c67588d8c94185f0a",
+    "smoke_sample.json": "3199c9f2f6f77f6676f4747664dff40a825be04254361f2b25aacc3d3a32a3c1"
+  }
+}

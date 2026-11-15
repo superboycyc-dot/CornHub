@@ -1,0 +1,4418 @@
+[
+  {
+    "scene_id": "S2B_18SUJ_20210403_0_L2A",
+    "product_id": "S2B_MSIL2A_20210403T155819_N0300_R097_T18SUJ_20210403T202428.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210403_0_L2A",
+    "observed_at_utc": "2021-04-03T16:12:17.663000Z",
+    "retrieved_at_utc": "2026-11-14T20:01:50Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": 0.46574199199676514,
+      "valid_pixel_fraction": 1.0,
+      "valid_pixels": 667,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210403_0_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210403_0_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210403_0_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "03.00",
+      "boa_offset_applied": false,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210403_1_L2A",
+    "product_id": "S2B_MSIL2A_20210403T155819_N0500_R097_T18SUJ_20230521T051340.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210403_1_L2A",
+    "observed_at_utc": "2021-04-03T16:12:17.663000Z",
+    "retrieved_at_utc": "2026-11-14T20:01:50Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": 0.8980100750923157,
+      "valid_pixel_fraction": 0.5112443778110944,
+      "valid_pixels": 341,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210403_1_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210403_1_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210403_1_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210405_1_L2A",
+    "product_id": "S2A_MSIL2A_20210405T154901_N0500_R054_T18SUJ_20230526T012342.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210405_1_L2A",
+    "observed_at_utc": "2021-04-05T16:02:20.080000Z",
+    "retrieved_at_utc": "2026-11-14T20:01:50Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": 0.837723970413208,
+      "valid_pixel_fraction": 0.6851574212893553,
+      "valid_pixels": 457,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210405_1_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210405_1_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210405_1_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210405_2_L2A",
+    "product_id": "S2A_MSIL2A_20210405T154901_N0500_R054_T18SUJ_20230211T045326.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210405_2_L2A",
+    "observed_at_utc": "2021-04-05T16:02:20.080000Z",
+    "retrieved_at_utc": "2026-11-14T20:01:50Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": 0.8333611488342285,
+      "valid_pixel_fraction": 0.6626686656671664,
+      "valid_pixels": 442,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210405_2_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210405_2_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210405_2_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210405_0_L2A",
+    "product_id": "S2A_MSIL2A_20210405T154901_N0300_R054_T18SUJ_20210405T201949.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210405_0_L2A",
+    "observed_at_utc": "2021-04-05T16:02:20.081000Z",
+    "retrieved_at_utc": "2026-11-14T20:01:54Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": 0.45051833987236023,
+      "valid_pixel_fraction": 1.0,
+      "valid_pixels": 667,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210405_0_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210405_0_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210405_0_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "03.00",
+      "boa_offset_applied": false,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210408_1_L2A",
+    "product_id": "S2A_MSIL2A_20210408T155901_N0500_R097_T18SUJ_20230512T081643.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210408_1_L2A",
+    "observed_at_utc": "2021-04-08T16:12:15.372000Z",
+    "retrieved_at_utc": "2026-11-14T20:01:54Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": 0.815589189529419,
+      "valid_pixel_fraction": 0.8365817091454273,
+      "valid_pixels": 558,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210408_1_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210408_1_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210408_1_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210408_2_L2A",
+    "product_id": "S2A_MSIL2A_20210408T155901_N0500_R097_T18SUJ_20230512T081643.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210408_2_L2A",
+    "observed_at_utc": "2021-04-08T16:12:15.372000Z",
+    "retrieved_at_utc": "2026-11-14T20:01:55Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": 0.815589189529419,
+      "valid_pixel_fraction": 0.8365817091454273,
+      "valid_pixels": 558,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210408_2_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210408_2_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210408_2_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210408_0_L2A",
+    "product_id": "S2A_MSIL2A_20210408T155901_N0300_R097_T18SUJ_20210408T220406.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210408_0_L2A",
+    "observed_at_utc": "2021-04-08T16:12:15.373000Z",
+    "retrieved_at_utc": "2026-11-14T20:01:55Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": 0.4423791468143463,
+      "valid_pixel_fraction": 1.0,
+      "valid_pixels": 667,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210408_0_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210408_0_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210408_0_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "03.00",
+      "boa_offset_applied": false,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210410_0_L2A",
+    "product_id": "S2B_MSIL2A_20210410T154809_N0300_R054_T18SUJ_20210416T083545.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210410_0_L2A",
+    "observed_at_utc": "2021-04-10T16:02:20.598000Z",
+    "retrieved_at_utc": "2026-11-14T20:01:58Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210410_0_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210410_0_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210410_0_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "03.00",
+      "boa_offset_applied": false,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210410_1_L2A",
+    "product_id": "S2B_MSIL2A_20210410T154809_N0500_R054_T18SUJ_20230212T072244.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210410_1_L2A",
+    "observed_at_utc": "2021-04-10T16:02:20.598000Z",
+    "retrieved_at_utc": "2026-11-14T20:01:59Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210410_1_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210410_1_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210410_1_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210410_2_L2A",
+    "product_id": "S2B_MSIL2A_20210410T154809_N0500_R054_T18SUJ_20230517T072445.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210410_2_L2A",
+    "observed_at_utc": "2021-04-10T16:02:20.598000Z",
+    "retrieved_at_utc": "2026-11-14T20:01:59Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210410_2_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210410_2_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210410_2_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210413_0_L2A",
+    "product_id": "S2B_MSIL2A_20210413T155819_N0300_R097_T18SUJ_20210413T195903.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210413_0_L2A",
+    "observed_at_utc": "2021-04-13T16:12:14.089000Z",
+    "retrieved_at_utc": "2026-11-14T20:01:59Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210413_0_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210413_0_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210413_0_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "03.00",
+      "boa_offset_applied": false,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210413_2_L2A",
+    "product_id": "S2B_MSIL2A_20210413T155819_N0500_R097_T18SUJ_20230521T185828.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210413_2_L2A",
+    "observed_at_utc": "2021-04-13T16:12:14.089000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:03Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210413_2_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210413_2_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210413_2_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210413_4_L2A",
+    "product_id": "S2B_MSIL2A_20210413T155819_N0500_R097_T18SUJ_20230511T150452.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210413_4_L2A",
+    "observed_at_utc": "2021-04-13T16:12:20.761000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:03Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210413_4_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210413_4_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210413_4_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210413_1_L2A",
+    "product_id": "S2B_MSIL2A_20210413T155819_N0300_R097_T18SUJ_20210413T201614.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210413_1_L2A",
+    "observed_at_utc": "2021-04-13T16:12:20.762000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:03Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210413_1_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210413_1_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210413_1_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "03.00",
+      "boa_offset_applied": false,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210413_3_L2A",
+    "product_id": "S2B_MSIL2A_20210413T155819_N0500_R097_T18SUJ_20230212T125752.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210413_3_L2A",
+    "observed_at_utc": "2021-04-13T16:12:20.762000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:03Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210413_3_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210413_3_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210413_3_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210415_1_L2A",
+    "product_id": "S2A_MSIL2A_20210415T154901_N0500_R054_T18SUJ_20230212T003144.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210415_1_L2A",
+    "observed_at_utc": "2021-04-15T16:02:17.622000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:07Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": 0.8610130548477173,
+      "valid_pixel_fraction": 0.4542728635682159,
+      "valid_pixels": 303,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210415_1_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210415_1_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210415_1_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210415_2_L2A",
+    "product_id": "S2A_MSIL2A_20210415T154901_N0500_R054_T18SUJ_20230517T102751.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210415_2_L2A",
+    "observed_at_utc": "2021-04-15T16:02:17.622000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:08Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": 0.8561980724334717,
+      "valid_pixel_fraction": 0.42278860569715143,
+      "valid_pixels": 282,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210415_2_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210415_2_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210415_2_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210415_0_L2A",
+    "product_id": "S2A_MSIL2A_20210415T154901_N0300_R054_T18SUJ_20210417T142159.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210415_0_L2A",
+    "observed_at_utc": "2021-04-15T16:02:17.623000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:08Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": 0.4615933895111084,
+      "valid_pixel_fraction": 0.9220389805097451,
+      "valid_pixels": 615,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210415_0_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210415_0_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210415_0_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "03.00",
+      "boa_offset_applied": false,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210418_0_L2A",
+    "product_id": "S2A_MSIL2A_20210418T155901_N0300_R097_T18SUJ_20210420T113223.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210418_0_L2A",
+    "observed_at_utc": "2021-04-18T16:12:14.493000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:08Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": 0.4991520345211029,
+      "valid_pixel_fraction": 1.0,
+      "valid_pixels": 667,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210418_0_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210418_0_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210418_0_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "03.00",
+      "boa_offset_applied": false,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210418_1_L2A",
+    "product_id": "S2A_MSIL2A_20210418T155901_N0500_R097_T18SUJ_20230514T015844.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210418_1_L2A",
+    "observed_at_utc": "2021-04-18T16:12:14.493000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:11Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": 0.8985849618911743,
+      "valid_pixel_fraction": 0.3103448275862069,
+      "valid_pixels": 207,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210418_1_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210418_1_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210418_1_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210420_1_L2A",
+    "product_id": "S2B_MSIL2A_20210420T154809_N0500_R054_T18SUJ_20230525T040847.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210420_1_L2A",
+    "observed_at_utc": "2021-04-20T16:02:18.470000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:12Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": 0.8608871102333069,
+      "valid_pixel_fraction": 0.5982008995502249,
+      "valid_pixels": 399,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210420_1_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210420_1_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210420_1_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210420_2_L2A",
+    "product_id": "S2B_MSIL2A_20210420T154809_N0500_R054_T18SUJ_20230213T142922.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210420_2_L2A",
+    "observed_at_utc": "2021-04-20T16:02:18.470000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:12Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": 0.8608871102333069,
+      "valid_pixel_fraction": 0.5982008995502249,
+      "valid_pixels": 399,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210420_2_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210420_2_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210420_2_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210420_0_L2A",
+    "product_id": "S2B_MSIL2A_20210420T154809_N0300_R054_T18SUJ_20210420T195827.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210420_0_L2A",
+    "observed_at_utc": "2021-04-20T16:02:18.471000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:12Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": 0.4784580171108246,
+      "valid_pixel_fraction": 1.0,
+      "valid_pixels": 667,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210420_0_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210420_0_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210420_0_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "03.00",
+      "boa_offset_applied": false,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210423_0_L2A",
+    "product_id": "S2B_MSIL2A_20210423T155819_N0300_R097_T18SUJ_20210423T202000.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210423_0_L2A",
+    "observed_at_utc": "2021-04-23T16:12:14.144000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:15Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": 0.4675496816635132,
+      "valid_pixel_fraction": 1.0,
+      "valid_pixels": 667,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210423_0_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210423_0_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210423_0_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "03.00",
+      "boa_offset_applied": false,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210423_1_L2A",
+    "product_id": "S2B_MSIL2A_20210423T155819_N0500_R097_T18SUJ_20230520T150421.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210423_1_L2A",
+    "observed_at_utc": "2021-04-23T16:12:14.144000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:16Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": 0.8469074964523315,
+      "valid_pixel_fraction": 0.6416791604197901,
+      "valid_pixels": 428,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210423_1_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210423_1_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210423_1_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210425_1_L2A",
+    "product_id": "S2A_MSIL2A_20210425T154901_N0500_R054_T18SUJ_20230517T060933.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210425_1_L2A",
+    "observed_at_utc": "2021-04-25T16:02:20.343000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:17Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210425_1_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210425_1_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210425_1_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210425_2_L2A",
+    "product_id": "S2A_MSIL2A_20210425T154901_N0500_R054_T18SUJ_20230517T060933.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210425_2_L2A",
+    "observed_at_utc": "2021-04-25T16:02:20.343000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:17Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210425_2_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210425_2_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210425_2_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210425_3_L2A",
+    "product_id": "S2A_MSIL2A_20210425T154901_N0500_R054_T18SUJ_20230214T121327.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210425_3_L2A",
+    "observed_at_utc": "2021-04-25T16:02:20.343000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:20Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210425_3_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210425_3_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210425_3_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210425_0_L2A",
+    "product_id": "S2A_MSIL2A_20210425T154901_N0300_R054_T18SUJ_20210425T215157.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210425_0_L2A",
+    "observed_at_utc": "2021-04-25T16:02:20.344000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:21Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210425_0_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210425_0_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210425_0_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "03.00",
+      "boa_offset_applied": false,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210428_1_L2A",
+    "product_id": "S2A_MSIL2A_20210428T155901_N0500_R097_T18SUJ_20230525T035822.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210428_1_L2A",
+    "observed_at_utc": "2021-04-28T16:12:16.995000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:22Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210428_1_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210428_1_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210428_1_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210428_0_L2A",
+    "product_id": "S2A_MSIL2A_20210428T155901_N0300_R097_T18SUJ_20210428T222758.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210428_0_L2A",
+    "observed_at_utc": "2021-04-28T16:12:16.996000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:22Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210428_0_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210428_0_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2A_18SUJ_20210428_0_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "03.00",
+      "boa_offset_applied": false,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210430_0_L2A",
+    "product_id": "S2B_MSIL2A_20210430T154809_N0300_R054_T18SUJ_20210430T200449.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210430_0_L2A",
+    "observed_at_utc": "2021-04-30T16:02:19.754000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:25Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": 0.34913167357444763,
+      "valid_pixel_fraction": 0.005997001499250375,
+      "valid_pixels": 4,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210430_0_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210430_0_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210430_0_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "03.00",
+      "boa_offset_applied": false,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210430_1_L2A",
+    "product_id": "S2B_MSIL2A_20210430T154809_N0500_R054_T18SUJ_20230218T185924.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210430_1_L2A",
+    "observed_at_utc": "2021-04-30T16:02:19.754000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:25Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210430_1_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210430_1_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/4/S2B_18SUJ_20210430_1_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210503_1_L2A",
+    "product_id": "S2B_MSIL2A_20210503T155819_N0500_R097_T18SUJ_20230312T172208.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210503_1_L2A",
+    "observed_at_utc": "2021-05-03T16:12:16.570000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:26Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210503_1_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210503_1_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210503_1_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210503_0_L2A",
+    "product_id": "S2B_MSIL2A_20210503T155819_N0300_R097_T18SUJ_20210503T202242.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210503_0_L2A",
+    "observed_at_utc": "2021-05-03T16:12:16.571000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:26Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210503_0_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210503_0_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210503_0_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "03.00",
+      "boa_offset_applied": false,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210505_1_L2A",
+    "product_id": "S2A_MSIL2A_20210505T154901_N0500_R054_T18SUJ_20230304T061259.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210505_1_L2A",
+    "observed_at_utc": "2021-05-05T16:02:22.349000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:29Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": 0.4675206243991852,
+      "valid_pixel_fraction": 0.6521739130434783,
+      "valid_pixels": 435,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210505_1_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210505_1_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210505_1_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210505_0_L2A",
+    "product_id": "S2A_MSIL2A_20210505T154901_N0300_R054_T18SUJ_20210505T214559.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210505_0_L2A",
+    "observed_at_utc": "2021-05-05T16:02:22.350000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:30Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": 0.32136422395706177,
+      "valid_pixel_fraction": 0.9715142428785607,
+      "valid_pixels": 648,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210505_0_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210505_0_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210505_0_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "03.00",
+      "boa_offset_applied": false,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210508_1_L2A",
+    "product_id": "S2A_MSIL2A_20210508T155901_N0500_R097_T18SUJ_20230310T005326.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210508_1_L2A",
+    "observed_at_utc": "2021-05-08T16:12:18.790000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:30Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210508_1_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210508_1_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210508_1_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210508_0_L2A",
+    "product_id": "S2A_MSIL2A_20210508T155901_N0300_R097_T18SUJ_20210508T202424.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210508_0_L2A",
+    "observed_at_utc": "2021-05-08T16:12:18.791000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:31Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210508_0_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210508_0_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210508_0_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "03.00",
+      "boa_offset_applied": false,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210510_0_L2A",
+    "product_id": "S2B_MSIL2A_20210510T154809_N0300_R054_T18SUJ_20210510T204422.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210510_0_L2A",
+    "observed_at_utc": "2021-05-10T16:02:22.101000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:34Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": 0.2529832422733307,
+      "valid_pixel_fraction": 1.0,
+      "valid_pixels": 667,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210510_0_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210510_0_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210510_0_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "03.00",
+      "boa_offset_applied": false,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210510_1_L2A",
+    "product_id": "S2B_MSIL2A_20210510T154809_N0500_R054_T18SUJ_20230208T070834.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210510_1_L2A",
+    "observed_at_utc": "2021-05-10T16:02:22.101000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:34Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": 0.4815236032009125,
+      "valid_pixel_fraction": 0.823088455772114,
+      "valid_pixels": 549,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210510_1_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210510_1_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210510_1_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210513_0_L2A",
+    "product_id": "S2B_MSIL2A_20210513T155819_N0300_R097_T18SUJ_20210513T195734.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210513_0_L2A",
+    "observed_at_utc": "2021-05-13T16:12:18.607000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:35Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": 0.26207906007766724,
+      "valid_pixel_fraction": 1.0,
+      "valid_pixels": 667,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210513_0_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210513_0_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210513_0_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "03.00",
+      "boa_offset_applied": false,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210513_1_L2A",
+    "product_id": "S2B_MSIL2A_20210513T155819_N0500_R097_T18SUJ_20230219T170908.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210513_1_L2A",
+    "observed_at_utc": "2021-05-13T16:12:18.607000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:35Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": 0.4819490909576416,
+      "valid_pixel_fraction": 0.8575712143928036,
+      "valid_pixels": 572,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210513_1_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210513_1_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210513_1_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210515_1_L2A",
+    "product_id": "S2A_MSIL2A_20210515T154911_N0500_R054_T18SUJ_20230206T101926.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210515_1_L2A",
+    "observed_at_utc": "2021-05-15T16:02:23.778000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:38Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210515_1_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210515_1_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210515_1_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210515_0_L2A",
+    "product_id": "S2A_MSIL2A_20210515T154911_N0300_R054_T18SUJ_20210515T201322.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210515_0_L2A",
+    "observed_at_utc": "2021-05-15T16:02:23.779000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:39Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210515_0_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210515_0_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210515_0_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "03.00",
+      "boa_offset_applied": false,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210518_1_L2A",
+    "product_id": "S2A_MSIL2A_20210518T155901_N0500_R097_T18SUJ_20230219T122354.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210518_1_L2A",
+    "observed_at_utc": "2021-05-18T16:12:20.018000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:39Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": 0.4314059615135193,
+      "valid_pixel_fraction": 0.9265367316341829,
+      "valid_pixels": 618,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210518_1_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210518_1_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210518_1_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210518_0_L2A",
+    "product_id": "S2A_MSIL2A_20210518T155901_N0300_R097_T18SUJ_20210518T222338.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210518_0_L2A",
+    "observed_at_utc": "2021-05-18T16:12:20.019000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:40Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": 0.25293290615081787,
+      "valid_pixel_fraction": 1.0,
+      "valid_pixels": 667,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210518_0_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210518_0_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210518_0_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "03.00",
+      "boa_offset_applied": false,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210520_0_L2A",
+    "product_id": "S2B_MSIL2A_20210520T154809_N0300_R054_T18SUJ_20210520T201501.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210520_0_L2A",
+    "observed_at_utc": "2021-05-20T16:02:23.683000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:43Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": 0.22739329934120178,
+      "valid_pixel_fraction": 1.0,
+      "valid_pixels": 667,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210520_0_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210520_0_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210520_0_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "03.00",
+      "boa_offset_applied": false,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210520_1_L2A",
+    "product_id": "S2B_MSIL2A_20210520T154809_N0500_R054_T18SUJ_20230219T225246.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210520_1_L2A",
+    "observed_at_utc": "2021-05-20T16:02:23.683000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:43Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": 0.42057082056999207,
+      "valid_pixel_fraction": 0.9580209895052474,
+      "valid_pixels": 639,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210520_1_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210520_1_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210520_1_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210523_1_L2A",
+    "product_id": "S2B_MSIL2A_20210523T155819_N0500_R097_T18SUJ_20230402T202900.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210523_1_L2A",
+    "observed_at_utc": "2021-05-23T16:12:19.970000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:43Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210523_1_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210523_1_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210523_1_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210523_0_L2A",
+    "product_id": "S2B_MSIL2A_20210523T155819_N0300_R097_T18SUJ_20210523T202619.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210523_0_L2A",
+    "observed_at_utc": "2021-05-23T16:12:19.971000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:45Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": 0.23827752470970154,
+      "valid_pixel_fraction": 1.0,
+      "valid_pixels": 667,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210523_0_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210523_0_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210523_0_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "03.00",
+      "boa_offset_applied": false,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210525_1_L2A",
+    "product_id": "S2A_MSIL2A_20210525T154911_N0500_R054_T18SUJ_20230208T124728.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210525_1_L2A",
+    "observed_at_utc": "2021-05-25T16:02:24.537000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:47Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210525_1_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210525_1_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210525_1_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210525_0_L2A",
+    "product_id": "S2A_MSIL2A_20210525T154911_N0300_R054_T18SUJ_20210525T213130.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210525_0_L2A",
+    "observed_at_utc": "2021-05-25T16:02:24.539000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:47Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210525_0_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210525_0_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210525_0_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "03.00",
+      "boa_offset_applied": false,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210528_1_L2A",
+    "product_id": "S2A_MSIL2A_20210528T155901_N0500_R097_T18SUJ_20230219T184714.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210528_1_L2A",
+    "observed_at_utc": "2021-05-28T16:12:20.600000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:48Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210528_1_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210528_1_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210528_1_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210528_0_L2A",
+    "product_id": "S2A_MSIL2A_20210528T155901_N0300_R097_T18SUJ_20210528T202753.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210528_0_L2A",
+    "observed_at_utc": "2021-05-28T16:12:20.601000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:49Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210528_0_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210528_0_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2A_18SUJ_20210528_0_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "03.00",
+      "boa_offset_applied": false,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210530_1_L2A",
+    "product_id": "S2B_MSIL2A_20210530T154809_N0500_R054_T18SUJ_20230219T165456.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210530_1_L2A",
+    "observed_at_utc": "2021-05-30T16:02:24.617000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:52Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210530_1_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210530_1_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210530_1_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210530_0_L2A",
+    "product_id": "S2B_MSIL2A_20210530T154809_N0300_R054_T18SUJ_20210530T201523.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210530_0_L2A",
+    "observed_at_utc": "2021-05-30T16:02:24.618000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:52Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210530_0_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210530_0_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/5/S2B_18SUJ_20210530_0_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "03.00",
+      "boa_offset_applied": false,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210602_0_L2A",
+    "product_id": "S2B_MSIL2A_20210602T155819_N0300_R097_T18SUJ_20210602T213355.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210602_0_L2A",
+    "observed_at_utc": "2021-06-02T16:12:20.699000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:52Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2B_18SUJ_20210602_0_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2B_18SUJ_20210602_0_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2B_18SUJ_20210602_0_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "03.00",
+      "boa_offset_applied": false,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210602_1_L2A",
+    "product_id": "S2B_MSIL2A_20210602T155819_N0500_R097_T18SUJ_20230320T144336.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210602_1_L2A",
+    "observed_at_utc": "2021-06-02T16:12:20.699000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:53Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2B_18SUJ_20210602_1_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2B_18SUJ_20210602_1_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2B_18SUJ_20210602_1_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210604_1_L2A",
+    "product_id": "S2A_MSIL2A_20210604T154911_N0500_R054_T18SUJ_20230203T152358.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210604_1_L2A",
+    "observed_at_utc": "2021-06-04T16:02:24.653000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:56Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2A_18SUJ_20210604_1_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2A_18SUJ_20210604_1_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2A_18SUJ_20210604_1_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210604_0_L2A",
+    "product_id": "S2A_MSIL2A_20210604T154911_N0300_R054_T18SUJ_20210604T204633.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210604_0_L2A",
+    "observed_at_utc": "2021-06-04T16:02:24.654000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:56Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2A_18SUJ_20210604_0_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2A_18SUJ_20210604_0_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2A_18SUJ_20210604_0_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "03.00",
+      "boa_offset_applied": false,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210607_1_L2A",
+    "product_id": "S2A_MSIL2A_20210607T155901_N0500_R097_T18SUJ_20230213T215416.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210607_1_L2A",
+    "observed_at_utc": "2021-06-07T16:12:20.549000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:57Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": 0.6841155290603638,
+      "valid_pixel_fraction": 0.9370314842578711,
+      "valid_pixels": 625,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2A_18SUJ_20210607_1_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2A_18SUJ_20210607_1_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2A_18SUJ_20210607_1_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210607_0_L2A",
+    "product_id": "S2A_MSIL2A_20210607T155901_N0300_R097_T18SUJ_20210607T202559.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210607_0_L2A",
+    "observed_at_utc": "2021-06-07T16:12:20.550000Z",
+    "retrieved_at_utc": "2026-11-14T20:02:58Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": 0.35536399483680725,
+      "valid_pixel_fraction": 0.9700149925037481,
+      "valid_pixels": 647,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2A_18SUJ_20210607_0_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2A_18SUJ_20210607_0_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2A_18SUJ_20210607_0_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "03.00",
+      "boa_offset_applied": false,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210609_0_L2A",
+    "product_id": "S2B_MSIL2A_20210609T154809_N0300_R054_T18SUJ_20210609T201215.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210609_0_L2A",
+    "observed_at_utc": "2021-06-09T16:02:24.932000Z",
+    "retrieved_at_utc": "2026-11-14T20:03:01Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2B_18SUJ_20210609_0_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2B_18SUJ_20210609_0_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2B_18SUJ_20210609_0_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "03.00",
+      "boa_offset_applied": false,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210609_1_L2A",
+    "product_id": "S2B_MSIL2A_20210609T154809_N0500_R054_T18SUJ_20230131T201848.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210609_1_L2A",
+    "observed_at_utc": "2021-06-09T16:02:24.932000Z",
+    "retrieved_at_utc": "2026-11-14T20:03:01Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2B_18SUJ_20210609_1_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2B_18SUJ_20210609_1_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2B_18SUJ_20210609_1_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210612_1_L2A",
+    "product_id": "S2B_MSIL2A_20210612T155819_N0500_R097_T18SUJ_20230316T115656.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210612_1_L2A",
+    "observed_at_utc": "2021-06-12T16:12:20.864000Z",
+    "retrieved_at_utc": "2026-11-14T20:03:01Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2B_18SUJ_20210612_1_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2B_18SUJ_20210612_1_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2B_18SUJ_20210612_1_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2B_18SUJ_20210612_0_L2A",
+    "product_id": "S2B_MSIL2A_20210612T155819_N0300_R097_T18SUJ_20210612T202549.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_18SUJ_20210612_0_L2A",
+    "observed_at_utc": "2021-06-12T16:12:20.865000Z",
+    "retrieved_at_utc": "2026-11-14T20:03:02Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": null,
+      "valid_pixel_fraction": 0.0,
+      "valid_pixels": 0,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2B_18SUJ_20210612_0_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2B_18SUJ_20210612_0_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2B_18SUJ_20210612_0_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": 0.0
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "03.00",
+      "boa_offset_applied": false,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  },
+  {
+    "scene_id": "S2A_18SUJ_20210614_1_L2A",
+    "product_id": "S2A_MSIL2A_20210614T154911_N0500_R054_T18SUJ_20230128T104503.SAFE",
+    "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_18SUJ_20210614_1_L2A",
+    "observed_at_utc": "2021-06-14T16:02:24.249000Z",
+    "retrieved_at_utc": "2026-11-14T20:04:41Z",
+    "source_field_dataset_id": "barc_corn_2021_2023_challenge",
+    "stats": {
+      "ndvi": 0.8912797570228577,
+      "valid_pixel_fraction": 0.11244377811094453,
+      "valid_pixels": 75,
+      "field_pixels": 667
+    },
+    "parameters": {
+      "asset_urls": {
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2A_18SUJ_20210614_1_L2A/B04.tif",
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2A_18SUJ_20210614_1_L2A/B08.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/18/S/UJ/2021/6/S2A_18SUJ_20210614_1_L2A/SCL.tif"
+      },
+      "radiometry": {
+        "red": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "nir": {
+          "nodata": 0,
+          "scale": 0.0001,
+          "offset": -0.1
+        },
+        "scl": {
+          "nodata": 0
+        }
+      },
+      "processing_baseline": "05.00",
+      "boa_offset_applied": true,
+      "grid_crs": "EPSG:32618",
+      "grid_transform": [
+        10.0,
+        0.0,
+        335820.0,
+        0.0,
+        -10.0,
+        4320300.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "grid_shape": [
+        34,
+        44
+      ],
+      "valid_scl": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "resampling": "nearest",
+      "edge_rule": "pixel_center_inside_all_touched_false",
+      "algorithm_version": "barc-smoke-v1"
+    },
+    "cache_hit": true
+  }
+]
