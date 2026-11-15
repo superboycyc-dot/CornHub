@@ -1,0 +1,15 @@
+{
+  "version": 19,
+  "status": "passed",
+  "root_cause": "ReviewOverview missing React binding for classic JSX",
+  "reproduced_error": "ReferenceError: React is not defined",
+  "render_regression": "loading, populated inference and OOF render successfully",
+  "tests": 18,
+  "live_resources": [
+    "/",
+    "/assets/index--5GCa0m4.js",
+    "/assets/index-CqjXWae2.css",
+    "/reference/release.json"
+  ],
+  "browser_visual_check": "Unavailable"
+}
