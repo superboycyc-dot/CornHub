@@ -19,7 +19,7 @@ export default function NationalLayer({
     const group = L.layerGroup().addTo(map);
     if (!map.getPane("national")) map.createPane("national").style.zIndex = 420;
     const renderer = L.canvas({ pane: "national", padding: 0.2 });
-    let index, config;
+    let index, config, polygonIndex;
     let timer;
     const tooltip = (field, result = null, error = null) => {
       const box = document.createElement("div");
@@ -31,7 +31,9 @@ export default function NationalLayer({
         error ||
           `Model silage probability: ${result?.p_silage == null ? "Not computed" : (result.p_silage * 100).toFixed(1) + "%"}`,
         `Source geometry: ${field.geometry_valid ? "valid" : "flagged invalid"}`,
-        "Display center only; not a surveyed boundary.",
+        field.geometry
+          ? "Source polygon · simplified for display; not a cadastral survey."
+          : "Display center only; zoom in for polygon outlines.",
         "National candidates are not BARC predictions.",
       ]) {
         const el = document.createElement("span");
@@ -69,6 +71,139 @@ export default function NationalLayer({
       const bounds = map.getBounds().pad(0.05),
         bit = 1 << (Number(year) - 2021),
         z = map.getZoom();
+      if (z >= 12) {
+        onStatus("Loading national field outlines…");
+        try {
+          const visible = polygonIndex.tiles.filter((t) =>
+            bounds.intersects([
+              [t.bbox[1], t.bbox[0]],
+              [t.bbox[3], t.bbox[2]],
+            ]),
+          );
+          const chunks = await Promise.all(
+            visible.map(async (tile) => {
+              const key = "polygon:" + tile.path;
+              if (cache.has(key)) return cache.get(key);
+              const response = await fetch("/national/" + tile.path, {
+                signal: abort.signal,
+              });
+              if (!response.ok) throw Error(`Polygon HTTP ${response.status}`);
+              let bytes = await response.arrayBuffer();
+              let text;
+              if (new Uint8Array(bytes)[0] === 31)
+                text = await new Response(
+                  new Blob([bytes])
+                    .stream()
+                    .pipeThrough(new DecompressionStream("gzip")),
+                ).text();
+              else text = new TextDecoder().decode(bytes);
+              const rows = text
+                .trim()
+                .split("\n")
+                .filter(Boolean)
+                .map(JSON.parse);
+              cache.set(key, rows);
+              if (cache.size > 24) cache.delete(cache.keys().next().value);
+              return rows;
+            }),
+          );
+          if (closed || ticket !== generation) return;
+          let count = 0;
+          for (const rows of chunks)
+            for (const [id, flags, geometry] of rows) {
+              if (!(flags & bit)) continue;
+              let west = 180,
+                east = -180,
+                south = 90,
+                north = -90;
+              const walk = (c) => {
+                if (typeof c[0] === "number") {
+                  west = Math.min(west, c[0]);
+                  east = Math.max(east, c[0]);
+                  south = Math.min(south, c[1]);
+                  north = Math.max(north, c[1]);
+                } else c.forEach(walk);
+              };
+              walk(geometry.coordinates);
+              if (
+                !bounds.intersects([
+                  [south, west],
+                  [north, east],
+                ])
+              )
+                continue;
+              const crop = !!(flags & 16),
+                field = {
+                  candidate_id: id,
+                  source_field_id: id.replace(crop ? "cropsight_" : "csb_", ""),
+                  source_dataset_id:
+                    (crop ? "cropsight" : "csb") + "_corn_2021_2023",
+                  geometry_valid: !!(flags & 8),
+                  geometry,
+                };
+              const normal = {
+                color: "#ffffff",
+                weight: 1.8,
+                opacity: 0.95,
+                fillColor: "#ffffff",
+                fillOpacity: 0.26,
+              };
+              L.geoJSON(
+                { type: "Feature", geometry, properties: { candidate_id: id } },
+                {
+                  pane: "national",
+                  renderer,
+                  style: normal,
+                  onEachFeature: (_, layer) => {
+                    layer.bindTooltip(tooltip(field), {
+                      className: "field-hover",
+                      sticky: true,
+                    });
+                    const load = async () => {
+                      try {
+                        const result = await queryPrediction(
+                          field,
+                          year,
+                          role,
+                          { ...config, source_revision: index.source_commit },
+                          abort.signal,
+                        );
+                        if (!closed)
+                          layer.setTooltipContent(tooltip(field, result));
+                      } catch (e) {
+                        if (e.name !== "AbortError")
+                          layer.setTooltipContent(
+                            tooltip(
+                              field,
+                              null,
+                              "Prediction loading failed: " + e.message,
+                            ),
+                          );
+                      }
+                    };
+                    layer.on({
+                      mouseover: () => {
+                        layer.setStyle({ weight: 2.5, fillOpacity: 0.4 });
+                        load();
+                      },
+                      mouseout: () => layer.setStyle(normal),
+                      click: () => {
+                        layer.openTooltip();
+                        load();
+                      },
+                    });
+                  },
+                },
+              ).addTo(group);
+              count++;
+            }
+          onStatus(`${count.toLocaleString()} visible white field outlines`);
+        } catch (e) {
+          if (e.name !== "AbortError" && !closed)
+            onStatus("National outlines loading failed: " + e.message);
+        }
+        return;
+      }
       if (z < 11) {
         for (const tile of index.tiles) {
           const n = tile.year_counts[year];
@@ -234,6 +369,12 @@ export default function NationalLayer({
       timer = setTimeout(draw, 180);
     };
     Promise.all([
+      fetch("/national/polygons-index.json", { signal: abort.signal }).then(
+        (r) => {
+          if (!r.ok) throw Error(`Polygon index HTTP ${r.status}`);
+          return r.json();
+        },
+      ),
       fetch("/national/index.json", { signal: abort.signal }).then((r) => {
         if (!r.ok) throw Error(`Index HTTP ${r.status}`);
         return r.json();
@@ -242,7 +383,8 @@ export default function NationalLayer({
         (r) => (r.ok ? r.json() : {}),
       ),
     ])
-      .then(([i, c]) => {
+      .then(([polygons, i, c]) => {
+        polygonIndex = polygons;
         index = i;
         config = c;
         map.attributionControl.addAttribution(

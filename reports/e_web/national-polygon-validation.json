@@ -1,0 +1,16 @@
+{
+  "status": "verified",
+  "objects": 6128148,
+  "tiles": 1832,
+  "source_commit": "83fc31f4a6f1fcd3555935c9fb4b286665b8b9ee",
+  "compressed_bytes": 503369627,
+  "max_file_bytes": 1823822,
+  "checks": [
+    "Tile object counts equal original complete inventory",
+    "Every input Parquet SHA-256 checked by builder",
+    "Sampled decompressed records preserve source IDs and Polygon/MultiPolygon types",
+    "All static files below 25 MiB"
+  ],
+  "display_simplification_degrees": 0.0001,
+  "browser_verification": "Not performed; supported tool unavailable"
+}

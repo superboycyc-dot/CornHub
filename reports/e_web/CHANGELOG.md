@@ -26,3 +26,7 @@ The builder checked all 1,232 upstream shard hashes and counts and packed 6,128,
 - 修复全国 external_corn 候选分片进入 BARC 网页发布目录的问题，并验证旧副本会清理。
 - 修复浏览器检查的旧概率定位器；真实数据桌面/手机、键盘田块选择、2024 pending 与 inference 队列隔离均通过本地 Chromium 检查。截图见 integration-real-*，详细证据见 integration-browser-verification.json。外部底图部分瓦片加载失败时提示正常，未验证生产部署。
 - 显示概率最多六位小数，避免浮点尾数挤出面板；原始预测文件不变。
+
+## National polygon outlines and small-scale points
+
+Replaced close-up national center markers with actual source Polygon/MultiPolygon geometry, white outline and translucent fill. Source geometries are simplified for display with topology preservation (0.0001 degrees), not replaced by rectangles. Source invalid-geometry flags remain explicit. At zoom 12 and closer polygons are displayed; farther out white points/clusters remain visible, including at a roughly 50 km ruler. No minimum national visibility cutoff was added. All source IDs, annual crop flags and prediction interfaces remain unchanged. Polygon tiles are selected by true geometry extents to retain edge-crossing shapes. Browser visual QA is still not claimed.

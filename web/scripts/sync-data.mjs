@@ -117,10 +117,24 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     recursive: true,
     force: true,
   });
-  await fs.cp(
+  async function linkTree(src, dest) {
+    await fs.mkdir(dest, { recursive: true });
+    for (const e of await fs.readdir(src, { withFileTypes: true })) {
+      const a = path.join(src, e.name),
+        b = path.join(dest, e.name);
+      if (e.isDirectory()) await linkTree(a, b);
+      else {
+        try {
+          await fs.link(a, b);
+        } catch {
+          await fs.copyFile(a, b);
+        }
+      }
+    }
+  }
+  await linkTree(
     path.join(root, "web/national"),
     path.join(root, "web/public/national"),
-    { recursive: true },
   );
   for (const [name, info] of Object.entries(files))
     console.log(`${info.status}: ${name}`);
