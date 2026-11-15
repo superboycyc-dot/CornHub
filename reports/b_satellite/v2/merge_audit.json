@@ -1,0 +1,23 @@
+{
+  "selection_rows": 200,
+  "label_rows": 200,
+  "feature_rows": 200,
+  "timeseries_rows": 4586,
+  "duplicate_selection_keys": 0,
+  "duplicate_label_keys": 0,
+  "duplicate_feature_keys": 0,
+  "duplicate_timeseries_keys": 0,
+  "matched_feature_keys": 200,
+  "unmatched_keys": [],
+  "excluded_from_selection": [
+    "Quebec grain-only",
+    "single-class European regions"
+  ],
+  "with_valid_observations": 177,
+  "quality_counts": {
+    "limited": 104,
+    "usable": 73,
+    "no_data": 23
+  },
+  "interpretation": "Matched feature keys include explicit no_data rows; matching is not successful satellite coverage"
+}

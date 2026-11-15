@@ -1,0 +1,10 @@
+{
+  "version": "quality_gapfill_v1",
+  "window": "[Apr1,Dec1)",
+  "criterion": "geometrically observable field with accepted NDVI gap strictly >30 days including boundaries",
+  "candidate_dates": "middle third of each long gap",
+  "ranking": "largest true footprint overlap;lowest catalog cloud;closest gap midpoint;scene_id",
+  "budget": "one unread physical product per long gap;one pass only",
+  "label_usage": "none;no label file read",
+  "local_acceptance": "unchanged v2 pixel/SCL/valid fraction rule"
+}

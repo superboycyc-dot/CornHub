@@ -1,0 +1,36 @@
+{
+  "europe_field_years": 345161,
+  "europe_years": [
+    2023
+  ],
+  "europe_crs": "EPSG:3035",
+  "europe_source_id": "cropfield within region/year/version",
+  "europe_original_id": "off_id preserved separately",
+  "selected_area_ha_max_absolute_error_vs_3035_geometry": 1.88411873836003e-06,
+  "netherlands": {
+    "field_years": 134,
+    "year": 2025,
+    "crs": "RFC7946 CRS84 longitude/latitude;no foreign CRS member",
+    "id": "GeoJSON id = field_index.field_id UUID",
+    "labels": {
+      "grain": 13,
+      "silage": 121
+    },
+    "unique_scene_keys": true
+  },
+  "quebec": {
+    "field_years": 39653,
+    "years": [
+      2025
+    ],
+    "crs": "EPSG:4269 NAD83;not relabelled EPSG4326;not queried",
+    "annual_source_key": "IDANPAR+AN",
+    "persistent_source_id": "IDPAR",
+    "duplicate_annual_keys": 0,
+    "labels": {
+      "grain": 39653
+    },
+    "single_crop_100pct": true,
+    "excluded_reason": "grain_only"
+  }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "entity_id": "eurocrops_gpqtv202_be2_2023_102667",
+    "scene_id": "S2A_MSIL2A_20230405T105031_R051_T31UES_20240826T212050",
+    "native_grid_checked": true,
+    "independent_pixel_counts_and_medians_match": true,
+    "array_file": "eurocrops_gpqtv202_be2_2023_102667_2023-04-05.npz",
+    "overlay_file": "eurocrops_gpqtv202_be2_2023_102667_2023-04-05.png",
+    "overlay_rule": "red=original;cyan=10m interior;image grid B04 native10m"
+  },
+  {
+    "entity_id": "eurocrops_gpqtv202_be3_2023_102195",
+    "scene_id": "S2A_MSIL2A_20230405T105031_R051_T31UES_20240826T212050",
+    "native_grid_checked": true,
+    "independent_pixel_counts_and_medians_match": true,
+    "array_file": "eurocrops_gpqtv202_be3_2023_102195_2023-04-05.npz",
+    "overlay_file": "eurocrops_gpqtv202_be3_2023_102195_2023-04-05.png",
+    "overlay_rule": "red=original;cyan=10m interior;image grid B04 native10m"
+  },
+  {
+    "entity_id": "eurocrops_gpqtv202_bg_2023_1020021",
+    "scene_id": "S2A_MSIL2A_20230422T085551_R007_T35TNH_20230423T182502",
+    "native_grid_checked": true,
+    "independent_pixel_counts_and_medians_match": true,
+    "array_file": "eurocrops_gpqtv202_bg_2023_1020021_2023-04-22.npz",
+    "overlay_file": "eurocrops_gpqtv202_bg_2023_1020021_2023-04-22.png",
+    "overlay_rule": "red=original;cyan=10m interior;image grid B04 native10m"
+  },
+  {
+    "entity_id": "eurocrops_gpqtv202_si_2023_156229",
+    "scene_id": "S2A_MSIL2A_20230427T095031_R079_T33TWM_20230427T141700",
+    "native_grid_checked": true,
+    "independent_pixel_counts_and_medians_match": true,
+    "array_file": "eurocrops_gpqtv202_si_2023_156229_2023-04-27.npz",
+    "overlay_file": "eurocrops_gpqtv202_si_2023_156229_2023-04-27.png",
+    "overlay_rule": "red=original;cyan=10m interior;image grid B04 native10m"
+  }
+]

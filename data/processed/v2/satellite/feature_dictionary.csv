@@ -1,0 +1,27 @@
+table,field,unit,algorithm,missing_rule
+all,entity_id,identifier,source namespace + source version + region/year + unchanged cropfield ID;NL namespaced UUID,required
+all,year,calendar year,source_year;not a predictor,required
+features,ndvi_peak,index,max accepted daily NDVI;min1 valid day,empty/null;never zero-filled
+features,peak_doy,day of year,DOY of peak;earliest tie;min1 valid day,empty/null;never zero-filled
+features,max_drop_per_day,index/day,"max(0,(NDVI_previous-NDVI_next)/elapsed_days) over adjacent accepted days;min2 days;no interpolation",empty/null;never zero-filled
+features,drop_doy,day of year,DOY of later endpoint of maximum drop;earliest tie;requires strictly positive drop,empty/null;never zero-filled
+features,ndvi_late_mean,index,"arithmetic mean of accepted daily NDVI in [Sep1,Dec1);min1 late day",empty/null;never zero-filled
+features,valid_obs_count,days,number of accepted NDVI days;fraction>=0.5 AND >=3 valid pixels AND finite NDVI,0 is measured count;not filled NDVI
+features,max_gap_days,days,maximum successive gap in [Apr1]+accepted_dates+[Dec1];no valid day=244 days in these years,always defined
+features,quality_flag,category,no_data=0 days;insufficient=1;limited=2..5 OR max_gap>30;usable otherwise;not predictive accuracy,required
+features,missing_reason,reason codes,explicit acquisition/geometric/temporal insufficiency;none means empty string,empty string when no identified gaps
+timeseries,date,UTC date,"STAC datetime date;[Apr1,Dec1)",required
+timeseries,sensor,category,sentinel2_l2a,required
+timeseries,scene_id,identifier,"PC product item ID;NL retained Earth Search ID;physical dedupe by satellite/sensing/tile,not catalog ID",required
+timeseries,source_dataset_id,identifier,satellite provider provenance;source label dataset separately in selection,required
+timeseries,ndvi,index,"median of (B08-B04)/(B08+B04) over individually valid band supports;float64 reflectance=(DN+XML_BOA_ADD_OFFSET)/XML_BOA_QUANTIFICATION_VALUE;min3 valid pixels;positive denominator;range[-1,1]",null if fewer than3 valid pixels;NDMI missing does not remove NDVI
+timeseries,ndvi_valid_pixels,10m target pixels,"10m inward-buffer pixel centers with SCL4,5,6,7;per-band raw NODATA masked;finite valid ndvi;B11 nearest20m->10m",0 valid pixels allowed;unread observations absent
+timeseries,ndvi_total_pixels,10m target pixels,all native B04 10m grid centers in 10m inward buffer;includes cloud/nodata/noncoverage;unobservable if <3,zero/too-small interior is unobservable;no zero-valued index
+timeseries,ndvi_valid_fraction,fraction,ndvi_valid_pixels / ndvi_total_pixels,undefined/null for zero denominator;NDMI unknown in legacy NL
+timeseries,ndmi,index,"median of (B08-B11)/(B08+B11) over individually valid band supports;float64 reflectance=(DN+XML_BOA_ADD_OFFSET)/XML_BOA_QUANTIFICATION_VALUE;min3 valid pixels;positive denominator;range[-1,1]",null if fewer than3 valid pixels;NDMI missing does not remove NDVI
+timeseries,ndmi_valid_pixels,10m target pixels,"10m inward-buffer pixel centers with SCL4,5,6,7;per-band raw NODATA masked;finite valid ndmi;B11 nearest20m->10m",0 valid pixels allowed;unread observations absent
+timeseries,ndmi_total_pixels,10m target pixels,all native B04 10m grid centers in 10m inward buffer;includes cloud/nodata/noncoverage;unobservable if <3,zero/too-small interior is unobservable;no zero-valued index
+timeseries,ndmi_valid_fraction,fraction,ndmi_valid_pixels / ndmi_total_pixels,undefined/null for zero denominator;NDMI unknown in legacy NL
+selection,source_field_id,identifier,EuroCrops cropfield (not off_id);off_id separately retained in acceptance labels;NL original field_id UUID,required
+selection,source_region,category,unchanged source region,required
+selection,selection_reason,text,seed20261114;4 regions x2 labels x5 rank-area quintiles x5 draws,required

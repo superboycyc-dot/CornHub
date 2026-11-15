@@ -1,0 +1,12 @@
+{
+  "status": "passed_export_invariants",
+  "checks": [
+    "unique keys",
+    "within year and fixed query window",
+    "finite indices in [-1,1]",
+    "valid pixel counts and fractions",
+    "one-to-one feature join"
+  ],
+  "observations_checked": 4586,
+  "limitations": "Grid verification performed on each response; visual alignment and independent pixel evidence QA reported separately"
+}

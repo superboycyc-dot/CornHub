@@ -1,0 +1,17 @@
+{
+  "status": "initial_acquisition_completed",
+  "workers": 6,
+  "algorithm_version": "global-v2-xml-erosion10-nearest-min3-v2",
+  "elapsed_seconds": 447.6313257217407,
+  "fields_attempted": 200,
+  "catalog_success": 200,
+  "planned_observations": 4954,
+  "successful_observations": 4384,
+  "unobservable_jobs": 570,
+  "metadata_success": 797,
+  "metadata_planned": 797,
+  "errors": [],
+  "completed_at_utc": "2026-11-15T00:14:10.094556Z",
+  "checkpoint": "reports/b_satellite/v2/.cache",
+  "expansion_authorized": false
+}

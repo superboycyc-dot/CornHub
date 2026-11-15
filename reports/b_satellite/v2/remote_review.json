@@ -1,0 +1,10 @@
+{
+  "initial_main_sha": "a7d843f5047a8fb86510a6139c086a5ed01efb61",
+  "fixed_input_sha": "a8ccadff2fa3a2e53c1469e2c243d7dab98d7466",
+  "latest_main_reviewed_sha": "884f8ad91a5b0e469d38662dca2ad1868dcc8b93",
+  "latest_input_branch_reviewed_sha": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+  "global_maize_tree_diff_exit_code": 0,
+  "latest_input_additions": "data/americas only;not used for this run",
+  "contract_change": "historical-reference links only;reviewed",
+  "new_delivery_branch_existed_remotely": false
+}
