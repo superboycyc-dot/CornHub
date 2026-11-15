@@ -1,0 +1,1442 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-15T04:02:51.690773+00:00",
+  "status": "partial_processing",
+  "scope": "Repository CSB historical corn candidates for CA/MD plus BARC83; not complete statewide cadastral inventory",
+  "years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "totals": {
+    "not_corn": 100204,
+    "pending_observations": 228307,
+    "invalid_geometry": 12970,
+    "predicted": 49,
+    "conditional_prediction": 18,
+    "no_usable_observations": 2
+  },
+  "groups": [
+    {
+      "state": "CA",
+      "year": 2021,
+      "rows": 18413,
+      "counts": {
+        "not_corn": 9787,
+        "pending_observations": 8260,
+        "invalid_geometry": 366
+      },
+      "predictions": "CA/2021.csv",
+      "geometry": [
+        "CA/fields/part-0000.geojson",
+        "CA/fields/part-0001.geojson",
+        "CA/fields/part-0002.geojson",
+        "CA/fields/part-0003.geojson",
+        "CA/fields/part-0004.geojson",
+        "CA/fields/part-0005.geojson",
+        "CA/fields/part-0006.geojson",
+        "CA/fields/part-0007.geojson",
+        "CA/fields/part-0008.geojson",
+        "CA/fields/part-0009.geojson",
+        "CA/fields/part-0010.geojson",
+        "CA/fields/part-0011.geojson",
+        "CA/fields/part-0012.geojson",
+        "CA/fields/part-0013.geojson",
+        "CA/fields/part-0014.geojson",
+        "CA/fields/part-0015.geojson",
+        "CA/fields/part-0016.geojson",
+        "CA/fields/part-0017.geojson",
+        "CA/fields/part-0018.geojson",
+        "CA/fields/part-0019.geojson",
+        "CA/fields/part-0020.geojson",
+        "CA/fields/part-0021.geojson",
+        "CA/fields/part-0022.geojson",
+        "CA/fields/part-0023.geojson",
+        "CA/fields/part-0024.geojson",
+        "CA/fields/part-0025.geojson",
+        "CA/fields/part-0026.geojson",
+        "CA/fields/part-0027.geojson",
+        "CA/fields/part-0028.geojson",
+        "CA/fields/part-0029.geojson",
+        "CA/fields/part-0030.geojson",
+        "CA/fields/part-0031.geojson",
+        "CA/fields/part-0032.geojson",
+        "CA/fields/part-0033.geojson",
+        "CA/fields/part-0034.geojson",
+        "CA/fields/part-0035.geojson",
+        "CA/fields/part-0036.geojson"
+      ]
+    },
+    {
+      "state": "CA",
+      "year": 2022,
+      "rows": 18413,
+      "counts": {
+        "predicted": 1,
+        "pending_observations": 6987,
+        "not_corn": 11059,
+        "invalid_geometry": 366
+      },
+      "predictions": "CA/2022.csv",
+      "geometry": [
+        "CA/fields/part-0000.geojson",
+        "CA/fields/part-0001.geojson",
+        "CA/fields/part-0002.geojson",
+        "CA/fields/part-0003.geojson",
+        "CA/fields/part-0004.geojson",
+        "CA/fields/part-0005.geojson",
+        "CA/fields/part-0006.geojson",
+        "CA/fields/part-0007.geojson",
+        "CA/fields/part-0008.geojson",
+        "CA/fields/part-0009.geojson",
+        "CA/fields/part-0010.geojson",
+        "CA/fields/part-0011.geojson",
+        "CA/fields/part-0012.geojson",
+        "CA/fields/part-0013.geojson",
+        "CA/fields/part-0014.geojson",
+        "CA/fields/part-0015.geojson",
+        "CA/fields/part-0016.geojson",
+        "CA/fields/part-0017.geojson",
+        "CA/fields/part-0018.geojson",
+        "CA/fields/part-0019.geojson",
+        "CA/fields/part-0020.geojson",
+        "CA/fields/part-0021.geojson",
+        "CA/fields/part-0022.geojson",
+        "CA/fields/part-0023.geojson",
+        "CA/fields/part-0024.geojson",
+        "CA/fields/part-0025.geojson",
+        "CA/fields/part-0026.geojson",
+        "CA/fields/part-0027.geojson",
+        "CA/fields/part-0028.geojson",
+        "CA/fields/part-0029.geojson",
+        "CA/fields/part-0030.geojson",
+        "CA/fields/part-0031.geojson",
+        "CA/fields/part-0032.geojson",
+        "CA/fields/part-0033.geojson",
+        "CA/fields/part-0034.geojson",
+        "CA/fields/part-0035.geojson",
+        "CA/fields/part-0036.geojson"
+      ]
+    },
+    {
+      "state": "CA",
+      "year": 2023,
+      "rows": 18413,
+      "counts": {
+        "predicted": 1,
+        "pending_observations": 8973,
+        "not_corn": 9073,
+        "invalid_geometry": 366
+      },
+      "predictions": "CA/2023.csv",
+      "geometry": [
+        "CA/fields/part-0000.geojson",
+        "CA/fields/part-0001.geojson",
+        "CA/fields/part-0002.geojson",
+        "CA/fields/part-0003.geojson",
+        "CA/fields/part-0004.geojson",
+        "CA/fields/part-0005.geojson",
+        "CA/fields/part-0006.geojson",
+        "CA/fields/part-0007.geojson",
+        "CA/fields/part-0008.geojson",
+        "CA/fields/part-0009.geojson",
+        "CA/fields/part-0010.geojson",
+        "CA/fields/part-0011.geojson",
+        "CA/fields/part-0012.geojson",
+        "CA/fields/part-0013.geojson",
+        "CA/fields/part-0014.geojson",
+        "CA/fields/part-0015.geojson",
+        "CA/fields/part-0016.geojson",
+        "CA/fields/part-0017.geojson",
+        "CA/fields/part-0018.geojson",
+        "CA/fields/part-0019.geojson",
+        "CA/fields/part-0020.geojson",
+        "CA/fields/part-0021.geojson",
+        "CA/fields/part-0022.geojson",
+        "CA/fields/part-0023.geojson",
+        "CA/fields/part-0024.geojson",
+        "CA/fields/part-0025.geojson",
+        "CA/fields/part-0026.geojson",
+        "CA/fields/part-0027.geojson",
+        "CA/fields/part-0028.geojson",
+        "CA/fields/part-0029.geojson",
+        "CA/fields/part-0030.geojson",
+        "CA/fields/part-0031.geojson",
+        "CA/fields/part-0032.geojson",
+        "CA/fields/part-0033.geojson",
+        "CA/fields/part-0034.geojson",
+        "CA/fields/part-0035.geojson",
+        "CA/fields/part-0036.geojson"
+      ]
+    },
+    {
+      "state": "CA",
+      "year": 2024,
+      "rows": 18413,
+      "counts": {
+        "pending_observations": 18047,
+        "invalid_geometry": 366
+      },
+      "predictions": "CA/2024.csv",
+      "geometry": [
+        "CA/fields/part-0000.geojson",
+        "CA/fields/part-0001.geojson",
+        "CA/fields/part-0002.geojson",
+        "CA/fields/part-0003.geojson",
+        "CA/fields/part-0004.geojson",
+        "CA/fields/part-0005.geojson",
+        "CA/fields/part-0006.geojson",
+        "CA/fields/part-0007.geojson",
+        "CA/fields/part-0008.geojson",
+        "CA/fields/part-0009.geojson",
+        "CA/fields/part-0010.geojson",
+        "CA/fields/part-0011.geojson",
+        "CA/fields/part-0012.geojson",
+        "CA/fields/part-0013.geojson",
+        "CA/fields/part-0014.geojson",
+        "CA/fields/part-0015.geojson",
+        "CA/fields/part-0016.geojson",
+        "CA/fields/part-0017.geojson",
+        "CA/fields/part-0018.geojson",
+        "CA/fields/part-0019.geojson",
+        "CA/fields/part-0020.geojson",
+        "CA/fields/part-0021.geojson",
+        "CA/fields/part-0022.geojson",
+        "CA/fields/part-0023.geojson",
+        "CA/fields/part-0024.geojson",
+        "CA/fields/part-0025.geojson",
+        "CA/fields/part-0026.geojson",
+        "CA/fields/part-0027.geojson",
+        "CA/fields/part-0028.geojson",
+        "CA/fields/part-0029.geojson",
+        "CA/fields/part-0030.geojson",
+        "CA/fields/part-0031.geojson",
+        "CA/fields/part-0032.geojson",
+        "CA/fields/part-0033.geojson",
+        "CA/fields/part-0034.geojson",
+        "CA/fields/part-0035.geojson",
+        "CA/fields/part-0036.geojson"
+      ]
+    },
+    {
+      "state": "CA",
+      "year": 2025,
+      "rows": 18413,
+      "counts": {
+        "pending_observations": 18047,
+        "invalid_geometry": 366
+      },
+      "predictions": "CA/2025.csv",
+      "geometry": [
+        "CA/fields/part-0000.geojson",
+        "CA/fields/part-0001.geojson",
+        "CA/fields/part-0002.geojson",
+        "CA/fields/part-0003.geojson",
+        "CA/fields/part-0004.geojson",
+        "CA/fields/part-0005.geojson",
+        "CA/fields/part-0006.geojson",
+        "CA/fields/part-0007.geojson",
+        "CA/fields/part-0008.geojson",
+        "CA/fields/part-0009.geojson",
+        "CA/fields/part-0010.geojson",
+        "CA/fields/part-0011.geojson",
+        "CA/fields/part-0012.geojson",
+        "CA/fields/part-0013.geojson",
+        "CA/fields/part-0014.geojson",
+        "CA/fields/part-0015.geojson",
+        "CA/fields/part-0016.geojson",
+        "CA/fields/part-0017.geojson",
+        "CA/fields/part-0018.geojson",
+        "CA/fields/part-0019.geojson",
+        "CA/fields/part-0020.geojson",
+        "CA/fields/part-0021.geojson",
+        "CA/fields/part-0022.geojson",
+        "CA/fields/part-0023.geojson",
+        "CA/fields/part-0024.geojson",
+        "CA/fields/part-0025.geojson",
+        "CA/fields/part-0026.geojson",
+        "CA/fields/part-0027.geojson",
+        "CA/fields/part-0028.geojson",
+        "CA/fields/part-0029.geojson",
+        "CA/fields/part-0030.geojson",
+        "CA/fields/part-0031.geojson",
+        "CA/fields/part-0032.geojson",
+        "CA/fields/part-0033.geojson",
+        "CA/fields/part-0034.geojson",
+        "CA/fields/part-0035.geojson",
+        "CA/fields/part-0036.geojson"
+      ]
+    },
+    {
+      "state": "MD",
+      "year": 2021,
+      "rows": 49897,
+      "counts": {
+        "predicted": 19,
+        "conditional_prediction": 3,
+        "pending_observations": 24917,
+        "not_corn": 22730,
+        "invalid_geometry": 2228
+      },
+      "predictions": "MD/2021.csv",
+      "geometry": [
+        "MD/fields/part-0000.geojson",
+        "MD/fields/part-0001.geojson",
+        "MD/fields/part-0002.geojson",
+        "MD/fields/part-0003.geojson",
+        "MD/fields/part-0004.geojson",
+        "MD/fields/part-0005.geojson",
+        "MD/fields/part-0006.geojson",
+        "MD/fields/part-0007.geojson",
+        "MD/fields/part-0008.geojson",
+        "MD/fields/part-0009.geojson",
+        "MD/fields/part-0010.geojson",
+        "MD/fields/part-0011.geojson",
+        "MD/fields/part-0012.geojson",
+        "MD/fields/part-0013.geojson",
+        "MD/fields/part-0014.geojson",
+        "MD/fields/part-0015.geojson",
+        "MD/fields/part-0016.geojson",
+        "MD/fields/part-0017.geojson",
+        "MD/fields/part-0018.geojson",
+        "MD/fields/part-0019.geojson",
+        "MD/fields/part-0020.geojson",
+        "MD/fields/part-0021.geojson",
+        "MD/fields/part-0022.geojson",
+        "MD/fields/part-0023.geojson",
+        "MD/fields/part-0024.geojson",
+        "MD/fields/part-0025.geojson",
+        "MD/fields/part-0026.geojson",
+        "MD/fields/part-0027.geojson",
+        "MD/fields/part-0028.geojson",
+        "MD/fields/part-0029.geojson",
+        "MD/fields/part-0030.geojson",
+        "MD/fields/part-0031.geojson",
+        "MD/fields/part-0032.geojson",
+        "MD/fields/part-0033.geojson",
+        "MD/fields/part-0034.geojson",
+        "MD/fields/part-0035.geojson",
+        "MD/fields/part-0036.geojson",
+        "MD/fields/part-0037.geojson",
+        "MD/fields/part-0038.geojson",
+        "MD/fields/part-0039.geojson",
+        "MD/fields/part-0040.geojson",
+        "MD/fields/part-0041.geojson",
+        "MD/fields/part-0042.geojson",
+        "MD/fields/part-0043.geojson",
+        "MD/fields/part-0044.geojson",
+        "MD/fields/part-0045.geojson",
+        "MD/fields/part-0046.geojson",
+        "MD/fields/part-0047.geojson",
+        "MD/fields/part-0048.geojson",
+        "MD/fields/part-0049.geojson",
+        "MD/fields/part-0050.geojson",
+        "MD/fields/part-0051.geojson",
+        "MD/fields/part-0052.geojson",
+        "MD/fields/part-0053.geojson",
+        "MD/fields/part-0054.geojson",
+        "MD/fields/part-0055.geojson",
+        "MD/fields/part-0056.geojson",
+        "MD/fields/part-0057.geojson",
+        "MD/fields/part-0058.geojson",
+        "MD/fields/part-0059.geojson",
+        "MD/fields/part-0060.geojson",
+        "MD/fields/part-0061.geojson",
+        "MD/fields/part-0062.geojson",
+        "MD/fields/part-0063.geojson",
+        "MD/fields/part-0064.geojson",
+        "MD/fields/part-0065.geojson",
+        "MD/fields/part-0066.geojson",
+        "MD/fields/part-0067.geojson",
+        "MD/fields/part-0068.geojson",
+        "MD/fields/part-0069.geojson",
+        "MD/fields/part-0070.geojson",
+        "MD/fields/part-0071.geojson",
+        "MD/fields/part-0072.geojson",
+        "MD/fields/part-0073.geojson",
+        "MD/fields/part-0074.geojson",
+        "MD/fields/part-0075.geojson",
+        "MD/fields/part-0076.geojson",
+        "MD/fields/part-0077.geojson",
+        "MD/fields/part-0078.geojson",
+        "MD/fields/part-0079.geojson",
+        "MD/fields/part-0080.geojson",
+        "MD/fields/part-0081.geojson",
+        "MD/fields/part-0082.geojson",
+        "MD/fields/part-0083.geojson",
+        "MD/fields/part-0084.geojson",
+        "MD/fields/part-0085.geojson",
+        "MD/fields/part-0086.geojson",
+        "MD/fields/part-0087.geojson",
+        "MD/fields/part-0088.geojson",
+        "MD/fields/part-0089.geojson",
+        "MD/fields/part-0090.geojson",
+        "MD/fields/part-0091.geojson",
+        "MD/fields/part-0092.geojson",
+        "MD/fields/part-0093.geojson",
+        "MD/fields/part-0094.geojson",
+        "MD/fields/part-0095.geojson",
+        "MD/fields/part-0096.geojson",
+        "MD/fields/part-0097.geojson",
+        "MD/fields/part-0098.geojson",
+        "MD/fields/part-0099.geojson"
+      ]
+    },
+    {
+      "state": "MD",
+      "year": 2022,
+      "rows": 49897,
+      "counts": {
+        "conditional_prediction": 3,
+        "no_usable_observations": 1,
+        "predicted": 8,
+        "pending_observations": 21995,
+        "not_corn": 25662,
+        "invalid_geometry": 2228
+      },
+      "predictions": "MD/2022.csv",
+      "geometry": [
+        "MD/fields/part-0000.geojson",
+        "MD/fields/part-0001.geojson",
+        "MD/fields/part-0002.geojson",
+        "MD/fields/part-0003.geojson",
+        "MD/fields/part-0004.geojson",
+        "MD/fields/part-0005.geojson",
+        "MD/fields/part-0006.geojson",
+        "MD/fields/part-0007.geojson",
+        "MD/fields/part-0008.geojson",
+        "MD/fields/part-0009.geojson",
+        "MD/fields/part-0010.geojson",
+        "MD/fields/part-0011.geojson",
+        "MD/fields/part-0012.geojson",
+        "MD/fields/part-0013.geojson",
+        "MD/fields/part-0014.geojson",
+        "MD/fields/part-0015.geojson",
+        "MD/fields/part-0016.geojson",
+        "MD/fields/part-0017.geojson",
+        "MD/fields/part-0018.geojson",
+        "MD/fields/part-0019.geojson",
+        "MD/fields/part-0020.geojson",
+        "MD/fields/part-0021.geojson",
+        "MD/fields/part-0022.geojson",
+        "MD/fields/part-0023.geojson",
+        "MD/fields/part-0024.geojson",
+        "MD/fields/part-0025.geojson",
+        "MD/fields/part-0026.geojson",
+        "MD/fields/part-0027.geojson",
+        "MD/fields/part-0028.geojson",
+        "MD/fields/part-0029.geojson",
+        "MD/fields/part-0030.geojson",
+        "MD/fields/part-0031.geojson",
+        "MD/fields/part-0032.geojson",
+        "MD/fields/part-0033.geojson",
+        "MD/fields/part-0034.geojson",
+        "MD/fields/part-0035.geojson",
+        "MD/fields/part-0036.geojson",
+        "MD/fields/part-0037.geojson",
+        "MD/fields/part-0038.geojson",
+        "MD/fields/part-0039.geojson",
+        "MD/fields/part-0040.geojson",
+        "MD/fields/part-0041.geojson",
+        "MD/fields/part-0042.geojson",
+        "MD/fields/part-0043.geojson",
+        "MD/fields/part-0044.geojson",
+        "MD/fields/part-0045.geojson",
+        "MD/fields/part-0046.geojson",
+        "MD/fields/part-0047.geojson",
+        "MD/fields/part-0048.geojson",
+        "MD/fields/part-0049.geojson",
+        "MD/fields/part-0050.geojson",
+        "MD/fields/part-0051.geojson",
+        "MD/fields/part-0052.geojson",
+        "MD/fields/part-0053.geojson",
+        "MD/fields/part-0054.geojson",
+        "MD/fields/part-0055.geojson",
+        "MD/fields/part-0056.geojson",
+        "MD/fields/part-0057.geojson",
+        "MD/fields/part-0058.geojson",
+        "MD/fields/part-0059.geojson",
+        "MD/fields/part-0060.geojson",
+        "MD/fields/part-0061.geojson",
+        "MD/fields/part-0062.geojson",
+        "MD/fields/part-0063.geojson",
+        "MD/fields/part-0064.geojson",
+        "MD/fields/part-0065.geojson",
+        "MD/fields/part-0066.geojson",
+        "MD/fields/part-0067.geojson",
+        "MD/fields/part-0068.geojson",
+        "MD/fields/part-0069.geojson",
+        "MD/fields/part-0070.geojson",
+        "MD/fields/part-0071.geojson",
+        "MD/fields/part-0072.geojson",
+        "MD/fields/part-0073.geojson",
+        "MD/fields/part-0074.geojson",
+        "MD/fields/part-0075.geojson",
+        "MD/fields/part-0076.geojson",
+        "MD/fields/part-0077.geojson",
+        "MD/fields/part-0078.geojson",
+        "MD/fields/part-0079.geojson",
+        "MD/fields/part-0080.geojson",
+        "MD/fields/part-0081.geojson",
+        "MD/fields/part-0082.geojson",
+        "MD/fields/part-0083.geojson",
+        "MD/fields/part-0084.geojson",
+        "MD/fields/part-0085.geojson",
+        "MD/fields/part-0086.geojson",
+        "MD/fields/part-0087.geojson",
+        "MD/fields/part-0088.geojson",
+        "MD/fields/part-0089.geojson",
+        "MD/fields/part-0090.geojson",
+        "MD/fields/part-0091.geojson",
+        "MD/fields/part-0092.geojson",
+        "MD/fields/part-0093.geojson",
+        "MD/fields/part-0094.geojson",
+        "MD/fields/part-0095.geojson",
+        "MD/fields/part-0096.geojson",
+        "MD/fields/part-0097.geojson",
+        "MD/fields/part-0098.geojson",
+        "MD/fields/part-0099.geojson"
+      ]
+    },
+    {
+      "state": "MD",
+      "year": 2023,
+      "rows": 49897,
+      "counts": {
+        "predicted": 20,
+        "no_usable_observations": 1,
+        "conditional_prediction": 2,
+        "pending_observations": 25753,
+        "not_corn": 21893,
+        "invalid_geometry": 2228
+      },
+      "predictions": "MD/2023.csv",
+      "geometry": [
+        "MD/fields/part-0000.geojson",
+        "MD/fields/part-0001.geojson",
+        "MD/fields/part-0002.geojson",
+        "MD/fields/part-0003.geojson",
+        "MD/fields/part-0004.geojson",
+        "MD/fields/part-0005.geojson",
+        "MD/fields/part-0006.geojson",
+        "MD/fields/part-0007.geojson",
+        "MD/fields/part-0008.geojson",
+        "MD/fields/part-0009.geojson",
+        "MD/fields/part-0010.geojson",
+        "MD/fields/part-0011.geojson",
+        "MD/fields/part-0012.geojson",
+        "MD/fields/part-0013.geojson",
+        "MD/fields/part-0014.geojson",
+        "MD/fields/part-0015.geojson",
+        "MD/fields/part-0016.geojson",
+        "MD/fields/part-0017.geojson",
+        "MD/fields/part-0018.geojson",
+        "MD/fields/part-0019.geojson",
+        "MD/fields/part-0020.geojson",
+        "MD/fields/part-0021.geojson",
+        "MD/fields/part-0022.geojson",
+        "MD/fields/part-0023.geojson",
+        "MD/fields/part-0024.geojson",
+        "MD/fields/part-0025.geojson",
+        "MD/fields/part-0026.geojson",
+        "MD/fields/part-0027.geojson",
+        "MD/fields/part-0028.geojson",
+        "MD/fields/part-0029.geojson",
+        "MD/fields/part-0030.geojson",
+        "MD/fields/part-0031.geojson",
+        "MD/fields/part-0032.geojson",
+        "MD/fields/part-0033.geojson",
+        "MD/fields/part-0034.geojson",
+        "MD/fields/part-0035.geojson",
+        "MD/fields/part-0036.geojson",
+        "MD/fields/part-0037.geojson",
+        "MD/fields/part-0038.geojson",
+        "MD/fields/part-0039.geojson",
+        "MD/fields/part-0040.geojson",
+        "MD/fields/part-0041.geojson",
+        "MD/fields/part-0042.geojson",
+        "MD/fields/part-0043.geojson",
+        "MD/fields/part-0044.geojson",
+        "MD/fields/part-0045.geojson",
+        "MD/fields/part-0046.geojson",
+        "MD/fields/part-0047.geojson",
+        "MD/fields/part-0048.geojson",
+        "MD/fields/part-0049.geojson",
+        "MD/fields/part-0050.geojson",
+        "MD/fields/part-0051.geojson",
+        "MD/fields/part-0052.geojson",
+        "MD/fields/part-0053.geojson",
+        "MD/fields/part-0054.geojson",
+        "MD/fields/part-0055.geojson",
+        "MD/fields/part-0056.geojson",
+        "MD/fields/part-0057.geojson",
+        "MD/fields/part-0058.geojson",
+        "MD/fields/part-0059.geojson",
+        "MD/fields/part-0060.geojson",
+        "MD/fields/part-0061.geojson",
+        "MD/fields/part-0062.geojson",
+        "MD/fields/part-0063.geojson",
+        "MD/fields/part-0064.geojson",
+        "MD/fields/part-0065.geojson",
+        "MD/fields/part-0066.geojson",
+        "MD/fields/part-0067.geojson",
+        "MD/fields/part-0068.geojson",
+        "MD/fields/part-0069.geojson",
+        "MD/fields/part-0070.geojson",
+        "MD/fields/part-0071.geojson",
+        "MD/fields/part-0072.geojson",
+        "MD/fields/part-0073.geojson",
+        "MD/fields/part-0074.geojson",
+        "MD/fields/part-0075.geojson",
+        "MD/fields/part-0076.geojson",
+        "MD/fields/part-0077.geojson",
+        "MD/fields/part-0078.geojson",
+        "MD/fields/part-0079.geojson",
+        "MD/fields/part-0080.geojson",
+        "MD/fields/part-0081.geojson",
+        "MD/fields/part-0082.geojson",
+        "MD/fields/part-0083.geojson",
+        "MD/fields/part-0084.geojson",
+        "MD/fields/part-0085.geojson",
+        "MD/fields/part-0086.geojson",
+        "MD/fields/part-0087.geojson",
+        "MD/fields/part-0088.geojson",
+        "MD/fields/part-0089.geojson",
+        "MD/fields/part-0090.geojson",
+        "MD/fields/part-0091.geojson",
+        "MD/fields/part-0092.geojson",
+        "MD/fields/part-0093.geojson",
+        "MD/fields/part-0094.geojson",
+        "MD/fields/part-0095.geojson",
+        "MD/fields/part-0096.geojson",
+        "MD/fields/part-0097.geojson",
+        "MD/fields/part-0098.geojson",
+        "MD/fields/part-0099.geojson"
+      ]
+    },
+    {
+      "state": "MD",
+      "year": 2024,
+      "rows": 49897,
+      "counts": {
+        "conditional_prediction": 5,
+        "pending_observations": 47664,
+        "invalid_geometry": 2228
+      },
+      "predictions": "MD/2024.csv",
+      "geometry": [
+        "MD/fields/part-0000.geojson",
+        "MD/fields/part-0001.geojson",
+        "MD/fields/part-0002.geojson",
+        "MD/fields/part-0003.geojson",
+        "MD/fields/part-0004.geojson",
+        "MD/fields/part-0005.geojson",
+        "MD/fields/part-0006.geojson",
+        "MD/fields/part-0007.geojson",
+        "MD/fields/part-0008.geojson",
+        "MD/fields/part-0009.geojson",
+        "MD/fields/part-0010.geojson",
+        "MD/fields/part-0011.geojson",
+        "MD/fields/part-0012.geojson",
+        "MD/fields/part-0013.geojson",
+        "MD/fields/part-0014.geojson",
+        "MD/fields/part-0015.geojson",
+        "MD/fields/part-0016.geojson",
+        "MD/fields/part-0017.geojson",
+        "MD/fields/part-0018.geojson",
+        "MD/fields/part-0019.geojson",
+        "MD/fields/part-0020.geojson",
+        "MD/fields/part-0021.geojson",
+        "MD/fields/part-0022.geojson",
+        "MD/fields/part-0023.geojson",
+        "MD/fields/part-0024.geojson",
+        "MD/fields/part-0025.geojson",
+        "MD/fields/part-0026.geojson",
+        "MD/fields/part-0027.geojson",
+        "MD/fields/part-0028.geojson",
+        "MD/fields/part-0029.geojson",
+        "MD/fields/part-0030.geojson",
+        "MD/fields/part-0031.geojson",
+        "MD/fields/part-0032.geojson",
+        "MD/fields/part-0033.geojson",
+        "MD/fields/part-0034.geojson",
+        "MD/fields/part-0035.geojson",
+        "MD/fields/part-0036.geojson",
+        "MD/fields/part-0037.geojson",
+        "MD/fields/part-0038.geojson",
+        "MD/fields/part-0039.geojson",
+        "MD/fields/part-0040.geojson",
+        "MD/fields/part-0041.geojson",
+        "MD/fields/part-0042.geojson",
+        "MD/fields/part-0043.geojson",
+        "MD/fields/part-0044.geojson",
+        "MD/fields/part-0045.geojson",
+        "MD/fields/part-0046.geojson",
+        "MD/fields/part-0047.geojson",
+        "MD/fields/part-0048.geojson",
+        "MD/fields/part-0049.geojson",
+        "MD/fields/part-0050.geojson",
+        "MD/fields/part-0051.geojson",
+        "MD/fields/part-0052.geojson",
+        "MD/fields/part-0053.geojson",
+        "MD/fields/part-0054.geojson",
+        "MD/fields/part-0055.geojson",
+        "MD/fields/part-0056.geojson",
+        "MD/fields/part-0057.geojson",
+        "MD/fields/part-0058.geojson",
+        "MD/fields/part-0059.geojson",
+        "MD/fields/part-0060.geojson",
+        "MD/fields/part-0061.geojson",
+        "MD/fields/part-0062.geojson",
+        "MD/fields/part-0063.geojson",
+        "MD/fields/part-0064.geojson",
+        "MD/fields/part-0065.geojson",
+        "MD/fields/part-0066.geojson",
+        "MD/fields/part-0067.geojson",
+        "MD/fields/part-0068.geojson",
+        "MD/fields/part-0069.geojson",
+        "MD/fields/part-0070.geojson",
+        "MD/fields/part-0071.geojson",
+        "MD/fields/part-0072.geojson",
+        "MD/fields/part-0073.geojson",
+        "MD/fields/part-0074.geojson",
+        "MD/fields/part-0075.geojson",
+        "MD/fields/part-0076.geojson",
+        "MD/fields/part-0077.geojson",
+        "MD/fields/part-0078.geojson",
+        "MD/fields/part-0079.geojson",
+        "MD/fields/part-0080.geojson",
+        "MD/fields/part-0081.geojson",
+        "MD/fields/part-0082.geojson",
+        "MD/fields/part-0083.geojson",
+        "MD/fields/part-0084.geojson",
+        "MD/fields/part-0085.geojson",
+        "MD/fields/part-0086.geojson",
+        "MD/fields/part-0087.geojson",
+        "MD/fields/part-0088.geojson",
+        "MD/fields/part-0089.geojson",
+        "MD/fields/part-0090.geojson",
+        "MD/fields/part-0091.geojson",
+        "MD/fields/part-0092.geojson",
+        "MD/fields/part-0093.geojson",
+        "MD/fields/part-0094.geojson",
+        "MD/fields/part-0095.geojson",
+        "MD/fields/part-0096.geojson",
+        "MD/fields/part-0097.geojson",
+        "MD/fields/part-0098.geojson",
+        "MD/fields/part-0099.geojson"
+      ]
+    },
+    {
+      "state": "MD",
+      "year": 2025,
+      "rows": 49897,
+      "counts": {
+        "conditional_prediction": 5,
+        "pending_observations": 47664,
+        "invalid_geometry": 2228
+      },
+      "predictions": "MD/2025.csv",
+      "geometry": [
+        "MD/fields/part-0000.geojson",
+        "MD/fields/part-0001.geojson",
+        "MD/fields/part-0002.geojson",
+        "MD/fields/part-0003.geojson",
+        "MD/fields/part-0004.geojson",
+        "MD/fields/part-0005.geojson",
+        "MD/fields/part-0006.geojson",
+        "MD/fields/part-0007.geojson",
+        "MD/fields/part-0008.geojson",
+        "MD/fields/part-0009.geojson",
+        "MD/fields/part-0010.geojson",
+        "MD/fields/part-0011.geojson",
+        "MD/fields/part-0012.geojson",
+        "MD/fields/part-0013.geojson",
+        "MD/fields/part-0014.geojson",
+        "MD/fields/part-0015.geojson",
+        "MD/fields/part-0016.geojson",
+        "MD/fields/part-0017.geojson",
+        "MD/fields/part-0018.geojson",
+        "MD/fields/part-0019.geojson",
+        "MD/fields/part-0020.geojson",
+        "MD/fields/part-0021.geojson",
+        "MD/fields/part-0022.geojson",
+        "MD/fields/part-0023.geojson",
+        "MD/fields/part-0024.geojson",
+        "MD/fields/part-0025.geojson",
+        "MD/fields/part-0026.geojson",
+        "MD/fields/part-0027.geojson",
+        "MD/fields/part-0028.geojson",
+        "MD/fields/part-0029.geojson",
+        "MD/fields/part-0030.geojson",
+        "MD/fields/part-0031.geojson",
+        "MD/fields/part-0032.geojson",
+        "MD/fields/part-0033.geojson",
+        "MD/fields/part-0034.geojson",
+        "MD/fields/part-0035.geojson",
+        "MD/fields/part-0036.geojson",
+        "MD/fields/part-0037.geojson",
+        "MD/fields/part-0038.geojson",
+        "MD/fields/part-0039.geojson",
+        "MD/fields/part-0040.geojson",
+        "MD/fields/part-0041.geojson",
+        "MD/fields/part-0042.geojson",
+        "MD/fields/part-0043.geojson",
+        "MD/fields/part-0044.geojson",
+        "MD/fields/part-0045.geojson",
+        "MD/fields/part-0046.geojson",
+        "MD/fields/part-0047.geojson",
+        "MD/fields/part-0048.geojson",
+        "MD/fields/part-0049.geojson",
+        "MD/fields/part-0050.geojson",
+        "MD/fields/part-0051.geojson",
+        "MD/fields/part-0052.geojson",
+        "MD/fields/part-0053.geojson",
+        "MD/fields/part-0054.geojson",
+        "MD/fields/part-0055.geojson",
+        "MD/fields/part-0056.geojson",
+        "MD/fields/part-0057.geojson",
+        "MD/fields/part-0058.geojson",
+        "MD/fields/part-0059.geojson",
+        "MD/fields/part-0060.geojson",
+        "MD/fields/part-0061.geojson",
+        "MD/fields/part-0062.geojson",
+        "MD/fields/part-0063.geojson",
+        "MD/fields/part-0064.geojson",
+        "MD/fields/part-0065.geojson",
+        "MD/fields/part-0066.geojson",
+        "MD/fields/part-0067.geojson",
+        "MD/fields/part-0068.geojson",
+        "MD/fields/part-0069.geojson",
+        "MD/fields/part-0070.geojson",
+        "MD/fields/part-0071.geojson",
+        "MD/fields/part-0072.geojson",
+        "MD/fields/part-0073.geojson",
+        "MD/fields/part-0074.geojson",
+        "MD/fields/part-0075.geojson",
+        "MD/fields/part-0076.geojson",
+        "MD/fields/part-0077.geojson",
+        "MD/fields/part-0078.geojson",
+        "MD/fields/part-0079.geojson",
+        "MD/fields/part-0080.geojson",
+        "MD/fields/part-0081.geojson",
+        "MD/fields/part-0082.geojson",
+        "MD/fields/part-0083.geojson",
+        "MD/fields/part-0084.geojson",
+        "MD/fields/part-0085.geojson",
+        "MD/fields/part-0086.geojson",
+        "MD/fields/part-0087.geojson",
+        "MD/fields/part-0088.geojson",
+        "MD/fields/part-0089.geojson",
+        "MD/fields/part-0090.geojson",
+        "MD/fields/part-0091.geojson",
+        "MD/fields/part-0092.geojson",
+        "MD/fields/part-0093.geojson",
+        "MD/fields/part-0094.geojson",
+        "MD/fields/part-0095.geojson",
+        "MD/fields/part-0096.geojson",
+        "MD/fields/part-0097.geojson",
+        "MD/fields/part-0098.geojson",
+        "MD/fields/part-0099.geojson"
+      ]
+    }
+  ],
+  "files": {
+    "CA/fields/part-0000.geojson": {
+      "bytes": 567517,
+      "sha256": "4c6baff68672304e5ac4a2341f6c9cc7ac052cb412ccd9a33819a671ec13ae6b"
+    },
+    "CA/fields/part-0001.geojson": {
+      "bytes": 661080,
+      "sha256": "7467f3871b69ebcb8d4e543a6bec33ce5af6d04bd918edaee4629f7e5f1e89c2"
+    },
+    "CA/fields/part-0002.geojson": {
+      "bytes": 783183,
+      "sha256": "747edc09ba2fefbf5280745382d80285159c97ec6081039916752c9ca203b86a"
+    },
+    "CA/fields/part-0003.geojson": {
+      "bytes": 519079,
+      "sha256": "d9344b3dbb4cf84863ef6145eae2cb6a4daf40a8fab060a71e2ea60f34d5f7ff"
+    },
+    "CA/fields/part-0004.geojson": {
+      "bytes": 657564,
+      "sha256": "f2ea26ec31eeb6f5ae7fd8346ba2df32610edc36f3e0d44bb2575ea529f4145a"
+    },
+    "CA/fields/part-0005.geojson": {
+      "bytes": 655423,
+      "sha256": "ccdc5a57b6e5a1af44f9bdf4e4c8dde0d48f25c2a1ee5815513b3c13be2ddffb"
+    },
+    "CA/fields/part-0006.geojson": {
+      "bytes": 667445,
+      "sha256": "b293d7b9377963ce43de484ec561eb285aef4acbae3bc09139de5ab726c99f33"
+    },
+    "CA/fields/part-0007.geojson": {
+      "bytes": 726900,
+      "sha256": "bb1d5759e1b7091be85b4c146490ff4867c2db4f874070e1b11d1f6feaeeaf9c"
+    },
+    "CA/fields/part-0008.geojson": {
+      "bytes": 640873,
+      "sha256": "8f68c1598f94b73b3941447c993105955ddf9ab44680671f1dd355bbd1deee1f"
+    },
+    "CA/fields/part-0009.geojson": {
+      "bytes": 661510,
+      "sha256": "d537cb51e4e53bb7e881fb224e4b4b7dd824f57d764af49183658d45b31e98ba"
+    },
+    "CA/fields/part-0010.geojson": {
+      "bytes": 728393,
+      "sha256": "66d6353142e9d64edc7aed06decd11ce27bd9ceaabb329ce2da2a3d07df8281e"
+    },
+    "CA/fields/part-0011.geojson": {
+      "bytes": 724802,
+      "sha256": "ee8cb151f30d644aac479fedcd8673ecd908ad02af272f8d828a5ca11d3b7c36"
+    },
+    "CA/fields/part-0012.geojson": {
+      "bytes": 774718,
+      "sha256": "93b3c3801500915b169993786226679990a182504f6533b44612520de312ee38"
+    },
+    "CA/fields/part-0013.geojson": {
+      "bytes": 681410,
+      "sha256": "6e00db19ec8cee0cf400659c238b9cc329d619b307023f3d203c0fadfa1d55a3"
+    },
+    "CA/fields/part-0014.geojson": {
+      "bytes": 735251,
+      "sha256": "33bbb3789e59d6f42a19811f9e6a42c775f6fed2675cd2afb587e25fc529ef23"
+    },
+    "CA/fields/part-0015.geojson": {
+      "bytes": 797554,
+      "sha256": "d0d675ea5069c57392ac783b542892aa8f39b23463c24a6245fd4731f2db7ba8"
+    },
+    "CA/fields/part-0016.geojson": {
+      "bytes": 758681,
+      "sha256": "df8ec3d6fc2444b02e8903ebb1d4994d1243e74042b81766d80a2431af2b95cc"
+    },
+    "CA/fields/part-0017.geojson": {
+      "bytes": 764363,
+      "sha256": "700eb668638bcb75391cefedad68af578a6d1aef0af85395f6c774749a6b1511"
+    },
+    "CA/fields/part-0018.geojson": {
+      "bytes": 736385,
+      "sha256": "baa810c9b94194c87878ae4623b68ce0eab17f426738d7b50b79be05100dc172"
+    },
+    "CA/fields/part-0019.geojson": {
+      "bytes": 743190,
+      "sha256": "301d90722e01df163fa5ee453409d96ebbb7c4a682b0c9335f955b07bb5d480a"
+    },
+    "CA/fields/part-0020.geojson": {
+      "bytes": 688235,
+      "sha256": "a56c65c519e67b9db74cf08e99f9fa93986d9351cecd00e42901f735adee162c"
+    },
+    "CA/fields/part-0021.geojson": {
+      "bytes": 705642,
+      "sha256": "74fac4fd596c636a1c4863147e2daffe0d1a336def3c917cec5e4a5dbb1d98c1"
+    },
+    "CA/fields/part-0022.geojson": {
+      "bytes": 676561,
+      "sha256": "4720514b712b22cb62ef4db6915fee5b31d221e2680fd2d1a8196a6f5be39071"
+    },
+    "CA/fields/part-0023.geojson": {
+      "bytes": 697193,
+      "sha256": "b3b8b333e34bd5a07c7a42950a7d7e52e31fe04eb6a78e849fc09b2e35b1ef8d"
+    },
+    "CA/fields/part-0024.geojson": {
+      "bytes": 713378,
+      "sha256": "27b9c57a0ee9593c1f6722555c9ceb0407da18e4a11ad5a24222e2580ca6256a"
+    },
+    "CA/fields/part-0025.geojson": {
+      "bytes": 706841,
+      "sha256": "1b132984012c51ae8971d007a13630ac92dbb8469957a3a79b5d69ba08a803ec"
+    },
+    "CA/fields/part-0026.geojson": {
+      "bytes": 737478,
+      "sha256": "46267e2650627e865853e3fba40839ea6f95cec628c8973d3b2487ead1b192ad"
+    },
+    "CA/fields/part-0027.geojson": {
+      "bytes": 778879,
+      "sha256": "663b770ad9ff7ccbb53934228e7705a209679c4b87a2534e02aa0718aaf56cc3"
+    },
+    "CA/fields/part-0028.geojson": {
+      "bytes": 796124,
+      "sha256": "c47de78a7cffefa0e0246a11ba9c91f1abda5f2b250c25cd248746804f1d29d9"
+    },
+    "CA/fields/part-0029.geojson": {
+      "bytes": 740716,
+      "sha256": "93c4519a683b0c15fa2c2a8ed229e2c78e6d35969e404d05b925eac634a6a7c9"
+    },
+    "CA/fields/part-0030.geojson": {
+      "bytes": 737297,
+      "sha256": "4400c987232ce0912c98616581da4e552eae133d504f8f0315570c007b6281ed"
+    },
+    "CA/fields/part-0031.geojson": {
+      "bytes": 719626,
+      "sha256": "b71e8967b1ee24081ce268c3bb3a08cb1ed42dc7e9c98a0a0f220b9d672cf49d"
+    },
+    "CA/fields/part-0032.geojson": {
+      "bytes": 737601,
+      "sha256": "b3b7b85cc2db6b5756c15716413b19148fc8ee7331375eaca70edd3f87c413e7"
+    },
+    "CA/fields/part-0033.geojson": {
+      "bytes": 674790,
+      "sha256": "c060b3f37b15ddaae4fa05c9c0c28f7e827de91b768fa474eb85f1b1d8193ba6"
+    },
+    "CA/fields/part-0034.geojson": {
+      "bytes": 686186,
+      "sha256": "98e0bf2ca26bb32191b6c8c9deaed518c561f0cf445fc99f4b38f752aca14d5b"
+    },
+    "CA/fields/part-0035.geojson": {
+      "bytes": 669183,
+      "sha256": "84dc1bbcb23055b3f25e308445825865c1fb45ece8ad191765a2cf1e8438e1c9"
+    },
+    "CA/fields/part-0036.geojson": {
+      "bytes": 585825,
+      "sha256": "90d19234d015e58c82bc2eba7fc127ec5348513b569cd3da63b46150d5e8ba03"
+    },
+    "CA/2021.csv": {
+      "bytes": 3281883,
+      "sha256": "e0c87ab5307b228076fdf6edcc401637c4b88f47f085a63cae9afc4a05fb3cfc"
+    },
+    "CA/2022.csv": {
+      "bytes": 3251407,
+      "sha256": "b4df2027f7a3df05cbe2e4355af376b193e76a3676a5df1e7077bc2677ff2b62"
+    },
+    "CA/2023.csv": {
+      "bytes": 3299049,
+      "sha256": "d44358ab27c2eef442486174081f61805c6f0b675a149f499733242eb2e07047"
+    },
+    "CA/2024.csv": {
+      "bytes": 3913805,
+      "sha256": "9cec22158b067ebf43cfc794af15b0d98783061ff92b7db9d7a04e2f5d339940"
+    },
+    "CA/2025.csv": {
+      "bytes": 3913805,
+      "sha256": "2f92145eec919859f117f6b2e249c16e4d696595e6254d7b0fc724f4126ef5b4"
+    },
+    "MD/fields/part-0000.geojson": {
+      "bytes": 1069708,
+      "sha256": "4d7792a9ed0e6bc066eeb51bfc7b77694df2c0a62eaf5111335234f7e621ba01"
+    },
+    "MD/fields/part-0001.geojson": {
+      "bytes": 714287,
+      "sha256": "9cde3525d6a9e8fae3c3ad17e22939398e60994ffa9bf5942b54da3911529c45"
+    },
+    "MD/fields/part-0002.geojson": {
+      "bytes": 672685,
+      "sha256": "42c0d46abb2d29efa1793680114df7d9cb137949ab8fae7a86569f3576e769c3"
+    },
+    "MD/fields/part-0003.geojson": {
+      "bytes": 683713,
+      "sha256": "a41f3888f8e5c98ef0d5416da6605c1b9aca0838547fe4af79463c55a674cb4b"
+    },
+    "MD/fields/part-0004.geojson": {
+      "bytes": 764183,
+      "sha256": "bb00a41df482c37428c26e7d8991347d36b855fd23ec807fe55d48cdaa4c0960"
+    },
+    "MD/fields/part-0005.geojson": {
+      "bytes": 807169,
+      "sha256": "f0b5d22cf44326631926976b225e5214ae602948e6346d8c544ca93a349cdf90"
+    },
+    "MD/fields/part-0006.geojson": {
+      "bytes": 767278,
+      "sha256": "6887be5aebfbf49c95f711c2bfa6f71d12528cc55450ec3c25ff50239a7aa2ce"
+    },
+    "MD/fields/part-0007.geojson": {
+      "bytes": 666816,
+      "sha256": "755cfec5355627505f6bab56c9fc943bef4cd16a9c18f89bce247c64944dcd64"
+    },
+    "MD/fields/part-0008.geojson": {
+      "bytes": 665492,
+      "sha256": "8931ee9b2b1f504c9ae86b85a9573a09d34a099b20b934860e5aecd39828a4f5"
+    },
+    "MD/fields/part-0009.geojson": {
+      "bytes": 748991,
+      "sha256": "7253199490c4e024c219952389af6e4a54c1f4640a2dbbcaca97e92a821c2693"
+    },
+    "MD/fields/part-0010.geojson": {
+      "bytes": 622194,
+      "sha256": "af24b13e951ad9339c0ae9532fa89455e815106c5407b9b896a2182458ed6da3"
+    },
+    "MD/fields/part-0011.geojson": {
+      "bytes": 664434,
+      "sha256": "a9bbf070e876c911f233148ac0bdc5fe0753ca80c501a9f22fe05df72c6b7921"
+    },
+    "MD/fields/part-0012.geojson": {
+      "bytes": 815562,
+      "sha256": "fc5e7781bdced21f0330d10f83a97494e361f34e10b369bb7af516f9e2e3c0c5"
+    },
+    "MD/fields/part-0013.geojson": {
+      "bytes": 699318,
+      "sha256": "c7c1b5592686bd11cc7ddbdbd3b38fe4d095c071e477cb6083e04c34fe6c5715"
+    },
+    "MD/fields/part-0014.geojson": {
+      "bytes": 735763,
+      "sha256": "205787696204dbff0c63242e5b1de3cc102a1dbe180e0f8d4eb4cd126d924627"
+    },
+    "MD/fields/part-0015.geojson": {
+      "bytes": 698345,
+      "sha256": "7663416c591cbff76c99bbd8a971e79da131d2b4e40ea99b65493c294682007d"
+    },
+    "MD/fields/part-0016.geojson": {
+      "bytes": 736952,
+      "sha256": "0812567fe6281efb3a29d21f9a69d33a4c4f0b3e1adef955bc2e4221408667a4"
+    },
+    "MD/fields/part-0017.geojson": {
+      "bytes": 815137,
+      "sha256": "395502f98be138f1766d64bc81c2acc25483ab7a2358963e2d20a7fd97752ef4"
+    },
+    "MD/fields/part-0018.geojson": {
+      "bytes": 803675,
+      "sha256": "c1b54608e0ab150659635c92ddd20ea52e923f15405114c19d32da8968d17e03"
+    },
+    "MD/fields/part-0019.geojson": {
+      "bytes": 888570,
+      "sha256": "ab5be01cbd2de8a9fdb69c4ef9dff3b9013a613147a282a8d010f5d14daa1d3c"
+    },
+    "MD/fields/part-0020.geojson": {
+      "bytes": 788056,
+      "sha256": "a2bd3aab5c0023bab041385c118ee64fa20a43b8df7c9c4fa69156c67a8de453"
+    },
+    "MD/fields/part-0021.geojson": {
+      "bytes": 791046,
+      "sha256": "5b829e4b155a8c848b9abf8939d799716b393c9b70e86e127828b40d83f382dd"
+    },
+    "MD/fields/part-0022.geojson": {
+      "bytes": 779145,
+      "sha256": "79ab4e07f4eb51790c026314fc25f5c39c3230210196d7f52f6e100babb0394d"
+    },
+    "MD/fields/part-0023.geojson": {
+      "bytes": 753148,
+      "sha256": "4eb64fed65b113680b2c9e058a186639302c3953bf122bea9218dab536de62b8"
+    },
+    "MD/fields/part-0024.geojson": {
+      "bytes": 786142,
+      "sha256": "dfa22a6061f9f16eef6ac6a5cbdf4af10dec40748c574597d891c512c5747c06"
+    },
+    "MD/fields/part-0025.geojson": {
+      "bytes": 745064,
+      "sha256": "db1972afe80e5c29953b601dde3f500e472e042dd4f8524f313f75198d945444"
+    },
+    "MD/fields/part-0026.geojson": {
+      "bytes": 655850,
+      "sha256": "40a958099c03fcf1e857406418d2090fad3e76b7f3af979e328eacdf01ec4993"
+    },
+    "MD/fields/part-0027.geojson": {
+      "bytes": 718090,
+      "sha256": "6a89325b5308cb268fa60b0e0aef0d864160d24ef0dfd635f310c61832922721"
+    },
+    "MD/fields/part-0028.geojson": {
+      "bytes": 691193,
+      "sha256": "81100fbcb87250264f6a5fc7cf4371b6084209f84358dec7aeda060582412cf1"
+    },
+    "MD/fields/part-0029.geojson": {
+      "bytes": 637224,
+      "sha256": "455af5928857ed8413ea623319955700444af2ed90f9b285b2d47f1345526559"
+    },
+    "MD/fields/part-0030.geojson": {
+      "bytes": 728126,
+      "sha256": "5273e3261002a09d482df2729df4b9cf6faa9e39ad9aa17c2f17f665f125622a"
+    },
+    "MD/fields/part-0031.geojson": {
+      "bytes": 731859,
+      "sha256": "9adf5656273e3eed41edc9c7287e347804b264143938ee5f1ff2ede270cb7818"
+    },
+    "MD/fields/part-0032.geojson": {
+      "bytes": 693574,
+      "sha256": "2fd54f6e1b5b7ddd1d4219d9f7c1515b164633af77fb912513b48b29be7acd41"
+    },
+    "MD/fields/part-0033.geojson": {
+      "bytes": 834717,
+      "sha256": "b761bd42593b65e45d40eb09a5f57252fd360350f11f121a9da8fc806f364cc7"
+    },
+    "MD/fields/part-0034.geojson": {
+      "bytes": 857849,
+      "sha256": "60c1e5126b6caf101010ff85fc7597875519c70cd4f7ceb3f84c2d156c1fb23e"
+    },
+    "MD/fields/part-0035.geojson": {
+      "bytes": 839456,
+      "sha256": "b6188278433c00b7b91bbac06d9c6c1de3a89809b50449ced4d478915a8c7646"
+    },
+    "MD/fields/part-0036.geojson": {
+      "bytes": 845772,
+      "sha256": "8300d793a411778a958f6cd3e9f91bd7bf4b17c5580fc7877a8275d120ac17f9"
+    },
+    "MD/fields/part-0037.geojson": {
+      "bytes": 862131,
+      "sha256": "d805c98c668809f3a5b943303be2e433e520c81f97c6d27db177e87f6b61524b"
+    },
+    "MD/fields/part-0038.geojson": {
+      "bytes": 806375,
+      "sha256": "d3943977d16ba50817ecee1a230a1f9250fc6945288e4f2ee41643367222f959"
+    },
+    "MD/fields/part-0039.geojson": {
+      "bytes": 753548,
+      "sha256": "09441de0790cc6af750ff6dec3ebb48038bfeafe6e4dbfa0dd4e7cb6eefe53c3"
+    },
+    "MD/fields/part-0040.geojson": {
+      "bytes": 579800,
+      "sha256": "0744f5d9699fecf24fac8d7fd91f8e02aa9fb7007ffa5638dff1424e59c7831b"
+    },
+    "MD/fields/part-0041.geojson": {
+      "bytes": 570920,
+      "sha256": "81380554e9dcfbeb5055e28b51510580cad899df8124e972da86a61da113e2fa"
+    },
+    "MD/fields/part-0042.geojson": {
+      "bytes": 543295,
+      "sha256": "67f9524077e5cb1f4b6e7830c59f18c3c7ae25c02cfc01cfb1c098f73390eadc"
+    },
+    "MD/fields/part-0043.geojson": {
+      "bytes": 640745,
+      "sha256": "69eb445dc578de2c783472895c84607595d222a68e90dd12b279686084191396"
+    },
+    "MD/fields/part-0044.geojson": {
+      "bytes": 635081,
+      "sha256": "4776e1f0f7e666e23e513de87d7e41485444b339c92c551d87bc676bc2080925"
+    },
+    "MD/fields/part-0045.geojson": {
+      "bytes": 705042,
+      "sha256": "09e28d73febda4f643617b9187d86f7cae9ad08265176bf911ad652e85d85719"
+    },
+    "MD/fields/part-0046.geojson": {
+      "bytes": 732523,
+      "sha256": "90f5eab8439ddfed3bd35f529aa93669a8688fd34f756210bbec3a170e10a39e"
+    },
+    "MD/fields/part-0047.geojson": {
+      "bytes": 755043,
+      "sha256": "6d14c8caec5e0e07f8f25755bf7e309f55b9b83cb0d7c2d830e42b7a0954cf25"
+    },
+    "MD/fields/part-0048.geojson": {
+      "bytes": 751373,
+      "sha256": "b86c87f49f5c3b9e4da735473645c02b1b452957afa40864d2278592563f71b5"
+    },
+    "MD/fields/part-0049.geojson": {
+      "bytes": 776339,
+      "sha256": "38903f9b497b903fa39e9160c4abbb86cd77efe276d776a512a0e3d9b2edaa4d"
+    },
+    "MD/fields/part-0050.geojson": {
+      "bytes": 773548,
+      "sha256": "2b982a594c53d3ee1e533f71dd25e407760f1b7528c2b142c6d5f90f159bf20c"
+    },
+    "MD/fields/part-0051.geojson": {
+      "bytes": 765994,
+      "sha256": "efb56b8e05b0ad7bc3354033e864359e21c9b04e7472a0e9c77a147a766d7b6c"
+    },
+    "MD/fields/part-0052.geojson": {
+      "bytes": 694685,
+      "sha256": "5588e35fa478d444fbf3580c4b6770a65d5d3c76591816ee5a8d5e31c6383fdb"
+    },
+    "MD/fields/part-0053.geojson": {
+      "bytes": 688461,
+      "sha256": "9552888ebc089d642c4504b6ce550007aee687e3df21e6014e97cbee5180eacb"
+    },
+    "MD/fields/part-0054.geojson": {
+      "bytes": 822744,
+      "sha256": "4d29f52da347712bad7992221c36604da02e01229a9cb3fd09d4086e2d7dbc15"
+    },
+    "MD/fields/part-0055.geojson": {
+      "bytes": 878454,
+      "sha256": "6c1aff9b3d1b69c1f999e63ed918e90f0dadf08d3e41433907c6416f1afa0050"
+    },
+    "MD/fields/part-0056.geojson": {
+      "bytes": 877145,
+      "sha256": "4d6a625c3f92dfde07f090790536d23447dbb5ff3626711cb57a87538c5c1308"
+    },
+    "MD/fields/part-0057.geojson": {
+      "bytes": 826356,
+      "sha256": "e46545ef21474359d169fa8785bc595256203903b0470cc20ab3fe0e33a65b47"
+    },
+    "MD/fields/part-0058.geojson": {
+      "bytes": 864476,
+      "sha256": "d79276c0f196d9d29635c49c0880ad19f4da2ef93fb0dc94184c50d92e8cc73a"
+    },
+    "MD/fields/part-0059.geojson": {
+      "bytes": 800178,
+      "sha256": "548feff9fbef175e4da0ccd2d4467bd0f913e6124c66417aea6fef81eab764e3"
+    },
+    "MD/fields/part-0060.geojson": {
+      "bytes": 826595,
+      "sha256": "077165ff0d2bd2416cb49879f5d6054e0d5920d2c75c2f38e39404da84925221"
+    },
+    "MD/fields/part-0061.geojson": {
+      "bytes": 756753,
+      "sha256": "99f183f8b84a835d712ffe1e96048467a78498d8574d4b43dcde463e011fd64c"
+    },
+    "MD/fields/part-0062.geojson": {
+      "bytes": 701043,
+      "sha256": "6f1338c0f3afecfd07fc89462e46ad024d88c6bb137ad000b2cab7913d6b67b9"
+    },
+    "MD/fields/part-0063.geojson": {
+      "bytes": 763318,
+      "sha256": "e85fed326940ef67aff22b1327986f54fdfe38036932d6dc111e16707bec8150"
+    },
+    "MD/fields/part-0064.geojson": {
+      "bytes": 715081,
+      "sha256": "5243bec8985b29ddb376291dbf6bcc0ff93da1ff476c902bf99458cca47b36bb"
+    },
+    "MD/fields/part-0065.geojson": {
+      "bytes": 729317,
+      "sha256": "232e9422033285e03cf8233cf49b04033a991d4f289c3fb34b0f6005a59a6d9e"
+    },
+    "MD/fields/part-0066.geojson": {
+      "bytes": 708709,
+      "sha256": "0331856d86363b3371a178d8516141125d18ba3707b998fc5e04a937b5729742"
+    },
+    "MD/fields/part-0067.geojson": {
+      "bytes": 687606,
+      "sha256": "a8dfcfeefbc6e9ced9c2769bac9d6c570a0c3f56550b67d669a4ab0b7c9d193e"
+    },
+    "MD/fields/part-0068.geojson": {
+      "bytes": 699645,
+      "sha256": "2312885198cc4171ba66d5cd6ba1d726d6c3d97fa35cf74082d840b2135b394b"
+    },
+    "MD/fields/part-0069.geojson": {
+      "bytes": 678592,
+      "sha256": "6775587f454ac3d1f000e0af8eaa1d3261611e8a60a20a9f245cd3bd7c28296c"
+    },
+    "MD/fields/part-0070.geojson": {
+      "bytes": 693766,
+      "sha256": "b1811d59302e2a6f72f60f39eb2232de1fdb3e7323a40fced1ba67af773ce5b6"
+    },
+    "MD/fields/part-0071.geojson": {
+      "bytes": 699781,
+      "sha256": "047a35ffaa808b5ae8c1503928d065ee27f4343bf20df55110ec6bed615993b8"
+    },
+    "MD/fields/part-0072.geojson": {
+      "bytes": 633496,
+      "sha256": "1661f20fba58a5fe0afde782793cd17afa9c405f7785854bae264b274a11f64e"
+    },
+    "MD/fields/part-0073.geojson": {
+      "bytes": 672115,
+      "sha256": "a57c2d3b248a4e122eb26756c55b909cc5b05e0d17a696ba5df4a5228d216c4a"
+    },
+    "MD/fields/part-0074.geojson": {
+      "bytes": 600569,
+      "sha256": "a6fa94850a33c68761aae8b0d3314c6c0567e875126cd89a204e33bdc22327d8"
+    },
+    "MD/fields/part-0075.geojson": {
+      "bytes": 706308,
+      "sha256": "2b79b5c090dba1555a7f5514e6655a110529ba49611410b6c799e6f4cdd6ff26"
+    },
+    "MD/fields/part-0076.geojson": {
+      "bytes": 704308,
+      "sha256": "86953f8a2513c6f8f7e72fe782e00b10fed49f84a70321f334fc35fa17523149"
+    },
+    "MD/fields/part-0077.geojson": {
+      "bytes": 688245,
+      "sha256": "7fdd377e8e4d7f4a4771cc17a0b74176e2ef3ce2a6b7c3f3917ad98d3c2bcaab"
+    },
+    "MD/fields/part-0078.geojson": {
+      "bytes": 710280,
+      "sha256": "668cc551aaee8ca6f3645049bc022cab5ccec3ac6677bc8619398780f7b2744c"
+    },
+    "MD/fields/part-0079.geojson": {
+      "bytes": 688548,
+      "sha256": "997dc95ff7229ea73234f54708e4beb264f034cc4505d748295c0a02365aefab"
+    },
+    "MD/fields/part-0080.geojson": {
+      "bytes": 671811,
+      "sha256": "582f7ecd079980be95a89d2a587266a4c0892324b11c7b6fc3daabb42e26af4a"
+    },
+    "MD/fields/part-0081.geojson": {
+      "bytes": 662715,
+      "sha256": "f3950729750fb63e2bd71d07c0c9858fc97791d2af36fa89517b2987f5c10e93"
+    },
+    "MD/fields/part-0082.geojson": {
+      "bytes": 662932,
+      "sha256": "1755356a6c677bf3fc6b03627bfdec5ed2cf48965d35bd70fb1ee46ab37e376d"
+    },
+    "MD/fields/part-0083.geojson": {
+      "bytes": 664002,
+      "sha256": "8becf9892f9269e85a5e15275fe4a348dc4d2612c8f25228e648803ed3c89c23"
+    },
+    "MD/fields/part-0084.geojson": {
+      "bytes": 592192,
+      "sha256": "00599aab3422faf5353280c5d97aae91ba7f738519341aea87dcd487788eac3a"
+    },
+    "MD/fields/part-0085.geojson": {
+      "bytes": 675508,
+      "sha256": "92d973540c29d48a1a1b0829647ec33476880152844b3c418c3f0a311d014301"
+    },
+    "MD/fields/part-0086.geojson": {
+      "bytes": 685385,
+      "sha256": "c9f781f450ae6348e3b8513cea50120bd8462564572130813676d38785105240"
+    },
+    "MD/fields/part-0087.geojson": {
+      "bytes": 652697,
+      "sha256": "59d067eaa6cfc646481b056937068729f99f18b4c0b1d8cc4a58b16819a035c8"
+    },
+    "MD/fields/part-0088.geojson": {
+      "bytes": 712051,
+      "sha256": "746a287f96b8d1edd3f7a89bbed8f07fb02c1501bc9d527bded790cf9b54788e"
+    },
+    "MD/fields/part-0089.geojson": {
+      "bytes": 732316,
+      "sha256": "b7c2b23b6846679688b769a6aedf7db5aa663efa93226f988d651f645b66258b"
+    },
+    "MD/fields/part-0090.geojson": {
+      "bytes": 696433,
+      "sha256": "35f40d75e1fac7b857e7b8244cb77168abd342bc391545f2764a71a755f5987e"
+    },
+    "MD/fields/part-0091.geojson": {
+      "bytes": 653787,
+      "sha256": "a753b079517650d793e823f6139052f30c1dd1d68127d727288181a5c6cec37f"
+    },
+    "MD/fields/part-0092.geojson": {
+      "bytes": 678235,
+      "sha256": "e6ed84a25b54ab32bec0810932d764222e17097de6fd28ece81646030416a705"
+    },
+    "MD/fields/part-0093.geojson": {
+      "bytes": 725576,
+      "sha256": "78982424210b63bfa35c141efbd854b298f30b83edce4840c17abdbc3636062c"
+    },
+    "MD/fields/part-0094.geojson": {
+      "bytes": 705616,
+      "sha256": "5139e93e73713db4e9cfc538d1d75590a64172347407ff333bfe23c2535efc7c"
+    },
+    "MD/fields/part-0095.geojson": {
+      "bytes": 713967,
+      "sha256": "074f4ebc313a405551bb6a911e1c4af1956ac7b61b8e7e1a9854d21a135bd991"
+    },
+    "MD/fields/part-0096.geojson": {
+      "bytes": 679129,
+      "sha256": "ea896112a33ffe36394771f56f4f5743725d80b998b8f6ba3ae139691f66f7b1"
+    },
+    "MD/fields/part-0097.geojson": {
+      "bytes": 545283,
+      "sha256": "14f32c61c3b5887f3b72977642800e77dfcbab51e1c737b7b399f27517021d89"
+    },
+    "MD/fields/part-0098.geojson": {
+      "bytes": 500408,
+      "sha256": "71b3ae961a4f422acda78ce4a03c1e63ca7c1bc2ca2a5278957cf0a12ebbc9fe"
+    },
+    "MD/fields/part-0099.geojson": {
+      "bytes": 417859,
+      "sha256": "021c156b88a6a4c76c8a84d8c6953abf64d08aac23be915d408aa1caf5bc93b4"
+    },
+    "MD/2021.csv": {
+      "bytes": 8985042,
+      "sha256": "2155d428076df325f437a6fdbe2eb94a6a289077b30b3a0f94192c2b3b71e71d"
+    },
+    "MD/2022.csv": {
+      "bytes": 8914631,
+      "sha256": "3b0f802cecbd31a6a58fe943efdef0dff6bc498e1e0aa4339ca747f0451a4251"
+    },
+    "MD/2023.csv": {
+      "bytes": 9005111,
+      "sha256": "c2df07191dd670f3c2c2a89f402468f108f5fe3d8c7d82a4764ebb6e66c6fe25"
+    },
+    "MD/2024.csv": {
+      "bytes": 10577551,
+      "sha256": "7e88a39628716127acf0488669dd26360742d995245d073da1534f45706f2b95"
+    },
+    "MD/2025.csv": {
+      "bytes": 10577682,
+      "sha256": "28b0dc83b032e3f926ea01743e396061ea7cf971627b794dbb548571023e1172"
+    }
+  },
+  "model_source": "/home/ubuntu/cornhub-compute/runs/v9-ndvi90-context10-20261115T030120Z",
+  "calibration_source": "/home/ubuntu/cornhub-compute/runs/v9-us-confidence-20261115T033209Z",
+  "confidence_meaning": "Experimental estimated correctness conditional on V9 predicted class; US80 Maryland development calibration, NOT independently validated in California",
+  "prediction_role": "inference, not blind validation; training_overlap records explicitly marked",
+  "empty_values": "CSV empty means unavailable, never zero; conditional_prediction has unverified annual maize eligibility",
+  "source_duplicate_policy": "CSB and BARC namespaces preserved; may overlap spatially; do not sum their areas blindly"
+}

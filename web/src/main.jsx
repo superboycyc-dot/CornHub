@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState, useCallback } from "react";
 import { createRoot } from "react-dom/client";
 import L from "leaflet";
 import NationalLayer from "./NationalLayer";
+import useV9 from "./useV9";
+import {confidenceColor,v9Record,v9Details} from "./v9";
 import "leaflet/dist/leaflet.css";
 import "./style.css";
 import {
@@ -88,7 +90,7 @@ function Icon({ name, size = 18 }) {
     </svg>
   );
 }
-function fieldTooltip(info) {
+function fieldTooltip(info, v9row) {
   const root = document.createElement("div");
   root.className = "field-tooltip-content";
   const text = (tag, value, className) => {
@@ -98,6 +100,12 @@ function fieldTooltip(info) {
     root.appendChild(element);
     return element;
   };
+  if(v9row) {
+    text("strong",info.field_id,"tooltip-title");
+    for(const detail of v9Details(v9row)) text("span",detail,"tooltip-detail");
+    text("span","V9 confidence colors · baseline outputs are separate in the detail panel.","tooltip-footnote");
+    return root;
+  }
   text("span", "BARC / VERIFIED FIELD", "tooltip-kicker");
   text("strong", info.field_id, "tooltip-title");
   text(
@@ -142,6 +150,7 @@ function Map({
   showFields,
   onZoomChange,
   onCountyStatus,
+  v9,
 }) {
   const el = useRef(),
     map = useRef(),
@@ -291,11 +300,12 @@ function Map({
   }, [counties, showCounties]);
   useEffect(() => {
     if (!fields?.features.length) return;
+    const rowFor = feature => v9Record(v9,feature.properties.source_dataset_id,feature.properties.field_id,year,role);
     const normal = (feature) => ({
-      color: feature.properties.field_id === selected ? "#edffb6" : "#cfff87",
+      color: confidenceColor(rowFor(feature)),
       weight: feature.properties.field_id === selected ? 2.5 : 1.8,
       opacity: 1,
-      fillColor: "#c3ff84",
+      fillColor: confidenceColor(rowFor(feature)),
       fillOpacity: feature.properties.field_id === selected ? 0.38 : 0.26,
     });
     const layer = L.geoJSON(fields, {
@@ -303,7 +313,7 @@ function Map({
       style: normal,
       onEachFeature: (feature, polygon) => {
         const info = fieldSnapshot(feature, data, year, role);
-        polygon.bindTooltip(fieldTooltip(info), {
+        polygon.bindTooltip(fieldTooltip(info,rowFor(feature)), {
           sticky: true,
           direction: "top",
           offset: [0, -14],
@@ -311,7 +321,7 @@ function Map({
           opacity: 1,
         });
         const highlight = () => {
-          polygon.setStyle({ color: "#efffc9", weight: 3, fillOpacity: 0.52 });
+          polygon.setStyle({ ...normal(feature), weight: 3, fillOpacity: 0.52 });
           polygon.bringToFront();
         };
         const reset = () => polygon.setStyle(normal(feature));
@@ -370,7 +380,7 @@ function Map({
       map.current.off("zoomend", toggle);
       if (map.current.hasLayer(layer)) map.current.removeLayer(layer);
     };
-  }, [fields, selected, data, year, role, showFields, onSelect]);
+  }, [fields, selected, data, year, role, showFields, onSelect, v9]);
   return (
     <div className="map-wrap">
       <div ref={el} className="map" aria-label="Field map" />
@@ -487,8 +497,9 @@ function App() {
   const [state, setState] = useState({ data: {}, errors: {} }),
     [loading, setLoading] = useState(true),
     [year, setYear] = useState("2021"),
-    [role, setRole] = useState("oof"),
+    [role, setRole] = useState("inference"),
     [id, setId] = useState("");
+  const v9 = useV9(year,role);
   const reload = () => {
     setLoading(true);
     loadData().then((s) => {
@@ -522,6 +533,7 @@ function App() {
   const boundary = fields?.features.find(
     (f) => f.properties.field_id === fieldId,
   )?.properties;
+  const selectedV9 = v9Record(v9,boundary?.source_dataset_id,fieldId,year,role);
   const summary = selectAnalysis(d, year, role),
     summaryMatches =
       summary &&
@@ -641,6 +653,7 @@ function App() {
         showFields={showFields}
         onZoomChange={setZoomLevel}
         onCountyStatus={setCountyStatus}
+        v9={v9}
       />
       <NationalLayer
         controller={mapController}
@@ -648,6 +661,7 @@ function App() {
         year={year}
         role={role}
         onStatus={setNationalStatus}
+        v9={v9}
       />
       <header className="topbar">
         <a
@@ -759,6 +773,14 @@ function App() {
         {nationalEnabled && (
           <small role="status">{nationalStatus || "Loading…"}</small>
         )}
+        <div className="confidence-legend" aria-label="V9 confidence score legend">
+          <span><i style={{background:"#61df8c"}} /> &gt;80</span>
+          <span><i style={{background:"#ffcf45"}} /> &gt;60–80</span>
+          <span><i style={{background:"#ff5b5b"}} /> ≤60</span>
+          <span><i style={{background:"#fff"}} /> Unavailable</span>
+        </div>
+        <small>V9 experimental confidence · inference · {year}</small>
+        <small role="status">{v9.status==='ready'?v9.message:(v9.message||'Loading V9 confidence…')}</small>
       </div>
       <div className="layer-switches" aria-label="Map layers">
         <button
@@ -876,9 +898,9 @@ function App() {
                 <span className="section-kicker">SELECTED FIELD</span>
                 {Number(year) > 2023 && (
                   <p className="notice">
-                    No annual target cohort, observations or predictions have
-                    been supplied for {year}. Displayed polygons are reference
-                    boundaries, not verified corn fields for this year.
+                    BARC baseline observations and predictions are unavailable for {year}.
+                    Any V9 conditional result is shown separately below. Historical
+                    boundaries do not verify corn eligibility for this year.
                   </p>
                 )}
                 <h3>{fieldId || "Awaiting the shared sample"}</h3>
@@ -897,7 +919,10 @@ function App() {
                   ))}
                 </dl>
                 <div className="panel-rule" />
-                <span className="section-kicker">MODEL OUTPUT</span>
+                <span className="section-kicker">V9 INFERENCE / CONFIDENCE COLORS</span>
+                {v9Details(selectedV9).map((line,i)=><p className="v9-detail" key={i}>{line}</p>)}
+                <div className="panel-rule" />
+                <span className="section-kicker">BARC BASELINE MODEL OUTPUT / {role.toUpperCase()}</span>
                 <div className="probability-value">
                   {present(prediction?.p_silage)
                     ? String(Number(Number(prediction.p_silage).toFixed(6)))

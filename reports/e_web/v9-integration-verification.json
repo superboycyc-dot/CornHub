@@ -1,0 +1,125 @@
+{
+  "status": "passed",
+  "source_commit": "d7648e0c81b0c59a494d44d8309684ba84ef2da6",
+  "total_rows": 341550,
+  "scored_rows": 67,
+  "groups": [
+    {
+      "state": "MD",
+      "year": 2021,
+      "rows": 49897,
+      "colors": {
+        "red": 17,
+        "yellow": 5,
+        "green": 0,
+        "missing": 49875
+      }
+    },
+    {
+      "state": "MD",
+      "year": 2022,
+      "rows": 49897,
+      "colors": {
+        "red": 10,
+        "yellow": 1,
+        "green": 0,
+        "missing": 49886
+      }
+    },
+    {
+      "state": "MD",
+      "year": 2023,
+      "rows": 49897,
+      "colors": {
+        "red": 20,
+        "yellow": 2,
+        "green": 0,
+        "missing": 49875
+      }
+    },
+    {
+      "state": "MD",
+      "year": 2024,
+      "rows": 49897,
+      "colors": {
+        "red": 5,
+        "yellow": 0,
+        "green": 0,
+        "missing": 49892
+      }
+    },
+    {
+      "state": "MD",
+      "year": 2025,
+      "rows": 49897,
+      "colors": {
+        "red": 3,
+        "yellow": 2,
+        "green": 0,
+        "missing": 49892
+      }
+    },
+    {
+      "state": "CA",
+      "year": 2021,
+      "rows": 18413,
+      "colors": {
+        "red": 0,
+        "yellow": 0,
+        "green": 0,
+        "missing": 18413
+      }
+    },
+    {
+      "state": "CA",
+      "year": 2022,
+      "rows": 18413,
+      "colors": {
+        "red": 1,
+        "yellow": 0,
+        "green": 0,
+        "missing": 18412
+      }
+    },
+    {
+      "state": "CA",
+      "year": 2023,
+      "rows": 18413,
+      "colors": {
+        "red": 0,
+        "yellow": 1,
+        "green": 0,
+        "missing": 18412
+      }
+    },
+    {
+      "state": "CA",
+      "year": 2024,
+      "rows": 18413,
+      "colors": {
+        "red": 0,
+        "yellow": 0,
+        "green": 0,
+        "missing": 18413
+      }
+    },
+    {
+      "state": "CA",
+      "year": 2025,
+      "rows": 18413,
+      "colors": {
+        "red": 0,
+        "yellow": 0,
+        "green": 0,
+        "missing": 18413
+      }
+    }
+  ],
+  "checks": [
+    "All 10 compressed annual CSVs decompress byte-exactly to pinned upstream files",
+    "Every real scored record joins an existing map boundary with source namespace unchanged",
+    "Runtime parser validated all records, score ranges, classes, uniqueness and state/year/role",
+    "Strict >60 and >80 boundaries, null handling and OOF separation covered by tests"
+  ],
+  "browser_verification": "Not performed: supported browser tool unavailable"
+}

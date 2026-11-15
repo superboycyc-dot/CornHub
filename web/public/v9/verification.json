@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "rows": 341550,
+  "polygons": {
+    "CA": 18413,
+    "MD": 49897
+  },
+  "counts": {
+    "not_corn": 100204,
+    "pending_observations": 228307,
+    "invalid_geometry": 12970,
+    "predicted": 49,
+    "conditional_prediction": 18,
+    "no_usable_observations": 2
+  },
+  "checks": [
+    "all manifest hashes match",
+    "field/year/state unique and complete",
+    "classes match unchanged V9 0.5 threshold",
+    "confidence in 0-100",
+    "uncomputed rows have empty scores and classes",
+    "annual crop eligibility distinguishes conditional predictions",
+    "separate stable geometry IDs join every year"
+  ],
+  "completion_status": "partial_processing"
+}

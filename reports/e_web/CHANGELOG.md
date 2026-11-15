@@ -39,3 +39,10 @@ Replaced close-up national center markers with actual source Polygon/MultiPolygo
 - Add repeatable scope reducer and byte-level verification against the prior complete point inventory. Deployment verification is recorded in national-scope-verification.json and deployment verification report.
 
 - Deployment: Sites v13 succeeded at the existing public URL. Live HTTP verification without cache-busting matched release manifest, homepage, JS bundle, national indexes, MD/CA outline samples and US point samples byte-for-byte. Evidence: deployment-scope-verification.json. Browser visual verification was unavailable.
+
+## 2026-11-15 — V9 confidence integration
+
+- Pin the latest inspected CA/MD snapshot d7648e0c81b0c59a494d44d8309684ba84ef2da6 (a new update arrived during integration). All 10 annual CSVs retain original columns and values in byte-exact gzip transport, with local processed files taking precedence. No teammate scripts or outputs changed.
+- Color existing field outlines and fills by confidence_score: >80 green, >60–80 yellow, ≤60 red; missing/uncomputed stays white. Preserve color on hover/selection; no confidence assigned to low-zoom clusters.
+- Add hover details, legend and separate V9 field card. Default to inference, disable V9 colors for OOF, and retain original BARC baseline and D analysis as separate outputs. Surface experimental calibration, California transfer, conditional crop eligibility and training overlap.
+- Validate strict thresholds, probability/score separation, state/year/source identity, duplicate rows, null values and repeatable synchronization. Check all upstream CSV bytes and scored map joins; see v9-integration-verification.json. Supported browser tools unavailable, so browser visual QA is not claimed.

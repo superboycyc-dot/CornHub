@@ -1,0 +1,9 @@
+# V9 California / Maryland 2021–2025 map data
+
+Start at index.json. Each state/year CSV joins to geometry chunks by field_id. CSV harvest_type is silage or grain; confidence_score is the experimental US-only estimated correctness score (0–100). raw_self_confidence preserves the uncalibrated V9 selected-class probability ×100. This is retrospective inferred harvest use, not an observed harvest date or a ground-truth claim.
+
+Check status before displaying a harvest type. predicted = a real feature record was scored and annual corn eligibility has source support. conditional_prediction = real observations were scored but annual corn eligibility is unknown; display as conditional on maize, not verified maize harvest. pending_observations = not computed, empty class/confidence must remain unavailable. not_corn = source annual CDL code was not corn. invalid_geometry = source geometry retained without repair. Missing values are empty CSV cells, not zeros.
+
+This snapshot is PARTIAL while index.json reports partial_processing. Do not count pending rows as grain, silage or zero confidence. CA calibration is an unvalidated transfer from the small Maryland US calibration set. training_overlap identifies rows reused from training; these inference outputs are not accuracy evaluation. State/year completeness is in index.json groups[].counts. Historical CSB boundaries have only 2021–2023 crop codes; 2024–2025 crop qualification remains unknown until supported by a new source. CSB and BARC may overlap geographically and must not be added as independent acreage.
+
+Geometry is EPSG:4326, longitude first. Load only needed state and geometry chunks; use field_id as stable source identifier. The 500-field chunks are transport partitions, not spatial tiles. Do not fetch all geometries on every map movement. No frontend deployment is included.

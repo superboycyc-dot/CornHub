@@ -102,3 +102,13 @@ Model validation 明确为 2021–2023 的 44 条汇总 OOF 评估，不能视�
 ### Maryland/California outline scope
 
 The national layer opens enabled: white polygons only in Maryland and California; other states use individual points at close zoom. Below zoom 12 the US inventory uses white count clusters, remaining visible around the 50 km ruler. See national/README.md for reproducible scope reduction and integrity checks. The deployment build is identified at `/reference/release.json`.
+
+### V9 prediction and confidence colors
+
+The map defaults to inference and joins MD/CA V9 records by original source_dataset_id + field_id/candidate_id + selected year. V9 outputs are separate from BARC baseline outputs and D summaries. Switching to OOF disables V9 confidence coloring. The V9 section and hover show class, p_silage, experimental confidence_score, raw_self_confidence, quality, conditional maize eligibility and training overlap.
+
+Color uses confidence_score (0–100), never p_silage or raw_self_confidence: >80 green, >60 through 80 yellow, 0 through 60 red. Missing/uncomputed data stays white. Hover and selection preserve the confidence color. Below close zoom, clusters stay white because no cluster-level confidence has been supplied. Historical 2024/2025 outlines do not establish current corn eligibility.
+
+`npm run sync:data` calls scripts/sync-v9.mjs. It copies existing local data/processed/model/v9_states files first, otherwise reads the exact commit pinned in v9-handoff.json. Annual CSVs are gzip-compressed without changing their contents into generated public/v9; missing files are recorded in manifest.json and the page displays a loading error. No geometry copy is needed: all currently scored identities join existing MD/CA or BARC boundaries. Do not hand-edit public/v9 or dist.
+
+After updating the upstream pin, run `npm run build`, `node scripts/check-v9-integration.mjs` and `npm test`. Publish dist/v9 together with dist/data, dist/national, dist/reference and dist/assets; a static host must not omit the v9 directory. Current snapshot is partial; white does not mean zero confidence or grain. California confidence transfer has no independent validation.

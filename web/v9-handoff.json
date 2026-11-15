@@ -1,0 +1,16 @@
+{
+  "branch": "data/v9-ca-md-2021-2025",
+  "commit": "d7648e0c81b0c59a494d44d8309684ba84ef2da6",
+  "base": "data/processed/model/v9_states",
+  "states": [
+    "MD",
+    "CA"
+  ],
+  "years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "release": "2026-11-15-md-ca-outlines-v13",
+  "release": "2026-11-15-v9-confidence-v14",
   "outline_states": [
     "MD",
     "CA"
@@ -12,5 +12,14 @@
   "polygon_bytes": 3133737,
   "point_bytes": 43815784,
   "national_default_enabled": true,
-  "detail_zoom": 12
+  "detail_zoom": 12,
+  "v9_source_commit": "d7648e0c81b0c59a494d44d8309684ba84ef2da6",
+  "confidence_field": "confidence_score",
+  "confidence_colors": {
+    "green": "score > 80",
+    "yellow": "60 < score <= 80",
+    "red": "score <= 60",
+    "white": "unavailable"
+  },
+  "default_prediction_role": "inference"
 }

@@ -1,3 +1,4 @@
+import { syncV9 } from "./sync-v9.mjs";
 import { promises as fs } from "node:fs";
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
@@ -104,6 +105,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     path.join(root, "web/public/data"),
     { repositoryRoot: root, handoffs },
   );
+  await syncV9(root);
   const referenceTarget = path.join(root, "web/public/reference");
   await fs.rm(referenceTarget, { recursive: true, force: true });
   try {

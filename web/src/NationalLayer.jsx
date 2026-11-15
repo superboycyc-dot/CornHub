@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import L from "leaflet";
+import {confidenceColor,v9Record,v9Details} from "./v9";
 import { queryPrediction, decodePolygons, decodeTile } from "./national";
 export default function NationalLayer({
   controller,
@@ -7,6 +8,7 @@ export default function NationalLayer({
   year,
   role,
   onStatus,
+  v9,
 }) {
   useEffect(() => {
     if (!enabled) return;
@@ -21,15 +23,18 @@ export default function NationalLayer({
     const renderer = L.canvas({ pane: "national", padding: 0.2 });
     let index, config, polygonIndex, pointIndex;
     let timer;
+    const rowFor = field => v9Record(v9,field.source_dataset_id,field.candidate_id,year,role);
     const tooltip = (field, result = null, error = null) => {
       const box = document.createElement("div");
       box.className = "field-tooltip-content";
+      const local = rowFor(field);
       for (const text of [
         field.candidate_id,
+        ...v9Details(local),
         `Source: ${field.source_dataset_id}`,
-        `${year} / ${role} / ${config?.model_version || "model not configured"}`,
-        error ||
-          `Model silage probability: ${result?.p_silage == null ? "Not computed" : (result.p_silage * 100).toFixed(1) + "%"}`,
+        `${year} / ${role} · external API: ${config?.model_version || "not configured"}`,
+        ...(error?[error]:[]),
+        ...(result?[`External API model silage probability: ${result.p_silage==null?"Not computed":(result.p_silage*100).toFixed(1)+"%"}`]:[]),
         `Source geometry: ${field.geometry_valid ? "valid" : "flagged invalid"}`,
         field.geometry
           ? "Source polygon · simplified for display; not a cadastral survey."
@@ -46,12 +51,13 @@ export default function NationalLayer({
       const ticket = ++generation;
       group.clearLayers();
       if (!index) return;
-      if (![2021, 2022, 2023].includes(Number(year))) {
+      if (![2021, 2022, 2023, 2024, 2025].includes(Number(year))) {
         onStatus("No national candidate data for " + year);
         return;
       }
       const bounds = map.getBounds().pad(0.05),
-        bit = 1 << (Number(year) - 2021),
+        historical = Number(year) > 2023,
+        bit = historical ? 7 : 1 << (Number(year) - 2021),
         z = map.getZoom();
       if (z >= 12) {
         onStatus("Loading MD + CA outlines and US points…");
@@ -103,8 +109,9 @@ export default function NationalLayer({
           if (closed || ticket !== generation) return;
           let dots = 0;
           for(const fields of pointChunks) for(const field of fields) {
-            if(!(field.flags & bit) || (field.flags & 32) || !bounds.contains([field.lat,field.lng])) continue;
-            const layer = L.circleMarker([field.lat,field.lng], {renderer,pane:"national",radius:3,color:"#fff",weight:1,fillColor:"#fff",fillOpacity:0.6}).bindTooltip(tooltip(field), {className:"field-hover",sticky:true});
+            if(historical || !(field.flags & bit) || (field.flags & 32) || !bounds.contains([field.lat,field.lng])) continue;
+            const color=confidenceColor(rowFor(field));
+            const layer = L.circleMarker([field.lat,field.lng], {renderer,pane:"national",radius:3,color,weight:1,fillColor:color,fillOpacity:0.6}).bindTooltip(tooltip(field), {className:"field-hover",sticky:true});
             layer.on("mouseover",async () => {
               layer.setRadius(5);
               try { const result=await queryPrediction(field,year,role,{...config,source_revision:index.source_commit},abort.signal);if(!closed)layer.setTooltipContent(tooltip(field,result)); }
@@ -145,11 +152,14 @@ export default function NationalLayer({
                   geometry_valid: !!(flags & 8),
                   geometry,
                 };
+              const local = rowFor(field);
+              if(historical && (!local || local.status==='not_corn')) continue;
+              const color = confidenceColor(local);
               const normal = {
-                color: "#ffffff",
+                color,
                 weight: 1.8,
                 opacity: 0.95,
-                fillColor: "#ffffff",
+                fillColor: color,
                 fillOpacity: 0.26,
               };
               L.geoJSON(
@@ -209,6 +219,7 @@ export default function NationalLayer({
         return;
       }
       if (z < 12) {
+        if(historical) {onStatus("2024–2025: zoom in for MD/CA historical boundaries; annual corn eligibility unverified");return;}
         for (const tile of index.tiles) {
           const n = tile.year_counts[year];
           const size = 512,
@@ -310,6 +321,6 @@ export default function NationalLayer({
         "Candidates: USDA NASS CSB; CropSight-US / Zhou, Liu & Diao CC-BY-4.0",
       );
     };
-  }, [controller, enabled, year, role, onStatus]);
+  }, [controller, enabled, year, role, onStatus, v9]);
   return null;
 }

@@ -1387,3 +1387,12 @@ select:disabled {
   border: 1px solid #fff;
   background: #ffffff35;
 }
+
+.confidence-legend { display:flex; flex-wrap:wrap; gap:10px; margin-top:8px; font-size:10px; }
+.confidence-legend span { display:inline-flex; align-items:center; gap:4px; }
+.confidence-legend i { width:9px; height:9px; display:inline-block; }
+.v9-detail { font-size:12px; line-height:1.5; overflow-wrap:anywhere; }
+.layer-swatch.fields { background:#ffffff40; border-color:#ffffff; }
+/* Keep the inspector accessible within the fixed viewport. */
+.mission:has(.floating-panel) .national-control > small,
+.mission:has(.floating-panel) .national-control .confidence-legend { display:none; }
