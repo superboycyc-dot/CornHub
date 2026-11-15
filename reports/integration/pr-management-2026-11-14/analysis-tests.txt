@@ -1,0 +1,25 @@
+test_2024_2025_missing_annual_cohort_is_unknown_not_zero (test_analysis.AnalysisTests.test_2024_2025_missing_annual_cohort_is_unknown_not_zero) ... ok
+test_A_handoff_farm_folds_and_smoke (test_analysis.AnalysisTests.test_A_handoff_farm_folds_and_smoke) ... ok
+test_cli_pending_and_required_selectors (test_analysis.AnalysisTests.test_cli_pending_and_required_selectors) ... ok
+test_cli_reads_and_merges_complete_files (test_analysis.AnalysisTests.test_cli_reads_and_merges_complete_files) ... ok
+test_cohort_cannot_hide_duplicates_or_orphans (test_analysis.AnalysisTests.test_cohort_cannot_hide_duplicates_or_orphans) ... ok
+test_computation_api_rejects_bad_numbers (test_analysis.AnalysisTests.test_computation_api_rejects_bad_numbers) ... ok
+test_csv_rejects_nonfinite_and_out_of_range_probability (test_analysis.AnalysisTests.test_csv_rejects_nonfinite_and_out_of_range_probability) ... ok
+test_duplicates_and_orphans_fail (test_analysis.AnalysisTests.test_duplicates_and_orphans_fail) ... ok
+test_empty_inventory_and_missing_features (test_analysis.AnalysisTests.test_empty_inventory_and_missing_features) ... ok
+test_explicit_annual_and_smoke_cohorts (test_analysis.AnalysisTests.test_explicit_annual_and_smoke_cohorts) ... ok
+test_feature_coverage_unknown_and_empty_denominators (test_analysis.AnalysisTests.test_feature_coverage_unknown_and_empty_denominators) ... ok
+test_features_do_not_imply_prediction_coverage (test_analysis.AnalysisTests.test_features_do_not_imply_prediction_coverage) ... ok
+test_new_year_real_probabilities_remain_separate (test_analysis.AnalysisTests.test_new_year_real_probabilities_remain_separate) ... ok
+test_pending_absent_and_empty_predictions (test_analysis.AnalysisTests.test_pending_absent_and_empty_predictions) ... ok
+test_quality_not_confidence (test_analysis.AnalysisTests.test_quality_not_confidence) ... ok
+test_review_complete_budget_and_seed (test_analysis.AnalysisTests.test_review_complete_budget_and_seed) ... ok
+test_string_id_and_geojson_area_validation (test_analysis.AnalysisTests.test_string_id_and_geojson_area_validation) ... ok
+test_tie_break_and_probability_endpoints (test_analysis.AnalysisTests.test_tie_break_and_probability_endpoints) ... ok
+test_weighted_area_and_unknown_not_grain (test_analysis.AnalysisTests.test_weighted_area_and_unknown_not_grain) ... ok
+test_year_and_role_separation (test_analysis.AnalysisTests.test_year_and_role_separation) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.173s
+
+OK

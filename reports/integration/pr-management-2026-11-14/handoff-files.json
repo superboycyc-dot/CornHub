@@ -1,0 +1,347 @@
+[
+  {
+    "path": "data/processed/core/field_id_map.csv",
+    "bytes": 11535,
+    "sha256": "1f9400d4a09a9f88e4adeeb989de0614f6fe24c7246733b83dfd380b840256de",
+    "rows": 83
+  },
+  {
+    "path": "data/processed/core/fields.geojson",
+    "bytes": 1392322,
+    "sha256": "0ec8c03cbf78ee2dbadc79eb0b43604126e82ecbb2a96710f790574214e252de"
+  },
+  {
+    "path": "data/processed/core/labels.csv",
+    "bytes": 2575,
+    "sha256": "b7c453f7535eca3fea4477bd4861864d5912e47c1330be7c67588d8c94185f0a",
+    "rows": 44
+  },
+  {
+    "path": "data/processed/core/smoke_sample.json",
+    "bytes": 283,
+    "sha256": "3199c9f2f6f77f6676f4747664dff40a825be04254361f2b25aacc3d3a32a3c1"
+  },
+  {
+    "path": "data/processed/core/validation_folds.csv",
+    "bytes": 765,
+    "sha256": "a846206c02b3e53f57b997893ea5c2a730411fb7ea91863f5f96cb47ce878ca5",
+    "rows": 44
+  },
+  {
+    "path": "data/processed/satellite/features.csv",
+    "bytes": 4636,
+    "sha256": "402ec0ba1198ed582dd6de0181b7e6298f30a7452282e377d5a39db838c227cb",
+    "rows": 44
+  },
+  {
+    "path": "data/processed/satellite/timeseries.csv",
+    "bytes": 652878,
+    "sha256": "2b42414eb5e6ce248671b5e2d0468ad06ea86b85ab7b82cec9e3503ffd6edbbf",
+    "rows": 4524
+  },
+  {
+    "path": "data/processed/model/metrics.json",
+    "bytes": 729,
+    "sha256": "9729e8915305de50d9d403432d44aae22de812cc984e307860afe28f4f691a7b"
+  },
+  {
+    "path": "data/processed/model/predictions.csv",
+    "bytes": 5884,
+    "sha256": "fc837db3fc6667419d9c784a8cee520574230bc5ceec94246df0e738953ef5ea",
+    "rows": 88
+  },
+  {
+    "path": "data/processed/analysis/2021/oof/data_needed.csv",
+    "bytes": 1171,
+    "sha256": "332791e3c8cd45cb28ed6798bb0b2aacb3c7e4f287edfb572f778e0572387ccd",
+    "rows": 18
+  },
+  {
+    "path": "data/processed/analysis/2021/oof/feature_coverage.json",
+    "bytes": 1335,
+    "sha256": "dd1e3243c51e4e7785a1b211d8758274d0f2276ac583ebdf24d5f6fa6050904c"
+  },
+  {
+    "path": "data/processed/analysis/2021/oof/merge_audit.json",
+    "bytes": 1813,
+    "sha256": "b4bbcd9e68dfb270f2f4783d95143f06d885067a26216bd94ef664f46bfb69d9"
+  },
+  {
+    "path": "data/processed/analysis/2021/oof/review_queue.csv",
+    "bytes": 55,
+    "sha256": "cdf23cfebbef1d3f280f09e2969feef7723a63e58de87cc6ffa1dfcd8adff8c0",
+    "rows": 0
+  },
+  {
+    "path": "data/processed/analysis/2021/oof/review_simulation.json",
+    "bytes": 456,
+    "sha256": "3a99a6505eb8ac2b844a3c13a800ba90c03d525a32cdaf23b202f208954151ad"
+  },
+  {
+    "path": "data/processed/analysis/2021/oof/summary.json",
+    "bytes": 1376,
+    "sha256": "5069ce14ed13eecf06c8c50cfccf125b4ec0f7ced0e6738fe89c06bf55cac8bd"
+  },
+  {
+    "path": "data/processed/analysis/2022/oof/data_needed.csv",
+    "bytes": 58,
+    "sha256": "75b7719a93f0fe0f948b4179601cfa2c2b14f34f0a9150a1e11d29af3c85152d",
+    "rows": 0
+  },
+  {
+    "path": "data/processed/analysis/2022/oof/feature_coverage.json",
+    "bytes": 1139,
+    "sha256": "0efd8d964ea04779cdb90acaf2b681eb0e9aa2276c507c20c0af7357b0197a88"
+  },
+  {
+    "path": "data/processed/analysis/2022/oof/merge_audit.json",
+    "bytes": 1979,
+    "sha256": "d860d43ca165d09909a041f82bb98d158627799b0a64792f0fd3fb96650533ad"
+  },
+  {
+    "path": "data/processed/analysis/2022/oof/review_queue.csv",
+    "bytes": 869,
+    "sha256": "7500121f4eb816bd818d6c4315380b6b0959a143fa965787e692ea6b3a33aa6b",
+    "rows": 7
+  },
+  {
+    "path": "data/processed/analysis/2022/oof/review_simulation.json",
+    "bytes": 788,
+    "sha256": "00131944a9f3342dd593ab04c0ae57efe7bff1261d515ad436e365d4cf89a8be"
+  },
+  {
+    "path": "data/processed/analysis/2022/oof/summary.json",
+    "bytes": 1179,
+    "sha256": "2cdd233f89292a017a03b8361c85424929845442a163911494200ee5d43a28f2"
+  },
+  {
+    "path": "data/processed/analysis/2023/oof/data_needed.csv",
+    "bytes": 58,
+    "sha256": "75b7719a93f0fe0f948b4179601cfa2c2b14f34f0a9150a1e11d29af3c85152d",
+    "rows": 0
+  },
+  {
+    "path": "data/processed/analysis/2023/oof/feature_coverage.json",
+    "bytes": 1362,
+    "sha256": "127616f9c9218bb591e65f66aa1300e9e1e07e5173bf01d6043df9c2b13e14ca"
+  },
+  {
+    "path": "data/processed/analysis/2023/oof/merge_audit.json",
+    "bytes": 1797,
+    "sha256": "bfcbb0cb9f3e1dd8149342460555020dbd816ac849dd59a1835d567f04e5ae55"
+  },
+  {
+    "path": "data/processed/analysis/2023/oof/review_queue.csv",
+    "bytes": 2271,
+    "sha256": "7774a9ae18ce4431876219ae38bd709bfc7a1db48180df916a134eac31e04b17",
+    "rows": 19
+  },
+  {
+    "path": "data/processed/analysis/2023/oof/review_simulation.json",
+    "bytes": 788,
+    "sha256": "227ddcb96a7f5954526d42fed4786f651c9f090811e8ecfbb58c59dd6087e846"
+  },
+  {
+    "path": "data/processed/analysis/2023/oof/summary.json",
+    "bytes": 1394,
+    "sha256": "6c89048d4d01c94cef1d2c71003fd61e8fba1fab81b10c55fe3cc2a78049d7e8"
+  },
+  {
+    "path": "data/processed/analysis/2024/oof/data_needed.csv",
+    "bytes": 59,
+    "sha256": "25d52af90dc27aaa3b9b98660ca9ec9cdf9cbbcdb5b8f5cd45611dcb2cf15719",
+    "rows": 0
+  },
+  {
+    "path": "data/processed/analysis/2024/oof/feature_coverage.json",
+    "bytes": 1049,
+    "sha256": "8143b1f04d9212e5855dd59f1f74b0367b542bbf9a9fa9d34ac991f974840505"
+  },
+  {
+    "path": "data/processed/analysis/2024/oof/merge_audit.json",
+    "bytes": 2155,
+    "sha256": "43faa62223e758143abc1f090fdc56bac5b7faf0e0d02071495e97b5b5827ae6"
+  },
+  {
+    "path": "data/processed/analysis/2024/oof/review_queue.csv",
+    "bytes": 56,
+    "sha256": "0666bd2757859732d02ce67b9581767e70c3daf02c1b4284b2aa8306e64d4b0d",
+    "rows": 0
+  },
+  {
+    "path": "data/processed/analysis/2024/oof/review_simulation.json",
+    "bytes": 461,
+    "sha256": "3a8434ac174eeb40c86c3aa7bb77bea4eec28d64bd40501634aa7023871789c1"
+  },
+  {
+    "path": "data/processed/analysis/2024/oof/summary.json",
+    "bytes": 1218,
+    "sha256": "c2382981143fb287aac93d97ba3105a1f2ef0d49b778193640a80359112b4681"
+  },
+  {
+    "path": "data/processed/analysis/2025/oof/data_needed.csv",
+    "bytes": 59,
+    "sha256": "25d52af90dc27aaa3b9b98660ca9ec9cdf9cbbcdb5b8f5cd45611dcb2cf15719",
+    "rows": 0
+  },
+  {
+    "path": "data/processed/analysis/2025/oof/feature_coverage.json",
+    "bytes": 1049,
+    "sha256": "7c4d41535ea908900ab08bfdf2b4ae7682762fbd7e97eae29087385bf08fe9cd"
+  },
+  {
+    "path": "data/processed/analysis/2025/oof/merge_audit.json",
+    "bytes": 2155,
+    "sha256": "a9c3d2383e226b067055e588cb2f3f389afa5727d2cb709de190ce3216d1c56d"
+  },
+  {
+    "path": "data/processed/analysis/2025/oof/review_queue.csv",
+    "bytes": 56,
+    "sha256": "0666bd2757859732d02ce67b9581767e70c3daf02c1b4284b2aa8306e64d4b0d",
+    "rows": 0
+  },
+  {
+    "path": "data/processed/analysis/2025/oof/review_simulation.json",
+    "bytes": 461,
+    "sha256": "3a8434ac174eeb40c86c3aa7bb77bea4eec28d64bd40501634aa7023871789c1"
+  },
+  {
+    "path": "data/processed/analysis/2025/oof/summary.json",
+    "bytes": 1218,
+    "sha256": "99287b46d4345eda61cf44bc86ad34ea3ec94b13fd078053e97d0dcb9efd1956"
+  },
+  {
+    "path": "data/processed/analysis/annual_data_summary.csv",
+    "bytes": 732,
+    "sha256": "b77d11c005c33d8e80cd2aa7d3cd39bfbdee0c6234ca9a08194f30df0e587cad",
+    "rows": 4
+  },
+  {
+    "path": "data/processed/analysis/data_needed.csv",
+    "bytes": 58,
+    "sha256": "75b7719a93f0fe0f948b4179601cfa2c2b14f34f0a9150a1e11d29af3c85152d",
+    "rows": 0
+  },
+  {
+    "path": "data/processed/analysis/feature_coverage.json",
+    "bytes": 1139,
+    "sha256": "0efd8d964ea04779cdb90acaf2b681eb0e9aa2276c507c20c0af7357b0197a88"
+  },
+  {
+    "path": "data/processed/analysis/merge_audit.json",
+    "bytes": 1979,
+    "sha256": "d860d43ca165d09909a041f82bb98d158627799b0a64792f0fd3fb96650533ad"
+  },
+  {
+    "path": "data/processed/analysis/ndmi/inputs/cdl_year_catalog.json",
+    "bytes": 1056,
+    "sha256": "7dbc9fe861a6c04f0ef6ac37031695f4353a3cd70025dc0826f6ceb554365ee2"
+  },
+  {
+    "path": "data/processed/analysis/ndmi/inputs/corn_2021.json",
+    "bytes": 4222,
+    "sha256": "97f9f227aabd5938eaae762f7d31e0a10e212b6c4dc6e83ae74ecd6c9545fd11"
+  },
+  {
+    "path": "data/processed/analysis/ndmi/inputs/corn_2022.json",
+    "bytes": 4223,
+    "sha256": "91eb21d9f81a69ba31f925d144c3b27a4ed70fd586331d909af2396177a1142f"
+  },
+  {
+    "path": "data/processed/analysis/ndmi/inputs/corn_2023.json",
+    "bytes": 4223,
+    "sha256": "cf4a2d12693f1345adc54101ec5a0e319d1465a9625afa6a4417201103332402"
+  },
+  {
+    "path": "data/processed/analysis/ndmi/inputs/corn_2024.json",
+    "bytes": 4223,
+    "sha256": "a8e3eb1df82f2058f221c1e641d7b95146c161037ebfb611b0d07ca6bcaafb63"
+  },
+  {
+    "path": "data/processed/analysis/ndmi/inputs/corn_2025.json",
+    "bytes": 4223,
+    "sha256": "2cb0428b4abacb81e3e54068987b4687a0f2409bfde75104eba36bda64e9fa74"
+  },
+  {
+    "path": "data/processed/analysis/ndmi/inputs/grid.json",
+    "bytes": 203,
+    "sha256": "3550e6b15dbf3a47c4558d7393e3712c5260898e3710e4a2791c3db0b81a55cf"
+  },
+  {
+    "path": "data/processed/analysis/ndmi/maryland_corn_ndmi_2021_05.csv",
+    "bytes": 242,
+    "sha256": "479460ba5066120d6924340af4c619f5db43e77b92676ea6e18539dcd522be72",
+    "rows": 1
+  },
+  {
+    "path": "data/processed/analysis/ndmi/maryland_corn_ndmi_monthly_2021_2025.csv",
+    "bytes": 2425,
+    "sha256": "d6c726a2f29f1fe3bbd6af59cd53eb6c1c5c470195fac8f8feef09b97e5e2584",
+    "rows": 60
+  },
+  {
+    "path": "data/processed/analysis/ndmi/months/2021_01.json",
+    "bytes": 13831,
+    "sha256": "0b829dadb66619b94844480c3c9bf39472b3a908651b259398f3baa082432648"
+  },
+  {
+    "path": "data/processed/analysis/ndmi/months/2021_02.json",
+    "bytes": 8507,
+    "sha256": "e58284a062045a9c0bef16083c7ad7f918d6520034772ab08f0d1a7ad1e6def7"
+  },
+  {
+    "path": "data/processed/analysis/ndmi/months/2021_03.json",
+    "bytes": 15995,
+    "sha256": "1e2dac5672345bc450c072dd484cb742dab52db402d32f959d2e59893b584fd7"
+  },
+  {
+    "path": "data/processed/analysis/ndmi/months/2021_05.json",
+    "bytes": 13833,
+    "sha256": "94c42ed85474829c8c90a323d5f13be0a5493eb5fa33e98e17fd33661311685b"
+  },
+  {
+    "path": "data/processed/analysis/ndmi/pixel_calculation_examples.csv",
+    "bytes": 2803,
+    "sha256": "2c22bdb563535471da7dac13b9f3e4c5c836ab47da517681351ab028e3e4f8e0",
+    "rows": 20
+  },
+  {
+    "path": "data/processed/analysis/ndmi/used_scenes.csv",
+    "bytes": 31185,
+    "sha256": "bbe25be52e2a3f9031f67768be9c2ed761df51b5d80d39e21f1fb0589afe5e46",
+    "rows": 37
+  },
+  {
+    "path": "data/processed/analysis/period_status.json",
+    "bytes": 3661,
+    "sha256": "f7dbb9250c149e08df86c236f1c264a5bcf00148a45192823b15f88e95cabbc4"
+  },
+  {
+    "path": "data/processed/analysis/review_field_corrections.csv",
+    "bytes": 753,
+    "sha256": "7df8f48a909becdc958c2da3fa5e6c49e6fe3937b229f5aa83f63839d1bc8c44",
+    "rows": 6
+  },
+  {
+    "path": "data/processed/analysis/review_queue.csv",
+    "bytes": 869,
+    "sha256": "7500121f4eb816bd818d6c4315380b6b0959a143fa965787e692ea6b3a33aa6b",
+    "rows": 7
+  },
+  {
+    "path": "data/processed/analysis/review_simulation.json",
+    "bytes": 788,
+    "sha256": "00131944a9f3342dd593ab04c0ae57efe7bff1261d515ad436e365d4cf89a8be"
+  },
+  {
+    "path": "data/processed/analysis/summary.json",
+    "bytes": 1179,
+    "sha256": "2cdd233f89292a017a03b8361c85424929845442a163911494200ee5d43a28f2"
+  },
+  {
+    "path": "data/processed/analysis/year_change_decomposition.csv",
+    "bytes": 422,
+    "sha256": "639279479b6283984815af85bcb5ffb0c7fb9bb9836da83a7a0dc1817d6317cc",
+    "rows": 3
+  }
+]

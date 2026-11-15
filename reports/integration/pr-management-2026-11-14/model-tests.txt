@@ -1,0 +1,15 @@
+test_duplicate_and_field_leakage_rejected (src.model.test_pipeline.ContractTests.test_duplicate_and_field_leakage_rejected) ... ok
+test_extra_feature_columns_cannot_replace_truth (src.model.test_pipeline.ContractTests.test_extra_feature_columns_cannot_replace_truth) ... ok
+test_farm_leakage_rejected_before_training (src.model.test_pipeline.ContractTests.test_farm_leakage_rejected_before_training) ... ok
+test_farm_plan_and_unknown_feature_id (src.model.test_pipeline.ContractTests.test_farm_plan_and_unknown_feature_id) ... ok
+test_missing_training_class_abstains (src.model.test_pipeline.ContractTests.test_missing_training_class_abstains) ... ok
+test_one_realistic_feature_row_cannot_train_or_infer (src.model.test_pipeline.ContractTests.test_one_realistic_feature_row_cannot_train_or_infer) ... ok
+test_pending_no_fake_rows (src.model.test_pipeline.ContractTests.test_pending_no_fake_rows) ... ok
+test_training_roles_and_fold_imputation (src.model.test_pipeline.ContractTests.test_training_roles_and_fold_imputation) ... ok
+test_undefined_metrics (src.model.test_pipeline.ContractTests.test_undefined_metrics) ... ok
+test_unmatched_and_quality_exclusions (src.model.test_pipeline.ContractTests.test_unmatched_and_quality_exclusions) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 1.597s
+
+OK

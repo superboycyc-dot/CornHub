@@ -1,0 +1,16 @@
+test_b5_b6_saturation_and_terrain_rejected (test_ndmi.NDMIQualityTests.test_b5_b6_saturation_and_terrain_rejected) ... ok
+test_each_cloud_shadow_snow_fill_flag_rejected (test_ndmi.NDMIQualityTests.test_each_cloud_shadow_snow_fill_flag_rejected) ... ok
+test_equal_bands_and_band_swap (test_ndmi.NDMIQualityTests.test_equal_bands_and_band_swap) ... ok
+test_missing_or_negative_reflectance_rejected (test_ndmi.NDMIQualityTests.test_missing_or_negative_reflectance_rejected) ... ok
+test_scale_offset_before_ratio (test_ndmi.NDMIQualityTests.test_scale_offset_before_ratio) ... ok
+test_gpu_equivalence_when_available (test_remote.RemoteTests.test_gpu_equivalence_when_available) ... skipped 'CuPy not installed'
+test_resource_bounds (test_remote.RemoteTests.test_resource_bounds) ... ok
+test_scene_error_circuit_breaker (test_remote.RemoteTests.test_scene_error_circuit_breaker) ... /workspace/work/CornHub/src/analysis/ndmi/calculate.py:310: DeprecationWarning: The 'shapely.ops.transform()' function is deprecated. Use 'shapely.transform()' or 'shapely.transform_coordseq()' instead. See https://shapely.readthedocs.io/en/latest/manual.html#shapely.ops.transform for more details.
+  footprint = geometry_transform(projection.transform, shape(item['geometry']))
+ok
+test_unknown_backend_rejected (test_remote.RemoteTests.test_unknown_backend_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.026s
+
+OK (skipped=1)

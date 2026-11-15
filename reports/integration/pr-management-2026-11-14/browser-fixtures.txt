@@ -1,0 +1,1 @@
+PASS: desktop/mobile empty screenshots; manifest failure; year/role joins; summary scope; duplicate rejection; no browser errors.
