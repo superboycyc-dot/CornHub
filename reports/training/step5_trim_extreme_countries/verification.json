@@ -1,0 +1,13 @@
+{
+  "all_source_fold_assignments_reused": true,
+  "spatial_groups_stay_in_one_fold": true,
+  "previous_oof_row_and_label_keys_match": true,
+  "filtered_models_use_only_ndvi_features": true,
+  "no_country_feature_or_weights": true,
+  "all_filtered_rows_have_oof": true,
+  "fold_models_reload_equal": true,
+  "full_models_reload_equal": true,
+  "threshold_fixed": 0.5,
+  "random_seed_fixed": 42,
+  "excluded_countries_chosen_by_predeclared_label_composition_rules": true
+}

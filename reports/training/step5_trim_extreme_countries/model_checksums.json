@@ -1,0 +1,19 @@
+{
+  "models/exclude_single_label_countries_fold_4.joblib": "94d80d4ec1009890c986694066a59ed55527b4bf81ddcd2464751389b680c4c9",
+  "models/all_countries_fold_1.joblib": "40d34181e00d83e8b842473286fe2df817e7d5643474d51882a689d7da342b4b",
+  "models/exclude_single_label_countries_fold_1.joblib": "c6b8f669ee4e24eec1456dd2167ae5923c63c09fb91a63f8a903df4f2b96be7c",
+  "models/exclude_countries_with_at_least_90pct_one_label_fold_1.joblib": "d37a102e02f50ff7698239a2ff57253675e402b00d3bc2a3194ff627ac0b657a",
+  "models/all_countries_fold_3.joblib": "2a1df09063d87cd335d5d4225d3d091b80f966208fd3a5cffc28eb42225b4bfd",
+  "models/all_countries_full_model.joblib": "83fc982a03928e2d4c8e85ffd110a40fa91fe2787b34fe3b1b4c25609c1c25a7",
+  "models/all_countries_fold_4.joblib": "934f35463fa88d8808882494e623f4b4cc13e67632a06e7ed925cef16ae80c01",
+  "models/exclude_countries_with_at_least_90pct_one_label_full_model.joblib": "6bd58c1e3e41923900524484b69317d08d181046375b03715436491baaf85fad",
+  "models/exclude_countries_with_at_least_90pct_one_label_fold_3.joblib": "6d55ffb2bd24427bde57966cba8a5aead54822ba59e3cbfa3496606d2de7b3e5",
+  "models/exclude_single_label_countries_fold_0.joblib": "95bf84c4c8e4d86bd906234596174ae711b0b88dd07d2091339f0a156aa5f5d2",
+  "models/all_countries_fold_0.joblib": "3c02236d00e566c4e32e9016f9196755e9e516f343125967495772eabc03b0be",
+  "models/exclude_countries_with_at_least_90pct_one_label_fold_0.joblib": "f6e03336db6750ccdb21e695cde3098c94d62d84d66211323b355170d9a871b4",
+  "models/exclude_single_label_countries_fold_3.joblib": "c7f3e4fd2f07bcb3e0be3c305ed5456900d9f0f5e8244d263073398ce172d003",
+  "models/all_countries_fold_2.joblib": "96da0647e10ba634282403b73ab42925652003917798a587752bf9647b408a70",
+  "models/exclude_single_label_countries_fold_2.joblib": "99073254e8ae7991d5b62d022247f387e31431f9d3dcf5544fff6eff404e3d17",
+  "models/exclude_countries_with_at_least_90pct_one_label_fold_4.joblib": "0d48177c8cdc61d770f3c7e9a61640c3412767574aac9ffcdf6584867bf3e30e",
+  "models/exclude_single_label_countries_full_model.joblib": "ffe1cf2e4a0a82640eb74a0a1c37063f69a44073f7a5ead42cf54c2e5a5f5da7"
+}

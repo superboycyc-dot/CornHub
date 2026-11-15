@@ -1,0 +1,10 @@
+[
+  {
+    "path": "/home/ubuntu/cornhub-compute/runs/step3-global-20261115T011738Z/training_rows.parquet",
+    "sha256": "defb29c394fb59a153922ea8c772e0bb315fd030828cc0e10ab2cf73ce3724a5"
+  },
+  {
+    "path": "/home/ubuntu/cornhub-compute/runs/step4-blind-ndvi-20261115T012838Z/oof_predictions.csv",
+    "sha256": "ea84c19f4b5c22df6f89791faa174fc2926bf00ac3912569a8c43f0042a7c109"
+  }
+]
