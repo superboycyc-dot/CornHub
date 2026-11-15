@@ -1,0 +1,372 @@
+[
+  {
+    "fold_id": "0",
+    "n_train": 32,
+    "n_test": 12,
+    "train_class_counts": [
+      21,
+      11
+    ],
+    "test_class_counts": [
+      11,
+      1
+    ],
+    "step1": {
+      "n": 12,
+      "accuracy": 1.0,
+      "correct": 12,
+      "balanced_accuracy": 1.0,
+      "macro_f1": 1.0,
+      "silage_precision": 1.0,
+      "silage_recall": 1.0,
+      "brier_score": 0.07810254685137942,
+      "roc_auc": 1.0,
+      "confusion_matrix": [
+        [
+          11,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    },
+    "step2": {
+      "n": 12,
+      "accuracy": 0.8333333333333334,
+      "correct": 10,
+      "balanced_accuracy": 0.9090909090909092,
+      "macro_f1": 0.7,
+      "silage_precision": 0.3333333333333333,
+      "silage_recall": 1.0,
+      "brier_score": 0.10534904223356008,
+      "roc_auc": 1.0,
+      "confusion_matrix": [
+        [
+          9,
+          2
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    },
+    "test_farm_groups": [
+      "22358"
+    ],
+    "imputer_statistics": [
+      0.892667010235481,
+      203.0,
+      0.07297619642588242,
+      250.0,
+      0.4488338963329481,
+      42.47028
+    ]
+  },
+  {
+    "fold_id": "1",
+    "n_train": 42,
+    "n_test": 2,
+    "train_class_counts": [
+      30,
+      12
+    ],
+    "test_class_counts": [
+      2,
+      0
+    ],
+    "step1": {
+      "n": 2,
+      "accuracy": 1.0,
+      "correct": 2,
+      "balanced_accuracy": null,
+      "macro_f1": null,
+      "silage_precision": 0.0,
+      "silage_recall": null,
+      "brier_score": 0.04700898242630386,
+      "roc_auc": null,
+      "confusion_matrix": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    },
+    "step2": {
+      "n": 2,
+      "accuracy": 1.0,
+      "correct": 2,
+      "balanced_accuracy": null,
+      "macro_f1": null,
+      "silage_precision": 0.0,
+      "silage_recall": null,
+      "brier_score": 0.06647207851473924,
+      "roc_auc": null,
+      "confusion_matrix": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    },
+    "test_farm_groups": [
+      "22359"
+    ],
+    "imputer_statistics": [
+      0.8890465697376311,
+      200.0,
+      0.05399108860233,
+      250.0,
+      0.44058968639956664,
+      43.1287885
+    ]
+  },
+  {
+    "fold_id": "2",
+    "n_train": 19,
+    "n_test": 25,
+    "train_class_counts": [
+      18,
+      1
+    ],
+    "test_class_counts": [
+      14,
+      11
+    ],
+    "step1": {
+      "n": 25,
+      "accuracy": 0.68,
+      "correct": 17,
+      "balanced_accuracy": 0.6461038961038961,
+      "macro_f1": 0.6323529411764706,
+      "silage_precision": 0.8,
+      "silage_recall": 0.36363636363636365,
+      "brier_score": 0.21771507287365263,
+      "roc_auc": 0.7467532467532467,
+      "confusion_matrix": [
+        [
+          13,
+          1
+        ],
+        [
+          7,
+          4
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    },
+    "step2": {
+      "n": 25,
+      "accuracy": 0.72,
+      "correct": 18,
+      "balanced_accuracy": 0.6818181818181819,
+      "macro_f1": 0.6666666666666667,
+      "silage_precision": 1.0,
+      "silage_recall": 0.36363636363636365,
+      "brier_score": 0.21221268829977696,
+      "roc_auc": 0.7597402597402597,
+      "confusion_matrix": [
+        [
+          14,
+          0
+        ],
+        [
+          7,
+          4
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    },
+    "test_farm_groups": [
+      "22380"
+    ],
+    "imputer_statistics": [
+      0.8625875032408608,
+      200.0,
+      0.039977458397232615,
+      240.0,
+      0.4309444314504809,
+      44.725954
+    ]
+  },
+  {
+    "fold_id": "3",
+    "n_train": 40,
+    "n_test": 4,
+    "train_class_counts": [
+      28,
+      12
+    ],
+    "test_class_counts": [
+      4,
+      0
+    ],
+    "step1": {
+      "n": 4,
+      "accuracy": 1.0,
+      "correct": 4,
+      "balanced_accuracy": null,
+      "macro_f1": null,
+      "silage_precision": 0.0,
+      "silage_recall": null,
+      "brier_score": 0.029060494083049893,
+      "roc_auc": null,
+      "confusion_matrix": [
+        [
+          4,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    },
+    "step2": {
+      "n": 4,
+      "accuracy": 1.0,
+      "correct": 4,
+      "balanced_accuracy": null,
+      "macro_f1": null,
+      "silage_precision": 0.0,
+      "silage_recall": null,
+      "brier_score": 0.040575791666666666,
+      "roc_auc": null,
+      "confusion_matrix": [
+        [
+          4,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    },
+    "test_farm_groups": [
+      "22381"
+    ],
+    "imputer_statistics": [
+      0.889545157193808,
+      200.0,
+      0.0547237047999343,
+      250.0,
+      0.4381019473797916,
+      42.731026
+    ]
+  },
+  {
+    "fold_id": "4",
+    "n_train": 43,
+    "n_test": 1,
+    "train_class_counts": [
+      31,
+      12
+    ],
+    "test_class_counts": [
+      1,
+      0
+    ],
+    "step1": {
+      "n": 1,
+      "accuracy": 1.0,
+      "correct": 1,
+      "balanced_accuracy": null,
+      "macro_f1": null,
+      "silage_precision": 0.0,
+      "silage_recall": null,
+      "brier_score": 5.624999999999963e-05,
+      "roc_auc": null,
+      "confusion_matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    },
+    "step2": {
+      "n": 1,
+      "accuracy": 1.0,
+      "correct": 1,
+      "balanced_accuracy": null,
+      "macro_f1": null,
+      "silage_precision": 0.0,
+      "silage_recall": null,
+      "brier_score": 0.0005840277777777778,
+      "roc_auc": null,
+      "confusion_matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    },
+    "test_farm_groups": [
+      "22854"
+    ],
+    "imputer_statistics": [
+      0.8889454915944982,
+      200.0,
+      0.05505157702681067,
+      250.0,
+      0.4428119450644788,
+      43.058134
+    ]
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "path": "data/processed/maryland_field_dairy_distances/README.md",
+    "commit": "4b1dd4ab834fbb4b3e8745d8f7c68453162f0121",
+    "sha256": "1441c9c029eea4f7df7bc126de309e56d438cfeabb5e70006765606e8c3f0afc"
+  },
+  {
+    "path": "data/processed/maryland_field_dairy_distances/dairy_locations.csv",
+    "commit": "4b1dd4ab834fbb4b3e8745d8f7c68453162f0121",
+    "sha256": "5ef23cd91b234700566a1c5c14e9b0f04f61ed726ddde6c274f3a7da842b3723"
+  },
+  {
+    "path": "data/processed/maryland_field_dairy_distances/distance_matrix_km.csv",
+    "commit": "4b1dd4ab834fbb4b3e8745d8f7c68453162f0121",
+    "sha256": "faca184aca3f178381f029a4e25c5f236d5e7b3848afffb422652bc633ffe526"
+  },
+  {
+    "path": "data/processed/maryland_field_dairy_distances/field_year_farm_distances.csv",
+    "commit": "4b1dd4ab834fbb4b3e8745d8f7c68453162f0121",
+    "sha256": "b6d5e0e9695e618f537363a800563a0825ef004c03ef117e33b19d0a5f69bd28"
+  },
+  {
+    "path": "data/processed/maryland_field_dairy_distances/field_year_index.csv",
+    "commit": "4b1dd4ab834fbb4b3e8745d8f7c68453162f0121",
+    "sha256": "e25468d270cdc4add373effc8a78f9dbf81dd43dd3f42455d2c72f82b4aa8a18"
+  },
+  {
+    "path": "data/processed/maryland_field_dairy_distances/nearest_dairy_by_field_year.csv",
+    "commit": "4b1dd4ab834fbb4b3e8745d8f7c68453162f0121",
+    "sha256": "36ecaaf3d33bd0a7b2a6d718702c75d9f034c7e15d5634af842811c9e3c378f6"
+  },
+  {
+    "path": "data/processed/maryland_field_dairy_distances/unique_field_farm_distances.csv",
+    "commit": "4b1dd4ab834fbb4b3e8745d8f7c68453162f0121",
+    "sha256": "a48b5a5632972b26cf4aa51f0a41032b45d4ca9e24d04cec2dcf84fe65b899bd"
+  },
+  {
+    "path": "data/processed/maryland_field_dairy_distances/unresolved_dairy_locations.csv",
+    "commit": "4b1dd4ab834fbb4b3e8745d8f7c68453162f0121",
+    "sha256": "745d2b4eb5292e998dfc6f9911e65dcde085b798d9a2c6433a185405969c2ce9"
+  },
+  {
+    "path": "data/processed/maryland_field_dairy_distances/validation.json",
+    "commit": "4b1dd4ab834fbb4b3e8745d8f7c68453162f0121",
+    "sha256": "6761bdd6881d87e3c6c2c4783d22e96ad374c5e43e8683d8225043b23019ce49"
+  },
+  {
+    "path": "reports/training/step1_ndvi_maryland/README.md",
+    "commit": "4b1dd4ab834fbb4b3e8745d8f7c68453162f0121",
+    "sha256": "4d237e371a483584188eb0eb1f505a49565bf23cab6a52a43c7e1eca15234a58"
+  },
+  {
+    "path": "reports/training/step1_ndvi_maryland/comparison_protocol.json",
+    "commit": "4b1dd4ab834fbb4b3e8745d8f7c68453162f0121",
+    "sha256": "e2c08c66c2b6a482bbfd2f818cf896632bbe1550b8d2bdad8a8e2b357df794be"
+  },
+  {
+    "path": "reports/training/step1_ndvi_maryland/environment.json",
+    "commit": "4b1dd4ab834fbb4b3e8745d8f7c68453162f0121",
+    "sha256": "27ad52620e36eea9c18f3b050189c9946dedd9ac648dfeb7bc0359116598e2bc"
+  },
+  {
+    "path": "reports/training/step1_ndvi_maryland/feature_importance.csv",
+    "commit": "4b1dd4ab834fbb4b3e8745d8f7c68453162f0121",
+    "sha256": "2c958d22e0a5a2165f2cebccef64d17a0f34c40e072a2ade74c9f9b050933520"
+  },
+  {
+    "path": "reports/training/step1_ndvi_maryland/fold_metrics.json",
+    "commit": "4b1dd4ab834fbb4b3e8745d8f7c68453162f0121",
+    "sha256": "a32231c1b98cca1a3eba8acd26b8ca81032fc6a24feba80769f38df4f78599fd"
+  },
+  {
+    "path": "reports/training/step1_ndvi_maryland/frozen_training_rows.csv",
+    "commit": "4b1dd4ab834fbb4b3e8745d8f7c68453162f0121",
+    "sha256": "8b82aab9c22d1e7fac1f33d0502bf51bd1f1ab1817d27c4c08f93ffc127b77ec"
+  },
+  {
+    "path": "reports/training/step1_ndvi_maryland/input_manifest.json",
+    "commit": "4b1dd4ab834fbb4b3e8745d8f7c68453162f0121",
+    "sha256": "58c7ff8760e96e5bf1a9f0b2f566cada2203a4ac598dd5dad1838cc5dae9ac1a"
+  },
+  {
+    "path": "reports/training/step1_ndvi_maryland/input_validation.json",
+    "commit": "4b1dd4ab834fbb4b3e8745d8f7c68453162f0121",
+    "sha256": "b8f9f900e6556460068b87a719ad5e73a844c151440c45686c404cfddf9e6e9e"
+  },
+  {
+    "path": "reports/training/step1_ndvi_maryland/metrics.json",
+    "commit": "4b1dd4ab834fbb4b3e8745d8f7c68453162f0121",
+    "sha256": "b6e99bf0f4afc3362b538dfcc292758e7e5e651d8a5ef3693de25e63c1d0e683"
+  },
+  {
+    "path": "reports/training/step1_ndvi_maryland/model_checksums.json",
+    "commit": "4b1dd4ab834fbb4b3e8745d8f7c68453162f0121",
+    "sha256": "68f20b9aa39b763cad557e1aadb41217991a0c3ac4395eeadea823276e93e7a8"
+  },
+  {
+    "path": "reports/training/step1_ndvi_maryland/oof_predictions.csv",
+    "commit": "4b1dd4ab834fbb4b3e8745d8f7c68453162f0121",
+    "sha256": "c66e826b5e80d99444ccfdc049670fee257ad82176c7613c710fd443f91a5e0e"
+  },
+  {
+    "path": "reports/training/step1_ndvi_maryland/requirements.lock.txt",
+    "commit": "4b1dd4ab834fbb4b3e8745d8f7c68453162f0121",
+    "sha256": "355fd012d5223c18a2f4a7d60ad874c90a6c807ddd954887917fd45f078edc31"
+  },
+  {
+    "path": "reports/training/step1_ndvi_maryland/train_step1.py",
+    "commit": "4b1dd4ab834fbb4b3e8745d8f7c68453162f0121",
+    "sha256": "1f46af6054a8c4b21951d18d5910721f1f58653f27e2faa75ecd1e90addf7a56"
+  },
+  {
+    "path": "reports/training/step1_ndvi_maryland/trained_models.zip",
+    "commit": "4b1dd4ab834fbb4b3e8745d8f7c68453162f0121",
+    "sha256": "3cb424b057f2741ab2efa41b5808abf8b121c8fc9e228001b5693e7f2beb2dd8"
+  },
+  {
+    "path": "reports/training/step1_ndvi_maryland/verification.json",
+    "commit": "4b1dd4ab834fbb4b3e8745d8f7c68453162f0121",
+    "sha256": "c5b6d85564cde885d544152020110992b051f544e9a078fd7dd920ba7e931fb1"
+  }
+]

@@ -1,0 +1,122 @@
+{
+  "n": 44,
+  "accuracy": 0.7954545454545454,
+  "correct": 35,
+  "balanced_accuracy": 0.6770833333333334,
+  "macro_f1": 0.6979405034324943,
+  "silage_precision": 0.7142857142857143,
+  "silage_recall": 0.4166666666666667,
+  "brier_score": 0.15603038785843337,
+  "roc_auc": 0.7942708333333333,
+  "confusion_matrix": [
+    [
+      30,
+      2
+    ],
+    [
+      7,
+      5
+    ]
+  ],
+  "confusion_order": [
+    "grain",
+    "silage"
+  ],
+  "status": "trained_and_evaluated",
+  "stage": 2,
+  "region": "Maryland BARC only",
+  "sample_count": 44,
+  "unique_fields": 34,
+  "class_counts": {
+    "grain": 32,
+    "silage": 12
+  },
+  "features": [
+    "ndvi_peak",
+    "peak_doy",
+    "max_drop_per_day",
+    "drop_doy",
+    "ndvi_late_mean",
+    "nearest_dairy_distance_km"
+  ],
+  "threshold": 0.5,
+  "evaluation": "same frozen five-fold leave-one-farm-out OOF as step 1",
+  "probabilities_calibrated": false,
+  "by_year": {
+    "2021": {
+      "n": 18,
+      "accuracy": 0.7777777777777778,
+      "correct": 14,
+      "balanced_accuracy": 0.5,
+      "macro_f1": 0.4375,
+      "silage_precision": 0.0,
+      "silage_recall": 0.0,
+      "brier_score": 0.14749989923824008,
+      "roc_auc": 0.7857142857142857,
+      "confusion_matrix": [
+        [
+          14,
+          0
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    },
+    "2022": {
+      "n": 7,
+      "accuracy": 0.7142857142857143,
+      "correct": 5,
+      "balanced_accuracy": 0.75,
+      "macro_f1": 0.7083333333333333,
+      "silage_precision": 1.0,
+      "silage_recall": 0.5,
+      "brier_score": 0.2458781117618696,
+      "roc_auc": 0.6666666666666667,
+      "confusion_matrix": [
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    },
+    "2023": {
+      "n": 19,
+      "accuracy": 0.8421052631578947,
+      "correct": 16,
+      "balanced_accuracy": 0.8083333333333333,
+      "macro_f1": 0.7816091954022988,
+      "silage_precision": 0.6,
+      "silage_recall": 0.75,
+      "brier_score": 0.1310101103762978,
+      "roc_auc": 0.9,
+      "confusion_matrix": [
+        [
+          13,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    }
+  }
+}

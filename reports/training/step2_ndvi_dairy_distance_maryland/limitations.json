@@ -1,0 +1,9 @@
+[
+  "Small cohort: 44 field-years, 34 fields, five farms; exploratory validation",
+  "Dairy location list assembled in 2026; operating/location status during 2021-2023 not independently verified",
+  "Distances are straight-line geodesic distances to approximate address points, not driving distance or confirmed silage relationships",
+  "Some dairy locations are retail/associated or low-precision reference addresses",
+  "No hyperparameter or distance-feature search; no guarantee accuracy improves",
+  "Distance may proxy geography; result does not establish causal feed supply relationships",
+  "Stage 3 not run"
+]

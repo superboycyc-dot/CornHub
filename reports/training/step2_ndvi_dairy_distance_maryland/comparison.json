@@ -1,0 +1,64 @@
+{
+  "step1": {
+    "n": 44,
+    "accuracy": 0.8181818181818182,
+    "correct": 36,
+    "balanced_accuracy": 0.6927083333333334,
+    "macro_f1": 0.7206349206349206,
+    "silage_precision": 0.8333333333333334,
+    "silage_recall": 0.4166666666666667,
+    "brier_score": 0.14978235398278808,
+    "roc_auc": 0.8046875,
+    "confusion_matrix": [
+      [
+        31,
+        1
+      ],
+      [
+        7,
+        5
+      ]
+    ],
+    "confusion_order": [
+      "grain",
+      "silage"
+    ]
+  },
+  "step2": {
+    "n": 44,
+    "accuracy": 0.7954545454545454,
+    "correct": 35,
+    "balanced_accuracy": 0.6770833333333334,
+    "macro_f1": 0.6979405034324943,
+    "silage_precision": 0.7142857142857143,
+    "silage_recall": 0.4166666666666667,
+    "brier_score": 0.15603038785843337,
+    "roc_auc": 0.7942708333333333,
+    "confusion_matrix": [
+      [
+        30,
+        2
+      ],
+      [
+        7,
+        5
+      ]
+    ],
+    "confusion_order": [
+      "grain",
+      "silage"
+    ]
+  },
+  "accuracy_change_pp": -2.272727272727282,
+  "macro_f1_change": -0.022694417202426376,
+  "silage_recall_change_pp": 0.0,
+  "outcome": "degraded",
+  "step1_wrong_now_correct": 1,
+  "step1_correct_now_wrong": 2,
+  "same_cohort": true,
+  "same_folds": true,
+  "same_parameters": true,
+  "same_seed": true,
+  "feature_selection": "Predeclared single added feature: nearest dairy location distance in km; no validation-driven search",
+  "no_statistical_significance_claim": "44 repeated field-year observations in five farms; changes are descriptive"
+}

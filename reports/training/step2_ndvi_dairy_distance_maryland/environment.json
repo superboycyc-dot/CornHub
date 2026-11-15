@@ -1,0 +1,17 @@
+{
+  "hostname": "brev-wfu5hudhr",
+  "python": "3.12.16",
+  "numpy": "2.5.4",
+  "sklearn": "1.9.1",
+  "joblib": "1.6.0",
+  "parameters": {
+    "n_estimators": 100,
+    "max_depth": 4,
+    "min_samples_leaf": 2,
+    "class_weight": "balanced",
+    "random_state": 42,
+    "n_jobs": 1
+  },
+  "input_commit": "4b1dd4ab834fbb4b3e8745d8f7c68453162f0121",
+  "execution": "NVIDIA Brev host CPU; sklearn random forest"
+}

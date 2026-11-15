@@ -1,0 +1,15 @@
+{
+  "baseline_saved_models_reproduce_all_44_predictions": true,
+  "baseline_accuracy_and_confusion_reproduced": true,
+  "exactly_44_matching_sample_keys": true,
+  "all_2948_distance_pairs_checked": true,
+  "nearest_distances_recomputed": true,
+  "only_one_added_distance_feature": true,
+  "no_field_or_farm_leakage": true,
+  "fold_models_reload_equal": true,
+  "full_model_reload_equal": true,
+  "no_heldout_imputation_statistics": true,
+  "no_overseas_or_national_candidate_rows": true,
+  "independent_saved_fold_models_reproduce_all_44_predictions": true,
+  "independent_accuracy_confusion_and_delta_verified": true
+}
