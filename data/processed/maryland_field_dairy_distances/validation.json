@@ -1,0 +1,49 @@
+{
+  "status": "completed",
+  "region": "Maryland only",
+  "field_years": 44,
+  "unique_fields": 34,
+  "dairy_locations": 67,
+  "field_year_pairs": 2948,
+  "unique_field_location_pairs": 2278,
+  "distance_unit": "km",
+  "method": "WGS84 ellipsoidal geodesic via pyproj.Geod.inv",
+  "field_reference": "point on surface derived in EPSG:26918 then transformed to EPSG:4326",
+  "not_road_distance": true,
+  "input_snapshot": "/home/ubuntu/cornhub-compute/workspaces/505d85800d39db8f",
+  "inputs": [
+    {
+      "branch": "work/a-data",
+      "commit": "df7ce8cd63039e90de7ca78ba95f4f3259ee15c5",
+      "path": "data/processed/core/fields.geojson",
+      "sha256": "0ec8c03cbf78ee2dbadc79eb0b43604126e82ecbb2a96710f790574214e252de",
+      "bytes": 1392322
+    },
+    {
+      "branch": "work/a-data",
+      "commit": "df7ce8cd63039e90de7ca78ba95f4f3259ee15c5",
+      "path": "data/processed/core/labels.csv",
+      "sha256": "b7c453f7535eca3fea4477bd4861864d5912e47c1330be7c67588d8c94185f0a",
+      "bytes": 2575
+    },
+    {
+      "branch": "main",
+      "commit": "884f8ad91a5b0e469d38662dca2ad1868dcc8b93",
+      "path": "data/maryland_dairy_farms.csv",
+      "sha256": "35bafb3ec69d190703c68697577f4a6c4e61992e2115e416576b7a090d51db49",
+      "bytes": 54532
+    }
+  ],
+  "min_distance_km": 39.845371,
+  "max_distance_km": 158.324923,
+  "checks": [
+    "44 unique field-year keys",
+    "67 distinct Maryland location IDs",
+    "finite nonnegative distances",
+    "all representative points within boundaries",
+    "geodesic equatorial known-distance check",
+    "reverse scalar verification of every unique field-location pair",
+    "2948 unique annual pair keys",
+    "same field distance reused consistently across years"
+  ]
+}
