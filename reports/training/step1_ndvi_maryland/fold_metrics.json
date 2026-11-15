@@ -1,0 +1,288 @@
+[
+  {
+    "fold_id": "0",
+    "n_train": 32,
+    "n_test": 12,
+    "train_class_counts": [
+      21,
+      11
+    ],
+    "test_class_counts": [
+      11,
+      1
+    ],
+    "test_field_ids": [
+      "barc_332",
+      "barc_334",
+      "barc_347",
+      "barc_348",
+      "barc_382",
+      "barc_383",
+      "barc_394",
+      "barc_397",
+      "barc_400",
+      "barc_429"
+    ],
+    "test_farm_groups": [
+      "22358"
+    ],
+    "metrics": {
+      "n": 12,
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "macro_f1": 1.0,
+      "silage_precision": 1.0,
+      "silage_recall": 1.0,
+      "brier_score": 0.07810254685137942,
+      "roc_auc": 1.0,
+      "confusion_matrix": [
+        [
+          11,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    },
+    "warnings": [],
+    "imputer_statistics": [
+      0.892667010235481,
+      203.0,
+      0.07297619642588242,
+      250.0,
+      0.4488338963329481
+    ]
+  },
+  {
+    "fold_id": "1",
+    "n_train": 42,
+    "n_test": 2,
+    "train_class_counts": [
+      30,
+      12
+    ],
+    "test_class_counts": [
+      2,
+      0
+    ],
+    "test_field_ids": [
+      "barc_548",
+      "barc_571"
+    ],
+    "test_farm_groups": [
+      "22359"
+    ],
+    "metrics": {
+      "n": 2,
+      "accuracy": 1.0,
+      "balanced_accuracy": null,
+      "macro_f1": null,
+      "silage_precision": 0.0,
+      "silage_recall": null,
+      "brier_score": 0.04700898242630386,
+      "roc_auc": null,
+      "confusion_matrix": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    },
+    "warnings": [],
+    "imputer_statistics": [
+      0.8890465697376311,
+      200.0,
+      0.05399108860233,
+      250.0,
+      0.44058968639956664
+    ]
+  },
+  {
+    "fold_id": "2",
+    "n_train": 19,
+    "n_test": 25,
+    "train_class_counts": [
+      18,
+      1
+    ],
+    "test_class_counts": [
+      14,
+      11
+    ],
+    "test_field_ids": [
+      "barc_230",
+      "barc_231",
+      "barc_238",
+      "barc_248",
+      "barc_251",
+      "barc_252",
+      "barc_254",
+      "barc_263",
+      "barc_278",
+      "barc_279",
+      "barc_280",
+      "barc_286",
+      "barc_288",
+      "barc_291",
+      "barc_292",
+      "barc_301",
+      "barc_323",
+      "barc_327",
+      "barc_328"
+    ],
+    "test_farm_groups": [
+      "22380"
+    ],
+    "metrics": {
+      "n": 25,
+      "accuracy": 0.68,
+      "balanced_accuracy": 0.6461038961038961,
+      "macro_f1": 0.6323529411764706,
+      "silage_precision": 0.8,
+      "silage_recall": 0.36363636363636365,
+      "brier_score": 0.21771507287365263,
+      "roc_auc": 0.7467532467532467,
+      "confusion_matrix": [
+        [
+          13,
+          1
+        ],
+        [
+          7,
+          4
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    },
+    "warnings": [
+      "Fewer than two training samples in one class"
+    ],
+    "imputer_statistics": [
+      0.8625875032408608,
+      200.0,
+      0.039977458397232615,
+      240.0,
+      0.4309444314504809
+    ]
+  },
+  {
+    "fold_id": "3",
+    "n_train": 40,
+    "n_test": 4,
+    "train_class_counts": [
+      28,
+      12
+    ],
+    "test_class_counts": [
+      4,
+      0
+    ],
+    "test_field_ids": [
+      "barc_1",
+      "barc_24"
+    ],
+    "test_farm_groups": [
+      "22381"
+    ],
+    "metrics": {
+      "n": 4,
+      "accuracy": 1.0,
+      "balanced_accuracy": null,
+      "macro_f1": null,
+      "silage_precision": 0.0,
+      "silage_recall": null,
+      "brier_score": 0.029060494083049893,
+      "roc_auc": null,
+      "confusion_matrix": [
+        [
+          4,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    },
+    "warnings": [],
+    "imputer_statistics": [
+      0.889545157193808,
+      200.0,
+      0.0547237047999343,
+      250.0,
+      0.4381019473797916
+    ]
+  },
+  {
+    "fold_id": "4",
+    "n_train": 43,
+    "n_test": 1,
+    "train_class_counts": [
+      31,
+      12
+    ],
+    "test_class_counts": [
+      1,
+      0
+    ],
+    "test_field_ids": [
+      "barc_511"
+    ],
+    "test_farm_groups": [
+      "22854"
+    ],
+    "metrics": {
+      "n": 1,
+      "accuracy": 1.0,
+      "balanced_accuracy": null,
+      "macro_f1": null,
+      "silage_precision": 0.0,
+      "silage_recall": null,
+      "brier_score": 5.624999999999963e-05,
+      "roc_auc": null,
+      "confusion_matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    },
+    "warnings": [],
+    "imputer_statistics": [
+      0.8889454915944982,
+      200.0,
+      0.05505157702681067,
+      250.0,
+      0.4428119450644788
+    ]
+  }
+]

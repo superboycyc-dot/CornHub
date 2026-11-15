@@ -1,0 +1,140 @@
+{
+  "input_rows": {
+    "labels": 44,
+    "folds": 44,
+    "features": 44
+  },
+  "missing_files": [],
+  "errors": [],
+  "duplicate_keys": [],
+  "label_summary": {
+    "n_rows": 44,
+    "n_fields": 34,
+    "class_counts": {
+      "grain": 32,
+      "silage": 12
+    },
+    "by_year": {
+      "2021": {
+        "grain": 14,
+        "silage": 4
+      },
+      "2022": {
+        "grain": 3,
+        "silage": 4
+      },
+      "2023": {
+        "grain": 15,
+        "silage": 4
+      }
+    }
+  },
+  "label_fold_matched_count": 44,
+  "farm_group_check": {
+    "status": "checked",
+    "n_fields": 83,
+    "n_labeled_farms": 5,
+    "farms_crossing_folds": [],
+    "notes": "Grouping metadata only; farm_group is never a model feature."
+  },
+  "planned_folds": [
+    {
+      "fold_id": "0",
+      "n_train": 32,
+      "n_test": 12,
+      "train_class_counts": {
+        "grain": 21,
+        "silage": 11
+      },
+      "test_class_counts": {
+        "grain": 11,
+        "silage": 1
+      },
+      "test_n_fields": 10,
+      "test_farm_groups": [
+        "22358"
+      ],
+      "warnings": []
+    },
+    {
+      "fold_id": "1",
+      "n_train": 42,
+      "n_test": 2,
+      "train_class_counts": {
+        "grain": 30,
+        "silage": 12
+      },
+      "test_class_counts": {
+        "grain": 2,
+        "silage": 0
+      },
+      "test_n_fields": 2,
+      "test_farm_groups": [
+        "22359"
+      ],
+      "warnings": [
+        "Test truth lacks a class: macro F1 undefined; silage recall null if no true silage."
+      ]
+    },
+    {
+      "fold_id": "2",
+      "n_train": 19,
+      "n_test": 25,
+      "train_class_counts": {
+        "grain": 18,
+        "silage": 1
+      },
+      "test_class_counts": {
+        "grain": 14,
+        "silage": 11
+      },
+      "test_n_fields": 19,
+      "test_farm_groups": [
+        "22380"
+      ],
+      "warnings": [
+        "Fewer than 2 training rows in a class; unreliable small-sample learning; no calibration."
+      ]
+    },
+    {
+      "fold_id": "3",
+      "n_train": 40,
+      "n_test": 4,
+      "train_class_counts": {
+        "grain": 28,
+        "silage": 12
+      },
+      "test_class_counts": {
+        "grain": 4,
+        "silage": 0
+      },
+      "test_n_fields": 2,
+      "test_farm_groups": [
+        "22381"
+      ],
+      "warnings": [
+        "Test truth lacks a class: macro F1 undefined; silage recall null if no true silage."
+      ]
+    },
+    {
+      "fold_id": "4",
+      "n_train": 43,
+      "n_test": 1,
+      "train_class_counts": {
+        "grain": 31,
+        "silage": 12
+      },
+      "test_class_counts": {
+        "grain": 1,
+        "silage": 0
+      },
+      "test_n_fields": 1,
+      "test_farm_groups": [
+        "22854"
+      ],
+      "warnings": [
+        "Test truth lacks a class: macro F1 undefined; silage recall null if no true silage."
+      ]
+    }
+  ]
+}

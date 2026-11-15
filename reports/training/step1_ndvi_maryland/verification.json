@@ -1,0 +1,11 @@
+{
+  "saved_predictions_reread": true,
+  "metrics_recomputed_from_saved_predictions": true,
+  "fold_models_reload_equal": true,
+  "full_model_reload_equal": true,
+  "no_field_or_farm_fold_leakage": true,
+  "only_five_ndvi_predictors": true,
+  "all_44_rows_evaluated": true,
+  "independent_saved_fold_models_reproduce_all_oof_probabilities": true,
+  "independent_saved_csv_confusion_matches": true
+}

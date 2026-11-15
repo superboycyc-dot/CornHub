@@ -1,0 +1,8 @@
+{
+  "models/fold_2.joblib": "d4847895fbbbcd0dbd4149a99e1241b84cdc3e8a9f533b0b58411f9b70d17bc9",
+  "models/fold_0.joblib": "552cfd763fdd34a227a5caf1694a33be0340464bfde827b0b4d48b8e82be9f58",
+  "models/fold_4.joblib": "01ffb33c3dac6d8f307c29bf75121f9f0b24dda13f262f1c91180f98befca760",
+  "models/fold_1.joblib": "3c42056c73144d1a4a64d4f2d1a548b7549c0ac8ef7ea78ba24092aa73d12f4f",
+  "models/ndvi_full_model.joblib": "4dde0c97c1a3cb84f0ac3fa5badb128d8bdeff514397b9f9e6764cf16097cf2b",
+  "models/fold_3.joblib": "7650f3990855471aa2c64767722b73b11495408bd638b0fd2cd7957f4cb83830"
+}

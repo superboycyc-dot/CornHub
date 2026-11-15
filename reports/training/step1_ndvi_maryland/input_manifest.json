@@ -1,0 +1,44 @@
+[
+  {
+    "path": "data/processed/core/labels.csv",
+    "branch": "work/a-data",
+    "commit": "df7ce8cd63039e90de7ca78ba95f4f3259ee15c5",
+    "sha256": "b7c453f7535eca3fea4477bd4861864d5912e47c1330be7c67588d8c94185f0a"
+  },
+  {
+    "path": "data/processed/core/validation_folds.csv",
+    "branch": "work/a-data",
+    "commit": "df7ce8cd63039e90de7ca78ba95f4f3259ee15c5",
+    "sha256": "a846206c02b3e53f57b997893ea5c2a730411fb7ea91863f5f96cb47ce878ca5"
+  },
+  {
+    "path": "data/processed/core/fields.geojson",
+    "branch": "work/a-data",
+    "commit": "df7ce8cd63039e90de7ca78ba95f4f3259ee15c5",
+    "sha256": "0ec8c03cbf78ee2dbadc79eb0b43604126e82ecbb2a96710f790574214e252de"
+  },
+  {
+    "path": "data/processed/core/README.md",
+    "branch": "work/a-data",
+    "commit": "df7ce8cd63039e90de7ca78ba95f4f3259ee15c5",
+    "sha256": "95d8b25d4f673b29e0457bc40088a81bdbbc8dd9e75152199725e8dc2127512b"
+  },
+  {
+    "path": "data/processed/satellite/features.csv",
+    "branch": "work/b-satellite",
+    "commit": "05a81a7d1634c80d3c56b66cf9eb9acb9527fc9b",
+    "sha256": "402ec0ba1198ed582dd6de0181b7e6298f30a7452282e377d5a39db838c227cb"
+  },
+  {
+    "path": "data/processed/satellite/timeseries.csv",
+    "branch": "work/b-satellite",
+    "commit": "05a81a7d1634c80d3c56b66cf9eb9acb9527fc9b",
+    "sha256": "2b42414eb5e6ce248671b5e2d0468ad06ea86b85ab7b82cec9e3503ffd6edbbf"
+  },
+  {
+    "path": "src/model/pipeline.py",
+    "branch": "work/c-model",
+    "commit": "a867e4e19c431754e7b07ee8a260f48761d83d81",
+    "sha256": "e3ab7df219b588908a40ec5c7a96e4e6db501f367206c8f791c1c4525002e26e"
+  }
+]

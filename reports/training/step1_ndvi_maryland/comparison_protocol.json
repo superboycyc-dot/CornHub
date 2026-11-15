@@ -1,0 +1,12 @@
+{
+  "completed_stage": 1,
+  "stage2": "Same 44 rows, labels, folds, model parameters and seed; append dairy-distance features. Report actual improvement, no improvement or degradation.",
+  "stage3": "Not run. Requires labeled external data, source/field deduplication, domain-aware held-out evaluation and fold-local missing-data handling. Unlabeled rows cannot produce accuracy.",
+  "missing_data": "NaN internally; training-fold median imputation; entirely missing training columns use zero; no test-fold statistics",
+  "primary_metrics": [
+    "accuracy",
+    "macro_f1",
+    "silage_recall",
+    "balanced_accuracy"
+  ]
+}
