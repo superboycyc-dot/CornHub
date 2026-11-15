@@ -1,0 +1,62 @@
+{
+  "scope": "BARC A/B/C/D plus separate California/US reference files",
+  "refs": {
+    "A": "df7ce8cd63039e90de7ca78ba95f4f3259ee15c5",
+    "B": "05a81a7d1634c80d3c56b66cf9eb9acb9527fc9b",
+    "C": "a867e4e19c431754e7b07ee8a260f48761d83d81"
+  },
+  "reference_main_ref": "630eebfb465a21379aeeda49ea8a5d7d70ef36d0",
+  "boundary_fields": 83,
+  "static_boundary_area_ha_not_annual_corn": 490.86427949,
+  "label_rows": 44,
+  "unique_labeled_fields": 34,
+  "feature_rows": 44,
+  "quality_counts": {
+    "limited": 18,
+    "usable": 26
+  },
+  "timeseries_rows": 4524,
+  "distinct_scene_ids": 394,
+  "prediction_roles": {
+    "oof": 44,
+    "inference": 44
+  },
+  "quickstats_rows": 225,
+  "quickstats_suppressed_D": 57,
+  "cdl_years": [
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "cdl_archive_size_bytes": 290778951,
+  "notes": [
+    "Scene rows repeat a scene across fields; rows are not distinct images.",
+    "All years/roles/regions and reference products remain separate.",
+    "Source inventory counts still include 2021; no new 2024/2025 field-year data is supplied."
+  ],
+  "active_analysis_period": {
+    "years": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "computed_years": [
+      2022,
+      2023
+    ],
+    "pending_years": [
+      2024,
+      2025
+    ],
+    "historical_output_years": [
+      2021
+    ],
+    "source_years": [
+      2021,
+      2022,
+      2023
+    ]
+  }
+}

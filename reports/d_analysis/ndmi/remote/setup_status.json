@@ -1,0 +1,53 @@
+{
+  "status": "prepared_waiting_for_brev_login_and_remote_validation",
+  "updated_at_utc": "2026-11-14T23:53:27.862136Z",
+  "brev_cli": {
+    "installed_locally": true,
+    "version": "0.6.337",
+    "authenticated": false,
+    "remote_connected": false
+  },
+  "local_validation": {
+    "tests_run": 9,
+    "passed": 8,
+    "skipped": 1,
+    "gpu_parity": "not_run_no_local_cuda",
+    "shell_syntax": "passed",
+    "python_compile": "passed",
+    "resource_plan_only": "passed",
+    "source_network_probe": "4/4 passed including TIFF byte range; does not certify remote networking"
+  },
+  "remote_validation": {
+    "gpu_inventory": null,
+    "cuda_runtime": null,
+    "network_probe": null,
+    "gpu_cpu_agreement": null,
+    "throughput_speedup": null,
+    "batch_started": false
+  },
+  "last_local_june_attempt": {
+    "status": "partial_scene_errors",
+    "wall_seconds": 2424.93,
+    "cpu_user_seconds": 0.42,
+    "cpu_system_seconds": 1.06,
+    "errors": "network URLError in remaining scenes; not a successful monthly timing benchmark"
+  },
+  "required_handoff": [
+    "requester own Brev login and SSH grant",
+    "actual existing instance identity and hardware inventory",
+    "persistent writable cache directory",
+    "source network probe success",
+    "isolated repository access and remote CPU/GPU validation"
+  ],
+  "source_code_sha256": {
+    "src/analysis/ndmi/calculate.py": "0c51d9a623cdb2821d26554be3fcc8b6c9c2fc5659b4f18894686803da13887b",
+    "src/analysis/ndmi/compute_backend.py": "9796474a7d343d925f0c3d7990187eb2c18d547c6f57886e6b4ba180ceddc702",
+    "src/analysis/ndmi/export_results.py": "9952d60c887c5163fc0786456dec1f1241140922e8a43793f4b410f4df45eb0e",
+    "src/analysis/ndmi/test_ndmi.py": "c69995e6ea5a6df67b437ef6c0b50d1e41e6ed83ca2b5deb277d7b7bb6afab55",
+    "src/analysis/ndmi/test_remote.py": "7b6c021f94480a086714ec2af44d106b5d7490bce8af2852c375a0f11a3bec2a",
+    "src/analysis/ndmi/plot_results.py": "f03f615dc7e86e92348f5d077e1fb171ccfd101bea019a4298513cf685e6e45e",
+    "src/analysis/ndmi/remote/benchmark.py": "950307f1f7461cfb6787c2e268a5f9446b94b475bd78008844a9daa4290fd9d7",
+    "src/analysis/ndmi/remote/launch.py": "ce27255d244c081ec493c49f030bad9de951baba5c79fbffdc5b8394c26f2fd1",
+    "src/analysis/ndmi/remote/network_probe.py": "d849190a5203be1cea3dfbe6f5ba125fc0a5953488814ffb6200e646c817bc03"
+  }
+}

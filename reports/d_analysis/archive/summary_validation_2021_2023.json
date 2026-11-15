@@ -1,0 +1,26 @@
+{
+  "status": "checked",
+  "source_blob_hashes_verified": 7,
+  "annual_rows": 3,
+  "field_correction_rows": 6,
+  "year_change_rows": 2,
+  "markdown_tables_checked": 11,
+  "arithmetic_tolerance_ha": 1e-10,
+  "checks": [
+    "source blob identities",
+    "area conservation",
+    "signed error and true-label reference",
+    "year-change decomposition",
+    "field corrections versus simulation",
+    "table structure",
+    "reference counts and suppression"
+  ],
+  "output_sha256": {
+    "reports/d_analysis/all_data_summary_zh.md": "3fff9fd84068bd851685262174521eb08c3816c4ba889a33f12982a15953bd09",
+    "reports/d_analysis/data_inventory.json": "d0e4dd3426a1ee54f619f60090486c9c16eda57694680d46d3556157a4407fa8",
+    "reports/d_analysis/summary_input_manifest.json": "2001c92b6bda5c31bcbb266afec54a43bf1033ade1843427356f89ece07be167",
+    "data/processed/analysis/annual_data_summary.csv": "7a5223f32c31b37b0aae8858dfc797b1da8dbebfe4517bf47fbafc6292e08751",
+    "data/processed/analysis/review_field_corrections.csv": "7df8f48a909becdc958c2da3fa5e6c49e6fe3937b229f5aa83f63839d1bc8c44",
+    "data/processed/analysis/year_change_decomposition.csv": "f07bb05240b70fa4f2565b05c2f630e232db56c19fd38c7572d07679370efe2f"
+  }
+}

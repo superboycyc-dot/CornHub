@@ -1,0 +1,5 @@
+source_dataset_id,organization,source_url,product_version,retrieved_at_utc,license,notes
+nvidia_brev_cli,NVIDIA,https://docs.nvidia.com/brev/latest/cli/getting-started,CLI v0.6.337 installed locally,2026-11-14T23:54:54.776707Z,unknown,Local CLI logged out; no remote SSH verification.
+nvidia_brev_connectivity,NVIDIA,https://docs.nvidia.com/brev/latest/cli/connectivity,latest docs,2026-11-14T23:54:54.776707Z,unknown,"Instance-name SSH, exec and remote tmux."
+cupy_install,CuPy project,https://docs.cupy.dev/en/stable/install.html,stable docs accessed for CUDA 12/13,2026-11-14T23:54:54.776707Z,unknown,Optional backend only; exact remote package versions must be frozen after install.
+cupy_performance,CuPy project,https://docs.cupy.dev/en/stable/user_guide/performance.html,stable docs,2026-11-14T23:54:54.776707Z,unknown,Warm-up and synchronized timing; local benchmark includes transfers; no local CUDA validation.
