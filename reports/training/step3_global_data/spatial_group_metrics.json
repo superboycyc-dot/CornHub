@@ -1,0 +1,130 @@
+{
+  "pooled": {
+    "n": 39846,
+    "correct": 39797,
+    "accuracy": 0.9987702655222607,
+    "macro_f1": 0.8936310665838358,
+    "balanced_accuracy": 0.8727242563854531,
+    "silage_precision": 0.8348623853211009,
+    "silage_recall": 0.7459016393442623,
+    "roc_auc": 0.9651074999463511,
+    "brier_score": 0.001033006891993391,
+    "confusion_matrix": [
+      [
+        39706,
+        18
+      ],
+      [
+        31,
+        91
+      ]
+    ],
+    "confusion_order": [
+      "grain",
+      "silage"
+    ],
+    "class_counts": {
+      "grain": 39724,
+      "silage": 122
+    },
+    "always_grain_accuracy": 0.9969382121166491,
+    "test_has_both_classes": true
+  },
+  "by_country": {
+    "CA": {
+      "n": 39653,
+      "correct": 39653,
+      "accuracy": 1.0,
+      "macro_f1": null,
+      "balanced_accuracy": null,
+      "silage_precision": 0.0,
+      "silage_recall": null,
+      "roc_auc": null,
+      "brier_score": 3.886671594270248e-05,
+      "confusion_matrix": [
+        [
+          39653,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ],
+      "class_counts": {
+        "grain": 39653,
+        "silage": 0
+      },
+      "always_grain_accuracy": 1.0,
+      "test_has_both_classes": false
+    },
+    "NL": {
+      "n": 113,
+      "correct": 93,
+      "accuracy": 0.8230088495575221,
+      "macro_f1": 0.5923520923520924,
+      "balanced_accuracy": 0.6501068376068375,
+      "silage_precision": 0.9468085106382979,
+      "silage_recall": 0.8557692307692307,
+      "roc_auc": 0.7035256410256411,
+      "brier_score": 0.14914416016411586,
+      "confusion_matrix": [
+        [
+          4,
+          5
+        ],
+        [
+          15,
+          89
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ],
+      "class_counts": {
+        "grain": 9,
+        "silage": 104
+      },
+      "always_grain_accuracy": 0.07964601769911504,
+      "test_has_both_classes": true
+    },
+    "US": {
+      "n": 80,
+      "correct": 51,
+      "accuracy": 0.6375,
+      "macro_f1": 0.4464328322596039,
+      "balanced_accuracy": 0.4507168458781362,
+      "silage_precision": 0.13333333333333333,
+      "silage_recall": 0.1111111111111111,
+      "roc_auc": 0.4789426523297491,
+      "brier_score": 0.2845840079068448,
+      "confusion_matrix": [
+        [
+          49,
+          13
+        ],
+        [
+          16,
+          2
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ],
+      "class_counts": {
+        "grain": 62,
+        "silage": 18
+      },
+      "always_grain_accuracy": 0.775,
+      "test_has_both_classes": true
+    }
+  },
+  "country_macro_accuracy": 0.820169616519174,
+  "warning": "Pooled accuracy is dominated by grain-only Quebec; report country and class metrics alongside it"
+}

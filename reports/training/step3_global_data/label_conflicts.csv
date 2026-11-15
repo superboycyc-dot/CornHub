@@ -1,0 +1,2 @@
+﻿country,field_id,year,official_label,external_label,external_operations,handling
+US,barc_248,2023,silage,unresolved,grain|silage,Excluded from global training/scoring; retained only as original official benchmark test label

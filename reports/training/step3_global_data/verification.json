@@ -1,0 +1,15 @@
+{
+  "unique_source_field_year_keys": true,
+  "official_44_preserved": true,
+  "no_national_corn_presence_labels_used_as_harvest_labels": true,
+  "no_overseas_to_maryland_dairy_distances_invented": true,
+  "missing_labels_not_imputed": true,
+  "all_null_ndvi_abstains": true,
+  "fold_local_imputation_and_weights": true,
+  "spatial_farm_and_field_groups_disjoint": true,
+  "country_holdout_train_test_disjoint": true,
+  "all_eligible_rows_have_oof": true,
+  "saved_group_fold_and_full_models_reload_equal": true,
+  "retained_8182_model_unchanged": true,
+  "probability_reload_absolute_tolerance": 1e-12
+}

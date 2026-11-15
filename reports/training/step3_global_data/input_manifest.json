@@ -1,0 +1,1598 @@
+[
+  {
+    "path": "data/americas/README.md",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "e53ad7003245695ab25ff4993081c7c8a180f00ddb55b98660a922a486bba8aa"
+  },
+  {
+    "path": "data/americas/americas_field_harvest.xlsx",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "ac3663971c37f7aa20eb7a3e13a07eb5e1f7a5ac2036b1f36edf9e3765acca0e"
+  },
+  {
+    "path": "data/americas/field_harvest.csv",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "ba7680ac1a13c82f2e0328c62687b56ad8e51b2fc90d4419303b6b72270567f1"
+  },
+  {
+    "path": "data/americas/satellite/landsat_items.json",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "356c7b7f3d888a4a4e2e55eb7376dc4bdce5d413ad092b9c14c508defce9cdd5"
+  },
+  {
+    "path": "data/americas/satellite/point_samples.csv.gz",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "204b0e0d1f791eb7f578b2d969ae046d8c901c4346b4ede1c12c003c9dfa7c77"
+  },
+  {
+    "path": "data/americas/satellite/sentinel2_items.json.gz",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "6abb608dc201d60f00d85c19f12943df8bd16823a58873ecd5b317aa111823de"
+  },
+  {
+    "path": "data/americas/satellite/us_2015_landsat8.csv",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "1506a8fc62fdd5921390c9c992f3738cdcfbb68cb7a223921824db24af8b0f43"
+  },
+  {
+    "path": "data/americas/satellite/us_existing_coverage.csv",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "e3b4e0a92b5ca7fd462599d499b2b679bfcd7b4364e12b3adff3dfbd0f61525f"
+  },
+  {
+    "path": "data/americas/satellite/us_existing_features.csv",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "402ec0ba1198ed582dd6de0181b7e6298f30a7452282e377d5a39db838c227cb"
+  },
+  {
+    "path": "data/americas/satellite/us_existing_provenance.json.gz",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "6c0af2ba0010514d160b349d4bbc8900cfaf5dc769ec606d03ed7ec487c4dc0a"
+  },
+  {
+    "path": "data/americas/satellite/us_existing_sentinel2.csv",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "2b42414eb5e6ce248671b5e2d0468ad06ea86b85ab7b82cec9e3503ffd6edbbf"
+  },
+  {
+    "path": "data/global_maize/README.md",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "bb0b6ea8987ce727eda964745463dd0c8924815aa0ecde39792bbdf39f616293"
+  },
+  {
+    "path": "data/global_maize/eurocrops/COPYRIGHT.txt",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "f20723519a580fb35b3499870f0b1baea54f483195105416e547f0014f1610d2"
+  },
+  {
+    "path": "data/global_maize/eurocrops/codebook.csv",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "c73a3a0140c52da9a569546ae843a3291fc561cc1b583455a71637d2ee819a33"
+  },
+  {
+    "path": "data/global_maize/eurocrops/coverage.csv",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "ef3708625034ea3268cbea3b5ecc0e5f64eb3b151cf524eb991f03df91e0b756"
+  },
+  {
+    "path": "data/global_maize/eurocrops/extract.py",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "6f13c8512ed54770883fb506f091efcd25da5d06bcd0140b69367efc11782431"
+  },
+  {
+    "path": "data/global_maize/eurocrops/fetch.py",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "42ffed4b00b62bbc4751e9459daa83361c441b47a2b123a746c091f7dd3dcb63"
+  },
+  {
+    "path": "data/global_maize/eurocrops/inventory.csv",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "cc8bfe89bc162a5d44423dcc12f19da873cba53b31e451dad68aa2272e857024"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be2_2023/000000.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "75423ff799563233878f9eefdccf92407f1d22acdc63c29278b790c9532a12c8"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be2_2023/000001.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "153145827bcf94b7020c4c26ffa8dcfc59a3ee36ff691c6adfb9deb571076b62"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be2_2023/000002.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "6643fe91f3a4e9f059c7885d46dbaa722d1305e8099cb782b7e5150957f2d7ad"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be2_2023/000003.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "47aee060701e030e7c8da31c47c6c7601d6276d9fee01c09e8b8f74c34998fd5"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be2_2023/000004.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "eb95bf826a8c14407d38c911544bf9e76829139e3ce8e94a72b4a225cba3ed92"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be2_2023/000005.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "aad8b7df79b1d8f0f16ba6d5f824e06ca4b375fc2bcc34fecf6084f73fad1891"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be2_2023/000006.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "05ced7e4657c819e0e214f0e983f6cbec685428379811b5c20c84f544b487d6b"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be2_2023/000007.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "f3139dccd9051407b09d9a28dd55b5011116a5e4d46b05c6fb9f15ba8d929c5e"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be2_2023/000008.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "dbfbb30c4cd945df8161c1e6d6886709109bda90d211429961119cffd0d4d8ae"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be2_2023/000009.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "631ab05bc083f9bd0f02570aa5f8e1cbba9a11688283f1b000e6ac6601b9148c"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be2_2023/000010.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "542701c5549ded3308e3399b76065032076d11baf924f89db057227443ddb4d9"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be2_2023/000011.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "3b0f28fdb61bd25249b1ea3183d14405ecedf9cdb6e047bc7bea74598db34008"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be2_2023/000012.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "c0087d6a9040311230c3d2b92729b0bedd46da9becaf8463ba9aa3b34d3762f9"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be2_2023/000013.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "a11b7fed9b33b03999818dee0270fd42c612ce827942361878ab4cff210280eb"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be2_2023/000014.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "53419869e748deb8ff4934363281af8e6aa94a8c5bb55b77b77dd0691787fee5"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be2_2023/000015.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "10ff53bb8076c3e2ae7aecd3dcff10145c5b3611a5ee1b8cab1831c2a142b902"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be2_2023/000016.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "f16319e82583cda8677e69979ea9e11f3ad508ee891bf60842dc80cd59f2fae4"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be2_2023/000017.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "ce880abc631392a9b248595ffafa9463bc71a710bbf7ebcc762333d71dcd863a"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be2_2023/000018.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "576cbda5fb6e6f542f6f5d11c06dae5ac342bf4c41ae03a395a602119adeb8fd"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be2_2023/000019.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "7eaa805131cdad10d411d222a7240a28d1e280c8c111fcb0b68b5a93ca841e71"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be2_2023/000020.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "73bf342f91a88adbad8c7cd8573cfe5d555d6857dc87b40762cd16d6c1ef5b8d"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be2_2023/000021.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "b6ec824fae2a0c3c1ed4560c99be410ff1b8f501f54711c362c71256e9f38058"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be3_2023/000000.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "85d81aa4f9e7f72ecbb194e9798dbedb6086ede3040a017f19ae3c08cfc76e9b"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be3_2023/000001.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "c329fa1cda536a8de7ea3f407769e2ff4690c47366cf3c2048fc3100801837f0"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be3_2023/000002.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "95701f85e26b6f0c637ac8117dc9309c9bbfc8f33accfd4aab26bb5b266f291a"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be3_2023/000003.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "c9ab78632ea2dbe5c11d77f25dc758204b8b039a702f63d098ca3f38e53af6ee"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be3_2023/000004.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "92c24f3b5c834d1f83326feee9027702d0c6ddd7c34d1982d0c0d2b55bd3614b"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be3_2023/000005.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "b33d5de965e204c49ebb1553caf76767adaad0e22e768a4a6db69b381efe3781"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be3_2023/000006.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "c5a458ffa6861657be17921bfd4c9ce0ea6c350c87d03df6735c7fcc58b30b14"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be3_2023/000007.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "b3a4075cb20513b4684fb2eb166189c287145aab0a3402b0b1c7839e78fa0c2d"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be3_2023/000008.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "cf8c936d3329ab11638a1e09085a020414f80662308d508021b30ee774fb46af"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be3_2023/000009.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "5562617bec09ae42c842f86736235d387b8e3d631b4d004de3f9c4e566e23f6e"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be3_2023/000010.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "c34643070e99088c3ff64913203af744d67a9857292d9cd9a7a7c93aa004d43d"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be3_2023/000011.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "1279a5ca198dcd5fc189837787ec186fb52d7fe5c806fdd7d143b189091af00e"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be3_2023/000012.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "165caae0c76e59b5104d78af2bf320698c79b298192ecc47745c148966373da4"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be3_2023/000013.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "f3693350634570ce9914433cda565d13249b3bd78d408f9a2ce94e965fa84004"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be3_2023/000014.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "ffd74f9a638677c04e265bb09aa7d048e6e4a62deb8cf06882516b8c92d38a20"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be3_2023/000015.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "076a2dbec0c0bfa28f0ea59b3034093e1297a2868a8039cbe2c3ac48ecff573b"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/be3_2023/000016.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "be125b8731d89abfb356329667d240f37ba9830fcfd65d0688421a8fc25babd2"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000000.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "93a3528774b9cf8330c6546ae28efc58d889faf5eabea3995c47f5401c5b7ae5"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000001.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "a1fa5d7013c520d7239baa477b04c1d5b4766d0b7cd4a8220289289446f9c01b"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000002.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "ff1e8dbc7ed54130ee425575f6a8a8348becf38e79d7911467e1413412a25bb5"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000003.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "f6465539223ef8e590b823c92f10e2417cce7bf2139f0a6d6b41ebc3ec9efff6"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000004.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "934ac8b0139ea0ba3af448929348addb196fda1f895bc4d0fe5e8cd5a31be2a1"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000005.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "38de3b4b248c7f6abd1572d9c63e77bf9974b39d85a3c7e14a106dd569192a02"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000006.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "d21825a37c688cf528d5ff116511ae543480f76f6ccea46f932366e5246cd3f6"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000007.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "a3ebc346ff41fa0ba0031c63abb0a62d905fb14b719f3ff36e6d10748d7d1598"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000008.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "48d3797cadfe71e523df1dafff8976ed0ffac2c7e91089918c46237da1d9df20"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000009.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "0a371355c984742acc01beea9084274c9b5e5505cb240279e83f9dc7f453bac3"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000010.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "40591debeece5f1eda205858506cdd6a14e1868242e0faccb8dbf79499fc9a95"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000011.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "ed11fe502c19d66245520545f11113ab9ba87d7d56ed2d1bdbcf9db37d93b903"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000012.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "8d1b5fdb719010c52bd52fad86dbd5ccb2202ed30b7d3dd80e95ba77e12cdf09"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000013.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "a2508007a652ae4f90d4c1a18cbd6b6ec38baf0b5d94fb0fca73ceab698c0107"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000014.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "4170cd040592ded2dd8b417eda411b7570b955f98621d9b8825f2205394e7bcd"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000015.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "f4aa91c025f84974407fea8b3f0b607c89eee1f150e2735d126cfd065e4d6f65"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000016.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "639135fcc44350e6a3094ea26eb1f79d9a3568c2ac8c3588f0be742792e86e79"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000017.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "e25d5ccd70beffebe04a64ec8b1502973cecd42202dcd1925a625f0c9817a6a4"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000018.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "febd9eee536f1f45496c94e5c59c21e13d9f9eae07ef43a8f2599617f6de8f2c"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000019.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "cdd6e1633e9a08ff743ad2edf6b470d79035db1f7d1ad1e9d5723d256eb642f0"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000020.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "56182d3be89341ab58977034234211eae3a7b5a9c8c6af8b0c89f8b15c01f1db"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000021.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "f6db1c3c6d7b183e02d252b909766ec8334f6255508cfe6de450a8962df5eb29"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000022.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "ebc04072e265bb476929872f72467328a077e8585f15bd13856a187bc66b289d"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000023.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "0d769792f89689799089b465c4ef3b347fbda9b893ac5771089af6fe95f5c581"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000024.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "f5c6f9dc01c20bdeb32449d161f326ff8f2405256ce11c40f1ed60f687b0104f"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000025.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "d41d3b51232a45fd33303069f241413ff08e17b7287f6908b530f182708dcf94"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000026.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "b5af4ce3bd8c3613d0a0a13e3abf6fad7ece853921e2cc5cd5e1ec757633f34b"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000027.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "28c55be5a1ce1b5bcb66b6aab789b6196f0170987db490472b8f5e8c1ebec55e"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000028.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "772b56fb4aa61685c00b549da146af5772e5457ecb6c68c77fea8835002d3b57"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000029.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "7a7f15102e7c8c43d55590ac29857a362c18f1fd20b8c27fddd80257d9bab8ab"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000030.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "e3c3e6cd7d8fea118cedb23791495bdfde77d9d5e523b1d47946f3044ad7ba07"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000031.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "ea1fa1b68153eb2953ee3c0a3854d36d187b555ba917b1c9f8361cb824520abb"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000032.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "a7ddb3e39e0716b2d5005d6fb8fafc8511cac80978aa4182ffe62e7207b61e64"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000033.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "d6426860d31dabe125ddd1005a5cda3a875e47407d21c38f8402bf6d5022f6ed"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000034.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "6ddb1b6dca21e4721ac164e81f1e0db6eb9de6760f0f8ea15d0ebb8c512ba1dd"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000035.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "1b8a36d151483a8bb1af50b9e6f01cd3485bd16e9c55f875f83d0f10bde6a7dd"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000036.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "cbf0c2749c1ea344112528a5190681f467bb46e3c41eb65bad4120b090ea7f30"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000037.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "3327128fd161f6cb33b8f31a33d7f49f7c79921b2cc21ea818e825211dc54c0e"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000038.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "fb90fd7f42cb9c938b6776ea31ee3a90e7f25571395d02939420bff60b08c05b"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/bg_2023/000039.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "56c6ceed164953fb37c70b9141071825cffda345ba5127dc2abd980394185c95"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/cz_2023/000000.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "73eab3ca80cc255dbaab2eacc088e6bd081f45c685da7e3e15bd5cf5002b8a24"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/cz_2023/000001.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "67a7a211b0f90d8a290fca5fd79d9f0f3b33ef7af82d30adbbcf033a72f8ca78"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/cz_2023/000002.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "6391030e1caf66388dcc4bf7408cb8996c1b74d116d035c9a7dde54e6e00e093"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/cz_2023/000003.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "ed79b179f4abd77ef4b4a4a5606c1c7e7903bad77bd256230b4069642524c6e3"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/cz_2023/000004.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "850cebe7d7ebdf9f2cd56d44dbff3949e28d4a73eb577ae9cb4802b9af52ff67"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/cz_2023/000005.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "25a504d3f2f580d7c7d90b3d01e55b35cb968f990dc7cae32e90a661594d40e9"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/cz_2023/000006.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "36b52874fbfde4aa84f6a3e2f7138b15d33075fb2bc6dac565c889468ae75a90"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/cz_2023/000007.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "9fce44495c29f7110233ca6cf5134e9d5b0717b0a9a1f6ca352f76cf9631189d"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/cz_2023/000008.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "43c9ef1037d7fdbfcac530342704aed5d7d71db904199025c55f82a38168a7da"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/cz_2023/000009.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "4b6785e9a9bd64fafc69fb56e639e4a4d4bf58de609fb460471d9ad2cce61658"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/cz_2023/000010.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "f7c7592f7dc9ee17daba2500be6b1ae6240465eb1d7f69e0cd46399e9ffaa881"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/cz_2023/000011.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "170f08e5a0a73b1eec60c3aeccbe1f194974d7f4c11abee8db3b849a3534736d"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/cz_2023/000012.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "dfe3513a02b3bbf6a481fa6b86c6bb2cc36dc4b1a3426e2d52eb9f8fcd1996a7"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/cz_2023/000013.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "5ebca73486816b7f2e8af64a0860bcdace8ce71457acb7cc9596ebac26a49054"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/cz_2023/000014.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "c2d28cd37004a89ee67b0f5ff91f7ddb85e67452896f0244a4edcb4f18192fe0"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/cz_2023/000015.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "d68a132a4bbda113081c00254276425c68fbfe7574eafbb9ce3ad5f227cca9ae"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/cz_2023/000016.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "aae28947180a9ff2bcb16c7d9072231cb7551ac6ba188fc9f91fdd589577062e"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/cz_2023/000017.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "f9646850ba9fd25f47a1f82ca2431cf907c5e9a748024156ceb360ba46f92c1a"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/cz_2023/000018.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "0fd6a1e31f7e8177d92132472156dd8fc50d41982f1618d5721f06206707ad99"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/cz_2023/000019.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "31965c6751865cfc0d366cf1f8215f671e7c86d9c300e089230e73d427508711"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/de4_2023/000000.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "28dfb2c79f1415a4bf10bc4e4fff40e099977d2ea79236228b75f7e03ec1eb17"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/de4_2023/000001.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "023275eef223fe86b662d6c3b8de2c4ee8fa1140874bfa2532c83a97ff17c192"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/de4_2023/000002.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "733ff614c9224e894e7791bcb50c20b18c14506aed879d5a28a3432d19f032c0"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/de4_2023/000003.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "8fc7c60bca3ee79a7c41cfcf3c4d7d0518af6a2d544174059fdbdf740b8a1a07"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/de4_2023/000004.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "e73b025852aaeaeb059286c3b6a44b27f994522cb02c23859891d1b12eef68d1"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/de4_2023/000005.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "4ab5386595ee97048ce374c597a6527cc81d7588c900aaa5b898ca38c2174e97"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/de4_2023/000006.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "012ae140b9a8a4f0b3f5c64691ebaafc68b22ab73094fd8c1c4acf66927ff75f"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/de4_2023/000007.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "63ac188651a8864cd58e89d5c7ab23ddc6f495df472a900e9dc75050f9ee0af4"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/de4_2023/000008.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "af6a5e8a95aa9689273a05c2ff3334a6fb60150a47e631b647e509acc08b6b77"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/de4_2023/000009.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "959fb73e6351df6cbda100d5e05ec0af4283811559b27bc0407b8f19a7663ddd"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/de4_2023/000010.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "30941dcba36708545f1d1193112f58781c902750504824abee6ba974f05f3fe2"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/de4_2023/000011.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "4446e67cffccd309a88235d5c54c767eb7a4082f0329152bda4a260777b979e2"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/de4_2023/000012.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "a689f07ac73c0d4237bef012650312ec2e07a4b6f0a897a7c86d4c5e50330403"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/de4_2023/000013.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "448edd23d09ddaa89129dd147c49a89651df242e278c526925230f2006c1fffa"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/de4_2023/000014.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "ffafa97c6a7292e35175e31269b9e80c81008119d876b36e65c440e340b52577"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/dk_2023/000000.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "07ce0dabe4c0d781187be758effc37a4f6514764a21624c61acc04ff6f09d5d5"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/dk_2023/000001.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "2d977b78eac1a8718633f1bae7090376ba617a2609d68a247120f747d2a2e654"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/dk_2023/000002.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "d7a9e1ab4471fbd56491ff561e7a5b86fd355c8a36da9cd1865afacdaed850fe"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/dk_2023/000003.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "e10a4393f61b2d37ca2279fd3cf1009b9263b117e896fe7f16e60f9e8e674d9c"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/dk_2023/000004.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "e480f1eb233ef4e3a228f79b2385ce6e8edc613b8fdd641e3d672ab0cab3b246"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/dk_2023/000005.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "a8666e2e6678b888b01d2027bc597f19576c5381d2cf74418b847838e4b44eb0"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/dk_2023/000006.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "d8ebf1f2200c6b20931831b5b39c19c84bb37312ea5beb976c6fc6f8e1108ac2"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/dk_2023/000007.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "023d79f80216d0f80db69e344f91022f2e68392e201ec84363ab330f054b9b67"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/dk_2023/000008.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "93f902aca1f58e82a9be3dcc3010299963036a9c3c2d3a3f5cb9145f125896ca"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/dk_2023/000009.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "0247286b3e70c4c21d506d0a29ecbb0af3cd2d0083cba57896595d7fd0244039"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/dk_2023/000010.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "b9470eb2f9bd021ad14617361b2ba784aa5be0ca589d43176c5d34037073d6c3"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/dk_2023/000011.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "4df72c973790c89d36463d7c87c0d98728811e17b285f34dbab7ca10cd8ea604"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/dk_2023/000012.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "987bd1c345c0fa505306462ba99708a1b52eee5a0b90ab42a61277ff1c362d80"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/dk_2023/000013.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "e59d13cd76c3bc9d1c8226f5bd849782bb0f2e596e182d0642099db1896cb2a3"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/dk_2023/000014.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "9fa95fbc80c61071bc812ac194da5548ae3ab4c2561a5e55ff1f2984256c63ec"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/dk_2023/000015.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "616528cdb016ef81e4b51f97f541645a10e405e540b9b3c45d1580c86c3e6cd2"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/dk_2023/000016.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "e6545bc77797ae97584fadb62e1d576759d38a130b85b6e20e1aa3e9abe0e471"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/dk_2023/000017.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "c5f4f9e503d884b7778b7f53687b11fbc46899d57f176058ede7511ce8825a4f"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/dk_2023/000018.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "d29e4d524f3d04f38bc98d3edb35897a596b207071e82850bf18a67df925a4d4"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/dk_2023/000019.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "608f1d5d158709de3ac95ec0716610cbc53be03cadd39f647be9f0ebc4bac042"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/dk_2023/000020.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "fcd6cf812960e8c7d3e7c0db74fd649ec7fb4ec5feb6419a0844bf82c60ab290"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/dk_2023/000021.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "41e4f8f50aad3f62dd3cc8817c833192270609b79a0618bec69cb2a2e793c99f"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/dk_2023/000022.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "b5bda653cf26c98ac2b39dfef4081a817494a315119826d6243cb1cb32a5cb6e"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/dk_2023/000023.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "e08c2feb754eb7a95afe0078a92ce1765d4342fb2251d36f4f995c9533f909c2"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/dk_2023/000024.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "9934cfe58b77c32d0ab16f953ffc844dd109d134350874c41e4dc16595e50c8a"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/dk_2023/000025.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "4a51c4dba11acbc9244b02f242a01bff41b4083e0f6bad139415041e18cb9b0a"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000000.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "f603e47bca390c68aaa974bde236420670d7c7a75ce35daac3dbdea66eb35539"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000001.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "70a632f4fc9243df583e33b561b351606581c0d3a1e5ee5b0bffc0a1d6c9cfba"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000002.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "5402fabddb2c6a5760177cef0aa0d6493512ebec69a7c1b8fbc26410ef08dcc5"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000003.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "40b3b15ea657f30b9e561ccfb499ceebd4d44e0aa25a465e16c4d08f3a1e23f0"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000004.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "7780aa94e4fd667161e106c1f3cb41694909b45fa71227596aa507ff8e2a0ce2"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000005.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "6870311c114fdfc3f775b90dd75acf733a7082e2ff94f15c708b8721dd5ed03f"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000006.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "aa04f52a65d38be4fdad0a82feed60829c463bd29a2fc498a23f031631fb65d4"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000007.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "b913b5c0e5e048e673aa62015b1652362244c517ed3654215acefc46752f07f2"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000008.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "db45b45ebe38c5952f6587a59326b2346d39583c95d3eea89ae13a47c354a0d8"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000009.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "de6c343a98a72e1006d3d409c8de76bcb69af4a0059f1778a928057f4be160fc"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000010.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "c8468e5d201b60d6ea560e2d1a083291ff4ae571afdeef6f431cc9177609794e"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000011.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "65a826710dad9e321163e6f92cf4dc40e9c5425fce483682f08d46df921245d9"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000012.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "38a152816b90d4478b714a2772f8a444e3309ffb436274c495045d2e3ed267a9"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000013.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "d603719aeae6c1b621995051ca90b1741a77c6920f82c22fa610c28cb2dad74e"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000014.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "822ff8f2c408155e2c13e8e592e973ef26031bc05dacde73abb4d479db1ac964"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000015.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "c58cd6fec671b705bcd0c0d15c53d524cdad4a83a67a65978ada1039773ec6ec"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000016.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "f3281fb2252590eb2f42c4a4140daaa4d92bf4a3373ad48ce8a14516a9c076a2"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000017.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "facb82998811516fc46d5df623b53a5f9df2f34e4ae9c77584280d2e3ce6b484"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000018.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "5844c45e3f665aa43f8e1c1b0dc4b916c176a48abd7a414e9d8b86afcc904dd5"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000019.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "39a60f7a28e55dd71304623b2e987ad1b5bf5c3ed90238b3d321a910fe974901"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000020.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "f17623b14fd2eac7c2d5ff9776e0be900b36a43e6349bd0a525739df9f0ab3d3"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000021.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "35ba0babc54c0786fc19d681c0115a41484ad194912049dd206ccaf649a9b84a"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000022.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "cd4f608bfd1d6ae8172ca216875684a48f9788209a2ab444210fdef379ed81c0"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000023.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "c1e92e2e3101bef79f2b9bee1c0edcef14891370e4948260451f6018b4ec17f7"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000024.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "bb3409fc6c4ec132edffd1542f71c43f5705d546dc5e4eda1edf32c351260046"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000025.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "2f210d8e37d17e77adfc4462511562119048aa8b6e423fbca15a6edbc40b0ca8"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000026.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "a87d36c097765ba8a5f322352a0dd851c00f028afc9bed3654041d4b83762e26"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000027.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "7b677ffeef41e30d05b19fc076d83385f621153d915ca3dfe5e3707d1c96fbc6"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000028.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "92f354d186c9321da946efc79baba33871d84c06e78f328a2fd57d1e3fb8a04d"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000029.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "80c9acb839b534066f6605975c28854019eb37c81b1520b760840e607801c773"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000030.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "07e5db33b59673275b71938ac46e7a70f0ae8debf680280b21313edbe5d9ca34"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000031.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "449073e12e916cd0193d7f4c1accc48ccd3b99ca9a63b652ce2784e4de31e406"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000032.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "b9e165a9a0dd13e023fbc0094e0d51e2536c8f376ddc9e249bb93437333f05d9"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000033.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "494a37437ff63554496b003b94b9ff988e4cb6ac0ce5e3bd63afeec28f1f0c1e"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000034.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "5dce1cef910721f6f142d5ee28679a7b8a1052108801e9da80d662f10f34bd04"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000035.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "b4df34baa26f03214e9844188a770aedd68b2c5efb2b858d960d71d24ddd5129"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000036.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "7d7e0fe07b2963dc6e9ecdfdf10013f34785b0325da529c56d901c9a61edceae"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000037.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "150f04a84a9ed4e0f2241c26bb85b1f2f1899dec8b79db72bab9f27056c4ea6c"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000038.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "788613dfddb5d67c07e48afb909a3fe8d27ae62acc32ef85487d3590f7e502ef"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000039.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "8a3730ed1966433435f2b35d371e9635f1c0fc22413d397b40bb7b24841438f5"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000040.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "4f519edbe530579ce558cb551a5d2816038fa82b9298149ef4304ca5352438d7"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/si_2023/000041.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "6b10ee18f5d07785d5f6877ded13bab304d8529bc080fc62ca27c013a7aba44a"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/sk_2023/000000.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "8ad194680508f57071fabc371edfb61a572c1041a6475a6313e8028b2fc081fb"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/sk_2023/000001.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "90b5804610e355eee914f2db0d14d0271da118158c54c4aec45794fda9c92285"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/sk_2023/000002.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "d2d1bfbc05f60582afeca42f5e8dc3c29c5b1c8564c2710e9d5e3cc386a8bafb"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/sk_2023/000003.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "7fcaa86244238a35b4df78ad084bf065869803026a09ecc368ab97b71e390ae7"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/sk_2023/000004.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "3bd6d9921cc030ca5035fa131455e5e97feead4ca532b6a0cc45d3e9a5b3f354"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/sk_2023/000005.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "adf51eee3e98072cb5699ab9409dbae4a20f4323bba7164cdea86705f8740fe4"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/sk_2023/000006.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "25ecd1776ea0855bdcc3c4d32380f054e0bcdedc8f10d41aa68486bddd8d8005"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/sk_2023/000007.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "7fe9b413c8f305d816293a9dacd5f5f264968609f53610a667537636540ed3e7"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/sk_2023/000008.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "fa108ef4abaf5e2fd1f04317123bf116c6aafb44d35e5724e28c847ed1a4ddee"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/sk_2023/000009.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "2f63de8aa4be21cbb881e3100e0054a881b69f6087b89a37ac3c982b6d5a0223"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/sk_2023/000010.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "0df7aee22f41ff2a9fd9fd8eaf6be7963e79eea5dfda8309c42f3a87c80d530d"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/sk_2023/000011.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "47e7cf6abf58d84b7fa051374f672141d61daf0f2eba25e289e7d8d84fe2075a"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/sk_2023/000012.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "f932a3f2f8487c1707832a3741f4eeb3716c2d7d06c618484c12af239d708660"
+  },
+  {
+    "path": "data/global_maize/eurocrops/parcels/sk_2023/000013.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "7a4475a36215c8ece4de67b87121db5d4bc05e409dfbb0d57d61bc53350f41d7"
+  },
+  {
+    "path": "data/global_maize/netherlands_2025/README.md",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "6c1ec1d839fa3e888648e38fd4b596046aa6adc098a600371d0afcda01908993"
+  },
+  {
+    "path": "data/global_maize/netherlands_2025/extract.py",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "85c74a7ab7c1d1887548161db0b8ab55378444cbc7e1281f50d74666685aaecf"
+  },
+  {
+    "path": "data/global_maize/netherlands_2025/field_index.csv",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "55f138782c712ec2518514cdad4e7c522306ecda1ce3302a2b15a6b0698d428b"
+  },
+  {
+    "path": "data/global_maize/netherlands_2025/fields.geojson",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "750c12e971c0cc6e1b42e663e7480aa1a8625221673ff92eb8e28e4ff646ed7e"
+  },
+  {
+    "path": "data/global_maize/netherlands_2025/ndvi_all.csv",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "0283efe9399868ed81b086bb6d8766d86bb5ae9f1c525088b45e3746a1374fb2"
+  },
+  {
+    "path": "data/global_maize/netherlands_2025/scenes.json",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "388f2dd92463a9b22ea38175a5279c4ab24276c1d5c7a2738826a73201308ed6"
+  },
+  {
+    "path": "data/global_maize/north_america_reports/BARCFarmMgmt.zip",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "d819df8b4e7cbffb52a980947ffe0fe35b75c86aa741c3fe606ddf9bab468357"
+  },
+  {
+    "path": "data/global_maize/north_america_reports/README.md",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "6e99d2b4f01313554a1ddbfbb2e6cb474609fd053e7ba545a4ac5fb02edfbcec"
+  },
+  {
+    "path": "data/global_maize/north_america_reports/extract_barc.py",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "7ec9016d515263f2e1a31a1051365897849ebc9e1d2cb4c675a1201acfcaea85"
+  },
+  {
+    "path": "data/global_maize/north_america_reports/harvest_operations.csv",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "2d2234f185373cd79182cfa348f46429be981ac876b7eb4d4a25c80c25fc4f9c"
+  },
+  {
+    "path": "data/global_maize/north_america_reports/matched_field_years.geojson",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "58109176a83cdb0a7224310987927f6a0e6f1bb39f0f13d67d12460222466f31"
+  },
+  {
+    "path": "data/global_maize/north_america_reports/usda_archive_files.csv",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "21da1901f74d3734090f18ff828e1ce592b267ccf6d1b89e5eb67e942b42b083"
+  },
+  {
+    "path": "data/global_maize/quebec/extract.py",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "e46b840e3b6d6be761d568b59305aaad5eb90fdca2eb2510948054572ff2603a"
+  },
+  {
+    "path": "data/global_maize/quebec/inventory.csv",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "c2f8a248341d3dd691e250d657338a26b750854a3e2b465375c90e774583cced"
+  },
+  {
+    "path": "data/global_maize/quebec/qc_2025_000.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "7228ec56a01ebc4817e3724b275fbd03cb16af00695e157d040c1606217e2f94"
+  },
+  {
+    "path": "data/global_maize/quebec/qc_2025_001.parquet",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "d979459c93b335290574ba94b641a3ec4e8a37742642375c7955c7aa874c9a31"
+  },
+  {
+    "path": "data/global_maize/sources.md",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "8bdcb4953988180cc6a81f7c6859446bdb698e25b42e48ae6294e67ebd249d37"
+  },
+  {
+    "path": "data/global_maize/us_barc/README.md",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "de01cee3b5c4e816c44c585390417b83d1630b8253c34b7679b5d98efd75b1f7"
+  },
+  {
+    "path": "data/global_maize/us_barc/features.csv",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "e4b8b7d0d449f5fa052a25c579aa6bd317bc533647874a27811ab683a3a2c47d"
+  },
+  {
+    "path": "data/global_maize/us_barc/field_id_map.csv",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "1f9400d4a09a9f88e4adeeb989de0614f6fe24c7246733b83dfd380b840256de"
+  },
+  {
+    "path": "data/global_maize/us_barc/fields.geojson",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "0ec8c03cbf78ee2dbadc79eb0b43604126e82ecbb2a96710f790574214e252de"
+  },
+  {
+    "path": "data/global_maize/us_barc/labels.csv",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "b7c453f7535eca3fea4477bd4861864d5912e47c1330be7c67588d8c94185f0a"
+  },
+  {
+    "path": "data/global_maize/us_barc/timeseries.csv",
+    "branch": "data/global-maize-fields",
+    "commit": "49807d67f7e1fb54ad9c1879019e0f7c3a058933",
+    "sha256": "cbd3867c4d4dd779b59c86811bd952715d98ce66da2d4be0bf9e8ff6980c579e"
+  },
+  {
+    "path": "data/processed/maryland_field_dairy_distances/dairy_locations.csv",
+    "branch": "main",
+    "commit": "ca141fbc81669a653664d5e62a3823476171dda3",
+    "sha256": "5ef23cd91b234700566a1c5c14e9b0f04f61ed726ddde6c274f3a7da842b3723"
+  },
+  {
+    "path": "reports/training/step1_ndvi_maryland/README.md",
+    "branch": "main",
+    "commit": "ca141fbc81669a653664d5e62a3823476171dda3",
+    "sha256": "4d237e371a483584188eb0eb1f505a49565bf23cab6a52a43c7e1eca15234a58"
+  },
+  {
+    "path": "reports/training/step1_ndvi_maryland/comparison_protocol.json",
+    "branch": "main",
+    "commit": "ca141fbc81669a653664d5e62a3823476171dda3",
+    "sha256": "e2c08c66c2b6a482bbfd2f818cf896632bbe1550b8d2bdad8a8e2b357df794be"
+  },
+  {
+    "path": "reports/training/step1_ndvi_maryland/environment.json",
+    "branch": "main",
+    "commit": "ca141fbc81669a653664d5e62a3823476171dda3",
+    "sha256": "27ad52620e36eea9c18f3b050189c9946dedd9ac648dfeb7bc0359116598e2bc"
+  },
+  {
+    "path": "reports/training/step1_ndvi_maryland/feature_importance.csv",
+    "branch": "main",
+    "commit": "ca141fbc81669a653664d5e62a3823476171dda3",
+    "sha256": "2c958d22e0a5a2165f2cebccef64d17a0f34c40e072a2ade74c9f9b050933520"
+  },
+  {
+    "path": "reports/training/step1_ndvi_maryland/fold_metrics.json",
+    "branch": "main",
+    "commit": "ca141fbc81669a653664d5e62a3823476171dda3",
+    "sha256": "a32231c1b98cca1a3eba8acd26b8ca81032fc6a24feba80769f38df4f78599fd"
+  },
+  {
+    "path": "reports/training/step1_ndvi_maryland/frozen_training_rows.csv",
+    "branch": "main",
+    "commit": "ca141fbc81669a653664d5e62a3823476171dda3",
+    "sha256": "8b82aab9c22d1e7fac1f33d0502bf51bd1f1ab1817d27c4c08f93ffc127b77ec"
+  },
+  {
+    "path": "reports/training/step1_ndvi_maryland/input_manifest.json",
+    "branch": "main",
+    "commit": "ca141fbc81669a653664d5e62a3823476171dda3",
+    "sha256": "58c7ff8760e96e5bf1a9f0b2f566cada2203a4ac598dd5dad1838cc5dae9ac1a"
+  },
+  {
+    "path": "reports/training/step1_ndvi_maryland/input_validation.json",
+    "branch": "main",
+    "commit": "ca141fbc81669a653664d5e62a3823476171dda3",
+    "sha256": "b8f9f900e6556460068b87a719ad5e73a844c151440c45686c404cfddf9e6e9e"
+  },
+  {
+    "path": "reports/training/step1_ndvi_maryland/metrics.json",
+    "branch": "main",
+    "commit": "ca141fbc81669a653664d5e62a3823476171dda3",
+    "sha256": "b6e99bf0f4afc3362b538dfcc292758e7e5e651d8a5ef3693de25e63c1d0e683"
+  },
+  {
+    "path": "reports/training/step1_ndvi_maryland/model_checksums.json",
+    "branch": "main",
+    "commit": "ca141fbc81669a653664d5e62a3823476171dda3",
+    "sha256": "68f20b9aa39b763cad557e1aadb41217991a0c3ac4395eeadea823276e93e7a8"
+  },
+  {
+    "path": "reports/training/step1_ndvi_maryland/oof_predictions.csv",
+    "branch": "main",
+    "commit": "ca141fbc81669a653664d5e62a3823476171dda3",
+    "sha256": "c66e826b5e80d99444ccfdc049670fee257ad82176c7613c710fd443f91a5e0e"
+  },
+  {
+    "path": "reports/training/step1_ndvi_maryland/requirements.lock.txt",
+    "branch": "main",
+    "commit": "ca141fbc81669a653664d5e62a3823476171dda3",
+    "sha256": "355fd012d5223c18a2f4a7d60ad874c90a6c807ddd954887917fd45f078edc31"
+  },
+  {
+    "path": "reports/training/step1_ndvi_maryland/train_step1.py",
+    "branch": "main",
+    "commit": "ca141fbc81669a653664d5e62a3823476171dda3",
+    "sha256": "1f46af6054a8c4b21951d18d5910721f1f58653f27e2faa75ecd1e90addf7a56"
+  },
+  {
+    "path": "reports/training/step1_ndvi_maryland/trained_models.zip",
+    "branch": "main",
+    "commit": "ca141fbc81669a653664d5e62a3823476171dda3",
+    "sha256": "3cb424b057f2741ab2efa41b5808abf8b121c8fc9e228001b5693e7f2beb2dd8"
+  },
+  {
+    "path": "reports/training/step1_ndvi_maryland/verification.json",
+    "branch": "main",
+    "commit": "ca141fbc81669a653664d5e62a3823476171dda3",
+    "sha256": "c5b6d85564cde885d544152020110992b051f544e9a078fd7dd920ba7e931fb1"
+  },
+  {
+    "path": "reports/training/step2_ndvi_dairy_distance_maryland_v2/README.md",
+    "branch": "main",
+    "commit": "ca141fbc81669a653664d5e62a3823476171dda3",
+    "sha256": "d1ac7784a52e2d58698b27504abf1d4f840a860377d42ef5870cc62a814779eb"
+  },
+  {
+    "path": "reports/training/step2_ndvi_dairy_distance_maryland_v2/environment.json",
+    "branch": "main",
+    "commit": "ca141fbc81669a653664d5e62a3823476171dda3",
+    "sha256": "804e8537ffe57a2d594184f28768f68d3b3237f92d486f0a3519f0cab5b4367e"
+  },
+  {
+    "path": "reports/training/step2_ndvi_dairy_distance_maryland_v2/fold_results.json",
+    "branch": "main",
+    "commit": "ca141fbc81669a653664d5e62a3823476171dda3",
+    "sha256": "1cbc22fc5c3004e146ba17d352ae390ccbbc1fae56339674f226bcea48870149"
+  },
+  {
+    "path": "reports/training/step2_ndvi_dairy_distance_maryland_v2/frozen_training_rows.csv",
+    "branch": "main",
+    "commit": "ca141fbc81669a653664d5e62a3823476171dda3",
+    "sha256": "4c2852c1e1d425f5a307a2b7d438c91062aec1b71a7bd47c67ad75d2979ca01e"
+  },
+  {
+    "path": "reports/training/step2_ndvi_dairy_distance_maryland_v2/input_manifest.json",
+    "branch": "main",
+    "commit": "ca141fbc81669a653664d5e62a3823476171dda3",
+    "sha256": "d7192315ac7c262651fb3f5f958109f1329c16c712d25ea3e8ef56d9a5c05497"
+  },
+  {
+    "path": "reports/training/step2_ndvi_dairy_distance_maryland_v2/metrics.json",
+    "branch": "main",
+    "commit": "ca141fbc81669a653664d5e62a3823476171dda3",
+    "sha256": "25df5190a6d3bc8ef1041ca2635303e2db98dfe23976621da238fce552e67331"
+  },
+  {
+    "path": "reports/training/step2_ndvi_dairy_distance_maryland_v2/model_checksums.json",
+    "branch": "main",
+    "commit": "ca141fbc81669a653664d5e62a3823476171dda3",
+    "sha256": "aba7dcb81af8d48f4e686e990247ab229c186c1bc99f6073052125f8711c44b0"
+  },
+  {
+    "path": "reports/training/step2_ndvi_dairy_distance_maryland_v2/paired_oof_predictions.csv",
+    "branch": "main",
+    "commit": "ca141fbc81669a653664d5e62a3823476171dda3",
+    "sha256": "d21f0dbc28f4b81011ebb445daeeca242bc9d29fd6c77a6892e3c048cb4e2fdb"
+  },
+  {
+    "path": "reports/training/step2_ndvi_dairy_distance_maryland_v2/protocol.json",
+    "branch": "main",
+    "commit": "ca141fbc81669a653664d5e62a3823476171dda3",
+    "sha256": "3796cb0edb542859e7a649ae6b3d44b1918b30863a6862ebedaa2045cd11317e"
+  },
+  {
+    "path": "reports/training/step2_ndvi_dairy_distance_maryland_v2/retained_model.json",
+    "branch": "main",
+    "commit": "ca141fbc81669a653664d5e62a3823476171dda3",
+    "sha256": "1094f8f623fd67573972c2e75ddcf8bbd4b87d081fe5f91c27f997497c2228a1"
+  },
+  {
+    "path": "reports/training/step2_ndvi_dairy_distance_maryland_v2/train_step2_fixed.py",
+    "branch": "main",
+    "commit": "ca141fbc81669a653664d5e62a3823476171dda3",
+    "sha256": "084896010b2b52a7b8135bd42e3ffecca2473c83b4ccfff9e7204b73c577f9b1"
+  },
+  {
+    "path": "reports/training/step2_ndvi_dairy_distance_maryland_v2/trained_models.zip",
+    "branch": "main",
+    "commit": "ca141fbc81669a653664d5e62a3823476171dda3",
+    "sha256": "216789ca458b1dc289104ec28021f07ee11572dda6b22b20cf54a25f561a4324"
+  },
+  {
+    "path": "reports/training/step2_ndvi_dairy_distance_maryland_v2/verification.json",
+    "branch": "main",
+    "commit": "ca141fbc81669a653664d5e62a3823476171dda3",
+    "sha256": "9b6e726bb7f64514c052f0e2fb86bb617ecf55306ff1387c6ef1c14088f26c18"
+  }
+]

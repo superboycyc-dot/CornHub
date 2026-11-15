@@ -1,0 +1,120 @@
+{
+  "by_country": {
+    "CA": {
+      "train_countries": [
+        "NL",
+        "US"
+      ],
+      "test_country": "CA",
+      "metrics": {
+        "n": 39653,
+        "correct": 35711,
+        "accuracy": 0.9005875974075102,
+        "macro_f1": null,
+        "balanced_accuracy": null,
+        "silage_precision": 0.0,
+        "silage_recall": null,
+        "roc_auc": null,
+        "brier_score": 0.153464503529246,
+        "confusion_matrix": [
+          [
+            35711,
+            3942
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "confusion_order": [
+          "grain",
+          "silage"
+        ],
+        "class_counts": {
+          "grain": 39653,
+          "silage": 0
+        },
+        "always_grain_accuracy": 1.0,
+        "test_has_both_classes": false
+      }
+    },
+    "NL": {
+      "train_countries": [
+        "CA",
+        "US"
+      ],
+      "test_country": "NL",
+      "metrics": {
+        "n": 113,
+        "correct": 52,
+        "accuracy": 0.46017699115044247,
+        "macro_f1": 0.3736483416628805,
+        "balanced_accuracy": 0.5037393162393162,
+        "silage_precision": 0.9215686274509803,
+        "silage_recall": 0.4519230769230769,
+        "roc_auc": 0.5908119658119658,
+        "brier_score": 0.5031221079993703,
+        "confusion_matrix": [
+          [
+            5,
+            4
+          ],
+          [
+            57,
+            47
+          ]
+        ],
+        "confusion_order": [
+          "grain",
+          "silage"
+        ],
+        "class_counts": {
+          "grain": 9,
+          "silage": 104
+        },
+        "always_grain_accuracy": 0.07964601769911504,
+        "test_has_both_classes": true
+      }
+    },
+    "US": {
+      "train_countries": [
+        "CA",
+        "NL"
+      ],
+      "test_country": "US",
+      "metrics": {
+        "n": 80,
+        "correct": 42,
+        "accuracy": 0.525,
+        "macro_f1": 0.5099935525467441,
+        "balanced_accuracy": 0.6146953405017921,
+        "silage_precision": 0.2916666666666667,
+        "silage_recall": 0.7777777777777778,
+        "roc_auc": 0.681899641577061,
+        "brier_score": 0.457942054765336,
+        "confusion_matrix": [
+          [
+            28,
+            34
+          ],
+          [
+            4,
+            14
+          ]
+        ],
+        "confusion_order": [
+          "grain",
+          "silage"
+        ],
+        "class_counts": {
+          "grain": 62,
+          "silage": 18
+        },
+        "always_grain_accuracy": 0.775,
+        "test_has_both_classes": true
+      }
+    }
+  },
+  "country_macro_accuracy": 0.6285881961859842,
+  "warning": "Only countries with usable observed features are scored; no Europe-all-null accuracy claim"
+}

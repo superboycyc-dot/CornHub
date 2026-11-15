@@ -1,0 +1,11 @@
+﻿feature,importance
+ndvi_peak,0.10199678988679023
+peak_doy,0.0
+max_drop_per_day,0.1141917780608624
+drop_doy,0.4053109415354062
+ndvi_late_mean,0.374907056792047
+nearest_dairy_distance_km,0.0035934337248942237
+missingindicator_max_drop_per_day,0.0
+missingindicator_drop_doy,0.0
+missingindicator_ndvi_late_mean,0.0
+missingindicator_nearest_dairy_distance_km,0.0

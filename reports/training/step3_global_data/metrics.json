@@ -1,0 +1,314 @@
+{
+  "status": "trained_and_evaluated",
+  "stage": 3,
+  "labeled_candidate_records": 385049,
+  "eligible_records": 39846,
+  "eligible_class_counts": {
+    "grain": 39724,
+    "silage": 122
+  },
+  "countries_with_observed_features": [
+    "CA",
+    "NL",
+    "US"
+  ],
+  "excluded_no_ndvi": 345202,
+  "excluded_conflicted": 1,
+  "spatial_group_oof": {
+    "pooled": {
+      "n": 39846,
+      "correct": 39797,
+      "accuracy": 0.9987702655222607,
+      "macro_f1": 0.8936310665838358,
+      "balanced_accuracy": 0.8727242563854531,
+      "silage_precision": 0.8348623853211009,
+      "silage_recall": 0.7459016393442623,
+      "roc_auc": 0.9651074999463511,
+      "brier_score": 0.001033006891993391,
+      "confusion_matrix": [
+        [
+          39706,
+          18
+        ],
+        [
+          31,
+          91
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ],
+      "class_counts": {
+        "grain": 39724,
+        "silage": 122
+      },
+      "always_grain_accuracy": 0.9969382121166491,
+      "test_has_both_classes": true
+    },
+    "by_country": {
+      "CA": {
+        "n": 39653,
+        "correct": 39653,
+        "accuracy": 1.0,
+        "macro_f1": null,
+        "balanced_accuracy": null,
+        "silage_precision": 0.0,
+        "silage_recall": null,
+        "roc_auc": null,
+        "brier_score": 3.886671594270248e-05,
+        "confusion_matrix": [
+          [
+            39653,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "confusion_order": [
+          "grain",
+          "silage"
+        ],
+        "class_counts": {
+          "grain": 39653,
+          "silage": 0
+        },
+        "always_grain_accuracy": 1.0,
+        "test_has_both_classes": false
+      },
+      "NL": {
+        "n": 113,
+        "correct": 93,
+        "accuracy": 0.8230088495575221,
+        "macro_f1": 0.5923520923520924,
+        "balanced_accuracy": 0.6501068376068375,
+        "silage_precision": 0.9468085106382979,
+        "silage_recall": 0.8557692307692307,
+        "roc_auc": 0.7035256410256411,
+        "brier_score": 0.14914416016411586,
+        "confusion_matrix": [
+          [
+            4,
+            5
+          ],
+          [
+            15,
+            89
+          ]
+        ],
+        "confusion_order": [
+          "grain",
+          "silage"
+        ],
+        "class_counts": {
+          "grain": 9,
+          "silage": 104
+        },
+        "always_grain_accuracy": 0.07964601769911504,
+        "test_has_both_classes": true
+      },
+      "US": {
+        "n": 80,
+        "correct": 51,
+        "accuracy": 0.6375,
+        "macro_f1": 0.4464328322596039,
+        "balanced_accuracy": 0.4507168458781362,
+        "silage_precision": 0.13333333333333333,
+        "silage_recall": 0.1111111111111111,
+        "roc_auc": 0.4789426523297491,
+        "brier_score": 0.2845840079068448,
+        "confusion_matrix": [
+          [
+            49,
+            13
+          ],
+          [
+            16,
+            2
+          ]
+        ],
+        "confusion_order": [
+          "grain",
+          "silage"
+        ],
+        "class_counts": {
+          "grain": 62,
+          "silage": 18
+        },
+        "always_grain_accuracy": 0.775,
+        "test_has_both_classes": true
+      }
+    },
+    "country_macro_accuracy": 0.820169616519174,
+    "warning": "Pooled accuracy is dominated by grain-only Quebec; report country and class metrics alongside it"
+  },
+  "country_holdout_macro_accuracy": 0.6285881961859842,
+  "country_holdout": {
+    "CA": {
+      "n": 39653,
+      "correct": 35711,
+      "accuracy": 0.9005875974075102,
+      "macro_f1": null,
+      "balanced_accuracy": null,
+      "silage_precision": 0.0,
+      "silage_recall": null,
+      "roc_auc": null,
+      "brier_score": 0.153464503529246,
+      "confusion_matrix": [
+        [
+          35711,
+          3942
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ],
+      "class_counts": {
+        "grain": 39653,
+        "silage": 0
+      },
+      "always_grain_accuracy": 1.0,
+      "test_has_both_classes": false
+    },
+    "NL": {
+      "n": 113,
+      "correct": 52,
+      "accuracy": 0.46017699115044247,
+      "macro_f1": 0.3736483416628805,
+      "balanced_accuracy": 0.5037393162393162,
+      "silage_precision": 0.9215686274509803,
+      "silage_recall": 0.4519230769230769,
+      "roc_auc": 0.5908119658119658,
+      "brier_score": 0.5031221079993703,
+      "confusion_matrix": [
+        [
+          5,
+          4
+        ],
+        [
+          57,
+          47
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ],
+      "class_counts": {
+        "grain": 9,
+        "silage": 104
+      },
+      "always_grain_accuracy": 0.07964601769911504,
+      "test_has_both_classes": true
+    },
+    "US": {
+      "n": 80,
+      "correct": 42,
+      "accuracy": 0.525,
+      "macro_f1": 0.5099935525467441,
+      "balanced_accuracy": 0.6146953405017921,
+      "silage_precision": 0.2916666666666667,
+      "silage_recall": 0.7777777777777778,
+      "roc_auc": 0.681899641577061,
+      "brier_score": 0.457942054765336,
+      "confusion_matrix": [
+        [
+          28,
+          34
+        ],
+        [
+          4,
+          14
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ],
+      "class_counts": {
+        "grain": 62,
+        "silage": 18
+      },
+      "always_grain_accuracy": 0.775,
+      "test_has_both_classes": true
+    }
+  },
+  "maryland_benchmark": {
+    "retained_step2_accuracy": 0.8181818181818182,
+    "foreign_augmented": {
+      "n": 44,
+      "correct": 39,
+      "accuracy": 0.8863636363636364,
+      "macro_f1": 0.8714202220923437,
+      "balanced_accuracy": 0.921875,
+      "silage_precision": 0.7058823529411765,
+      "silage_recall": 1.0,
+      "roc_auc": 0.9114583333333333,
+      "brier_score": 0.11608147961243459,
+      "confusion_matrix": [
+        [
+          27,
+          5
+        ],
+        [
+          0,
+          12
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ],
+      "class_counts": {
+        "grain": 32,
+        "silage": 12
+      },
+      "always_grain_accuracy": 0.7272727272727273,
+      "test_has_both_classes": true
+    },
+    "clean_official_without_conflict": {
+      "n": 43,
+      "correct": 38,
+      "accuracy": 0.8837209302325582,
+      "macro_f1": 0.8650345260514751,
+      "balanced_accuracy": 0.921875,
+      "silage_precision": 0.6875,
+      "silage_recall": 1.0,
+      "roc_auc": 0.9090909090909091,
+      "brier_score": 0.11878104890574703,
+      "confusion_matrix": [
+        [
+          27,
+          5
+        ],
+        [
+          0,
+          11
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ],
+      "class_counts": {
+        "grain": 32,
+        "silage": 11
+      },
+      "always_grain_accuracy": 0.7441860465116279,
+      "test_has_both_classes": true
+    },
+    "accuracy_change_pp": 6.818181818181812,
+    "same_44_test_rows_and_outer_farm_folds": true,
+    "conflicted_rows_excluded_from_training": 1,
+    "warning": "One conflicted official row excluded from training but original benchmark test label retained; global missingness representation and source/class weights also differ from retained model"
+  },
+  "retained_model_replaced": false,
+  "scope": "Existing repository multi-country subset; no full-world coverage or independent global accuracy claim"
+}

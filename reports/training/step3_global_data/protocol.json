@@ -1,0 +1,41 @@
+{
+  "features": [
+    "ndvi_peak",
+    "peak_doy",
+    "max_drop_per_day",
+    "drop_doy",
+    "ndvi_late_mean",
+    "nearest_dairy_distance_km"
+  ],
+  "parameters": {
+    "n_estimators": 100,
+    "max_depth": 4,
+    "min_samples_leaf": 2,
+    "max_features": 1.0,
+    "class_weight": null,
+    "random_state": 42,
+    "n_jobs": 4
+  },
+  "threshold": 0.5,
+  "partial_missing": "fold-local median imputation + missing indicators; all-missing training columns retained as zero",
+  "all_feature_missing": "retain null candidate row and abstain; do not train/score with no informative NDVI",
+  "sample_weight": "class-balanced, then equal-country contribution within each class; weights fit on training rows only",
+  "validation": [
+    "five deterministic farm/spatial-group folds",
+    "leave-one-country-out for observed US/CA/NL",
+    "same official Maryland 44 rows with foreign training augmentation and original five farm folds"
+  ],
+  "negative_labels_not_inferred": true,
+  "region_or_country_not_predictors": true,
+  "no_hyperparameter_or_threshold_search": true,
+  "global_scope": "repository multi-country subset, not worldwide coverage",
+  "limitations": [
+    "Canadian eligible records are grain-only",
+    "Netherlands is a small local sample dominated by silage",
+    "Europe has labels but missing NDVI and dairy distances: pending enrichment, not measured accuracy",
+    "Point vs field NDVI and sparse vs dense sampling differ by source",
+    "Missingness can proxy source; source-held-out results are essential",
+    "2026 Maryland dairy locations not independently verified for historical years",
+    "No claim of new blind-test accuracy for repeatedly viewed Maryland data"
+  ]
+}

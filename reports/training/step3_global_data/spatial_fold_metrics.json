@@ -1,0 +1,187 @@
+[
+  {
+    "fold_id": 0,
+    "n_train": 31986,
+    "n_test": 7860,
+    "test_groups": 103,
+    "metrics": {
+      "n": 7860,
+      "correct": 7851,
+      "accuracy": 0.998854961832061,
+      "macro_f1": 0.9178945535792009,
+      "balanced_accuracy": 0.8963601777198491,
+      "silage_precision": 0.8846153846153846,
+      "silage_recall": 0.7931034482758621,
+      "roc_auc": 0.9958035922659281,
+      "brier_score": 0.0009942897571186282,
+      "confusion_matrix": [
+        [
+          7828,
+          3
+        ],
+        [
+          6,
+          23
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ],
+      "class_counts": {
+        "grain": 7831,
+        "silage": 29
+      },
+      "always_grain_accuracy": 0.9963104325699745,
+      "test_has_both_classes": true
+    }
+  },
+  {
+    "fold_id": 1,
+    "n_train": 30357,
+    "n_test": 9489,
+    "test_groups": 127,
+    "metrics": {
+      "n": 9489,
+      "correct": 9482,
+      "accuracy": 0.999262303720097,
+      "macro_f1": 0.942437932053483,
+      "balanced_accuracy": 0.9217692582214233,
+      "silage_precision": 0.9310344827586207,
+      "silage_recall": 0.84375,
+      "roc_auc": 0.9998645183461986,
+      "brier_score": 0.0007343896722700595,
+      "confusion_matrix": [
+        [
+          9455,
+          2
+        ],
+        [
+          5,
+          27
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ],
+      "class_counts": {
+        "grain": 9457,
+        "silage": 32
+      },
+      "always_grain_accuracy": 0.9966276741490147,
+      "test_has_both_classes": true
+    }
+  },
+  {
+    "fold_id": 2,
+    "n_train": 32846,
+    "n_test": 7000,
+    "test_groups": 128,
+    "metrics": {
+      "n": 7000,
+      "correct": 6996,
+      "accuracy": 0.9994285714285714,
+      "macro_f1": 0.9165235642053043,
+      "balanced_accuracy": 0.9997138769670959,
+      "silage_precision": 0.7142857142857143,
+      "silage_recall": 1.0,
+      "roc_auc": 0.999856938483548,
+      "brier_score": 0.0004604514487605697,
+      "confusion_matrix": [
+        [
+          6986,
+          4
+        ],
+        [
+          0,
+          10
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ],
+      "class_counts": {
+        "grain": 6990,
+        "silage": 10
+      },
+      "always_grain_accuracy": 0.9985714285714286,
+      "test_has_both_classes": true
+    }
+  },
+  {
+    "fold_id": 3,
+    "n_train": 32895,
+    "n_test": 6951,
+    "test_groups": 125,
+    "metrics": {
+      "n": 6951,
+      "correct": 6941,
+      "accuracy": 0.9985613580779744,
+      "macro_f1": 0.5829733621310296,
+      "balanced_accuracy": 0.7493524248093251,
+      "silage_precision": 0.1,
+      "silage_recall": 0.5,
+      "roc_auc": 0.9987048496186502,
+      "brier_score": 0.0010970818284675408,
+      "confusion_matrix": [
+        [
+          6940,
+          9
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ],
+      "class_counts": {
+        "grain": 6949,
+        "silage": 2
+      },
+      "always_grain_accuracy": 0.9997122716155948,
+      "test_has_both_classes": true
+    }
+  },
+  {
+    "fold_id": 4,
+    "n_train": 31300,
+    "n_test": 8546,
+    "test_groups": 131,
+    "metrics": {
+      "n": 8546,
+      "correct": 8527,
+      "accuracy": 0.9977767376550433,
+      "macro_f1": 0.87918843892273,
+      "balanced_accuracy": 0.8061224489795918,
+      "silage_precision": 1.0,
+      "silage_recall": 0.6122448979591837,
+      "roc_auc": 0.9283096314905862,
+      "brier_score": 0.0018170460561951528,
+      "confusion_matrix": [
+        [
+          8497,
+          0
+        ],
+        [
+          19,
+          30
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ],
+      "class_counts": {
+        "grain": 8497,
+        "silage": 49
+      },
+      "always_grain_accuracy": 0.9942663234261643,
+      "test_has_both_classes": true
+    }
+  }
+]

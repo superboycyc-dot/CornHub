@@ -1,0 +1,16 @@
+{
+  "models/global_group_fold_4.joblib": "cdc106ac44b9b92bdb542a0bbf16e6d3f9d048a6a98664cb3aea391ca02df494",
+  "models/global_group_fold_3.joblib": "4809466d6f06d43310c7574a6ac720cc5eef20bff4505b66461468fd1a3bb145",
+  "models/global_group_fold_0.joblib": "96996fe6b67d13c3b6acdc74b1c88ec2ea6bd4348b265fab56cda41636df16cf",
+  "models/country_holdout_CA.joblib": "b793bfbabe818b44859bcbb482783f91d73a54818fb528d53eeb8b3435162a9d",
+  "models/maryland_augmented_fold_1.joblib": "dcb5e045a270f10fa4b21a013011ca26ef865155baa8709a99150949801f94bc",
+  "models/maryland_augmented_fold_4.joblib": "232738fe5fde169ffe391da4dde3f7654e11fc8721a1ffe3b563cd2e820d3360",
+  "models/maryland_augmented_fold_0.joblib": "c220d8c01b70bd69d41fcd79cbe67a6c509be8ab232af96f6d7f6938ebe0e549",
+  "models/global_full_model.joblib": "9470cda3006dcb4b2f134dc9cddf3a134c4a627fea129ff3faaf9fe28aff9fa3",
+  "models/maryland_augmented_fold_3.joblib": "23e54d75157298c0051d5508bc3168ac5ac84d40f9941f2a784357939436cfc8",
+  "models/maryland_augmented_fold_2.joblib": "096df67c0936e117e7fd768bb2ab0b181b8565dd2c960565ebea1d22c0892701",
+  "models/country_holdout_NL.joblib": "122d12fd23559f14e828151c74814e5b6618816b11ac2ae53aa034ec6ad93aed",
+  "models/global_group_fold_1.joblib": "f940cc5d5a9fbed74751b8adc0bb0951b3dfbbd28465c51323e1c4c83be888c4",
+  "models/country_holdout_US.joblib": "08dbf981004fd46215a2f7580f08baa0856a17ba509bd902183666a00bb93ed3",
+  "models/global_group_fold_2.joblib": "f60832de51e47c6b915945f0a3d73cde630cf851917cd08f73e8df0fac2efafe"
+}

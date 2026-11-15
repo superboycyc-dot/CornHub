@@ -1,0 +1,14 @@
+[
+  {
+    "source": "csb",
+    "records": 6112209,
+    "reason": "No silage/grain ground-truth labels; corn presence is not a harvest-use label",
+    "input_path": "/home/ubuntu/cornhub-compute/workspaces/505d85800d39db8f/data/processed/external_corn/csb"
+  },
+  {
+    "source": "cropsight",
+    "records": 15939,
+    "reason": "No silage/grain ground-truth labels; corn presence is not a harvest-use label",
+    "input_path": "/home/ubuntu/cornhub-compute/workspaces/505d85800d39db8f/data/processed/external_corn/cropsight"
+  }
+]

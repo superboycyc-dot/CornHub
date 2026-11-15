@@ -1,0 +1,12 @@
+﻿country,region,labeled_records,grain,silage,conflicted,eligible,excluded_no_valid_ndvi,median_valid_ndvi_dates
+BE,be2,111379,33493,77886,0,0,111379,
+BE,be3,25070,3132,21938,0,0,25070,
+BG,bg,75573,69934,5639,0,0,75573,
+CA,Québec,39653,39653,0,0,39653,0,2.0
+CZ,cz,7690,7690,0,0,0,7690,
+DE,de4,10599,0,10599,0,0,10599,
+DK,dk,25163,0,25163,0,0,25163,
+NL,southeast_sample,134,13,121,0,113,21,7.0
+SI,si,86356,55159,31197,0,0,86356,
+SK,sk,3331,0,3331,0,0,3331,
+US,Maryland,101,74,27,1,80,20,22.5
