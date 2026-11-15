@@ -1,0 +1,22 @@
+[
+  {
+    "path": "/home/ubuntu/cornhub-compute/runs/v9-states-plan-20261115T034001Z/CA_MD_candidates.parquet",
+    "sha256": "f6d3428823396862cbe865fe660e15b08bac00f5e905214b864ed5e7e4bf9dc1"
+  },
+  {
+    "path": "/home/ubuntu/cornhub-compute/workspace/data/processed/core/fields.geojson",
+    "sha256": "0ec8c03cbf78ee2dbadc79eb0b43604126e82ecbb2a96710f790574214e252de"
+  },
+  {
+    "path": "/home/ubuntu/cornhub-compute/runs/v9-ndvi90-context10-20261115T030120Z/models/V9_full.joblib",
+    "sha256": "1d957c4804b105728ae095ee4125f38fbdede737942d38bc961bf2fbb152b096"
+  },
+  {
+    "path": "/home/ubuntu/cornhub-compute/runs/v9-us-confidence-20261115T033209Z/models/us_calibrator_full.joblib",
+    "sha256": "736b6fd6d888dcb3a06fd22123e75401c5c67ac29d2bf5930a4fbffd719643e8"
+  },
+  {
+    "path": "/home/ubuntu/cornhub-compute/export_v9_states.py",
+    "sha256": "a030567a7dd124b719e2602912aa85b61aee52ed6323f23917acf76bfb11802f"
+  }
+]
