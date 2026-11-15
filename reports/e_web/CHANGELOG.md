@@ -75,3 +75,7 @@ Replaced close-up national center markers with actual source Polygon/MultiPolygo
 ## Review overview and field lists
 
 Restore BARC reference layer by default. Move silage-probability legend to lower right with 48% opaque background. Add current-year Maryland available-prediction percentages and clickable red First review, orange Suggested review and green lists. Counts describe user-requested probability buckets, not validated error/review requirements or D area summaries. Missing predictions excluded; conditional predictions included and labeled. Each list shows original field ID (no supplied names), boundary-center coordinates, predicted silage/grain use and original probability. Harvest dates are unavailable. Location index is generated from existing source geometries during sync.
+
+## Black-screen hotfix
+
+Reproduced ReferenceError: React is not defined by rendering ReviewOverview with the production classic JSX transform. Added the missing React import. Added a component render regression check for loading, populated and OOF states; compilation and HTTP checks alone had missed this runtime failure.
