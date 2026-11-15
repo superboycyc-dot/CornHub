@@ -549,7 +549,7 @@ function App() {
     [fullscreen, setFullscreen] = useState(false),
     [uiNotice, setUiNotice] = useState("");
   const mapController = useRef();
-  const [nationalEnabled, setNationalEnabled] = useState(false),
+  const [nationalEnabled, setNationalEnabled] = useState(true),
     [nationalStatus, setNationalStatus] = useState("");
   const [zoomLevel, setZoomLevel] = useState(9),
     [showCounties, setShowCounties] = useState(true),
@@ -754,7 +754,7 @@ function App() {
             onChange={(e) => setNationalEnabled(e.target.checked)}
           />
           <span className="national-swatch" />
-          US candidate fields
+          US candidate fields · MD + CA outlines
         </label>
         {nationalEnabled && (
           <small role="status">{nationalStatus || "Loading…"}</small>

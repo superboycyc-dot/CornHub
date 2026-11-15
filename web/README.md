@@ -98,3 +98,7 @@ Model validation 明确为 2021–2023 的 44 条汇总 OOF 评估，不能视�
 ## 集成后的浏览器验收
 
 本次已使用本地 Chromium 检查真实 BARC 数据与桌面/390px 手机布局；脚本为 `scripts/integration-browser-check.mjs`，证据和截图见 `reports/e_web/integration-browser-verification.json`、`integration-real-desktop.png`、`integration-real-mobile.png`。这更新了上文旧的“未执行截图”状态。部分外部底图瓦片不可达，页面显示降级提示，田块与模型仍可用；未重新发布网站。
+
+### Maryland/California outline scope
+
+The national layer opens enabled: white polygons only in Maryland and California; other states use individual points at close zoom. Below zoom 12 the US inventory uses white count clusters, remaining visible around the 50 km ruler. See national/README.md for reproducible scope reduction and integrity checks. The deployment build is identified at `/reference/release.json`.

@@ -30,3 +30,10 @@ The builder checked all 1,232 upstream shard hashes and counts and packed 6,128,
 ## National polygon outlines and small-scale points
 
 Replaced close-up national center markers with actual source Polygon/MultiPolygon geometry, white outline and translucent fill. Source geometries are simplified for display with topology preservation (0.0001 degrees), not replaced by rectangles. Source invalid-geometry flags remain explicit. At zoom 12 and closer polygons are displayed; farther out white points/clusters remain visible, including at a roughly 50 km ruler. No minimum national visibility cutoff was added. All source IDs, annual crop flags and prediction interfaces remain unchanged. Polygon tiles are selected by true geometry extents to retain edge-crossing shapes. Browser visual QA is still not claimed.
+
+## 2026-11-15 — MD/CA outlines, US points
+
+- Limit published source outlines to MD (49,902 objects) and CA (18,434); keep all 6,128,148 national object IDs and position points. Source inventories can overlap.
+- Restore individual point loading elsewhere, keep low-zoom count clusters, and preserve all future prediction slots. No national probabilities are available or generated.
+- Enable the national checkbox on opening and label its outline scope explicitly. Keep the 83 green BARC boundaries and Maryland opening view.
+- Add repeatable scope reducer and byte-level verification against the prior complete point inventory. Deployment verification is recorded in national-scope-verification.json and deployment verification report.

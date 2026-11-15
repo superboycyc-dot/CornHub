@@ -121,11 +121,6 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   async function linkTree(src, dest) {
     await fs.mkdir(dest, { recursive: true });
     for (const e of await fs.readdir(src, { withFileTypes: true })) {
-      if (
-        path.basename(src) === "national" &&
-        (e.name === "tiles" || e.name === "index.json")
-      )
-        continue;
       const a = path.join(src, e.name),
         b = path.join(dest, e.name);
       if (e.isDirectory()) await linkTree(a, b);

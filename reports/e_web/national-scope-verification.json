@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "objects": 6128148,
+  "outlined": 68336,
+  "state_counts": {
+    "MD": 49902,
+    "CA": 18434
+  },
+  "polygon_bytes": 3133737,
+  "point_bytes": 43815784,
+  "checks": [
+    "All point IDs, coordinates, annual eligibility and geometry validity byte-equal to original",
+    "Only MD/CA CSB IDs in outline inventory; CropSight classified against Census county geometry by generator",
+    "Every outline identity occurs exactly once and has point suppression flag",
+    "All transport hashes and row counts verified"
+  ],
+  "browser_verification": "Not performed: supported browser tool unavailable"
+}

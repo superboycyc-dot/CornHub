@@ -1,0 +1,16 @@
+{
+  "release": "2026-11-15-md-ca-outlines-v13",
+  "outline_states": [
+    "MD",
+    "CA"
+  ],
+  "state_counts": {
+    "MD": 49902,
+    "CA": 18434
+  },
+  "national_objects": 6128148,
+  "polygon_bytes": 3133737,
+  "point_bytes": 43815784,
+  "national_default_enabled": true,
+  "detail_zoom": 12
+}

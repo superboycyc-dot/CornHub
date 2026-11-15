@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import L from "leaflet";
-import { queryPrediction, decodePolygons } from "./national";
+import { queryPrediction, decodePolygons, decodeTile } from "./national";
 export default function NationalLayer({
   controller,
   enabled,
@@ -19,7 +19,7 @@ export default function NationalLayer({
     const group = L.layerGroup().addTo(map);
     if (!map.getPane("national")) map.createPane("national").style.zIndex = 420;
     const renderer = L.canvas({ pane: "national", padding: 0.2 });
-    let index, config, polygonIndex;
+    let index, config, polygonIndex, pointIndex;
     let timer;
     const tooltip = (field, result = null, error = null) => {
       const box = document.createElement("div");
@@ -33,7 +33,7 @@ export default function NationalLayer({
         `Source geometry: ${field.geometry_valid ? "valid" : "flagged invalid"}`,
         field.geometry
           ? "Source polygon · simplified for display; not a cadastral survey."
-          : "Display center only; zoom in for polygon outlines.",
+          : "Display center · point-only outside Maryland and California.",
         "National candidates are not BARC predictions.",
       ]) {
         const el = document.createElement("span");
@@ -54,7 +54,7 @@ export default function NationalLayer({
         bit = 1 << (Number(year) - 2021),
         z = map.getZoom();
       if (z >= 12) {
-        onStatus("Loading national field outlines…");
+        onStatus("Loading MD + CA outlines and US points…");
         try {
           const visible = polygonIndex.tiles.filter((t) =>
             bounds.intersects([
@@ -74,7 +74,7 @@ export default function NationalLayer({
               const { decompress } = await import("brotli/decompress");
               const body = new Uint8Array(bytes);
               const decoded =
-                String.fromCharCode(...body.subarray(0, 4)) === "NPG1"
+                /^NPG[12]$/.test(String.fromCharCode(...body.subarray(0, 4)))
                   ? body
                   : decompress(body);
               const rows = decodePolygons(decoded);
@@ -83,7 +83,35 @@ export default function NationalLayer({
               return rows;
             }),
           );
+          const pointTiles = pointIndex.tiles.filter(t => {
+            const size = 2 ** pointIndex.tile_zoom;
+            const lat = y => Math.atan(Math.sinh(Math.PI * (1 - 2*y/size))) * 180/Math.PI;
+            return bounds.intersects([[lat(t.y+1),t.x/size*360-180],[lat(t.y),(t.x+1)/size*360-180]]);
+          });
+          const pointChunks = await Promise.all(pointTiles.map(async tile => {
+            const key = "point:" + tile.path;
+            if(cache.has(key)) return cache.get(key);
+            const r = await fetch("/national/" + tile.path, {signal: abort.signal});
+            if(!r.ok) throw Error(`Point HTTP ${r.status}`);
+            let bytes = await r.arrayBuffer();
+            if(new Uint8Array(bytes)[0] === 31) bytes = await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"))).arrayBuffer();
+            const rows = decodeTile(bytes,tile,pointIndex.tile_zoom);
+            cache.set(key,rows);
+            if(cache.size>8) cache.delete(cache.keys().next().value);
+            return rows;
+          }));
           if (closed || ticket !== generation) return;
+          let dots = 0;
+          for(const fields of pointChunks) for(const field of fields) {
+            if(!(field.flags & bit) || (field.flags & 32) || !bounds.contains([field.lat,field.lng])) continue;
+            const layer = L.circleMarker([field.lat,field.lng], {renderer,pane:"national",radius:3,color:"#fff",weight:1,fillColor:"#fff",fillOpacity:0.6}).bindTooltip(tooltip(field), {className:"field-hover",sticky:true});
+            layer.on("mouseover",async () => {
+              layer.setRadius(5);
+              try { const result=await queryPrediction(field,year,role,{...config,source_revision:index.source_commit},abort.signal);if(!closed)layer.setTooltipContent(tooltip(field,result)); }
+              catch(e) { if(e.name!=="AbortError")layer.setTooltipContent(tooltip(field,null,"Prediction loading failed: "+e.message)); }
+            });
+            layer.on("mouseout",()=>layer.setRadius(3));layer.addTo(group);dots++;
+          }
           let count = 0;
           for (const rows of chunks)
             for (const [id, flags, geometry] of rows) {
@@ -173,7 +201,7 @@ export default function NationalLayer({
               ).addTo(group);
               count++;
             }
-          onStatus(`${count.toLocaleString()} visible white field outlines`);
+          onStatus(`${count.toLocaleString()} outlines · ${dots.toLocaleString()} points · MD + CA outline scope`);
         } catch (e) {
           if (e.name !== "AbortError" && !closed)
             onStatus("National outlines loading failed: " + e.message);
@@ -247,11 +275,16 @@ export default function NationalLayer({
         if (!r.ok) throw Error(`Index HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/national/index.json", {signal: abort.signal}).then(r => {
+        if(!r.ok) throw Error(`Point index HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/national/prediction-config.json", { signal: abort.signal }).then(
         (r) => (r.ok ? r.json() : {}),
       ),
     ])
-      .then(([polygons, i, c]) => {
+      .then(([polygons, i, points, c]) => {
+        pointIndex = points;
         polygonIndex = polygons;
         index = i;
         config = c;
