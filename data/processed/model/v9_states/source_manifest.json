@@ -16,7 +16,27 @@
     "sha256": "736b6fd6d888dcb3a06fd22123e75401c5c67ac29d2bf5930a4fbffd719643e8"
   },
   {
+    "path": "/home/ubuntu/cornhub-compute/process_v9_states.py",
+    "sha256": "cd2bfed2c339b0c68db327de65267453c6bb65d449abe14e608991e97ca7f7e2"
+  },
+  {
+    "path": "/home/ubuntu/cornhub-compute/v9_predict.py",
+    "sha256": "c4247c7dca06324a5a3cef6521aba535d762de9962de2c570492847a5ffc28e4"
+  },
+  {
+    "path": "/home/ubuntu/cornhub-compute/v9_us_predict.py",
+    "sha256": "19aae72c7b77d66377ebe2f07059670e1ed51afdcca63c9c8c1b39126a2d4830"
+  },
+  {
+    "path": "/home/ubuntu/cornhub-compute/workspace/src/satellite/imagery.py",
+    "sha256": "4283e262b85470f95b7370a4baf618de597e7813362e8e9243f1aa93000ad359"
+  },
+  {
+    "path": "/home/ubuntu/cornhub-compute/workspace/src/satellite/features.py",
+    "sha256": "e53818036a08cbce0c97f97a6b9a843e058cb9de0efc88779a70daeba6c4a168"
+  },
+  {
     "path": "/home/ubuntu/cornhub-compute/export_v9_states.py",
-    "sha256": "3002a9bc06af6f44a9259c53dec8440caa4a09501b0fdd0d09880650babf2653"
+    "sha256": "2c38214bf096ac06afef3268d25d605bb7989c43a8e45767ca478110028cc00d"
   }
 ]

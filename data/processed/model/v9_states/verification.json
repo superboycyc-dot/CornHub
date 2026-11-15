@@ -7,10 +7,10 @@
   },
   "counts": {
     "not_corn": 100204,
-    "pending_observations": 228310,
+    "pending_observations": 228307,
     "invalid_geometry": 12970,
     "predicted": 49,
-    "conditional_prediction": 15,
+    "conditional_prediction": 18,
     "no_usable_observations": 2
   },
   "checks": [

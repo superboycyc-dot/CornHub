@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-15T04:00:45.257375+00:00",
+  "generated_at": "2026-11-15T04:02:51.690773+00:00",
   "status": "partial_processing",
   "scope": "Repository CSB historical corn candidates for CA/MD plus BARC83; not complete statewide cadastral inventory",
   "years": [
@@ -12,10 +12,10 @@
   ],
   "totals": {
     "not_corn": 100204,
-    "pending_observations": 228310,
+    "pending_observations": 228307,
     "invalid_geometry": 12970,
     "predicted": 49,
-    "conditional_prediction": 15,
+    "conditional_prediction": 18,
     "no_usable_observations": 2
   },
   "groups": [
@@ -621,8 +621,8 @@
       "year": 2024,
       "rows": 49897,
       "counts": {
-        "conditional_prediction": 4,
-        "pending_observations": 47665,
+        "conditional_prediction": 5,
+        "pending_observations": 47664,
         "invalid_geometry": 2228
       },
       "predictions": "MD/2024.csv",
@@ -734,8 +734,8 @@
       "year": 2025,
       "rows": 49897,
       "counts": {
-        "conditional_prediction": 3,
-        "pending_observations": 47666,
+        "conditional_prediction": 5,
+        "pending_observations": 47664,
         "invalid_geometry": 2228
       },
       "predictions": "MD/2025.csv",
@@ -1417,20 +1417,20 @@
       "sha256": "2155d428076df325f437a6fdbe2eb94a6a289077b30b3a0f94192c2b3b71e71d"
     },
     "MD/2022.csv": {
-      "bytes": 8914646,
-      "sha256": "86a0b0b2711fa353869b536939c1d019abf31b22c8f736c805863b3effd1fce7"
+      "bytes": 8914631,
+      "sha256": "3b0f802cecbd31a6a58fe943efdef0dff6bc498e1e0aa4339ca747f0451a4251"
     },
     "MD/2023.csv": {
-      "bytes": 9005126,
-      "sha256": "fa9ee314cd0c4fc0bda054b8b46211a1d1d14d0af815713973f2e761a93f4ae2"
+      "bytes": 9005111,
+      "sha256": "c2df07191dd670f3c2c2a89f402468f108f5fe3d8c7d82a4764ebb6e66c6fe25"
     },
     "MD/2024.csv": {
-      "bytes": 10577459,
-      "sha256": "7cac711d13cbe3c1ecd7e81b27f676f50d1d74419deae70ac6e57232d1e6669e"
+      "bytes": 10577551,
+      "sha256": "7e88a39628716127acf0488669dd26360742d995245d073da1534f45706f2b95"
     },
     "MD/2025.csv": {
-      "bytes": 10577462,
-      "sha256": "6b0cc06cb26d4f646b4b388ad20f78bc88d3db81e71ce028c2073112badf0747"
+      "bytes": 10577682,
+      "sha256": "28b0dc83b032e3f926ea01743e396061ea7cf971627b794dbb548571023e1172"
     }
   },
   "model_source": "/home/ubuntu/cornhub-compute/runs/v9-ndvi90-context10-20261115T030120Z",
