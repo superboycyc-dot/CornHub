@@ -1,0 +1,12 @@
+{
+  "organization": "U.S. Census Bureau",
+  "source_url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/State_County/MapServer/9/query?where=1%3D1&outFields=GEOID%2CNAME%2CSTATE%2CINTPTLAT%2CINTPTLON&outSR=4326&returnGeometry=true&maxAllowableOffset=0.002&geometryPrecision=5&f=geojson",
+  "layer_url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/State_County/MapServer/9",
+  "vintage": "2026-01-01",
+  "retrieved_at_utc": "2026-11-14T20:58:47.866283Z",
+  "feature_count": 3235,
+  "sha256": "ffea3d9024469a0fa7af59de1733e77282ec09bbe242394528e0c267a47de22d",
+  "crs": "EPSG:4326",
+  "generalization_degrees": 0.002,
+  "notes": "Generalized administrative context, not historical crop-year boundaries or a cadastral survey. County GEOID is independent of CornHub field_id. Source: U.S. Census Bureau."
+}

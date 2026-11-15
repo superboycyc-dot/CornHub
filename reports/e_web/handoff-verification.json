@@ -1,0 +1,185 @@
+{
+  "status": "verified",
+  "verified_at_utc": "2026-11-15T00:08:11.238Z",
+  "boundary_count": 83,
+  "labeled_field_count": 34,
+  "label_year_count": 44,
+  "feature_rows": 44,
+  "timeseries_rows": 4524,
+  "prediction_roles": {
+    "oof": 44,
+    "inference": 44
+  },
+  "quality_counts": {
+    "limited": 18,
+    "usable": 26
+  },
+  "annual": {
+    "2022": {
+      "status": "computed",
+      "cohort": "labeled",
+      "n_selected": 7,
+      "queue_rows": 7,
+      "simulation_status": "evaluated"
+    },
+    "2023": {
+      "status": "computed",
+      "cohort": "labeled",
+      "n_selected": 19,
+      "queue_rows": 19,
+      "simulation_status": "evaluated"
+    },
+    "2024": {
+      "status": "pending",
+      "cohort": "labeled",
+      "n_selected": 0,
+      "queue_rows": 0,
+      "simulation_status": "pending"
+    },
+    "2025": {
+      "status": "pending",
+      "cohort": "labeled",
+      "n_selected": 0,
+      "queue_rows": 0,
+      "simulation_status": "pending"
+    }
+  },
+  "files": {
+    "core/fields.geojson": {
+      "source": "data/processed/core/fields.geojson",
+      "sha256": "0ec8c03cbf78ee2dbadc79eb0b43604126e82ecbb2a96710f790574214e252de",
+      "rows": 83
+    },
+    "core/labels.csv": {
+      "source": "data/processed/core/labels.csv",
+      "sha256": "b7c453f7535eca3fea4477bd4861864d5912e47c1330be7c67588d8c94185f0a",
+      "rows": 44
+    },
+    "core/smoke_sample.json": {
+      "source": "data/processed/core/smoke_sample.json",
+      "sha256": "3199c9f2f6f77f6676f4747664dff40a825be04254361f2b25aacc3d3a32a3c1",
+      "rows": "object"
+    },
+    "core/validation_folds.csv": {
+      "source": "data/processed/core/validation_folds.csv",
+      "sha256": "a846206c02b3e53f57b997893ea5c2a730411fb7ea91863f5f96cb47ce878ca5",
+      "rows": 44
+    },
+    "satellite/timeseries.csv": {
+      "source": "data/processed/satellite/timeseries.csv",
+      "sha256": "2b42414eb5e6ce248671b5e2d0468ad06ea86b85ab7b82cec9e3503ffd6edbbf",
+      "rows": 4524
+    },
+    "satellite/features.csv": {
+      "source": "data/processed/satellite/features.csv",
+      "sha256": "402ec0ba1198ed582dd6de0181b7e6298f30a7452282e377d5a39db838c227cb",
+      "rows": 44
+    },
+    "model/predictions.csv": {
+      "source": "data/processed/model/predictions.csv",
+      "sha256": "fc837db3fc6667419d9c784a8cee520574230bc5ceec94246df0e738953ef5ea",
+      "rows": 88
+    },
+    "model/metrics.json": {
+      "source": "data/processed/model/metrics.json",
+      "sha256": "9729e8915305de50d9d403432d44aae22de812cc984e307860afe28f4f691a7b",
+      "rows": "object"
+    },
+    "analysis/summary.json": {
+      "source": "data/processed/analysis/summary.json",
+      "sha256": "2cdd233f89292a017a03b8361c85424929845442a163911494200ee5d43a28f2",
+      "rows": "object"
+    },
+    "analysis/review_queue.csv": {
+      "source": "data/processed/analysis/review_queue.csv",
+      "sha256": "7500121f4eb816bd818d6c4315380b6b0959a143fa965787e692ea6b3a33aa6b",
+      "rows": 7
+    },
+    "analysis/period_status.json": {
+      "source": "data/processed/analysis/period_status.json",
+      "sha256": "f7dbb9250c149e08df86c236f1c264a5bcf00148a45192823b15f88e95cabbc4",
+      "rows": "object"
+    },
+    "analysis/2022/oof/summary.json": {
+      "source": "data/processed/analysis/2022/oof/summary.json",
+      "sha256": "2cdd233f89292a017a03b8361c85424929845442a163911494200ee5d43a28f2",
+      "rows": "object"
+    },
+    "analysis/2022/oof/review_queue.csv": {
+      "source": "data/processed/analysis/2022/oof/review_queue.csv",
+      "sha256": "7500121f4eb816bd818d6c4315380b6b0959a143fa965787e692ea6b3a33aa6b",
+      "rows": 7
+    },
+    "analysis/2022/oof/data_needed.csv": {
+      "source": "data/processed/analysis/2022/oof/data_needed.csv",
+      "sha256": "75b7719a93f0fe0f948b4179601cfa2c2b14f34f0a9150a1e11d29af3c85152d",
+      "rows": 0
+    },
+    "analysis/2022/oof/review_simulation.json": {
+      "source": "data/processed/analysis/2022/oof/review_simulation.json",
+      "sha256": "00131944a9f3342dd593ab04c0ae57efe7bff1261d515ad436e365d4cf89a8be",
+      "rows": "object"
+    },
+    "analysis/2023/oof/summary.json": {
+      "source": "data/processed/analysis/2023/oof/summary.json",
+      "sha256": "6c89048d4d01c94cef1d2c71003fd61e8fba1fab81b10c55fe3cc2a78049d7e8",
+      "rows": "object"
+    },
+    "analysis/2023/oof/review_queue.csv": {
+      "source": "data/processed/analysis/2023/oof/review_queue.csv",
+      "sha256": "7774a9ae18ce4431876219ae38bd709bfc7a1db48180df916a134eac31e04b17",
+      "rows": 19
+    },
+    "analysis/2023/oof/data_needed.csv": {
+      "source": "data/processed/analysis/2023/oof/data_needed.csv",
+      "sha256": "75b7719a93f0fe0f948b4179601cfa2c2b14f34f0a9150a1e11d29af3c85152d",
+      "rows": 0
+    },
+    "analysis/2023/oof/review_simulation.json": {
+      "source": "data/processed/analysis/2023/oof/review_simulation.json",
+      "sha256": "227ddcb96a7f5954526d42fed4786f651c9f090811e8ecfbb58c59dd6087e846",
+      "rows": "object"
+    },
+    "analysis/2024/oof/summary.json": {
+      "source": "data/processed/analysis/2024/oof/summary.json",
+      "sha256": "c2382981143fb287aac93d97ba3105a1f2ef0d49b778193640a80359112b4681",
+      "rows": "object"
+    },
+    "analysis/2024/oof/review_queue.csv": {
+      "source": "data/processed/analysis/2024/oof/review_queue.csv",
+      "sha256": "0666bd2757859732d02ce67b9581767e70c3daf02c1b4284b2aa8306e64d4b0d",
+      "rows": 0
+    },
+    "analysis/2024/oof/data_needed.csv": {
+      "source": "data/processed/analysis/2024/oof/data_needed.csv",
+      "sha256": "25d52af90dc27aaa3b9b98660ca9ec9cdf9cbbcdb5b8f5cd45611dcb2cf15719",
+      "rows": 0
+    },
+    "analysis/2024/oof/review_simulation.json": {
+      "source": "data/processed/analysis/2024/oof/review_simulation.json",
+      "sha256": "3a8434ac174eeb40c86c3aa7bb77bea4eec28d64bd40501634aa7023871789c1",
+      "rows": "object"
+    },
+    "analysis/2025/oof/summary.json": {
+      "source": "data/processed/analysis/2025/oof/summary.json",
+      "sha256": "99287b46d4345eda61cf44bc86ad34ea3ec94b13fd078053e97d0dcb9efd1956",
+      "rows": "object"
+    },
+    "analysis/2025/oof/review_queue.csv": {
+      "source": "data/processed/analysis/2025/oof/review_queue.csv",
+      "sha256": "0666bd2757859732d02ce67b9581767e70c3daf02c1b4284b2aa8306e64d4b0d",
+      "rows": 0
+    },
+    "analysis/2025/oof/data_needed.csv": {
+      "source": "data/processed/analysis/2025/oof/data_needed.csv",
+      "sha256": "25d52af90dc27aaa3b9b98660ca9ec9cdf9cbbcdb5b8f5cd45611dcb2cf15719",
+      "rows": 0
+    },
+    "analysis/2025/oof/review_simulation.json": {
+      "source": "data/processed/analysis/2025/oof/review_simulation.json",
+      "sha256": "3a8434ac174eeb40c86c3aa7bb77bea4eec28d64bd40501634aa7023871789c1",
+      "rows": "object"
+    }
+  },
+  "browser_verification": "This command checks data only; see integration-browser-verification.json for the separate real-data browser acceptance."
+}

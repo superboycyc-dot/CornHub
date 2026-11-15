@@ -1,0 +1,24 @@
+{
+  "name": "cornhub-web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "sync:data": "node scripts/sync-data.mjs",
+    "dev": "npm run sync:data && vite --host 0.0.0.0",
+    "build": "npm run sync:data && vite build",
+    "test": "node --test scripts/*.test.mjs",
+    "preview": "vite preview --host 0.0.0.0",
+    "check:data": "npm run sync:data && node scripts/check-handoffs.mjs"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "leaflet": "^1.9.4",
+    "papaparse": "^5.5.0"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0",
+    "@playwright/test": "^1.50.0"
+  }
+}
