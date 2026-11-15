@@ -1,0 +1,2 @@
+year,month,corn_area_ha,valid_area_ha,valid_area_fraction,ndmi_mean,ndmi_median,ndmi_p10,ndmi_p90,status
+2021,5,207096.3,196443.9,0.948563059793922,-0.003308909893542131,-0.06269463896751404,-0.14472873508930206,0.2349420189857483,computed

@@ -1,0 +1,17 @@
+{
+  "status": "pending",
+  "budget": 3,
+  "seed": 42,
+  "random_repeats": 200,
+  "n_evaluated": 0,
+  "true_silage_area_ha": null,
+  "initial_absolute_error_ha": null,
+  "heuristic_absolute_error_ha": null,
+  "random_absolute_error_median_ha": null,
+  "random_absolute_error_min_ha": null,
+  "random_absolute_error_max_ha": null,
+  "heuristic_review_ids": [],
+  "notes": [
+    "Requires OOF probabilities, sourced real labels, and A validation_folds.csv."
+  ]
+}

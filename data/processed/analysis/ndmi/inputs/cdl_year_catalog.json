@@ -1,0 +1,61 @@
+{
+  "objectIdFieldName": "OBJECTID",
+  "fields": [
+    {
+      "name": "OBJECTID",
+      "type": "esriFieldTypeOID",
+      "alias": "OBJECTID",
+      "domain": null
+    },
+    {
+      "name": "Name",
+      "type": "esriFieldTypeString",
+      "alias": "Name",
+      "domain": null,
+      "length": 200
+    },
+    {
+      "name": "Year",
+      "type": "esriFieldTypeInteger",
+      "alias": "Year",
+      "domain": null
+    }
+  ],
+  "features": [
+    {
+      "attributes": {
+        "OBJECTID": 36,
+        "Name": "2021_30m_cdls",
+        "Year": 2021
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 37,
+        "Name": "2022_30m_cdls",
+        "Year": 2022
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 38,
+        "Name": "2023_30m_cdls",
+        "Year": 2023
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 39,
+        "Name": "2024_10m_cdls",
+        "Year": 2024
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 40,
+        "Name": "2025_10m_cdls",
+        "Year": 2025
+      }
+    }
+  ]
+}

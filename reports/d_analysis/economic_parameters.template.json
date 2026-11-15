@@ -1,0 +1,86 @@
+{
+  "status": "pending",
+  "year": null,
+  "region": null,
+  "currency": null,
+  "parameters": {
+    "silage": {
+      "yield": {
+        "value": null,
+        "source_dataset_id": null,
+        "source_url": null,
+        "source_table": null,
+        "publication_year": null,
+        "data_year": null,
+        "region": null,
+        "unit": null,
+        "price_basis": null,
+        "moisture_basis": null,
+        "conversion_description": null,
+        "conversion_factor": null,
+        "retrieved_at_utc": null,
+        "license": null
+      },
+      "price": {
+        "value": null,
+        "source_dataset_id": null,
+        "source_url": null,
+        "source_table": null,
+        "publication_year": null,
+        "data_year": null,
+        "region": null,
+        "unit": null,
+        "price_basis": null,
+        "moisture_basis": null,
+        "conversion_description": null,
+        "conversion_factor": null,
+        "retrieved_at_utc": null,
+        "license": null
+      }
+    },
+    "grain": {
+      "yield": {
+        "value": null,
+        "source_dataset_id": null,
+        "source_url": null,
+        "source_table": null,
+        "publication_year": null,
+        "data_year": null,
+        "region": null,
+        "unit": null,
+        "price_basis": null,
+        "moisture_basis": null,
+        "conversion_description": null,
+        "conversion_factor": null,
+        "retrieved_at_utc": null,
+        "license": null
+      },
+      "price": {
+        "value": null,
+        "source_dataset_id": null,
+        "source_url": null,
+        "source_table": null,
+        "publication_year": null,
+        "data_year": null,
+        "region": null,
+        "unit": null,
+        "price_basis": null,
+        "moisture_basis": null,
+        "conversion_description": null,
+        "conversion_factor": null,
+        "retrieved_at_utc": null,
+        "license": null
+      }
+    }
+  },
+  "required_inputs": [
+    "Sourced local year-matched silage fresh-weight yield and price",
+    "Sourced local year-matched grain yield and price with moisture basis",
+    "Unit conversion factors and price basis (farm-gate or delivered)",
+    "Currency, source tables, region, data/publication year, license and retrieval date"
+  ],
+  "notes": [
+    "No default prices or yields. No economic result without complete inputs.",
+    "Fresh silage mass is not comparable to grain mass. Gross value is not profit."
+  ]
+}

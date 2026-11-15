@@ -1,0 +1,27 @@
+{
+  "checked_at_utc": "2026-11-14T23:53:49.506392Z",
+  "passed": true,
+  "checks": [
+    {
+      "source": "USDA annual CDL",
+      "passed": true,
+      "seconds": 5.141688500007149
+    },
+    {
+      "source": "Census Maryland boundary",
+      "passed": true,
+      "seconds": 4.366940499981865
+    },
+    {
+      "source": "Planetary Computer Landsat catalog",
+      "passed": true,
+      "seconds": 5.965823166014161
+    },
+    {
+      "source": "Landsat blob + public signing + TIFF range",
+      "passed": true,
+      "seconds": 8.090828042011708
+    }
+  ],
+  "signed_urls_saved": false
+}

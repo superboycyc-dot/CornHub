@@ -1,0 +1,407 @@
+{
+  "input_rows": {
+    "labels": 44,
+    "folds": 44,
+    "features": 44
+  },
+  "missing_files": [],
+  "errors": [],
+  "duplicate_keys": [],
+  "matched_count": 44,
+  "unmatched": [],
+  "exclusions": [],
+  "folds": [
+    {
+      "fold_id": "0",
+      "n_train": 32,
+      "n_test": 12,
+      "train_class_counts": {
+        "grain": 21,
+        "silage": 11
+      },
+      "test_class_counts": {
+        "grain": 11,
+        "silage": 1
+      },
+      "metrics": {
+        "status": "evaluated",
+        "prediction_role": "oof",
+        "n_evaluated": 12,
+        "class_counts": {
+          "grain": 11,
+          "silage": 1
+        },
+        "macro_f1": 0.7,
+        "silage_precision": 0.3333333333333333,
+        "silage_recall": 1.0,
+        "brier_score": 0.11821633003826532,
+        "confusion_matrix": {
+          "grain": {
+            "grain": 9,
+            "silage": 2
+          },
+          "silage": {
+            "grain": 0,
+            "silage": 1
+          }
+        },
+        "notes": []
+      }
+    },
+    {
+      "fold_id": "1",
+      "n_train": 42,
+      "n_test": 2,
+      "train_class_counts": {
+        "grain": 30,
+        "silage": 12
+      },
+      "test_class_counts": {
+        "grain": 2,
+        "silage": 0
+      },
+      "metrics": {
+        "status": "evaluated",
+        "prediction_role": "oof",
+        "n_evaluated": 2,
+        "class_counts": {
+          "grain": 2,
+          "silage": 0
+        },
+        "macro_f1": null,
+        "silage_precision": null,
+        "silage_recall": null,
+        "brier_score": 0.03968429173752835,
+        "confusion_matrix": {
+          "grain": {
+            "grain": 2,
+            "silage": 0
+          },
+          "silage": {
+            "grain": 0,
+            "silage": 0
+          }
+        },
+        "notes": [
+          "macro_f1 null: evaluation truth lacks a class; Brier remains defined.",
+          "silage_precision null: no predicted silage.",
+          "silage_recall null: no true silage."
+        ]
+      }
+    },
+    {
+      "fold_id": "2",
+      "n_train": 19,
+      "n_test": 25,
+      "train_class_counts": {
+        "grain": 18,
+        "silage": 1
+      },
+      "test_class_counts": {
+        "grain": 14,
+        "silage": 11
+      },
+      "metrics": {
+        "status": "evaluated",
+        "prediction_role": "oof",
+        "n_evaluated": 25,
+        "class_counts": {
+          "grain": 14,
+          "silage": 11
+        },
+        "macro_f1": 0.6031746031746031,
+        "silage_precision": 1.0,
+        "silage_recall": 0.2727272727272727,
+        "brier_score": 0.21847894301303167,
+        "confusion_matrix": {
+          "grain": {
+            "grain": 14,
+            "silage": 0
+          },
+          "silage": {
+            "grain": 8,
+            "silage": 3
+          }
+        },
+        "notes": []
+      }
+    },
+    {
+      "fold_id": "3",
+      "n_train": 40,
+      "n_test": 4,
+      "train_class_counts": {
+        "grain": 28,
+        "silage": 12
+      },
+      "test_class_counts": {
+        "grain": 4,
+        "silage": 0
+      },
+      "metrics": {
+        "status": "evaluated",
+        "prediction_role": "oof",
+        "n_evaluated": 4,
+        "class_counts": {
+          "grain": 4,
+          "silage": 0
+        },
+        "macro_f1": null,
+        "silage_precision": null,
+        "silage_recall": null,
+        "brier_score": 0.050006541753340454,
+        "confusion_matrix": {
+          "grain": {
+            "grain": 4,
+            "silage": 0
+          },
+          "silage": {
+            "grain": 0,
+            "silage": 0
+          }
+        },
+        "notes": [
+          "macro_f1 null: evaluation truth lacks a class; Brier remains defined.",
+          "silage_precision null: no predicted silage.",
+          "silage_recall null: no true silage."
+        ]
+      }
+    },
+    {
+      "fold_id": "4",
+      "n_train": 43,
+      "n_test": 1,
+      "train_class_counts": {
+        "grain": 31,
+        "silage": 12
+      },
+      "test_class_counts": {
+        "grain": 1,
+        "silage": 0
+      },
+      "metrics": {
+        "status": "evaluated",
+        "prediction_role": "oof",
+        "n_evaluated": 1,
+        "class_counts": {
+          "grain": 1,
+          "silage": 0
+        },
+        "macro_f1": null,
+        "silage_precision": null,
+        "silage_recall": null,
+        "brier_score": 0.00019599999999999997,
+        "confusion_matrix": {
+          "grain": {
+            "grain": 1,
+            "silage": 0
+          },
+          "silage": {
+            "grain": 0,
+            "silage": 0
+          }
+        },
+        "notes": [
+          "macro_f1 null: evaluation truth lacks a class; Brier remains defined.",
+          "silage_precision null: no predicted silage.",
+          "silage_recall null: no true silage."
+        ]
+      }
+    }
+  ],
+  "features": [
+    "ndvi_peak",
+    "peak_doy",
+    "max_drop_per_day",
+    "drop_doy",
+    "ndvi_late_mean",
+    "valid_obs_count",
+    "max_gap_days"
+  ],
+  "training_requested": true,
+  "inference_requested": true,
+  "model_fit_count": 6,
+  "calibration": "not performed; probabilities uncalibrated, reliability unproven",
+  "label_summary": {
+    "n_rows": 44,
+    "n_fields": 34,
+    "class_counts": {
+      "grain": 32,
+      "silage": 12
+    },
+    "by_year": {
+      "2021": {
+        "grain": 14,
+        "silage": 4
+      },
+      "2022": {
+        "grain": 3,
+        "silage": 4
+      },
+      "2023": {
+        "grain": 15,
+        "silage": 4
+      }
+    }
+  },
+  "label_fold_matched_count": 44,
+  "farm_group_check": {
+    "status": "checked",
+    "n_fields": 83,
+    "n_labeled_farms": 5,
+    "farms_crossing_folds": [],
+    "notes": "Grouping metadata only; farm_group is never a model feature."
+  },
+  "planned_folds": [
+    {
+      "fold_id": "0",
+      "n_train": 32,
+      "n_test": 12,
+      "train_class_counts": {
+        "grain": 21,
+        "silage": 11
+      },
+      "test_class_counts": {
+        "grain": 11,
+        "silage": 1
+      },
+      "test_n_fields": 10,
+      "test_farm_groups": [
+        "22358"
+      ],
+      "warnings": []
+    },
+    {
+      "fold_id": "1",
+      "n_train": 42,
+      "n_test": 2,
+      "train_class_counts": {
+        "grain": 30,
+        "silage": 12
+      },
+      "test_class_counts": {
+        "grain": 2,
+        "silage": 0
+      },
+      "test_n_fields": 2,
+      "test_farm_groups": [
+        "22359"
+      ],
+      "warnings": [
+        "Test truth lacks a class: macro F1 undefined; silage recall null if no true silage."
+      ]
+    },
+    {
+      "fold_id": "2",
+      "n_train": 19,
+      "n_test": 25,
+      "train_class_counts": {
+        "grain": 18,
+        "silage": 1
+      },
+      "test_class_counts": {
+        "grain": 14,
+        "silage": 11
+      },
+      "test_n_fields": 19,
+      "test_farm_groups": [
+        "22380"
+      ],
+      "warnings": [
+        "Fewer than 2 training rows in a class; unreliable small-sample learning; no calibration."
+      ]
+    },
+    {
+      "fold_id": "3",
+      "n_train": 40,
+      "n_test": 4,
+      "train_class_counts": {
+        "grain": 28,
+        "silage": 12
+      },
+      "test_class_counts": {
+        "grain": 4,
+        "silage": 0
+      },
+      "test_n_fields": 2,
+      "test_farm_groups": [
+        "22381"
+      ],
+      "warnings": [
+        "Test truth lacks a class: macro F1 undefined; silage recall null if no true silage."
+      ]
+    },
+    {
+      "fold_id": "4",
+      "n_train": 43,
+      "n_test": 1,
+      "train_class_counts": {
+        "grain": 31,
+        "silage": 12
+      },
+      "test_class_counts": {
+        "grain": 1,
+        "silage": 0
+      },
+      "test_n_fields": 1,
+      "test_farm_groups": [
+        "22854"
+      ],
+      "warnings": [
+        "Test truth lacks a class: macro F1 undefined; silage recall null if no true silage."
+      ]
+    }
+  ],
+  "input_provenance": {
+    "mode": "git_snapshot",
+    "sources": [
+      {
+        "requested_ref": "df7ce8cd63039e90de7ca78ba95f4f3259ee15c5",
+        "commit": "df7ce8cd63039e90de7ca78ba95f4f3259ee15c5",
+        "present_files": [
+          "data/processed/core/labels.csv",
+          "data/processed/core/validation_folds.csv",
+          "data/processed/core/fields.geojson"
+        ],
+        "missing_files": []
+      },
+      {
+        "requested_ref": "05a81a7d1634c80d3c56b66cf9eb9acb9527fc9b",
+        "commit": "05a81a7d1634c80d3c56b66cf9eb9acb9527fc9b",
+        "present_files": [
+          "data/processed/satellite/features.csv"
+        ],
+        "missing_files": []
+      }
+    ]
+  },
+  "input_sha256": {
+    "core/labels.csv": "b7c453f7535eca3fea4477bd4861864d5912e47c1330be7c67588d8c94185f0a",
+    "core/validation_folds.csv": "a846206c02b3e53f57b997893ea5c2a730411fb7ea91863f5f96cb47ce878ca5",
+    "core/fields.geojson": "0ec8c03cbf78ee2dbadc79eb0b43604126e82ecbb2a96710f790574214e252de",
+    "satellite/features.csv": "402ec0ba1198ed582dd6de0181b7e6298f30a7452282e377d5a39db838c227cb"
+  },
+  "eligible_count": 44,
+  "eligible_summary": {
+    "class_counts": {
+      "grain": 32,
+      "silage": 12
+    },
+    "n_fields": 34,
+    "fold_ids": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "quality_counts": {
+      "usable": 26,
+      "limited": 18
+    }
+  },
+  "output_rows": {
+    "oof": 44,
+    "inference": 44
+  }
+}

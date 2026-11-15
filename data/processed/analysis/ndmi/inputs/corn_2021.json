@@ -1,0 +1,66 @@
+{
+  "year": 2021,
+  "source": {
+    "OBJECTID": 36,
+    "Name": "2021_30m_cdls",
+    "Year": 2021
+  },
+  "corn_class": 1,
+  "excluded_classes": "sweet/popcorn and double-crop classes",
+  "source_resolution_m": 30,
+  "target_resolution_m": 30,
+  "resampling": "nearest",
+  "boundary_rule": "pixel center inside Census Maryland",
+  "corn_pixel_count": 2301070,
+  "corn_area_ha": 207096.3,
+  "tiles": [
+    {
+      "row": 0,
+      "col": 0,
+      "height": 4096,
+      "width": 4096,
+      "sha256": "55facaee42884c35d427c68ce3e6cdcc07952549f93d81f478df5e323419d260",
+      "source_url": "https://pdi.scinet.usda.gov/image/rest/services/CDL_WM/ImageServer/exportImage?bbox=1396620.0%2C1914870.0%2C1519500.0%2C2037750.0&bboxSR=5070&imageSR=5070&size=4096%2C4096&format=tiff&pixelType=U8&interpolation=RSP_NearestNeighbor&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicLockRaster%22%2C+%22lockRasterIds%22%3A+%5B36%5D%2C+%22mosaicOperation%22%3A+%22MT_FIRST%22%7D&renderingRule=%7B%22rasterFunction%22%3A+%22None%22%7D&f=image"
+    },
+    {
+      "row": 0,
+      "col": 4096,
+      "height": 4096,
+      "width": 4096,
+      "sha256": "f943b21dd73b93eddfdfec88d8ec9a2da2052ebb5403e27d14480ba96ad05768",
+      "source_url": "https://pdi.scinet.usda.gov/image/rest/services/CDL_WM/ImageServer/exportImage?bbox=1519500.0%2C1914870.0%2C1642380.0%2C2037750.0&bboxSR=5070&imageSR=5070&size=4096%2C4096&format=tiff&pixelType=U8&interpolation=RSP_NearestNeighbor&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicLockRaster%22%2C+%22lockRasterIds%22%3A+%5B36%5D%2C+%22mosaicOperation%22%3A+%22MT_FIRST%22%7D&renderingRule=%7B%22rasterFunction%22%3A+%22None%22%7D&f=image"
+    },
+    {
+      "row": 0,
+      "col": 8192,
+      "height": 4096,
+      "width": 4096,
+      "sha256": "9b2e14837129309c391d70db0245c3b7970635249136b5dbe399bc01a1108fc3",
+      "source_url": "https://pdi.scinet.usda.gov/image/rest/services/CDL_WM/ImageServer/exportImage?bbox=1642380.0%2C1914870.0%2C1765260.0%2C2037750.0&bboxSR=5070&imageSR=5070&size=4096%2C4096&format=tiff&pixelType=U8&interpolation=RSP_NearestNeighbor&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicLockRaster%22%2C+%22lockRasterIds%22%3A+%5B36%5D%2C+%22mosaicOperation%22%3A+%22MT_FIRST%22%7D&renderingRule=%7B%22rasterFunction%22%3A+%22None%22%7D&f=image"
+    },
+    {
+      "row": 4096,
+      "col": 4096,
+      "height": 2880,
+      "width": 4096,
+      "sha256": "8701d872f6633129c0e6ac732d76c929abb46b5e9c8258d35945cd43f7e2ef12",
+      "source_url": "https://pdi.scinet.usda.gov/image/rest/services/CDL_WM/ImageServer/exportImage?bbox=1519500.0%2C1828470.0%2C1642380.0%2C1914870.0&bboxSR=5070&imageSR=5070&size=4096%2C2880&format=tiff&pixelType=U8&interpolation=RSP_NearestNeighbor&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicLockRaster%22%2C+%22lockRasterIds%22%3A+%5B36%5D%2C+%22mosaicOperation%22%3A+%22MT_FIRST%22%7D&renderingRule=%7B%22rasterFunction%22%3A+%22None%22%7D&f=image"
+    },
+    {
+      "row": 4096,
+      "col": 8192,
+      "height": 2880,
+      "width": 4096,
+      "sha256": "aed828671746089c297264c6d950a88658b9f2d9dc5dd1d404a42e1cc308aa48",
+      "source_url": "https://pdi.scinet.usda.gov/image/rest/services/CDL_WM/ImageServer/exportImage?bbox=1642380.0%2C1828470.0%2C1765260.0%2C1914870.0&bboxSR=5070&imageSR=5070&size=4096%2C2880&format=tiff&pixelType=U8&interpolation=RSP_NearestNeighbor&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicLockRaster%22%2C+%22lockRasterIds%22%3A+%5B36%5D%2C+%22mosaicOperation%22%3A+%22MT_FIRST%22%7D&renderingRule=%7B%22rasterFunction%22%3A+%22None%22%7D&f=image"
+    },
+    {
+      "row": 4096,
+      "col": 12288,
+      "height": 2880,
+      "width": 1248,
+      "sha256": "cd1cac49360cc19e659d8e717801581ce519b41007110e50be71721003ee6562",
+      "source_url": "https://pdi.scinet.usda.gov/image/rest/services/CDL_WM/ImageServer/exportImage?bbox=1765260.0%2C1828470.0%2C1802700.0%2C1914870.0&bboxSR=5070&imageSR=5070&size=1248%2C2880&format=tiff&pixelType=U8&interpolation=RSP_NearestNeighbor&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicLockRaster%22%2C+%22lockRasterIds%22%3A+%5B36%5D%2C+%22mosaicOperation%22%3A+%22MT_FIRST%22%7D&renderingRule=%7B%22rasterFunction%22%3A+%22None%22%7D&f=image"
+    }
+  ]
+}

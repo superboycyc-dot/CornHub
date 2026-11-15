@@ -1,0 +1,248 @@
+{
+  "audited_at_utc": "2026-11-14T19:42:47.219118Z",
+  "head_before_documentation_commit": "51d59890b04c6b0d7c1dce8186f2992352a32a1c",
+  "origin_main_at_audit": "51d59890b04c6b0d7c1dce8186f2992352a32a1c",
+  "python_version": "3.13.0",
+  "scope": "Local checkout and fetched origin/main; no inspection of teammates' private workspaces.",
+  "barc": {
+    "source_features": 83,
+    "distinct_farms_in_source": 5,
+    "gpkg_contents": [
+      [
+        "barc_silage_grain_corn20212023",
+        100000
+      ]
+    ],
+    "source_label_counts": {
+      "2021": {
+        "Grain": 14,
+        "Silage": 4
+      },
+      "2022": {
+        "Grain": 3,
+        "Silage": 4
+      },
+      "2023": {
+        "Grain": 15,
+        "Silage": 4
+      }
+    },
+    "exported_rows": 44,
+    "exported_unique_fields": 34,
+    "exported_unique_field_years": 44
+  },
+  "quickstats": {
+    "raw_rows": 39906,
+    "california_rows": 225,
+    "states": [
+      "CALIFORNIA"
+    ],
+    "by_year": {
+      "2012": 78,
+      "2013": 3,
+      "2014": 3,
+      "2015": 3,
+      "2016": 3,
+      "2017": 55,
+      "2018": 3,
+      "2019": 3,
+      "2020": 3,
+      "2021": 3,
+      "2022": 59,
+      "2023": 3,
+      "2024": 3,
+      "2025": 3
+    },
+    "unique_series_keys": 225,
+    "california_2025": [
+      {
+        "year": "2025",
+        "aggregation_level": "STATE",
+        "state_name": "CALIFORNIA",
+        "state_ansi": "06",
+        "county_name": "",
+        "county_ansi": "",
+        "commodity": "CORN",
+        "crop_use": "all_corn",
+        "measurement": "planted",
+        "statistic": "AREA PLANTED",
+        "unit": "ACRES",
+        "value": "450,000",
+        "cv_percent": "",
+        "source": "SURVEY",
+        "domain": "TOTAL",
+        "domain_category": "NOT SPECIFIED",
+        "reference_period": "YEAR",
+        "frequency": "ANNUAL",
+        "short_description": "CORN - ACRES PLANTED"
+      },
+      {
+        "year": "2025",
+        "aggregation_level": "STATE",
+        "state_name": "CALIFORNIA",
+        "state_ansi": "06",
+        "county_name": "",
+        "county_ansi": "",
+        "commodity": "CORN",
+        "crop_use": "grain",
+        "measurement": "harvested",
+        "statistic": "AREA HARVESTED",
+        "unit": "ACRES",
+        "value": "75,000",
+        "cv_percent": "",
+        "source": "SURVEY",
+        "domain": "TOTAL",
+        "domain_category": "NOT SPECIFIED",
+        "reference_period": "YEAR",
+        "frequency": "ANNUAL",
+        "short_description": "CORN, GRAIN - ACRES HARVESTED"
+      },
+      {
+        "year": "2025",
+        "aggregation_level": "STATE",
+        "state_name": "CALIFORNIA",
+        "state_ansi": "06",
+        "county_name": "",
+        "county_ansi": "",
+        "commodity": "CORN",
+        "crop_use": "silage",
+        "measurement": "harvested",
+        "statistic": "AREA HARVESTED",
+        "unit": "ACRES",
+        "value": "370,000",
+        "cv_percent": "",
+        "source": "SURVEY",
+        "domain": "TOTAL",
+        "domain_category": "NOT SPECIFIED",
+        "reference_period": "YEAR",
+        "frequency": "ANNUAL",
+        "short_description": "CORN, SILAGE - ACRES HARVESTED"
+      }
+    ]
+  },
+  "notebook": {
+    "code_cells": 8,
+    "ast_parsed_cells": 7,
+    "skipped_magic_cells": 1,
+    "saved_executed_cells": 0,
+    "saved_output_blocks": 0,
+    "execution_performed_by_audit": false
+  },
+  "parsed_scripts": [
+    "scripts/curate_quickstats.py",
+    "scripts/prepare_barc_labels.py",
+    "01_QuickStats/download_corn_acres.py"
+  ],
+  "contract_outputs": [
+    {
+      "path": "data/processed/core/fields.geojson",
+      "exists": false
+    },
+    {
+      "path": "data/processed/core/labels.csv",
+      "exists": false
+    },
+    {
+      "path": "data/processed/core/smoke_sample.json",
+      "exists": false
+    },
+    {
+      "path": "data/processed/core/validation_folds.csv",
+      "exists": false
+    },
+    {
+      "path": "data/processed/satellite/timeseries.csv",
+      "exists": false
+    },
+    {
+      "path": "data/processed/satellite/features.csv",
+      "exists": false
+    },
+    {
+      "path": "data/processed/model/predictions.csv",
+      "exists": false
+    },
+    {
+      "path": "data/processed/model/metrics.json",
+      "exists": false
+    },
+    {
+      "path": "data/processed/analysis/summary.json",
+      "exists": false
+    },
+    {
+      "path": "data/processed/analysis/review_queue.csv",
+      "exists": false
+    }
+  ],
+  "web_directory_exists": false,
+  "files": [
+    {
+      "path": "01_QuickStats/corn_grain_silage_acres_2012_2025_raw.csv",
+      "exists": true,
+      "bytes": 6568244,
+      "sha256": "c70018bde4cbc5a1097013df52455094d37d4471194f16cc6a5bd646a63e7bb2"
+    },
+    {
+      "path": "data/processed/usda_nass/california_corn_acreage_annual_reference_2012_2025.csv",
+      "exists": true,
+      "bytes": 37461,
+      "sha256": "12f17813caf5229e0c1d31dc44f21945c5a69a61033b1d78c5434fe2c401b628"
+    },
+    {
+      "path": "data/processed/barc_field_year_labels.csv",
+      "exists": true,
+      "bytes": 1171,
+      "sha256": "0bd9842b0347fa367f12062d5445eab013e57c738d8337465efe00ab6d0a3371"
+    },
+    {
+      "path": "04_Evaluation/BARC_Corn.2021-2023.gpkg",
+      "exists": true,
+      "bytes": 724992,
+      "sha256": "9647257991ab9466d578743bc407093232fab40606bc8c5d90113039a6a50c40"
+    },
+    {
+      "path": "05_Model/barc_sentinel2_baseline.ipynb",
+      "exists": true,
+      "bytes": 18301,
+      "sha256": "a8f682b84babca7dede60854310cd4b67e9e099b535a1acd641147688a8cd456"
+    },
+    {
+      "path": "data/processed/usda_nass/corn_state_benchmarks_2025.csv",
+      "exists": true,
+      "bytes": 402,
+      "sha256": "a521d0e00d0cac71f745f87971742a2e42eca61da4193d59837701dc79a75e88"
+    },
+    {
+      "path": "data/usda_nass_cdl/california/manifest.json",
+      "exists": true,
+      "bytes": 4596,
+      "sha256": "a3a2a2905a3022cf2628dec1b4e8bf0ffbfb6a1a1e8205092c5ada9d98e65196"
+    },
+    {
+      "path": "scripts/curate_quickstats.py",
+      "exists": true,
+      "bytes": 2800,
+      "sha256": "6627cf4bc6318ba2344d9b10e0f9cbee5b976dfa7f2324817f71a97ee23525a5"
+    },
+    {
+      "path": "scripts/prepare_barc_labels.py",
+      "exists": true,
+      "bytes": 2712,
+      "sha256": "f1251d3074b95fd500ffea9f610796549856bf931d28dc1d2bd0952cea5d22bf"
+    },
+    {
+      "path": "01_QuickStats/download_corn_acres.py",
+      "exists": true,
+      "bytes": 7190,
+      "sha256": "d4c79f538528c17f58bdf78454394c8f48e073169afa40d608da49c7cced86d6"
+    }
+  ],
+  "not_checked": [
+    "Satellite retrieval, raster values, CRS transformations and geometry validity",
+    "Training, accuracy, calibration, geographic transfer or area uncertainty",
+    "CDL ZIP CRC, raster resolution or archive SHA re-verification",
+    "External NASS source correctness or reason for conflicting 2025 values",
+    "Other branches' unpublished work, deployment or hackathon submission status"
+  ]
+}

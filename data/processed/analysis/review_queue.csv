@@ -1,0 +1,8 @@
+field_id,year,prediction_role,rank,review_score,reason
+barc_252,2022,oof,1,10.78135189836256,area_ha * 4*p_silage*(1-p_silage); usable observations; unvalidated heuristic
+barc_278,2022,oof,2,7.663544579033275,area_ha * 4*p_silage*(1-p_silage); usable observations; unvalidated heuristic
+barc_279,2022,oof,3,6.619874207762147,area_ha * 4*p_silage*(1-p_silage); usable observations; unvalidated heuristic
+barc_429,2022,oof,4,5.8054900954481985,area_ha * 4*p_silage*(1-p_silage); usable observations; unvalidated heuristic
+barc_231,2022,oof,5,3.644255172712192,area_ha * 4*p_silage*(1-p_silage); usable observations; unvalidated heuristic
+barc_251,2022,oof,6,3.2871910873040724,area_ha * 4*p_silage*(1-p_silage); usable observations; unvalidated heuristic
+barc_286,2022,oof,7,2.518190477985612,area_ha * 4*p_silage*(1-p_silage); usable observations; unvalidated heuristic

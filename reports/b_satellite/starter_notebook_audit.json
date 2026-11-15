@@ -1,0 +1,47 @@
+{
+  "status": "inventoried_not_executed",
+  "source_filename": "sentinel-2_starter_notebook.ipynb",
+  "sha256": "c5239266224acc45079b6539e48dfccd67212782799c34692e866e2095192092",
+  "cells": 14,
+  "imports": [
+    "geopandas",
+    "matplotlib.pyplot",
+    "numpy",
+    "odc.stac",
+    "pathlib",
+    "planetary_computer",
+    "pystac_client"
+  ],
+  "defined_functions": [],
+  "signals": [
+    {
+      "cell_index": 2,
+      "signal": "catalog_or_search_reference"
+    },
+    {
+      "cell_index": 4,
+      "signal": "catalog_or_search_reference"
+    },
+    {
+      "cell_index": 6,
+      "signal": "catalog_or_search_reference"
+    },
+    {
+      "cell_index": 8,
+      "signal": "scl_reference"
+    },
+    {
+      "cell_index": 10,
+      "signal": "scl_reference"
+    },
+    {
+      "cell_index": 10,
+      "signal": "ndvi_reference"
+    },
+    {
+      "cell_index": 12,
+      "signal": "ndvi_reference"
+    }
+  ],
+  "limitation": "Text/AST inventory is not verification that masking, scaling, or search is correct; manual code review is required before claiming official-notebook adaptation."
+}

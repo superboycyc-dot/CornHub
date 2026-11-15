@@ -1,0 +1,22 @@
+{
+  "input": "synthetic performance inputs; not satellite observations",
+  "shape": [
+    1024,
+    1024
+  ],
+  "timing_includes": "kernel, allocation and host/device transfers",
+  "observation_result": false,
+  "benchmarks": [
+    {
+      "backend": "cpu",
+      "gpu_id": null,
+      "parity": "passed",
+      "median_seconds": 0.006273833510931581,
+      "repeats": 10
+    }
+  ],
+  "gpu_parity_passed": false,
+  "recommended_backend": "cpu",
+  "gpu_unavailable": "ModuleNotFoundError",
+  "notes": "Kernel benchmark only; full pipeline may still be dominated by download, reprojection or disk."
+}

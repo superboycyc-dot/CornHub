@@ -1,0 +1,6 @@
+{
+  "scope": "all 44 A field-year keys",
+  "record_count": 4524,
+  "records_file": "pc_batch_provenance.json.gz",
+  "historical_single_field_records": "single_field_prior/pc_scene_provenance.json"
+}

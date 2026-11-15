@@ -1,0 +1,5 @@
+year,prediction_role,status,n_fields,selected_area_ha,covered_area_ha,coverage_fraction,expected_silage_area_ha,expected_grain_area_ha,label_silage_area_ha,signed_silage_error_ha,blockers
+2022,oof,computed,7,44.6508102,44.6508102,1,18.660169008519667,25.990641191480336,30.12051757,-11.460348561480334,
+2023,oof,computed,19,123.08976508,123.08976508,1,40.63679195082961,82.45297312917039,43.69451412,-3.0577221691703897,
+2024,oof,pending,,,,,,,,,missing_annual_target_cohort;missing_features_for_year;missing_predictions_for_year;missing_labels_and_folds_for_oof_evaluation
+2025,oof,pending,,,,,,,,,missing_annual_target_cohort;missing_features_for_year;missing_predictions_for_year;missing_labels_and_folds_for_oof_evaluation
