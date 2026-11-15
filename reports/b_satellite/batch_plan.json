@@ -1,0 +1,359 @@
+{
+  "status": "validated_input_plan_only",
+  "field_year_count": 44,
+  "scene_queries_executed": false,
+  "plan": [
+    {
+      "field_id": "barc_1",
+      "year": 2021,
+      "window_start": "2021-04-01",
+      "window_end_exclusive": "2021-12-01",
+      "selection_rule": "First labeled record sorted lexicographically by normalized field_id, then numeric year.",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_1",
+      "year": 2023,
+      "window_start": "2023-04-01",
+      "window_end_exclusive": "2023-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_230",
+      "year": 2023,
+      "window_start": "2023-04-01",
+      "window_end_exclusive": "2023-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_231",
+      "year": 2022,
+      "window_start": "2022-04-01",
+      "window_end_exclusive": "2022-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_231",
+      "year": 2023,
+      "window_start": "2023-04-01",
+      "window_end_exclusive": "2023-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_238",
+      "year": 2021,
+      "window_start": "2021-04-01",
+      "window_end_exclusive": "2021-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_238",
+      "year": 2023,
+      "window_start": "2023-04-01",
+      "window_end_exclusive": "2023-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_24",
+      "year": 2021,
+      "window_start": "2021-04-01",
+      "window_end_exclusive": "2021-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_24",
+      "year": 2023,
+      "window_start": "2023-04-01",
+      "window_end_exclusive": "2023-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_248",
+      "year": 2023,
+      "window_start": "2023-04-01",
+      "window_end_exclusive": "2023-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_251",
+      "year": 2022,
+      "window_start": "2022-04-01",
+      "window_end_exclusive": "2022-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_251",
+      "year": 2023,
+      "window_start": "2023-04-01",
+      "window_end_exclusive": "2023-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_252",
+      "year": 2022,
+      "window_start": "2022-04-01",
+      "window_end_exclusive": "2022-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_254",
+      "year": 2023,
+      "window_start": "2023-04-01",
+      "window_end_exclusive": "2023-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_263",
+      "year": 2021,
+      "window_start": "2021-04-01",
+      "window_end_exclusive": "2021-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_278",
+      "year": 2022,
+      "window_start": "2022-04-01",
+      "window_end_exclusive": "2022-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_279",
+      "year": 2022,
+      "window_start": "2022-04-01",
+      "window_end_exclusive": "2022-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_280",
+      "year": 2021,
+      "window_start": "2021-04-01",
+      "window_end_exclusive": "2021-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_286",
+      "year": 2021,
+      "window_start": "2021-04-01",
+      "window_end_exclusive": "2021-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_286",
+      "year": 2022,
+      "window_start": "2022-04-01",
+      "window_end_exclusive": "2022-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_286",
+      "year": 2023,
+      "window_start": "2023-04-01",
+      "window_end_exclusive": "2023-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_288",
+      "year": 2021,
+      "window_start": "2021-04-01",
+      "window_end_exclusive": "2021-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_288",
+      "year": 2023,
+      "window_start": "2023-04-01",
+      "window_end_exclusive": "2023-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_291",
+      "year": 2021,
+      "window_start": "2021-04-01",
+      "window_end_exclusive": "2021-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_292",
+      "year": 2023,
+      "window_start": "2023-04-01",
+      "window_end_exclusive": "2023-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_301",
+      "year": 2021,
+      "window_start": "2021-04-01",
+      "window_end_exclusive": "2021-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_323",
+      "year": 2023,
+      "window_start": "2023-04-01",
+      "window_end_exclusive": "2023-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_327",
+      "year": 2021,
+      "window_start": "2021-04-01",
+      "window_end_exclusive": "2021-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_328",
+      "year": 2021,
+      "window_start": "2021-04-01",
+      "window_end_exclusive": "2021-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_332",
+      "year": 2021,
+      "window_start": "2021-04-01",
+      "window_end_exclusive": "2021-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_334",
+      "year": 2021,
+      "window_start": "2021-04-01",
+      "window_end_exclusive": "2021-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_347",
+      "year": 2021,
+      "window_start": "2021-04-01",
+      "window_end_exclusive": "2021-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_347",
+      "year": 2023,
+      "window_start": "2023-04-01",
+      "window_end_exclusive": "2023-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_348",
+      "year": 2021,
+      "window_start": "2021-04-01",
+      "window_end_exclusive": "2021-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_348",
+      "year": 2023,
+      "window_start": "2023-04-01",
+      "window_end_exclusive": "2023-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_382",
+      "year": 2023,
+      "window_start": "2023-04-01",
+      "window_end_exclusive": "2023-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_383",
+      "year": 2023,
+      "window_start": "2023-04-01",
+      "window_end_exclusive": "2023-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_394",
+      "year": 2023,
+      "window_start": "2023-04-01",
+      "window_end_exclusive": "2023-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_397",
+      "year": 2023,
+      "window_start": "2023-04-01",
+      "window_end_exclusive": "2023-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_400",
+      "year": 2023,
+      "window_start": "2023-04-01",
+      "window_end_exclusive": "2023-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_429",
+      "year": 2022,
+      "window_start": "2022-04-01",
+      "window_end_exclusive": "2022-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_511",
+      "year": 2021,
+      "window_start": "2021-04-01",
+      "window_end_exclusive": "2021-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_548",
+      "year": 2021,
+      "window_start": "2021-04-01",
+      "window_end_exclusive": "2021-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    },
+    {
+      "field_id": "barc_571",
+      "year": 2021,
+      "window_start": "2021-04-01",
+      "window_end_exclusive": "2021-12-01",
+      "selection_rule": "Existing labeled A field-year; no B-generated identifiers or labels",
+      "source_dataset_id": "barc_corn_2021_2023_challenge"
+    }
+  ]
+}

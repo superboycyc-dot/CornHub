@@ -1,0 +1,22 @@
+{
+  "status": "evaluated",
+  "budget": 3,
+  "seed": 42,
+  "random_repeats": 200,
+  "n_evaluated": 19,
+  "true_silage_area_ha": 43.69451412,
+  "initial_absolute_error_ha": 3.0577221691703897,
+  "heuristic_absolute_error_ha": 4.009307098232732,
+  "random_absolute_error_median_ha": 4.77900319547479,
+  "random_absolute_error_min_ha": 0.4720189849917986,
+  "random_absolute_error_max_ha": 11.757307665134938,
+  "heuristic_review_ids": [
+    "barc_292",
+    "barc_230",
+    "barc_323"
+  ],
+  "notes": [
+    "Same candidate pool and whole-field budget for both strategies. Aggregate error covers the same complete labeled OOF cohort.",
+    "OOF provenance relies on C and A; this interface cannot inspect model training history. This cohort is not a county/state representative sample."
+  ]
+}

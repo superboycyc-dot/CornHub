@@ -1,0 +1,13 @@
+{
+  "scope": "all A label keys",
+  "field_year_count": 44,
+  "unique_field_count": 34,
+  "field_years_with_observations": 44,
+  "quality_counts": {
+    "no_data": 0,
+    "insufficient": 0,
+    "limited": 18,
+    "usable": 26
+  },
+  "details": "field_year_coverage.csv"
+}

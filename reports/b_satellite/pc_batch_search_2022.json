@@ -1,0 +1,17 @@
+{
+  "query": {
+    "collections": [
+      "sentinel-2-l2a"
+    ],
+    "bbox": [
+      -76.93846251824495,
+      39.01046923523607,
+      -76.82639282015958,
+      39.04297906100617
+    ],
+    "datetime": "2022-04-01T00:00:00Z/2022-11-30T23:59:59Z",
+    "limit": 500
+  },
+  "source_url": "https://planetarycomputer.microsoft.com/api/stac/v1/search",
+  "retrieved_at_utc": "2026-11-14T20:53:52Z"
+}

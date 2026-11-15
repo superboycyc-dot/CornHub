@@ -1,0 +1,9 @@
+{
+  "status": "extra_manual_and_row_checks_skipped_by_user_request",
+  "completion_accounting": {
+    "feature_rows": 44,
+    "timeseries_rows": 4524,
+    "export_counts_match_execution_report": true
+  },
+  "execution_status": "completed"
+}

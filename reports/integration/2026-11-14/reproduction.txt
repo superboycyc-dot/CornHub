@@ -1,0 +1,24 @@
+2026-11-14T19:42:46.755543+00:00
+Repository baseline: 51d59890b04c6b0d7c1dce8186f2992352a32a1c
+$ python3 scripts/curate_quickstats.py
+exit_code=0
+Wrote 225 California records to data/processed/usda_nass/california_corn_acreage_annual_reference_2012_2025.csv
+
+
+$ python3 scripts/prepare_barc_labels.py
+exit_code=0
+Wrote 44 labeled field-years from 34 fields to data/processed/barc_field_year_labels.csv
+2021: Grain=14, Silage=4
+2022: Grain=3, Silage=4
+2023: Grain=15, Silage=4
+
+
+$ git diff -- data/processed/barc_field_year_labels.csv data/processed/usda_nass/california_corn_acreage_annual_reference_2012_2025.csv
+exit_code=0
+
+
+$ git diff --check
+exit_code=0
+
+
+Documentation relative-link existence check: 14 links, 0 missing targets.

@@ -1,0 +1,21 @@
+Current requested period: 2022–2025, role oof.
+
+Before local execution disconnected:
+- python3 -m unittest discover -s src/analysis -p 'test_*.py' -v
+  20 tests passed, including 2024/2025 unknown cohorts and no year carry-forward.
+- run_period.py --start-year 2022 --end-year 2025 --prediction-role oof
+  --input-root pointed at pinned read-only A/B/C files. Exit 0, partial_pending.
+  2022/2023 computed; 2024/2025 pending with explicit missing-input lists.
+- report_results.py was run with the pinned C report and real inputs; exit 0.
+  Source refs/hashes/folds match; existing annual checks pass; missing years
+  remain unevaluated.
+
+After execution environment disconnected:
+- Files assembled from fixed GitHub snapshots and the recorded implementation.
+- Current JSON/CSV year selection, null semantics, root scope and unchanged
+  2021 output paths checked before upload.
+- No new Python run, model training, image processing or ground review occurred.
+- The uploaded batch entry and documentation were not executed after assembly.
+
+A/B/C data is still 2021–2023. Interface support for new years is not data coverage.
+2024/2025 require annual targets, real features, predictions and OOF labels/folds.

@@ -20,3 +20,9 @@ Added an independent white-marker layer with an explicit show/hide checkbox (off
 Every object retains its original candidate_id, source_field_id and source_dataset_id, including ID string length. A prediction adapter is available for all of them, keyed by source, ID, year, role and model version. A configured endpoint may return separately calculated outputs; empty configuration/results show Not computed. IDs, model versions, roles, years, duplicate records and probability ranges are validated. BARC remains independent. No national probabilities or crop confidence were fabricated or borrowed from BARC.
 
 The builder checked all 1,232 upstream shard hashes and counts and packed 6,128,148 objects into 170 compressed display tiles (~40.7 MB). Source geometry-valid flags and annual eligibility are preserved, including flagged-invalid source objects. Data provenance and a rebuild command are in web/national/README.md and national-index-validation.json. 10 Node tests and production build passed; supported browser tools remain unavailable, so visual/hover QA is not claimed.
+## 集成验收 2026-11-14（America/Los_Angeles）
+
+- 合入 main 的 A/B/C/D 交接后，通过 27 个发布输入核验、9 个 Node 测试及生产构建。
+- 修复全国 external_corn 候选分片进入 BARC 网页发布目录的问题，并验证旧副本会清理。
+- 修复浏览器检查的旧概率定位器；真实数据桌面/手机、键盘田块选择、2024 pending 与 inference 队列隔离均通过本地 Chromium 检查。截图见 integration-real-*，详细证据见 integration-browser-verification.json。外部底图部分瓦片加载失败时提示正常，未验证生产部署。
+- 显示概率最多六位小数，避免浮点尾数挤出面板；原始预测文件不变。

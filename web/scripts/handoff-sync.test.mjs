@@ -73,3 +73,22 @@ test("pinned handoff is byte-exact, local output wins, unavailable commits canno
     await fs.rm(repo, { recursive: true, force: true });
   }
 });
+
+test("national candidates stay out of BARC publication, including stale copies", async () => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "cornhub-scope-"));
+  try {
+    const source = path.join(root, "source"), target = path.join(root, "target");
+    await fs.mkdir(path.join(source, "external_corn/csb"), { recursive: true });
+    await fs.mkdir(path.join(source, "core"), { recursive: true });
+    await fs.mkdir(path.join(target, "external_corn"), { recursive: true });
+    await fs.writeFile(path.join(source, "external_corn/csb/part.parquet"), "research only");
+    await fs.writeFile(path.join(target, "external_corn/stale.parquet"), "stale");
+    await fs.writeFile(path.join(source, "core/labels.csv"), "field_id,year,label\n");
+    const files = await sync(source, target);
+    assert.equal(files["core/labels.csv"].status, "available");
+    assert.ok(!Object.keys(files).some((name) => name.startsWith("external_corn/")));
+    await assert.rejects(fs.stat(path.join(target, "external_corn")), { code: "ENOENT" });
+  } finally {
+    await fs.rm(root, { recursive: true, force: true });
+  }
+});

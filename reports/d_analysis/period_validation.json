@@ -1,0 +1,33 @@
+{
+  "status": "checked_against_recorded_execution",
+  "requested_years": [
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "computed_years": [
+    2022,
+    2023
+  ],
+  "pending_years": [
+    2024,
+    2025
+  ],
+  "core_tests_passed_before_disconnect": 20,
+  "four_year_execution_before_disconnect": "partial_pending",
+  "root_year": 2022,
+  "legacy_2021_unchanged": true,
+  "unknown_annual_area_and_coverage": "null, not zero",
+  "source_data_years": [
+    2021,
+    2022,
+    2023
+  ],
+  "post_disconnect_python_execution": false,
+  "notes": [
+    "Core tests and four-year job completed before local execution disconnected.",
+    "GitHub files were assembled and checked after disconnection; uploaded entry point was not executed again.",
+    "No real 2024/2025 observations, labels or probabilities were fabricated."
+  ]
+}

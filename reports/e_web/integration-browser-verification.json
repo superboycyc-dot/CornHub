@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "real_data": true,
+  "boundaries": 83,
+  "labels": 44,
+  "checks": [
+    "real 2023 OOF model displayed",
+    "field keyboard focus tooltip and Enter selection",
+    "2023 D area shown",
+    "2024 pending area",
+    "2024 no stale review queue",
+    "inference no OOF review queue",
+    "390px mobile no horizontal overflow",
+    "no JavaScript page errors"
+  ],
+  "screenshots": [
+    "integration-real-desktop.png",
+    "integration-real-mobile.png"
+  ],
+  "note": "Local Chromium acceptance; no production deployment or external basemap availability guarantee."
+}

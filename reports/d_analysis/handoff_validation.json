@@ -1,0 +1,201 @@
+{
+  "status": "validated",
+  "n_boundary_fields": 83,
+  "n_label_rows": 44,
+  "n_labeled_fields": 34,
+  "n_fold_rows": 44,
+  "n_farms_with_labels": 5,
+  "fold_ids": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4"
+  ],
+  "static_boundary_inventory_area_ha": 490.86427949,
+  "annual_labeled_cohorts": {
+    "2021": {
+      "n_labeled_fields": 18,
+      "class_counts": {
+        "grain": 14,
+        "silage": 4
+      },
+      "selected_labeled_area_ha": 130.11089599
+    },
+    "2022": {
+      "n_labeled_fields": 7,
+      "class_counts": {
+        "silage": 4,
+        "grain": 3
+      },
+      "selected_labeled_area_ha": 44.6508102
+    },
+    "2023": {
+      "n_labeled_fields": 19,
+      "class_counts": {
+        "grain": 15,
+        "silage": 4
+      },
+      "selected_labeled_area_ha": 123.08976508
+    }
+  },
+  "smoke_sample": {
+    "field_id": "barc_1",
+    "year": 2021,
+    "window_start": "2021-04-01",
+    "window_end_exclusive": "2021-12-01",
+    "selection_rule": "First labeled record sorted lexicographically by normalized field_id, then numeric year.",
+    "source_dataset_id": "barc_corn_2021_2023_challenge"
+  },
+  "checks": [
+    "unique field and annual keys",
+    "positive finite source areas",
+    "no orphan labels",
+    "label/fold keys match",
+    "same field and farm never cross folds",
+    "canonical smoke sample and window"
+  ],
+  "limitations": [
+    "Static boundary inventory is not annual corn acreage.",
+    "Annual labeled cohorts and the smoke sample are selected BARC samples, not a census.",
+    "No independent geometry reprojection or ground truth verification by D.",
+    "A documents five farm folds as an explicit exception to the older three-field-fold contract.",
+    "A documents restricted class support and one training fold with one silage label.",
+    "OOF training exclusion remains C responsibility; no model or ranking effectiveness claimed."
+  ],
+  "inputs": [
+    {
+      "path": "data/processed/core/fields.geojson",
+      "commit": "df7ce8cd63039e90de7ca78ba95f4f3259ee15c5",
+      "exists": true,
+      "sha256": "0ec8c03cbf78ee2dbadc79eb0b43604126e82ecbb2a96710f790574214e252de",
+      "git_blob_sha": "435ee8ea1f8d3b66e6691872dbba2f7483b25393",
+      "matches_A_acceptance_sha256": true
+    },
+    {
+      "path": "data/processed/core/labels.csv",
+      "commit": "df7ce8cd63039e90de7ca78ba95f4f3259ee15c5",
+      "exists": true,
+      "sha256": "b7c453f7535eca3fea4477bd4861864d5912e47c1330be7c67588d8c94185f0a",
+      "git_blob_sha": "75273b55493a2be11719e10e0d1ea9649fc86105",
+      "matches_A_acceptance_sha256": true
+    },
+    {
+      "path": "data/processed/core/validation_folds.csv",
+      "commit": "df7ce8cd63039e90de7ca78ba95f4f3259ee15c5",
+      "exists": true,
+      "sha256": "a846206c02b3e53f57b997893ea5c2a730411fb7ea91863f5f96cb47ce878ca5",
+      "git_blob_sha": "04ed160c6dfb1417099a16daa22ae053d77c1d07",
+      "matches_A_acceptance_sha256": true
+    },
+    {
+      "path": "data/processed/core/smoke_sample.json",
+      "commit": "df7ce8cd63039e90de7ca78ba95f4f3259ee15c5",
+      "exists": true,
+      "sha256": "3199c9f2f6f77f6676f4747664dff40a825be04254361f2b25aacc3d3a32a3c1",
+      "git_blob_sha": "1db47bd3276f05596ef64ce4345610395f597f62",
+      "matches_A_acceptance_sha256": true
+    },
+    {
+      "path": "data/processed/satellite/features.csv",
+      "commit": "05a81a7d1634c80d3c56b66cf9eb9acb9527fc9b",
+      "exists": true,
+      "sha256": "402ec0ba1198ed582dd6de0181b7e6298f30a7452282e377d5a39db838c227cb",
+      "git_blob_sha": "d13fc5b0d7267c33525f2b279fb8d339656ff718"
+    },
+    {
+      "path": "data/processed/model/predictions.csv",
+      "commit": "a867e4e19c431754e7b07ee8a260f48761d83d81",
+      "exists": true,
+      "sha256": "fc837db3fc6667419d9c784a8cee520574230bc5ceec94246df0e738953ef5ea",
+      "git_blob_sha": "15ce29c47768ff044dad8e00f316780323ab311e"
+    }
+  ],
+  "upstream_rows": {
+    "features": 44,
+    "predictions": 88
+  },
+  "checked_at_utc": "2026-11-14T21:14:50.193241Z",
+  "analysis_runs": [
+    {
+      "cohort": "labeled",
+      "year": 2022,
+      "prediction_role": "oof",
+      "n_fields": 7,
+      "status": "computed",
+      "selected_area_ha": 44.6508102,
+      "covered_area_ha": 44.6508102
+    },
+    {
+      "cohort": "labeled",
+      "year": 2023,
+      "prediction_role": "oof",
+      "n_fields": 19,
+      "status": "computed",
+      "selected_area_ha": 123.08976508,
+      "covered_area_ha": 123.08976508
+    },
+    {
+      "cohort": "labeled",
+      "year": 2024,
+      "prediction_role": "oof",
+      "n_fields": null,
+      "status": "pending",
+      "selected_area_ha": null,
+      "covered_area_ha": null
+    },
+    {
+      "cohort": "labeled",
+      "year": 2025,
+      "prediction_role": "oof",
+      "n_fields": null,
+      "status": "pending",
+      "selected_area_ha": null,
+      "covered_area_ha": null
+    }
+  ],
+  "archived_analysis_runs": [
+    {
+      "cohort": "smoke",
+      "year": 2021,
+      "prediction_role": "oof",
+      "n_fields": 1,
+      "status": "computed",
+      "selected_area_ha": 6.63739333,
+      "covered_area_ha": 6.63739333
+    },
+    {
+      "cohort": "labeled",
+      "year": 2021,
+      "prediction_role": "oof",
+      "n_fields": 18,
+      "status": "computed",
+      "selected_area_ha": 130.11089599,
+      "covered_area_ha": 130.11089599
+    },
+    {
+      "cohort": "labeled",
+      "year": 2022,
+      "prediction_role": "oof",
+      "n_fields": 7,
+      "status": "computed",
+      "selected_area_ha": 44.6508102,
+      "covered_area_ha": 44.6508102
+    },
+    {
+      "cohort": "labeled",
+      "year": 2023,
+      "prediction_role": "oof",
+      "n_fields": 19,
+      "status": "computed",
+      "selected_area_ha": 123.08976508,
+      "covered_area_ha": 123.08976508
+    }
+  ],
+  "active_period_years": [
+    2022,
+    2023,
+    2024,
+    2025
+  ]
+}

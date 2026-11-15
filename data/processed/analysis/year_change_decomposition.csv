@@ -1,0 +1,4 @@
+from_year,to_year,status,expected_silage_change_ha,selected_area_component_ha,weighted_probability_share_component_ha,interpretation
+2022,2023,computed,21.976622942309945,32.78068524078984,-10.804062298479899,Different selected cohorts; not causal land-use change
+2023,2024,pending,,,,Missing annual estimate; no interpolation/extrapolation
+2024,2025,pending,,,,Missing annual estimate; no interpolation/extrapolation

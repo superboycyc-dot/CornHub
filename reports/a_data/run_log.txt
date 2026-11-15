@@ -1,0 +1,157 @@
+2026-11-14T19:52:33.805712+00:00
+Baseline main: 51d5989; early handoff commit: 6b9f09f
+$ /private/tmp/cornhub-a-data-venv/bin/python src/data/prepare_core.py
+exit_code=0
+{
+  "source_fields": 83,
+  "labeled_field_years": 44,
+  "unique_labeled_fields": 34,
+  "by_year": {
+    "2021": {
+      "grain": 14,
+      "silage": 4
+    },
+    "2022": {
+      "silage": 4,
+      "grain": 3
+    },
+    "2023": {
+      "grain": 15,
+      "silage": 4
+    }
+  },
+  "missing_labels_by_year": {
+    "2022": 76,
+    "2021": 65,
+    "2023": 64
+  },
+  "fold_groups": [
+    {
+      "fold_id": 0,
+      "held_out_farm": "22358",
+      "test_counts": {
+        "grain": 11,
+        "silage": 1
+      },
+      "train_counts": {
+        "grain": 21,
+        "silage": 11
+      },
+      "test_fields": 10
+    },
+    {
+      "fold_id": 1,
+      "held_out_farm": "22359",
+      "test_counts": {
+        "grain": 2
+      },
+      "train_counts": {
+        "grain": 30,
+        "silage": 12
+      },
+      "test_fields": 2
+    },
+    {
+      "fold_id": 2,
+      "held_out_farm": "22380",
+      "test_counts": {
+        "grain": 14,
+        "silage": 11
+      },
+      "train_counts": {
+        "grain": 18,
+        "silage": 1
+      },
+      "test_fields": 19
+    },
+    {
+      "fold_id": 3,
+      "held_out_farm": "22381",
+      "test_counts": {
+        "grain": 4
+      },
+      "train_counts": {
+        "grain": 28,
+        "silage": 12
+      },
+      "test_fields": 2
+    },
+    {
+      "fold_id": 4,
+      "held_out_farm": "22854",
+      "test_counts": {
+        "grain": 1
+      },
+      "train_counts": {
+        "grain": 31,
+        "silage": 12
+      },
+      "test_fields": 1
+    }
+  ],
+  "smoke_sample": {
+    "field_id": "barc_1",
+    "year": 2021,
+    "window_start": "2021-04-01",
+    "window_end_exclusive": "2021-12-01",
+    "selection_rule": "First labeled record sorted lexicographically by normalized field_id, then numeric year.",
+    "source_dataset_id": "barc_corn_2021_2023_challenge"
+  },
+  "smoke_label": {
+    "field_id": "barc_1",
+    "year": 2021,
+    "label": "grain",
+    "label_raw": "Grain",
+    "source_dataset_id": "barc_corn_2021_2023_challenge"
+  }
+}
+
+
+$ /private/tmp/cornhub-a-data-venv/bin/python src/data/validate_core.py
+exit_code=0
+{
+  "status": "passed",
+  "fields": 83,
+  "labels": 44,
+  "folds": 44,
+  "id_map": 83,
+  "unique_labeled_fields": 34,
+  "duplicate_keys": 0,
+  "orphan_labels": 0,
+  "invalid_exported_geometries": 0,
+  "max_serialized_area_roundtrip_delta_ha": 4.974589629114234e-09,
+  "cross_year_field_leakage": false,
+  "cross_year_farm_leakage": false,
+  "smoke_sample": {
+    "field_id": "barc_1",
+    "year": 2021,
+    "window_start": "2021-04-01",
+    "window_end_exclusive": "2021-12-01",
+    "selection_rule": "First labeled record sorted lexicographically by normalized field_id, then numeric year.",
+    "source_dataset_id": "barc_corn_2021_2023_challenge"
+  },
+  "source_hash_verified": true,
+  "label_counts": {
+    "grain": 32,
+    "silage": 12
+  }
+}
+
+
+$ git diff --check
+exit_code=0
+
+
+Rebuild hashes identical: true
+{
+  "data/processed/core/README.md": "95d8b25d4f673b29e0457bc40088a81bdbbc8dd9e75152199725e8dc2127512b",
+  "data/processed/core/field_id_map.csv": "1f9400d4a09a9f88e4adeeb989de0614f6fe24c7246733b83dfd380b840256de",
+  "data/processed/core/fields.geojson": "0ec8c03cbf78ee2dbadc79eb0b43604126e82ecbb2a96710f790574214e252de",
+  "data/processed/core/labels.csv": "b7c453f7535eca3fea4477bd4861864d5912e47c1330be7c67588d8c94185f0a",
+  "data/processed/core/smoke_sample.json": "3199c9f2f6f77f6676f4747664dff40a825be04254361f2b25aacc3d3a32a3c1",
+  "data/processed/core/validation_folds.csv": "a846206c02b3e53f57b997893ea5c2a730411fb7ea91863f5f96cb47ce878ca5",
+  "reports/a_data/acceptance.json": "5ef391986b544f73cc962ad9cbdcb02c61f386270a6943f738163a762e0d9f01",
+  "reports/a_data/area_checks.csv": "0a1ba165a1243e4c55815c3243cc574dd72085e69f4febfc458577a9a33fb419"
+}
+Original GeoPackage, legacy script and CSV unchanged against origin/main: true
+Core README local link existence check: passed
