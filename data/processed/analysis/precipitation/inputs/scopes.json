@@ -1,0 +1,420 @@
+[
+  {
+    "scope_id": "AK",
+    "scope_name": "Alaska",
+    "state_fips": "02",
+    "geometry_area_km2": 1560669.8547261637,
+    "weighted_area_km2": 1560651.229861242,
+    "overlapping_grid_cells": 1427
+  },
+  {
+    "scope_id": "AL",
+    "scope_name": "Alabama",
+    "state_fips": "01",
+    "geometry_area_km2": 133958.0815165818,
+    "weighted_area_km2": 133957.29488697555,
+    "overlapping_grid_cells": 70
+  },
+  {
+    "scope_id": "AR",
+    "scope_name": "Arkansas",
+    "state_fips": "05",
+    "geometry_area_km2": 137792.7065243776,
+    "weighted_area_km2": 137792.50611185533,
+    "overlapping_grid_cells": 63
+  },
+  {
+    "scope_id": "AZ",
+    "scope_name": "Arizona",
+    "state_fips": "04",
+    "geometry_area_km2": 295240.46838441765,
+    "weighted_area_km2": 295255.77182583534,
+    "overlapping_grid_cells": 141
+  },
+  {
+    "scope_id": "CA",
+    "scope_name": "California",
+    "state_fips": "06",
+    "geometry_area_km2": 410516.83640931966,
+    "weighted_area_km2": 410514.15702232625,
+    "overlapping_grid_cells": 217
+  },
+  {
+    "scope_id": "CO",
+    "scope_name": "Colorado",
+    "state_fips": "08",
+    "geometry_area_km2": 269581.4503614258,
+    "weighted_area_km2": 269574.6231621624,
+    "overlapping_grid_cells": 145
+  },
+  {
+    "scope_id": "CT",
+    "scope_name": "Connecticut",
+    "state_fips": "09",
+    "geometry_area_km2": 12961.993779479231,
+    "weighted_area_km2": 12961.926637833549,
+    "overlapping_grid_cells": 15
+  },
+  {
+    "scope_id": "DC",
+    "scope_name": "District of Columbia",
+    "state_fips": "11",
+    "geometry_area_km2": 178.93592555506314,
+    "weighted_area_km2": 178.93751742982136,
+    "overlapping_grid_cells": 2
+  },
+  {
+    "scope_id": "DE",
+    "scope_name": "Delaware",
+    "state_fips": "10",
+    "geometry_area_km2": 5324.642818258301,
+    "weighted_area_km2": 5324.737896436093,
+    "overlapping_grid_cells": 8
+  },
+  {
+    "scope_id": "FL",
+    "scope_name": "Florida",
+    "state_fips": "12",
+    "geometry_area_km2": 154174.61382818932,
+    "weighted_area_km2": 154174.28598343878,
+    "overlapping_grid_cells": 91
+  },
+  {
+    "scope_id": "GA",
+    "scope_name": "Georgia",
+    "state_fips": "13",
+    "geometry_area_km2": 152734.51223187885,
+    "weighted_area_km2": 152734.65993711003,
+    "overlapping_grid_cells": 78
+  },
+  {
+    "scope_id": "HI",
+    "scope_name": "Hawaii",
+    "state_fips": "15",
+    "geometry_area_km2": 16762.351331336682,
+    "weighted_area_km2": 16762.348503114223,
+    "overlapping_grid_cells": 26
+  },
+  {
+    "scope_id": "IA",
+    "scope_name": "Iowa",
+    "state_fips": "19",
+    "geometry_area_km2": 145666.9650850867,
+    "weighted_area_km2": 145666.37047202926,
+    "overlapping_grid_cells": 85
+  },
+  {
+    "scope_id": "ID",
+    "scope_name": "Idaho",
+    "state_fips": "16",
+    "geometry_area_km2": 216681.75578566952,
+    "weighted_area_km2": 216682.90704677912,
+    "overlapping_grid_cells": 137
+  },
+  {
+    "scope_id": "IL",
+    "scope_name": "Illinois",
+    "state_fips": "17",
+    "geometry_area_km2": 145968.74467169758,
+    "weighted_area_km2": 145968.28701949705,
+    "overlapping_grid_cells": 83
+  },
+  {
+    "scope_id": "IN",
+    "scope_name": "Indiana",
+    "state_fips": "18",
+    "geometry_area_km2": 93789.21704199853,
+    "weighted_area_km2": 93788.63859768465,
+    "overlapping_grid_cells": 62
+  },
+  {
+    "scope_id": "KS",
+    "scope_name": "Kansas",
+    "state_fips": "20",
+    "geometry_area_km2": 213184.6453995964,
+    "weighted_area_km2": 213184.0062759584,
+    "overlapping_grid_cells": 126
+  },
+  {
+    "scope_id": "KY",
+    "scope_name": "Kentucky",
+    "state_fips": "21",
+    "geometry_area_km2": 104630.06988050282,
+    "weighted_area_km2": 104630.70355432248,
+    "overlapping_grid_cells": 65
+  },
+  {
+    "scope_id": "LA",
+    "scope_name": "Louisiana",
+    "state_fips": "22",
+    "geometry_area_km2": 125494.27902773621,
+    "weighted_area_km2": 125493.60921235278,
+    "overlapping_grid_cells": 73
+  },
+  {
+    "scope_id": "MA",
+    "scope_name": "Massachusetts",
+    "state_fips": "25",
+    "geometry_area_km2": 21937.81728324158,
+    "weighted_area_km2": 21937.47241503442,
+    "overlapping_grid_cells": 24
+  },
+  {
+    "scope_id": "MD",
+    "scope_name": "Maryland",
+    "state_fips": "24",
+    "geometry_area_km2": 27542.548530394,
+    "weighted_area_km2": 27542.153881530176,
+    "overlapping_grid_cells": 26
+  },
+  {
+    "scope_id": "ME",
+    "scope_name": "Maine",
+    "state_fips": "23",
+    "geometry_area_km2": 87116.61530462968,
+    "weighted_area_km2": 87116.1588782825,
+    "overlapping_grid_cells": 59
+  },
+  {
+    "scope_id": "MI",
+    "scope_name": "Michigan",
+    "state_fips": "26",
+    "geometry_area_km2": 153619.72145033433,
+    "weighted_area_km2": 153621.214389384,
+    "overlapping_grid_cells": 117
+  },
+  {
+    "scope_id": "MN",
+    "scope_name": "Minnesota",
+    "state_fips": "27",
+    "geometry_area_km2": 218794.34450161713,
+    "weighted_area_km2": 218793.7182506214,
+    "overlapping_grid_cells": 136
+  },
+  {
+    "scope_id": "MO",
+    "scope_name": "Missouri",
+    "state_fips": "29",
+    "geometry_area_km2": 180430.62458689793,
+    "weighted_area_km2": 180430.76916905266,
+    "overlapping_grid_cells": 107
+  },
+  {
+    "scope_id": "MS",
+    "scope_name": "Mississippi",
+    "state_fips": "28",
+    "geometry_area_km2": 123302.89160647485,
+    "weighted_area_km2": 123302.82243949457,
+    "overlapping_grid_cells": 67
+  },
+  {
+    "scope_id": "MT",
+    "scope_name": "Montana",
+    "state_fips": "30",
+    "geometry_area_km2": 380607.1129339202,
+    "weighted_area_km2": 380608.59148768894,
+    "overlapping_grid_cells": 215
+  },
+  {
+    "scope_id": "NC",
+    "scope_name": "North Carolina",
+    "state_fips": "37",
+    "geometry_area_km2": 136503.30055274477,
+    "weighted_area_km2": 136503.45153324885,
+    "overlapping_grid_cells": 86
+  },
+  {
+    "scope_id": "ND",
+    "scope_name": "North Dakota",
+    "state_fips": "38",
+    "geometry_area_km2": 183136.6009078567,
+    "weighted_area_km2": 183129.58969366364,
+    "overlapping_grid_cells": 114
+  },
+  {
+    "scope_id": "NE",
+    "scope_name": "Nebraska",
+    "state_fips": "31",
+    "geometry_area_km2": 200365.49686864633,
+    "weighted_area_km2": 200360.79404500322,
+    "overlapping_grid_cells": 103
+  },
+  {
+    "scope_id": "NH",
+    "scope_name": "New Hampshire",
+    "state_fips": "33",
+    "geometry_area_km2": 24038.191438342023,
+    "weighted_area_km2": 24038.324103515566,
+    "overlapping_grid_cells": 21
+  },
+  {
+    "scope_id": "NJ",
+    "scope_name": "New Jersey",
+    "state_fips": "34",
+    "geometry_area_km2": 20184.54383254163,
+    "weighted_area_km2": 20184.46402077999,
+    "overlapping_grid_cells": 21
+  },
+  {
+    "scope_id": "NM",
+    "scope_name": "New Mexico",
+    "state_fips": "35",
+    "geometry_area_km2": 314914.80313074996,
+    "weighted_area_km2": 314917.5451106563,
+    "overlapping_grid_cells": 144
+  },
+  {
+    "scope_id": "NV",
+    "scope_name": "Nevada",
+    "state_fips": "32",
+    "geometry_area_km2": 286344.126335487,
+    "weighted_area_km2": 286346.0574420249,
+    "overlapping_grid_cells": 135
+  },
+  {
+    "scope_id": "NY",
+    "scope_name": "New York",
+    "state_fips": "36",
+    "geometry_area_km2": 127592.99348342113,
+    "weighted_area_km2": 127594.68058693767,
+    "overlapping_grid_cells": 90
+  },
+  {
+    "scope_id": "OH",
+    "scope_name": "Ohio",
+    "state_fips": "39",
+    "geometry_area_km2": 106978.00770460535,
+    "weighted_area_km2": 106977.67265903491,
+    "overlapping_grid_cells": 61
+  },
+  {
+    "scope_id": "OK",
+    "scope_name": "Oklahoma",
+    "state_fips": "40",
+    "geometry_area_km2": 180949.1785317293,
+    "weighted_area_km2": 180952.0363467895,
+    "overlapping_grid_cells": 98
+  },
+  {
+    "scope_id": "OR",
+    "scope_name": "Oregon",
+    "state_fips": "41",
+    "geometry_area_km2": 251375.50543921863,
+    "weighted_area_km2": 251375.61143695557,
+    "overlapping_grid_cells": 146
+  },
+  {
+    "scope_id": "PA",
+    "scope_name": "Pennsylvania",
+    "state_fips": "42",
+    "geometry_area_km2": 117357.64610269645,
+    "weighted_area_km2": 117356.7562255695,
+    "overlapping_grid_cells": 67
+  },
+  {
+    "scope_id": "RI",
+    "scope_name": "Rhode Island",
+    "state_fips": "44",
+    "geometry_area_km2": 3203.8866648129674,
+    "weighted_area_km2": 3203.888151868144,
+    "overlapping_grid_cells": 6
+  },
+  {
+    "scope_id": "SC",
+    "scope_name": "South Carolina",
+    "state_fips": "45",
+    "geometry_area_km2": 80639.03350112568,
+    "weighted_area_km2": 80638.41949944242,
+    "overlapping_grid_cells": 48
+  },
+  {
+    "scope_id": "SD",
+    "scope_name": "South Dakota",
+    "state_fips": "46",
+    "geometry_area_km2": 199717.2472323464,
+    "weighted_area_km2": 199722.9557954509,
+    "overlapping_grid_cells": 117
+  },
+  {
+    "scope_id": "TN",
+    "scope_name": "Tennessee",
+    "state_fips": "47",
+    "geometry_area_km2": 109177.8968815255,
+    "weighted_area_km2": 109178.86235698056,
+    "overlapping_grid_cells": 76
+  },
+  {
+    "scope_id": "TX",
+    "scope_name": "Texas",
+    "state_fips": "48",
+    "geometry_area_km2": 692662.7969878631,
+    "weighted_area_km2": 692656.9863630569,
+    "overlapping_grid_cells": 316
+  },
+  {
+    "scope_id": "UT",
+    "scope_name": "Utah",
+    "state_fips": "49",
+    "geometry_area_km2": 219895.9940360645,
+    "weighted_area_km2": 219904.9771193661,
+    "overlapping_grid_cells": 110
+  },
+  {
+    "scope_id": "VA",
+    "scope_name": "Virginia",
+    "state_fips": "51",
+    "geometry_area_km2": 105735.45671337779,
+    "weighted_area_km2": 105735.70082884877,
+    "overlapping_grid_cells": 66
+  },
+  {
+    "scope_id": "VT",
+    "scope_name": "Vermont",
+    "state_fips": "50",
+    "geometry_area_km2": 24935.232958761866,
+    "weighted_area_km2": 24935.29282932564,
+    "overlapping_grid_cells": 22
+  },
+  {
+    "scope_id": "WA",
+    "scope_name": "Washington",
+    "state_fips": "53",
+    "geometry_area_km2": 178817.0596468311,
+    "weighted_area_km2": 178814.22553164136,
+    "overlapping_grid_cells": 115
+  },
+  {
+    "scope_id": "WI",
+    "scope_name": "Wisconsin",
+    "state_fips": "55",
+    "geometry_area_km2": 145561.47253568374,
+    "weighted_area_km2": 145561.28396447116,
+    "overlapping_grid_cells": 90
+  },
+  {
+    "scope_id": "WV",
+    "scope_name": "West Virginia",
+    "state_fips": "54",
+    "geometry_area_km2": 62943.380980615846,
+    "weighted_area_km2": 62943.406732547635,
+    "overlapping_grid_cells": 45
+  },
+  {
+    "scope_id": "WY",
+    "scope_name": "Wyoming",
+    "state_fips": "56",
+    "geometry_area_km2": 253350.68919927167,
+    "weighted_area_km2": 253350.341405789,
+    "overlapping_grid_cells": 141
+  },
+  {
+    "scope_id": "US50_DC",
+    "scope_name": "United States: 50 states + DC",
+    "weighted_area_km2": 9415033.22621844
+  },
+  {
+    "scope_id": "CONUS48_DC",
+    "scope_name": "Contiguous 48 states + DC",
+    "weighted_area_km2": 7837619.647854084
+  }
+]

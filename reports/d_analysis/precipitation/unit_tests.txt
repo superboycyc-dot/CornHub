@@ -1,0 +1,10 @@
+test_area_weighted_depth_not_sum_of_locations (test_weekly.WeeklyTests.test_area_weighted_depth_not_sum_of_locations) ... ok
+test_cross_year_iso_and_partial_edges (test_weekly.WeeklyTests.test_cross_year_iso_and_partial_edges) ... ok
+test_missing_day_excludes_cell_instead_of_zero (test_weekly.WeeklyTests.test_missing_day_excludes_cell_instead_of_zero) ... ok
+test_no_complete_cell_is_nan (test_weekly.WeeklyTests.test_no_complete_cell_is_nan) ... ok
+test_zero_is_valid_precipitation (test_weekly.WeeklyTests.test_zero_is_valid_precipitation) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+
+OK

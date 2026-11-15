@@ -1,0 +1,44 @@
+[
+  {
+    "source_url": "https://downloads.psl.noaa.gov/Datasets/cpc_global_precip/precip.2021.nc",
+    "filename": "precip.2021.nc",
+    "bytes": 59910391,
+    "sha256": "e4ca984593b551f2b56407cbcdadc2b0eb3cb46a069dab436a83f3d0d7d4e70e",
+    "retrieved_at_utc": "2026-11-15T01:44:49.040146Z"
+  },
+  {
+    "source_url": "https://downloads.psl.noaa.gov/Datasets/cpc_global_precip/precip.2022.nc",
+    "filename": "precip.2022.nc",
+    "bytes": 66268125,
+    "sha256": "cd90c1962bb700e64ce4f314bd9b8ae972bc28df2e53c185ec14db13dc1855bd",
+    "retrieved_at_utc": "2026-11-15T01:45:05.966968Z"
+  },
+  {
+    "source_url": "https://downloads.psl.noaa.gov/Datasets/cpc_global_precip/precip.2023.nc",
+    "filename": "precip.2023.nc",
+    "bytes": 64499992,
+    "sha256": "e3f1281118738239612491b8fc0b52588b0e6494239caba6e329c5f987da6ae0",
+    "retrieved_at_utc": "2026-11-15T01:44:51.786725Z"
+  },
+  {
+    "source_url": "https://downloads.psl.noaa.gov/Datasets/cpc_global_precip/precip.2024.nc",
+    "filename": "precip.2024.nc",
+    "bytes": 66061518,
+    "sha256": "0fa9a77e01ce1dc7f440bcb1243146b37542f021c28de4ba92fa156ada229065",
+    "retrieved_at_utc": "2026-11-15T01:45:16.464625Z"
+  },
+  {
+    "source_url": "https://downloads.psl.noaa.gov/Datasets/cpc_global_precip/precip.2025.nc",
+    "filename": "precip.2025.nc",
+    "bytes": 66159233,
+    "sha256": "824a05ca4ec98bb015c085782215b34db555f40d19b9a9936556cbe8f7166a6b",
+    "retrieved_at_utc": "2026-11-15T01:45:12.759466Z"
+  },
+  {
+    "source_url": "https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_us_state_20m.zip",
+    "filename": "cb_2024_us_state_20m.zip",
+    "bytes": 187671,
+    "sha256": "7bc773d83c01b6df69b8aada9c2b5983d97f22f4551947cc5c00b87c663223ef",
+    "retrieved_at_utc": "2026-11-15T01:45:10.400241Z"
+  }
+]

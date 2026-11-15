@@ -1,0 +1,46 @@
+{
+  "scope": "MD",
+  "week_start": "2025-03-31",
+  "week_end": "2025-04-06",
+  "daily_units": "mm",
+  "chosen_cell": {
+    "grid_row": 101,
+    "grid_col": 566,
+    "intersection_area_km2": 2391.179035851178,
+    "daily_values": [
+      {
+        "date": "2025-03-31",
+        "precip_mm": 0.0
+      },
+      {
+        "date": "2025-04-01",
+        "precip_mm": 18.40606117248535
+      },
+      {
+        "date": "2025-04-02",
+        "precip_mm": 0.0
+      },
+      {
+        "date": "2025-04-03",
+        "precip_mm": 4.040872573852539
+      },
+      {
+        "date": "2025-04-04",
+        "precip_mm": 3.9445266723632812
+      },
+      {
+        "date": "2025-04-05",
+        "precip_mm": 0.1464412808418274
+      },
+      {
+        "date": "2025-04-06",
+        "precip_mm": 0.8309332132339478
+      }
+    ],
+    "seven_day_total_mm": 27.368834912776947
+  },
+  "state_weighted_numerator_mm_km2": 850179.3507768638,
+  "state_valid_area_km2": 27542.153881530176,
+  "state_weekly_mean_mm": 30.86829571985638,
+  "independent_source_pixel_check": "exact match to original NetCDF values"
+}

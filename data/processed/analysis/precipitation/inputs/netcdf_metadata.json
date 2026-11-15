@@ -1,0 +1,182 @@
+[
+  {
+    "year": 2021,
+    "days": 365,
+    "first_date": "2021-01-01",
+    "last_date": "2021-12-31",
+    "precip_attributes": {
+      "missing_value": -9.969209968386869e+36,
+      "units": "mm",
+      "var_desc": "Precipitation",
+      "level_desc": "Surface",
+      "statistic": "Total",
+      "parent_stat": "Other",
+      "long_name": "Daily total of precipitation",
+      "cell_methods": "time: sum",
+      "valid_range": [
+        0.0,
+        1000.0
+      ],
+      "avg_period": "0000-00-01 00:00:00",
+      "actual_range": [
+        0.0,
+        776.75
+      ],
+      "dataset": "CPC Global Precipitation"
+    },
+    "dataset_attributes": {
+      "Conventions": "CF-1.0",
+      "version": "V1.0",
+      "title": "CPC GLOBAL PRCP V1.0 RT",
+      "References": "https://www.psl.noaa.gov/data/gridded/data.cpc.globalprecip.html",
+      "dataset_title": "CPC GLOBAL PRCP V1.0",
+      "Source": "ftp://ftp.cpc.ncep.noaa.gov/precip/CPC_UNI_PRCP/",
+      "history": "Updated 2022-01-02 23:30:58"
+    },
+    "time_units": "hours since 1900-01-01 00:00:00"
+  },
+  {
+    "year": 2022,
+    "days": 365,
+    "first_date": "2022-01-01",
+    "last_date": "2022-12-31",
+    "precip_attributes": {
+      "missing_value": -9.969209968386869e+36,
+      "units": "mm",
+      "var_desc": "Precipitation",
+      "level_desc": "Surface",
+      "statistic": "Total",
+      "parent_stat": "Other",
+      "long_name": "Daily total of precipitation",
+      "cell_methods": "time: sum",
+      "valid_range": [
+        0.0,
+        1000.0
+      ],
+      "avg_period": "0000-00-01 00:00:00",
+      "actual_range": [
+        0.0,
+        776.75
+      ],
+      "dataset": "CPC Global Precipitation"
+    },
+    "dataset_attributes": {
+      "Conventions": "CF-1.0",
+      "version": "V1.0",
+      "title": "CPC GLOBAL PRCP V1.0 RT",
+      "References": "https://www.psl.noaa.gov/data/gridded/data.cpc.globalprecip.html",
+      "dataset_title": "CPC GLOBAL PRCP V1.0",
+      "Source": "ftp://ftp.cpc.ncep.noaa.gov/precip/CPC_UNI_PRCP/",
+      "history": "Updated 2023-01-02 23:31:13"
+    },
+    "time_units": "hours since 1900-01-01 00:00:00"
+  },
+  {
+    "year": 2023,
+    "days": 365,
+    "first_date": "2023-01-01",
+    "last_date": "2023-12-31",
+    "precip_attributes": {
+      "missing_value": -9.969209968386869e+36,
+      "units": "mm",
+      "var_desc": "Precipitation",
+      "level_desc": "Surface",
+      "statistic": "Total",
+      "parent_stat": "Other",
+      "long_name": "Daily total of precipitation",
+      "cell_methods": "time: sum",
+      "valid_range": [
+        0.0,
+        1000.0
+      ],
+      "avg_period": "0000-00-01 00:00:00",
+      "actual_range": [
+        0.0,
+        776.75
+      ],
+      "dataset": "CPC Global Precipitation"
+    },
+    "dataset_attributes": {
+      "Conventions": "CF-1.0",
+      "version": "V1.0",
+      "title": "CPC GLOBAL PRCP V1.0 RT",
+      "References": "https://www.psl.noaa.gov/data/gridded/data.cpc.globalprecip.html",
+      "dataset_title": "CPC GLOBAL PRCP V1.0",
+      "Source": "ftp://ftp.cpc.ncep.noaa.gov/precip/CPC_UNI_PRCP/",
+      "history": "Updated 2024-01-02 23:30:47"
+    },
+    "time_units": "hours since 1900-01-01 00:00:00"
+  },
+  {
+    "year": 2024,
+    "days": 366,
+    "first_date": "2024-01-01",
+    "last_date": "2024-12-31",
+    "precip_attributes": {
+      "missing_value": -9.969209968386869e+36,
+      "units": "mm",
+      "var_desc": "Precipitation",
+      "level_desc": "Surface",
+      "statistic": "Total",
+      "parent_stat": "Other",
+      "long_name": "Daily total of precipitation",
+      "cell_methods": "time: sum",
+      "valid_range": [
+        0.0,
+        1000.0
+      ],
+      "avg_period": "0000-00-01 00:00:00",
+      "actual_range": [
+        0.0,
+        776.75
+      ],
+      "dataset": "CPC Global Precipitation"
+    },
+    "dataset_attributes": {
+      "Conventions": "CF-1.0",
+      "version": "V1.0",
+      "title": "CPC GLOBAL PRCP V1.0 RT",
+      "References": "https://www.psl.noaa.gov/data/gridded/data.cpc.globalprecip.html",
+      "dataset_title": "CPC GLOBAL PRCP V1.0",
+      "Source": "ftp://ftp.cpc.ncep.noaa.gov/precip/CPC_UNI_PRCP/",
+      "history": "Updated 2025-01-02 23:30:43"
+    },
+    "time_units": "hours since 1900-01-01 00:00:00"
+  },
+  {
+    "year": 2025,
+    "days": 365,
+    "first_date": "2025-01-01",
+    "last_date": "2025-12-31",
+    "precip_attributes": {
+      "missing_value": -9.969209968386869e+36,
+      "units": "mm",
+      "var_desc": "Precipitation",
+      "level_desc": "Surface",
+      "statistic": "Total",
+      "parent_stat": "Other",
+      "long_name": "Daily total of precipitation",
+      "cell_methods": "time: sum",
+      "valid_range": [
+        0.0,
+        1000.0
+      ],
+      "avg_period": "0000-00-01 00:00:00",
+      "actual_range": [
+        0.0,
+        776.75
+      ],
+      "dataset": "CPC Global Precipitation"
+    },
+    "dataset_attributes": {
+      "Conventions": "CF-1.0",
+      "version": "V1.0",
+      "title": "CPC GLOBAL PRCP V1.0 RT",
+      "References": "https://www.psl.noaa.gov/data/gridded/data.cpc.globalprecip.html",
+      "dataset_title": "CPC GLOBAL PRCP V1.0",
+      "Source": "ftp://ftp.cpc.ncep.noaa.gov/precip/CPC_UNI_PRCP/",
+      "history": "Updated 2026-01-02 23:30:30"
+    },
+    "time_units": "hours since 1900-01-01 00:00:00"
+  }
+]

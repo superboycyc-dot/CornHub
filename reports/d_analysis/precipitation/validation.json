@@ -1,0 +1,49 @@
+{
+  "target_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "scope_count": 53,
+  "states_plus_dc": 51,
+  "week_count": 262,
+  "weekly_rows": 13886,
+  "annual_rows": 265,
+  "daily_dates_expected": 1826,
+  "source_dates_observed": 1826,
+  "missing_source_dates": [],
+  "selected_grid_cells": 5012,
+  "full_weeks": 260,
+  "partial_boundary_weeks": 2,
+  "weekly_rows_with_no_complete_cell": 148,
+  "weekly_rows_below_90pct_coverage": 153,
+  "national_vs_state_weighted_max_difference_mm": 1.7763568394002505e-14,
+  "checks": [
+    "source date uniqueness and year",
+    "source units mm",
+    "stable global grid",
+    "51 FIPS states including AK/HI/DC",
+    "scope+week_start unique",
+    "nonnegative precipitation",
+    "coverage bounds",
+    "mm/inch conversion",
+    "independent national/state aggregation"
+  ],
+  "completed_at_utc": "2026-11-15T01:48:20.211599Z",
+  "unit_tests": {
+    "run": 5,
+    "passed": 5
+  },
+  "independent_original_netcdf_pixel_check": "passed",
+  "state_vs_weekly_example_max_difference_mm": 3.552713678800501e-15,
+  "geometry_area_partition_max_relative_difference": 5.1833820415625453e-05,
+  "source_code_sha256": {
+    "src/analysis/precipitation/weekly.py": "b83a09c9c889f5f32b0994af9f916e7f2fc077328093c205d3633db6bedf81cb",
+    "src/analysis/precipitation/download.py": "a30b85a20224ae75b0395ecc454b9c8f1e959ecebbd9bb4d590f7cc85d46a051",
+    "src/analysis/precipitation/test_weekly.py": "6fa916d24a5acb82b60ce622d6eb54c36b73d73dd8388e7b3a913c7990fc8eb9",
+    "src/analysis/precipitation/report.py": "8c9ec2c3664449ff1235feb782b173c07e79cad455e63bbff1e7f594abfb4681"
+  },
+  "unit_test_exit_code": 0
+}
