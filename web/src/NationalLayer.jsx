@@ -90,7 +90,19 @@ export default function NationalLayer({
               if (!response.ok) throw Error(`Polygon HTTP ${response.status}`);
               let bytes = await response.arrayBuffer();
               let text;
-              if (new Uint8Array(bytes)[0] === 31)
+              if (
+                tile.path.endsWith(".br") &&
+                !/^\["(?:csb_|cropsight_)/.test(
+                  new TextDecoder().decode(
+                    new Uint8Array(bytes, 0, Math.min(32, bytes.byteLength)),
+                  ),
+                )
+              ) {
+                const { decompress } = await import("brotli/decompress");
+                text = new TextDecoder().decode(
+                  decompress(new Uint8Array(bytes)),
+                );
+              } else if (new Uint8Array(bytes)[0] === 31)
                 text = await new Response(
                   new Blob([bytes])
                     .stream()

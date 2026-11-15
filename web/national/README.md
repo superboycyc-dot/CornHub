@@ -23,3 +23,5 @@ Install scripts/requirements-national.txt in an isolated Python environment, fet
 Attribution: USDA NASS Crop Sequence Boundaries 2016–2023 rev23 (U.S. Public Domain); Zhou, Liu & Diao, CropSight-US v1.0.1 (CC-BY-4.0), https://doi.org/10.5194/essd-18-3069-2026 . Original geometry, area and author confidence fields remain in A's GeoParquet; author crop confidence is not a silage probability.
 
 Polygon rebuild: run scripts/build-national-polygons.py in the same Python environment. polygons-index.json contains actual per-tile source extents (including edge-crossing shapes); only intersecting files are fetched. The prediction keys and universal per-object API slots are unchanged.
+
+Transport packaging: after polygon generation, run scripts/compress-national-polygons.py. Brotli recompression is lossless: every decompressed NDJSON stream is byte-identical to the generated geometry. Browser decoding uses a dynamically loaded decoder and is independently checked against the native Brotli decoder. No fields or vertices are removed by this transport step.

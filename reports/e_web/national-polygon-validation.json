@@ -3,14 +3,17 @@
   "objects": 6128148,
   "tiles": 1832,
   "source_commit": "83fc31f4a6f1fcd3555935c9fb4b286665b8b9ee",
-  "compressed_bytes": 503369627,
+  "compressed_bytes": 459898358,
   "max_file_bytes": 1823822,
   "checks": [
     "Tile object counts equal original complete inventory",
     "Every input Parquet SHA-256 checked by builder",
     "Sampled decompressed records preserve source IDs and Polygon/MultiPolygon types",
-    "All static files below 25 MiB"
+    "All static files below 25 MiB",
+    "Every Brotli stream decompressed exactly to its pre-compression NDJSON",
+    "Browser-compatible decoder checked against native decoder, including largest tile"
   ],
   "display_simplification_degrees": 0.0001,
-  "browser_verification": "Not performed; supported tool unavailable"
+  "browser_verification": "Not performed; supported tool unavailable",
+  "transport_compression": "brotli quality 6, lossless"
 }
