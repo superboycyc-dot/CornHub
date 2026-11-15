@@ -43,3 +43,7 @@ The cause of this discrepancy is **not established**. Recheck the PDF-to-CSV tra
 ## USDA NASS California Cropland Data Layer
 
 [加州 2022–2025 年 CDL 数据与来源说明](usda_nass_cdl/california/README.md)：四个原始年度 ZIP、文件清单与 SHA-256 校验记录。实测 30 米像元；2026 年本次未找到已发布数据。
+
+## 外部全国玉米候选库（2021–2023）
+
+[CSB / CropSight-US 处理后数据与读取方式](processed/external_corn/README.md)。全国原始包仅本地缓存，GitHub 保存玉米筛选分片、来源校验和复现脚本；两套数据均不提供 silage/grain 收获用途真值，不替换 BARC core。2022–2025 美国相关支持政策及适用边界见 [政策研究](../reports/a_data/policy_2022_2025/README.md)。

@@ -1,0 +1,9 @@
+{
+  "source_features": 16194800,
+  "union_corn_polygons": 6112209,
+  "corn_field_year_counts": {
+    "2021": 3184035,
+    "2022": 2993250,
+    "2023": 3262384
+  }
+}

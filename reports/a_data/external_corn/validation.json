@@ -1,0 +1,32 @@
+{
+  "csb": {
+    "status": "passed",
+    "shards": 1223,
+    "rows": 6112209,
+    "corn_field_year_counts": {
+      "2021": 3184035,
+      "2022": 2993250,
+      "2023": 3262384
+    },
+    "duplicate_ids": 0,
+    "all_harvest_types_unknown": true,
+    "invalid_geometries_flagged": 209931,
+    "area_roundtrip_samples": 1223,
+    "area_tolerance_ha": 0.001
+  },
+  "cropsight": {
+    "status": "passed",
+    "shards": 9,
+    "rows": 15939,
+    "corn_field_year_counts": {
+      "2023": 4137,
+      "2021": 6676,
+      "2022": 5126
+    },
+    "duplicate_ids": 0,
+    "all_harvest_types_unknown": true,
+    "invalid_geometries_flagged": 0,
+    "area_roundtrip_samples": 9,
+    "area_tolerance_ha": 0.001
+  }
+}
