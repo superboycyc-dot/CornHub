@@ -1,0 +1,14 @@
+{
+  "exact_training_field_ids_masked_across_years": true,
+  "all_44_training_rows_accounted_for": true,
+  "frozen_step1_model_unchanged": true,
+  "frozen_original_step2_model_unchanged": true,
+  "frozen_selected_step2_v2_unchanged": true,
+  "test_labels_not_in_predictor_matrices": true,
+  "filtered_model_test_fold_labels_excluded_from_fit": true,
+  "all_predictions_made_before_scoring": true,
+  "filtered_models_are_saved_fold_models_not_refit": true,
+  "heldout_group_fold_assignments_from_stage4": true,
+  "all_models_received_only_declared_feature_columns": true,
+  "probability_reload_and_model_checksums_recorded": true
+}

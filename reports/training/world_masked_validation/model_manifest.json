@@ -1,0 +1,95 @@
+{
+  "models": {
+    "step1_ndvi_44_frozen": {
+      "path": "/home/ubuntu/cornhub-compute/runs/step1-ndvi-20261115T003405Z/models/ndvi_full_model.joblib",
+      "sha256": "4dde0c97c1a3cb84f0ac3fa5badb128d8bdeff514397b9f9e6764cf16097cf2b",
+      "features": [
+        "ndvi_peak",
+        "peak_doy",
+        "max_drop_per_day",
+        "drop_doy",
+        "ndvi_late_mean"
+      ]
+    },
+    "step2_ndvi_distance_44_frozen": {
+      "path": "models/ndvi_distance_full_model.joblib inside /home/ubuntu/cornhub-compute/runs/step2-ndvi-distance-20261115T004129Z/trained_models.zip",
+      "archive_sha256": "804350f39d49ea358cff07e495bcf5b7720051aa6c5d149731d9dfd0e901be10",
+      "features": [
+        "ndvi_peak",
+        "peak_doy",
+        "max_drop_per_day",
+        "drop_doy",
+        "ndvi_late_mean",
+        "nearest_dairy_distance_km"
+      ]
+    },
+    "step2_v2_selected_44_frozen": {
+      "path": "/home/ubuntu/cornhub-compute/runs/step2-fixed-all-features-20261115T005356Z/models/ndvi_distance_full_model.joblib",
+      "sha256": "c68ee4e6ff07e8788cc3dba81d293c41387df9f834c9ea1e70c37746aa6f5637",
+      "features": [
+        "ndvi_peak",
+        "peak_doy",
+        "max_drop_per_day",
+        "drop_doy",
+        "ndvi_late_mean",
+        "nearest_dairy_distance_km"
+      ]
+    },
+    "filtered_fold_models": {
+      "refit_drop_single_label_countries_ndvi": {
+        "directory": "/home/ubuntu/cornhub-compute/runs/step5-trim-extreme-countries-20261115T014458Z/models",
+        "source_metrics": "/home/ubuntu/cornhub-compute/runs/step5-trim-extreme-countries-20261115T014458Z/metrics.json"
+      },
+      "refit_drop_ge90pct_label_countries_ndvi": {
+        "directory": "/home/ubuntu/cornhub-compute/runs/step5-trim-extreme-countries-20261115T014458Z/models",
+        "source_metrics": "/home/ubuntu/cornhub-compute/runs/step5-trim-extreme-countries-20261115T014458Z/metrics.json"
+      }
+    }
+  },
+  "mask": {
+    "field_ids": [
+      "barc_1",
+      "barc_230",
+      "barc_231",
+      "barc_238",
+      "barc_24",
+      "barc_248",
+      "barc_251",
+      "barc_252",
+      "barc_254",
+      "barc_263",
+      "barc_278",
+      "barc_279",
+      "barc_280",
+      "barc_286",
+      "barc_288",
+      "barc_291",
+      "barc_292",
+      "barc_301",
+      "barc_323",
+      "barc_327",
+      "barc_328",
+      "barc_332",
+      "barc_334",
+      "barc_347",
+      "barc_348",
+      "barc_382",
+      "barc_383",
+      "barc_394",
+      "barc_397",
+      "barc_400",
+      "barc_429",
+      "barc_511",
+      "barc_548",
+      "barc_571"
+    ],
+    "farm_groups": [
+      "US:farm:apu",
+      "US:farm:centralfarm",
+      "US:farm:eastfarm",
+      "US:farm:linkagefarm",
+      "US:farm:northfarm"
+    ],
+    "exact_field_year_rows_removed": 58
+  }
+}

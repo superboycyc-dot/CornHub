@@ -1,0 +1,888 @@
+{
+  "status": "completed",
+  "task": "frozen_step1_step2_and_filtered_models_masked_global_validation",
+  "scored_external_rows": 39788,
+  "scored_countries": [
+    "CA",
+    "NL",
+    "US"
+  ],
+  "class_counts": {
+    "grain": 39680,
+    "silage": 108
+  },
+  "whole_repository_labeled_candidates": 385049,
+  "whole_repository_all_ndvi_missing_or_ineligible": 345202,
+  "masked_training_field_ids": 34,
+  "masked_rows_exact_training_field_all_years": 58,
+  "remaining_test_rows_sharing_a_training_farm": 22,
+  "training_countries_excluded_from_test_for_frozen_models": [],
+  "models": {
+    "frozen": [
+      "step1_ndvi_44_frozen",
+      "step2_ndvi_distance_44_frozen",
+      "step2_v2_selected_44_frozen"
+    ],
+    "filtered_oof": [
+      "refit_drop_single_label_countries_ndvi",
+      "refit_drop_ge90pct_label_countries_ndvi"
+    ]
+  },
+  "cohorts": [
+    "all_available_external_countries",
+    "test_excluding_Canada",
+    "test_excluding_ge90pct_label_countries_CA_NL",
+    "strict_unseen_farm_all_countries",
+    "strict_unseen_farm_excluding_Canada",
+    "strict_unseen_farm_excluding_CA_NL"
+  ],
+  "results": [
+    {
+      "model": "step1_ndvi_44_frozen",
+      "cohort": "all_available_external_countries",
+      "n": 39788,
+      "correct": 38144,
+      "accuracy": 0.9586810093495526,
+      "majority_class_baseline": 0.9972856137528903,
+      "macro_f1": 0.5148445763440187,
+      "balanced_accuracy": 0.6837944295101553,
+      "silage_precision": 0.027093596059113302,
+      "silage_recall": 0.4074074074074074,
+      "roc_auc": 0.679360462402927,
+      "confusion_matrix": [
+        [
+          38100,
+          1580
+        ],
+        [
+          64,
+          44
+        ]
+      ],
+      "class_counts": {
+        "grain": 39680,
+        "silage": 108
+      },
+      "has_both_classes": true
+    },
+    {
+      "model": "step1_ndvi_44_frozen",
+      "cohort": "test_excluding_Canada",
+      "n": 135,
+      "correct": 71,
+      "accuracy": 0.5259259259259259,
+      "majority_class_baseline": 0.8,
+      "macro_f1": 0.5182872435325603,
+      "balanced_accuracy": 0.7037037037037037,
+      "silage_precision": 1.0,
+      "silage_recall": 0.4074074074074074,
+      "roc_auc": 0.7539437585733881,
+      "confusion_matrix": [
+        [
+          27,
+          0
+        ],
+        [
+          64,
+          44
+        ]
+      ],
+      "class_counts": {
+        "grain": 27,
+        "silage": 108
+      },
+      "has_both_classes": true
+    },
+    {
+      "model": "step1_ndvi_44_frozen",
+      "cohort": "test_excluding_ge90pct_label_countries_CA_NL",
+      "n": 22,
+      "correct": 18,
+      "accuracy": 0.8181818181818182,
+      "majority_class_baseline": 0.8181818181818182,
+      "macro_f1": 0.45,
+      "balanced_accuracy": 0.5,
+      "silage_precision": 0.0,
+      "silage_recall": 0.0,
+      "roc_auc": 0.41666666666666663,
+      "confusion_matrix": [
+        [
+          18,
+          0
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "class_counts": {
+        "grain": 18,
+        "silage": 4
+      },
+      "has_both_classes": true
+    },
+    {
+      "model": "step1_ndvi_44_frozen",
+      "cohort": "strict_unseen_farm_all_countries",
+      "n": 39766,
+      "correct": 38126,
+      "accuracy": 0.9587587386209324,
+      "majority_class_baseline": 0.9973847004979128,
+      "macro_f1": 0.5149236590711321,
+      "balanced_accuracy": 0.691620151821352,
+      "silage_precision": 0.027093596059113302,
+      "silage_recall": 0.4230769230769231,
+      "roc_auc": 0.6937110167453442,
+      "confusion_matrix": [
+        [
+          38082,
+          1580
+        ],
+        [
+          60,
+          44
+        ]
+      ],
+      "class_counts": {
+        "grain": 39662,
+        "silage": 104
+      },
+      "has_both_classes": true
+    },
+    {
+      "model": "step1_ndvi_44_frozen",
+      "cohort": "strict_unseen_farm_excluding_Canada",
+      "n": 113,
+      "correct": 53,
+      "accuracy": 0.4690265486725664,
+      "majority_class_baseline": 0.9203539823008849,
+      "macro_f1": 0.4126819126819127,
+      "balanced_accuracy": 0.7115384615384616,
+      "silage_precision": 1.0,
+      "silage_recall": 0.4230769230769231,
+      "roc_auc": 0.7665598290598291,
+      "confusion_matrix": [
+        [
+          9,
+          0
+        ],
+        [
+          60,
+          44
+        ]
+      ],
+      "class_counts": {
+        "grain": 9,
+        "silage": 104
+      },
+      "has_both_classes": true
+    },
+    {
+      "model": "step1_ndvi_44_frozen",
+      "cohort": "strict_unseen_farm_excluding_CA_NL",
+      "n": 0,
+      "correct": 0,
+      "accuracy": null,
+      "majority_class_baseline": null,
+      "macro_f1": null,
+      "balanced_accuracy": null,
+      "silage_precision": null,
+      "silage_recall": null,
+      "roc_auc": null,
+      "confusion_matrix": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "class_counts": {
+        "grain": 0,
+        "silage": 0
+      },
+      "has_both_classes": false
+    },
+    {
+      "model": "step2_ndvi_distance_44_frozen",
+      "cohort": "all_available_external_countries",
+      "n": 39788,
+      "correct": 38251,
+      "accuracy": 0.9613702623906706,
+      "majority_class_baseline": 0.9972856137528903,
+      "macro_f1": 0.5166356421585502,
+      "balanced_accuracy": 0.6805256869772999,
+      "silage_precision": 0.02838283828382838,
+      "silage_recall": 0.39814814814814814,
+      "roc_auc": 0.7897933467741934,
+      "confusion_matrix": [
+        [
+          38208,
+          1472
+        ],
+        [
+          65,
+          43
+        ]
+      ],
+      "class_counts": {
+        "grain": 39680,
+        "silage": 108
+      },
+      "has_both_classes": true
+    },
+    {
+      "model": "step2_ndvi_distance_44_frozen",
+      "cohort": "test_excluding_Canada",
+      "n": 135,
+      "correct": 70,
+      "accuracy": 0.5185185185185185,
+      "majority_class_baseline": 0.8,
+      "macro_f1": 0.5116589682230508,
+      "balanced_accuracy": 0.6990740740740741,
+      "silage_precision": 1.0,
+      "silage_recall": 0.39814814814814814,
+      "roc_auc": 0.7839506172839505,
+      "confusion_matrix": [
+        [
+          27,
+          0
+        ],
+        [
+          65,
+          43
+        ]
+      ],
+      "class_counts": {
+        "grain": 27,
+        "silage": 108
+      },
+      "has_both_classes": true
+    },
+    {
+      "model": "step2_ndvi_distance_44_frozen",
+      "cohort": "test_excluding_ge90pct_label_countries_CA_NL",
+      "n": 22,
+      "correct": 18,
+      "accuracy": 0.8181818181818182,
+      "majority_class_baseline": 0.8181818181818182,
+      "macro_f1": 0.45,
+      "balanced_accuracy": 0.5,
+      "silage_precision": 0.0,
+      "silage_recall": 0.0,
+      "roc_auc": 0.375,
+      "confusion_matrix": [
+        [
+          18,
+          0
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "class_counts": {
+        "grain": 18,
+        "silage": 4
+      },
+      "has_both_classes": true
+    },
+    {
+      "model": "step2_ndvi_distance_44_frozen",
+      "cohort": "strict_unseen_farm_all_countries",
+      "n": 39766,
+      "correct": 38233,
+      "accuracy": 0.9614494794548106,
+      "majority_class_baseline": 0.9973847004979128,
+      "macro_f1": 0.5167217085793583,
+      "balanced_accuracy": 0.6881739642285001,
+      "silage_precision": 0.02838283828382838,
+      "silage_recall": 0.41346153846153844,
+      "roc_auc": 0.8062036467768025,
+      "confusion_matrix": [
+        [
+          38190,
+          1472
+        ],
+        [
+          61,
+          43
+        ]
+      ],
+      "class_counts": {
+        "grain": 39662,
+        "silage": 104
+      },
+      "has_both_classes": true
+    },
+    {
+      "model": "step2_ndvi_distance_44_frozen",
+      "cohort": "strict_unseen_farm_excluding_Canada",
+      "n": 113,
+      "correct": 52,
+      "accuracy": 0.46017699115044247,
+      "majority_class_baseline": 0.9203539823008849,
+      "macro_f1": 0.40644105743563247,
+      "balanced_accuracy": 0.7067307692307692,
+      "silage_precision": 1.0,
+      "silage_recall": 0.41346153846153844,
+      "roc_auc": 0.7724358974358975,
+      "confusion_matrix": [
+        [
+          9,
+          0
+        ],
+        [
+          61,
+          43
+        ]
+      ],
+      "class_counts": {
+        "grain": 9,
+        "silage": 104
+      },
+      "has_both_classes": true
+    },
+    {
+      "model": "step2_ndvi_distance_44_frozen",
+      "cohort": "strict_unseen_farm_excluding_CA_NL",
+      "n": 0,
+      "correct": 0,
+      "accuracy": null,
+      "majority_class_baseline": null,
+      "macro_f1": null,
+      "balanced_accuracy": null,
+      "silage_precision": null,
+      "silage_recall": null,
+      "roc_auc": null,
+      "confusion_matrix": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "class_counts": {
+        "grain": 0,
+        "silage": 0
+      },
+      "has_both_classes": false
+    },
+    {
+      "model": "step2_v2_selected_44_frozen",
+      "cohort": "all_available_external_countries",
+      "n": 39788,
+      "correct": 36671,
+      "accuracy": 0.9216597969236956,
+      "majority_class_baseline": 0.9972856137528903,
+      "macro_f1": 0.4966308528006552,
+      "balanced_accuracy": 0.7160207586618876,
+      "silage_precision": 0.017633857005450466,
+      "silage_recall": 0.5092592592592593,
+      "roc_auc": 0.6357812733348267,
+      "confusion_matrix": [
+        [
+          36616,
+          3064
+        ],
+        [
+          53,
+          55
+        ]
+      ],
+      "class_counts": {
+        "grain": 39680,
+        "silage": 108
+      },
+      "has_both_classes": true
+    },
+    {
+      "model": "step2_v2_selected_44_frozen",
+      "cohort": "test_excluding_Canada",
+      "n": 135,
+      "correct": 78,
+      "accuracy": 0.5777777777777777,
+      "majority_class_baseline": 0.8,
+      "macro_f1": 0.5526422882390558,
+      "balanced_accuracy": 0.6805555555555556,
+      "silage_precision": 0.9322033898305084,
+      "silage_recall": 0.5092592592592593,
+      "roc_auc": 0.7352537722908092,
+      "confusion_matrix": [
+        [
+          23,
+          4
+        ],
+        [
+          53,
+          55
+        ]
+      ],
+      "class_counts": {
+        "grain": 27,
+        "silage": 108
+      },
+      "has_both_classes": true
+    },
+    {
+      "model": "step2_v2_selected_44_frozen",
+      "cohort": "test_excluding_ge90pct_label_countries_CA_NL",
+      "n": 22,
+      "correct": 15,
+      "accuracy": 0.6818181818181818,
+      "majority_class_baseline": 0.8181818181818182,
+      "macro_f1": 0.40540540540540543,
+      "balanced_accuracy": 0.4166666666666667,
+      "silage_precision": 0.0,
+      "silage_recall": 0.0,
+      "roc_auc": 0.5625,
+      "confusion_matrix": [
+        [
+          15,
+          3
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "class_counts": {
+        "grain": 18,
+        "silage": 4
+      },
+      "has_both_classes": true
+    },
+    {
+      "model": "step2_v2_selected_44_frozen",
+      "cohort": "strict_unseen_farm_all_countries",
+      "n": 39766,
+      "correct": 36656,
+      "accuracy": 0.9217924860433536,
+      "majority_class_baseline": 0.9973847004979128,
+      "macro_f1": 0.4967038714554633,
+      "balanced_accuracy": 0.7258345034774615,
+      "silage_precision": 0.01765083440308087,
+      "silage_recall": 0.5288461538461539,
+      "roc_auc": 0.6411613227929853,
+      "confusion_matrix": [
+        [
+          36601,
+          3061
+        ],
+        [
+          49,
+          55
+        ]
+      ],
+      "class_counts": {
+        "grain": 39662,
+        "silage": 104
+      },
+      "has_both_classes": true
+    },
+    {
+      "model": "step2_v2_selected_44_frozen",
+      "cohort": "strict_unseen_farm_excluding_Canada",
+      "n": 113,
+      "correct": 63,
+      "accuracy": 0.5575221238938053,
+      "majority_class_baseline": 0.9203539823008849,
+      "macro_f1": 0.4649621212121212,
+      "balanced_accuracy": 0.7088675213675213,
+      "silage_precision": 0.9821428571428571,
+      "silage_recall": 0.5288461538461539,
+      "roc_auc": 0.7719017094017094,
+      "confusion_matrix": [
+        [
+          8,
+          1
+        ],
+        [
+          49,
+          55
+        ]
+      ],
+      "class_counts": {
+        "grain": 9,
+        "silage": 104
+      },
+      "has_both_classes": true
+    },
+    {
+      "model": "step2_v2_selected_44_frozen",
+      "cohort": "strict_unseen_farm_excluding_CA_NL",
+      "n": 0,
+      "correct": 0,
+      "accuracy": null,
+      "majority_class_baseline": null,
+      "macro_f1": null,
+      "balanced_accuracy": null,
+      "silage_precision": null,
+      "silage_recall": null,
+      "roc_auc": null,
+      "confusion_matrix": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "class_counts": {
+        "grain": 0,
+        "silage": 0
+      },
+      "has_both_classes": false
+    },
+    {
+      "model": "refit_drop_single_label_countries_ndvi",
+      "cohort": "all_available_external_countries",
+      "n": 39788,
+      "correct": 35749,
+      "accuracy": 0.8984869809992962,
+      "majority_class_baseline": 0.9972856137528903,
+      "macro_f1": 0.49271645981232287,
+      "balanced_accuracy": 0.8290625933393071,
+      "silage_precision": 0.020024420024420026,
+      "silage_recall": 0.7592592592592593,
+      "roc_auc": 0.9166106630824372,
+      "confusion_matrix": [
+        [
+          35667,
+          4013
+        ],
+        [
+          26,
+          82
+        ]
+      ],
+      "class_counts": {
+        "grain": 39680,
+        "silage": 108
+      },
+      "has_both_classes": true
+    },
+    {
+      "model": "refit_drop_single_label_countries_ndvi",
+      "cohort": "test_excluding_Canada",
+      "n": 135,
+      "correct": 102,
+      "accuracy": 0.7555555555555555,
+      "majority_class_baseline": 0.8,
+      "macro_f1": 0.6902162575620611,
+      "balanced_accuracy": 0.75,
+      "silage_precision": 0.9213483146067416,
+      "silage_recall": 0.7592592592592593,
+      "roc_auc": 0.8168724279835391,
+      "confusion_matrix": [
+        [
+          20,
+          7
+        ],
+        [
+          26,
+          82
+        ]
+      ],
+      "class_counts": {
+        "grain": 27,
+        "silage": 108
+      },
+      "has_both_classes": true
+    },
+    {
+      "model": "refit_drop_single_label_countries_ndvi",
+      "cohort": "test_excluding_ge90pct_label_countries_CA_NL",
+      "n": 22,
+      "correct": 15,
+      "accuracy": 0.6818181818181818,
+      "majority_class_baseline": 0.8181818181818182,
+      "macro_f1": 0.40540540540540543,
+      "balanced_accuracy": 0.4166666666666667,
+      "silage_precision": 0.0,
+      "silage_recall": 0.0,
+      "roc_auc": 0.21527777777777776,
+      "confusion_matrix": [
+        [
+          15,
+          3
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "class_counts": {
+        "grain": 18,
+        "silage": 4
+      },
+      "has_both_classes": true
+    },
+    {
+      "model": "refit_drop_single_label_countries_ndvi",
+      "cohort": "strict_unseen_farm_all_countries",
+      "n": 39766,
+      "correct": 35734,
+      "accuracy": 0.8986068500729266,
+      "majority_class_baseline": 0.9973847004979128,
+      "macro_f1": 0.49278230666746436,
+      "balanced_accuracy": 0.8436786034297505,
+      "silage_precision": 0.020039100684261974,
+      "silage_recall": 0.7884615384615384,
+      "roc_auc": 0.9432439692323209,
+      "confusion_matrix": [
+        [
+          35652,
+          4010
+        ],
+        [
+          22,
+          82
+        ]
+      ],
+      "class_counts": {
+        "grain": 39662,
+        "silage": 104
+      },
+      "has_both_classes": true
+    },
+    {
+      "model": "refit_drop_single_label_countries_ndvi",
+      "cohort": "strict_unseen_farm_excluding_Canada",
+      "n": 113,
+      "correct": 87,
+      "accuracy": 0.7699115044247787,
+      "majority_class_baseline": 0.9203539823008849,
+      "macro_f1": 0.5704678362573099,
+      "balanced_accuracy": 0.6720085470085471,
+      "silage_precision": 0.9534883720930233,
+      "silage_recall": 0.7884615384615384,
+      "roc_auc": 0.704594017094017,
+      "confusion_matrix": [
+        [
+          5,
+          4
+        ],
+        [
+          22,
+          82
+        ]
+      ],
+      "class_counts": {
+        "grain": 9,
+        "silage": 104
+      },
+      "has_both_classes": true
+    },
+    {
+      "model": "refit_drop_single_label_countries_ndvi",
+      "cohort": "strict_unseen_farm_excluding_CA_NL",
+      "n": 0,
+      "correct": 0,
+      "accuracy": null,
+      "majority_class_baseline": null,
+      "macro_f1": null,
+      "balanced_accuracy": null,
+      "silage_precision": null,
+      "silage_recall": null,
+      "roc_auc": null,
+      "confusion_matrix": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "class_counts": {
+        "grain": 0,
+        "silage": 0
+      },
+      "has_both_classes": false
+    },
+    {
+      "model": "refit_drop_ge90pct_label_countries_ndvi",
+      "cohort": "all_available_external_countries",
+      "n": 39788,
+      "correct": 39205,
+      "accuracy": 0.9853473409068061,
+      "majority_class_baseline": 0.9972856137528903,
+      "macro_f1": 0.5566378836085385,
+      "balanced_accuracy": 0.6786957698626046,
+      "silage_precision": 0.07207207207207207,
+      "silage_recall": 0.37037037037037035,
+      "roc_auc": 0.8284899566905617,
+      "confusion_matrix": [
+        [
+          39165,
+          515
+        ],
+        [
+          68,
+          40
+        ]
+      ],
+      "class_counts": {
+        "grain": 39680,
+        "silage": 108
+      },
+      "has_both_classes": true
+    },
+    {
+      "model": "refit_drop_ge90pct_label_countries_ndvi",
+      "cohort": "test_excluding_Canada",
+      "n": 135,
+      "correct": 65,
+      "accuracy": 0.48148148148148145,
+      "majority_class_baseline": 0.8,
+      "macro_f1": 0.475,
+      "balanced_accuracy": 0.6481481481481481,
+      "silage_precision": 0.9523809523809523,
+      "silage_recall": 0.37037037037037035,
+      "roc_auc": 0.702846364883402,
+      "confusion_matrix": [
+        [
+          25,
+          2
+        ],
+        [
+          68,
+          40
+        ]
+      ],
+      "class_counts": {
+        "grain": 27,
+        "silage": 108
+      },
+      "has_both_classes": true
+    },
+    {
+      "model": "refit_drop_ge90pct_label_countries_ndvi",
+      "cohort": "test_excluding_ge90pct_label_countries_CA_NL",
+      "n": 22,
+      "correct": 17,
+      "accuracy": 0.7727272727272727,
+      "majority_class_baseline": 0.8181818181818182,
+      "macro_f1": 0.4358974358974359,
+      "balanced_accuracy": 0.4722222222222222,
+      "silage_precision": 0.0,
+      "silage_recall": 0.0,
+      "roc_auc": 0.3055555555555555,
+      "confusion_matrix": [
+        [
+          17,
+          1
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "class_counts": {
+        "grain": 18,
+        "silage": 4
+      },
+      "has_both_classes": true
+    },
+    {
+      "model": "refit_drop_ge90pct_label_countries_ndvi",
+      "cohort": "strict_unseen_farm_all_countries",
+      "n": 39766,
+      "correct": 39188,
+      "accuracy": 0.9854649700749384,
+      "majority_class_baseline": 0.9973847004979128,
+      "macro_f1": 0.5571262017454949,
+      "balanced_accuracy": 0.685827938387063,
+      "silage_precision": 0.07220216606498195,
+      "silage_recall": 0.38461538461538464,
+      "roc_auc": 0.8432001615574682,
+      "confusion_matrix": [
+        [
+          39148,
+          514
+        ],
+        [
+          64,
+          40
+        ]
+      ],
+      "class_counts": {
+        "grain": 39662,
+        "silage": 104
+      },
+      "has_both_classes": true
+    },
+    {
+      "model": "refit_drop_ge90pct_label_countries_ndvi",
+      "cohort": "strict_unseen_farm_excluding_Canada",
+      "n": 113,
+      "correct": 48,
+      "accuracy": 0.4247787610619469,
+      "majority_class_baseline": 0.9203539823008849,
+      "macro_f1": 0.37462750106428266,
+      "balanced_accuracy": 0.6367521367521367,
+      "silage_precision": 0.975609756097561,
+      "silage_recall": 0.38461538461538464,
+      "roc_auc": 0.6762820512820513,
+      "confusion_matrix": [
+        [
+          8,
+          1
+        ],
+        [
+          64,
+          40
+        ]
+      ],
+      "class_counts": {
+        "grain": 9,
+        "silage": 104
+      },
+      "has_both_classes": true
+    },
+    {
+      "model": "refit_drop_ge90pct_label_countries_ndvi",
+      "cohort": "strict_unseen_farm_excluding_CA_NL",
+      "n": 0,
+      "correct": 0,
+      "accuracy": null,
+      "majority_class_baseline": null,
+      "macro_f1": null,
+      "balanced_accuracy": null,
+      "silage_precision": null,
+      "silage_recall": null,
+      "roc_auc": null,
+      "confusion_matrix": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "class_counts": {
+        "grain": 0,
+        "silage": 0
+      },
+      "has_both_classes": false
+    }
+  ],
+  "mask_protocol": "Remove every external row from any one of the 34 Maryland training field IDs across all years before predictions. The frozen step 1/2 model artifacts are loaded unchanged. New filtered-model predictions use only the saved fold model that excludes the row group; no test labels are passed to predict_proba. Labels are joined only after probabilities exist.",
+  "warnings": [
+    "Remaining US rows may share one of the five farms used to train the Maryland models; field IDs are masked, but those US rows are farm-correlated and are not an independent-farm test",
+    "The available scored countries are only CA, NL and US and 345k+ labeled candidates lack usable NDVI; this is not worldwide coverage",
+    "Global held-out data were inspected in prior development experiments; predictions are label-masked, but this is not a never-before-seen blind benchmark",
+    "The selected step2 v2, original step2, and step1 are three distinct frozen models; none were retrained for this evaluation"
+  ]
+}

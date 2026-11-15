@@ -1,0 +1,34 @@
+[
+  {
+    "path": "/home/ubuntu/cornhub-compute/runs/step1-ndvi-20261115T003405Z/frozen_training_rows.csv",
+    "sha256": "3d912a8f6a6bd742ca13c3b46f7107a31f594dcd3a2546b3a67aba34dcdf75d5"
+  },
+  {
+    "path": "/home/ubuntu/cornhub-compute/runs/step1-ndvi-20261115T003405Z/models/ndvi_full_model.joblib",
+    "sha256": "4dde0c97c1a3cb84f0ac3fa5badb128d8bdeff514397b9f9e6764cf16097cf2b"
+  },
+  {
+    "path": "/home/ubuntu/cornhub-compute/runs/step2-ndvi-distance-20261115T004129Z/trained_models.zip",
+    "sha256": "804350f39d49ea358cff07e495bcf5b7720051aa6c5d149731d9dfd0e901be10"
+  },
+  {
+    "path": "/home/ubuntu/cornhub-compute/runs/step2-fixed-all-features-20261115T005356Z/models/ndvi_distance_full_model.joblib",
+    "sha256": "c68ee4e6ff07e8788cc3dba81d293c41387df9f834c9ea1e70c37746aa6f5637"
+  },
+  {
+    "path": "/home/ubuntu/cornhub-compute/runs/step3-global-20261115T011738Z/training_rows.parquet",
+    "sha256": "defb29c394fb59a153922ea8c772e0bb315fd030828cc0e10ab2cf73ce3724a5"
+  },
+  {
+    "path": "/home/ubuntu/cornhub-compute/runs/step3-global-20261115T011738Z/global_labeled_inventory.parquet",
+    "sha256": "6d10300881b6fe65a5a5a6b085f73358c1b26d6b6b12385b36861c514738627c"
+  },
+  {
+    "path": "/home/ubuntu/cornhub-compute/runs/step4-blind-ndvi-20261115T012838Z/oof_predictions.csv",
+    "sha256": "ea84c19f4b5c22df6f89791faa174fc2926bf00ac3912569a8c43f0042a7c109"
+  },
+  {
+    "path": "/home/ubuntu/cornhub-compute/runs/step5-trim-extreme-countries-20261115T014458Z/metrics.json",
+    "sha256": "6c8f5e06d2ea7565491082189fb6d56cca2088c392e2d7da80ef81dfff860321"
+  }
+]

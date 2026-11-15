@@ -1,0 +1,145 @@
+{
+  "top_all_country_accuracy": [
+    {
+      "model": "refit_drop_ge90pct_label_countries_ndvi",
+      "cohort": "all_available_external_countries",
+      "n": 39788,
+      "correct": 39205,
+      "accuracy": 0.9853473409068061,
+      "majority_class_baseline": 0.9972856137528903,
+      "macro_f1": 0.5566378836085385,
+      "balanced_accuracy": 0.6786957698626046,
+      "silage_precision": 0.07207207207207207,
+      "silage_recall": 0.37037037037037035,
+      "roc_auc": 0.8284899566905617,
+      "confusion_matrix": [
+        [
+          39165,
+          515
+        ],
+        [
+          68,
+          40
+        ]
+      ],
+      "class_counts": {
+        "grain": 39680,
+        "silage": 108
+      },
+      "has_both_classes": true
+    },
+    {
+      "model": "step2_ndvi_distance_44_frozen",
+      "cohort": "all_available_external_countries",
+      "n": 39788,
+      "correct": 38251,
+      "accuracy": 0.9613702623906706,
+      "majority_class_baseline": 0.9972856137528903,
+      "macro_f1": 0.5166356421585502,
+      "balanced_accuracy": 0.6805256869772999,
+      "silage_precision": 0.02838283828382838,
+      "silage_recall": 0.39814814814814814,
+      "roc_auc": 0.7897933467741934,
+      "confusion_matrix": [
+        [
+          38208,
+          1472
+        ],
+        [
+          65,
+          43
+        ]
+      ],
+      "class_counts": {
+        "grain": 39680,
+        "silage": 108
+      },
+      "has_both_classes": true
+    },
+    {
+      "model": "step1_ndvi_44_frozen",
+      "cohort": "all_available_external_countries",
+      "n": 39788,
+      "correct": 38144,
+      "accuracy": 0.9586810093495526,
+      "majority_class_baseline": 0.9972856137528903,
+      "macro_f1": 0.5148445763440187,
+      "balanced_accuracy": 0.6837944295101553,
+      "silage_precision": 0.027093596059113302,
+      "silage_recall": 0.4074074074074074,
+      "roc_auc": 0.679360462402927,
+      "confusion_matrix": [
+        [
+          38100,
+          1580
+        ],
+        [
+          64,
+          44
+        ]
+      ],
+      "class_counts": {
+        "grain": 39680,
+        "silage": 108
+      },
+      "has_both_classes": true
+    },
+    {
+      "model": "step2_v2_selected_44_frozen",
+      "cohort": "all_available_external_countries",
+      "n": 39788,
+      "correct": 36671,
+      "accuracy": 0.9216597969236956,
+      "majority_class_baseline": 0.9972856137528903,
+      "macro_f1": 0.4966308528006552,
+      "balanced_accuracy": 0.7160207586618876,
+      "silage_precision": 0.017633857005450466,
+      "silage_recall": 0.5092592592592593,
+      "roc_auc": 0.6357812733348267,
+      "confusion_matrix": [
+        [
+          36616,
+          3064
+        ],
+        [
+          53,
+          55
+        ]
+      ],
+      "class_counts": {
+        "grain": 39680,
+        "silage": 108
+      },
+      "has_both_classes": true
+    },
+    {
+      "model": "refit_drop_single_label_countries_ndvi",
+      "cohort": "all_available_external_countries",
+      "n": 39788,
+      "correct": 35749,
+      "accuracy": 0.8984869809992962,
+      "majority_class_baseline": 0.9972856137528903,
+      "macro_f1": 0.49271645981232287,
+      "balanced_accuracy": 0.8290625933393071,
+      "silage_precision": 0.020024420024420026,
+      "silage_recall": 0.7592592592592593,
+      "roc_auc": 0.9166106630824372,
+      "confusion_matrix": [
+        [
+          35667,
+          4013
+        ],
+        [
+          26,
+          82
+        ]
+      ],
+      "class_counts": {
+        "grain": 39680,
+        "silage": 108
+      },
+      "has_both_classes": true
+    }
+  ],
+  "best_model_by_accuracy_warning": "Accuracy may be inflated by grain-only Canada; use country and balanced metrics"
+}
