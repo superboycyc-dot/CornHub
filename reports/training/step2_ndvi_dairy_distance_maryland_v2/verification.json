@@ -1,0 +1,10 @@
+{
+  "same_44_rows": true,
+  "same_outer_folds": true,
+  "no_field_or_farm_leakage": true,
+  "fixed_threshold_and_seed": true,
+  "only_max_features_changed": true,
+  "saved_fold_models_reproduce_probabilities": true,
+  "independent_saved_models_reproduce_all_probabilities": true,
+  "independent_saved_predictions_accuracy_and_confusion_match": true
+}

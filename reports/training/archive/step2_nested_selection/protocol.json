@@ -1,0 +1,127 @@
+{
+  "seed": 42,
+  "outer_validation": "unchanged five-fold leave-one-farm-out",
+  "inner_validation": "leave-one-farm-out within outer training only",
+  "candidate_configs": [
+    {
+      "family": "random_forest",
+      "max_depth": 2,
+      "min_samples_leaf": 1
+    },
+    {
+      "family": "random_forest",
+      "max_depth": 2,
+      "min_samples_leaf": 2
+    },
+    {
+      "family": "random_forest",
+      "max_depth": 4,
+      "min_samples_leaf": 1
+    },
+    {
+      "family": "random_forest",
+      "max_depth": 4,
+      "min_samples_leaf": 2
+    },
+    {
+      "family": "random_forest",
+      "max_depth": null,
+      "min_samples_leaf": 1
+    },
+    {
+      "family": "random_forest",
+      "max_depth": null,
+      "min_samples_leaf": 2
+    },
+    {
+      "family": "extra_trees",
+      "max_depth": 4,
+      "min_samples_leaf": 1
+    },
+    {
+      "family": "extra_trees",
+      "max_depth": 4,
+      "min_samples_leaf": 2
+    },
+    {
+      "family": "extra_trees",
+      "max_depth": null,
+      "min_samples_leaf": 1
+    },
+    {
+      "family": "extra_trees",
+      "max_depth": null,
+      "min_samples_leaf": 2
+    },
+    {
+      "family": "logistic",
+      "C": 0.1
+    },
+    {
+      "family": "logistic",
+      "C": 1.0
+    },
+    {
+      "family": "logistic",
+      "C": 10.0
+    }
+  ],
+  "feature_sets": {
+    "ndvi_only": [
+      "ndvi_peak",
+      "peak_doy",
+      "max_drop_per_day",
+      "drop_doy",
+      "ndvi_late_mean"
+    ],
+    "nearest": [
+      "ndvi_peak",
+      "peak_doy",
+      "max_drop_per_day",
+      "drop_doy",
+      "ndvi_late_mean",
+      "nearest_dairy_distance_km"
+    ],
+    "distance_summary": [
+      "ndvi_peak",
+      "peak_doy",
+      "max_drop_per_day",
+      "drop_doy",
+      "ndvi_late_mean",
+      "nearest_dairy_distance_km",
+      "nearest3_mean_km",
+      "nearest5_mean_km",
+      "inverse_distance_exposure"
+    ]
+  },
+  "thresholds": [
+    0.25,
+    0.35,
+    0.45,
+    0.5,
+    0.55,
+    0.65,
+    0.75
+  ],
+  "selection": "maximize pooled inner OOF accuracy, then macro F1, then threshold proximity to 0.5, then smaller feature set, then configuration order",
+  "single_class_inner_training": "explicit constant-class dummy fallback, recorded; never train on outer test labels",
+  "arms": {
+    "ndvi_control": [
+      "ndvi_only"
+    ],
+    "ndvi_distance": [
+      "nearest",
+      "distance_summary"
+    ]
+  },
+  "distance_definition": {
+    "nearest": "minimum over 67 dairy locations",
+    "nearest3_mean_km": "mean of three smallest distances",
+    "nearest5_mean_km": "mean of five smallest distances",
+    "inverse_distance_exposure": "sum over 67 of 1/(1+distance_km)"
+  },
+  "distance_variants_predeclared_before_training": true,
+  "no_outer_score_selection": true,
+  "development_caveat": "Outer results were viewed during prior experiments; this is a development-set rerun, not a new independent blind test.",
+  "no_overseas": true
+}

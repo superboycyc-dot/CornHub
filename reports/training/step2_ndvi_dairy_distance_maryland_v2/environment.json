@@ -1,0 +1,8 @@
+{
+  "hostname": "brev-wfu5hudhr",
+  "python": "3.12.16",
+  "numpy": "2.5.4",
+  "sklearn": "1.9.1",
+  "joblib": "1.6.0",
+  "execution": "NVIDIA Brev CPU"
+}

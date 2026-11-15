@@ -1,0 +1,26 @@
+{
+  "version": "step2_ndvi_dairy_distance_maryland_v2",
+  "selected_by_user": true,
+  "status": "retained_for_future_work_not_deployed_to_studio",
+  "features": [
+    "ndvi_peak",
+    "peak_doy",
+    "max_drop_per_day",
+    "drop_doy",
+    "ndvi_late_mean",
+    "nearest_dairy_distance_km"
+  ],
+  "model_family": "RandomForestClassifier",
+  "max_features": 1.0,
+  "threshold": 0.5,
+  "validation_accuracy": 0.8181818181818182,
+  "validation_correct": 36,
+  "validation_n": 44,
+  "validation": "same five-farm held-out OOF development evaluation",
+  "distance_gain_pp_vs_matched_ndvi_control": 0.0,
+  "model_relative_to_archive": "models/ndvi_distance_full_model.joblib",
+  "remote_model_path": "/home/ubuntu/cornhub-compute/runs/step2-fixed-all-features-20261115T005356Z/models/ndvi_distance_full_model.joblib",
+  "remote_model_sha256": "c68ee4e6ff07e8788cc3dba81d293c41387df9f834c9ea1e70c37746aa6f5637",
+  "git_report_path": "reports/training/step2_ndvi_dairy_distance_maryland_v2",
+  "caveat": "Repeatedly viewed small development cohort; not independent blind-test or deployment guarantee; accuracy is from held-out fold models, not full-fit model evaluation"
+}

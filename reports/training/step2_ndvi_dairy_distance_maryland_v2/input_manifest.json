@@ -1,0 +1,18 @@
+[
+  {
+    "path": "/home/ubuntu/cornhub-compute/runs/step2-ndvi-distance-20261115T004129Z/frozen_training_rows.csv",
+    "sha256": "29aae6c1b4080f431362ff7b63c74e5e0693a83d539af5c80187453f910c1aca"
+  },
+  {
+    "path": "/home/ubuntu/cornhub-compute/runs/step2-ndvi-distance-20261115T004129Z/paired_oof_predictions.csv",
+    "sha256": "d8a67a3a09e63b7abd0e7aac814f4d757773cfc6fbdeccc10d51f3b66c2c8767"
+  },
+  {
+    "path": "/home/ubuntu/cornhub-compute/runs/step2-ndvi-distance-20261115T004129Z/metrics.json",
+    "sha256": "f3a7644c0a7cad19ba8e4f36fbc0c6ba386c84b9e80312459c041792547740f2"
+  },
+  {
+    "path": "/home/ubuntu/cornhub-compute/runs/step2-nested-20261115T005005Z/metrics.json",
+    "sha256": "a818f32fdcdeb53d590f2258b801126b9daca4ad92c2d74ca5c61a02686dad45"
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "outer_folds_unchanged": true,
+  "all_44_rows_evaluated": true,
+  "no_field_or_farm_crosses_outer_folds": true,
+  "inner_farms_disjoint": true,
+  "inner_preprocessing_fit_only_on_inner_train": true,
+  "outer_preprocessing_fit_only_on_outer_train": true,
+  "thresholds_selected_only_from_inner_oof": true,
+  "saved_fold_models_reload_equal": true,
+  "all_candidate_results_preserved": true,
+  "prior_79_55_result_retained": true,
+  "independent_saved_models_reproduce_all_probabilities": true,
+  "independent_saved_predictions_accuracy_and_confusion_match": true
+}

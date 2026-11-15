@@ -1,0 +1,546 @@
+[
+  {
+    "outer_fold": "0",
+    "arm": "ndvi_control",
+    "n_train": 32,
+    "n_test": 12,
+    "train_farm_groups": [
+      "22359",
+      "22380",
+      "22381",
+      "22854"
+    ],
+    "test_farm_groups": [
+      "22358"
+    ],
+    "chosen": {
+      "feature_set": "ndvi_only",
+      "config_id": 3,
+      "threshold": 0.5,
+      "inner_correct": 21,
+      "inner_n": 32,
+      "inner_accuracy": 0.65625,
+      "inner_macro_f1": 0.39622641509433965,
+      "single_class_inner_fallbacks": 1
+    },
+    "config": {
+      "family": "random_forest",
+      "max_depth": 4,
+      "min_samples_leaf": 2
+    },
+    "outer_metrics": {
+      "n": 12,
+      "correct": 12,
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "macro_f1": 1.0,
+      "silage_precision": 1.0,
+      "silage_recall": 1.0,
+      "brier_score": 0.07810254685137942,
+      "roc_auc": 1.0,
+      "confusion_matrix": [
+        [
+          11,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    }
+  },
+  {
+    "outer_fold": "0",
+    "arm": "ndvi_distance",
+    "n_train": 32,
+    "n_test": 12,
+    "train_farm_groups": [
+      "22359",
+      "22380",
+      "22381",
+      "22854"
+    ],
+    "test_farm_groups": [
+      "22358"
+    ],
+    "chosen": {
+      "feature_set": "nearest",
+      "config_id": 6,
+      "threshold": 0.5,
+      "inner_correct": 21,
+      "inner_n": 32,
+      "inner_accuracy": 0.65625,
+      "inner_macro_f1": 0.39622641509433965,
+      "single_class_inner_fallbacks": 1
+    },
+    "config": {
+      "family": "extra_trees",
+      "max_depth": 4,
+      "min_samples_leaf": 1
+    },
+    "outer_metrics": {
+      "n": 12,
+      "correct": 12,
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "macro_f1": 1.0,
+      "silage_precision": 1.0,
+      "silage_recall": 1.0,
+      "brier_score": 0.07885917107991852,
+      "roc_auc": 1.0,
+      "confusion_matrix": [
+        [
+          11,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    }
+  },
+  {
+    "outer_fold": "1",
+    "arm": "ndvi_control",
+    "n_train": 42,
+    "n_test": 2,
+    "train_farm_groups": [
+      "22358",
+      "22380",
+      "22381",
+      "22854"
+    ],
+    "test_farm_groups": [
+      "22359"
+    ],
+    "chosen": {
+      "feature_set": "ndvi_only",
+      "config_id": 10,
+      "threshold": 0.5,
+      "inner_correct": 35,
+      "inner_n": 42,
+      "inner_accuracy": 0.8333333333333334,
+      "inner_macro_f1": 0.7418788410886743,
+      "single_class_inner_fallbacks": 0
+    },
+    "config": {
+      "family": "logistic",
+      "C": 0.1
+    },
+    "outer_metrics": {
+      "n": 2,
+      "correct": 2,
+      "accuracy": 1.0,
+      "balanced_accuracy": null,
+      "macro_f1": 0.5,
+      "silage_precision": 0.0,
+      "silage_recall": null,
+      "brier_score": 0.09914743741990421,
+      "roc_auc": null,
+      "confusion_matrix": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    }
+  },
+  {
+    "outer_fold": "1",
+    "arm": "ndvi_distance",
+    "n_train": 42,
+    "n_test": 2,
+    "train_farm_groups": [
+      "22358",
+      "22380",
+      "22381",
+      "22854"
+    ],
+    "test_farm_groups": [
+      "22359"
+    ],
+    "chosen": {
+      "feature_set": "nearest",
+      "config_id": 10,
+      "threshold": 0.5,
+      "inner_correct": 35,
+      "inner_n": 42,
+      "inner_accuracy": 0.8333333333333334,
+      "inner_macro_f1": 0.7418788410886743,
+      "single_class_inner_fallbacks": 0
+    },
+    "config": {
+      "family": "logistic",
+      "C": 0.1
+    },
+    "outer_metrics": {
+      "n": 2,
+      "correct": 2,
+      "accuracy": 1.0,
+      "balanced_accuracy": null,
+      "macro_f1": 0.5,
+      "silage_precision": 0.0,
+      "silage_recall": null,
+      "brier_score": 0.15777195766865024,
+      "roc_auc": null,
+      "confusion_matrix": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    }
+  },
+  {
+    "outer_fold": "2",
+    "arm": "ndvi_control",
+    "n_train": 19,
+    "n_test": 25,
+    "train_farm_groups": [
+      "22358",
+      "22359",
+      "22381",
+      "22854"
+    ],
+    "test_farm_groups": [
+      "22380"
+    ],
+    "chosen": {
+      "feature_set": "ndvi_only",
+      "config_id": 0,
+      "threshold": 0.5,
+      "inner_correct": 18,
+      "inner_n": 19,
+      "inner_accuracy": 0.9473684210526315,
+      "inner_macro_f1": 0.4864864864864865,
+      "single_class_inner_fallbacks": 1
+    },
+    "config": {
+      "family": "random_forest",
+      "max_depth": 2,
+      "min_samples_leaf": 1
+    },
+    "outer_metrics": {
+      "n": 25,
+      "correct": 14,
+      "accuracy": 0.56,
+      "balanced_accuracy": 0.5,
+      "macro_f1": 0.358974358974359,
+      "silage_precision": 0.0,
+      "silage_recall": 0.0,
+      "brier_score": 0.33187600000000006,
+      "roc_auc": 0.5616883116883117,
+      "confusion_matrix": [
+        [
+          14,
+          0
+        ],
+        [
+          11,
+          0
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    }
+  },
+  {
+    "outer_fold": "2",
+    "arm": "ndvi_distance",
+    "n_train": 19,
+    "n_test": 25,
+    "train_farm_groups": [
+      "22358",
+      "22359",
+      "22381",
+      "22854"
+    ],
+    "test_farm_groups": [
+      "22380"
+    ],
+    "chosen": {
+      "feature_set": "nearest",
+      "config_id": 0,
+      "threshold": 0.5,
+      "inner_correct": 18,
+      "inner_n": 19,
+      "inner_accuracy": 0.9473684210526315,
+      "inner_macro_f1": 0.4864864864864865,
+      "single_class_inner_fallbacks": 1
+    },
+    "config": {
+      "family": "random_forest",
+      "max_depth": 2,
+      "min_samples_leaf": 1
+    },
+    "outer_metrics": {
+      "n": 25,
+      "correct": 14,
+      "accuracy": 0.56,
+      "balanced_accuracy": 0.5,
+      "macro_f1": 0.358974358974359,
+      "silage_precision": 0.0,
+      "silage_recall": 0.0,
+      "brier_score": 0.34333600000000003,
+      "roc_auc": 0.5194805194805194,
+      "confusion_matrix": [
+        [
+          14,
+          0
+        ],
+        [
+          11,
+          0
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    }
+  },
+  {
+    "outer_fold": "3",
+    "arm": "ndvi_control",
+    "n_train": 40,
+    "n_test": 4,
+    "train_farm_groups": [
+      "22358",
+      "22359",
+      "22380",
+      "22854"
+    ],
+    "test_farm_groups": [
+      "22381"
+    ],
+    "chosen": {
+      "feature_set": "ndvi_only",
+      "config_id": 12,
+      "threshold": 0.35,
+      "inner_correct": 34,
+      "inner_n": 40,
+      "inner_accuracy": 0.85,
+      "inner_macro_f1": 0.8119122257053292,
+      "single_class_inner_fallbacks": 0
+    },
+    "config": {
+      "family": "logistic",
+      "C": 10.0
+    },
+    "outer_metrics": {
+      "n": 4,
+      "correct": 3,
+      "accuracy": 0.75,
+      "balanced_accuracy": null,
+      "macro_f1": 0.42857142857142855,
+      "silage_precision": 0.0,
+      "silage_recall": null,
+      "brier_score": 0.04438692891801871,
+      "roc_auc": null,
+      "confusion_matrix": [
+        [
+          3,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    }
+  },
+  {
+    "outer_fold": "3",
+    "arm": "ndvi_distance",
+    "n_train": 40,
+    "n_test": 4,
+    "train_farm_groups": [
+      "22358",
+      "22359",
+      "22380",
+      "22854"
+    ],
+    "test_farm_groups": [
+      "22381"
+    ],
+    "chosen": {
+      "feature_set": "distance_summary",
+      "config_id": 12,
+      "threshold": 0.35,
+      "inner_correct": 34,
+      "inner_n": 40,
+      "inner_accuracy": 0.85,
+      "inner_macro_f1": 0.8119122257053292,
+      "single_class_inner_fallbacks": 0
+    },
+    "config": {
+      "family": "logistic",
+      "C": 10.0
+    },
+    "outer_metrics": {
+      "n": 4,
+      "correct": 2,
+      "accuracy": 0.5,
+      "balanced_accuracy": null,
+      "macro_f1": 0.3333333333333333,
+      "silage_precision": 0.0,
+      "silage_recall": null,
+      "brier_score": 0.13476882148833458,
+      "roc_auc": null,
+      "confusion_matrix": [
+        [
+          2,
+          2
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    }
+  },
+  {
+    "outer_fold": "4",
+    "arm": "ndvi_control",
+    "n_train": 43,
+    "n_test": 1,
+    "train_farm_groups": [
+      "22358",
+      "22359",
+      "22380",
+      "22381"
+    ],
+    "test_farm_groups": [
+      "22854"
+    ],
+    "chosen": {
+      "feature_set": "ndvi_only",
+      "config_id": 12,
+      "threshold": 0.25,
+      "inner_correct": 36,
+      "inner_n": 43,
+      "inner_accuracy": 0.8372093023255814,
+      "inner_macro_f1": 0.7922705314009661,
+      "single_class_inner_fallbacks": 0
+    },
+    "config": {
+      "family": "logistic",
+      "C": 10.0
+    },
+    "outer_metrics": {
+      "n": 1,
+      "correct": 1,
+      "accuracy": 1.0,
+      "balanced_accuracy": null,
+      "macro_f1": 0.5,
+      "silage_precision": 0.0,
+      "silage_recall": null,
+      "brier_score": 1.8692353520296446e-06,
+      "roc_auc": null,
+      "confusion_matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    }
+  },
+  {
+    "outer_fold": "4",
+    "arm": "ndvi_distance",
+    "n_train": 43,
+    "n_test": 1,
+    "train_farm_groups": [
+      "22358",
+      "22359",
+      "22380",
+      "22381"
+    ],
+    "test_farm_groups": [
+      "22854"
+    ],
+    "chosen": {
+      "feature_set": "nearest",
+      "config_id": 12,
+      "threshold": 0.25,
+      "inner_correct": 35,
+      "inner_n": 43,
+      "inner_accuracy": 0.813953488372093,
+      "inner_macro_f1": 0.7688172043010753,
+      "single_class_inner_fallbacks": 0
+    },
+    "config": {
+      "family": "logistic",
+      "C": 10.0
+    },
+    "outer_metrics": {
+      "n": 1,
+      "correct": 1,
+      "accuracy": 1.0,
+      "balanced_accuracy": null,
+      "macro_f1": 0.5,
+      "silage_precision": 0.0,
+      "silage_recall": null,
+      "brier_score": 1.0310538352742583e-05,
+      "roc_auc": null,
+      "confusion_matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    }
+  }
+]

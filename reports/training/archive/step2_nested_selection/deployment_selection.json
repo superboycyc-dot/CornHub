@@ -1,0 +1,36 @@
+[
+  {
+    "arm": "ndvi_control",
+    "selection": {
+      "feature_set": "ndvi_only",
+      "config_id": 12,
+      "threshold": 0.25,
+      "inner_correct": 37,
+      "inner_n": 44,
+      "inner_accuracy": 0.8409090909090909,
+      "inner_macro_f1": 0.7939799331103679,
+      "single_class_inner_fallbacks": 0
+    },
+    "config": {
+      "family": "logistic",
+      "C": 10.0
+    }
+  },
+  {
+    "arm": "ndvi_distance",
+    "selection": {
+      "feature_set": "nearest",
+      "config_id": 12,
+      "threshold": 0.25,
+      "inner_correct": 36,
+      "inner_n": 44,
+      "inner_accuracy": 0.8181818181818182,
+      "inner_macro_f1": 0.7708333333333333,
+      "single_class_inner_fallbacks": 0
+    },
+    "config": {
+      "family": "logistic",
+      "C": 10.0
+    }
+  }
+]

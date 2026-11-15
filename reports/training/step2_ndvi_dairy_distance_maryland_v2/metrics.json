@@ -1,0 +1,207 @@
+{
+  "status": "completed",
+  "metrics": {
+    "original_step1": {
+      "correct": 36,
+      "n": 44,
+      "accuracy": 0.8181818181818182,
+      "macro_f1": 0.7206349206349206,
+      "balanced_accuracy": 0.6927083333333334,
+      "silage_recall": 0.4166666666666667,
+      "silage_precision": 0.8333333333333334,
+      "brier_score": 0.14978235398278808,
+      "confusion_matrix": [
+        [
+          31,
+          1
+        ],
+        [
+          7,
+          5
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    },
+    "original_step2": {
+      "correct": 35,
+      "n": 44,
+      "accuracy": 0.7954545454545454,
+      "macro_f1": 0.6979405034324943,
+      "balanced_accuracy": 0.6770833333333334,
+      "silage_recall": 0.4166666666666667,
+      "silage_precision": 0.7142857142857143,
+      "brier_score": 0.15603038785843337,
+      "confusion_matrix": [
+        [
+          30,
+          2
+        ],
+        [
+          7,
+          5
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    },
+    "ndvi_control": {
+      "correct": 36,
+      "n": 44,
+      "accuracy": 0.8181818181818182,
+      "macro_f1": 0.7206349206349206,
+      "balanced_accuracy": 0.6927083333333334,
+      "silage_recall": 0.4166666666666667,
+      "silage_precision": 0.8333333333333334,
+      "brier_score": 0.13727782003896752,
+      "confusion_matrix": [
+        [
+          31,
+          1
+        ],
+        [
+          7,
+          5
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    },
+    "ndvi_distance": {
+      "correct": 36,
+      "n": 44,
+      "accuracy": 0.8181818181818182,
+      "macro_f1": 0.7206349206349206,
+      "balanced_accuracy": 0.6927083333333334,
+      "silage_recall": 0.4166666666666667,
+      "silage_precision": 0.8333333333333334,
+      "brier_score": 0.13982412616423898,
+      "confusion_matrix": [
+        [
+          31,
+          1
+        ],
+        [
+          7,
+          5
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    }
+  },
+  "change_pp_vs_original_step1": 0.0,
+  "change_pp_vs_original_step2": 2.272727272727282,
+  "distance_gain_pp_vs_matched_control": 0.0,
+  "nested_experiment_also_reported": {
+    "original_step1_ndvi": {
+      "n": 44,
+      "correct": 36,
+      "accuracy": 0.8181818181818182,
+      "balanced_accuracy": 0.6927083333333334,
+      "macro_f1": 0.7206349206349206,
+      "silage_precision": 0.8333333333333334,
+      "silage_recall": 0.4166666666666667,
+      "brier_score": 0.14978235398278808,
+      "roc_auc": 0.8046875,
+      "confusion_matrix": [
+        [
+          31,
+          1
+        ],
+        [
+          7,
+          5
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    },
+    "original_step2_nearest": {
+      "n": 44,
+      "correct": 35,
+      "accuracy": 0.7954545454545454,
+      "balanced_accuracy": 0.6770833333333334,
+      "macro_f1": 0.6979405034324943,
+      "silage_precision": 0.7142857142857143,
+      "silage_recall": 0.4166666666666667,
+      "brier_score": 0.15603038785843337,
+      "roc_auc": 0.7942708333333333,
+      "confusion_matrix": [
+        [
+          30,
+          2
+        ],
+        [
+          7,
+          5
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    },
+    "ndvi_control": {
+      "n": 44,
+      "correct": 32,
+      "accuracy": 0.7272727272727273,
+      "balanced_accuracy": 0.5260416666666666,
+      "macro_f1": 0.49034749034749037,
+      "silage_precision": 0.5,
+      "silage_recall": 0.08333333333333333,
+      "brier_score": 0.2184085232264497,
+      "roc_auc": 0.5169270833333333,
+      "confusion_matrix": [
+        [
+          31,
+          1
+        ],
+        [
+          11,
+          1
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    },
+    "ndvi_distance": {
+      "n": 44,
+      "correct": 31,
+      "accuracy": 0.7045454545454546,
+      "balanced_accuracy": 0.5104166666666666,
+      "macro_f1": 0.47762557077625567,
+      "silage_precision": 0.3333333333333333,
+      "silage_recall": 0.08333333333333333,
+      "brier_score": 0.2360077173815457,
+      "roc_auc": 0.4244791666666667,
+      "confusion_matrix": [
+        [
+          30,
+          2
+        ],
+        [
+          11,
+          1
+        ]
+      ],
+      "confusion_order": [
+        "grain",
+        "silage"
+      ]
+    }
+  },
+  "development_rerun_not_independent_blind_test": true
+}
