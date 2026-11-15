@@ -17,8 +17,8 @@ import {
   selectReviewQueue,
 } from "./data";
 import { FIELD_MIN_ZOOM, fieldSnapshot, countiesInView } from "./map-data";
-// At BARC latitude, zoom 13 with a 100 CSS-pixel metric scale renders 1 km.
-const INITIAL_MAP_ZOOM = 13;
+// At BARC latitude, zoom 14 with a 100 CSS-pixel metric scale renders 500 m.
+const INITIAL_MAP_ZOOM = 14;
 const show = (v, missing = "Missing data") =>
   present(v) ? String(v) : missing;
 function Icon({ name, size = 18 }) {
@@ -370,7 +370,7 @@ function Map({
     map.current.on("zoomend", toggle);
     if (fitted.current !== fields) {
       // Use a fixed initial scale rather than viewport-dependent fitBounds.
-      // The 1 km ruler is computed by Leaflet from actual map distances.
+      // The 500 m ruler is computed by Leaflet from actual map distances.
       map.current.setView(layer.getBounds().getCenter(), INITIAL_MAP_ZOOM, {
         animate: false,
       });

@@ -1,5 +1,5 @@
 {
-  "release": "selected-field-detail-v21",
+  "release": "maryland-500m-v22",
   "outline_states": [
     "MD"
   ],
@@ -30,5 +30,7 @@
     "orange": "Suggested review: 0.6 < p_silage <= 0.9",
     "green": "p_silage > 0.9"
   },
-  "review_denominator": "Current-year Maryland available inference records, including conditional predictions"
+  "review_denominator": "Current-year Maryland available inference records, including conditional predictions",
+  "initial_map_zoom": 14,
+  "initial_scale_target_m": 500
 }
