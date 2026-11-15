@@ -1484,3 +1484,8 @@ select:disabled {
   .selectors .harvest-summary {height:214px;}
   .mission:has(.selectors .harvest-summary) .review-overview {top:354px;max-height:calc(100dvh - 460px);min-height:76px;}
 }
+
+/* Expand the card to reveal the assumptions directly below its disclosure. */
+.selectors:has(.harvest-summary details[open]) {height:auto;z-index:1050;}
+.selectors .harvest-summary:has(details[open]) {height:auto;max-height:calc(100dvh - 205px);overflow-y:auto;}
+.harvest-summary details[open] p {margin:8px 0;}
