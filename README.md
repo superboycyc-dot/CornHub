@@ -34,3 +34,11 @@
 角色：A数据与集成（work/a-data）、B遥感（work/b-satellite）、C模型（work/c-model）、D分析（work/d-analysis）、E展示（work/e-web）。沿用已有分支与PR，不覆盖队友工作。共享合同由A整合，所有新增指标需同步下游接口并保留旧版本。
 
 原始标注、来源和许可保持可追溯。面积按单一年份、明确田块集合与prediction_role汇总；OOF用于验证，inference不得冒充新田块或独立验证。价格、经济收益和运输调度不是当前已完成能力。
+
+## 历史交接记录
+
+以下文件保留首轮交接时点的事实与审计，不代表当前集成状态；范围和验证划分以本页及团队合同顶部最新约定为准。
+
+- [首轮项目状态快照](docs/project-status.md)
+- [首轮角色交接](docs/agent-handoff.md)
+- [首轮工作日志](docs/worklog-2026-11-14.md)
