@@ -1,5 +1,7 @@
 # CornHub
 
+**中文** | [English](README.en.md)
+
 **集成入口：[数据目录、全部 PR 处理结果与待补项](docs/data-catalog.md)**。本次接手的 11 个 PR 已全部合入 main，核心 BARC 交接与全国候选库保留独立路径。
 
 利用公开卫星时序识别玉米田的青贮（silage）或籽粒（grain）收获用途，并展示数据质量、预测不确定性和人工核查建议。
