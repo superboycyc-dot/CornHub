@@ -1,5 +1,5 @@
 field_id,state,year,harvest_type,confidence_score,raw_self_confidence,p_silage,status,missing_reason,corn_eligibility,geometry_valid,model_version,confidence_version,prediction_role,training_overlap,source_dataset_id,quality_flag,feature_missing_reason
-csb_061623001006171,CA,2022,,,,,pending_observations,NDVI_not_yet_extracted,confirmed_by_source,True,V9_ndvi90_context10,V9_US_nested_selected_candidate,inference,False,csb_corn_2021_2023,,
+csb_061623001006171,CA,2022,silage,28.480326700165907,98.99633277524248,0.9899633277524248,predicted,,confirmed_by_source,True,V9_ndvi90_context10,V9_US_nested_selected_candidate,inference,False,csb_corn_2021_2023,limited,gap_exceeds_30_days
 csb_061623001006175,CA,2022,,,,,pending_observations,NDVI_not_yet_extracted,confirmed_by_source,True,V9_ndvi90_context10,V9_US_nested_selected_candidate,inference,False,csb_corn_2021_2023,,
 csb_061623002550886,CA,2022,,,,,not_corn,annual_CDL_code_not_1,not_corn,True,V9_ndvi90_context10,V9_US_nested_selected_candidate,inference,False,csb_corn_2021_2023,,
 csb_061623002550934,CA,2022,,,,,not_corn,annual_CDL_code_not_1,not_corn,True,V9_ndvi90_context10,V9_US_nested_selected_candidate,inference,False,csb_corn_2021_2023,,
