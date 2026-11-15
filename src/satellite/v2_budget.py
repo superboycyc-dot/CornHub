@@ -17,7 +17,7 @@ def main():
     files={}
     for root in [OUT,REPORT]:
         for p in root.rglob('*'):
-            if p.is_file() and '.cache' not in p.parts and p.name!='delivery_manifest.json':files[str(p.relative_to(REPORT.parents[2]))]=dict(bytes=p.stat().st_size,sha256=sha(p))
+            if p.is_file() and '.cache' not in p.parts and p.name!='delivery_manifest.json':files[p.relative_to(REPORT.parents[2]).as_posix()]=dict(bytes=p.stat().st_size,sha256=sha(p))
     write_json(REPORT/'delivery_manifest.json',dict(files=files,total_artifact_bytes=sum(v['bytes'] for v in files.values()),raw_large_images_included=False))
     print('Resources',cache_bytes,'checkpoint bytes;',round(wall/60,2),'wall minutes;delivery',sum(v['bytes'] for v in files.values()),'bytes')
 if __name__=='__main__':main()

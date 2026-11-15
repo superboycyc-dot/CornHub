@@ -8,7 +8,7 @@ def main():
     # Stable artifact bytes across Windows/Linux, including reproducibility hashes.
     for root in [OUT,REPORT]:
         for path in root.rglob('*'):
-            if path.is_file() and '.cache' not in path.parts and path.suffix in ['.csv','.json','.md','.txt']:
+            if path.is_file() and '.cache' not in path.parts and path.suffix in ['.csv','.json','.geojson','.md','.txt']:
                 path.write_text(path.read_text(encoding='utf-8'),encoding='utf-8',newline='\n')
     rows=[]
     def add(field,unit,algorithm,missing='empty/null;never zero-filled',table='features'):
@@ -56,7 +56,7 @@ def main():
     manifest['selected_geometry_sha256']=sha(REPORT/'selected_fields.geojson')
     manifest['algorithm_version']=__import__('v2_acquire').VERSION
     source=Path(__file__).parent
-    manifest['code_files_sha256']={str(p.relative_to(source.parents[1])):sha(p) for p in list(source.glob('v2_*.py'))+[source/'global_v2.py',source/'requirements-v2.txt']}
+    manifest['code_files_sha256']={p.relative_to(source.parents[1]).as_posix():sha(p) for p in list(source.glob('v2_*.py'))+[source/'global_v2.py',source/'requirements-v2.txt']}
     manifest['official_api_snapshots']={p.name:sha(p) for p in (REPORT/'.cache/official_docs').glob('*.json')}
     write_json(REPORT/'input_manifest.json',manifest)
     for path in REPORT.rglob('*.json'):

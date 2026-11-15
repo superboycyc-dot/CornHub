@@ -29,7 +29,7 @@ reports accompany the data.
 Observed European crop payloads: 28.7 MB; local ignored checkpoints: 551 MB.
 Elapsed wall time from first catalog checkpoint to gap-fill completion: 28.83
 minutes, including warmup, debugging and idle time. Delivered artifacts are
-about 9.4 MB. Expansion is held: only 73/200 are usable, and the current
+about 9.2 MB. Expansion is held: only 73/200 are usable, and the current
 per-field catalog cache must be deduplicated before 2,000–5,000. Shared
 neighbor-window reads are a remaining optimization. Raw large images and
 cache are excluded from Git. C should confirm the supplied global entity-ID
