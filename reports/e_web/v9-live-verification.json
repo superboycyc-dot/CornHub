@@ -1,35 +1,35 @@
 {
-  "verified_at": "2026-11-15T04:21:01.620Z",
+  "verified_at": "2026-11-15T05:12:38.399Z",
   "url": "https://cornhub-field-evidence.feistydegu3.chatgpt.site",
   "status": "passed",
-  "sites_version": 14,
-  "release": "2026-11-15-v9-confidence-v14",
-  "source_commit": "3e9b21bcbb84f1c50e21d77c4882e25d6f3e6d49",
-  "upstream_commit": "d7648e0c81b0c59a494d44d8309684ba84ef2da6",
-  "deployment_id": "appgdep_6af932fef2c48191a9af5a5c24ce9b81",
+  "sites_version": 15,
+  "release": "2026-11-15-md-only-confidence90-v15",
+  "source_commit": "6330367abf66399d6403e7bac5b1b42e06361b15",
+  "upstream_commit": "cf612d37d762392068056f0c6cb2e132bf16f4cf",
+  "deployment_id": "appgdep_6af93f2f77b4819190b29301428acf69",
   "http_without_cache_busting": true,
-  "rows": 341550,
+  "rows": 249485,
   "colors": {
-    "red": 56,
-    "yellow": 11,
+    "red": 93,
+    "yellow": 35,
     "green": 0,
-    "missing": 341483
+    "missing": 249357
   },
   "resources": [
     {
       "path": "/reference/release.json",
-      "bytes": 589,
-      "sha256": "e9385703d49640cd1e0be858895ca31abdae15b58aadcbc2cfa92cdfe22ae7a6"
+      "bytes": 608,
+      "sha256": "d162286ca2d59ccf295ebcda1f05f220a7726d7d72dd5575ca7bc2d6d9f600ef"
     },
     {
       "path": "/",
       "bytes": 407,
-      "sha256": "30d522745e423f8842930cbbf453389cd8d80e05567b4ca49e5b0b8076758354"
+      "sha256": "55573c22ab43fdd5c2fde8260244414f247233ceb43fc06415ff730154b2fd76"
     },
     {
-      "path": "/assets/index-BhlIn1X0.js",
-      "bytes": 445192,
-      "sha256": "84fb4ea10300cbc5e736f19c97090f58c055295594f22166de55ec15b2d3782c"
+      "path": "/assets/index-bFy0YNA3.js",
+      "bytes": 445434,
+      "sha256": "89280d5835ff866491a9dd27a12b1ac75cea72f3898728f87dfc5ff66ae1f291"
     },
     {
       "path": "/assets/index-KvLQ-NSL.css",
@@ -38,63 +38,58 @@
     },
     {
       "path": "/v9/manifest.json",
-      "bytes": 4472,
-      "sha256": "b74a2cb55c2041116af7aeea8a5f3dfbcec2fb8d95f09b0a6f2fe3d451f00e06"
+      "bytes": 2892,
+      "sha256": "3ca08bde77c72b445f806429e5ffbea0a93529a71b5d89f9f531f1da3d2a433f"
     },
     {
       "path": "/v9/index.json",
-      "bytes": 52766,
-      "sha256": "31acb690ebc6c6a280f0530e32de0d5e820a0e186c30a56f7ced75b50f110921"
+      "bytes": 52771,
+      "sha256": "f7fdcaf84cec71bb4cc446d3ecb9efdbc676b600e015069c6edc59badb9d24da"
+    },
+    {
+      "path": "/national/polygons-index.json",
+      "bytes": 5898,
+      "sha256": "541c12d06f05ff6266dc210b5fcf1ca503ae29af8ad69187a8f7b1f10173bad8"
+    },
+    {
+      "path": "/national/index.json",
+      "bytes": 48356,
+      "sha256": "8e1bf181a45969594be482c40765abac516976704466f0aef360c74f65c6374a"
+    },
+    {
+      "path": "/national/tiles/21/50.bin.gz",
+      "bytes": 43395,
+      "sha256": "37a7e9648dea597f8644e4eddf8dc68520fae2a299abfef716c3066af7f66609"
+    },
+    {
+      "path": "/national/polygons/142-194.npg.br",
+      "bytes": 1204,
+      "sha256": "b90bd2727882962a7e9e6adfd40461b2e1eb796528711d946f27601dff3e6b1c"
     },
     {
       "path": "/v9/MD/2021.csv.gz",
-      "bytes": 172020,
-      "sha256": "77184487245a7d90a2972efd7ca5b7b8f64500d2978da2cff826ad9748beede4"
+      "bytes": 172266,
+      "sha256": "bf80de26460473cdee45266fa43ef45048f88a527d1fd342e1217f946ddfaa1a"
     },
     {
       "path": "/v9/MD/2022.csv.gz",
-      "bytes": 171886,
-      "sha256": "0e947632bb9ae941d271e53a851f4efd423f21e1c268294bc71987147506b959"
+      "bytes": 172214,
+      "sha256": "dedcdf3ee384ed0c98acfc9c75867d400973a1f4705e35004fb2c3705c1a4e11"
     },
     {
       "path": "/v9/MD/2023.csv.gz",
-      "bytes": 172345,
-      "sha256": "47f275c454369bd66ecd4cd7d93a9fe5aea15474dd9b4253b2fb1dd9215ffa7f"
+      "bytes": 172600,
+      "sha256": "51b6400574ce2fd274627ceb22e3ebeea4e5ba5704253d497dd59259c738613f"
     },
     {
       "path": "/v9/MD/2024.csv.gz",
-      "bytes": 169945,
-      "sha256": "ab5ea531d83396c0aabfde8e79650ed704c8eb2a41e104d955d76223143c6b68"
+      "bytes": 170257,
+      "sha256": "035aa3a7f2b3d3575ad09272d32e4b0769060e22a66764731adac8f20fa3d02c"
     },
     {
       "path": "/v9/MD/2025.csv.gz",
-      "bytes": 169991,
-      "sha256": "1d3f4a174f2efba63a33001987bf0a09d9fc8522181d7c609401422c40ddebb9"
-    },
-    {
-      "path": "/v9/CA/2021.csv.gz",
-      "bytes": 70979,
-      "sha256": "f982512a79b932a6088b19319ee3e3a7b31d33fb21866d4db282cb0701e79b80"
-    },
-    {
-      "path": "/v9/CA/2022.csv.gz",
-      "bytes": 71153,
-      "sha256": "15b39fcb46088fb53b8ec482b38664d43a171b8c448b61c2513d728f3aae5345"
-    },
-    {
-      "path": "/v9/CA/2023.csv.gz",
-      "bytes": 70954,
-      "sha256": "18f47098ba2d629251be9142a61022e11373e5e5f2992f1179a32a77d1880878"
-    },
-    {
-      "path": "/v9/CA/2024.csv.gz",
-      "bytes": 68843,
-      "sha256": "c2f85d717b3760b1acb089ba9cec5e719757c869e622e07e1968d8c7496ca727"
-    },
-    {
-      "path": "/v9/CA/2025.csv.gz",
-      "bytes": 68842,
-      "sha256": "951bcf7c458d6dcb2f77da633555feac8cea99df162b625432d89210d3dad427"
+      "bytes": 170265,
+      "sha256": "03a8aec257cefef9c40797a8a93a53eacdbeb090423e8d85774da580fe485912"
     }
   ],
   "browser_verification": "Not performed: supported browser tool unavailable"
