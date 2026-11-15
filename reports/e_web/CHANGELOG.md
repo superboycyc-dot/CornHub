@@ -83,3 +83,7 @@ Reproduced ReferenceError: React is not defined by rendering ReviewOverview with
 ## Compact review rows
 
 Move review summaries into three compact vertical rows at upper right, with a fourth white Unavailable row counting selected-year records without predictions. Missing counts include pending, non-corn and invalid-geometry statuses; cross-year rows are excluded. Preserve clickable color lists and percentages among available predictions. Remove lower-right explanatory card while preserving visible data-load failures.
+
+## Selected-field hierarchy
+
+Selected BARC/national fields now open a common scrollable detail view: predicted harvest use, selected-class probability, source area in hectares and stable ID first; source dataset and model notes below. Grain class probability is 1-p_silage; map colors still use p_silage. Original area metadata is copied from pinned upstream geometry properties without deriving area from simplified display geometry. List View field action also opens this panel.

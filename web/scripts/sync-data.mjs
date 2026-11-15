@@ -1,3 +1,4 @@
+import { syncFieldMetadata } from "./sync-field-metadata.mjs";
 import { syncFieldLocations } from "./sync-field-locations.mjs";
 import { syncV9 } from "./sync-v9.mjs";
 import { promises as fs } from "node:fs";
@@ -108,6 +109,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   );
   await syncV9(root);
   await syncFieldLocations(root);
+  try { await syncFieldMetadata(root); } catch(e) { console.warn("Field metadata unavailable:",e.message); }
   const referenceTarget = path.join(root, "web/public/reference");
   await fs.rm(referenceTarget, { recursive: true, force: true });
   try {

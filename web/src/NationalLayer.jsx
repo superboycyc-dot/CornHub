@@ -8,6 +8,7 @@ export default function NationalLayer({
   year,
   role,
   onStatus,
+  onSelect,
   v9,
 }) {
   useEffect(() => {
@@ -118,6 +119,7 @@ export default function NationalLayer({
               try { const result=await queryPrediction(field,year,role,{...config,source_revision:index.source_commit},abort.signal);if(!closed)layer.setTooltipContent(tooltip(field,result)); }
               catch(e) { if(e.name!=="AbortError")layer.setTooltipContent(tooltip(field,null,"Prediction loading failed: "+e.message)); }
             });
+            layer.on("click",()=>onSelect(field));
             layer.on("mouseout",()=>layer.setRadius(3));layer.addTo(group);dots++;
           }
           let count = 0;
@@ -203,8 +205,8 @@ export default function NationalLayer({
                       },
                       mouseout: () => layer.setStyle(normal),
                       click: () => {
-                        layer.openTooltip();
-                        load();
+                        layer.closeTooltip();
+                        onSelect(field);
                       },
                     });
                   },
@@ -321,6 +323,6 @@ export default function NationalLayer({
         "Candidates: USDA NASS CSB; CropSight-US / Zhou, Liu & Diao CC-BY-4.0",
       );
     };
-  }, [controller, enabled, year, role, onStatus, v9]);
+  }, [controller, enabled, year, role, onStatus, v9, onSelect]);
   return null;
 }

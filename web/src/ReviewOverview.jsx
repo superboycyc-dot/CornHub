@@ -1,7 +1,7 @@
 import React, {useState,useEffect,useMemo} from 'react';
 import {reviewGroups} from './review-overview';
 const labels={red:'First review',orange:'Suggested review',green:'Green'};
-export default function ReviewOverview({v9,year,role,controller,onOpen}){
+export default function ReviewOverview({v9,year,role,controller,onOpen,onSelect}){
  const [active,setActive]=useState(null),[locations,setLocations]=useState({}),[error,setError]=useState('');
  const stats=useMemo(()=>reviewGroups(v9,year,role),[v9,year,role]);
  useEffect(()=>{const a=new AbortController();fetch('/v9/locations.json',{signal:a.signal}).then(r=>{if(!r.ok)throw Error('Location data unavailable');return r.json();}).then(setLocations).catch(e=>{if(e.name!=='AbortError')setError(e.message);});return()=>a.abort();},[]);
@@ -23,7 +23,7 @@ export default function ReviewOverview({v9,year,role,controller,onOpen}){
     <p>Model silage probability · predicted use: <strong>{r.harvest_type==='silage'?'Silage':'Grain'}</strong></p>
     <p>{loc?`Maryland · ${loc.lat.toFixed(5)}, ${loc.lng.toFixed(5)} (boundary center)`:'Location not provided'}</p>
     <small>{r.source_dataset_id} · {r.status==='conditional_prediction'?'Conditional on maize; annual eligibility unverified':r.status}{r.training_overlap?.toLowerCase()==='true'?' · Training overlap':''}</small>
-    {loc&&<button onClick={()=>{controller.current?.setView([loc.lat,loc.lng],16);setActive(null);}}>Locate on map ↗</button>}
+    {loc&&<button onClick={()=>{controller.current?.setView([loc.lat,loc.lng],16);setActive(null);onSelect?.({candidate_id:r.field_id,source_dataset_id:r.source_dataset_id});}}>View field ↗</button>}
    </article>;})}</div>
   </section>}
  </>;

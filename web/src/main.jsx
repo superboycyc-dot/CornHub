@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import L from "leaflet";
 import NationalLayer from "./NationalLayer";
 import ReviewOverview from "./ReviewOverview";
+import SelectedField from "./SelectedField";
 import useV9 from "./useV9";
 import {probabilityColor,v9Record,v9Details} from "./v9";
 import "leaflet/dist/leaflet.css";
@@ -501,6 +502,7 @@ function App() {
     [role, setRole] = useState("inference"),
     [id, setId] = useState("");
   const v9 = useV9(year,role);
+  const [nationalSelection,setNationalSelection]=useState(null);
   const reload = () => {
     setLoading(true);
     loadData().then((s) => {
@@ -569,6 +571,7 @@ function App() {
     [showFields, setShowFields] = useState(true),
     [countyStatus, setCountyStatus] = useState("loading");
   const selectField = useCallback((value) => {
+    setNationalSelection(null);
     setId(value);
     setPanel("field");
   }, []);
@@ -585,6 +588,7 @@ function App() {
       document.removeEventListener("fullscreenchange", onFullscreen);
     };
   }, []);
+  const selectNational = useCallback(field=>{setNationalSelection(field);setPanel("field");},[]);
   const tabs = [
     { id: "field", label: "Field", icon: "field" },
     { id: "observations", label: "Observations", icon: "chart" },
@@ -662,9 +666,10 @@ function App() {
         year={year}
         role={role}
         onStatus={setNationalStatus}
+        onSelect={selectNational}
         v9={v9}
       />
-      <ReviewOverview v9={v9} year={year} role={role} controller={mapController} onOpen={()=>setPanel(null)} />
+      <ReviewOverview v9={v9} year={year} role={role} controller={mapController} onOpen={()=>setPanel(null)} onSelect={selectNational} />
       <header className="topbar">
         <a
           className="brand"
@@ -823,82 +828,7 @@ function App() {
             </button>
           </div>
           <div className="panel-content" key={panel}>
-            {panel === "field" && (
-              <>
-                <span className="section-kicker">SELECTED FIELD</span>
-                {Number(year) > 2023 && (
-                  <p className="notice">
-                    BARC baseline observations and predictions are unavailable for {year}.
-                    Any V9 conditional result is shown separately below. Historical
-                    boundaries do not verify corn eligibility for this year.
-                  </p>
-                )}
-                <h3>{fieldId || "Awaiting the shared sample"}</h3>
-                <dl>
-                  {Object.entries({
-                    Year: year,
-                    "Area (ha)": show(boundary?.area_ha),
-                    "Official ID": show(boundary?.source_field_id),
-                    Label: show(label?.label),
-                    "Source dataset": show(boundary?.source_dataset_id),
-                  }).map(([k, v]) => (
-                    <React.Fragment key={k}>
-                      <dt>{k}</dt>
-                      <dd>{v}</dd>
-                    </React.Fragment>
-                  ))}
-                </dl>
-                <div className="panel-rule" />
-                <span className="section-kicker">V9 INFERENCE / MODEL PROBABILITY COLORS</span>
-                {v9Details(selectedV9).map((line,i)=><p className="v9-detail" key={i}>{line}</p>)}
-                <div className="panel-rule" />
-                <span className="section-kicker">BARC BASELINE MODEL OUTPUT / {role.toUpperCase()}</span>
-                <div className="probability-value">
-                  {present(prediction?.p_silage)
-                    ? String(Number(Number(prediction.p_silage).toFixed(6)))
-                    : "Not computed"}
-                </div>
-                <p className="metric-caption">Model silage probability</p>
-                <dl>
-                  {Object.entries({
-                    "Predicted class": show(
-                      prediction?.predicted_label,
-                      "Not computed",
-                    ),
-                    "Model version": show(
-                      prediction?.model_version,
-                      "Not computed",
-                    ),
-                    "Prediction role": role,
-                  }).map(([k, v]) => (
-                    <React.Fragment key={k}>
-                      <dt>{k}</dt>
-                      <dd>{v}</dd>
-                    </React.Fragment>
-                  ))}
-                </dl>
-                {role === "oof" &&
-                  label?.label &&
-                  prediction?.predicted_label &&
-                  label.label !== prediction.predicted_label && (
-                    <p className="notice">
-                      This held-out prediction differs from the recorded label (
-                      {label.label}). It is a real OOF error; satellite quality
-                      does not establish correctness.
-                    </p>
-                  )}
-                <p className="notice">
-                  {role === "oof"
-                    ? "OOF: predictions from models trained without this field."
-                    : "Inference: predictions from the full-data model."}{" "}
-                  Model probability is uncalibrated and is not accuracy.
-                </p>
-                <small>
-                  Source: core/fields.geojson, core/labels.csv,
-                  model/predictions.csv
-                </small>
-              </>
-            )}
+            {panel === "field" && <SelectedField key={nationalSelection?.candidate_id||fieldId} id={nationalSelection?.candidate_id||fieldId} source={nationalSelection?.source_dataset_id||boundary?.source_dataset_id} area={nationalSelection?undefined:boundary?.area_ha} year={year} role={role} row={nationalSelection?v9Record(v9,nationalSelection.source_dataset_id,nationalSelection.candidate_id,year,role):(role==='inference'?selectedV9:prediction)} />}
             {panel === "observations" && (
               <>
                 <span className="section-kicker">VEGETATION SIGNAL</span>
