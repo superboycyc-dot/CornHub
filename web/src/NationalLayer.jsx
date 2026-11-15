@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import L from "leaflet";
-import {probabilityColor,v9Record,v9Details} from "./v9";
+import {probabilityColor,v9Record,v9Details} from "./v3final";
 import { queryPrediction, decodePolygons, decodeTile } from "./national";
 export default function NationalLayer({
   controller,
@@ -156,7 +156,7 @@ export default function NationalLayer({
                   geometry,
                 };
               const local = rowFor(field);
-              if(historical && (!local || local.status==='not_corn')) continue;
+              if(historical && local?.status==='not_corn') continue;
               const color = probabilityColor(local);
               const normal = {
                 color,

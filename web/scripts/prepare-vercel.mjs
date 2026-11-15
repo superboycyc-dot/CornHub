@@ -4,7 +4,7 @@ import path from 'node:path';
 const root=path.resolve(import.meta.dirname,'..');
 const target=path.join(root,'.vercel-static');
 await fs.rm(target,{recursive:true,force:true});await fs.mkdir(target,{recursive:true});
-for(const entry of ['index.html','assets','national','reference','v9'])await fs.cp(path.join(root,'dist',entry),path.join(target,entry),{recursive:true});
+for(const entry of ['index.html','assets','national','reference','v9','v3final'])await fs.cp(path.join(root,'dist',entry),path.join(target,entry),{recursive:true});
 const manifest=JSON.parse(await fs.readFile(path.join(root,'dist/data/manifest.json')));
 const handoffs=JSON.parse(await fs.readFile(path.join(root,'data-handoffs.json')));
 const allowed=new Set(handoffs.handoffs.flatMap(h=>h.files));

@@ -5,7 +5,7 @@ import NationalLayer from "./NationalLayer";
 import ReviewOverview from "./ReviewOverview";
 import SelectedField from "./SelectedField";
 import useV9 from "./useV9";
-import {probabilityColor,v9Record,v9Details} from "./v9";
+import {probabilityColor,v9Record,v9Details} from "./v3final";
 import "leaflet/dist/leaflet.css";
 import "./style.css";
 import {
@@ -102,10 +102,10 @@ function fieldTooltip(info, v9row) {
     root.appendChild(element);
     return element;
   };
-  if(v9row) {
+  if(v9row || info.role==="inference") {
     text("strong",info.field_id,"tooltip-title");
     for(const detail of v9Details(v9row)) text("span",detail,"tooltip-detail");
-    text("span","V9 model silage probability colors · baseline outputs are separate in the detail panel.","tooltip-footnote");
+    text("span","Colors show the probability of the predicted harvest use.","tooltip-footnote");
     return root;
   }
   text("span", "BARC / VERIFIED FIELD", "tooltip-kicker");
@@ -341,7 +341,7 @@ function Map({
             path.setAttribute("role", "button");
             path.setAttribute(
               "aria-label",
-              `Field ${info.field_id}, ${info.year}, ${info.role}, model silage probability ${info.p_silage === null ? "not computed" : info.p_silage}`,
+              `Field ${info.field_id}, ${info.year}, ${info.role}, ${role==="inference" ? v9Details(rowFor(feature)).join(", ") : "OOF validation"}`,
             );
             path.onfocus = () => {
               highlight();
@@ -686,7 +686,7 @@ function App() {
         <div className="header-divider" />
         <span className="mission-name">FIELD OPERATIONS</span>
         <div className="header-actions">
-          <span className="archive-label">MARYLAND PREDICTIONS · US FIELD MAP</span>
+          <span className="archive-label">BARC v3final PREDICTIONS · US FIELD MAP</span>
           <button
             className="icon-button"
             onClick={reload}
