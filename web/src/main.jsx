@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState, useCallback } from "react";
 import { createRoot } from "react-dom/client";
 import L from "leaflet";
 import NationalLayer from "./NationalLayer";
+import HarvestSummary from "./HarvestSummary";
+import {reviewGroups} from "./review-overview";
 import ReviewOverview from "./ReviewOverview";
 import SelectedField from "./SelectedField";
 import useV9 from "./useV9";
@@ -669,7 +671,7 @@ function App() {
         onSelect={selectNational}
         v9={v9}
       />
-      <ReviewOverview fields={fields} v9={v9} year={year} role={role} controller={mapController} onOpen={()=>setPanel(null)} onSelect={selectNational} />
+      <ReviewOverview v9={v9} year={year} role={role} controller={mapController} onOpen={()=>setPanel(null)} onSelect={selectNational} />
       <header className="topbar">
         <a
           className="brand"
@@ -755,6 +757,7 @@ function App() {
             ))}
           </select>
         </label>
+        <HarvestSummary stats={reviewGroups(v9,year,role)} fields={fields} year={year}/>
       </section>
       {(v9.status==='error'||nationalStatus.includes('failed'))&&<div className="county-error" role="alert">{v9.status==='error'?v9.message:nationalStatus}</div>}
       <div className="layer-switches" aria-label="Map layers">

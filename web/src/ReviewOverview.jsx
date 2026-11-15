@@ -1,8 +1,7 @@
-import HarvestSummary from './HarvestSummary';
 import React, {useState,useEffect,useMemo} from 'react';
 import {reviewGroups} from './review-overview';
 const labels={red:'First review',yellow:'Suggested review',green:'Green'};
-export default function ReviewOverview({v9,year,role,fields,controller,onOpen,onSelect}){
+export default function ReviewOverview({v9,year,role,controller,onOpen,onSelect}){
  const [active,setActive]=useState(null),[locations,setLocations]=useState({}),[error,setError]=useState('');
  const stats=useMemo(()=>reviewGroups(v9,year,role),[v9,year,role]);
  useEffect(()=>{const a=new AbortController();fetch('/v9/locations.json',{signal:a.signal}).then(r=>{if(!r.ok)throw Error('Location data unavailable');return r.json();}).then(setLocations).catch(e=>{if(e.name!=='AbortError')setError(e.message);});return()=>a.abort();},[]);
@@ -14,7 +13,6 @@ export default function ReviewOverview({v9,year,role,fields,controller,onOpen,on
     <span>{label}</span><strong>{stats.ready&&stats.total?`${(stats.groups[key].length/stats.total*100).toFixed(1)}%`:'—'}</strong><small>{stats.ready?stats.groups[key].length:'—'} fields · {key==='red'?'<60%':key==='yellow'?'60–<90%':'≥90%'}</small>
    </button>)}</div>
    <div className="review-unavailable"><span>White · Unknown</span><strong>{stats.ready?stats.unavailable.toLocaleString():"—"} fields</strong></div>
-   <HarvestSummary stats={stats} fields={fields} year={year}/>
   </section>
   {active&&<section className="review-list" aria-label={`${labels[active]} field list`}>
    <header><div><small>{year} · BARC · {role.toUpperCase()}</small><h2>{labels[active]} <span>{stats.groups[active].length}</span></h2></div><button aria-label="Close field list" onClick={()=>setActive(null)}>×</button></header>
