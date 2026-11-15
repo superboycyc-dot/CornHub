@@ -1,0 +1,28 @@
+{
+  "status": "evaluated",
+  "prediction_role": "oof",
+  "n_evaluated": 44,
+  "class_counts": {
+    "grain": 32,
+    "silage": 12
+  },
+  "macro_f1": 0.6507936507936507,
+  "silage_precision": 0.6666666666666666,
+  "silage_recall": 0.3333333333333333,
+  "brier_score": 0.16273091559712258,
+  "confusion_matrix": {
+    "grain": {
+      "grain": 30,
+      "silage": 2
+    },
+    "silage": {
+      "grain": 8,
+      "silage": 4
+    }
+  },
+  "notes": [
+    "Uncalibrated exploratory BARC baseline; no probability reliability claim.",
+    "Fold 2 has fewer than 2 training rows in a class; estimates are unstable and uncalibrated.",
+    "OOF metrics cover only successfully held-out rows; inspect exclusions and per-fold counts."
+  ]
+}

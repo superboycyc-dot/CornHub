@@ -1,0 +1,27 @@
+{
+  "status": "evaluated",
+  "prediction_role": "oof",
+  "n_evaluated": 44,
+  "class_counts": {
+    "grain": 32,
+    "silage": 12
+  },
+  "macro_f1": 0.42916450441100157,
+  "silage_precision": 0.3142857142857143,
+  "silage_recall": 0.9166666666666666,
+  "brier_score": null,
+  "confusion_matrix": {
+    "grain": {
+      "grain": 8,
+      "silage": 24
+    },
+    "silage": {
+      "grain": 1,
+      "silage": 11
+    }
+  },
+  "notes": [
+    "Fixed rule: drop_doy <= 258 predicts silage; missing drop day abstains.",
+    "Hard decisions only; Brier is not a calibrated-probability assessment. Same successful OOF cohort, subset with drop_doy."
+  ]
+}
