@@ -561,11 +561,11 @@ function App() {
     [fullscreen, setFullscreen] = useState(false),
     [uiNotice, setUiNotice] = useState("");
   const mapController = useRef();
-  const [nationalEnabled, setNationalEnabled] = useState(true),
-    [nationalStatus, setNationalStatus] = useState("");
+  const nationalEnabled = true;
+  const [nationalStatus, setNationalStatus] = useState("");
   const [zoomLevel, setZoomLevel] = useState(9),
     [showCounties, setShowCounties] = useState(true),
-    [showFields, setShowFields] = useState(true),
+    [showFields, setShowFields] = useState(false),
     [countyStatus, setCountyStatus] = useState("loading");
   const selectField = useCallback((value) => {
     setId(value);
@@ -679,7 +679,7 @@ function App() {
         <div className="header-divider" />
         <span className="mission-name">FIELD OPERATIONS</span>
         <div className="header-actions">
-          <span className="archive-label">BARC / ARCHIVE 2021—2023</span>
+          <span className="archive-label">MARYLAND PREDICTIONS · US FIELD MAP</span>
           <button
             className="icon-button"
             onClick={reload}
@@ -698,17 +698,6 @@ function App() {
           </button>
         </div>
       </header>
-      <div className="mission-heading">
-        <div className="eyebrow">
-          <span className="status-dot" /> EARTH OBSERVATION
-        </div>
-        <h1>
-          FIELD
-          <br />
-          INTELLIGENCE
-        </h1>
-        <p>Every field. Every observation. In context.</p>
-      </div>
       <section className="selectors" aria-label="Map filters">
         <label>
           <span>YEAR</span>
@@ -719,7 +708,7 @@ function App() {
           >
             {["2021", "2022", "2023", "2024", "2025"].map((y) => (
               <option key={y} value={y}>
-                {Number(y) > 2023 ? `${y} · Pending` : y}
+                {y}
               </option>
             ))}
           </select>
@@ -761,25 +750,20 @@ function App() {
         </label>
       </section>
       <div className="national-control">
-        <label>
-          <input
-            type="checkbox"
-            checked={nationalEnabled}
-            onChange={(e) => setNationalEnabled(e.target.checked)}
-          />
-          <span className="national-swatch" />
-          US candidate fields · Maryland outlines
-        </label>
-        {nationalEnabled && (
-          <small role="status">{nationalStatus || "Loading…"}</small>
-        )}
+        <strong className="map-card-title">Model silage probability</strong>
+        <p className="map-card-subtitle">Maryland · {year} · {role === 'inference' ? 'Model predictions' : 'Validation view'}</p>
         <div className="probability-legend" aria-label="V9 model silage probability legend">
           <span><i style={{background:"#61df8c"}} /> &gt;90%</span>
           <span><i style={{background:"#ffcf45"}} /> &gt;60–90%</span>
           <span><i style={{background:"#ff5b5b"}} /> ≤60%</span>
           <span><i style={{background:"#fff"}} /> Unavailable</span>
         </div>
-        <small>MD V9 model silage probability · inference · {year}</small>
+        <p className="map-help">Hover a field to see its prediction. White means no result.</p>
+        <details className="map-metadata"><summary>Coverage &amp; data status</summary>
+          <small>US field layer always on · Maryland outlines; other states shown as points.</small>
+          <small>{nationalStatus || 'Loading fields…'}</small>
+          <small>Experimental model probability; not validated accuracy.</small>
+        </details>
         <small role="status">{v9.status==='ready'?v9.message:(v9.message||'Loading V9 probability…')}</small>
       </div>
       <div className="layer-switches" aria-label="Map layers">
@@ -795,7 +779,7 @@ function App() {
           onClick={() => setShowFields(!showFields)}
         >
           <span className="layer-swatch fields" />
-          Fields <small>{fields?.features.length || "pending"}</small>
+          BARC reference <small>Optional</small>
         </button>
         <span className="zoom-readout">
           Z{zoomLevel} / FIELDS ≥ {FIELD_MIN_ZOOM}
@@ -804,46 +788,6 @@ function App() {
       {countyStatus !== "ready" && countyStatus !== "loading" && (
         <div className="county-error" role="status">
           {countyStatus}
-        </div>
-      )}
-      {!panel && (
-        <div className="context-note">
-          <span className="crosshair-mark">+</span>
-          <div>
-            <span className="micro-label">
-              {fields?.features.length
-                ? showFields
-                  ? "VERIFIED FIELD LAYER"
-                  : "FIELD LAYER HIDDEN"
-                : "FIELD LAYER PENDING"}
-            </span>
-            <p>
-              {fields?.features.length
-                ? !showFields
-                  ? "Enable the field layer to inspect boundaries."
-                  : zoomLevel < FIELD_MIN_ZOOM
-                    ? "Zoom in to reveal verified field boundaries."
-                    : "Hover a field for its prediction. Click for details."
-                : "Field boundaries have not been provided"}
-            </p>
-            <small>
-              {fields?.features.length
-                ? "Maryland / BARC · Zoom out to explore the United States."
-                : "Regional basemap only. No field boundaries are inferred."}
-            </small>
-            {fields?.features.length > 0 &&
-              (zoomLevel < FIELD_MIN_ZOOM || !showFields) && (
-                <button
-                  className="show-fields-button"
-                  onClick={() => {
-                    setShowFields(true);
-                    fitMap();
-                  }}
-                >
-                  Zoom to fields <Icon name="arrow" size={13} />
-                </button>
-              )}
-          </div>
         </div>
       )}
       <div className="map-tools" aria-label="Map controls">
@@ -1288,7 +1232,7 @@ function App() {
       )}
       <footer className="flight-deck">
         <div className="flight-id">
-          <span className="micro-label">MISSION / BARC</span>
+          <span className="micro-label">REFERENCE DATA</span>
           <div>
             <span className="status-dot amber" />
             {loading

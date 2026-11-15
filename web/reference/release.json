@@ -1,5 +1,5 @@
 {
-  "release": "md-model-probability-v16",
+  "release": "map-first-us-layer-v17",
   "outline_states": [
     "MD"
   ],
@@ -22,5 +22,7 @@
     "yellow": "0.6 < p_silage <= 0.9",
     "red": "p_silage <= 0.6",
     "white": "unavailable"
-  }
+  },
+  "national_layer_locked": true,
+  "barc_reference_default_visible": false
 }

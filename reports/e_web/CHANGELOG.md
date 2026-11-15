@@ -65,3 +65,9 @@ Replaced close-up national center markers with actual source Polygon/MultiPolygo
 - Preserve Maryland-only detailed data, other-state points, original IDs, source probabilities, selected year, inference/OOF isolation and existing upstream pin.
 
 - Sites v16 deployed successfully. Live homepage, JS/CSS, release metadata, MD-only manifest, all five MD annual CSVs and geometry/point samples matched local build bytes without cache-busting. Color basis verified as p_silage; 128 scored annual records yield 43 red, 12 yellow and 73 green records. Original data bytes unchanged. Evidence: v9-live-verification.json. Browser visual verification remains unavailable.
+
+## Map-first layout
+
+- Prioritize year, model role and a readable silage-probability legend; move coverage and technical status into expandable details. Remove decorative headline and redundant telemetry.
+- Force the US candidate layer on, hide BARC reference polygons by default and label their optional toggle explicitly. Preserve Maryland outline/other-state point scope.
+- Separate primary left controls from right evidence panel; mobile evidence replaces the legend card to avoid overlapping controls.
