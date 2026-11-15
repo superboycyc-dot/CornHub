@@ -12,3 +12,10 @@
 - Retained the Maryland 1 km opening view, field highlights, county layer and full-screen English interface.
 - Verification: 8 Node tests; 27 source files byte-checked; annual/role/cohort and D input-hash checks; production build. No browser visual/hover check or real screenshot was performed because the supported browser tool is unavailable.
 - Source changes are limited to web and reports/e_web. No teammate scripts, source IDs, model results, economic values or root configuration were changed.
+
+## 集成验收 2026-11-14（America/Los_Angeles）
+
+- 合入 main 的 A/B/C/D 交接后，通过 27 个发布输入核验、9 个 Node 测试及生产构建。
+- 修复全国 external_corn 候选分片进入 BARC 网页发布目录的问题，并验证旧副本会清理。
+- 修复浏览器检查的旧概率定位器；真实数据桌面/手机、键盘田块选择、2024 pending 与 inference 队列隔离均通过本地 Chromium 检查。截图见 integration-real-*，详细证据见 integration-browser-verification.json。外部底图部分瓦片加载失败时提示正常，未验证生产部署。
+- 显示概率最多六位小数，避免浮点尾数挤出面板；原始预测文件不变。

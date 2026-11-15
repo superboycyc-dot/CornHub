@@ -866,7 +866,9 @@ function App() {
                 <div className="panel-rule" />
                 <span className="section-kicker">MODEL OUTPUT</span>
                 <div className="probability-value">
-                  {show(prediction?.p_silage, "Not computed")}
+                  {present(prediction?.p_silage)
+                    ? String(Number(Number(prediction.p_silage).toFixed(6)))
+                    : "Not computed"}
                 </div>
                 <p className="metric-caption">Model silage probability</p>
                 <dl>

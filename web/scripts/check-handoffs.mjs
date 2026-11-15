@@ -159,7 +159,7 @@ const report = {
   annual,
   files,
   browser_verification:
-    "Not performed: supported browser control tool is unavailable.",
+    "This command checks data only; see integration-browser-verification.json for the separate real-data browser acceptance.",
 };
 await fs.writeFile(
   path.join(root, "reports/e_web/handoff-verification.json"),

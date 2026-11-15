@@ -26,6 +26,8 @@ export async function sync(
   async function copy(dir, relative = "") {
     for (const entry of await fs.readdir(dir, { withFileTypes: true })) {
       const name = path.posix.join(relative, entry.name);
+      // National candidates are outside the BARC website scope.
+      if (name === "external_corn") continue;
       if (entry.isDirectory()) await copy(path.join(dir, entry.name), name);
       else if (entry.isFile()) {
         const dest = path.join(target, name);

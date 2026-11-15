@@ -25,7 +25,7 @@ node scripts/browser-check.mjs
 
 ## 数据接入
 
-同步脚本逐字节复制仓库 `data/processed` 下已有常规文件到 `web/public/data`，保留相对路径和全部字段。尚未合入主线的团队交接文件，可按 `data-handoffs.json` 中固定的完整提交 SHA 从本仓库 Git 对象只读提取；本地文件优先。每次清理旧发布副本，生成带来源的 manifest，缺文件继续，不修改队友目录。发布目录已忽略，不手改、不提交副本。源目录应由团队维护，不存凭据或未获许可的原件；同步不会过滤其已有文件。
+同步脚本逐字节复制仓库 `data/processed` 下已有常规文件（排除不属于 BARC 网页范围的 `external_corn/` 全国候选库）到 `web/public/data`，保留相对路径和全部字段。尚未合入主线的团队交接文件，可按 `data-handoffs.json` 中固定的完整提交 SHA 从本仓库 Git 对象只读提取；本地文件优先。每次清理旧发布副本，生成带来源的 manifest，缺文件继续，不修改队友目录。发布目录已忽略，不手改、不提交副本。源目录应由团队维护，不存凭据或未获许可的原件；同步不会过滤其已有文件。
 
 页面读取合同十个路径：
 
@@ -94,3 +94,7 @@ check:data 检查 27 个发布输入的 schema/键、田块关联、两种 role 
 Model validation 明确为 2021–2023 的 44 条汇总 OOF 评估，不能视为当前单年指标或 inference 验证。Review 显示 D 的核查前/后误差和相同预算随机对照，保留 2023 核查后误差上升。所有模型概率标注 uncalibrated。
 
 日志见 reports/e_web/CHANGELOG.md；当前浏览器工具限制和截图状态仍按交付报告如实记录。
+
+## 集成后的浏览器验收
+
+本次已使用本地 Chromium 检查真实 BARC 数据与桌面/390px 手机布局；脚本为 `scripts/integration-browser-check.mjs`，证据和截图见 `reports/e_web/integration-browser-verification.json`、`integration-real-desktop.png`、`integration-real-mobile.png`。这更新了上文旧的“未执行截图”状态。部分外部底图瓦片不可达，页面显示降级提示，田块与模型仍可用；未重新发布网站。

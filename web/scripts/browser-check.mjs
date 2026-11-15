@@ -97,19 +97,13 @@ await page
   .getByRole("heading", { name: "test_only_001", exact: true })
   .waitFor();
 assert.equal(
-  await page
-    .locator("dt")
-    .filter({ hasText: "Model silage probability" })
-    .locator("+ dd")
+  await page.locator(".probability-value")
     .textContent(),
   "0.2",
 );
 await page.getByLabel("Prediction role").selectOption("inference");
 assert.equal(
-  await page
-    .locator("dt")
-    .filter({ hasText: "Model silage probability" })
-    .locator("+ dd")
+  await page.locator(".probability-value")
     .textContent(),
   "0.8",
 );
@@ -120,19 +114,13 @@ await page
 await page.getByRole("button", { name: "Field", exact: true }).click();
 await page.getByLabel("Year", { exact: true }).selectOption("2022");
 assert.equal(
-  await page
-    .locator("dt")
-    .filter({ hasText: "Model silage probability" })
-    .locator("+ dd")
+  await page.locator(".probability-value")
     .textContent(),
   "Not computed",
 );
 await page.getByLabel("Prediction role").selectOption("oof");
 assert.equal(
-  await page
-    .locator("dt")
-    .filter({ hasText: "Model silage probability" })
-    .locator("+ dd")
+  await page.locator(".probability-value")
     .textContent(),
   "0.9",
 );
