@@ -1,0 +1,271 @@
+{
+  "status": "completed",
+  "stage": 4,
+  "cohort_rows": 39846,
+  "countries_for_posthoc_reporting": [
+    "CA",
+    "NL",
+    "US"
+  ],
+  "feature_arms": {
+    "ndvi_only": [
+      "ndvi_peak",
+      "peak_doy",
+      "max_drop_per_day",
+      "drop_doy",
+      "ndvi_late_mean"
+    ],
+    "ndvi_plus_distance": [
+      "ndvi_peak",
+      "peak_doy",
+      "max_drop_per_day",
+      "drop_doy",
+      "ndvi_late_mean",
+      "nearest_dairy_distance_km"
+    ]
+  },
+  "parameters": {
+    "n_estimators": 100,
+    "max_depth": 4,
+    "min_samples_leaf": 2,
+    "max_features": 1.0,
+    "class_weight": "balanced",
+    "random_state": 42,
+    "n_jobs": 4
+  },
+  "threshold": 0.5,
+  "overall_group_random_oof": {
+    "ndvi_only": {
+      "n": 39846,
+      "correct": 39784,
+      "accuracy": 0.9984440094363298,
+      "macro_f1": 0.8896805429403554,
+      "balanced_accuracy": 0.9501903296681529,
+      "silage_precision": 0.6875,
+      "silage_recall": 0.9016393442622951,
+      "roc_auc": 0.9996031015647311,
+      "confusion_matrix": [
+        [
+          39674,
+          50
+        ],
+        [
+          12,
+          110
+        ]
+      ],
+      "class_counts": {
+        "grain": 39724,
+        "silage": 122
+      },
+      "majority_class_baseline": 0.9969382121166491,
+      "has_both_classes": true
+    },
+    "ndvi_plus_distance": {
+      "n": 39846,
+      "correct": 39793,
+      "accuracy": 0.998669879034282,
+      "macro_f1": 0.8957448336787791,
+      "balanced_accuracy": 0.9135316470531916,
+      "silage_precision": 0.7593984962406015,
+      "silage_recall": 0.8278688524590164,
+      "roc_auc": 0.9996984314722405,
+      "confusion_matrix": [
+        [
+          39692,
+          32
+        ],
+        [
+          21,
+          101
+        ]
+      ],
+      "class_counts": {
+        "grain": 39724,
+        "silage": 122
+      },
+      "majority_class_baseline": 0.9969382121166491,
+      "has_both_classes": true
+    }
+  },
+  "by_country": {
+    "CA": {
+      "ndvi_only": {
+        "n": 39653,
+        "correct": 39653,
+        "accuracy": 1.0,
+        "macro_f1": 0.5,
+        "balanced_accuracy": null,
+        "silage_precision": 0.0,
+        "silage_recall": null,
+        "roc_auc": null,
+        "confusion_matrix": [
+          [
+            39653,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "class_counts": {
+          "grain": 39653,
+          "silage": 0
+        },
+        "majority_class_baseline": 1.0,
+        "has_both_classes": false
+      },
+      "ndvi_plus_distance": {
+        "n": 39653,
+        "correct": 39653,
+        "accuracy": 1.0,
+        "macro_f1": 0.5,
+        "balanced_accuracy": null,
+        "silage_precision": 0.0,
+        "silage_recall": null,
+        "roc_auc": null,
+        "confusion_matrix": [
+          [
+            39653,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "class_counts": {
+          "grain": 39653,
+          "silage": 0
+        },
+        "majority_class_baseline": 1.0,
+        "has_both_classes": false
+      }
+    },
+    "NL": {
+      "ndvi_only": {
+        "n": 113,
+        "correct": 99,
+        "accuracy": 0.8761061946902655,
+        "macro_f1": 0.4669811320754717,
+        "balanced_accuracy": 0.47596153846153844,
+        "silage_precision": 0.9166666666666666,
+        "silage_recall": 0.9519230769230769,
+        "roc_auc": 0.6655982905982906,
+        "confusion_matrix": [
+          [
+            0,
+            9
+          ],
+          [
+            5,
+            99
+          ]
+        ],
+        "class_counts": {
+          "grain": 9,
+          "silage": 104
+        },
+        "majority_class_baseline": 0.9203539823008849,
+        "has_both_classes": true
+      },
+      "ndvi_plus_distance": {
+        "n": 113,
+        "correct": 99,
+        "accuracy": 0.8761061946902655,
+        "macro_f1": 0.4669811320754717,
+        "balanced_accuracy": 0.47596153846153844,
+        "silage_precision": 0.9166666666666666,
+        "silage_recall": 0.9519230769230769,
+        "roc_auc": 0.6009615384615384,
+        "confusion_matrix": [
+          [
+            0,
+            9
+          ],
+          [
+            5,
+            99
+          ]
+        ],
+        "class_counts": {
+          "grain": 9,
+          "silage": 104
+        },
+        "majority_class_baseline": 0.9203539823008849,
+        "has_both_classes": true
+      }
+    },
+    "US": {
+      "ndvi_only": {
+        "n": 80,
+        "correct": 32,
+        "accuracy": 0.4,
+        "macro_f1": 0.3904761904761905,
+        "balanced_accuracy": 0.47491039426523296,
+        "silage_precision": 0.21153846153846154,
+        "silage_recall": 0.6111111111111112,
+        "roc_auc": 0.48431899641577064,
+        "confusion_matrix": [
+          [
+            21,
+            41
+          ],
+          [
+            7,
+            11
+          ]
+        ],
+        "class_counts": {
+          "grain": 62,
+          "silage": 18
+        },
+        "majority_class_baseline": 0.775,
+        "has_both_classes": true
+      },
+      "ndvi_plus_distance": {
+        "n": 80,
+        "correct": 41,
+        "accuracy": 0.5125,
+        "macro_f1": 0.3798449612403101,
+        "balanced_accuracy": 0.3700716845878136,
+        "silage_precision": 0.08,
+        "silage_recall": 0.1111111111111111,
+        "roc_auc": 0.46863799283154123,
+        "confusion_matrix": [
+          [
+            39,
+            23
+          ],
+          [
+            16,
+            2
+          ]
+        ],
+        "class_counts": {
+          "grain": 62,
+          "silage": 18
+        },
+        "majority_class_baseline": 0.775,
+        "has_both_classes": true
+      }
+    }
+  },
+  "country_macro_accuracy": {
+    "ndvi_only": 0.7587020648967552,
+    "ndvi_plus_distance": 0.7962020648967552
+  },
+  "distance_gain_pp": 0.02258695979521219,
+  "paired_same_rows_folds_parameters": true,
+  "country_used_for_training_features_or_weights": false,
+  "previous_stage3_comparison": "descriptive only; stage 3 used country-class weights and a different split",
+  "limitations": [
+    "repository subset, not worldwide ground truth",
+    "Canadian rows are grain-only",
+    "country is retained only for reporting and group integrity checks; no country/region/source feature or country-based sample weight is used for fitting",
+    "field/farm/spatial groups are held out",
+    "NDVI-only and NDVI-plus-distance arms use exact same rows, group folds, parameters and threshold",
+    "historical Maryland rows have been repeatedly used in development; this is not an independent blind test"
+  ]
+}

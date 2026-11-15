@@ -1,0 +1,10 @@
+[
+  {
+    "path": "/home/ubuntu/cornhub-compute/runs/step3-global-20261115T011738Z/training_rows.parquet",
+    "sha256": "defb29c394fb59a153922ea8c772e0bb315fd030828cc0e10ab2cf73ce3724a5"
+  },
+  {
+    "path": "/home/ubuntu/cornhub-compute/runs/step3-global-20261115T011738Z/input_manifest.json",
+    "sha256": "d4b956b7a76eb4704d5298630f133c11bfc9b14763899386d2764366bc1a1229"
+  }
+]

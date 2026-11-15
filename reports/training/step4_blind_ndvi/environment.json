@@ -1,0 +1,16 @@
+{
+  "hostname": "brev-wfu5hudhr",
+  "python": "3.12.16",
+  "numpy": "2.5.4",
+  "sklearn": "1.9.1",
+  "parameters": {
+    "n_estimators": 100,
+    "max_depth": 4,
+    "min_samples_leaf": 2,
+    "max_features": 1.0,
+    "class_weight": "balanced",
+    "random_state": 42,
+    "n_jobs": 4
+  },
+  "execution": "NVIDIA Brev CPU; country-blind paired models"
+}

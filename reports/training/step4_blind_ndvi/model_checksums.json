@@ -1,0 +1,14 @@
+{
+  "models/ndvi_plus_distance_full_model.joblib": "25856ce2aca9529e816cef75c982a60bc77d7b67e82f6327ad048842c9dc10e4",
+  "models/ndvi_only_group_fold_4.joblib": "d510e7910f5d1cfb87dad063c010151826decea2bb1d5a4bf5ef1c87bae611ba",
+  "models/ndvi_plus_distance_group_fold_3.joblib": "95739978ec597d4d2b5ed573f8ac7dcb174dda9c27d359c10815e62168fa5858",
+  "models/ndvi_plus_distance_group_fold_2.joblib": "b88af76b909b867199a2db94d59321cab3d3847b1c0a3dcebc548e81e38356ef",
+  "models/ndvi_only_group_fold_2.joblib": "05ab8058a4a1f739db0f08f94f0e7e0264c230ad3b288845d7ed1d4c34fc03f8",
+  "models/ndvi_only_full_model.joblib": "ae8f9546ed1278bd9da16f71ad6b69c9ad8e1dc44796744e459de0bbbf5be9fa",
+  "models/ndvi_only_group_fold_0.joblib": "d334f1c995ab5e608b23e8933a36cd23c325afd4211ab6f05b335e8d89bdbd14",
+  "models/ndvi_only_group_fold_1.joblib": "4b784a98a5bc5ec84550ca0eb075573bbf8a1de0250f956039a84294c6aa7786",
+  "models/ndvi_plus_distance_group_fold_1.joblib": "d16b446e4dfd3a6c65e93277241f9f52efec1e21b631381783dbe686de3a9f7e",
+  "models/ndvi_plus_distance_group_fold_0.joblib": "1a19f45bd74e6c784d3e124d19447548a8b5fbd327c067742d912458a38b7039",
+  "models/ndvi_plus_distance_group_fold_4.joblib": "e25122c45d2f60106ed9905048e0ca0d68c675766d71fa2fecbe57e1f8a253ee",
+  "models/ndvi_only_group_fold_3.joblib": "2c9b453d46aa7895e4a153495fbb9095fa0f06bff1ac6401ee589a97ca7d7a04"
+}

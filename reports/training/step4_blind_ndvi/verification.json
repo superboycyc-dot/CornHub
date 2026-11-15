@@ -1,0 +1,14 @@
+{
+  "country_not_in_features": true,
+  "country_not_used_for_weights": true,
+  "ndvi_only_arm_has_only_five_curve_features": true,
+  "distance_only_in_paired_control": true,
+  "group_disjoint": true,
+  "all_rows_have_oof": true,
+  "fold_models_reload_equal": true,
+  "full_models_reload_equal": true,
+  "all_null_ndvi_rows_excluded_for_abstention": true,
+  "threshold_fixed": 0.5,
+  "seed": 42,
+  "paired_arms_same_rows_folds_parameters": true
+}
