@@ -1,0 +1,14 @@
+{
+  "version": 18,
+  "status": "passed",
+  "resources": [
+    "/",
+    "/assets/index-BGt31Cq9.js",
+    "/assets/index-CqjXWae2.css",
+    "/reference/release.json",
+    "/v9/locations.json"
+  ],
+  "location_joins": 128,
+  "tests_passed": 17,
+  "browser_visual_check": "Unavailable"
+}
