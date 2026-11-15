@@ -79,3 +79,7 @@ Restore BARC reference layer by default. Move silage-probability legend to lower
 ## Black-screen hotfix
 
 Reproduced ReferenceError: React is not defined by rendering ReviewOverview with the production classic JSX transform. Added the missing React import. Added a component render regression check for loading, populated and OOF states; compilation and HTTP checks alone had missed this runtime failure.
+
+## Compact review rows
+
+Move review summaries into three compact vertical rows at upper right, with a fourth white Unavailable row counting selected-year records without predictions. Missing counts include pending, non-corn and invalid-geometry statuses; cross-year rows are excluded. Preserve clickable color lists and percentages among available predictions. Remove lower-right explanatory card while preserving visible data-load failures.

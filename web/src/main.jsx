@@ -751,23 +751,7 @@ function App() {
           </select>
         </label>
       </section>
-      <div className="national-control">
-        <strong className="map-card-title">Model silage probability</strong>
-        <p className="map-card-subtitle">Maryland · {year} · {role === 'inference' ? 'Model predictions' : 'Validation view'}</p>
-        <div className="probability-legend" aria-label="V9 model silage probability legend">
-          <span><i style={{background:"#61df8c"}} /> &gt;90%</span>
-          <span><i style={{background:"#ffa447"}} /> &gt;60–90%</span>
-          <span><i style={{background:"#ff5b5b"}} /> ≤60%</span>
-          <span><i style={{background:"#fff"}} /> Unavailable</span>
-        </div>
-        <p className="map-help">Hover a field to see its prediction. White means no result.</p>
-        <details className="map-metadata"><summary>Coverage &amp; data status</summary>
-          <small>US field layer always on · Maryland outlines; other states shown as points.</small>
-          <small>{nationalStatus || 'Loading fields…'}</small>
-          <small>Experimental model probability; not validated accuracy.</small>
-        </details>
-        <small role="status">{v9.status==='ready'?v9.message:(v9.message||'Loading V9 probability…')}</small>
-      </div>
+      {(v9.status==='error'||nationalStatus.includes('failed'))&&<div className="county-error" role="alert">{v9.status==='error'?v9.message:nationalStatus}</div>}
       <div className="layer-switches" aria-label="Map layers">
         <button
           aria-pressed={showCounties}

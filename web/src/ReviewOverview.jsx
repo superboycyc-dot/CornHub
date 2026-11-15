@@ -7,12 +7,12 @@ export default function ReviewOverview({v9,year,role,controller,onOpen}){
  useEffect(()=>{const a=new AbortController();fetch('/v9/locations.json',{signal:a.signal}).then(r=>{if(!r.ok)throw Error('Location data unavailable');return r.json();}).then(setLocations).catch(e=>{if(e.name!=='AbortError')setError(e.message);});return()=>a.abort();},[]);
  useEffect(()=>{const close=e=>{if(e.key==='Escape')setActive(null);};document.addEventListener('keydown',close);return()=>document.removeEventListener('keydown',close);},[]);
  return <>
-  <section className="review-overview" aria-label="Prediction review overview">
+  <section className="review-overview" aria-label="Prediction review overview" title="Percentages among current-year available Maryland predictions, including conditional results. Unavailable counts records without predictions; these may be pending, not corn, or invalid geometry.">
    <div className="review-scope">MARYLAND · {year} · {stats.ready?`${stats.total} predicted field records`:'Predictions unavailable for this view'}</div>
    <div className="review-cards">{Object.entries(labels).map(([key,label])=><button key={key} className={`review-card ${key}`} aria-pressed={active===key} onClick={()=>{setActive(active===key?null:key);onOpen();}}>
     <span>{label}</span><strong>{stats.ready&&stats.total?`${(stats.groups[key].length/stats.total*100).toFixed(1)}%`:'—'}</strong><small>{stats.ready?stats.groups[key].length:'—'} fields · {key==='red'?'≤60%':key==='orange'?'>60–90%':'>90%'}</small>
    </button>)}</div>
-   <small className="review-note">Share of available predictions, including conditional maize results. Color-based review groups; not estimated error rates.</small>
+   <div className="review-unavailable"><span>Unavailable</span><strong>{stats.ready?stats.unavailable.toLocaleString():"—"} fields</strong></div>
   </section>
   {active&&<section className="review-list" aria-label={`${labels[active]} field list`}>
    <header><div><small>{year} · MARYLAND · {role.toUpperCase()}</small><h2>{labels[active]} <span>{stats.groups[active].length}</span></h2></div><button aria-label="Close field list" onClick={()=>setActive(null)}>×</button></header>
