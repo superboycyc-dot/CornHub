@@ -112,3 +112,21 @@ Color uses the original model p_silage (0–1): >0.9 green, >0.6 through 0.9 yel
 `npm run sync:data` calls scripts/sync-v9.mjs. It copies existing local data/processed/model/v9_states files first, otherwise reads the exact commit pinned in v9-handoff.json. Only the five Maryland annual CSVs are synchronized; California CSVs are excluded. Annual CSVs are gzip-compressed without changing their contents into generated public/v9; missing files are recorded in manifest.json and the page displays a loading error. No geometry copy is needed: all currently scored Maryland identities join existing Maryland or BARC boundaries. Do not hand-edit public/v9 or dist.
 
 After updating the upstream pin, run `npm run build`, `node scripts/check-v9-integration.mjs` and `npm test`. Publish dist/v9 together with dist/data, dist/national, dist/reference and dist/assets; a static host must not omit the v9 directory. Current snapshot is partial; white does not mean zero confidence or grain. California confidence transfer has no independent validation.
+
+### Vercel production
+
+Public URL: https://cornhub-field-map.vercel.app . This is a static deployment, with no dependency on the Sites hostname. Default map zoom 14 targets the 500 m ruler in Maryland.
+
+After fetching pinned upstream handoffs, build and prepare the scoped static payload:
+
+```bash
+cd web
+npm ci
+npm run build
+node scripts/prepare-vercel.mjs
+cd .vercel-static
+npx vercel link --project cornhub-field-map
+npx vercel deploy --prod
+```
+
+Authenticate with your own Vercel account. Never commit CLI credentials or tokens. The preparation script publishes only approved contract data, Maryland V9 records and the national display assets. Git pushes do not automatically redeploy this manually published project.

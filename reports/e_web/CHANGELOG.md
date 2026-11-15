@@ -91,3 +91,7 @@ Selected BARC/national fields now open a common scrollable detail view: predicte
 ## 2026-11-15 — default 500 m view
 
 Set initial Maryland zoom to 14, targeting Leaflet's 500 m scale at the existing 100px metric ruler. External Vercel/Netlify deployment is not authenticated in this environment; an account connection or user-owned custom domain is required for an alternate public hostname.
+
+## Vercel public hosting
+
+Published the prepared 500 m view to https://cornhub-field-map.vercel.app using the user's authorized Vercel account. Production deployment: dpl_6zJWJfG34ptUnDQdcFNVb7Qaikni. Added reproducible static preparation instructions; authentication remains outside the repository. Anonymous HTTP byte checks cover homepage, JS/CSS, Maryland annual data, metadata and geometry/point samples. See vercel-verification.json. Existing Sites address remains available.

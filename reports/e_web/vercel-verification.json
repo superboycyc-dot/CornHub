@@ -1,0 +1,91 @@
+{
+  "url": "https://cornhub-field-map.vercel.app",
+  "status": "passed",
+  "deployment_id": "dpl_6zJWJfG34ptUnDQdcFNVb7Qaikni",
+  "anonymous_public_requests": true,
+  "release": "maryland-500m-v22",
+  "initial_zoom": 14,
+  "resources": [
+    {
+      "path": "/",
+      "bytes": 407,
+      "sha256": "9ad6c64dfcc5cbd6cd6bc40078a9e5a3c90fbff6c5aa91cd7e698ee3af3d5820"
+    },
+    {
+      "path": "/assets/index-CfgvOiWn.js",
+      "bytes": 448038,
+      "sha256": "4dd05b33c5609d8c7c877843db1cb60d2367b1bbb04d4683d9e988241c18cf43"
+    },
+    {
+      "path": "/assets/index-DqdBEQfX.css",
+      "bytes": 42381,
+      "sha256": "3ce80fefcb85fec6ae2fa02b190007c94aa3b179e3cd9b3f23e20f3e64a962a5"
+    },
+    {
+      "path": "/reference/release.json",
+      "bytes": 994,
+      "sha256": "4dfb2b8d847aca4e6f5b5e8d298eaa6223f355ee90496d25bf97149956917e4c"
+    },
+    {
+      "path": "/v9/manifest.json",
+      "bytes": 2892,
+      "sha256": "3ca08bde77c72b445f806429e5ffbea0a93529a71b5d89f9f531f1da3d2a433f"
+    },
+    {
+      "path": "/v9/MD/2021.csv.gz",
+      "bytes": 172266,
+      "sha256": "bf80de26460473cdee45266fa43ef45048f88a527d1fd342e1217f946ddfaa1a"
+    },
+    {
+      "path": "/v9/MD/2022.csv.gz",
+      "bytes": 172214,
+      "sha256": "dedcdf3ee384ed0c98acfc9c75867d400973a1f4705e35004fb2c3705c1a4e11"
+    },
+    {
+      "path": "/v9/MD/2023.csv.gz",
+      "bytes": 172600,
+      "sha256": "51b6400574ce2fd274627ceb22e3ebeea4e5ba5704253d497dd59259c738613f"
+    },
+    {
+      "path": "/v9/MD/2024.csv.gz",
+      "bytes": 170257,
+      "sha256": "035aa3a7f2b3d3575ad09272d32e4b0769060e22a66764731adac8f20fa3d02c"
+    },
+    {
+      "path": "/v9/MD/2025.csv.gz",
+      "bytes": 170265,
+      "sha256": "03a8aec257cefef9c40797a8a93a53eacdbeb090423e8d85774da580fe485912"
+    },
+    {
+      "path": "/v9/field-metadata.json",
+      "bytes": 4660822,
+      "sha256": "3c4c1bce2ea32290a035b159bddd9629f8298e2636e1eddf7e0c890530ac061e"
+    },
+    {
+      "path": "/v9/locations.json",
+      "bytes": 7260985,
+      "sha256": "8bb9fc3742942886d59c3e62c494536e32ac8c67d119e25b33c0e3b1e86b8326"
+    },
+    {
+      "path": "/national/polygons-index.json",
+      "bytes": 5898,
+      "sha256": "541c12d06f05ff6266dc210b5fcf1ca503ae29af8ad69187a8f7b1f10173bad8"
+    },
+    {
+      "path": "/national/polygons/142-194.npg.br",
+      "bytes": 1204,
+      "sha256": "b90bd2727882962a7e9e6adfd40461b2e1eb796528711d946f27601dff3e6b1c"
+    },
+    {
+      "path": "/national/index.json",
+      "bytes": 48356,
+      "sha256": "8e1bf181a45969594be482c40765abac516976704466f0aef360c74f65c6374a"
+    },
+    {
+      "path": "/national/tiles/19/45.bin.gz",
+      "bytes": 1628,
+      "sha256": "18a65cce370f3bc73fd65dd651b7353a8cbf41a0c89d51a1b926255884e3d22e"
+    }
+  ],
+  "browser_visual_verification": "Not performed"
+}
