@@ -63,3 +63,5 @@ Replaced close-up national center markers with actual source Polygon/MultiPolygo
 - Replace confidence-driven colors with original V9 p_silage: >0.9 green, >0.6–0.9 yellow, ≤0.6 red, unavailable white. Keep confidence and raw selected-class probability separately labeled in details.
 - Apply the same rule to outline/fill, hover/selection, legend and field card. Missing confidence no longer blocks a valid model probability. Test boundaries and deliberately conflicting/missing confidence values.
 - Preserve Maryland-only detailed data, other-state points, original IDs, source probabilities, selected year, inference/OOF isolation and existing upstream pin.
+
+- Sites v16 deployed successfully. Live homepage, JS/CSS, release metadata, MD-only manifest, all five MD annual CSVs and geometry/point samples matched local build bytes without cache-busting. Color basis verified as p_silage; 128 scored annual records yield 43 red, 12 yellow and 73 green records. Original data bytes unchanged. Evidence: v9-live-verification.json. Browser visual verification remains unavailable.

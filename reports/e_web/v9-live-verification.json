@@ -1,40 +1,40 @@
 {
-  "verified_at": "2026-11-15T05:12:38.399Z",
+  "verified_at": "2026-11-15T05:30:42.852Z",
   "url": "https://cornhub-field-evidence.feistydegu3.chatgpt.site",
   "status": "passed",
-  "sites_version": 15,
-  "release": "2026-11-15-md-only-confidence90-v15",
-  "source_commit": "6330367abf66399d6403e7bac5b1b42e06361b15",
+  "sites_version": 16,
+  "release": "md-model-probability-v16",
+  "source_commit": "54765935459244ea9b0f1b32bdfbb4f30e5317e3",
   "upstream_commit": "cf612d37d762392068056f0c6cb2e132bf16f4cf",
-  "deployment_id": "appgdep_6af93f2f77b4819190b29301428acf69",
+  "deployment_id": "appgdep_6af9436ef8708191a2b77f9649b956aa",
   "http_without_cache_busting": true,
   "rows": 249485,
   "colors": {
-    "red": 93,
-    "yellow": 35,
-    "green": 0,
+    "red": 43,
+    "yellow": 12,
+    "green": 73,
     "missing": 249357
   },
   "resources": [
     {
       "path": "/reference/release.json",
-      "bytes": 608,
-      "sha256": "d162286ca2d59ccf295ebcda1f05f220a7726d7d72dd5575ca7bc2d6d9f600ef"
+      "bytes": 598,
+      "sha256": "582805205e3bfc581a6c3131cdf71af6f6420779db9230103bf32e8ac788c5d4"
     },
     {
       "path": "/",
       "bytes": 407,
-      "sha256": "55573c22ab43fdd5c2fde8260244414f247233ceb43fc06415ff730154b2fd76"
+      "sha256": "499bc1a2f16f33e0bed24c48dd4aa18be81eb824169fd9875302281b26c5c10a"
     },
     {
-      "path": "/assets/index-bFy0YNA3.js",
-      "bytes": 445434,
-      "sha256": "89280d5835ff866491a9dd27a12b1ac75cea72f3898728f87dfc5ff66ae1f291"
+      "path": "/assets/index-C7zzXA6g.js",
+      "bytes": 445383,
+      "sha256": "1e78d30a022cc3421a9f81a7d60b66563d4cf989ebec2627c9eba202ea73063d"
     },
     {
-      "path": "/assets/index-KvLQ-NSL.css",
-      "bytes": 34990,
-      "sha256": "efffbed0847ab933f4ac7c10aad1454353f82df4fdce705778eaeb01b7b00265"
+      "path": "/assets/index-DJLf_AqB.css",
+      "bytes": 34994,
+      "sha256": "c474d21d9637f8204c3ec2686cfaaea4cf1cdc85d41179139435f6a75994bd8c"
     },
     {
       "path": "/v9/manifest.json",
@@ -92,5 +92,6 @@
       "sha256": "03a8aec257cefef9c40797a8a93a53eacdbeb090423e8d85774da580fe485912"
     }
   ],
-  "browser_verification": "Not performed: supported browser tool unavailable"
+  "browser_verification": "Not performed: supported browser tool unavailable",
+  "color_field": "p_silage"
 }
