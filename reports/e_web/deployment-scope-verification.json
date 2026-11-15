@@ -1,0 +1,62 @@
+{
+  "verified_at": "2026-11-15T03:26:59.005Z",
+  "url": "https://cornhub-field-evidence.feistydegu3.chatgpt.site",
+  "release": "2026-11-15-md-ca-outlines-v13",
+  "sites_version": 13,
+  "source_commit": "8feefd206ffc073cb1c3cb86f5c2f50ece6fea8f",
+  "deployment_id": "appgdep_6af92649e8308191bdcfd9909171c115",
+  "status": "live HTTP bytes match local build",
+  "resources": [
+    {
+      "path": "/reference/release.json",
+      "bytes": 296,
+      "sha256": "a5fd31ccb58429f23339101b6049d868e151968bf5229aacbbd0ae612681fe59"
+    },
+    {
+      "path": "/",
+      "bytes": 407,
+      "sha256": "63f3dd07302ea4cc69cfd9525db48cea7e0679d6138873fa58d6198b2f648292"
+    },
+    {
+      "path": "/assets/index-r4uX0MdU.js",
+      "bytes": 439237,
+      "sha256": "87c9b4fcd28507c056f1d139b53c0e385a135599d61e41c4511597e9ec71f848"
+    },
+    {
+      "path": "/national/polygons-index.json",
+      "bytes": 17387,
+      "sha256": "03cd93e9d1d8f620c896f48021bc0f5d5e7bcdbe09dac2c5669c978b7c056f26"
+    },
+    {
+      "path": "/national/index.json",
+      "bytes": 48361,
+      "sha256": "c2afcd0bbc8f34e02e166682d1d6449739f3b6f651d8af8fd00626f011eec40e"
+    },
+    {
+      "path": "/national/overview.json",
+      "bytes": 232754,
+      "sha256": "28a4e0153a2708ecff171ffdbd7824d5988ac4d6a80ce3f1aad9d46a9fe7db89"
+    },
+    {
+      "path": "/national/polygons/79-193.npg.br",
+      "bytes": 136,
+      "sha256": "9acc17a68abf83404483ae74f06c661f92ae077d95bbd109273a56ba2f759d9f"
+    },
+    {
+      "path": "/national/polygons/142-194.npg.br",
+      "bytes": 1204,
+      "sha256": "b90bd2727882962a7e9e6adfd40461b2e1eb796528711d946f27601dff3e6b1c"
+    },
+    {
+      "path": "/national/tiles/19/45.bin.gz",
+      "bytes": 1628,
+      "sha256": "18a65cce370f3bc73fd65dd651b7353a8cbf41a0c89d51a1b926255884e3d22e"
+    },
+    {
+      "path": "/national/tiles/35/48.bin.gz",
+      "bytes": 349653,
+      "sha256": "9b6384df8212666602ae0e90596874887942566129b81fa8d3508919fc4fcd0e"
+    }
+  ],
+  "visual_browser_verification": "Not performed: supported browser tool unavailable"
+}

@@ -37,3 +37,5 @@ Replaced close-up national center markers with actual source Polygon/MultiPolygo
 - Restore individual point loading elsewhere, keep low-zoom count clusters, and preserve all future prediction slots. No national probabilities are available or generated.
 - Enable the national checkbox on opening and label its outline scope explicitly. Keep the 83 green BARC boundaries and Maryland opening view.
 - Add repeatable scope reducer and byte-level verification against the prior complete point inventory. Deployment verification is recorded in national-scope-verification.json and deployment verification report.
+
+- Deployment: Sites v13 succeeded at the existing public URL. Live HTTP verification without cache-busting matched release manifest, homepage, JS bundle, national indexes, MD/CA outline samples and US point samples byte-for-byte. Evidence: deployment-scope-verification.json. Browser visual verification was unavailable.
