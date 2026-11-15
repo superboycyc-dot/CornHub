@@ -61,3 +61,39 @@ test("unconfigured prediction slots stay empty; mismatched responses fail", asyn
     globalThis.fetch = prior;
   }
 });
+
+test("polygon protocol preserves IDs, ring vertices and the NPG2 geographic scale", async () => {
+  const { decodePolygons } = await import("../src/national.js");
+  const bytes = new Uint8Array(8 + 15 + 4 + 4 + 4 * 8),
+    view = new DataView(bytes.buffer);
+  bytes.set([78, 80, 71, 50]);
+  view.setUint32(4, 1, true);
+  view.setBigUint64(8, 123n, true);
+  bytes[16] = 5;
+  bytes[17] = 9;
+  bytes[18] = 1;
+  view.setUint32(19, 1, true);
+  view.setUint32(23, 1, true);
+  view.setUint32(27, 4, true);
+  const coordinates = [
+    [-76, 39],
+    [-76.00001, 39],
+    [-76, 39.00001],
+    [-76, 39],
+  ];
+  let x = 0,
+    y = 0;
+  coordinates.forEach(([lng, lat], i) => {
+    const nx = Math.round(lng * 1e6),
+      ny = Math.round(lat * 1e6);
+    view.setInt32(31 + i * 8, nx - x, true);
+    view.setInt32(35 + i * 8, ny - y, true);
+    x = nx;
+    y = ny;
+  });
+  const rows = decodePolygons(bytes);
+  assert.equal(rows[0][0], "csb_00123");
+  assert.equal(rows[0][1], 9);
+  assert.deepEqual(rows[0][2], { type: "Polygon", coordinates: [coordinates] });
+  assert.throws(() => decodePolygons(bytes.subarray(0, bytes.length - 1)));
+});
