@@ -48,3 +48,10 @@ Replaced close-up national center markers with actual source Polygon/MultiPolygo
 - Validate strict thresholds, probability/score separation, state/year/source identity, duplicate rows, null values and repeatable synchronization. Check all upstream CSV bytes and scored map joins; see v9-integration-verification.json. Supported browser tools unavailable, so browser visual QA is not claimed.
 
 - Deployment: Sites v14 succeeded at the existing URL. Without cache-busting, live homepage, JS/CSS bundles, release/manifest/index and all 10 annual gzip CSVs matched the local build byte-for-byte. All live CSVs were parsed again: 341,550 rows, 56 red +11 yellow scored annual records, zero >80 green records; others remain white. Evidence: v9-live-verification.json.
+
+## 2026-11-15 — Maryland detail only, confidence >90 green
+
+- Refresh V9 pin to cf612d37d762392068056f0c6cb2e132bf16f4cf; publish/load only Maryland 2021–2025 CSVs (249,485 field-year rows, 128 scored records). California annual prediction files are excluded and stale generated copies removed. Upstream snapshot is still partial.
+- Remove California polygon assets from web publication, retain all 6,128,148 US display-point identities, and keep 49,902 Maryland candidate outlines plus independent BARC boundaries. All other regions, including California, use points; overview counts remain white.
+- Change confidence threshold to >90 green, >60–90 yellow, ≤60 red, unavailable white. Test exact 90 and adjacent values; preserve year/role/source isolation. Existing confidence scores are unchanged.
+- 2024/2025 national dots are explicitly historical reference locations, not verified current-year corn fields. Maryland conditional predictions retain source eligibility and training-overlap notes.

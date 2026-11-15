@@ -8,7 +8,7 @@ const exec=promisify(execFile);
 export async function syncV9(root) {
  const config=JSON.parse(await fs.readFile(path.join(root,'web/v9-handoff.json'),'utf8'));
  const target=path.join(root,'web/public/v9');await fs.rm(target,{recursive:true,force:true});await fs.mkdir(target,{recursive:true});
- const manifest={source_commit:config.commit,branch:config.branch,files:{}};
+ const manifest={source_commit:config.commit,branch:config.branch,states:config.states,years:config.years,files:{}};
  for(const name of ['index.json','README.md','verification.json',...config.states.flatMap(s=>config.years.map(y=>`${s}/${y}.csv`))]) {
   let bytes,source;
   try {bytes=await fs.readFile(path.join(root,config.base,name));source='local:'+config.base+'/'+name;}

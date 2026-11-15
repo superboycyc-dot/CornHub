@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {confidenceColor,V9_COLORS,parseV9,v9Record,v9Key} from '../src/v9.js';
 const row={status:'predicted',prediction_role:'inference',p_silage:.9};
 test('V9 confidence boundaries are strict and missing/OOF results stay white',()=>{
- for(const [n,key] of [[0,'red'],[60,'red'],[60.0001,'yellow'],[80,'yellow'],[80.0001,'green'],[100,'green']])assert.equal(confidenceColor({...row,confidence_score:n}),V9_COLORS[key]);
+ for(const [n,key] of [[0,'red'],[60,'red'],[60.0001,'yellow'],[80,'yellow'],[90,'yellow'],[90.0001,'green'],[100,'green']])assert.equal(confidenceColor({...row,confidence_score:n}),V9_COLORS[key]);
  for(const r of [null,{...row,confidence_score:null},{...row,confidence_score:99,prediction_role:'oof'},{...row,confidence_score:99,status:'pending_observations'}])assert.equal(confidenceColor(r),V9_COLORS.missing);
  assert.equal(confidenceColor({...row,status:'conditional_prediction',confidence_score:70}),V9_COLORS.yellow);
 });
@@ -36,5 +36,14 @@ test('V9 sync keeps source CSV bytes and missing files; repeated sync removes st
   const first=await syncV9(root);assert.equal(first.files['CA/2022.csv'].status,'available');assert.equal(first.files['index.json'].status,'missing');
   assert.deepEqual(zlib.gunzipSync(await fs.readFile(path.join(root,'web/public/v9/CA/2022.csv.gz'))),bytes);
   await fs.rm(src);const second=await syncV9(root);assert.equal(second.files['CA/2022.csv'].status,'missing');await assert.rejects(fs.access(path.join(root,'web/public/v9/CA/2022.csv.gz')));
+ }finally{await fs.rm(root,{recursive:true,force:true});}
+});
+test('Maryland-only publication excludes California even when local California CSVs exist',async()=>{
+ const root=await fs.mkdtemp(path.join(os.tmpdir(),'cornhub-md-scope-'));
+ try {
+  await fs.mkdir(path.join(root,'web'),{recursive:true});
+  await fs.writeFile(path.join(root,'web/v9-handoff.json'),JSON.stringify({base:'data/processed/model/v9_states',commit:'unavailable',branch:'data/v9-ca-md-2021-2025',states:['MD'],years:[2022]}));
+  for(const state of ['MD','CA']) {const dir=path.join(root,'data/processed/model/v9_states',state);await fs.mkdir(dir,{recursive:true});await fs.writeFile(path.join(dir,'2022.csv'),state+' source bytes\r\n');}
+  const m=await syncV9(root);assert.deepEqual(m.states,['MD']);assert.equal(m.files['MD/2022.csv'].status,'available');assert.equal(m.files['CA/2022.csv'],undefined);await assert.rejects(fs.access(path.join(root,'web/public/v9/CA')));
  }finally{await fs.rm(root,{recursive:true,force:true});}
 });

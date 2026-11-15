@@ -38,7 +38,8 @@ export default function NationalLayer({
         `Source geometry: ${field.geometry_valid ? "valid" : "flagged invalid"}`,
         field.geometry
           ? "Source polygon · simplified for display; not a cadastral survey."
-          : "Display center · point-only outside Maryland and California.",
+          : "Display center · point-only outside Maryland.",
+        ...(Number(year)>2023?["Historical location only; annual corn eligibility unverified."]:[]),
         "National candidates are not BARC predictions.",
       ]) {
         const el = document.createElement("span");
@@ -60,7 +61,7 @@ export default function NationalLayer({
         bit = historical ? 7 : 1 << (Number(year) - 2021),
         z = map.getZoom();
       if (z >= 12) {
-        onStatus("Loading MD + CA outlines and US points…");
+        onStatus("Loading MD outlines and US points…");
         try {
           const visible = polygonIndex.tiles.filter((t) =>
             bounds.intersects([
@@ -109,7 +110,7 @@ export default function NationalLayer({
           if (closed || ticket !== generation) return;
           let dots = 0;
           for(const fields of pointChunks) for(const field of fields) {
-            if(historical || !(field.flags & bit) || (field.flags & 32) || !bounds.contains([field.lat,field.lng])) continue;
+            if(!(field.flags & bit) || (field.flags & 32) || !bounds.contains([field.lat,field.lng])) continue;
             const color=confidenceColor(rowFor(field));
             const layer = L.circleMarker([field.lat,field.lng], {renderer,pane:"national",radius:3,color,weight:1,fillColor:color,fillOpacity:0.6}).bindTooltip(tooltip(field), {className:"field-hover",sticky:true});
             layer.on("mouseover",async () => {
@@ -211,7 +212,7 @@ export default function NationalLayer({
               ).addTo(group);
               count++;
             }
-          onStatus(`${count.toLocaleString()} outlines · ${dots.toLocaleString()} points · MD + CA outline scope`);
+          onStatus(`${count.toLocaleString()} outlines · ${dots.toLocaleString()} points · MD outline scope`);
         } catch (e) {
           if (e.name !== "AbortError" && !closed)
             onStatus("National outlines loading failed: " + e.message);
@@ -219,9 +220,8 @@ export default function NationalLayer({
         return;
       }
       if (z < 12) {
-        if(historical) {onStatus("2024–2025: zoom in for MD/CA historical boundaries; annual corn eligibility unverified");return;}
         for (const tile of index.tiles) {
-          const n = tile.year_counts[year];
+          const n = historical ? tile.count : tile.year_counts[year];
           const size = 512,
             west = (tile.x / size) * 360 - 180,
             east = ((tile.x + 1) / size) * 360 - 180,
@@ -262,12 +262,12 @@ export default function NationalLayer({
             fillOpacity: 0.35,
           })
             .bindTooltip(
-              `${n.toLocaleString()} candidate objects · zoom in for individual IDs`,
+              `${n.toLocaleString()} ${historical ? "historical inventory objects · annual corn eligibility unverified" : "candidate objects"} · zoom in for individual IDs`,
             )
             .on("click", () => map.setView(tile.center, 12))
             .addTo(group);
         }
-        onStatus("White clusters · zoom in to inspect candidates");
+        onStatus(historical ? "Historical inventory points · annual corn eligibility unverified" : "White clusters · zoom in to inspect candidates");
         return;
       }
     }

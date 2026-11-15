@@ -6,7 +6,11 @@ import crypto from 'node:crypto';
 const root = path.resolve(import.meta.dirname, '../national');
 const read = p => JSON.parse(fs.readFileSync(p, 'utf8'));
 const index = read(path.join(root, 'polygons-index.json'));
-const counties = read(path.resolve(root, '../reference/us-counties.geojson')).features.filter(f => ['06','24'].includes(f.properties.STATE));
+const stateNames={MD:'24',CA:'06'};
+const selected=(process.argv.find(v=>v.startsWith('--states='))?.slice(9)||'MD').split(',');
+if(!selected.length||selected.some(s=>!stateNames[s]))throw Error('Supported outline states: MD,CA');
+const fips=selected.map(s=>stateNames[s]);
+const counties = read(path.resolve(root, '../reference/us-counties.geojson')).features.filter(f => fips.includes(f.properties.STATE));
 function ringContains([x,y], ring) {
   let inside=false;
   for(let i=0,j=ring.length-1;i<ring.length;j=i++) {
@@ -44,7 +48,7 @@ for(const t of index.tiles) {
     const raw=num.toString().padStart(len,'0');
     // CSB candidate IDs retain the source STATEFIPS prefix; CropSight has no state attribute.
     const state=flags&16 ? stateAt([(w+e)/2,(s+n)/2]) : raw.slice(0,2);
-    if(!['06','24'].includes(state)) continue;
+    if(!fips.includes(state)) continue;
     counts[state]++;ids.add((flags&16?'cropsight_':'csb_')+raw);records.push(b.subarray(start,o));vertices+=nv;
   }
   if(o!==b.length) throw Error('Invalid geometry offsets: '+t.path);
@@ -56,8 +60,8 @@ for(const t of index.tiles) {
   tiles.push({...t,count:records.length,bytes:packed.length,sha256:crypto.createHash('sha256').update(packed).digest('hex'),vertices});
 }
 index.tiles=tiles;index.objects=ids.size;index.vertices=tiles.reduce((n,t)=>n+t.vertices,0);
-index.outline_states=['MD','CA'];index.state_counts={MD:counts['24'],CA:counts['06']};
-index.notes='White outlines limited to Maryland and California. CSB uses original source STATEFIPS ID prefix; CropSight uses geometry bbox center within Census county boundaries. All other candidates remain points. Display geometry and source IDs preserved.';
+index.outline_states=selected;index.state_counts=Object.fromEntries(selected.map(s=>[s,counts[stateNames[s]]]));
+index.notes='Outlines limited to the configured states in outline_states. CSB uses original source STATEFIPS ID prefix; CropSight uses geometry bbox center within Census county boundaries. All other candidates remain points. Display geometry and source IDs preserved.';
 fs.writeFileSync(path.join(root,'polygons-index.json'),JSON.stringify(index));
 const points=read(path.join(root,'index.json'));
 let total=0, marked=0;
@@ -74,6 +78,6 @@ for(const t of points.tiles) {
 }
 if(marked!==ids.size) throw Error(`Outline/point identity mismatch ${marked}/${ids.size}`);
 points.compressed_bytes=points.tiles.reduce((n,t)=>n+t.bytes,0);
-points.outline_flag=32;points.outline_states=['MD','CA'];
+points.outline_flag=32;points.outline_states=selected;
 fs.writeFileSync(path.join(root,'index.json'),JSON.stringify(points));
 console.log(JSON.stringify({objects:total,outlines:ids.size,states:index.state_counts,polygon_bytes:tiles.reduce((n,t)=>n+t.bytes,0),tiles:tiles.length}));

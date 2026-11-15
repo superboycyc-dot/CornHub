@@ -768,18 +768,18 @@ function App() {
             onChange={(e) => setNationalEnabled(e.target.checked)}
           />
           <span className="national-swatch" />
-          US candidate fields · MD + CA outlines
+          US candidate fields · Maryland outlines
         </label>
         {nationalEnabled && (
           <small role="status">{nationalStatus || "Loading…"}</small>
         )}
         <div className="confidence-legend" aria-label="V9 confidence score legend">
-          <span><i style={{background:"#61df8c"}} /> &gt;80</span>
-          <span><i style={{background:"#ffcf45"}} /> &gt;60–80</span>
+          <span><i style={{background:"#61df8c"}} /> &gt;90</span>
+          <span><i style={{background:"#ffcf45"}} /> &gt;60–90</span>
           <span><i style={{background:"#ff5b5b"}} /> ≤60</span>
           <span><i style={{background:"#fff"}} /> Unavailable</span>
         </div>
-        <small>V9 experimental confidence · inference · {year}</small>
+        <small>MD V9 experimental confidence · inference · {year}</small>
         <small role="status">{v9.status==='ready'?v9.message:(v9.message||'Loading V9 confidence…')}</small>
       </div>
       <div className="layer-switches" aria-label="Map layers">

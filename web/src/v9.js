@@ -3,7 +3,7 @@ export const V9_COLORS={red:'#ff5b5b',yellow:'#ffcf45',green:'#61df8c',missing:'
 export function confidenceColor(row) {
  if(!row || !['predicted','conditional_prediction'].includes(row.status) || row.prediction_role!=='inference' || row.p_silage==null || row.confidence_score==null) return V9_COLORS.missing;
  const n=row.confidence_score;
- return n>80?V9_COLORS.green:n>60?V9_COLORS.yellow:V9_COLORS.red;
+ return n>90?V9_COLORS.green:n>60?V9_COLORS.yellow:V9_COLORS.red;
 }
 export function v9Key(source,id,year) {return JSON.stringify([source,id,Number(year)]);}
 export function v9Record(v9,source,id,year,role) {

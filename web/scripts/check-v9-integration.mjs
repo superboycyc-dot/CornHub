@@ -29,6 +29,8 @@ for(const state of config.states)for(const year of config.years) {
  const expected=index.groups.find(g=>g.state===state&&g.year===year);assert.equal(rows.length,expected.rows);assert.deepEqual(status,expected.counts);
  groups.push({state,year,rows:rows.length,colors});
 }
-assert.equal(total,index.groups.reduce((n,g)=>n+g.rows,0));assert.equal(scored,(index.totals.predicted||0)+(index.totals.conditional_prediction||0));
-const report={status:'passed',source_commit:config.commit,total_rows:total,scored_rows:scored,groups,checks:['All 10 compressed annual CSVs decompress byte-exactly to pinned upstream files','Every real scored record joins an existing map boundary with source namespace unchanged','Runtime parser validated all records, score ranges, classes, uniqueness and state/year/role','Strict >60 and >80 boundaries, null handling and OOF separation covered by tests'],browser_verification:'Not performed: supported browser tool unavailable'};
+const selectedGroups=index.groups.filter(g=>config.states.includes(g.state)&&config.years.includes(g.year));
+assert.deepEqual(manifest.states,['MD']);assert.ok(!Object.keys(manifest.files).some(f=>f.startsWith('CA/')));
+assert.equal(total,selectedGroups.reduce((n,g)=>n+g.rows,0));assert.equal(scored,selectedGroups.reduce((n,g)=>n+(g.counts.predicted||0)+(g.counts.conditional_prediction||0),0));
+const report={status:'passed',source_commit:config.commit,total_rows:total,scored_rows:scored,groups,checks:['All 5 Maryland compressed annual CSVs decompress byte-exactly to pinned upstream files','Every real scored record joins an existing map boundary with source namespace unchanged','Runtime parser validated all records, score ranges, classes, uniqueness and state/year/role','Strict >60 and >90 boundaries, null handling and OOF separation covered by tests'],browser_verification:'Not performed: supported browser tool unavailable'};
 fs.writeFileSync(path.resolve(root,'../reports/e_web/v9-integration-verification.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));

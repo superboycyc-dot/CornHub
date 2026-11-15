@@ -1,25 +1,26 @@
 {
-  "release": "2026-11-15-v9-confidence-v14",
+  "release": "2026-11-15-md-only-confidence90-v15",
   "outline_states": [
-    "MD",
-    "CA"
+    "MD"
   ],
   "state_counts": {
-    "MD": 49902,
-    "CA": 18434
+    "MD": 49902
   },
   "national_objects": 6128148,
-  "polygon_bytes": 3133737,
-  "point_bytes": 43815784,
+  "polygon_bytes": 2326310,
+  "point_bytes": 43815159,
   "national_default_enabled": true,
   "detail_zoom": 12,
-  "v9_source_commit": "d7648e0c81b0c59a494d44d8309684ba84ef2da6",
+  "v9_source_commit": "cf612d37d762392068056f0c6cb2e132bf16f4cf",
   "confidence_field": "confidence_score",
   "confidence_colors": {
-    "green": "score > 80",
-    "yellow": "60 < score <= 80",
+    "green": "score > 90",
+    "yellow": "60 < score <= 90",
     "red": "score <= 60",
     "white": "unavailable"
   },
-  "default_prediction_role": "inference"
+  "default_prediction_role": "inference",
+  "prediction_states": [
+    "MD"
+  ]
 }

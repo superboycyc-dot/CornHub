@@ -7,11 +7,11 @@
   },
   "counts": {
     "not_corn": 100204,
-    "pending_observations": 228307,
+    "pending_observations": 228243,
     "invalid_geometry": 12970,
     "predicted": 49,
-    "conditional_prediction": 18,
-    "no_usable_observations": 2
+    "conditional_prediction": 81,
+    "no_usable_observations": 3
   },
   "checks": [
     "all manifest hashes match",

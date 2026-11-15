@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-15T04:02:51.690773+00:00",
+  "generated_at": "2026-11-15T04:34:16.696834+00:00",
   "status": "partial_processing",
   "scope": "Repository CSB historical corn candidates for CA/MD plus BARC83; not complete statewide cadastral inventory",
   "years": [
@@ -12,11 +12,11 @@
   ],
   "totals": {
     "not_corn": 100204,
-    "pending_observations": 228307,
+    "pending_observations": 228243,
     "invalid_geometry": 12970,
     "predicted": 49,
-    "conditional_prediction": 18,
-    "no_usable_observations": 2
+    "conditional_prediction": 81,
+    "no_usable_observations": 3
   },
   "groups": [
     {
@@ -275,8 +275,8 @@
       "rows": 49897,
       "counts": {
         "predicted": 19,
-        "conditional_prediction": 3,
-        "pending_observations": 24917,
+        "conditional_prediction": 16,
+        "pending_observations": 24904,
         "not_corn": 22730,
         "invalid_geometry": 2228
       },
@@ -389,10 +389,10 @@
       "year": 2022,
       "rows": 49897,
       "counts": {
-        "conditional_prediction": 3,
+        "conditional_prediction": 15,
         "no_usable_observations": 1,
         "predicted": 8,
-        "pending_observations": 21995,
+        "pending_observations": 21983,
         "not_corn": 25662,
         "invalid_geometry": 2228
       },
@@ -506,9 +506,9 @@
       "rows": 49897,
       "counts": {
         "predicted": 20,
-        "no_usable_observations": 1,
-        "conditional_prediction": 2,
-        "pending_observations": 25753,
+        "no_usable_observations": 2,
+        "conditional_prediction": 10,
+        "pending_observations": 25744,
         "not_corn": 21893,
         "invalid_geometry": 2228
       },
@@ -621,8 +621,8 @@
       "year": 2024,
       "rows": 49897,
       "counts": {
-        "conditional_prediction": 5,
-        "pending_observations": 47664,
+        "conditional_prediction": 20,
+        "pending_observations": 47649,
         "invalid_geometry": 2228
       },
       "predictions": "MD/2024.csv",
@@ -734,8 +734,8 @@
       "year": 2025,
       "rows": 49897,
       "counts": {
-        "conditional_prediction": 5,
-        "pending_observations": 47664,
+        "conditional_prediction": 20,
+        "pending_observations": 47649,
         "invalid_geometry": 2228
       },
       "predictions": "MD/2025.csv",
@@ -1413,24 +1413,24 @@
       "sha256": "021c156b88a6a4c76c8a84d8c6953abf64d08aac23be915d408aa1caf5bc93b4"
     },
     "MD/2021.csv": {
-      "bytes": 8985042,
-      "sha256": "2155d428076df325f437a6fdbe2eb94a6a289077b30b3a0f94192c2b3b71e71d"
+      "bytes": 8985983,
+      "sha256": "4e9485af598a9969484bf5c44e05494573f30627bf67f84beadac5c74db96424"
     },
     "MD/2022.csv": {
-      "bytes": 8914631,
-      "sha256": "3b0f802cecbd31a6a58fe943efdef0dff6bc498e1e0aa4339ca747f0451a4251"
+      "bytes": 8915836,
+      "sha256": "a460b73e21df1016f18b48af6e974c0bd702448ca526165fbe7ac6b6c067a37d"
     },
     "MD/2023.csv": {
-      "bytes": 9005111,
-      "sha256": "c2df07191dd670f3c2c2a89f402468f108f5fe3d8c7d82a4764ebb6e66c6fe25"
+      "bytes": 9005855,
+      "sha256": "a27fd16d45fd84b8334ecd4e511cd551f357b3cadc31efd45f3a36480f4abcab"
     },
     "MD/2024.csv": {
-      "bytes": 10577551,
-      "sha256": "7e88a39628716127acf0488669dd26360742d995245d073da1534f45706f2b95"
+      "bytes": 10578960,
+      "sha256": "d85008ee009a3bd5fe624956e65090063336802d38eae59f1881e7315d87b6d2"
     },
     "MD/2025.csv": {
-      "bytes": 10577682,
-      "sha256": "28b0dc83b032e3f926ea01743e396061ea7cf971627b794dbb548571023e1172"
+      "bytes": 10579272,
+      "sha256": "3fec1d831fcfb756b50766ba2e6c0c69e7797a83b71807e0acff6ce3f882bcee"
     }
   },
   "model_source": "/home/ubuntu/cornhub-compute/runs/v9-ndvi90-context10-20261115T030120Z",
