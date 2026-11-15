@@ -3,7 +3,7 @@
   "objects": 6128148,
   "tiles": 1832,
   "source_commit": "83fc31f4a6f1fcd3555935c9fb4b286665b8b9ee",
-  "compressed_bytes": 265656422,
+  "compressed_bytes": 255238084,
   "max_file_bytes": 1823822,
   "checks": [
     "Every upstream Parquet SHA checked",
@@ -11,12 +11,14 @@
     "All 123936481 display vertices and all ring/part counts retained",
     "Maximum coordinate rounding 5e-7 degrees; no further simplification",
     "Each Brotli encoded binary tile decompressed exactly",
-    "Actual JS geometry decoder exercised on produced tiles"
+    "Actual JS geometry decoder exercised on produced tiles",
+    "Every object represented in annual regional overview; unused individual point transport excluded from publication"
   ],
   "display_simplification_degrees": 0.0001,
   "browser_verification": "Not performed; supported tool unavailable",
   "transport_compression": "binary integer deltas + Brotli",
   "geometry_format": "NPG2",
   "vertices": 123936481,
-  "coordinate_rounding_max_degrees": 5e-07
+  "coordinate_rounding_max_degrees": 5e-07,
+  "overview_regions": 1832
 }

@@ -150,10 +150,19 @@ function Map({
     [counties, setCounties] = useState(null);
   useEffect(() => {
     const abort = new AbortController();
-    fetch("/reference/us-counties.geojson", { signal: abort.signal })
-      .then((r) => {
+    fetch("/reference/us-counties.geojson.gz", { signal: abort.signal })
+      .then(async (r) => {
         if (!r.ok) throw Error(`HTTP ${r.status}`);
-        return r.json();
+        const bytes = await r.arrayBuffer();
+        const text =
+          new Uint8Array(bytes)[0] === 31
+            ? await new Response(
+                new Blob([bytes])
+                  .stream()
+                  .pipeThrough(new DecompressionStream("gzip")),
+              ).text()
+            : new TextDecoder().decode(bytes);
+        return JSON.parse(text);
       })
       .then((value) => {
         if (
