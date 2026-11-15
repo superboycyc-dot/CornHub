@@ -1,0 +1,26 @@
+
+> cornhub-web@0.1.0 test
+> node --test scripts/*.test.mjs
+
+✔ annual results take precedence and cannot cross years or prediction roles (0.919005ms)
+✔ empty annual review queue never falls back to a different cohort; nested CSVs retain schema checks (8.552947ms)
+✔ sync preserves exact bytes, missing files and upstream deletion (13.003432ms)
+✔ CSV preserves leading zeros, quotes and missing values (2.254888ms)
+✔ duplicates and invalid probabilities fail visibly; roles remain distinct (1.097854ms)
+✔ pinned handoff is byte-exact, local output wins, unavailable commits cannot leave stale copies (43.260461ms)
+✔ national candidates stay out of BARC publication, including stale copies (7.627492ms)
+✔ hover lookup preserves field ID and isolates year and prediction role, including zero probability (1.090253ms)
+✔ county viewport filtering keeps intersecting boundaries without altering source features (0.257658ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 348.680472
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+npm notice To update run: npm install -g npm@12.2.2
+npm notice

@@ -1,0 +1,156 @@
+[
+  {
+    "baseRefName": "main",
+    "headRefName": "work/c-model-v2-plan",
+    "headRefOid": "716a85e397146ebf21989e53ac60c639894e9bda",
+    "isDraft": false,
+    "mergeCommit": {
+      "oid": "67bb590451dc6c046b15c7d445d8da2a06262fb7"
+    },
+    "mergedAt": "2026-11-15T00:02:47Z",
+    "number": 11,
+    "state": "MERGED",
+    "title": "C: 第二版逐田逐年模型方案与 A/B/C AI 提示词",
+    "url": "https://github.com/superboycyc-dot/CornHub/pull/11"
+  },
+  {
+    "baseRefName": "main",
+    "headRefName": "work/a-external-corn",
+    "headRefOid": "83fc31f4a6f1fcd3555935c9fb4b286665b8b9ee",
+    "isDraft": false,
+    "mergeCommit": {
+      "oid": "9191f152f61a06641b16003f564fc5f014966ef0"
+    },
+    "mergedAt": "2026-11-15T00:07:36Z",
+    "number": 10,
+    "state": "MERGED",
+    "title": "A: 全国2021–2023玉米候选库、团队进度及2022–2025政策研究",
+    "url": "https://github.com/superboycyc-dot/CornHub/pull/10"
+  },
+  {
+    "baseRefName": "main",
+    "headRefName": "docs/barc-scope-and-validation",
+    "headRefOid": "d284d143898eaace6f067a7e1a592eac69de3a55",
+    "isDraft": false,
+    "mergeCommit": {
+      "oid": "2f280564fdabf6d3af60a76a8f13f2340dc4113c"
+    },
+    "mergedAt": "2026-11-14T21:52:19Z",
+    "number": 9,
+    "state": "MERGED",
+    "title": "统一为主办方 BARC 范围并澄清 NDMI 增强与核查规则",
+    "url": "https://github.com/superboycyc-dot/CornHub/pull/9"
+  },
+  {
+    "baseRefName": "main",
+    "headRefName": "docs/round-2-handoff",
+    "headRefOid": "f1ce35095789ed34f87d14c659fbac82760e6b53",
+    "isDraft": false,
+    "mergeCommit": {
+      "oid": "630eebfb465a21379aeeda49ea8a5d7d70ef36d0"
+    },
+    "mergedAt": "2026-11-14T21:08:40Z",
+    "number": 8,
+    "state": "MERGED",
+    "title": "第二轮：全量数据交接审查与五人执行提示词",
+    "url": "https://github.com/superboycyc-dot/CornHub/pull/8"
+  },
+  {
+    "baseRefName": "main",
+    "headRefName": "work/d-analysis",
+    "headRefOid": "53b39a600e60d94129b9dbbf23dc1d8c55e439de",
+    "isDraft": false,
+    "mergeCommit": {
+      "oid": "1f9dbf9d9f9aad91bd5abb0606e43adbce8619d8"
+    },
+    "mergedAt": "2026-11-15T00:02:42Z",
+    "number": 7,
+    "state": "MERGED",
+    "title": "D: NVIDIA 多 GPU NDMI 部署准备、实算过程与逐年分析",
+    "url": "https://github.com/superboycyc-dot/CornHub/pull/7"
+  },
+  {
+    "baseRefName": "main",
+    "headRefName": "work/a-data",
+    "headRefOid": "df7ce8cd63039e90de7ca78ba95f4f3259ee15c5",
+    "isDraft": false,
+    "mergeCommit": {
+      "oid": "43883407c301baed9539de8f52743f667a491460"
+    },
+    "mergedAt": "2026-11-15T00:02:17Z",
+    "number": 6,
+    "state": "MERGED",
+    "title": "A: BARC 核心数据、共同样本与农场分组交接",
+    "url": "https://github.com/superboycyc-dot/CornHub/pull/6"
+  },
+  {
+    "baseRefName": "main",
+    "headRefName": "work/b-satellite",
+    "headRefOid": "05a81a7d1634c80d3c56b66cf9eb9acb9527fc9b",
+    "isDraft": false,
+    "mergeCommit": {
+      "oid": "1998d5c37f9410f46842ebae9893e2f32cf53853"
+    },
+    "mergedAt": "2026-11-15T00:02:23Z",
+    "number": 5,
+    "state": "MERGED",
+    "title": "B: 完成44个田块年批处理，导出4524条时序与44行特征",
+    "url": "https://github.com/superboycyc-dot/CornHub/pull/5"
+  },
+  {
+    "baseRefName": "main",
+    "headRefName": "work/c-model",
+    "headRefOid": "a867e4e19c431754e7b07ee8a260f48761d83d81",
+    "isDraft": false,
+    "mergeCommit": {
+      "oid": "92aa1c136c4a2ab51098b23e2e61b65dd7651f8c"
+    },
+    "mergedAt": "2026-11-15T00:02:29Z",
+    "number": 4,
+    "state": "MERGED",
+    "title": "C: deliver real 44-row farm-held-out OOF metrics and separate inference",
+    "url": "https://github.com/superboycyc-dot/CornHub/pull/4"
+  },
+  {
+    "baseRefName": "main",
+    "headRefName": "docs/project-handoff-2026-11-14",
+    "headRefOid": "030a7e52619c9cf34e914da29174f8dc7d405279",
+    "isDraft": false,
+    "mergeCommit": {
+      "oid": "98d235b8e6bace22767f8d0696df541280f3184f"
+    },
+    "mergedAt": "2026-11-15T00:02:57Z",
+    "number": 3,
+    "state": "MERGED",
+    "title": "记录实际项目进度、五人 agent 交接与可复现审计",
+    "url": "https://github.com/superboycyc-dot/CornHub/pull/3"
+  },
+  {
+    "baseRefName": "main",
+    "headRefName": "work/e-web",
+    "headRefOid": "f45d120b65d5f323ea9c5353f0ea9ce7bde5def3",
+    "isDraft": false,
+    "mergeCommit": {
+      "oid": "a63b7a03e0ec1b57169de8bc4a6a5d14ca00d959"
+    },
+    "mergedAt": "2026-11-15T00:08:35Z",
+    "number": 2,
+    "state": "MERGED",
+    "title": "feat(web): connect complete BARC predictions and annual analysis",
+    "url": "https://github.com/superboycyc-dot/CornHub/pull/2"
+  },
+  {
+    "baseRefName": "main",
+    "headRefName": "docs/team-kickoff",
+    "headRefOid": "b61039f724fa9b7b6a9e3e6ee87377e91cf06982",
+    "isDraft": false,
+    "mergeCommit": {
+      "oid": "b603997177fb68bf19a2aa6ac7013a4e74001643"
+    },
+    "mergedAt": "2026-11-14T19:33:28Z",
+    "number": 1,
+    "state": "MERGED",
+    "title": "添加五人开工流程、数据合同及 AI 提示词",
+    "url": "https://github.com/superboycyc-dot/CornHub/pull/1"
+  }
+]
