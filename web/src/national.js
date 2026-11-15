@@ -75,3 +75,57 @@ export function decodeTile(buffer, tile, zoom) {
   }
   return points;
 }
+
+export function decodePolygons(bytes) {
+  if (!/^NPG[12]$/.test(String.fromCharCode(...bytes.subarray(0, 4))))
+    throw Error("Invalid polygon header");
+  const scale = bytes[3] === 50 ? 1e6 : 1e7;
+  const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+  let offset = 4;
+  const count = view.getUint32(offset, true);
+  offset += 4;
+  const rows = [];
+  const u32 = () => {
+    const n = view.getUint32(offset, true);
+    offset += 4;
+    return n;
+  };
+  for (let i = 0; i < count; i++) {
+    const num = view.getBigUint64(offset, true);
+    offset += 8;
+    const length = view.getUint8(offset++),
+      flags = view.getUint8(offset++),
+      kind = view.getUint8(offset++),
+      npoly = u32(),
+      parts = [];
+    for (let p = 0; p < npoly; p++) {
+      const rings = [],
+        nrings = u32();
+      for (let r = 0; r < nrings; r++) {
+        const points = [],
+          n = u32();
+        let x = 0,
+          y = 0;
+        for (let j = 0; j < n; j++) {
+          x += view.getInt32(offset, true);
+          y += view.getInt32(offset + 4, true);
+          offset += 8;
+          points.push([x / scale, y / scale]);
+        }
+        rings.push(points);
+      }
+      parts.push(rings);
+    }
+    rows.push([
+      (flags & 16 ? "cropsight_" : "csb_") +
+        num.toString().padStart(length, "0"),
+      flags,
+      {
+        type: kind === 1 ? "Polygon" : "MultiPolygon",
+        coordinates: kind === 1 ? parts[0] : parts,
+      },
+    ]);
+  }
+  if (offset !== bytes.byteLength) throw Error("Invalid polygon record length");
+  return rows;
+}

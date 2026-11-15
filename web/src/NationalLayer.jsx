@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import L from "leaflet";
-import { decodeTile, queryPrediction } from "./national";
+import { decodeTile, queryPrediction, decodePolygons } from "./national";
 export default function NationalLayer({
   controller,
   enabled,
@@ -89,31 +89,13 @@ export default function NationalLayer({
               });
               if (!response.ok) throw Error(`Polygon HTTP ${response.status}`);
               let bytes = await response.arrayBuffer();
-              let text;
-              if (
-                tile.path.endsWith(".br") &&
-                !/^\["(?:csb_|cropsight_)/.test(
-                  new TextDecoder().decode(
-                    new Uint8Array(bytes, 0, Math.min(32, bytes.byteLength)),
-                  ),
-                )
-              ) {
-                const { decompress } = await import("brotli/decompress");
-                text = new TextDecoder().decode(
-                  decompress(new Uint8Array(bytes)),
-                );
-              } else if (new Uint8Array(bytes)[0] === 31)
-                text = await new Response(
-                  new Blob([bytes])
-                    .stream()
-                    .pipeThrough(new DecompressionStream("gzip")),
-                ).text();
-              else text = new TextDecoder().decode(bytes);
-              const rows = text
-                .trim()
-                .split("\n")
-                .filter(Boolean)
-                .map(JSON.parse);
+              const { decompress } = await import("brotli/decompress");
+              const body = new Uint8Array(bytes);
+              const decoded =
+                String.fromCharCode(...body.subarray(0, 4)) === "NPG1"
+                  ? body
+                  : decompress(body);
+              const rows = decodePolygons(decoded);
               cache.set(key, rows);
               if (cache.size > 24) cache.delete(cache.keys().next().value);
               return rows;

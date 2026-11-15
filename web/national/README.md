@@ -24,4 +24,6 @@ Attribution: USDA NASS Crop Sequence Boundaries 2016–2023 rev23 (U.S. Public D
 
 Polygon rebuild: run scripts/build-national-polygons.py in the same Python environment. polygons-index.json contains actual per-tile source extents (including edge-crossing shapes); only intersecting files are fetched. The prediction keys and universal per-object API slots are unchanged.
 
-Transport packaging: after polygon generation, run scripts/compress-national-polygons.py. Brotli recompression is lossless: every decompressed NDJSON stream is byte-identical to the generated geometry. Browser decoding uses a dynamically loaded decoder and is independently checked against the native Brotli decoder. No fields or vertices are removed by this transport step.
+Transport packaging: after polygon generation, run scripts/compress-national-polygons.py. Final NPG2 preserves all object IDs, rings and vertices on a 1e-6 degree display grid (max coordinate rounding about 6 cm). Brotli is lossless relative to this defined display representation. Browser decoding uses a dynamically loaded decoder and is independently checked against the native Brotli decoder. No fields or vertices are removed by this transport step.
+
+NPG2 display coordinates retain every vertex and use a 1e-6 degree grid (maximum rounding shift about 6 cm in latitude), well below the display simplification and source raster resolution. IDs, flags, rings and vertex counts are unchanged. pack-national-geometry.py and compact-display-grid.py produce this compact representation.
