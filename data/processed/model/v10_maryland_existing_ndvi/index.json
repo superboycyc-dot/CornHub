@@ -1,0 +1,57 @@
+{
+  "status": "complete",
+  "scope": "Maryland existing cached NDVI only; not statewide coverage",
+  "model_version": "V10 is user alias for frozen V9 plus US-only confidence calibration",
+  "generated_at": "2026-11-15T05:04:32.417244+00:00",
+  "rows": 358,
+  "fields": 257,
+  "years": {
+    "2021": {
+      "silage": 213,
+      "grain": 34
+    },
+    "2022": {
+      "silage": 20,
+      "grain": 6
+    },
+    "2023": {
+      "silage": 24,
+      "grain": 11
+    },
+    "2024": {
+      "silage": 18,
+      "grain": 7
+    },
+    "2025": {
+      "silage": 19,
+      "grain": 6
+    }
+  },
+  "statuses": {
+    "predicted": 255,
+    "conditional_prediction": 103
+  },
+  "excluded": {},
+  "training_overlap": 47,
+  "remote_run": "/home/ubuntu/cornhub-compute/runs/v10-md-existing-20261115T050429Z",
+  "model_source": "/home/ubuntu/cornhub-compute/runs/v9-ndvi90-context10-20261115T030120Z",
+  "calibration_source": "/home/ubuntu/cornhub-compute/runs/v9-us-confidence-20261115T033209Z",
+  "source_hashes": {
+    "/home/ubuntu/cornhub-compute/runs/v9-ndvi90-context10-20261115T030120Z/models/V9_full.joblib": "1d957c4804b105728ae095ee4125f38fbdede737942d38bc961bf2fbb152b096",
+    "/home/ubuntu/cornhub-compute/runs/v9-us-confidence-20261115T033209Z/models/us_calibrator_full.joblib": "736b6fd6d888dcb3a06fd22123e75401c5c67ac29d2bf5930a4fbffd719643e8",
+    "/home/ubuntu/cornhub-compute/v9_predict.py": "c4247c7dca06324a5a3cef6521aba535d762de9962de2c570492847a5ffc28e4",
+    "/home/ubuntu/cornhub-compute/v9_us_predict.py": "19aae72c7b77d66377ebe2f07059670e1ed51afdcca63c9c8c1b39126a2d4830"
+  },
+  "files": {
+    "predict_existing_md.py": "140e3deed394f7c0788d2363e4f4e8250fd4366ade6eaf68be3531209d7d4755",
+    "2021.csv": "95d716072c6306f8ed63798a1e01e33ff4f06bb48efb046bfd12759047827595",
+    "input_features.json": "dd2e98fee7351dd3d13d30aa79b9b46f83af201d23857150d725c8111d7ee998",
+    "2024.csv": "b168f5ea96ba281798581cfe3f7400f1c68e7ae3bbedee53ba87548f69417c34",
+    "2025.csv": "323ae024e6acf550e09ff066977dfe68b1ff3239bb08feca289c645fa62c0402",
+    "2022.csv": "0c00f7d92e5d7ab63d2a8178496116977afd721f8900d4ea7e279c57d2dcd7ea",
+    "2023.csv": "ab37f279d5e6d179222123e910b028a4e7055b11ec4e14b03f1a14638702ad33",
+    "fields.geojson": "bdfcd1c074eac90b85f197c9ac1bc540b2d07300358758a542fa8542013856d8",
+    "predictions.csv": "4266b7ea5f0e9dcb677034c2eb20925fee7037cdd2f7a0255c0647b485927dd5",
+    "README.md": "ab509e130a56d4548492bc5654da9b6c61fd8725d60aaa97cf4f657e87fd9b87"
+  }
+}

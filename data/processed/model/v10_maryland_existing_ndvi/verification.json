@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "rows": 358,
+  "checks": [
+    "unique field-year keys",
+    "Maryland only, 2021\u20132025",
+    "non-null NDVI required",
+    "frozen class threshold",
+    "confidence range",
+    "file hashes verified"
+  ]
+}
