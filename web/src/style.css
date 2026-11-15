@@ -1306,3 +1306,77 @@ select:disabled {
     bottom: 151px;
   }
 }
+.national-control {
+  position: absolute;
+  z-index: 1025;
+  right: 36px;
+  top: 235px;
+  max-width: 390px;
+  background: #07110ee8;
+  border: 1px solid var(--line);
+  padding: 11px 13px;
+  backdrop-filter: blur(18px);
+}
+.national-control label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 10px;
+  cursor: pointer;
+}
+.national-control input {
+  accent-color: white;
+  width: 14px;
+  height: 14px;
+  margin: 0;
+}
+.national-swatch {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: white;
+}
+.national-control small {
+  display: block;
+  color: #a9b9a2;
+  line-height: 1.6;
+  font-size: 8px;
+  max-width: 320px;
+  margin-top: 8px;
+}
+.floating-panel {
+  top: 315px;
+}
+@media (min-width: 1600px) {
+  .national-control {
+    right: 48px;
+    top: 244px;
+  }
+}
+@media (max-width: 900px) {
+  .national-control {
+    right: 26px;
+  }
+}
+@media (max-width: 700px) {
+  .national-control {
+    left: 20px;
+    right: 20px;
+    top: 343px;
+    max-width: none;
+  }
+  .floating-panel {
+    top: 422px;
+  }
+  .national-control small {
+    font-size: 7px;
+  }
+}
+@media (max-height: 700px) and (max-width: 700px) {
+  .national-control {
+    top: 286px;
+  }
+  .floating-panel {
+    top: 361px;
+  }
+}

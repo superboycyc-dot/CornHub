@@ -111,6 +111,15 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   } catch (e) {
     if (e.code !== "ENOENT") throw e;
   }
+  await fs.rm(path.join(root, "web/public/national"), {
+    recursive: true,
+    force: true,
+  });
+  await fs.cp(
+    path.join(root, "web/national"),
+    path.join(root, "web/public/national"),
+    { recursive: true },
+  );
   for (const [name, info] of Object.entries(files))
     console.log(`${info.status}: ${name}`);
 }

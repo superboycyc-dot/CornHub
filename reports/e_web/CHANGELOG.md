@@ -12,3 +12,11 @@
 - Retained the Maryland 1 km opening view, field highlights, county layer and full-screen English interface.
 - Verification: 8 Node tests; 27 source files byte-checked; annual/role/cohort and D input-hash checks; production build. No browser visual/hover check or real screenshot was performed because the supported browser tool is unavailable.
 - Source changes are limited to web and reports/e_web. No teammate scripts, source IDs, model results, economic values or root configuration were changed.
+
+## National candidate layer and prediction slots
+
+Added an independent white-marker layer with an explicit show/hide checkbox (off by default). It covers all 6,112,209 CSB and 15,939 CropSight objects in A's pinned handoff, without merging overlapping sources. Locations are bounding-box-center display points, not surveyed boundary polygons. Counted clusters are used at low zoom or dense views; individual IDs load on demand. Annual crop eligibility is preserved for 2021–2023; 2024/2025 are not populated from older data.
+
+Every object retains its original candidate_id, source_field_id and source_dataset_id, including ID string length. A prediction adapter is available for all of them, keyed by source, ID, year, role and model version. A configured endpoint may return separately calculated outputs; empty configuration/results show Not computed. IDs, model versions, roles, years, duplicate records and probability ranges are validated. BARC remains independent. No national probabilities or crop confidence were fabricated or borrowed from BARC.
+
+The builder checked all 1,232 upstream shard hashes and counts and packed 6,128,148 objects into 170 compressed display tiles (~40.7 MB). Source geometry-valid flags and annual eligibility are preserved, including flagged-invalid source objects. Data provenance and a rebuild command are in web/national/README.md and national-index-validation.json. 10 Node tests and production build passed; supported browser tools remain unavailable, so visual/hover QA is not claimed.

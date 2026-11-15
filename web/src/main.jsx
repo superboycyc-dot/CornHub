@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import { createRoot } from "react-dom/client";
 import L from "leaflet";
+import NationalLayer from "./NationalLayer";
 import "leaflet/dist/leaflet.css";
 import "./style.css";
 import {
@@ -539,6 +540,8 @@ function App() {
     [fullscreen, setFullscreen] = useState(false),
     [uiNotice, setUiNotice] = useState("");
   const mapController = useRef();
+  const [nationalEnabled, setNationalEnabled] = useState(false),
+    [nationalStatus, setNationalStatus] = useState("");
   const [zoomLevel, setZoomLevel] = useState(9),
     [showCounties, setShowCounties] = useState(true),
     [showFields, setShowFields] = useState(true),
@@ -629,6 +632,13 @@ function App() {
         showFields={showFields}
         onZoomChange={setZoomLevel}
         onCountyStatus={setCountyStatus}
+      />
+      <NationalLayer
+        controller={mapController}
+        enabled={nationalEnabled}
+        year={year}
+        role={role}
+        onStatus={setNationalStatus}
       />
       <header className="topbar">
         <a
@@ -727,6 +737,20 @@ function App() {
           </select>
         </label>
       </section>
+      <div className="national-control">
+        <label>
+          <input
+            type="checkbox"
+            checked={nationalEnabled}
+            onChange={(e) => setNationalEnabled(e.target.checked)}
+          />
+          <span className="national-swatch" />
+          US candidate fields
+        </label>
+        {nationalEnabled && (
+          <small role="status">{nationalStatus || "Loading…"}</small>
+        )}
+      </div>
       <div className="layer-switches" aria-label="Map layers">
         <button
           aria-pressed={showCounties}
