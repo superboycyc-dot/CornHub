@@ -669,7 +669,7 @@ function App() {
         onSelect={selectNational}
         v9={v9}
       />
-      <ReviewOverview v9={v9} year={year} role={role} controller={mapController} onOpen={()=>setPanel(null)} onSelect={selectNational} />
+      <ReviewOverview fields={fields} v9={v9} year={year} role={role} controller={mapController} onOpen={()=>setPanel(null)} onSelect={selectNational} />
       <header className="topbar">
         <a
           className="brand"

@@ -1459,3 +1459,16 @@ select:disabled {
 @media(max-width:700px){.review-overview{top:150px;right:12px;left:auto;width:240px}.review-card{padding:7px 10px}.review-card strong{font-size:20px}.review-card span{font-size:12px}.review-scope{font-size:9px}.selectors{top:68px}.review-list{top:150px;z-index:1070}.floating-panel{top:150px;z-index:1070}.review-unavailable{padding:7px 10px;font-size:11px}}
 
 .selected-field-primary {min-height:440px;display:flex;flex-direction:column;padding-top:12px;}.selected-field-primary h3{font-size:34px;margin:12px 0;}.selected-field-probability{font-size:52px;line-height:1.1;font-weight:650;color:#eaf6ed;}.selected-field-primary dl{margin-top:30px;}.selected-field-primary dd{overflow-wrap:anywhere;}.selected-field-primary>small{margin-top:auto;padding-top:24px;color:#a4b9ac;}.selected-field-source{border-top:1px solid #ffffff30;padding:24px 0;overflow-wrap:anywhere;}.selected-field-source p{font-size:12px;line-height:1.6;}
+
+.review-overview {max-height:calc(100dvh - 170px);overflow-y:auto;overscroll-behavior:contain;}
+.harvest-summary {margin-top:6px;padding:12px;color:#edf5ef;background:#0b1b16f5;border:1px solid #ffffff45;border-radius:7px;font-size:12px;}
+.harvest-summary h3,.harvest-summary caption {font-size:13px;font-weight:650;text-align:left;margin:0 0 9px;}
+.harvest-mix {display:grid;grid-template-columns:62px 1fr;align-items:center;gap:14px;}
+.harvest-ring {aspect-ratio:1;border-radius:50%;background:conic-gradient(#64cfc6 0 var(--silage-share),#dab584 var(--silage-share) 100%);mask:radial-gradient(circle,transparent 47%,black 49%);}
+.harvest-key {display:flex;align-items:center;gap:6px;margin-bottom:4px;text-transform:capitalize;}
+.harvest-key:before {content:'';width:8px;height:8px;border-radius:50%;background:#64cfc6;}.harvest-key.grain:before {background:#dab584;}
+.harvest-key strong {margin-left:auto;}.harvest-summary small,.harvest-summary details {color:#c4d4cc;}
+.harvest-summary table {width:100%;margin:12px 0 8px;font-size:12px;border-collapse:collapse;font-variant-numeric:tabular-nums;}
+.harvest-summary th,.harvest-summary td {padding:4px 0;text-align:right;color:inherit;}.harvest-summary th:first-child {text-align:left;text-transform:capitalize;}
+.harvest-summary thead {font-size:10px;color:#b5c7bc;}.harvest-summary details {font-size:11px;line-height:1.4;}.harvest-summary summary {cursor:pointer;}.harvest-summary a {color:#9fe9d7;}
+@media(max-width:700px){.review-overview{max-height:calc(100dvh - 230px);}}
