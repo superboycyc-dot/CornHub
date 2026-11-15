@@ -1,3 +1,4 @@
+import { syncFieldLocations } from "./sync-field-locations.mjs";
 import { syncV9 } from "./sync-v9.mjs";
 import { promises as fs } from "node:fs";
 import { execFile } from "node:child_process";
@@ -106,6 +107,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     { repositoryRoot: root, handoffs },
   );
   await syncV9(root);
+  await syncFieldLocations(root);
   const referenceTarget = path.join(root, "web/public/reference");
   await fs.rm(referenceTarget, { recursive: true, force: true });
   try {

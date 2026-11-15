@@ -1,5 +1,5 @@
 {
-  "release": "map-first-us-layer-v17",
+  "release": "review-overview-v18",
   "outline_states": [
     "MD"
   ],
@@ -24,5 +24,11 @@
     "white": "unavailable"
   },
   "national_layer_locked": true,
-  "barc_reference_default_visible": false
+  "barc_reference_default_visible": true,
+  "review_groups": {
+    "red": "First review: p_silage <= 0.6",
+    "orange": "Suggested review: 0.6 < p_silage <= 0.9",
+    "green": "p_silage > 0.9"
+  },
+  "review_denominator": "Current-year Maryland available inference records, including conditional predictions"
 }

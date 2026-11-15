@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState, useCallback } from "react";
 import { createRoot } from "react-dom/client";
 import L from "leaflet";
 import NationalLayer from "./NationalLayer";
+import ReviewOverview from "./ReviewOverview";
 import useV9 from "./useV9";
 import {probabilityColor,v9Record,v9Details} from "./v9";
 import "leaflet/dist/leaflet.css";
@@ -565,7 +566,7 @@ function App() {
   const [nationalStatus, setNationalStatus] = useState("");
   const [zoomLevel, setZoomLevel] = useState(9),
     [showCounties, setShowCounties] = useState(true),
-    [showFields, setShowFields] = useState(false),
+    [showFields, setShowFields] = useState(true),
     [countyStatus, setCountyStatus] = useState("loading");
   const selectField = useCallback((value) => {
     setId(value);
@@ -663,6 +664,7 @@ function App() {
         onStatus={setNationalStatus}
         v9={v9}
       />
+      <ReviewOverview v9={v9} year={year} role={role} controller={mapController} onOpen={()=>setPanel(null)} />
       <header className="topbar">
         <a
           className="brand"
@@ -754,7 +756,7 @@ function App() {
         <p className="map-card-subtitle">Maryland · {year} · {role === 'inference' ? 'Model predictions' : 'Validation view'}</p>
         <div className="probability-legend" aria-label="V9 model silage probability legend">
           <span><i style={{background:"#61df8c"}} /> &gt;90%</span>
-          <span><i style={{background:"#ffcf45"}} /> &gt;60–90%</span>
+          <span><i style={{background:"#ffa447"}} /> &gt;60–90%</span>
           <span><i style={{background:"#ff5b5b"}} /> ≤60%</span>
           <span><i style={{background:"#fff"}} /> Unavailable</span>
         </div>

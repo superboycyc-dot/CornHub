@@ -1,5 +1,5 @@
 import Papa from 'papaparse';
-export const V9_COLORS={red:'#ff5b5b',yellow:'#ffcf45',green:'#61df8c',missing:'#ffffff'};
+export const V9_COLORS={red:'#ff5b5b',yellow:'#ffa447',green:'#61df8c',missing:'#ffffff'};
 export function probabilityColor(row) {
  if(!row || !['predicted','conditional_prediction'].includes(row.status) || row.prediction_role!=='inference' || row.p_silage==null) return V9_COLORS.missing;
  const n=row.p_silage;

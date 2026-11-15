@@ -71,3 +71,7 @@ Replaced close-up national center markers with actual source Polygon/MultiPolygo
 - Prioritize year, model role and a readable silage-probability legend; move coverage and technical status into expandable details. Remove decorative headline and redundant telemetry.
 - Force the US candidate layer on, hide BARC reference polygons by default and label their optional toggle explicitly. Preserve Maryland outline/other-state point scope.
 - Separate primary left controls from right evidence panel; mobile evidence replaces the legend card to avoid overlapping controls.
+
+## Review overview and field lists
+
+Restore BARC reference layer by default. Move silage-probability legend to lower right with 48% opaque background. Add current-year Maryland available-prediction percentages and clickable red First review, orange Suggested review and green lists. Counts describe user-requested probability buckets, not validated error/review requirements or D area summaries. Missing predictions excluded; conditional predictions included and labeled. Each list shows original field ID (no supplied names), boundary-center coordinates, predicted silage/grain use and original probability. Harvest dates are unavailable. Location index is generated from existing source geometries during sync.
