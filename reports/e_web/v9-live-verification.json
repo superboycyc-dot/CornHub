@@ -1,0 +1,97 @@
+{
+  "verified_at": "2026-11-15T05:30:42.852Z",
+  "url": "https://cornhub-field-evidence.feistydegu3.chatgpt.site",
+  "status": "passed",
+  "sites_version": 16,
+  "release": "md-model-probability-v16",
+  "source_commit": "54765935459244ea9b0f1b32bdfbb4f30e5317e3",
+  "upstream_commit": "cf612d37d762392068056f0c6cb2e132bf16f4cf",
+  "deployment_id": "appgdep_6af9436ef8708191a2b77f9649b956aa",
+  "http_without_cache_busting": true,
+  "rows": 249485,
+  "colors": {
+    "red": 43,
+    "yellow": 12,
+    "green": 73,
+    "missing": 249357
+  },
+  "resources": [
+    {
+      "path": "/reference/release.json",
+      "bytes": 598,
+      "sha256": "582805205e3bfc581a6c3131cdf71af6f6420779db9230103bf32e8ac788c5d4"
+    },
+    {
+      "path": "/",
+      "bytes": 407,
+      "sha256": "499bc1a2f16f33e0bed24c48dd4aa18be81eb824169fd9875302281b26c5c10a"
+    },
+    {
+      "path": "/assets/index-C7zzXA6g.js",
+      "bytes": 445383,
+      "sha256": "1e78d30a022cc3421a9f81a7d60b66563d4cf989ebec2627c9eba202ea73063d"
+    },
+    {
+      "path": "/assets/index-DJLf_AqB.css",
+      "bytes": 34994,
+      "sha256": "c474d21d9637f8204c3ec2686cfaaea4cf1cdc85d41179139435f6a75994bd8c"
+    },
+    {
+      "path": "/v9/manifest.json",
+      "bytes": 2892,
+      "sha256": "3ca08bde77c72b445f806429e5ffbea0a93529a71b5d89f9f531f1da3d2a433f"
+    },
+    {
+      "path": "/v9/index.json",
+      "bytes": 52771,
+      "sha256": "f7fdcaf84cec71bb4cc446d3ecb9efdbc676b600e015069c6edc59badb9d24da"
+    },
+    {
+      "path": "/national/polygons-index.json",
+      "bytes": 5898,
+      "sha256": "541c12d06f05ff6266dc210b5fcf1ca503ae29af8ad69187a8f7b1f10173bad8"
+    },
+    {
+      "path": "/national/index.json",
+      "bytes": 48356,
+      "sha256": "8e1bf181a45969594be482c40765abac516976704466f0aef360c74f65c6374a"
+    },
+    {
+      "path": "/national/tiles/21/50.bin.gz",
+      "bytes": 43395,
+      "sha256": "37a7e9648dea597f8644e4eddf8dc68520fae2a299abfef716c3066af7f66609"
+    },
+    {
+      "path": "/national/polygons/142-194.npg.br",
+      "bytes": 1204,
+      "sha256": "b90bd2727882962a7e9e6adfd40461b2e1eb796528711d946f27601dff3e6b1c"
+    },
+    {
+      "path": "/v9/MD/2021.csv.gz",
+      "bytes": 172266,
+      "sha256": "bf80de26460473cdee45266fa43ef45048f88a527d1fd342e1217f946ddfaa1a"
+    },
+    {
+      "path": "/v9/MD/2022.csv.gz",
+      "bytes": 172214,
+      "sha256": "dedcdf3ee384ed0c98acfc9c75867d400973a1f4705e35004fb2c3705c1a4e11"
+    },
+    {
+      "path": "/v9/MD/2023.csv.gz",
+      "bytes": 172600,
+      "sha256": "51b6400574ce2fd274627ceb22e3ebeea4e5ba5704253d497dd59259c738613f"
+    },
+    {
+      "path": "/v9/MD/2024.csv.gz",
+      "bytes": 170257,
+      "sha256": "035aa3a7f2b3d3575ad09272d32e4b0769060e22a66764731adac8f20fa3d02c"
+    },
+    {
+      "path": "/v9/MD/2025.csv.gz",
+      "bytes": 170265,
+      "sha256": "03a8aec257cefef9c40797a8a93a53eacdbeb090423e8d85774da580fe485912"
+    }
+  ],
+  "browser_verification": "Not performed: supported browser tool unavailable",
+  "color_field": "p_silage"
+}

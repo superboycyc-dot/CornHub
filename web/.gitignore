@@ -3,3 +3,6 @@ dist/
 public/data/
 test-results/
 public/reference/
+public/national/
+.vercel-static/
+.vercel/

@@ -1,0 +1,15 @@
+{
+  "version": 21,
+  "status": "passed",
+  "tests": 18,
+  "component_render": "Grain 80% for p_silage 0.2; area and ID before source dataset",
+  "live_resources": [
+    "/",
+    "/assets/index-BEUPQfxg.js",
+    "/assets/index-DqdBEQfX.css",
+    "/reference/release.json",
+    "/v9/field-metadata.json"
+  ],
+  "source_metadata_fields": 49897,
+  "browser_visual_check": "Unavailable"
+}

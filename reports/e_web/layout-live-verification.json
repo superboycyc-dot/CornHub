@@ -1,0 +1,12 @@
+{
+  "version": 17,
+  "status": "passed",
+  "resources": [
+    "/",
+    "/assets/index-D97pW3gs.js",
+    "/assets/index-CWfacdCk.css",
+    "/reference/release.json"
+  ],
+  "release": "map-first-us-layer-v17",
+  "browser_visual_check": "Unavailable"
+}

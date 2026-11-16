@@ -1306,3 +1306,186 @@ select:disabled {
     bottom: 151px;
   }
 }
+.national-control {
+  position: absolute;
+  z-index: 1025;
+  right: 36px;
+  top: 235px;
+  max-width: 390px;
+  background: #07110ee8;
+  border: 1px solid var(--line);
+  padding: 11px 13px;
+  backdrop-filter: blur(18px);
+}
+.national-control label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 10px;
+  cursor: pointer;
+}
+.national-control input {
+  accent-color: white;
+  width: 14px;
+  height: 14px;
+  margin: 0;
+}
+.national-swatch {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: white;
+}
+.national-control small {
+  display: block;
+  color: #a9b9a2;
+  line-height: 1.6;
+  font-size: 8px;
+  max-width: 320px;
+  margin-top: 8px;
+}
+.floating-panel {
+  top: 315px;
+}
+@media (min-width: 1600px) {
+  .national-control {
+    right: 48px;
+    top: 244px;
+  }
+}
+@media (max-width: 900px) {
+  .national-control {
+    right: 26px;
+  }
+}
+@media (max-width: 700px) {
+  .national-control {
+    left: 20px;
+    right: 20px;
+    top: 343px;
+    max-width: none;
+  }
+  .floating-panel {
+    top: 422px;
+  }
+  .national-control small {
+    font-size: 7px;
+  }
+}
+@media (max-height: 700px) and (max-width: 700px) {
+  .national-control {
+    top: 286px;
+  }
+  .floating-panel {
+    top: 361px;
+  }
+}
+.national-swatch {
+  width: 11px;
+  height: 8px;
+  border-radius: 0;
+  border: 1px solid #fff;
+  background: #ffffff35;
+}
+
+.probability-legend { display:flex; flex-wrap:wrap; gap:10px; margin-top:8px; font-size:10px; }
+.probability-legend span { display:inline-flex; align-items:center; gap:4px; }
+.probability-legend i { width:9px; height:9px; display:inline-block; }
+.v9-detail { font-size:12px; line-height:1.5; overflow-wrap:anywhere; }
+.layer-swatch.fields { background:#ffffff40; border-color:#ffffff; }
+/* Keep the inspector accessible within the fixed viewport. */
+.mission:has(.floating-panel) .national-control > small,
+.mission:has(.floating-panel) .national-control .probability-legend { display:none; }
+
+/* Map-first information hierarchy: primary controls on the left, evidence on the right. */
+.topbar { height:64px; padding:0 24px; background:#07110ef2; }
+.mission-heading,.telemetry,.flight-id,.view-label,.zoom-readout { display:none; }
+.selectors { top:84px; left:24px; right:auto; width:340px; box-sizing:border-box; padding:10px 0; }
+.selectors .field-select { display:none; }
+.selectors label { flex:1; padding:0 16px; }
+.selectors label > span { font-size:11px; color:#b8c8c0; }
+.selectors select { font-size:17px; }
+.national-control { top:176px; left:24px; right:auto; width:340px; max-width:none; padding:18px; box-sizing:border-box; border-radius:10px; background:#07110ef2; }
+.map-card-title { display:block; font-size:20px; line-height:1.3; color:#f4faf6; }
+.map-card-subtitle { margin:7px 0 16px; font-size:13px; color:#b8c8c0; }
+.probability-legend { display:grid; grid-template-columns:1fr 1fr; gap:12px; font-size:14px; margin:0; }
+.probability-legend i { width:13px; height:13px; border-radius:3px; }
+.map-help { font-size:12px; line-height:1.5; color:#d2ded7; margin:16px 0 10px; }
+.map-metadata { font-size:12px; color:#a8bdb1; border-top:1px solid #ffffff20; padding-top:10px; }
+.map-metadata summary { cursor:pointer; }
+.national-control small { font-size:11px; line-height:1.4; margin-top:8px; }
+.layer-switches { top:auto; bottom:100px; left:24px; right:auto; background:#07110ee8; }
+.flight-deck { bottom:22px; left:50%; right:auto; transform:translateX(-50%); width:auto; padding:8px 14px; border-radius:12px; }
+.panel-nav button { min-width:76px; }
+.floating-panel { top:84px; bottom:100px; right:24px; width:min(410px,calc(100vw - 412px)); }
+.mission:has(.floating-panel) .national-control > small,
+.mission:has(.floating-panel) .national-control .probability-legend { display:grid; }
+.county-error { top:auto; bottom:148px; left:24px; right:auto; max-width:330px; }
+@media(max-width:700px) {
+ .topbar { height:56px; padding:0 16px; }.mission-name,.archive-label,.header-divider {display:none;}
+ .selectors { top:68px; left:12px; right:12px; width:auto; }.selectors .role-select {display:flex;}
+ .national-control {top:150px;left:12px;right:12px;width:auto;padding:14px;}
+ .map-card-title {font-size:17px;}.map-card-subtitle {margin:4px 0 12px;}
+ .probability-legend {grid-template-columns:repeat(4,1fr);gap:5px;font-size:11px;}.map-help {margin:10px 0;font-size:11px;}
+ .layer-switches {top:auto;bottom:88px;left:12px;right:auto;}
+ .flight-deck {bottom:12px;padding:5px;width:calc(100% - 24px);box-sizing:border-box;}.panel-nav {width:100%;justify-content:space-around;}.panel-nav button {min-width:0;flex:1;}
+ .floating-panel {top:150px;bottom:88px;left:12px;right:12px;width:auto;}
+ .mission:has(.floating-panel) .national-control {visibility:hidden;}
+ .map-tools {right:12px;bottom:140px;top:auto;}.county-error {bottom:130px;left:12px;}
+}
+/* Review overview and translucent corner legend. */
+.national-control {top:auto;bottom:100px;left:auto;right:24px;background:rgba(7,17,14,.48);backdrop-filter:blur(12px);width:310px;}
+.review-overview {position:absolute;z-index:1020;top:78px;left:50%;transform:translateX(-50%);width:min(590px,calc(100vw - 48px));}
+.review-scope {font-size:11px;letter-spacing:1px;color:white;text-shadow:0 1px 4px #000;margin-bottom:8px;}
+.review-cards {display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.review-card {background:#091710e8;border:1px solid currentColor;border-radius:10px;padding:12px 16px;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:5px;}
+.review-card.red {color:#ff5b5b}.review-card.yellow{color:#ffda42}.review-card.green{color:#61df8c}
+.review-card strong {font-size:32px;line-height:1.1}.review-card span{font-size:14px;font-weight:650}.review-card small{font-size:11px;color:#d7e2dc}.review-card[aria-pressed=true]{background:#183027;box-shadow:0 0 0 2px currentColor}
+.review-note {display:block;font-size:10px;color:#e2ebe6;background:#07110eb0;padding:5px 8px;margin-top:6px;border-radius:5px;}
+.selectors {top:260px;}
+.review-list {position:absolute;z-index:1060;top:250px;left:24px;bottom:155px;width:min(510px,calc(100vw - 48px));background:#091710f5;border:1px solid #ffffff35;border-radius:12px;display:flex;flex-direction:column;color:#edf4ef;box-shadow:0 15px 60px #0006;}
+.review-list header {display:flex;justify-content:space-between;padding:16px;align-items:center}.review-list h2{margin:4px 0;font-size:22px}.review-list header button{background:none;border:0;color:white;font-size:28px;cursor:pointer}.review-list>p {font-size:11px;margin:0 16px 10px;color:#b9cec0;}.review-list-scroll{overflow:auto;padding:0 16px 16px;min-height:0}.review-list article{padding:14px 0;border-top:1px solid #ffffff22}.review-row-heading{display:flex;justify-content:space-between;gap:12px;overflow-wrap:anywhere}.review-row-heading b{font-size:22px;white-space:nowrap}.review-list article p{font-size:12px;line-height:1.5;margin:7px 0}.review-list article small{display:block;font-size:10px;color:#b9cec0;overflow-wrap:anywhere}.review-list article button{margin-top:10px;padding:7px 10px;background:#ffffff12;color:white;border:1px solid #ffffff40;border-radius:5px;cursor:pointer}
+.mission:has(.review-list) .selectors{visibility:hidden}.mission:has(.floating-panel) .national-control{visibility:hidden}
+@media(max-width:700px){.review-overview{top:64px;width:calc(100% - 24px)}.review-cards{gap:6px}.review-card{padding:9px 8px}.review-card strong{font-size:25px}.review-card span{font-size:11px}.review-note{font-size:9px}.selectors{top:218px}.national-control{top:auto;bottom:90px;right:12px;left:auto;width:260px;padding:12px;background:#07110e66}.national-control .map-help,.national-control .map-card-subtitle,.national-control>small{display:none}.national-control .probability-legend{grid-template-columns:1fr 1fr;margin-top:10px}.map-card-title{font-size:15px}.review-list{top:218px;left:12px;bottom:90px;width:calc(100% - 24px)}.mission:has(.review-list) .national-control{visibility:hidden}.floating-panel{top:218px}.layer-switches{bottom:65px;font-size:10px}}
+
+/* Compact four-row summary, anchored above the map at upper right. */
+.review-overview {top:82px;right:24px;left:auto;transform:none;width:300px;}
+.review-scope {font-size:10px;letter-spacing:.5px;}
+.review-cards {display:flex;flex-direction:column;gap:6px;}
+.review-card {display:grid;grid-template-columns:1fr auto;gap:3px 12px;padding:9px 12px;border-radius:7px;}
+.review-card span{font-size:13px;align-self:center}.review-card strong{font-size:23px;grid-column:2;grid-row:1 / 3;align-self:center}.review-card small{font-size:10px;grid-column:1;}
+.review-unavailable {display:flex;justify-content:space-between;align-items:center;padding:9px 12px;margin-top:6px;background:#091710d9;border:1px solid #ffffff55;border-radius:7px;color:white;font-size:12px;}.review-unavailable strong{font-size:13px;font-weight:500;}
+.selectors{top:84px;}.review-list{top:180px;}.floating-panel{top:360px;}
+@media(max-width:700px){.review-overview{top:150px;right:12px;left:auto;width:240px}.review-card{padding:7px 10px}.review-card strong{font-size:20px}.review-card span{font-size:12px}.review-scope{font-size:9px}.selectors{top:68px}.review-list{top:150px;z-index:1070}.floating-panel{top:150px;z-index:1070}.review-unavailable{padding:7px 10px;font-size:11px}}
+
+.selected-field-primary {min-height:440px;display:flex;flex-direction:column;padding-top:12px;}.selected-field-primary h3{font-size:34px;margin:12px 0;}.selected-field-probability{font-size:52px;line-height:1.1;font-weight:650;color:#eaf6ed;}.selected-field-primary dl{margin-top:30px;}.selected-field-primary dd{overflow-wrap:anywhere;}.selected-field-primary>small{margin-top:auto;padding-top:24px;color:#a4b9ac;}.selected-field-source{border-top:1px solid #ffffff30;padding:24px 0;overflow-wrap:anywhere;}.selected-field-source p{font-size:12px;line-height:1.6;}
+
+.review-overview {max-height:calc(100dvh - 170px);overflow-y:auto;overscroll-behavior:contain;}
+.harvest-summary {margin-top:6px;padding:12px;color:#edf5ef;background:#0b1b16f5;border:1px solid #ffffff45;border-radius:7px;font-size:12px;}
+.harvest-summary h3,.harvest-summary caption {font-size:13px;font-weight:650;text-align:left;margin:0 0 9px;}
+.harvest-mix {display:grid;grid-template-columns:58px repeat(2,minmax(0,1fr));align-items:center;gap:8px;}
+.harvest-share {grid-row:1;text-align:center;display:grid;gap:2px;text-transform:capitalize;}
+.harvest-share.silage {grid-column:3;color:#64cfc6;}
+.harvest-share.grain {grid-column:2;color:#dab584;}
+.harvest-share strong {font-size:clamp(22px,4vw,28px);line-height:1.1;font-variant-numeric:tabular-nums;}
+.harvest-count {display:block;text-align:center;margin-top:4px;}
+.harvest-ring {grid-column:1;grid-row:1;aspect-ratio:1;border-radius:50%;background:conic-gradient(#64cfc6 0 var(--silage-share),#dab584 var(--silage-share) 100%);mask:radial-gradient(circle,transparent 47%,black 49%);}
+.harvest-summary small,.harvest-summary details {color:#c4d4cc;}
+.harvest-summary table {width:100%;margin:12px 0 8px;font-size:12px;border-collapse:collapse;font-variant-numeric:tabular-nums;}
+.harvest-summary th,.harvest-summary td {padding:4px 0;text-align:right;color:inherit;}.harvest-summary th:first-child {text-align:left;text-transform:capitalize;}
+.harvest-summary thead {font-size:10px;color:#b5c7bc;}.harvest-summary details {font-size:11px;line-height:1.4;}.harvest-summary summary {cursor:pointer;}.harvest-summary a {color:#9fe9d7;}
+@media(max-width:700px){.review-overview{max-height:calc(100dvh - 230px);}}
+
+.selectors {flex-wrap:wrap;}
+.selectors:has(.harvest-summary) {padding-bottom:0;}
+.selectors .harvest-summary {box-sizing:border-box;flex:0 0 100%;margin-top:10px;max-height:240px;overflow:auto;}
+@media(max-width:700px){
+  .selectors:has(.harvest-summary) {height:278px;}
+  .selectors .harvest-summary {height:214px;}
+  .mission:has(.selectors .harvest-summary) .review-overview {top:354px;max-height:calc(100dvh - 460px);min-height:76px;}
+}
+
+/* Expand the card to reveal the assumptions directly below its disclosure. */
+.selectors:has(.harvest-summary details[open]) {height:auto;z-index:1050;}
+.selectors .harvest-summary:has(details[open]) {height:auto;max-height:calc(100dvh - 205px);overflow-y:auto;}
+.harvest-summary details[open] p {margin:8px 0;}

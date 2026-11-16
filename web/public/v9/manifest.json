@@ -1,0 +1,80 @@
+{
+  "source_commit": "cf612d37d762392068056f0c6cb2e132bf16f4cf",
+  "branch": "data/v9-ca-md-2021-2025",
+  "states": [
+    "MD"
+  ],
+  "years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "files": {
+    "index.json": {
+      "status": "available",
+      "path": "index.json",
+      "source": "git:cf612d37d762392068056f0c6cb2e132bf16f4cf:data/processed/model/v9_states/index.json",
+      "bytes": 52771,
+      "sha256": "f7fdcaf84cec71bb4cc446d3ecb9efdbc676b600e015069c6edc59badb9d24da",
+      "transport_bytes": 52771
+    },
+    "README.md": {
+      "status": "available",
+      "path": "README.md",
+      "source": "git:cf612d37d762392068056f0c6cb2e132bf16f4cf:data/processed/model/v9_states/README.md",
+      "bytes": 1860,
+      "sha256": "ecacc44dad8b09c6b57e1df2f4e0771e413048d33040eec6ecb32323146e788f",
+      "transport_bytes": 1860
+    },
+    "verification.json": {
+      "status": "available",
+      "path": "verification.json",
+      "source": "git:cf612d37d762392068056f0c6cb2e132bf16f4cf:data/processed/model/v9_states/verification.json",
+      "bytes": 682,
+      "sha256": "9468ec370bf72cf2ac1c1ca7e555871cbc772817c9b33d15079245809546daeb",
+      "transport_bytes": 682
+    },
+    "MD/2021.csv": {
+      "status": "available",
+      "path": "MD/2021.csv.gz",
+      "source": "git:cf612d37d762392068056f0c6cb2e132bf16f4cf:data/processed/model/v9_states/MD/2021.csv",
+      "bytes": 8985983,
+      "sha256": "4e9485af598a9969484bf5c44e05494573f30627bf67f84beadac5c74db96424",
+      "transport_bytes": 172266
+    },
+    "MD/2022.csv": {
+      "status": "available",
+      "path": "MD/2022.csv.gz",
+      "source": "git:cf612d37d762392068056f0c6cb2e132bf16f4cf:data/processed/model/v9_states/MD/2022.csv",
+      "bytes": 8915836,
+      "sha256": "a460b73e21df1016f18b48af6e974c0bd702448ca526165fbe7ac6b6c067a37d",
+      "transport_bytes": 172214
+    },
+    "MD/2023.csv": {
+      "status": "available",
+      "path": "MD/2023.csv.gz",
+      "source": "git:cf612d37d762392068056f0c6cb2e132bf16f4cf:data/processed/model/v9_states/MD/2023.csv",
+      "bytes": 9005855,
+      "sha256": "a27fd16d45fd84b8334ecd4e511cd551f357b3cadc31efd45f3a36480f4abcab",
+      "transport_bytes": 172600
+    },
+    "MD/2024.csv": {
+      "status": "available",
+      "path": "MD/2024.csv.gz",
+      "source": "git:cf612d37d762392068056f0c6cb2e132bf16f4cf:data/processed/model/v9_states/MD/2024.csv",
+      "bytes": 10578960,
+      "sha256": "d85008ee009a3bd5fe624956e65090063336802d38eae59f1881e7315d87b6d2",
+      "transport_bytes": 170257
+    },
+    "MD/2025.csv": {
+      "status": "available",
+      "path": "MD/2025.csv.gz",
+      "source": "git:cf612d37d762392068056f0c6cb2e132bf16f4cf:data/processed/model/v9_states/MD/2025.csv",
+      "bytes": 10579272,
+      "sha256": "3fec1d831fcfb756b50766ba2e6c0c69e7797a83b71807e0acff6ce3f882bcee",
+      "transport_bytes": 170265
+    }
+  }
+}

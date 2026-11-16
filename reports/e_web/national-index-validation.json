@@ -1,0 +1,41 @@
+{
+  "status": "verified",
+  "objects": 6128148,
+  "sources": [
+    {
+      "source_dataset_id": "csb_corn_2021_2023",
+      "candidate_prefix": "csb_",
+      "objects": 6112209,
+      "geometry_invalid_count": 209931,
+      "year_counts": {
+        "2021": 3184035,
+        "2022": 2993250,
+        "2023": 3262384
+      },
+      "upstream_processing_report": "reports/a_data/external_corn/csb_processing.json"
+    },
+    {
+      "source_dataset_id": "cropsight_corn_2021_2023",
+      "candidate_prefix": "cropsight_",
+      "objects": 15939,
+      "geometry_invalid_count": 0,
+      "year_counts": {
+        "2021": 6676,
+        "2022": 5126,
+        "2023": 4137
+      },
+      "upstream_processing_report": "reports/a_data/external_corn/cropsight_processing.json"
+    }
+  ],
+  "tiles": 170,
+  "compressed_bytes": 40734641,
+  "source_commit": "83fc31f4a6f1fcd3555935c9fb4b286665b8b9ee",
+  "checks": [
+    "Every shard SHA-256 and row count matches A processing report",
+    "Every candidate ID reconstructed exactly from A source_field_id, with leading zero length preserved",
+    "Every object assigned to one display tile with original annual eligibility and geometry-valid flag",
+    "No rows omitted or predictions synthesized",
+    "Each compressed tile decompressed byte-exactly and output counts match source totals"
+  ],
+  "browser_verification": "Not performed; supported browser tool unavailable"
+}

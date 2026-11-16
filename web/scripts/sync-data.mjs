@@ -1,3 +1,6 @@
+import { syncFieldMetadata } from "./sync-field-metadata.mjs";
+import { syncFieldLocations } from "./sync-field-locations.mjs";
+import { syncV9 } from "./sync-v9.mjs";
 import { promises as fs } from "node:fs";
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
@@ -104,15 +107,42 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     path.join(root, "web/public/data"),
     { repositoryRoot: root, handoffs },
   );
+  await syncV9(root);
+  await syncFieldLocations(root);
+  try { await syncFieldMetadata(root); } catch(e) { console.warn("Field metadata unavailable:",e.message); }
   const referenceTarget = path.join(root, "web/public/reference");
   await fs.rm(referenceTarget, { recursive: true, force: true });
   try {
     await fs.cp(path.join(root, "web/reference"), referenceTarget, {
       recursive: true,
+      filter: (src) => path.basename(src) !== "us-counties.geojson",
     });
   } catch (e) {
     if (e.code !== "ENOENT") throw e;
   }
+  await fs.rm(path.join(root, "web/public/national"), {
+    recursive: true,
+    force: true,
+  });
+  async function linkTree(src, dest) {
+    await fs.mkdir(dest, { recursive: true });
+    for (const e of await fs.readdir(src, { withFileTypes: true })) {
+      const a = path.join(src, e.name),
+        b = path.join(dest, e.name);
+      if (e.isDirectory()) await linkTree(a, b);
+      else {
+        try {
+          await fs.link(a, b);
+        } catch {
+          await fs.copyFile(a, b);
+        }
+      }
+    }
+  }
+  await linkTree(
+    path.join(root, "web/national"),
+    path.join(root, "web/public/national"),
+  );
   for (const [name, info] of Object.entries(files))
     console.log(`${info.status}: ${name}`);
 }

@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "objects": 6128148,
+  "outlined": 49902,
+  "state_counts": {
+    "MD": 49902
+  },
+  "polygon_bytes": 2326310,
+  "point_bytes": 43815159,
+  "checks": [
+    "All point IDs, coordinates, annual eligibility and geometry validity byte-equal to original",
+    "Only Maryland CSB IDs in outline inventory; CropSight classified against Census county geometry by generator",
+    "Every outline identity occurs exactly once and has point suppression flag",
+    "All transport hashes and row counts verified"
+  ],
+  "browser_verification": "Not performed: supported browser tool unavailable"
+}

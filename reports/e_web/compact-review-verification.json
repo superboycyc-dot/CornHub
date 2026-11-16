@@ -1,0 +1,12 @@
+{
+  "version": 20,
+  "status": "passed",
+  "tests": 18,
+  "live_resources": [
+    "/",
+    "/assets/index-ByMRsRtm.js",
+    "/assets/index-DXGOa-f3.css",
+    "/reference/release.json"
+  ],
+  "browser_visual_check": "Unavailable"
+}

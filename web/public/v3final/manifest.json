@@ -1,0 +1,12 @@
+{
+  "model_sha256": "9470cda3006dcb4b2f134dc9cddf3a134c4a627fea129ff3faaf9fe28aff9fa3",
+  "model": "/home/ubuntu/cornhub-compute/runs/step3-global-20261115T011738Z/models/global_full_model.joblib",
+  "counts": {
+    "grain": 169,
+    "silage": 241,
+    "no_ndvi": 5
+  },
+  "training_overlap": 47,
+  "official_labels": 44,
+  "csv_sha256": "bbb9a355d279ac8bacb0e9e1c761b87b278ba4dd1d74c36d9bee9ddef783bf4a"
+}

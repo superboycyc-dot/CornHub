@@ -1,6 +1,13 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import { createRoot } from "react-dom/client";
 import L from "leaflet";
+import NationalLayer from "./NationalLayer";
+import HarvestSummary from "./HarvestSummary";
+import {reviewGroups} from "./review-overview";
+import ReviewOverview from "./ReviewOverview";
+import SelectedField from "./SelectedField";
+import useV9 from "./useV9";
+import {probabilityColor,v9Record,v9Details} from "./v3final";
 import "leaflet/dist/leaflet.css";
 import "./style.css";
 import {
@@ -12,8 +19,8 @@ import {
   selectReviewQueue,
 } from "./data";
 import { FIELD_MIN_ZOOM, fieldSnapshot, countiesInView } from "./map-data";
-// At BARC latitude, zoom 13 with a 100 CSS-pixel metric scale renders 1 km.
-const INITIAL_MAP_ZOOM = 13;
+// At BARC latitude, zoom 14 with a 100 CSS-pixel metric scale renders 500 m.
+const INITIAL_MAP_ZOOM = 14;
 const show = (v, missing = "Missing data") =>
   present(v) ? String(v) : missing;
 function Icon({ name, size = 18 }) {
@@ -87,7 +94,7 @@ function Icon({ name, size = 18 }) {
     </svg>
   );
 }
-function fieldTooltip(info) {
+function fieldTooltip(info, v9row) {
   const root = document.createElement("div");
   root.className = "field-tooltip-content";
   const text = (tag, value, className) => {
@@ -97,6 +104,12 @@ function fieldTooltip(info) {
     root.appendChild(element);
     return element;
   };
+  if(v9row || info.role==="inference") {
+    text("strong",info.field_id,"tooltip-title");
+    for(const detail of v9Details(v9row)) text("span",detail,"tooltip-detail");
+    text("span","Colors show the probability of the predicted harvest use.","tooltip-footnote");
+    return root;
+  }
   text("span", "BARC / VERIFIED FIELD", "tooltip-kicker");
   text("strong", info.field_id, "tooltip-title");
   text(
@@ -141,6 +154,7 @@ function Map({
   showFields,
   onZoomChange,
   onCountyStatus,
+  v9,
 }) {
   const el = useRef(),
     map = useRef(),
@@ -149,10 +163,19 @@ function Map({
     [counties, setCounties] = useState(null);
   useEffect(() => {
     const abort = new AbortController();
-    fetch("/reference/us-counties.geojson", { signal: abort.signal })
-      .then((r) => {
+    fetch("/reference/us-counties.geojson.gz", { signal: abort.signal })
+      .then(async (r) => {
         if (!r.ok) throw Error(`HTTP ${r.status}`);
-        return r.json();
+        const bytes = await r.arrayBuffer();
+        const text =
+          new Uint8Array(bytes)[0] === 31
+            ? await new Response(
+                new Blob([bytes])
+                  .stream()
+                  .pipeThrough(new DecompressionStream("gzip")),
+              ).text()
+            : new TextDecoder().decode(bytes);
+        return JSON.parse(text);
       })
       .then((value) => {
         if (
@@ -281,11 +304,12 @@ function Map({
   }, [counties, showCounties]);
   useEffect(() => {
     if (!fields?.features.length) return;
+    const rowFor = feature => v9Record(v9,feature.properties.source_dataset_id,feature.properties.field_id,year,role);
     const normal = (feature) => ({
-      color: feature.properties.field_id === selected ? "#edffb6" : "#cfff87",
+      color: probabilityColor(rowFor(feature)),
       weight: feature.properties.field_id === selected ? 2.5 : 1.8,
       opacity: 1,
-      fillColor: "#c3ff84",
+      fillColor: probabilityColor(rowFor(feature)),
       fillOpacity: feature.properties.field_id === selected ? 0.38 : 0.26,
     });
     const layer = L.geoJSON(fields, {
@@ -293,7 +317,7 @@ function Map({
       style: normal,
       onEachFeature: (feature, polygon) => {
         const info = fieldSnapshot(feature, data, year, role);
-        polygon.bindTooltip(fieldTooltip(info), {
+        polygon.bindTooltip(fieldTooltip(info,rowFor(feature)), {
           sticky: true,
           direction: "top",
           offset: [0, -14],
@@ -301,7 +325,7 @@ function Map({
           opacity: 1,
         });
         const highlight = () => {
-          polygon.setStyle({ color: "#efffc9", weight: 3, fillOpacity: 0.52 });
+          polygon.setStyle({ ...normal(feature), weight: 3, fillOpacity: 0.52 });
           polygon.bringToFront();
         };
         const reset = () => polygon.setStyle(normal(feature));
@@ -319,7 +343,7 @@ function Map({
             path.setAttribute("role", "button");
             path.setAttribute(
               "aria-label",
-              `Field ${info.field_id}, ${info.year}, ${info.role}, model silage probability ${info.p_silage === null ? "not computed" : info.p_silage}`,
+              `Field ${info.field_id}, ${info.year}, ${info.role}, ${role==="inference" ? v9Details(rowFor(feature)).join(", ") : "OOF validation"}`,
             );
             path.onfocus = () => {
               highlight();
@@ -348,7 +372,7 @@ function Map({
     map.current.on("zoomend", toggle);
     if (fitted.current !== fields) {
       // Use a fixed initial scale rather than viewport-dependent fitBounds.
-      // The 1 km ruler is computed by Leaflet from actual map distances.
+      // The 500 m ruler is computed by Leaflet from actual map distances.
       map.current.setView(layer.getBounds().getCenter(), INITIAL_MAP_ZOOM, {
         animate: false,
       });
@@ -360,7 +384,7 @@ function Map({
       map.current.off("zoomend", toggle);
       if (map.current.hasLayer(layer)) map.current.removeLayer(layer);
     };
-  }, [fields, selected, data, year, role, showFields, onSelect]);
+  }, [fields, selected, data, year, role, showFields, onSelect, v9]);
   return (
     <div className="map-wrap">
       <div ref={el} className="map" aria-label="Field map" />
@@ -477,8 +501,10 @@ function App() {
   const [state, setState] = useState({ data: {}, errors: {} }),
     [loading, setLoading] = useState(true),
     [year, setYear] = useState("2021"),
-    [role, setRole] = useState("oof"),
+    [role, setRole] = useState("inference"),
     [id, setId] = useState("");
+  const v9 = useV9(year,role);
+  const [nationalSelection,setNationalSelection]=useState(null);
   const reload = () => {
     setLoading(true);
     loadData().then((s) => {
@@ -512,6 +538,7 @@ function App() {
   const boundary = fields?.features.find(
     (f) => f.properties.field_id === fieldId,
   )?.properties;
+  const selectedV9 = v9Record(v9,boundary?.source_dataset_id,fieldId,year,role);
   const summary = selectAnalysis(d, year, role),
     summaryMatches =
       summary &&
@@ -539,11 +566,14 @@ function App() {
     [fullscreen, setFullscreen] = useState(false),
     [uiNotice, setUiNotice] = useState("");
   const mapController = useRef();
+  const nationalEnabled = true;
+  const [nationalStatus, setNationalStatus] = useState("");
   const [zoomLevel, setZoomLevel] = useState(9),
     [showCounties, setShowCounties] = useState(true),
     [showFields, setShowFields] = useState(true),
     [countyStatus, setCountyStatus] = useState("loading");
   const selectField = useCallback((value) => {
+    setNationalSelection(null);
     setId(value);
     setPanel("field");
   }, []);
@@ -560,6 +590,7 @@ function App() {
       document.removeEventListener("fullscreenchange", onFullscreen);
     };
   }, []);
+  const selectNational = useCallback(field=>{setNationalSelection(field);setPanel("field");},[]);
   const tabs = [
     { id: "field", label: "Field", icon: "field" },
     { id: "observations", label: "Observations", icon: "chart" },
@@ -629,7 +660,18 @@ function App() {
         showFields={showFields}
         onZoomChange={setZoomLevel}
         onCountyStatus={setCountyStatus}
+        v9={v9}
       />
+      <NationalLayer
+        controller={mapController}
+        enabled={nationalEnabled}
+        year={year}
+        role={role}
+        onStatus={setNationalStatus}
+        onSelect={selectNational}
+        v9={v9}
+      />
+      <ReviewOverview v9={v9} year={year} role={role} controller={mapController} onOpen={()=>setPanel(null)} onSelect={selectNational} />
       <header className="topbar">
         <a
           className="brand"
@@ -646,7 +688,7 @@ function App() {
         <div className="header-divider" />
         <span className="mission-name">FIELD OPERATIONS</span>
         <div className="header-actions">
-          <span className="archive-label">BARC / ARCHIVE 2021—2023</span>
+          <span className="archive-label">BARC v3final PREDICTIONS · US FIELD MAP</span>
           <button
             className="icon-button"
             onClick={reload}
@@ -665,17 +707,6 @@ function App() {
           </button>
         </div>
       </header>
-      <div className="mission-heading">
-        <div className="eyebrow">
-          <span className="status-dot" /> EARTH OBSERVATION
-        </div>
-        <h1>
-          FIELD
-          <br />
-          INTELLIGENCE
-        </h1>
-        <p>Every field. Every observation. In context.</p>
-      </div>
       <section className="selectors" aria-label="Map filters">
         <label>
           <span>YEAR</span>
@@ -686,7 +717,7 @@ function App() {
           >
             {["2021", "2022", "2023", "2024", "2025"].map((y) => (
               <option key={y} value={y}>
-                {Number(y) > 2023 ? `${y} · Pending` : y}
+                {y}
               </option>
             ))}
           </select>
@@ -726,7 +757,9 @@ function App() {
             ))}
           </select>
         </label>
+        <HarvestSummary stats={reviewGroups(v9,year,role)} fields={fields} year={year}/>
       </section>
+      {(v9.status==='error'||nationalStatus.includes('failed'))&&<div className="county-error" role="alert">{v9.status==='error'?v9.message:nationalStatus}</div>}
       <div className="layer-switches" aria-label="Map layers">
         <button
           aria-pressed={showCounties}
@@ -740,7 +773,7 @@ function App() {
           onClick={() => setShowFields(!showFields)}
         >
           <span className="layer-swatch fields" />
-          Fields <small>{fields?.features.length || "pending"}</small>
+          BARC reference <small>Optional</small>
         </button>
         <span className="zoom-readout">
           Z{zoomLevel} / FIELDS ≥ {FIELD_MIN_ZOOM}
@@ -749,46 +782,6 @@ function App() {
       {countyStatus !== "ready" && countyStatus !== "loading" && (
         <div className="county-error" role="status">
           {countyStatus}
-        </div>
-      )}
-      {!panel && (
-        <div className="context-note">
-          <span className="crosshair-mark">+</span>
-          <div>
-            <span className="micro-label">
-              {fields?.features.length
-                ? showFields
-                  ? "VERIFIED FIELD LAYER"
-                  : "FIELD LAYER HIDDEN"
-                : "FIELD LAYER PENDING"}
-            </span>
-            <p>
-              {fields?.features.length
-                ? !showFields
-                  ? "Enable the field layer to inspect boundaries."
-                  : zoomLevel < FIELD_MIN_ZOOM
-                    ? "Zoom in to reveal verified field boundaries."
-                    : "Hover a field for its prediction. Click for details."
-                : "Field boundaries have not been provided"}
-            </p>
-            <small>
-              {fields?.features.length
-                ? "Maryland / BARC · Zoom out to explore the United States."
-                : "Regional basemap only. No field boundaries are inferred."}
-            </small>
-            {fields?.features.length > 0 &&
-              (zoomLevel < FIELD_MIN_ZOOM || !showFields) && (
-                <button
-                  className="show-fields-button"
-                  onClick={() => {
-                    setShowFields(true);
-                    fitMap();
-                  }}
-                >
-                  Zoom to fields <Icon name="arrow" size={13} />
-                </button>
-              )}
-          </div>
         </div>
       )}
       <div className="map-tools" aria-label="Map controls">
@@ -838,79 +831,7 @@ function App() {
             </button>
           </div>
           <div className="panel-content" key={panel}>
-            {panel === "field" && (
-              <>
-                <span className="section-kicker">SELECTED FIELD</span>
-                {Number(year) > 2023 && (
-                  <p className="notice">
-                    No annual target cohort, observations or predictions have
-                    been supplied for {year}. Displayed polygons are reference
-                    boundaries, not verified corn fields for this year.
-                  </p>
-                )}
-                <h3>{fieldId || "Awaiting the shared sample"}</h3>
-                <dl>
-                  {Object.entries({
-                    Year: year,
-                    "Area (ha)": show(boundary?.area_ha),
-                    "Official ID": show(boundary?.source_field_id),
-                    Label: show(label?.label),
-                    "Source dataset": show(boundary?.source_dataset_id),
-                  }).map(([k, v]) => (
-                    <React.Fragment key={k}>
-                      <dt>{k}</dt>
-                      <dd>{v}</dd>
-                    </React.Fragment>
-                  ))}
-                </dl>
-                <div className="panel-rule" />
-                <span className="section-kicker">MODEL OUTPUT</span>
-                <div className="probability-value">
-                  {present(prediction?.p_silage)
-                    ? String(Number(Number(prediction.p_silage).toFixed(6)))
-                    : "Not computed"}
-                </div>
-                <p className="metric-caption">Model silage probability</p>
-                <dl>
-                  {Object.entries({
-                    "Predicted class": show(
-                      prediction?.predicted_label,
-                      "Not computed",
-                    ),
-                    "Model version": show(
-                      prediction?.model_version,
-                      "Not computed",
-                    ),
-                    "Prediction role": role,
-                  }).map(([k, v]) => (
-                    <React.Fragment key={k}>
-                      <dt>{k}</dt>
-                      <dd>{v}</dd>
-                    </React.Fragment>
-                  ))}
-                </dl>
-                {role === "oof" &&
-                  label?.label &&
-                  prediction?.predicted_label &&
-                  label.label !== prediction.predicted_label && (
-                    <p className="notice">
-                      This held-out prediction differs from the recorded label (
-                      {label.label}). It is a real OOF error; satellite quality
-                      does not establish correctness.
-                    </p>
-                  )}
-                <p className="notice">
-                  {role === "oof"
-                    ? "OOF: predictions from models trained without this field."
-                    : "Inference: predictions from the full-data model."}{" "}
-                  Model probability is uncalibrated and is not accuracy.
-                </p>
-                <small>
-                  Source: core/fields.geojson, core/labels.csv,
-                  model/predictions.csv
-                </small>
-              </>
-            )}
+            {panel === "field" && <SelectedField key={nationalSelection?.candidate_id||fieldId} id={nationalSelection?.candidate_id||fieldId} source={nationalSelection?.source_dataset_id||boundary?.source_dataset_id} area={nationalSelection?undefined:boundary?.area_ha} year={year} role={role} row={nationalSelection?v9Record(v9,nationalSelection.source_dataset_id,nationalSelection.candidate_id,year,role):(role==='inference'?selectedV9:prediction)} />}
             {panel === "observations" && (
               <>
                 <span className="section-kicker">VEGETATION SIGNAL</span>
@@ -1230,7 +1151,7 @@ function App() {
       )}
       <footer className="flight-deck">
         <div className="flight-id">
-          <span className="micro-label">MISSION / BARC</span>
+          <span className="micro-label">REFERENCE DATA</span>
           <div>
             <span className="status-dot amber" />
             {loading

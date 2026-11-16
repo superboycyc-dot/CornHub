@@ -1,0 +1,36 @@
+{
+  "release": "maryland-500m-v22",
+  "outline_states": [
+    "MD"
+  ],
+  "state_counts": {
+    "MD": 49902
+  },
+  "national_objects": 6128148,
+  "polygon_bytes": 2326310,
+  "point_bytes": 43815159,
+  "national_default_enabled": true,
+  "detail_zoom": 12,
+  "v9_source_commit": "cf612d37d762392068056f0c6cb2e132bf16f4cf",
+  "default_prediction_role": "inference",
+  "prediction_states": [
+    "MD"
+  ],
+  "color_field": "p_silage",
+  "probability_colors": {
+    "green": "p_silage > 0.9",
+    "yellow": "0.6 < p_silage <= 0.9",
+    "red": "p_silage <= 0.6",
+    "white": "unavailable"
+  },
+  "national_layer_locked": true,
+  "barc_reference_default_visible": true,
+  "review_groups": {
+    "red": "First review: p_silage <= 0.6",
+    "orange": "Suggested review: 0.6 < p_silage <= 0.9",
+    "green": "p_silage > 0.9"
+  },
+  "review_denominator": "Current-year Maryland available inference records, including conditional predictions",
+  "initial_map_zoom": 14,
+  "initial_scale_target_m": 500
+}
